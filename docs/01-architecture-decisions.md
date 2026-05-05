@@ -4,11 +4,11 @@
 
 | Layer | Choice | Why |
 |---|---|---|
-| Frontend framework | Next.js 15, App Router | Best-in-class SEO, edge rendering, Vercel-native |
+| Frontend framework | Next.js 16, App Router | Best-in-class SEO, edge rendering, Vercel-native; current stable since Oct 2025 |
 | Hosting | Vercel | Zero-config CWV, ISR for product pages, instant deploys |
 | Commerce | Shopify (Storefront API via Headless channel) | Mature checkout, inventory, payments — but headless |
 | Shopify client | `@shopify/storefront-api-client` (official) | Less custom code, better TypeScript, version-aware |
-| Styling | Tailwind CSS | Rapid build, no design-system overhead for v1 |
+| Styling | Tailwind CSS v4 | CSS-first config via `@theme`, no JS config file, faster build |
 | Components | Custom + Radix UI primitives where needed | No bloat from full UI libraries |
 | Forms | React Hook Form + Zod | Type-safe, minimal |
 | Analytics | Vercel Analytics + GA4 | Standard duo |
@@ -16,7 +16,10 @@
 | Image optimisation | Next.js `<Image>` + Vercel | Automatic, free |
 | Icons | lucide-react | Clean, consistent, free |
 
-## Why Next.js 15 App Router specifically
+## Why Next.js 16 App Router specifically
+
+- Resolves Next.js 15 security CVEs (CVE-2025-66478 RCE, CVE-2025-55184, CVE-2025-55183)
+- Stable since October 2025; production-ready for a 2026 build
 
 - Server components by default → better performance, less JS shipped to client
 - Built-in metadata API → clean SEO without third-party libraries
@@ -80,38 +83,39 @@
 ├── migration/                # Migration spreadsheet
 ├── public/                   # Static assets
 ├── types/                    # TypeScript types (Product, Cart, etc.)
-├── tailwind.config.ts
+├── postcss.config.js
 ├── next.config.js
 └── package.json
 ```
+
+Tailwind v4 is configured CSS-first inside `app/globals.css` via the `@theme` directive — there is no `tailwind.config.ts` file. See `docs/05-design-system.md` for the brand-token block.
 
 ## Key dependencies
 
 ```json
 {
   "dependencies": {
-    "next": "^15.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "^16.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "@shopify/storefront-api-client": "^1.0.0",
-    "lucide-react": "^0.400.0",
-    "clsx": "^2.0.0"
+    "lucide-react": "^0.469.0",
+    "clsx": "^2.1.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.5.0",
-    "tailwindcss": "^3.4.0",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.0",
+    "typescript": "^5.7.0",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
     "eslint": "^9.0.0",
-    "eslint-config-next": "^15.0.0"
+    "eslint-config-next": "^16.2.0"
   }
 }
 ```
 
-Versions above are minimums — Claude should pin to current latest stable at the time of scaffolding.
+Versions above are minimums — Claude should pin to current latest stable at the time of scaffolding. Note: Tailwind v4 replaces `autoprefixer` + raw `postcss` with the unified `@tailwindcss/postcss` plugin.
 
 ## Routing strategy
 
