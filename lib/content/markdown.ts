@@ -121,3 +121,36 @@ export async function listMarkdownSlugs(section: string): Promise<string[]> {
     return [];
   }
 }
+
+export interface MarkdownPageSummary {
+  slug: string;
+  title: string;
+  description: string;
+}
+
+/**
+ * Lightweight listing for hub pages — reads frontmatter only,
+ * skips body rendering. Returns one entry per `*.md` file in the
+ * section directory (excluding index.md).
+ */
+export async function listSectionPages(
+  section: string,
+): Promise<ReadonlyArray<MarkdownPageSummary>> {
+  const slugs = await listMarkdownSlugs(section);
+  const summaries: MarkdownPageSummary[] = [];
+  for (const slug of slugs) {
+    const filePath = path.join(CONTENT_ROOT, section, `${slug}.md`);
+    try {
+      const raw = await fs.readFile(filePath, 'utf8');
+      const { data } = matter(raw);
+      summaries.push({
+        slug,
+        title: asString(data.title) ?? slug,
+        description: asString(data.description) ?? '',
+      });
+    } catch {
+      // Skip unreadable files.
+    }
+  }
+  return summaries;
+}
