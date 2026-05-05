@@ -1,4 +1,5 @@
 import type { Product } from '@/types/product';
+import type { FaqItem } from '@/lib/content/markdown';
 import { absoluteUrl, getSiteUrl } from './siteUrl';
 
 export type JsonLd = Record<string, unknown>;
@@ -53,6 +54,21 @@ export function breadcrumbSchema(items: ReadonlyArray<BreadcrumbItem>): JsonLd {
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function faqPageSchema(items: ReadonlyArray<FaqItem>): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
     })),
   };
 }
