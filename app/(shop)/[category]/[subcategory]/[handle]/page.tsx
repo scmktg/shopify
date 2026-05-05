@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ProductDetail } from '@/components/product/ProductDetail';
+import { findSubcategory } from '@/content/categories';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
+import { getProductCategoryTags } from '@/lib/utils/productUrl';
 
 interface ProductPageProps {
   params: Promise<{
@@ -22,7 +24,7 @@ function truncate(text: string, max: number): string {
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
-  const { handle } = await params;
+  const { category, subcategory, handle } = await params;
   const product = await getProductByHandle(handle);
   if (!product) return {};
 
@@ -34,6 +36,9 @@ export async function generateMetadata({
   return {
     title,
     description,
+    alternates: {
+      canonical: `/${category}/${subcategory}/${handle}/`,
+    },
     openGraph: {
       title,
       description,
@@ -44,8 +49,19 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { category, subcategory, handle } = await params;
+
+  if (!findSubcategory(category, subcategory)) notFound();
+
   const product = await getProductByHandle(handle);
   if (!product) notFound();
+
+  const productCategory = getProductCategoryTags(product.tags);
+  if (
+    productCategory.category !== category ||
+    productCategory.subcategory !== subcategory
+  ) {
+    notFound();
+  }
 
   return (
     <ProductDetail
