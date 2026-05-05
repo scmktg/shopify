@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { findSubcategory } from '@/content/categories';
+import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
@@ -43,12 +44,13 @@ export default async function SubcategoryPage({
 
   const pathname = `/${category}/${subcategory}/`;
   const title = `${node.subcategory.label} ${node.category.label}`;
+  const intro = getCategoryIntro(`${category}/${subcategory}`);
 
   return (
     <>
       <JsonLdScript
         data={[
-          collectionSchema(title, pathname, null),
+          collectionSchema(title, pathname, intro),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
             { name: node.category.label, path: `/${category}/` },
@@ -58,7 +60,7 @@ export default async function SubcategoryPage({
       />
       <CategoryHero
         title={title}
-        intro={null}
+        intro={intro}
         categorySlug={node.category.slug}
         subcategories={node.category.subcategories}
         activeSubSlug={node.subcategory.slug}
