@@ -11,16 +11,17 @@ When you start the build with Claude (after Phases A–D of `SETUP-CHECKLIST.md`
 ```
 Read /CLAUDE.md and /docs/01-architecture-decisions.md in this repo first.
 
-Then begin Milestone 0 from /docs/09-build-roadmap.md. Initialise a Next.js 15 + TypeScript + Tailwind project at the root of this repo by creating these files one at a time:
+Then begin Milestone 0 from /docs/09-build-roadmap.md. Initialise a Next.js 16 + TypeScript + Tailwind v4 project at the root of this repo by creating these files one at a time:
 
-1. package.json (include @shopify/storefront-api-client, lucide-react, clsx; latest stable Next 15, React 19, TypeScript)
+1. package.json (include @shopify/storefront-api-client, lucide-react, clsx; latest stable Next 16, React 19.2, TypeScript 5.7+; devDeps tailwindcss ^4 and @tailwindcss/postcss ^4)
 2. tsconfig.json
 3. next.config.js
-4. tailwind.config.ts
-5. postcss.config.js
-6. app/layout.tsx (minimal)
-7. app/page.tsx (minimal "hello world")
-8. app/globals.css (Tailwind directives + minimal base styles)
+4. postcss.config.js (Tailwind v4 uses the `@tailwindcss/postcss` plugin only — no autoprefixer, no separate postcss config tweaks)
+5. app/layout.tsx (minimal, lang="en-AU")
+6. app/page.tsx (minimal placeholder)
+7. app/globals.css (`@import "tailwindcss";` then an `@theme` block with the brand tokens from /docs/05-design-system.md; system font stack only)
+
+Note: there is no `tailwind.config.ts` in v4 — design tokens live in `app/globals.css` under `@theme`.
 
 Use the conventions from /docs/08-conventions.md.
 
