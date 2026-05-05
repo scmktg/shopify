@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import {
+  DollarSign,
   Droplet,
-  Droplets,
   Filter,
   Gauge,
   GlassWater,
+  MapPin,
   ShieldCheck,
   Truck,
-  Wallet,
   Wrench,
   type LucideIcon,
 } from 'lucide-react';
@@ -190,7 +190,7 @@ function CategoryGrid() {
 function TrustStrip() {
   const items: Array<{ icon: LucideIcon; title: string; body: string }> = [
     {
-      icon: Wallet,
+      icon: DollarSign,
       title: 'Wholesale pricing',
       body: 'Same price for everyone — homeowners, tradies, commercial.',
     },
@@ -205,31 +205,30 @@ function TrustStrip() {
       body: 'Every certified product shows its licence number on the page.',
     },
     {
-      icon: Droplets,
+      icon: MapPin,
       title: 'Australian owned',
       body: 'Based on the Central Coast NSW. Real people on the phones.',
     },
   ];
   return (
     <section className="bg-white border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
         <ul
           role="list"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {items.map((item) => (
-            <li key={item.title} className="flex gap-3">
+            <li key={item.title} className="text-center">
               <item.icon
-                size={24}
+                size={32}
+                strokeWidth={1.75}
                 aria-hidden="true"
-                className="flex-shrink-0 text-brand-blue mt-0.5"
+                className="mx-auto text-brand-blue"
               />
-              <div>
-                <h3 className="text-sm font-semibold text-black">
-                  {item.title}
-                </h3>
-                <p className="mt-1 text-sm text-black/70">{item.body}</p>
-              </div>
+              <h3 className="mt-3 text-base font-semibold text-black">
+                {item.title}
+              </h3>
+              <p className="mt-1.5 text-sm text-black/70">{item.body}</p>
             </li>
           ))}
         </ul>
