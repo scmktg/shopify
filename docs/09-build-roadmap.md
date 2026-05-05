@@ -2,148 +2,157 @@
 
 This roadmap sequences the build into milestones. Each milestone has a clear "done" criterion. Work top-to-bottom — don't skip ahead.
 
-## Milestone 0 — Setup (Day 1, ~2 hours)
+## Milestone 0 — Setup ✅ COMPLETE
 
-- [ ] Create GitHub repo `enviroaqua-web`
-- [ ] Create Vercel project, connect to GitHub repo
-- [ ] Create Shopify Storefront API access token
-- [ ] Set Vercel environment variables (Shopify token, store domain)
-- [ ] Add `/docs/` folder (this pack) to repo
-- [ ] Initial Next.js 15 + Tailwind + TypeScript scaffold
-- [ ] First deploy succeeds (blank "hello world" page on Vercel)
+- [x] Create GitHub repo `enviroaqua-web`
+- [x] Create Vercel project, connect to GitHub repo
+- [x] Create Shopify Storefront API access token
+- [x] Set Vercel environment variables (Shopify token, store domain)
+- [x] Add `/docs/` folder (this pack) to repo
+- [x] Initial Next.js 16 + Tailwind v4 + TypeScript scaffold
+- [x] First deploy succeeds
 
-**Done when**: visiting the Vercel staging URL shows a Next.js placeholder page.
+## Milestone 1 — Layout & navigation ✅ COMPLETE
 
-## Milestone 1 — Layout & navigation (Day 1, ~2 hours)
+- [x] Top banner component (sitewide wholesale message)
+- [x] Header component with sticky black nav
+- [x] Megamenu dropdown on hover/focus (CSS-only, server component)
+- [x] Footer component (4 columns)
+- [x] Mobile menu (hamburger → full-screen overlay)
+- [x] Brand tokens via Tailwind v4 `@theme` directive
+- [x] Root layout (`app/layout.tsx`)
 
-- [ ] Header component (top banner + main nav)
-- [ ] Footer component
-- [ ] Mobile menu (hamburger → full-screen overlay)
-- [ ] Tailwind config with brand colours
-- [ ] Root layout (`app/layout.tsx`)
-- [ ] Homepage shell (hero + 5 category tiles + value prop)
+## Milestone 2 — Shopify connection ✅ COMPLETE
 
-**Done when**: site has correct nav structure, looks clean per design system, all top-level routes return 404 with consistent layout.
+- [x] Storefront API client in `/lib/shopify/client.ts`
+- [x] Type definitions for Product, Cart in `/types/`
+- [x] First query: `getProductByHandle` with full metafield set
+- [x] Tested with real Shopify product
+- [x] List query (`getProducts`) and search query (`searchProducts`)
+- [x] Cart Server Actions (`createCart`, `addToCart`, `updateCartLine`,
+  `removeCartLine`, `getCart`)
 
-## Milestone 2 — Shopify connection (Day 1, ~2 hours)
+## Milestone 3 — Product detail page ✅ COMPLETE
 
-- [ ] Storefront API client in `/lib/shopify/client.ts`
-- [ ] Type definitions for Product, Collection, Cart in `/types/`
-- [ ] First query: fetch a single product by handle
-- [ ] Test with real Shopify product (one created manually in Admin)
-- [ ] Cart context (`CartProvider`) with create/add/update/remove
+- [x] Route: `app/(shop)/[category]/[subcategory]/[handle]/page.tsx`
+- [x] Fetches product by handle, validates it belongs to category/sub
+  via `primary-cat:` / `sub-cat:` tags (404 on mismatch)
+- [x] Gallery, title, price, stock indicator, description
+- [x] Specifications panel rendering each non-null metafield with
+  formatted labels and units
+- [x] Breadcrumbs
+- [x] Add to Cart wired through CartProvider
+- [x] Schema.org Product JSON-LD with hasCertification when WaterMark
+  certified
+- [x] Metadata (title, description, OG, canonical)
+- [ ] Variant selector for multi-variant products (currently always
+  adds the first variant)
+- [ ] WaterMark non-certified warning banner
 
-**Done when**: a hard-coded product handle renders real data from Shopify on a test page.
+## Milestone 4 — Category pages ✅ COMPLETE
 
-## Milestone 3 — Product detail page (Day 2)
+- [x] Top-level category route: `app/(shop)/[category]/page.tsx`
+- [x] Sub-category route: `app/(shop)/[category]/[subcategory]/page.tsx`
+- [x] Editorial intros for top-level categories (`content/category-intros.ts`)
+- [x] Single source of truth for the catalogue tree
+  (`content/categories.ts`)
+- [x] Product grid (4 cols desktop, 2 cols mobile) via ProductCard
+- [x] Sort dropdown (Featured, Newest, Best selling, Price asc/desc)
+- [x] Load more button (cursor-paginated via Server Action)
+- [x] CollectionPage + BreadcrumbList JSON-LD
+- [ ] FAQ section component (deferred)
+- [ ] Filter UI (WaterMark certified, stages, micron, etc.) — deferred
 
-- [ ] Route: `/[category]/[sub]/[handle]/page.tsx`
-- [ ] Fetch product by handle, validate it belongs to category/sub
-- [ ] Render: gallery, title, price, variant selector, add-to-cart, description, spec table
-- [ ] WaterMark badge component (reads `enviroaqua.watermark_status` metafield)
-- [ ] WaterMark non-certified warning banner (when applicable)
-- [ ] Breadcrumbs
-- [ ] Cart drawer (slides in on add-to-cart)
-- [ ] Schema.org Product JSON-LD
-- [ ] Metadata (title, description, OG, canonical)
+## Milestone 5 — Cart & checkout ✅ COMPLETE
 
-**Done when**: product page is fully functional with real Shopify data, schema validates, lighthouse 90+.
+- [x] CartProvider with localStorage persistence and single-flight
+  cart creation
+- [x] Cart drawer with line items, quantity stepper, free-shipping
+  progress bar, subtotal, checkout link
+- [x] Empty state in drawer + on `/cart`
+- [x] Full-page `/cart` route
+- [x] Cart token rehydration on mount; expired tokens silently cleared
+- [x] Checkout button → Shopify-hosted `cart.checkoutUrl`
 
-## Milestone 4 — Category pages (Day 3)
+## Milestone 6 — Editorial pages — NOT BUILT
 
-- [ ] Top-level category route: `/[category]/page.tsx`
-- [ ] Sub-category route: `/[category]/[sub]/page.tsx`
-- [ ] Editorial intro support (markdown blocks for category descriptions)
-- [ ] Product grid with pagination (24 per page)
-- [ ] Filter UI (client-side, no URL params): WaterMark certified, stages, micron, etc.
-- [ ] FAQ section component
-- [ ] BreadcrumbList + CollectionPage schema
-- [ ] All 5 top-level category landing pages live with editorial content
+The editorial markdown surfaces (`/use`, `/water-problems`, `/locations`,
+`/help`) are intentionally not built yet. The site-wide infrastructure
+(footer links, sitemap entries) treats them as future routes. Pick this
+up when ready to write content.
 
-**Done when**: all category and sub-category URLs return real product data with proper editorial framing.
-
-## Milestone 5 — Cart & checkout (Day 4)
-
-- [ ] Cart drawer component
-- [ ] Cart line item: image, title, variant, quantity, price, remove
-- [ ] Cart subtotal, free shipping progress bar
-- [ ] "Checkout" button → Shopify-hosted checkout URL
-- [ ] Cart persistence via cookie token
-- [ ] Empty cart state
-- [ ] Cart summary on `/cart` page (full-page version)
-
-**Done when**: full add-to-cart → checkout → order flow works end-to-end with a real Shopify product.
-
-## Milestone 6 — Editorial pages (Day 5–6)
-
-- [ ] Markdown rendering setup (`@next/mdx` or `react-markdown`)
-- [ ] Editorial layout component
-- [ ] `/use/[slug]/page.tsx` reads from `content/use/`
-- [ ] `/water-problems/[slug]/page.tsx` reads from `content/water-problems/`
-- [ ] `/locations/[slug]/page.tsx` reads from `content/locations/`
-- [ ] `/help/[slug]/page.tsx` reads from `content/help/`
+- [ ] Markdown rendering setup
+- [ ] `/use/[slug]/page.tsx`
+- [ ] `/water-problems/[slug]/page.tsx`
+- [ ] `/locations/[slug]/page.tsx`
+- [ ] `/help/[slug]/page.tsx`
+- [ ] Skeleton markdown for 9 problem pages, 6 use-cases, 4 locations
 - [ ] FAQ schema generation from frontmatter
-- [ ] Internal linking modules (related products, related problems)
-- [ ] Skeleton markdown files for all 9 problem pages, 6 use-cases, 4 locations
 
-**Done when**: editorial routing works, all skeletons exist with placeholder content, real content can be filled in by editing markdown.
+## Milestone 7 — Search & discovery ✅ MOSTLY COMPLETE
 
-## Milestone 7 — Search & discovery (Day 7)
+- [x] Search input in header with overlay
+- [x] Live suggestions (debounced 300 ms) via `predictiveSearch`
+- [x] Search results page (`/search?q=`)
+- [x] Sitemap generation (`app/sitemap.ts`) with categories,
+  subcategories, and products (editorial pages excluded until built)
+- [x] robots.txt (`app/robots.ts`)
 
-- [ ] Search input in header
-- [ ] Search results page using Shopify predictive search
-- [ ] Mobile search overlay
-- [ ] Empty state
-- [ ] Sitemap generation (`app/sitemap.ts`)
-- [ ] robots.txt (`app/robots.ts`)
+## Milestone 8 — Migration & content — NOT STARTED
 
-**Done when**: site search works, sitemap is generated and includes all expected URLs.
-
-## Milestone 8 — Migration & content (Week 2)
-
-- [ ] Final migration spreadsheet completed (with WaterMark numbers from suppliers)
-- [ ] Shopify metafield definitions created
+- [ ] Final migration spreadsheet completed (with WaterMark numbers)
+- [ ] Shopify metafield definitions verified across all products
 - [ ] Products imported into Shopify (CSV import)
 - [ ] All product images uploaded
-- [ ] All redirects added to `next.config.js` from migration spreadsheet
-- [ ] All editorial pages have real content (problem pages, use-cases, locations)
-- [ ] Homepage has real content (no Lorem Ipsum)
-- [ ] About page, shipping page, returns page, contact page
+- [ ] All redirects added to `next.config.js`
+- [ ] All editorial pages have real content
+- [ ] About / shipping / returns / contact pages populated
 
-**Done when**: site has 100% real content, all 145 products live, all redirects in place.
-
-## Milestone 9 — Pre-launch (Week 3)
+## Milestone 9 — Pre-launch — NOT STARTED
 
 - [ ] Google Analytics 4 set up
 - [ ] Vercel Analytics enabled
-- [ ] Google Search Console set up for staging URL
+- [ ] Google Search Console set up
 - [ ] Google Merchant Centre feed validated
-- [ ] All redirects tested (every URL from migration spreadsheet)
+- [ ] All redirects tested
 - [ ] Lighthouse audits: Performance 90+, SEO 100, Accessibility 95+
 - [ ] Schema validator: all page types pass
-- [ ] Cross-browser test (Chrome, Safari, Firefox, mobile Safari)
+- [ ] Cross-browser test
 - [ ] Real test order placed end-to-end
-- [ ] Email notifications validated (order confirmation, shipping notification)
-- [ ] Privacy policy, terms, shipping policy, returns policy all in place
+- [ ] Email notifications validated
 
-**Done when**: full launch checklist passes.
-
-## Milestone 10 — Launch (Week 4)
+## Milestone 10 — Launch — NOT STARTED
 
 - [ ] DNS cutover from old WordPress site to Vercel
 - [ ] Submit XML sitemap to Google Search Console
 - [ ] Verify redirects working live
-- [ ] Monitor Search Console for crawl errors (daily for first week)
-- [ ] Monitor Vercel Analytics + GA4 for traffic patterns
+- [ ] Monitor Search Console for crawl errors
 - [ ] Customer service ready for support inquiries
-
-**Done when**: enviroaqua.com.au resolves to the new site, old URLs redirect, traffic is flowing.
 
 ## Post-launch priorities
 
 1. Monitor and fix any 404s or broken redirects (week 1)
 2. Begin content velocity: 1 new help guide per week
 3. Customer reviews integration (Judge.me or similar)
-4. Email marketing setup (welcome series, abandoned cart, post-purchase)
-5. Newcastle and Sydney location hubs (once Central Coast ranks top-3)
+4. Email marketing setup
+5. Newcastle and Sydney location hubs
 6. Quarterly content refresh on top-performing problem pages
+
+## Outstanding placeholder items (cross-milestone)
+
+These were intentionally left as placeholders during the storefront
+build and need attention before launch:
+
+- `/about/`, `/about/our-pricing/`, `/contact/`, `/shipping/`,
+  `/returns/`, `/privacy/`, `/terms/` — links exist in the footer but
+  no pages render. They 404 today.
+- ABN in the footer is "TBC" — replace with the real ABN.
+- Phone number: footer says "Call us" without a number.
+- Logo asset: `/logo.svg` referenced by Organization schema but not
+  uploaded. Upload to `/public/logo.svg`.
+- Variant selector on the product page (multi-variant products
+  currently always add the first variant).
+- WaterMark non-certified warning banner on product pages.
+- Webhook handlers (`/api/webhooks/products|collections|inventory`)
+  for on-demand revalidation. `SHOPIFY_WEBHOOK_SECRET` is documented
+  in `docs/01` but no route handler consumes it yet.
