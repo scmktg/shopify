@@ -12,17 +12,25 @@ Three colours, that's it for v1:
 | Black | `#000000` | Header banner, footer, primary text, borders |
 | Blue | `#0066CC` | All buttons, CTAs, links, focus states |
 
-Tailwind config:
+Tailwind v4 configuration is CSS-first — there is no `tailwind.config.ts`. Brand colours are declared in `app/globals.css` under the `@theme` directive, which Tailwind compiles into utility classes (`bg-brand-blue`, `text-brand-blue-hover`, etc.):
 
-```ts
-colors: {
-  brand: {
-    blue: '#0066CC',
-    'blue-hover': '#0052A3',
-    'blue-light': '#E6F0FA',
-  }
+```css
+/* app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0066CC;
+  --color-brand-blue-hover: #0052A3;
+  --color-brand-blue-light: #E6F0FA;
 }
 ```
+
+Same values, same rules — only the configuration mechanism has changed:
+- White is the only page background
+- Black is reserved for the header banner and footer
+- Blue is reserved for actions (buttons, CTAs, links, focus states); never decorative
+
+Do not introduce additional brand colours. If a new shade is needed, justify it against `docs/01-architecture-decisions.md` first.
 
 ## Typography
 
