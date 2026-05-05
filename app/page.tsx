@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import {
   Container,
+  Droplet,
   Droplets,
   Filter,
   GlassWater,
@@ -95,29 +96,49 @@ export default async function HomePage() {
 
 function Hero() {
   return (
-    <section className="border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-        <h1 className="text-4xl md:text-6xl font-semibold text-black tracking-tight">
-          Australia&apos;s water filtration specialist
-        </h1>
-        <p className="mt-5 max-w-2xl mx-auto text-lg text-black/80">
-          Wholesale prices on water filters, cartridges, and filtration systems
-          for every home, trade, and business. One price for everyone — no
-          accounts, no quotes, just the best price upfront.
-        </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            href="/water-filters/"
-            className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
+    <section className="bg-gray-50 border-b border-gray-200">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+          <div className="text-center md:text-left">
+            <h1 className="text-5xl md:text-6xl font-bold text-black tracking-tight leading-tight">
+              Australia&apos;s water filtration specialist
+            </h1>
+            <p className="mt-5 max-w-2xl mx-auto md:mx-0 text-lg md:text-xl text-black/70">
+              Wholesale prices on water filters, cartridges, and filtration
+              systems. One price for everyone — no accounts, no quotes, just
+              the best price upfront.
+            </p>
+            <div className="mt-8 flex justify-center md:justify-start">
+              <Link
+                href="/water-filters/"
+                className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
+              >
+                Shop water filters
+              </Link>
+            </div>
+            <p
+              className="mt-5 text-sm text-black/60"
+              aria-label="Trusted by tradies and homeowners across Australia"
+            >
+              <span aria-hidden="true" className="text-brand-blue mr-2">
+                ★★★★★
+              </span>
+              Trusted by tradies and homeowners across Australia
+            </p>
+          </div>
+
+          {/* Decorative hero graphic placeholder. Swap for the brand
+              illustration when the asset is ready. */}
+          <div
+            aria-hidden="true"
+            className="hidden md:flex items-center justify-center"
           >
-            Shop water filters
-          </Link>
-          <Link
-            href="/cartridges/"
-            className="inline-flex items-center justify-center bg-white border border-black text-black font-semibold px-6 py-3 rounded hover:bg-gray-50 transition-colors"
-          >
-            Shop cartridges
-          </Link>
+            <Droplet
+              size={260}
+              strokeWidth={1.25}
+              className="text-brand-blue"
+            />
+          </div>
         </div>
       </div>
     </section>
