@@ -33,20 +33,50 @@ const CATEGORY_BLURBS: Record<string, string> = {
   plumbing: 'Filter-friendly taps, showers, toilets, and bundles.',
 };
 
+const FEATURED_TARGET = 8;
+
+function isValidFeatured(product: {
+  handle: string;
+  tags: ReadonlyArray<string>;
+  price: { amount: string };
+}): boolean {
+  const price = Number.parseFloat(product.price.amount);
+  if (!Number.isFinite(price) || price <= 0) return false;
+  if (product.handle.includes('-dup')) return false;
+  if (product.tags.includes('cut') || product.tags.includes('draft')) {
+    return false;
+  }
+  return true;
+}
+
 async function loadFeatured() {
+  // Fetch more than needed so post-filter we still have headroom.
   const featured = await getProducts({
     query: 'tag:featured',
-    first: 8,
+    first: 24,
     sortKey: 'BEST_SELLING',
   });
-  if (featured.products.length > 0) return featured.products;
-  // Fallback: most recently created products if no curated 'featured' tag.
+  const valid = featured.products.filter(isValidFeatured);
+  if (valid.length >= FEATURED_TARGET) {
+    return valid.slice(0, FEATURED_TARGET);
+  }
+
+  // Pad with newest valid products until we hit the target.
+  const padded: typeof valid = [...valid];
+  const seen = new Set(padded.map((p) => p.id));
   const fallback = await getProducts({
-    first: 8,
+    first: 24,
     sortKey: 'CREATED_AT',
     reverse: true,
   });
-  return fallback.products;
+  for (const product of fallback.products) {
+    if (padded.length >= FEATURED_TARGET) break;
+    if (seen.has(product.id)) continue;
+    if (!isValidFeatured(product)) continue;
+    padded.push(product);
+    seen.add(product.id);
+  }
+  return padded.slice(0, FEATURED_TARGET);
 }
 
 export default async function HomePage() {
