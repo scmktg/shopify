@@ -60,8 +60,11 @@ export function Footer() {
             <h2 className="text-sm font-semibold tracking-wider uppercase">Contact</h2>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <Link href="/contact/" className="hover:underline underline-offset-4">
-                  Call us
+                <Link
+                  href="/contact/"
+                  className="hover:underline underline-offset-4"
+                >
+                  Contact us
                 </Link>
               </li>
               <li>

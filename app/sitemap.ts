@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { CATEGORIES } from '@/content/categories';
+import { listMarkdownSlugs } from '@/lib/content/markdown';
 import { getAllProductHandles } from '@/lib/shopify/queries/getAllProductHandles';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductCategoryTags } from '@/lib/utils/productUrl';
@@ -18,7 +19,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/contact/`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/shipping/`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/returns/`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/privacy/`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms/`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/help/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/use/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/water-problems/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/locations/`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
   ];
+
+  const editorialSections: ReadonlyArray<{
+    section: string;
+    priority: number;
+  }> = [
+    { section: 'use', priority: 0.7 },
+    { section: 'water-problems', priority: 0.7 },
+    { section: 'locations', priority: 0.6 },
+    { section: 'help', priority: 0.5 },
+  ];
+
+  const editorialEntries: MetadataRoute.Sitemap = [];
+  for (const { section, priority } of editorialSections) {
+    const slugs = await listMarkdownSlugs(section);
+    for (const slug of slugs) {
+      editorialEntries.push({
+        url: `${base}/${section}/${slug}/`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority,
+      });
+    }
+  }
 
   const categoryEntries: MetadataRoute.Sitemap = CATEGORIES.flatMap(
     (category) => [
@@ -65,5 +95,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('[sitemap] product fetch failed:', caught);
   }
 
-  return [...staticEntries, ...categoryEntries, ...productEntries];
+  return [
+    ...staticEntries,
+    ...categoryEntries,
+    ...editorialEntries,
+    ...productEntries,
+  ];
 }
