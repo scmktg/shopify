@@ -24,8 +24,8 @@
 | Compare-at price | Shopify variant | Optional | For sale pricing |
 | Inventory | Shopify variant | Yes | Real stock count |
 | Weight | Shopify variant | Yes | For shipping |
-| SEO Title | Shopify | Optional override | Defaults to product title |
-| SEO Description | Shopify | Optional override | Max 155 chars |
+| SEO Title | Shopify `seo.title` | Optional override | Defaults to product title |
+| SEO Description | Shopify `seo.description` | Optional override | Max 155 chars |
 
 ### Metafields (Shopify custom fields — set in Admin)
 
@@ -33,16 +33,16 @@ These extend the Shopify schema for our specific data model. **Every metafield u
 
 | Metafield key | Type | Required | Description |
 |---|---|---|---|
-| `enviroaqua.watermark_status` | Single line text (enum) | Yes | One of: `certified`, `not_required`, `not_certified`, `pending` |
+| `enviroaqua.watermark_status` | Single line text (with enum validation) | Yes | One of: `certified`, `not_required`, `not_certified`, `pending` |
 | `enviroaqua.watermark_licence_number` | Single line text | Yes if certified | The WMK licence number |
 | `enviroaqua.watermark_certifier` | Single line text | Yes if certified | "IAPMO", "SAI Global", etc. |
 | `enviroaqua.watermark_valid_until` | Date | Yes if certified | |
 | `enviroaqua.watermark_certificate_pdf` | File reference | Optional | Linked downloadable certificate |
 | `enviroaqua.wels_rating_stars` | Integer | Optional | 0–6 |
 | `enviroaqua.wels_registration_number` | Single line text | Optional | |
-| `enviroaqua.installation_type` | Single line text (enum) | For filter products | `under-sink`, `whole-house`, `bench-top`, `inline`, `countertop`, `commercial` |
+| `enviroaqua.installation_type` | Single line text (with enum validation) | For filter products | `under-sink`, `whole-house`, `bench-top`, `inline`, `countertop`, `commercial` |
 | `enviroaqua.stages` | Integer | For filter products | 1–6 |
-| `enviroaqua.cartridge_type` | Single line text (enum) | For cartridges | `sediment`, `carbon-cto`, `carbon-gac`, `ro-membrane`, `alkaline`, `fluoride`, `t33`, `pleated`, `uf` |
+| `enviroaqua.cartridge_type` | Single line text (with enum validation) | For cartridges | `sediment`, `carbon-cto`, `carbon-gac`, `ro-membrane`, `alkaline`, `fluoride`, `t33`, `pleated`, `uf` |
 | `enviroaqua.micron_rating` | Decimal | For cartridges | |
 | `enviroaqua.housing_size` | Single line text | Where applicable | `10x2.5`, `20x4.5`, etc. |
 | `enviroaqua.connection_size` | Single line text | Where applicable | `1/4"`, `3/8"`, `1/2"`, `3/4"`, `1"` |
@@ -55,9 +55,38 @@ These extend the Shopify schema for our specific data model. **Every metafield u
 | `enviroaqua.country_of_origin` | Single line text | Optional | |
 | `enviroaqua.warranty_months` | Integer | Optional | |
 
+**Storefront access MUST be enabled** on every metafield definition, otherwise queries return null silently. Settings → Custom data → Products → [definition] → "Storefront access" toggle.
+
+## Querying metafields via Storefront API
+
+Use the `metafields(identifiers: [...])` query pattern (current Storefront API approach):
+
+```graphql
+metafields(identifiers: [
+  {namespace: "enviroaqua", key: "watermark_status"}
+  {namespace: "enviroaqua", key: "watermark_licence_number"}
+  # ... etc
+]) {
+  key
+  value
+  type
+}
+```
+
+Returns an array in the same order as requested. Null values for unset metafields. Parse on the client/server based on `type`:
+
+- `single_line_text_field` → use `value` directly
+- `boolean` → `value === 'true'`
+- `integer` → `parseInt(value)`
+- `number_decimal` → `parseFloat(value)`
+- `date` → `new Date(value)`
+- `list.single_line_text_field` → `JSON.parse(value)` (returns string array)
+- `file_reference` → `value` is a GID; resolve via separate query if needed
+
 ## Category structure (Shopify Collections)
 
 Every URL category is a Shopify Collection. Products are assigned to collections via:
+
 - **Manual collection** for primary category (drives canonical URL)
 - **Smart collections** based on tags for use-case and problem pages
 
