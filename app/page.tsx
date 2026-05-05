@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import {
+  ChevronDown,
   DollarSign,
   Droplet,
   Filter,
@@ -18,6 +19,7 @@ import {
 import { CATEGORIES } from '@/content/categories';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
+import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
   'water-filters': Droplet,
@@ -94,7 +96,81 @@ export default async function HomePage() {
       <TrustStrip />
       <FeaturedProducts products={featured} />
       <WhyDifferent />
+      <Faq />
     </>
+  );
+}
+
+const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
+  {
+    q: 'Do you sell to trade/wholesale customers?',
+    a: 'Yes — and at the same price as everyone else. There is no separate trade portal, no account application, and no minimum order. Tradies and homeowners pay the same wholesale price up front.',
+  },
+  {
+    q: 'What is WaterMark certification and why does it matter?',
+    a: 'WaterMark is the Australian certification scheme for plumbing products that connect to mains water. Every certified product on this site shows its licence number; non-certified products are clearly labelled as off-mains use only. Council inspectors require certified products on every mains-pressure install.',
+  },
+  {
+    q: 'How do I know which water filter is right for my home?',
+    a: 'Start with what you want to filter. Chlorine and taste — a carbon under-sink filter does the job. Sediment from rainwater — a whole-house pre-filter. Fluoride — reverse osmosis. Each product page lists what the system reduces; the help guides break it down by water source if you are not sure.',
+  },
+  {
+    q: 'Do you ship Australia-wide?',
+    a: 'Yes. Tracked delivery on every order, flat-rate shipping below $200 and free above. Orders placed before 1pm AEST ship the same business day from our Central Coast NSW warehouse.',
+  },
+  {
+    q: "What's your returns policy?",
+    a: 'Thirty-day returns on unopened products with no restocking fee. Faulty products are covered separately under Australian Consumer Law. Full details are on the Returns page.',
+  },
+  {
+    q: 'Can I install these myself, or do I need a plumber?',
+    a: 'Under-sink and bench-top filters are usually DIY — they tap into the existing cold-water line with the included push-fit fittings. Whole-house systems and anything cutting into mains plumbing must be installed by a licensed plumber. Each product page lists the install requirements.',
+  },
+];
+
+function Faq() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+
+  return (
+    <section>
+      <JsonLdScript data={faqSchema} />
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <h2 className="text-2xl font-semibold text-black">
+          Frequently asked questions
+        </h2>
+        <div className="mt-6 border-t border-gray-200">
+          {FAQ_ITEMS.map((item) => (
+            <details
+              key={item.q}
+              className="group border-b border-gray-200"
+            >
+              <summary className="flex items-start justify-between gap-4 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 className="text-base font-semibold text-black">
+                  {item.q}
+                </h3>
+                <ChevronDown
+                  size={20}
+                  aria-hidden="true"
+                  className="flex-shrink-0 mt-0.5 text-black/60 transition-transform duration-150 group-open:rotate-180"
+                />
+              </summary>
+              <p className="pb-5 text-base text-black/80">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
