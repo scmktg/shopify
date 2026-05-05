@@ -22,8 +22,18 @@ async function fetchProductByHandle(handle: string): Promise<Product | null> {
     );
 
   if (errors) {
-    console.error('[shopify] getProductByHandle errors:', errors);
-    throw new Error(`Failed to fetch product "${handle}"`);
+    console.error(
+      '[shopify] getProductByHandle GraphQL errors:',
+      JSON.stringify(errors, null, 2),
+    );
+    const firstMessage =
+      errors.graphQLErrors?.[0]?.message ??
+      errors.message ??
+      'Unknown Shopify error';
+    throw new Error(
+      `Failed to fetch product "${handle}": ${firstMessage}`,
+      { cause: errors },
+    );
   }
 
   if (!data?.product) return null;

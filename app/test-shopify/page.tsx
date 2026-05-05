@@ -5,6 +5,21 @@ export const dynamic = 'force-dynamic';
 const TEST_HANDLE =
   'chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l';
 
+function formatError(error: unknown, depth = 0): string {
+  const indent = depth === 0 ? '' : '\nCaused by:\n';
+  if (error instanceof Error) {
+    let out = indent + (error.stack ?? `${error.name}: ${error.message}`);
+    if (error.cause !== undefined) {
+      out += '\n\n' + formatError(error.cause, depth + 1);
+    }
+    return out;
+  }
+  if (typeof error === 'object' && error !== null) {
+    return indent + JSON.stringify(error, null, 2);
+  }
+  return indent + String(error);
+}
+
 export default async function TestShopifyPage() {
   let body: string;
   try {
@@ -14,7 +29,7 @@ export default async function TestShopifyPage() {
         ? `No product found for handle "${TEST_HANDLE}".`
         : JSON.stringify(product, null, 2);
   } catch (error) {
-    body = `Error fetching "${TEST_HANDLE}":\n\n${error instanceof Error ? error.stack ?? error.message : String(error)}`;
+    body = `Error fetching "${TEST_HANDLE}":\n\n${formatError(error)}`;
   }
 
   return (
