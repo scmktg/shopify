@@ -1,11 +1,17 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import { TopBanner } from '@/components/layout/TopBanner';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Enviro Aqua — Australia's water filtration specialist",
+  title: {
+    default: "Enviro Aqua — Australia's water filtration specialist",
+    template: '%s | Enviro Aqua',
+  },
   description:
-    'Wholesale prices on water filters, cartridges, and filtration systems. One price for everyone — homeowners, tradies, commercial.',
+    'Wholesale prices on water filters, cartridges, and filtration systems for every Australian home, trade, and business. One price for everyone.',
 };
 
 interface RootLayoutProps {
@@ -15,7 +21,12 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en-AU">
-      <body>{children}</body>
+      <body className="flex flex-col min-h-screen">
+        <TopBanner />
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
