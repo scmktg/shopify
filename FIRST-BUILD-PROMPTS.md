@@ -13,7 +13,7 @@ Read /CLAUDE.md and /docs/01-architecture-decisions.md in this repo first.
 
 Then begin Milestone 0 from /docs/09-build-roadmap.md. Initialise a Next.js 15 + TypeScript + Tailwind project at the root of this repo by creating these files one at a time:
 
-1. package.json
+1. package.json (include @shopify/storefront-api-client, lucide-react, clsx; latest stable Next 15, React 19, TypeScript)
 2. tsconfig.json
 3. next.config.js
 4. tailwind.config.ts
@@ -92,20 +92,23 @@ Show me before committing.
 
 ---
 
-## Prompt 4 — Shopify Storefront client
+## Prompt 4 — Shopify Storefront client (using official package)
 
 ```
-Read /docs/07-shopify-integration.md and /docs/03-data-model.md.
+Read /docs/07-shopify-integration.md and /docs/03-data-model.md fully before writing any code.
 
 Begin Milestone 2 — Shopify connection.
 
 Create:
-1. lib/shopify/client.ts — the shopifyFetch function exactly as specified in docs/07
-2. lib/shopify/queries/getProductByHandle.ts — query to fetch a single product by handle, including all metafields specified in docs/03
-3. types/product.ts — TypeScript types matching the Shopify product shape with our metafields
-4. lib/shopify/queries/index.ts — barrel export
+1. lib/shopify/client.ts — instantiate the official @shopify/storefront-api-client using the createStorefrontApiClient factory, reading SHOPIFY_STORE_DOMAIN, SHOPIFY_STOREFRONT_PRIVATE_TOKEN, SHOPIFY_API_VERSION env variables. Throw clear errors if env vars are missing.
+2. lib/shopify/fragments.ts — shared GraphQL fragments for product data (image, variant, metafield)
+3. lib/shopify/queries/getProductByHandle.ts — query function that takes a handle, returns a typed Product, including all the metafields specified in /docs/03-data-model.md
+4. types/shopify.ts — raw Shopify response types (with edges/nodes etc.)
+5. types/product.ts — clean app-level Product type that abstracts away the GraphQL shape (no edges/nodes; metafields as a flat object)
+6. lib/shopify/transformers.ts — function transforming raw Shopify product into clean Product type
 
-Use process.env.SHOPIFY_STORE_DOMAIN, SHOPIFY_STOREFRONT_ACCESS_TOKEN, and SHOPIFY_API_VERSION. These are already set in Vercel.
+Use the official client per /docs/07-shopify-integration.md. Do NOT hand-roll fetch wrappers.
+Use SHOPIFY_API_VERSION env var (currently 2026-04).
 
 Don't render anything yet — just the data layer.
 
@@ -113,9 +116,10 @@ Show me each file before committing.
 ```
 
 **Verification**:
-- Build still succeeds on Vercel
+- Build succeeds on Vercel
 - TypeScript types are correct
-- No env variable warnings
+- No env variable warnings (Vercel logs)
+- The official package appears in package.json
 
 ---
 
@@ -126,10 +130,10 @@ Read /docs/05-design-system.md and /docs/03-data-model.md.
 
 Now wire up the Shopify client to render a real product. Create:
 
-1. app/(shop)/[category]/[subcategory]/[handle]/page.tsx — dynamic route for product detail
-2. components/product/ProductDetail.tsx — the visual layout: image gallery, title, price, variant selector, add-to-cart button (placeholder), description
+1. app/(shop)/[category]/[subcategory]/[handle]/page.tsx — dynamic route for product detail. Use generateMetadata for SEO. Wrap getProductByHandle with unstable_cache from next/cache (revalidate: 60, tags: ['products', `product:${handle}`])
+2. components/product/ProductDetail.tsx — the visual layout: image gallery, title, price, variant selector, add-to-cart button (placeholder — cart functionality is Milestone 5), description
 
-For now, fetch a product I'll specify by handle. Don't worry about the cart functionality yet — that's Milestone 5.
+For now, fetch a product I'll specify by handle. Don't worry about the cart functionality yet.
 
 The goal: I should be able to visit /water-filters/under-sink/<some-handle>/ and see a real Shopify product render.
 
@@ -142,6 +146,7 @@ Show me each file before committing.
 - Visiting the URL renders the real product from Shopify
 - Title, price, image all show correctly
 - Lighthouse Performance ≥ 90
+- Page metadata appears in the HTML head (view source)
 
 ---
 
@@ -164,5 +169,9 @@ Don't run all 5 prompts back-to-back without checking the result of each one. Ru
 **Claude wants to add dependencies**: that's fine — package.json is meant to grow. But check that the dependency is mainstream and well-maintained.
 
 **Claude wants to deviate from the design system** ("could we use a slightly different blue?"): don't allow it. The design system is locked at `#0066CC` blue + black + white. Deviation = scope creep.
+
+**Claude proposes hand-rolling a Shopify fetch wrapper**: stop. We use the official `@shopify/storefront-api-client` package. The doc explicitly says so. Reject the proposal and ask Claude to re-read /docs/07-shopify-integration.md.
+
+**Claude uses an old API version like 2024-10**: stop. Current is `2026-04`. The env var SHOPIFY_API_VERSION should be the source of truth, not a hardcoded fallback.
 
 **You don't understand what Claude is proposing**: ask Claude to explain it in plain English first. Don't accept code you don't understand. The docs were written so this never has to happen — if Claude is making mysterious choices, it probably hasn't read the docs.
