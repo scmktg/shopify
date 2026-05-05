@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Search } from 'lucide-react';
 import { CATEGORIES } from '@/content/categories';
 import { CartButton } from '@/components/cart/CartButton';
+import { SearchBar } from '@/components/search/SearchBar';
 import { MobileMenu } from './MobileMenu';
 
 export function Header() {
@@ -66,13 +66,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1">
-          <button
-            type="button"
-            aria-label="Search"
-            className="hidden md:inline-flex items-center justify-center h-10 w-10 rounded hover:opacity-80"
-          >
-            <Search size={20} aria-hidden="true" />
-          </button>
+          <SearchBar triggerClassName="inline-flex items-center justify-center h-10 w-10 rounded hover:opacity-80" />
           <CartButton className="hidden md:inline-flex relative items-center justify-center h-10 w-10 rounded hover:opacity-80" />
           <MobileMenu items={navItems} />
         </div>
