@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import {
-  Container,
   Droplet,
   Droplets,
   Filter,
+  Gauge,
   GlassWater,
   ShieldCheck,
   Truck,
@@ -16,10 +16,10 @@ import { ProductGrid } from '@/components/product/ProductGrid';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
-  'water-filters': Droplets,
+  'water-filters': Droplet,
   cartridges: Filter,
   bubblers: GlassWater,
-  'pumps-and-tanks': Container,
+  'pumps-and-tanks': Gauge,
   plumbing: Wrench,
 };
 
@@ -149,7 +149,7 @@ function CategoryGrid() {
   return (
     <section className="border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="flex items-end justify-between mb-6">
+        <div className="flex items-end justify-between mb-8">
           <h2 className="text-2xl font-semibold text-black">Shop by category</h2>
         </div>
         <ul
@@ -157,22 +157,23 @@ function CategoryGrid() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
         >
           {CATEGORIES.map((category) => {
-            const Icon = CATEGORY_ICONS[category.slug] ?? Droplets;
+            const Icon = CATEGORY_ICONS[category.slug] ?? Droplet;
             return (
               <li key={category.slug}>
                 <Link
                   href={`/${category.slug}/`}
-                  className="block h-full p-5 border border-gray-200 hover:border-gray-400 rounded transition-colors"
+                  className="flex flex-col items-center text-center h-full p-6 bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded transition-colors aspect-[4/3] sm:aspect-auto"
                 >
                   <Icon
-                    size={28}
+                    size={48}
+                    strokeWidth={1.5}
                     aria-hidden="true"
                     className="text-brand-blue"
                   />
-                  <h3 className="mt-3 text-base font-semibold text-black">
+                  <h3 className="mt-4 text-xl font-semibold text-black">
                     {category.label}
                   </h3>
-                  <p className="mt-1.5 text-sm text-black/70">
+                  <p className="mt-2 text-sm text-black/70">
                     {CATEGORY_BLURBS[category.slug] ??
                       `${category.label} for every Australian home and trade.`}
                   </p>
