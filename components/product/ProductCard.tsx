@@ -22,12 +22,21 @@ export function ProductCard({ product }: ProductCardProps) {
           {image ? (
             <Image
               src={image.url}
-              alt={product.title}
+              // Image is decorative — the card's <h3> is the labelled
+              // text immediately below and carries the meaning. Empty
+              // alt prevents the merchant's altText from rendering as
+              // visible fallback if the image fails to load.
+              alt=""
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
               className="object-contain p-2 transition-opacity group-hover:opacity-90"
             />
-          ) : null}
+          ) : (
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gray-100"
+            />
+          )}
         </div>
         <div className="mt-3">
           <h3 className="text-sm font-medium text-black line-clamp-2 group-hover:underline underline-offset-4">

@@ -21,6 +21,10 @@ import { ProductGrid } from '@/components/product/ProductGrid';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 
+// Re-render the homepage at most once a minute so featured-product
+// curation in Shopify shows up promptly on the live site.
+export const revalidate = 60;
+
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
   'water-filters': Droplet,
   cartridges: Filter,
@@ -47,7 +51,9 @@ function isValidFeatured(product: {
   tags: ReadonlyArray<string>;
   price: { amount: string };
 }): boolean {
-  const price = Number.parseFloat(product.price.amount);
+  // Cast via Number() so partial-numeric strings ('0.00 AUD' etc.)
+  // resolve to NaN rather than parseFloat's leading-digit fallback.
+  const price = Number(product.price.amount);
   if (!Number.isFinite(price) || price <= 0) return false;
   if (product.handle.includes('-dup')) return false;
   if (product.tags.includes('cut') || product.tags.includes('draft')) {
