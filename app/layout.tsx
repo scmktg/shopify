@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { TopBanner } from '@/components/layout/TopBanner';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { CartProvider } from '@/components/cart/CartProvider';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -22,10 +23,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en-AU">
       <body className="flex flex-col min-h-screen">
-        <TopBanner />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <CartProvider>
+          <TopBanner />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </CartProvider>
       </body>
     </html>
   );
