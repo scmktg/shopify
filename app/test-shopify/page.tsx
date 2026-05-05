@@ -2,7 +2,8 @@ import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 
 export const dynamic = 'force-dynamic';
 
-const TEST_HANDLE = 'commercial-water-bubbler';
+const TEST_HANDLE =
+  'chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l';
 
 export default async function TestShopifyPage() {
   let body: string;
