@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Search, ShoppingCart } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { CATEGORIES } from '@/content/categories';
+import { CartButton } from '@/components/cart/CartButton';
 import { MobileMenu } from './MobileMenu';
 
 export function Header() {
@@ -72,13 +73,7 @@ export function Header() {
           >
             <Search size={20} aria-hidden="true" />
           </button>
-          <button
-            type="button"
-            aria-label="Cart"
-            className="hidden md:inline-flex items-center justify-center h-10 w-10 rounded hover:opacity-80"
-          >
-            <ShoppingCart size={20} aria-hidden="true" />
-          </button>
+          <CartButton className="hidden md:inline-flex relative items-center justify-center h-10 w-10 rounded hover:opacity-80" />
           <MobileMenu items={navItems} />
         </div>
       </div>

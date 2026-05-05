@@ -9,6 +9,7 @@ import type {
 } from '@/types/product';
 import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
+import { AddToCartButton } from '@/components/cart/AddToCartButton';
 
 interface ProductDetailProps {
   product: Product;
@@ -86,13 +87,12 @@ export function ProductDetail({
             </span>
           </div>
 
-          {/* TODO 2026-05: wire up cart in Milestone 5 */}
-          <button
-            type="button"
-            className="mt-6 w-full bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors"
-          >
-            Add to cart
-          </button>
+          {firstVariant && (
+            <AddToCartButton
+              variantId={firstVariant.id}
+              available={inStock}
+            />
+          )}
 
           <div
             className="mt-8 prose prose-sm max-w-none"
