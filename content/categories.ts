@@ -6,6 +6,9 @@
  * matching `category.slug` and one `sub-cat:<slug>` tag matching one
  * of the category's `subcategories[].slug`.
  *
+ * Subcategories are ordered roughly by product count, biggest first,
+ * to bias the megamenu and chip nav toward what shoppers see most.
+ *
  * Used by: header megamenu, sitemap, breadcrumbs, category pages,
  * subcategory pages, and product-page tag validation.
  */
@@ -30,7 +33,6 @@ export const CATEGORIES: ReadonlyArray<Category> = [
       { slug: 'reverse-osmosis', label: 'Reverse Osmosis' },
       { slug: 'uv-sterilisation', label: 'UV Sterilisation' },
       { slug: 'bench-top', label: 'Bench Top' },
-      { slug: 'inline', label: 'Inline' },
       { slug: 'commercial', label: 'Commercial' },
       { slug: 'parts', label: 'Parts' },
     ],
@@ -42,10 +44,7 @@ export const CATEGORIES: ReadonlyArray<Category> = [
       { slug: 'sediment', label: 'Sediment' },
       { slug: 'carbon', label: 'Carbon' },
       { slug: 'reverse-osmosis-membranes', label: 'RO Membranes' },
-      { slug: 'alkaline', label: 'Alkaline' },
-      { slug: 'fluoride-removal', label: 'Fluoride Removal' },
-      { slug: 'post-carbon-t33', label: 'Post-Carbon T33' },
-      { slug: 'pleated-washable', label: 'Pleated Washable' },
+      { slug: 'specialty-cartridges', label: 'Specialty Cartridges' },
       { slug: 'cartridge-sets', label: 'Cartridge Sets' },
     ],
   },
@@ -62,12 +61,9 @@ export const CATEGORIES: ReadonlyArray<Category> = [
     slug: 'pumps-and-tanks',
     label: 'Pumps & Tanks',
     subcategories: [
-      { slug: '12v-pumps', label: '12V Pumps' },
-      { slug: 'ro-booster-pumps', label: 'RO Booster Pumps' },
-      { slug: 'pressure-pumps', label: 'Pressure Pumps' },
+      { slug: 'pumps', label: 'Pumps' },
       { slug: 'pressure-tanks', label: 'Pressure Tanks' },
       { slug: 'dosing-tanks', label: 'Dosing Tanks' },
-      { slug: 'replacement-bladders', label: 'Replacement Bladders' },
       { slug: 'components', label: 'Components' },
     ],
   },
@@ -75,10 +71,10 @@ export const CATEGORIES: ReadonlyArray<Category> = [
     slug: 'plumbing',
     label: 'Plumbing',
     subcategories: [
-      { slug: 'toilets', label: 'Toilets' },
       { slug: 'kitchen-taps', label: 'Kitchen Taps' },
       { slug: 'bathroom-taps', label: 'Bathroom Taps' },
-      { slug: 'showers', label: 'Showers' },
+      { slug: 'ro-filter-taps', label: 'RO Filter Taps' },
+      { slug: 'toilets', label: 'Toilets' },
       { slug: 'bundles', label: 'Bundles' },
     ],
   },
