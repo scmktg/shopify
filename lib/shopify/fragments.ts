@@ -1,11 +1,39 @@
 /**
- * Shared GraphQL fragments. Single source of truth for the product field
- * list — every product-shaped query must spread `ProductFields` rather than
- * re-listing fields.
+ * Lightweight product fragment used in grids, search suggestions, and
+ * any list-style surface. Drops metafields, variants, and the full image
+ * set to keep response size and Shopify call cost low.
+ */
+export const PRODUCT_CARD_FRAGMENT = /* GraphQL */ `
+  fragment ProductCardFields on Product {
+    id
+    handle
+    title
+    productType
+    tags
+    featuredImage {
+      url
+      altText
+      width
+      height
+    }
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+  }
+`;
+
+/**
+ * Full product fragment for the canonical product detail page. Single
+ * source of truth for the field list — every product-shaped detail
+ * query must spread `ProductFields` rather than re-listing fields.
  *
- * `metafields(identifiers: [...])` returns an array in the same order as the
- * request, with `null` at any position where the metafield is unset. The
- * transformer indexes the result by `key`, so the order here is informational.
+ * `metafields(identifiers: [...])` returns an array in the same order
+ * as the request, with `null` at any position where the metafield is
+ * unset. The transformer indexes the result by `key`, so the order
+ * here is informational.
  */
 export const PRODUCT_FRAGMENT = /* GraphQL */ `
   fragment ProductFields on Product {

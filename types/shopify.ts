@@ -13,6 +13,11 @@ export interface ShopifyConnection<T> {
   edges: ReadonlyArray<ShopifyEdge<T>>;
 }
 
+export interface ShopifyPageInfo {
+  hasNextPage: boolean;
+  endCursor: string | null;
+}
+
 export interface ShopifyMetafield {
   key: string;
   value: string;
@@ -49,6 +54,16 @@ export interface ShopifyProductRaw {
    */
   metafields: ReadonlyArray<ShopifyMetafield | null>;
   seo: ProductSeo;
+}
+
+export interface ShopifyProductCardRaw {
+  id: string;
+  handle: string;
+  title: string;
+  productType: string;
+  tags: ReadonlyArray<string>;
+  featuredImage: ProductImage | null;
+  priceRange: { minVariantPrice: Money };
 }
 
 export interface ShopifyProductByHandleResponse {

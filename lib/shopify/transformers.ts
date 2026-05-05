@@ -2,10 +2,15 @@ import type {
   CartridgeType,
   InstallationType,
   Product,
+  ProductCardData,
   ProductMetafields,
   WatermarkStatus,
 } from '@/types/product';
-import type { ShopifyMetafield, ShopifyProductRaw } from '@/types/shopify';
+import type {
+  ShopifyMetafield,
+  ShopifyProductCardRaw,
+  ShopifyProductRaw,
+} from '@/types/shopify';
 
 const WATERMARK_STATUSES: ReadonlyArray<WatermarkStatus> = [
   'certified',
@@ -152,5 +157,19 @@ export function transformShopifyProduct(raw: ShopifyProductRaw): Product {
     variants: raw.variants.edges.map((edge) => edge.node),
     seo: raw.seo,
     metafields: buildMetafields(raw.metafields),
+  };
+}
+
+export function transformShopifyProductCard(
+  raw: ShopifyProductCardRaw,
+): ProductCardData {
+  return {
+    id: raw.id,
+    handle: raw.handle,
+    title: raw.title,
+    productType: raw.productType,
+    tags: raw.tags,
+    featuredImage: raw.featuredImage,
+    price: raw.priceRange.minVariantPrice,
   };
 }

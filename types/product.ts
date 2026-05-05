@@ -98,3 +98,18 @@ export interface Product {
   seo: ProductSeo;
   metafields: ProductMetafields;
 }
+
+/**
+ * Lightweight projection used in product grids, search suggestions, and
+ * homepage tiles. Avoids fetching the full metafield set when all we
+ * need is image, title, price, and certification tags.
+ */
+export interface ProductCardData {
+  id: string;
+  handle: string;
+  title: string;
+  productType: string;
+  tags: ReadonlyArray<string>;
+  featuredImage: ProductImage | null;
+  price: Money;
+}
