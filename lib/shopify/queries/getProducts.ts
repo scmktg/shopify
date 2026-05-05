@@ -1,7 +1,10 @@
 'use server';
 
 import { unstable_cache } from 'next/cache';
-import { shopifyClient } from '../client';
+import {
+  shopifyClient,
+  type ShopifyClientResponse,
+} from '../client';
 import { PRODUCT_CARD_FRAGMENT } from '../fragments';
 import { transformShopifyProductCard } from '../transformers';
 import type { ProductCardData } from '@/types/product';
@@ -81,9 +84,9 @@ async function fetchProducts(options: GetProductsOptions): Promise<ProductsPage>
     reverse: options.reverse ?? false,
   };
 
-  const { data, errors } = await shopifyClient.request<RawResponse>(QUERY, {
-    variables,
-  });
+  const result: ShopifyClientResponse<RawResponse> =
+    await shopifyClient.request<RawResponse>(QUERY, { variables });
+  const { data, errors } = result;
 
   if (errors) {
     console.error(

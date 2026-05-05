@@ -1,6 +1,9 @@
 'use server';
 
-import { shopifyClient } from '../client';
+import {
+  shopifyClient,
+  type ShopifyClientResponse,
+} from '../client';
 import { PRODUCT_CARD_FRAGMENT } from '../fragments';
 import { transformShopifyProductCard } from '../transformers';
 import type { ProductCardData } from '@/types/product';
@@ -32,9 +35,11 @@ export async function searchProducts(
 
   const safeLimit = Math.min(Math.max(limit, 1), 20);
 
-  const { data, errors } = await shopifyClient.request<RawResponse>(QUERY, {
-    variables: { query: trimmed, limit: safeLimit },
-  });
+  const result: ShopifyClientResponse<RawResponse> =
+    await shopifyClient.request<RawResponse>(QUERY, {
+      variables: { query: trimmed, limit: safeLimit },
+    });
+  const { data, errors } = result;
 
   if (errors) {
     console.error(

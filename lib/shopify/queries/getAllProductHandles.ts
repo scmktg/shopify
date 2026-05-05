@@ -1,4 +1,7 @@
-import { shopifyClient } from '../client';
+import {
+  shopifyClient,
+  type ShopifyClientResponse,
+} from '../client';
 
 export interface ProductHandleEntry {
   handle: string;
@@ -38,9 +41,11 @@ export async function getAllProductHandles(): Promise<
   let after: string | null = null;
 
   while (true) {
-    const { data, errors } = await shopifyClient.request<RawResponse>(QUERY, {
-      variables: { first: PAGE_SIZE, after },
-    });
+    const result: ShopifyClientResponse<RawResponse> =
+      await shopifyClient.request<RawResponse>(QUERY, {
+        variables: { first: PAGE_SIZE, after },
+      });
+    const { data, errors } = result;
 
     if (errors) {
       console.error(

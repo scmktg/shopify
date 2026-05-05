@@ -1,5 +1,8 @@
 import { unstable_cache } from 'next/cache';
-import { shopifyClient } from '../client';
+import {
+  shopifyClient,
+  type ShopifyClientResponse,
+} from '../client';
 import { PRODUCT_FRAGMENT } from '../fragments';
 import { transformShopifyProduct } from '../transformers';
 import type { Product } from '@/types/product';
@@ -15,11 +18,12 @@ const GET_PRODUCT_BY_HANDLE = /* GraphQL */ `
 `;
 
 async function fetchProductByHandle(handle: string): Promise<Product | null> {
-  const { data, errors } =
+  const result: ShopifyClientResponse<ShopifyProductByHandleResponse> =
     await shopifyClient.request<ShopifyProductByHandleResponse>(
       GET_PRODUCT_BY_HANDLE,
       { variables: { handle } },
     );
+  const { data, errors } = result;
 
   if (errors) {
     console.error(

@@ -1,6 +1,9 @@
 'use server';
 
-import { shopifyClient } from './client';
+import {
+  shopifyClient,
+  type ShopifyClientResponse,
+} from './client';
 import type { Cart, CartLine, CartLineMerchandise } from '@/types/cart';
 import type { Money, ProductImage, SelectedOption } from '@/types/product';
 
@@ -208,11 +211,11 @@ function throwOnUserErrors(label: string, userErrors: ReadonlyArray<UserError>):
 }
 
 export async function getCart(cartId: string): Promise<Cart | null> {
-  const { data, errors } = await shopifyClient.request<{
-    cart: RawCart | null;
-  }>(CART_QUERY, {
-    variables: { cartId },
-  });
+  const result: ShopifyClientResponse<{ cart: RawCart | null }> =
+    await shopifyClient.request<{ cart: RawCart | null }>(CART_QUERY, {
+      variables: { cartId },
+    });
+  const { data, errors } = result;
 
   if (errors) {
     logShopifyErrors('getCart errors', errors);
@@ -223,9 +226,12 @@ export async function getCart(cartId: string): Promise<Cart | null> {
 }
 
 export async function createCart(): Promise<Cart> {
-  const { data, errors } = await shopifyClient.request<{
+  type CartCreateData = {
     cartCreate: { cart: RawCart | null; userErrors: ReadonlyArray<UserError> };
-  }>(CART_CREATE_MUTATION);
+  };
+  const result: ShopifyClientResponse<CartCreateData> =
+    await shopifyClient.request<CartCreateData>(CART_CREATE_MUTATION);
+  const { data, errors } = result;
 
   if (errors) {
     logShopifyErrors('createCart errors', errors);
@@ -242,14 +248,20 @@ export async function addToCart(
   quantity: number,
 ): Promise<Cart> {
   const safeQty = Math.min(Math.max(Math.floor(quantity), 1), 999);
-  const { data, errors } = await shopifyClient.request<{
-    cartLinesAdd: { cart: RawCart | null; userErrors: ReadonlyArray<UserError> };
-  }>(CART_LINES_ADD_MUTATION, {
-    variables: {
-      cartId,
-      lines: [{ merchandiseId, quantity: safeQty }],
-    },
-  });
+  type CartLinesAddData = {
+    cartLinesAdd: {
+      cart: RawCart | null;
+      userErrors: ReadonlyArray<UserError>;
+    };
+  };
+  const result: ShopifyClientResponse<CartLinesAddData> =
+    await shopifyClient.request<CartLinesAddData>(CART_LINES_ADD_MUTATION, {
+      variables: {
+        cartId,
+        lines: [{ merchandiseId, quantity: safeQty }],
+      },
+    });
+  const { data, errors } = result;
 
   if (errors) {
     logShopifyErrors('addToCart errors', errors);
@@ -272,17 +284,23 @@ export async function updateCartLine(
     return removeCartLine(cartId, lineId);
   }
 
-  const { data, errors } = await shopifyClient.request<{
+  type CartLinesUpdateData = {
     cartLinesUpdate: {
       cart: RawCart | null;
       userErrors: ReadonlyArray<UserError>;
     };
-  }>(CART_LINES_UPDATE_MUTATION, {
-    variables: {
-      cartId,
-      lines: [{ id: lineId, quantity: safeQty }],
-    },
-  });
+  };
+  const result: ShopifyClientResponse<CartLinesUpdateData> =
+    await shopifyClient.request<CartLinesUpdateData>(
+      CART_LINES_UPDATE_MUTATION,
+      {
+        variables: {
+          cartId,
+          lines: [{ id: lineId, quantity: safeQty }],
+        },
+      },
+    );
+  const { data, errors } = result;
 
   if (errors) {
     logShopifyErrors('updateCartLine errors', errors);
@@ -299,14 +317,20 @@ export async function removeCartLine(
   cartId: string,
   lineId: string,
 ): Promise<Cart> {
-  const { data, errors } = await shopifyClient.request<{
+  type CartLinesRemoveData = {
     cartLinesRemove: {
       cart: RawCart | null;
       userErrors: ReadonlyArray<UserError>;
     };
-  }>(CART_LINES_REMOVE_MUTATION, {
-    variables: { cartId, lineIds: [lineId] },
-  });
+  };
+  const result: ShopifyClientResponse<CartLinesRemoveData> =
+    await shopifyClient.request<CartLinesRemoveData>(
+      CART_LINES_REMOVE_MUTATION,
+      {
+        variables: { cartId, lineIds: [lineId] },
+      },
+    );
+  const { data, errors } = result;
 
   if (errors) {
     logShopifyErrors('removeCartLine errors', errors);
