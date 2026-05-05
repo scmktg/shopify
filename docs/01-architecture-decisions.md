@@ -6,13 +6,15 @@
 |---|---|---|
 | Frontend framework | Next.js 15, App Router | Best-in-class SEO, edge rendering, Vercel-native |
 | Hosting | Vercel | Zero-config CWV, ISR for product pages, instant deploys |
-| Commerce | Shopify Storefront API | Mature checkout, inventory, payments — but headless |
+| Commerce | Shopify (Storefront API via Headless channel) | Mature checkout, inventory, payments — but headless |
+| Shopify client | `@shopify/storefront-api-client` (official) | Less custom code, better TypeScript, version-aware |
 | Styling | Tailwind CSS | Rapid build, no design-system overhead for v1 |
 | Components | Custom + Radix UI primitives where needed | No bloat from full UI libraries |
 | Forms | React Hook Form + Zod | Type-safe, minimal |
 | Analytics | Vercel Analytics + GA4 | Standard duo |
-| Search | Shopify Search & Discovery (built into Storefront API) | Free, sufficient for v1 |
+| Search | Shopify Storefront predictiveSearch | Free, sufficient for v1 |
 | Image optimisation | Next.js `<Image>` + Vercel | Automatic, free |
+| Icons | lucide-react | Clean, consistent, free |
 
 ## Why Next.js 15 App Router specifically
 
@@ -21,11 +23,21 @@
 - Route handlers for API needs (Shopify webhooks, etc.)
 - Streaming + Suspense for fast TTFB on product pages
 
-## Why Shopify Storefront API (not Admin API only)
+## Why Shopify Headless channel (not legacy Custom Apps)
 
-- Storefront API is read-only and built for headless frontends — fast, cached, public
-- Admin API is used only server-side for cart mutations and webhook handling
-- All checkout happens on Shopify's hosted checkout (compliance, security, fraud handled by Shopify)
+- Current, supported way (2026) to manage headless storefronts
+- Auto-generates public + private access tokens
+- Single-screen permissions management
+- Token rotation built in
+- Order attribution to the headless storefront (visible in Shopify Admin order list)
+
+## Why the official `@shopify/storefront-api-client` package
+
+- Maintained by Shopify, tracks API versions automatically
+- Less custom code to maintain (no hand-rolled fetch wrapper)
+- Built-in TypeScript types for client config
+- Cleaner error surface
+- Standard pattern across Shopify headless ecosystem
 
 ## Repo structure
 
@@ -52,20 +64,54 @@
 │   ├── ui/                   # Primitives (Button, Card, etc.)
 │   ├── product/              # Product-specific (ProductCard, Gallery, etc.)
 │   ├── layout/               # Header, Footer, Nav
+│   ├── cart/                 # CartProvider, CartDrawer, etc.
 │   └── content/              # ContentHero, FAQ, etc.
 ├── lib/
 │   ├── shopify/              # Shopify Storefront API client + queries
+│   │   ├── client.ts         # createStorefrontApiClient instance
+│   │   ├── fragments.ts      # Shared GraphQL fragments
+│   │   ├── queries/          # Read queries
+│   │   └── mutations/        # Cart mutations
 │   ├── seo/                  # Metadata helpers, schema generators
 │   ├── cart/                 # Cart state and persistence
 │   └── utils/                # Generic helpers
 ├── content/                  # Markdown for use-cases, problems, locations, help
 ├── docs/                     # This documentation pack
+├── migration/                # Migration spreadsheet
 ├── public/                   # Static assets
 ├── types/                    # TypeScript types (Product, Cart, etc.)
 ├── tailwind.config.ts
 ├── next.config.js
 └── package.json
 ```
+
+## Key dependencies
+
+```json
+{
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@shopify/storefront-api-client": "^1.0.0",
+    "lucide-react": "^0.400.0",
+    "clsx": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.5.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.0.0"
+  }
+}
+```
+
+Versions above are minimums — Claude should pin to current latest stable at the time of scaffolding.
 
 ## Routing strategy
 
@@ -81,16 +127,39 @@
 
 ## Rendering strategy
 
-- **Product pages**: ISR, revalidate every 60 seconds, on-demand revalidate via Shopify webhook
-- **Category pages**: ISR, revalidate every 5 minutes
-- **Editorial pages**: Static at build time
-- **Cart**: Client-side state, persisted via Shopify cart token in cookie
-- **Homepage**: ISR, revalidate every hour
+- **Product pages**: ISR via `unstable_cache` with `revalidate: 60`, on-demand revalidate via Shopify webhook
+- **Category pages**: ISR with `revalidate: 300`
+- **Editorial pages**: Static at build time (Markdown content rarely changes)
+- **Cart**: Client-side state, persisted via Shopify cart token in HTTP-only cookie
+- **Homepage**: ISR with `revalidate: 3600`
 
 ## State management
 
 - **Cart**: React Context + Shopify cart token in cookie
 - **No global state library.** Server components fetch data; client components handle interaction. No Redux, no Zustand for v1.
+
+## Required environment variables
+
+```
+# Shopify (set in Vercel for all environments)
+SHOPIFY_STORE_DOMAIN=your-store.myshopify.com
+SHOPIFY_STOREFRONT_PRIVATE_TOKEN=<from Headless channel - SECRET>
+NEXT_PUBLIC_SHOPIFY_STOREFRONT_PUBLIC_TOKEN=<from Headless channel - public-safe>
+SHOPIFY_API_VERSION=2026-04
+SHOPIFY_WEBHOOK_SECRET=<set when configuring webhooks>
+
+# Site
+NEXT_PUBLIC_SITE_URL=https://staging.enviroaqua.com.au
+
+# Analytics (post-launch)
+NEXT_PUBLIC_GA_ID=
+
+# Vercel-injected (don't set manually)
+VERCEL_URL=
+VERCEL_ENV=
+```
+
+The `_PRIVATE_TOKEN` must NOT have a `NEXT_PUBLIC_` prefix — it's server-only. The `_PUBLIC_TOKEN` must have `NEXT_PUBLIC_` prefix to be readable in client components.
 
 ## What we are deliberately NOT doing in v1
 
@@ -101,6 +170,7 @@
 - No multi-currency in v1 (AUD only)
 - No A/B testing infrastructure in v1
 - No internal admin panel — Shopify admin handles everything
+- No trade login / wholesale gating — one price for everyone (brand promise)
 
 ## Performance budgets
 
@@ -112,3 +182,17 @@
 - Total JS shipped to client (product page): <250KB
 
 These are non-negotiable. If a feature breaks budget, it doesn't ship.
+
+## API version policy
+
+- Current: `2026-04` (latest stable as of build)
+- Update quarterly when Shopify releases new versions
+- Test against the new version on staging before bumping production env variable
+- Old versions are supported for ~12 months as a fallback
+
+## Caching policy
+
+- Use `unstable_cache` from `next/cache` to wrap Shopify queries
+- Tag caches consistently: `'products'`, `'collections'`, `'product:<handle>'`
+- Webhooks call `revalidateTag()` for affected tags
+- Never call Shopify on every request — fight the urge to add fresh data; ISR + on-demand revalidation is correct
