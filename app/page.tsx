@@ -1,14 +1,18 @@
 import Link from 'next/link';
+import clsx from 'clsx';
 import {
   DollarSign,
   Droplet,
   Filter,
   Gauge,
   GlassWater,
+  GraduationCap,
+  Lightbulb,
   MapPin,
   ShieldCheck,
   Truck,
   Wrench,
+  Zap,
   type LucideIcon,
 } from 'lucide-react';
 import { CATEGORIES } from '@/content/categories';
@@ -264,36 +268,48 @@ function FeaturedProducts({ products }: FeaturedProductsProps) {
 }
 
 function WhyDifferent() {
-  const points: Array<{ title: string; body: string }> = [
+  const points: Array<{ icon: LucideIcon; title: string; body: string }> = [
     {
+      icon: Lightbulb,
       title: 'No quote-chasing',
       body: 'Every price is on the page. No phone calls to find out what something costs, no gated trade pricing, no surprise upsell at checkout.',
     },
     {
+      icon: GraduationCap,
       title: 'Specialist knowledge',
       body: "We sell water filtration — that's it. Spec sheets, installation notes, and compatibility info on every product so you order the right thing first time.",
     },
     {
+      icon: Zap,
       title: 'Fast Australian dispatch',
       body: 'Orders placed before 1pm AEST ship the same business day from our Central Coast NSW warehouse. Tracked delivery on every order.',
     },
   ];
   return (
-    <section>
+    <section className="border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <h2 className="text-2xl font-semibold text-black">
           Why we&apos;re different
         </h2>
-        <ul
-          role="list"
-          className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
-          {points.map((point) => (
-            <li key={point.title}>
-              <h3 className="text-base font-semibold text-black">
+        <ul role="list" className="mt-8 grid grid-cols-1 md:grid-cols-3">
+          {points.map((point, index) => (
+            <li
+              key={point.title}
+              className={clsx(
+                'py-6 md:py-2 md:px-8 first:md:pl-0 last:md:pr-0',
+                index > 0 && 'md:border-l md:border-gray-200',
+              )}
+            >
+              <point.icon
+                size={32}
+                strokeWidth={1.75}
+                aria-hidden="true"
+                className="text-brand-blue"
+              />
+              <h3 className="mt-4 text-xl font-semibold text-black">
                 {point.title}
               </h3>
-              <p className="mt-2 text-sm text-black/80">{point.body}</p>
+              <p className="mt-2 text-base text-black/80">{point.body}</p>
             </li>
           ))}
         </ul>
