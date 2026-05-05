@@ -23,7 +23,6 @@ Sitewide top banner above the nav: **"Wholesale prices for everyone — no accou
 ├── /water-filters/reverse-osmosis/
 ├── /water-filters/uv-sterilisation/
 ├── /water-filters/bench-top/
-├── /water-filters/inline/
 ├── /water-filters/commercial/
 └── /water-filters/parts/
 
@@ -31,10 +30,7 @@ Sitewide top banner above the nav: **"Wholesale prices for everyone — no accou
 ├── /cartridges/sediment/
 ├── /cartridges/carbon/
 ├── /cartridges/reverse-osmosis-membranes/
-├── /cartridges/alkaline/
-├── /cartridges/fluoride-removal/
-├── /cartridges/post-carbon-t33/
-├── /cartridges/pleated-washable/
+├── /cartridges/specialty-cartridges/   # alkaline, fluoride, T33, UF, pleated
 └── /cartridges/cartridge-sets/
 
 /bubblers/
@@ -43,21 +39,44 @@ Sitewide top banner above the nav: **"Wholesale prices for everyone — no accou
 └── /bubblers/parts/
 
 /pumps-and-tanks/
-├── /pumps-and-tanks/12v-pumps/
-├── /pumps-and-tanks/ro-booster-pumps/
-├── /pumps-and-tanks/pressure-pumps/
-├── /pumps-and-tanks/pressure-tanks/
+├── /pumps-and-tanks/pumps/             # 12V, RO booster, pressure, solar, submersible
+├── /pumps-and-tanks/pressure-tanks/    # includes replacement bladders
 ├── /pumps-and-tanks/dosing-tanks/
-├── /pumps-and-tanks/replacement-bladders/
 └── /pumps-and-tanks/components/
 
 /plumbing/
-├── /plumbing/toilets/
 ├── /plumbing/kitchen-taps/
 ├── /plumbing/bathroom-taps/
-├── /plumbing/showers/
+├── /plumbing/ro-filter-taps/
+├── /plumbing/toilets/
 └── /plumbing/bundles/
 ```
+
+The `/pumps-and-tanks/pumps/` page exposes a `?type=` filter pill row
+(All / 12V / RO Booster / Pressure / Solar / Submersible) that narrows
+on the secondary `tech:<slug>` tag. Filter URLs are noindex.
+
+## Migration notes (2026-05 restructure)
+
+The previous 30-subcategory map was consolidated to 24. Old URLs are
+permanently redirected (308) in `next.config.js`:
+
+| Old URL | New URL | Reason |
+|---|---|---|
+| `/water-filters/inline/` | (none yet) | Inline filters folded into the catalogue elsewhere; no redirect — relisted as needed |
+| `/cartridges/post-carbon-t33/` | `/cartridges/specialty-cartridges/` | Consolidated specialty range |
+| `/cartridges/alkaline/` | `/cartridges/specialty-cartridges/` | Consolidated specialty range |
+| `/cartridges/fluoride-removal/` | `/cartridges/specialty-cartridges/` | Consolidated specialty range |
+| `/cartridges/pleated-washable/` | `/cartridges/specialty-cartridges/` | Consolidated specialty range |
+| `/pumps-and-tanks/12v-pumps/` | `/pumps-and-tanks/pumps/` | Pumps consolidated; sub-filter via `?type=12v` |
+| `/pumps-and-tanks/ro-booster-pumps/` | `/pumps-and-tanks/pumps/` | Pumps consolidated; sub-filter via `?type=ro-booster` |
+| `/pumps-and-tanks/pressure-pumps/` | `/pumps-and-tanks/pumps/` | Pumps consolidated; sub-filter via `?type=pressure` |
+| `/pumps-and-tanks/replacement-bladders/` | `/pumps-and-tanks/pressure-tanks/` | Bladders folded into pressure-tanks |
+| `/plumbing/showers/` | `/plumbing/bathroom-taps/` | Showers absorbed into bathroom range |
+
+Products affected by the consolidation must be re-tagged in Shopify
+(`primary-cat:` / `sub-cat:`). Products in the new `pumps` subcategory
+should also carry a `tech:<type>` tag so the filter pills work.
 
 ### Editorial (driven by markdown in /content/)
 
