@@ -4,6 +4,11 @@ import { findSubcategory } from '@/content/categories';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
+import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import {
+  breadcrumbSchema,
+  collectionSchema,
+} from '@/lib/seo/jsonld';
 
 interface SubcategoryPageProps {
   params: Promise<{ category: string; subcategory: string }>;
@@ -36,10 +41,23 @@ export default async function SubcategoryPage({
   const query = `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
   const page = await getProducts({ query, first: PAGE_SIZE });
 
+  const pathname = `/${category}/${subcategory}/`;
+  const title = `${node.subcategory.label} ${node.category.label}`;
+
   return (
     <>
+      <JsonLdScript
+        data={[
+          collectionSchema(title, pathname, null),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: node.category.label, path: `/${category}/` },
+            { name: node.subcategory.label, path: pathname },
+          ]),
+        ]}
+      />
       <CategoryHero
-        title={`${node.subcategory.label} ${node.category.label}`}
+        title={title}
         intro={null}
         categorySlug={node.category.slug}
         subcategories={node.category.subcategories}

@@ -5,6 +5,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { CartDrawer } from '@/components/cart/CartDrawer';
+import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import { organisationSchema, websiteSchema } from '@/lib/seo/jsonld';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -24,6 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en-AU">
       <body className="flex flex-col min-h-screen">
+        <JsonLdScript data={[organisationSchema(), websiteSchema()]} />
         <CartProvider>
           <TopBanner />
           <Header />

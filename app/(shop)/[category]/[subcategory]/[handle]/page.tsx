@@ -4,6 +4,8 @@ import { ProductDetail } from '@/components/product/ProductDetail';
 import { findSubcategory } from '@/content/categories';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductCategoryTags } from '@/lib/utils/productUrl';
+import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import { breadcrumbSchema, productSchema } from '@/lib/seo/jsonld';
 
 interface ProductPageProps {
   params: Promise<{
@@ -63,11 +65,30 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  const node = findSubcategory(category, subcategory);
+  const pathname = `/${category}/${subcategory}/${handle}/`;
+
   return (
-    <ProductDetail
-      product={product}
-      category={category}
-      subcategory={subcategory}
-    />
+    <>
+      <JsonLdScript
+        data={[
+          productSchema(product, pathname),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: node?.category.label ?? category, path: `/${category}/` },
+            {
+              name: node?.subcategory.label ?? subcategory,
+              path: `/${category}/${subcategory}/`,
+            },
+            { name: product.title, path: pathname },
+          ]),
+        ]}
+      />
+      <ProductDetail
+        product={product}
+        category={category}
+        subcategory={subcategory}
+      />
+    </>
   );
 }

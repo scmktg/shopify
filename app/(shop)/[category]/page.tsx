@@ -5,6 +5,11 @@ import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
+import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import {
+  breadcrumbSchema,
+  collectionSchema,
+} from '@/lib/seo/jsonld';
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
@@ -37,8 +42,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   const intro = getCategoryIntro(category);
 
+  const pathname = `/${node.slug}/`;
+
   return (
     <>
+      <JsonLdScript
+        data={[
+          collectionSchema(node.label, pathname, intro),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: node.label, path: pathname },
+          ]),
+        ]}
+      />
       <CategoryHero
         title={node.label}
         intro={intro}
