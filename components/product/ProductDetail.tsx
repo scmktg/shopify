@@ -44,35 +44,35 @@ export function ProductDetail({
 
   return (
     <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <div>
+      <nav
+        aria-label="Breadcrumb"
+        className="text-sm text-black/70 mb-6 flex items-center gap-2 flex-wrap"
+      >
+        <Link href="/" className="hover:underline underline-offset-4">
+          Home
+        </Link>
+        <span aria-hidden="true">/</span>
+        <Link
+          href={`/${category}/`}
+          className="hover:underline underline-offset-4"
+        >
+          {humaniseSlug(category)}
+        </Link>
+        <span aria-hidden="true">/</span>
+        <Link
+          href={`/${category}/${subcategory}/`}
+          className="hover:underline underline-offset-4"
+        >
+          {humaniseSlug(subcategory)}
+        </Link>
+      </nav>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="md:sticky md:top-24">
           <ProductGallery images={product.images} title={product.title} />
         </div>
 
         <div>
-          <nav
-            aria-label="Breadcrumb"
-            className="text-sm text-black/70 mb-4 flex items-center gap-2 flex-wrap"
-          >
-            <Link href="/" className="hover:underline underline-offset-4">
-              Home
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href={`/${category}/`}
-              className="hover:underline underline-offset-4"
-            >
-              {humaniseSlug(category)}
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href={`/${category}/${subcategory}/`}
-              className="hover:underline underline-offset-4"
-            >
-              {humaniseSlug(subcategory)}
-            </Link>
-          </nav>
-
           <h1 className="text-3xl md:text-4xl font-semibold text-black">
             {product.title}
           </h1>
@@ -109,8 +109,19 @@ export function ProductDetail({
             </div>
           )}
 
+          {firstVariant && (
+            <AddToCartButton
+              variantId={firstVariant.id}
+              available={inStock}
+            />
+          )}
+
+          <p className="mt-3 text-xs text-black/60">
+            Free shipping on Australian orders over $200
+          </p>
+
           {offersInstallPackage(product) && (
-            <div className="mt-4 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
+            <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
               Live on the Central Coast NSW? Get this installed by a local
               plumber for $2,299 —{' '}
               <Link
@@ -122,26 +133,19 @@ export function ProductDetail({
               .
             </div>
           )}
-
-          {firstVariant && (
-            <AddToCartButton
-              variantId={firstVariant.id}
-              available={inStock}
-            />
-          )}
-
-          <p className="mt-3 text-xs text-black/60 text-center">
-            Free shipping on Australian orders over $200
-          </p>
-
-          <div
-            className="mt-8 prose prose-sm max-w-none"
-            dangerouslySetInnerHTML={{
-              __html: sanitiseProductDescriptionHtml(product.descriptionHtml),
-            }}
-          />
         </div>
       </div>
+
+      <section className="mt-12 border-t border-gray-200 pt-8">
+        <div
+          className="prose prose-sm max-w-none"
+          dangerouslySetInnerHTML={{
+            __html: sanitiseProductDescriptionHtml(product.descriptionHtml),
+          }}
+        />
+      </section>
+
+      <SpecificationsPanel metafields={product.metafields} />
 
       <CompatibleCartridges
         housingSize={product.metafields.housing_size}
@@ -157,8 +161,6 @@ export function ProductDetail({
         }
         currentHandle={product.handle}
       />
-
-      <SpecificationsPanel metafields={product.metafields} />
     </article>
   );
 }
