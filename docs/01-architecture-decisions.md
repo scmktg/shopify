@@ -180,6 +180,10 @@ SHOPIFY_WEBHOOK_SECRET=<set when configuring webhooks>
 # Site
 NEXT_PUBLIC_SITE_URL=https://staging.enviroaqua.com.au
 
+# Lead-form email delivery (Resend — used by /api/lead-installation/)
+RESEND_API_KEY=<from resend.com after verifying enviroaqua.com.au domain>
+RESEND_FROM_EMAIL=quotes@enviroaqua.com.au
+
 # Analytics (post-launch)
 NEXT_PUBLIC_GA_ID=
 
@@ -189,6 +193,19 @@ VERCEL_ENV=
 ```
 
 The `_PRIVATE_TOKEN` must NOT have a `NEXT_PUBLIC_` prefix — it's server-only. The `_PUBLIC_TOKEN` must have `NEXT_PUBLIC_` prefix to be readable in client components.
+
+### Resend setup (one-time)
+
+The `/api/lead-installation/` route uses [Resend](https://resend.com) for transactional email delivery (Whole House Install Package lead form → `info@enviroaqua.com.au`). Until both env vars are set, the route returns HTTP 503 with a clear "email us directly" message; the form surfaces that to the customer rather than silently dropping the lead.
+
+To enable:
+
+1. Sign up at <https://resend.com>. Free tier covers 3,000 emails/month — well above expected lead volume.
+2. Add `enviroaqua.com.au` as a verified domain (DNS TXT record provided in the Resend dashboard).
+3. Create an API key.
+4. Add `RESEND_API_KEY` and `RESEND_FROM_EMAIL` (e.g. `quotes@enviroaqua.com.au`) to Vercel env vars for Production, Preview, and (optionally) Development.
+
+The `from` address must be on the verified domain. `info@` works too if you'd rather route from a single mailbox.
 
 ## What we are deliberately NOT doing in v1
 
