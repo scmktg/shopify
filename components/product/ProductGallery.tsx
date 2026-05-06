@@ -10,6 +10,20 @@ interface ProductGalleryProps {
   title: string;
 }
 
+/**
+ * Shopify auto-generates placeholder alt text like "image 2" when a
+ * merchant doesn't set one. We don't want that surfacing to the page
+ * — it's worse than no alt at all because it carries no information.
+ * Treat empty, whitespace-only, or "image N"-style alts as missing
+ * and fall back to a generated label that names the product.
+ */
+function isPlaceholderAlt(alt: string | null | undefined): boolean {
+  if (!alt) return true;
+  const trimmed = alt.trim();
+  if (!trimmed) return true;
+  return /^image[\s_-]*\d*$/i.test(trimmed);
+}
+
 export function ProductGallery({ images, title }: ProductGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -22,13 +36,16 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
   }
 
   const selected = images[selectedIndex] ?? images[0]!;
+  const heroAlt = isPlaceholderAlt(selected.altText)
+    ? `${title} — main product image`
+    : selected.altText!;
 
   return (
     <div>
       <div className="relative aspect-square overflow-hidden rounded border border-gray-200 bg-white">
         <Image
           src={selected.url}
-          alt={selected.altText ?? title}
+          alt={heroAlt}
           fill
           priority
           sizes="(min-width: 768px) 50vw, 100vw"
@@ -43,11 +60,14 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
         >
           {images.map((image, index) => {
             const isSelected = index === selectedIndex;
+            const thumbAlt = isPlaceholderAlt(image.altText)
+              ? `${title} — view ${index + 1}`
+              : image.altText!;
             return (
               <li key={image.url} className="flex-shrink-0">
                 <button
                   type="button"
-                  aria-label={`Show image ${index + 1} of ${images.length}`}
+                  aria-label={`Show ${thumbAlt}`}
                   aria-current={isSelected}
                   onClick={() => setSelectedIndex(index)}
                   className={clsx(
@@ -59,7 +79,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
                 >
                   <Image
                     src={image.url}
-                    alt=""
+                    alt={thumbAlt}
                     fill
                     sizes="80px"
                     className="object-contain"
