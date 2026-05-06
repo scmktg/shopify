@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import clsx from 'clsx';
 import type {
   CartridgeType,
   InstallationType,
@@ -15,6 +14,8 @@ import { CompatibleCartridges } from './CompatibleCartridges';
 import { RelatedSystems } from './RelatedSystems';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 import { MobileStickyBuyBar } from '@/components/cart/MobileStickyBuyBar';
+import { ProductTrustBlock, type StockStatus } from './ProductTrustBlock';
+import { DEFAULT_LOW_STOCK_THRESHOLD } from '@/lib/site-config';
 
 const INSTALL_PACKAGE_HANDLES: ReadonlySet<string> = new Set([
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
@@ -46,6 +47,13 @@ export function ProductDetail({
     product.priceRange.minVariantPrice,
     compareAt,
   );
+  const stockStatus: StockStatus = !inStock
+    ? 'out_of_stock'
+    : firstVariant?.quantityAvailable !== null &&
+        firstVariant?.quantityAvailable !== undefined &&
+        firstVariant.quantityAvailable <= DEFAULT_LOW_STOCK_THRESHOLD
+      ? 'low_stock'
+      : 'in_stock';
 
   return (
     <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
@@ -105,19 +113,6 @@ export function ProductDetail({
             )}
           </div>
 
-          <div className="mt-4 flex items-center gap-2 text-sm">
-            <span
-              aria-hidden="true"
-              className={clsx(
-                'inline-block h-2.5 w-2.5 rounded-full',
-                inStock ? 'bg-green-600' : 'bg-red-600',
-              )}
-            />
-            <span className="text-black">
-              {inStock ? 'In stock' : 'Out of stock'}
-            </span>
-          </div>
-
           {product.metafields.watermark_status && (
             <div className="mt-4">
               <WatermarkBadge status={product.metafields.watermark_status} />
@@ -131,9 +126,14 @@ export function ProductDetail({
             />
           )}
 
-          <p className="mt-3 text-xs text-black/60">
-            Free shipping on Australian orders over $200
-          </p>
+          {firstVariant && (
+            <ProductTrustBlock
+              productId={product.id}
+              sku={firstVariant.sku}
+              stockStatus={stockStatus}
+              stockCount={firstVariant.quantityAvailable ?? undefined}
+            />
+          )}
 
           {offersInstallPackage(product) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">

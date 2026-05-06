@@ -36,6 +36,28 @@ export const BUSINESS_INFO = {
   },
   /** Same-day dispatch cutoff for orders received on a business day. */
   orderCutoff: '12:00pm AEST',
+  /**
+   * Structured form of the dispatch cutoff for the live countdown on
+   * product pages. Locked to Australia/Sydney regardless of the
+   * visitor's timezone.
+   */
+  orderCutoffTime: {
+    hour: 12,
+    minute: 0,
+    timeZone: 'Australia/Sydney',
+  },
+  /**
+   * Phone-support window — narrower than the showroom hours.
+   * Surfaced under the Add to cart "Questions?" line.
+   */
+  phoneSupportHours: 'Mon–Thu 9am–3pm',
+  /** Free-shipping order threshold (AUD). */
+  shippingFreeThresholdAud: 200,
+  /**
+   * Below this on-hand quantity, product pages render an amber
+   * "Only N left in stock" indicator instead of plain "In stock".
+   */
+  defaultLowStockThreshold: 3,
   returns: {
     /** Days from delivery during which a return can be requested. */
     windowDays: 14,
