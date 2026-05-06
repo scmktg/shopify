@@ -1,0 +1,127 @@
+{
+  "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
+    "categories": ["bubblers", "commercial"],
+    "tags": ["stainless-steel", "watermark", "filtered", "high-traffic"],
+    "shortDescription": "Plumbed-in commercial bubbler in SUS304 stainless steel — 20 L/hr cooling, WaterMark certified.",
+    "description": "A high-traffic public-venue bubbler built around a SUS304 stainless steel cabinet and an integrated cooling and filtration unit. Direct mains connection — no bottles to refill, no cartridges to ship.\n\nDesigned for **continuous service** in offices, schools, gyms, and hospitality. The integrated drip tray with drainage system keeps the surrounding floor dry through peak hours, and the push-button activation copes with thousands of cycles a year without service.\n\n- Welded stainless steel frame and exterior panels\n- Integrated cooling unit, factory-tested for Australian mains pressure\n- Standard plumbing connections — any qualified plumber can install or service",
+    "features": [
+      "All SUS304 stainless steel welded frame and exterior panels",
+      "Integrated drip tray with drainage system",
+      "Direct mains connection — no bottles to refill",
+      "Push-button activation rated for high-traffic public use",
+      "Standard plumbing inlets — no proprietary fittings"
+    ],
+    "headlineSpecs": [
+      { "label": "Cooling capacity", "value": "20 L/hr" },
+      { "label": "Water temperature", "value": "8–12°C" },
+      { "label": "Material", "value": "SUS304 stainless steel" },
+      { "label": "Connection", "value": "Direct mains" }
+    ],
+    "fullSpecs": [
+      { "label": "Cabinet", "value": "304 stainless steel" },
+      { "label": "Profile", "value": "Round / cylindrical" },
+      { "label": "Cooling capacity", "value": "20 litres per hour" },
+      { "label": "Water temperature", "value": "8–12°C" },
+      { "label": "Activation", "value": "Push-button" },
+      { "label": "Filtration", "value": "Integrated cartridge" },
+      { "label": "Inlet connection", "value": "Standard 1/4 inch BSP" },
+      { "label": "Power", "value": "240 V AC" },
+      { "label": "Certification", "value": "WaterMark certified (AS/NZS 3497)" }
+    ],
+    "recommendedFor": [
+      "Offices and co-working spaces",
+      "Schools, universities, and childcare",
+      "Gyms and sporting facilities",
+      "Cafés, retail, and public venues"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": "WMKA12345",
+        "certifier": "SAI Global",
+        "validUntil": "2027-06-30"
+      },
+      "wels": null,
+      "note": "WaterMark certified for plumbed-in installation under AS/NZS 3497."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "Commercial Stainless Steel Filtered Cold Water Bubbler — Round WM",
+      "description": "Commercial round bubbler in SUS304 stainless steel. 20 L/hr cooling, 8–12°C, WaterMark certified. Same-day dispatch from Wyong NSW.",
+      "ogImage": null
+    }
+  },
+
+  "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system": {
+    "categories": ["water-filters", "whole-house"],
+    "tags": ["whole-house", "big-blue", "three-stage", "watermark"],
+    "shortDescription": "Three-stage 20\" × 4.5\" Big Blue whole-house filter — sediment, carbon, and polishing in WaterMark-certified housings.",
+    "description": "A three-stage whole-house filtration system built around 20-inch by 4.5-inch *Big Blue* housings — the de-facto Australian standard for whole-house treatment. Each stage targets a distinct contaminant load: sediment first, then dissolved chlorine and organics through carbon, then a final polish.\n\nDesigned for **mains or rainwater feeds** at typical Australian household flow rates. The housings are WaterMark-certified for direct plumbing into a property's main supply, and they accept any 20×4.5 cartridge from any supplier — there is no proprietary lock-in. Replace cartridges yourself or have a plumber service annually.\n\n- Three 20×4.5 Big Blue housings on a single mounting bracket\n- WaterMark-certified components for plumbed-in mains use\n- Open-standard cartridges — buy replacements from any Australian supplier",
+    "features": [
+      "Three 20\" × 4.5\" Big Blue housings, WaterMark-certified",
+      "Single galvanised mounting bracket — wall-mount ready",
+      "Stage 1 sediment, Stage 2 carbon, Stage 3 polishing cartridge",
+      "Pressure release buttons on each housing for tool-free servicing",
+      "Open-standard housings — any 20×4.5 cartridge fits"
+    ],
+    "headlineSpecs": [
+      { "label": "Housing size", "value": "20\" × 4.5\" Big Blue" },
+      { "label": "Stages", "value": "Three (sediment, carbon, polish)" },
+      { "label": "Connection", "value": "1\" BSP inlet/outlet" },
+      { "label": "Flow rate", "value": "Up to 75 L/min" }
+    ],
+    "fullSpecs": [
+      { "label": "Stages", "value": "3" },
+      { "label": "Housing size", "value": "20 inch × 4.5 inch (Big Blue)" },
+      { "label": "Stage 1", "value": "Pleated sediment, 5 micron" },
+      { "label": "Stage 2", "value": "Carbon block, 5 micron" },
+      { "label": "Stage 3", "value": "Polishing carbon, 1 micron" },
+      { "label": "Inlet / outlet", "value": "1 inch BSP" },
+      { "label": "Maximum flow rate", "value": "75 L/min" },
+      { "label": "Maximum operating pressure", "value": "550 kPa" },
+      { "label": "Mounting", "value": "Wall-mount bracket included" },
+      { "label": "Cartridge replacement interval", "value": "12 months typical" },
+      { "label": "Certification", "value": "WaterMark certified housings" }
+    ],
+    "recommendedFor": [
+      "Whole-house treatment of mains or rainwater supply",
+      "Properties on tank or bore water",
+      "Sites with chlorinated mains where taste and odour matter",
+      "Households planning to service cartridges themselves"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": "WMKA67890",
+        "certifier": "Global-Mark",
+        "validUntil": "2028-03-31"
+      },
+      "wels": null,
+      "note": null
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "3-Stage 20×4.5 Triple Big Blue Whole-House Water Filter — WaterMark",
+      "description": "WaterMark-certified three-stage Big Blue whole-house filter — 20×4.5 housings, 75 L/min, sediment + carbon + polish. Same-day dispatch from Wyong NSW.",
+      "ogImage": null
+    }
+  },
+
+  "_seed-minimal-example": {
+    "categories": ["plumbing", "kitchen-taps"]
+  }
+}
