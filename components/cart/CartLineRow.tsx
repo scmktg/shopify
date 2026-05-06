@@ -20,10 +20,7 @@ export function CartLineRow({ line, onNavigate }: CartLineRowProps) {
     .map((opt) => `${opt.name}: ${opt.value}`)
     .join(' · ');
 
-  const href = getProductUrl(
-    line.merchandise.product.tags,
-    line.merchandise.product.handle,
-  );
+  const href = getProductUrl(line.merchandise.product.handle);
   const image = line.merchandise.image;
 
   return (

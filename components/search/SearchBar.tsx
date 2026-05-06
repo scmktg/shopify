@@ -172,7 +172,7 @@ export function SearchBar({ triggerClassName }: SearchBarProps) {
                 {results.map((product) => (
                   <li key={product.id}>
                     <Link
-                      href={getProductUrl(product.tags, product.handle)}
+                      href={getProductUrl(product.handle)}
                       onClick={navigate}
                       className="flex items-center gap-3 py-2 px-1 rounded hover:bg-gray-100"
                     >

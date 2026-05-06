@@ -13,6 +13,14 @@ export const ORDER_CUTOFF = BUSINESS_INFO.orderCutoffTime;
 export const ORDER_CUTOFF_DISPLAY = BUSINESS_INFO.orderCutoff;
 export const SHIPPING_FREE_THRESHOLD_AUD =
   BUSINESS_INFO.shippingFreeThresholdAud;
+export const SHIPPING_STANDARD_FROM_AUD =
+  BUSINESS_INFO.shipping.standardFromAud;
+export const SHIPPING_EXPRESS_FROM_AUD =
+  BUSINESS_INFO.shipping.expressFromAud;
+export const RETURNS_SUMMARY = BUSINESS_INFO.returnsSummary;
+export const CLICK_AND_COLLECT_PICKUP_WINDOW =
+  BUSINESS_INFO.clickAndCollectPickupWindow;
+export const TRUST_STRIP = BUSINESS_INFO.trustStrip;
 export const DEFAULT_LOW_STOCK_THRESHOLD =
   BUSINESS_INFO.defaultLowStockThreshold;
 export const PHONE_SUPPORT_HOURS = BUSINESS_INFO.phoneSupportHours;

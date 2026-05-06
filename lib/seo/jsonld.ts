@@ -1,6 +1,8 @@
 import type { Product } from '@/types/product';
 import type { FaqItem } from '@/lib/content/markdown';
+import type { ProductContent } from '@/lib/products/schema';
 import { BUSINESS_INFO } from '@/content/business-info';
+import { findCategory } from '@/content/categories';
 import { absoluteUrl, getSiteUrl } from './siteUrl';
 
 export type JsonLd = Record<string, unknown>;
@@ -108,75 +110,51 @@ export function faqPageSchema(items: ReadonlyArray<FaqItem>): JsonLd {
   };
 }
 
-export function productSchema(product: Product, pathname: string): JsonLd {
+export function productSchema(
+  product: Product,
+  content: ProductContent,
+  pathname: string,
+  descriptionPlainText: string,
+): JsonLd {
   const firstVariant = product.variants[0];
   const images = product.images.map((image) => image.url);
   const offerAvailability = firstVariant?.availableForSale
     ? 'https://schema.org/InStock'
     : 'https://schema.org/OutOfStock';
 
-  const additionalProperty: JsonLd[] = [];
-  const m = product.metafields;
+  // Spec rows under additionalProperty: pull from products.json
+  // fullSpecs verbatim — JSON-LD just wants name + value pairs.
+  const additionalProperty: JsonLd[] = (content.fullSpecs ?? []).map(
+    (row) => ({
+      '@type': 'PropertyValue',
+      name: row.label,
+      value: row.value,
+    }),
+  );
 
-  if (m.watermark_status) {
-    additionalProperty.push({
-      '@type': 'PropertyValue',
-      name: 'WaterMark Status',
-      value: m.watermark_status,
-      ...(m.watermark_licence_number
-        ? { identifier: m.watermark_licence_number }
-        : {}),
-    });
-  }
-  if (m.installation_type) {
-    additionalProperty.push({
-      '@type': 'PropertyValue',
-      name: 'Installation Type',
-      value: m.installation_type,
-    });
-  }
-  if (m.stages !== null) {
-    additionalProperty.push({
-      '@type': 'PropertyValue',
-      name: 'Stages',
-      value: m.stages,
-    });
-  }
-  if (m.micron_rating !== null) {
-    additionalProperty.push({
-      '@type': 'PropertyValue',
-      name: 'Micron Rating',
-      value: m.micron_rating,
-      unitText: 'micron',
-    });
-  }
-  if (m.flow_rate_lpm !== null) {
-    additionalProperty.push({
-      '@type': 'PropertyValue',
-      name: 'Flow Rate',
-      value: m.flow_rate_lpm,
-      unitText: 'L/min',
-    });
-  }
-  if (m.capacity_l !== null) {
-    additionalProperty.push({
-      '@type': 'PropertyValue',
-      name: 'Capacity',
-      value: m.capacity_l,
-      unitText: 'L',
-    });
-  }
+  // Category string (Schema.org expects a single value, slash-
+  // delimited for multi-level). Resolve to human labels via the
+  // category tree so search engines see "Water Filters / Whole
+  // House" not "water-filters/whole-house".
+  const [catSlug, subSlug] = content.categories;
+  const category = findCategory(catSlug);
+  const subcategoryLabel =
+    category?.subcategories.find((s) => s.slug === subSlug)?.label ?? subSlug;
+  const categoryString = category
+    ? `${category.label} / ${subcategoryLabel}`
+    : `${catSlug}/${subSlug}`;
 
   const schema: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.title,
-    description: product.description,
+    description: descriptionPlainText,
     image: images.length > 0 ? images : undefined,
     sku: firstVariant?.sku ?? undefined,
+    category: categoryString,
     brand: {
       '@type': 'Brand',
-      name: product.vendor || 'Enviro Aqua',
+      name: 'Enviro Aqua',
     },
     offers: {
       '@type': 'Offer',
@@ -192,22 +170,17 @@ export function productSchema(product: Product, pathname: string): JsonLd {
     schema.additionalProperty = additionalProperty;
   }
 
-  if (
-    m.watermark_status === 'certified' &&
-    m.watermark_licence_number &&
-    m.watermark_certifier
-  ) {
+  const wm = content.compliance?.watermark;
+  if (wm?.status === 'certified' && wm.licenceNumber && wm.certifier) {
     schema.hasCertification = {
       '@type': 'Certification',
       name: 'WaterMark Certification Scheme (Australia)',
       issuedBy: {
         '@type': 'Organization',
-        name: m.watermark_certifier,
+        name: wm.certifier,
       },
-      identifier: m.watermark_licence_number,
-      ...(m.watermark_valid_until
-        ? { validUntil: m.watermark_valid_until }
-        : {}),
+      identifier: wm.licenceNumber,
+      ...(wm.validUntil ? { validUntil: wm.validUntil } : {}),
     };
   }
 

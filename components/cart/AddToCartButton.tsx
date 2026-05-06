@@ -6,11 +6,17 @@ import { useCart } from './CartProvider';
 interface AddToCartButtonProps {
   variantId: string;
   available: boolean;
+  /**
+   * Label override from `products.json[handle].ctas.primary`. Falls
+   * back to "Add to cart" when undefined. The "Out of stock" /
+   * "Adding…" states still take precedence over the override.
+   */
+  label?: string;
 }
 
 const MAX_QTY = 99;
 
-export function AddToCartButton({ variantId, available }: AddToCartButtonProps) {
+export function AddToCartButton({ variantId, available, label: labelOverride }: AddToCartButtonProps) {
   const { addItem, isMutating } = useCart();
   const [busy, setBusy] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -41,7 +47,7 @@ export function AddToCartButton({ variantId, available }: AddToCartButtonProps) 
     ? 'Out of stock'
     : busy
       ? 'Adding…'
-      : 'Add to cart';
+      : (labelOverride ?? 'Add to cart');
 
   return (
     <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-stretch">

@@ -3,7 +3,7 @@ import { CATEGORIES } from '@/content/categories';
 import { listMarkdownSlugs } from '@/lib/content/markdown';
 import { getAllProductHandles } from '@/lib/shopify/queries/getAllProductHandles';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
-import { getProductCategoryTags } from '@/lib/utils/productUrl';
+import { getProductCategories } from '@/lib/utils/productUrl';
 import { getSiteUrl } from '@/lib/seo/siteUrl';
 
 export const revalidate = 3600;
@@ -76,7 +76,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         try {
           const product = await getProductByHandle(entry.handle);
           if (!product) return null;
-          const { category, subcategory } = getProductCategoryTags(product.tags);
+          const { category, subcategory } = getProductCategories(entry.handle);
           if (!category || !subcategory) return null;
           return {
             url: `${base}/${category}/${subcategory}/${entry.handle}/`,
