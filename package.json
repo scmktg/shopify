@@ -11,7 +11,8 @@
     "type-check": "tsc --noEmit",
     "test:shopify": "tsx scripts/test-shopify-fetch.ts",
     "audit:watermark": "tsx scripts/audit-watermark-status.ts",
-    "validate:products": "tsx scripts/validate-products.ts"
+    "validate:products": "tsx scripts/validate-products.ts",
+    "bootstrap:products": "tsx scripts/bootstrap-products-json.ts"
   },
   "dependencies": {
     "next": "^16.2.0",
