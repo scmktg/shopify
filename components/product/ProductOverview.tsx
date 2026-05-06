@@ -14,7 +14,17 @@ interface ProductOverviewProps {
  */
 export async function ProductOverview({ description }: ProductOverviewProps) {
   if (!description?.trim()) return null;
-  const html = await renderProductMarkdown(description);
+  let html = '';
+  try {
+    html = await renderProductMarkdown(description);
+  } catch (error) {
+    // Defensive: a single bad markdown input shouldn't take down the
+    // whole product page. Log and skip the section in production;
+    // surface in dev so the bad content is obvious during authoring.
+    console.error('[ProductOverview] markdown render failed', error);
+    if (process.env.NODE_ENV !== 'production') throw error;
+    return null;
+  }
   if (!html) return null;
   // No wrapper heading — long-form descriptions carry their own
   // markdown h2/h3 structure (the seed content has "Why This System",

@@ -106,7 +106,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const node = findSubcategory(category, subcategory);
   const pathname = `/${category}/${subcategory}/${handle}/`;
-  const descriptionPlainText = await markdownToPlainText(content.description);
+  // Cap at 5000 chars: search engines truncate beyond this anyway,
+  // and bounding the JSON-LD payload keeps the inline <script> tag
+  // small. Long-form description content still renders in full on
+  // the page itself via ProductOverview.
+  const descriptionPlainText = await markdownToPlainText(
+    content.description,
+    5000,
+  );
 
   return (
     <>

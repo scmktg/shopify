@@ -46,6 +46,12 @@ export async function MoreInCategory({
       try {
         const product = await getProductByHandle(handle);
         if (!product) return null;
+        // Universal Shopify boundary (clarification #2): commerce
+        // primitives only. ProductCardData still carries legacy
+        // fields (tags / productType / housingSize) for shape
+        // compatibility but rendering doesn't read them. We default
+        // them to safe values so a Shopify product without those
+        // metafields can't throw here.
         const card: ProductCardData = {
           id: product.id,
           handle: product.handle,
@@ -54,7 +60,7 @@ export async function MoreInCategory({
           tags: product.tags,
           featuredImage: product.featuredImage,
           price: product.priceRange.minVariantPrice,
-          housingSize: product.metafields.housing_size,
+          housingSize: null,
         };
         return card;
       } catch {

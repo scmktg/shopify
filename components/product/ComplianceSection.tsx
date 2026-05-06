@@ -15,7 +15,14 @@ interface ComplianceSectionProps {
 export async function ComplianceSection({ compliance }: ComplianceSectionProps) {
   const note = compliance?.note;
   if (!note?.trim()) return null;
-  const html = await renderProductMarkdown(note);
+  let html = '';
+  try {
+    html = await renderProductMarkdown(note);
+  } catch (error) {
+    console.error('[ComplianceSection] markdown render failed', error);
+    if (process.env.NODE_ENV !== 'production') throw error;
+    return null;
+  }
   if (!html) return null;
   return (
     <section className="mt-12 border-t border-gray-200 pt-8">

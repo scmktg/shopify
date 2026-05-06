@@ -5,9 +5,16 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { PriceDisplay } from './PriceDisplay';
 import { SimpleAddToCart } from '@/components/cart/SimpleAddToCart';
 
+import type { Product } from '@/types/product';
+
 interface BoughtTogetherProps {
   /** Handles from products.json[handle].upsells.boughtTogether. */
   handles: ReadonlyArray<string>;
+}
+
+interface BoughtTogetherCard {
+  product: Product;
+  handle: string;
 }
 
 /**
@@ -25,22 +32,36 @@ interface BoughtTogetherProps {
 export async function BoughtTogether({ handles }: BoughtTogetherProps) {
   if (handles.length === 0) return null;
 
-  const products = await Promise.all(
-    handles.map(async (handle) => {
-      try {
-        return await getProductByHandle(handle);
-      } catch {
-        return null;
-      }
-    }),
-  );
-
-  const cards = products
-    .map((product, index) => ({ product, handle: handles[index]! }))
-    .filter(
-      (entry): entry is { product: NonNullable<(typeof products)[number]>; handle: string } =>
-        entry.product !== null,
+  // Guard the whole fetch path — a single Shopify-side hiccup
+  // shouldn't take down the entire product page. Per-handle
+  // try/catch already catches individual fetch failures; this
+  // outer guard is defensive against anything else (network
+  // teardown, GraphQL deserialisation, Promise.all rejection).
+  let cards: ReadonlyArray<BoughtTogetherCard> = [];
+  try {
+    const products = await Promise.all(
+      handles.map(async (handle) => {
+        try {
+          return await getProductByHandle(handle);
+        } catch {
+          return null;
+        }
+      }),
     );
+
+    const collected: BoughtTogetherCard[] = [];
+    products.forEach((product, index) => {
+      if (!product) return;
+      const handle = handles[index];
+      if (!handle) return;
+      collected.push({ product, handle });
+    });
+    cards = collected;
+  } catch (error) {
+    console.error('[BoughtTogether] fetch failed', error);
+    if (process.env.NODE_ENV !== 'production') throw error;
+    return null;
+  }
 
   if (cards.length === 0) {
     if (process.env.NODE_ENV !== 'production') {
