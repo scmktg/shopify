@@ -1,5 +1,10 @@
 # Design System
 
+## Revision history
+
+- **2026-05** — Header switched from black background to **white background with black text** and a `border-b border-gray-200` bottom border. The black top utility bar above the header is unchanged. The black footer is unchanged. Mobile menu now slides in as a white overlay.
+- **2026-04** — Initial system locked: white page, black header, black footer, brand-blue (`#0066CC`) actions only. Tailwind v4 brand tokens via `@theme` in `app/globals.css`.
+
 ## Visual identity (locked)
 
 **Minimalist. Clean. Utilitarian. Professional.**
@@ -8,9 +13,9 @@ Three colours, that's it for v1:
 
 | Colour | Hex | Use |
 |---|---|---|
-| White | `#FFFFFF` | Page background |
-| Black | `#000000` | Header banner, footer, primary text, borders |
-| Blue | `#0066CC` | All buttons, CTAs, links, focus states |
+| White | `#FFFFFF` | Page background, header background |
+| Black | `#000000` | Top banner background, footer background, primary text, borders |
+| Blue | `#0066CC` | All buttons, CTAs, links, focus states, link hover on the white header |
 
 Tailwind v4 configuration is CSS-first — there is no `tailwind.config.ts`. Brand colours are declared in `app/globals.css` under the `@theme` directive, which Tailwind compiles into utility classes (`bg-brand-blue`, `text-brand-blue-hover`, etc.):
 
@@ -26,9 +31,9 @@ Tailwind v4 configuration is CSS-first — there is no `tailwind.config.ts`. Bra
 ```
 
 Same values, same rules — only the configuration mechanism has changed:
-- White is the only page background
-- Black is reserved for the header banner and footer
-- Blue is reserved for actions (buttons, CTAs, links, focus states); never decorative
+- White is the page and header background
+- Black is reserved for the top utility bar and the footer
+- Blue is reserved for actions (buttons, CTAs, links, focus states, link-hover); never decorative
 
 Do not introduce additional brand colours. If a new shade is needed, justify it against `docs/01-architecture-decisions.md` first.
 
@@ -56,16 +61,18 @@ Do not introduce additional brand colours. If a new shade is needed, justify it 
 ┌─────────────────────────────────────────────────────────────┐
 │ Black banner: "Wholesale prices for everyone..."           │  <- Top utility bar
 ├─────────────────────────────────────────────────────────────┤
-│ ENVIRO AQUA      Water Filters | Cartridges | ... | 🔍 🛒 │  <- Black header
+│ ENVIRO AQUA      Water Filters | Cartridges | ... | 🔍 🛒 │  <- White header
 └─────────────────────────────────────────────────────────────┘
+                                                                  ↑ border-b border-gray-200
 ```
 
-- Top utility bar: black background, white text, ~32px tall, displays the wholesale message + maybe phone number
-- Main header: black background, white text + logo, sticky on scroll
-- Logo on left (text-only for v1: "ENVIRO AQUA" in semibold)
-- Nav in centre/right
-- Search icon + cart icon on far right
-- Mobile: hamburger menu, full-screen overlay nav
+- **Top utility bar** — black background, white text, ~32px tall, displays the wholesale message. Unchanged from v1.
+- **Main header** — `bg-white text-black border-b border-gray-200`, sticky on scroll. The bottom border is the visual separator from page content (no shadow per the design rules).
+- **Wordmark** — text-only "ENVIRO AQUA" in `font-semibold text-black` on the left. No logo image; the wordmark is the brand mark.
+- **Nav** — black text in centre/right; hover state is `hover:text-brand-blue` (no underline shift).
+- **Search and cart icons** — black, hover to brand-blue. Cart badge stays brand-blue with white text (it stands out on the white header).
+- **Mega menu dropdown** — `bg-white text-black` with a 1px gray-200 border for separation. Hover state on dropdown items is `hover:bg-gray-50` (subtle); active link is `text-brand-blue`.
+- **Mobile** — hamburger button (black icon) opens a full-screen white overlay with black text and a black X close button. Nav items are large tappable rows with `hover:text-brand-blue`.
 
 ## Footer
 
@@ -148,7 +155,7 @@ Minimal. Specifically:
 
 ## Design rules (enforced)
 
-1. White backgrounds for content. Black only for header/footer.
+1. White backgrounds for content and the main header. Black only for the top utility bar and the footer.
 2. Blue is for action. If it's not clickable, it's not blue.
 3. No gradients. No drop shadows. No rounded corners larger than `rounded` (4px).
 4. Borders are 1px, gray-200 or gray-300. Never colourful.
