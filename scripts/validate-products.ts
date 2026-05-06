@@ -46,6 +46,13 @@ async function main(): Promise<void> {
 
   // Pass 1 — pure validation.
   const result = validateProducts(productData);
+
+  for (const w of result.warnings) {
+    console.warn(`  ${YELLOW}!${RESET} ${w.handle}`);
+    console.warn(`      ${DIM}${w.path}${RESET}`);
+    console.warn(`      ${w.message}`);
+  }
+
   if (!result.ok) {
     console.error('');
     console.error(`${RED}✖ products.json failed validation${RESET}`);
@@ -62,6 +69,11 @@ async function main(): Promise<void> {
     process.exit(1);
   }
   console.log(`${GREEN}✓${RESET} shape + cross-handle references valid`);
+  if (result.warnings.length > 0) {
+    console.log(
+      `${YELLOW}!${RESET} ${result.warnings.length} warning(s) — non-blocking; the audit script enforces the launch gate.`,
+    );
+  }
 
   const scaffolding = Object.keys(productData).filter(isScaffoldingHandle);
   if (scaffolding.length > 0) {

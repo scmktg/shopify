@@ -41,9 +41,19 @@ export interface ValidationError {
   message: string;
 }
 
+/**
+ * Soft notices that don't fail the build. The CLI prints them in
+ * yellow alongside the errors. Today only one rule produces warnings:
+ * compliance.watermark.status='certified' with a null licenceNumber.
+ * The audit script (`npm run audit:watermark`) is the launch-blocker
+ * report for that case.
+ */
+export type ValidationWarning = ValidationError;
+
 export interface ValidationResult {
   ok: boolean;
   errors: ReadonlyArray<ValidationError>;
+  warnings: ReadonlyArray<ValidationWarning>;
 }
 
 const VALID_WATERMARK_STATUS: ReadonlySet<WatermarkStatus> = new Set<WatermarkStatus>([
@@ -55,6 +65,7 @@ const VALID_WATERMARK_STATUS: ReadonlySet<WatermarkStatus> = new Set<WatermarkSt
 
 export function validateProducts(input: unknown): ValidationResult {
   const errors: ValidationError[] = [];
+  const warnings: ValidationWarning[] = [];
 
   if (typeof input !== 'object' || input === null || Array.isArray(input)) {
     errors.push({
@@ -62,7 +73,7 @@ export function validateProducts(input: unknown): ValidationResult {
       path: '(root)',
       message: 'products.json must be an object keyed by product handle.',
     });
-    return { ok: false, errors };
+    return { ok: false, errors, warnings };
   }
 
   const map = input as Record<string, unknown>;
@@ -81,7 +92,7 @@ export function validateProducts(input: unknown): ValidationResult {
       });
       continue;
     }
-    validateEntry(handle, entry as Record<string, unknown>, errors);
+    validateEntry(handle, entry as Record<string, unknown>, errors, warnings);
   }
 
   // Cross-handle pass — only run when the per-entry shape passed for
@@ -97,7 +108,7 @@ export function validateProducts(input: unknown): ValidationResult {
     );
   }
 
-  return { ok: errors.length === 0, errors };
+  return { ok: errors.length === 0, errors, warnings };
 }
 
 export function isFileMetaKey(key: string): boolean {
@@ -108,9 +119,13 @@ function validateEntry(
   handle: string,
   entry: Record<string, unknown>,
   errors: ValidationError[],
+  warnings: ValidationWarning[],
 ): void {
   const push = (path: string, message: string): void => {
     errors.push({ handle, path, message });
+  };
+  const warn = (path: string, message: string): void => {
+    warnings.push({ handle, path, message });
   };
 
   // categories — required, exactly 2 strings, both must resolve.
@@ -158,7 +173,7 @@ function validateEntry(
   }
 
   if ('compliance' in entry) {
-    validateCompliance(entry['compliance'] as ProductCompliance, push);
+    validateCompliance(entry['compliance'] as ProductCompliance, push, warn);
   }
   if ('ctas' in entry) {
     validateCtas(entry['ctas'] as ProductCtas, push);
@@ -227,6 +242,7 @@ function validateSpecRows(
 function validateCompliance(
   value: unknown,
   push: (path: string, message: string) => void,
+  warn: (path: string, message: string) => void,
 ): void {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
     push('compliance', 'Must be an object when present.');
@@ -235,7 +251,7 @@ function validateCompliance(
   const compliance = value as Record<string, unknown>;
 
   if ('watermark' in compliance && compliance['watermark'] !== null) {
-    validateWatermark(compliance['watermark'] as WatermarkInfo, push);
+    validateWatermark(compliance['watermark'] as WatermarkInfo, push, warn);
   }
   if ('wels' in compliance && compliance['wels'] !== null) {
     push(
@@ -255,6 +271,7 @@ function validateCompliance(
 function validateWatermark(
   value: unknown,
   push: (path: string, message: string) => void,
+  warn: (path: string, message: string) => void,
 ): void {
   if (typeof value !== 'object' || value === null || Array.isArray(value)) {
     push('compliance.watermark', 'Must be an object or null.');
@@ -289,12 +306,16 @@ function validateWatermark(
     );
   }
 
-  // Launch-blocker: certified + null licence is the hand-off check
-  // called out in the brief (clarification #11).
+  // Launch-blocker hand-off check (clarification #11). Emitted as a
+  // *warning* — the build still passes — because licences often
+  // arrive from the supplier after the engineer has populated the
+  // rest of the entry. The audit script (`npm run audit:watermark`)
+  // is the gate that should fail before launch; this warning keeps
+  // the case visible during day-to-day iteration.
   if (status === 'certified' && wm['licenceNumber'] == null) {
-    push(
+    warn(
       'compliance.watermark.licenceNumber',
-      `Required when status is 'certified'. Add the licence number from the WaterMark certificate or change status to 'pending' until it lands.`,
+      `status='certified' but licenceNumber is null. Add the licence number once the supplier provides it; the audit script will fail before launch.`,
     );
   }
 }

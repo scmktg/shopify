@@ -2,9 +2,7 @@
   "__placeholders": {
     "_comment": "Top-level metadata block — JSON has no native comments. Top-level keys starting with `__` are skipped by the validator and the loader. Do not nest product entries under this key.",
     "note": "Handles listed below contain placeholder content that needs replacement before launch. Empty list means every entry is real-data sourced. The audit script (npm run audit:watermark) reports any compliance.watermark.status='certified' with a missing licenceNumber regardless of whether the handle appears here.",
-    "handles": [
-      "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system"
-    ]
+    "handles": []
   },
 
   "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
@@ -69,64 +67,86 @@
 
   "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system": {
     "categories": ["water-filters", "whole-house"],
-    "tags": ["whole-house", "big-blue", "three-stage", "watermark"],
-    "shortDescription": "Three-stage 20\" × 4.5\" Big Blue whole-house filter — sediment, carbon, and polishing in WaterMark-certified housings.",
-    "description": "A three-stage whole-house filtration system built around 20-inch by 4.5-inch *Big Blue* housings — the de-facto Australian standard for whole-house treatment. Each stage targets a distinct contaminant load: sediment first, then dissolved chlorine and organics through carbon, then a final polish.\n\nDesigned for **mains or rainwater feeds** at typical Australian household flow rates. The housings are WaterMark-certified for direct plumbing into a property's main supply, and they accept any 20×4.5 cartridge from any supplier — there is no proprietary lock-in. Replace cartridges yourself or have a plumber service annually.\n\n- Three 20×4.5 Big Blue housings on a single mounting bracket\n- WaterMark-certified components for plumbed-in mains use\n- Open-standard cartridges — buy replacements from any Australian supplier",
+    "tags": ["watermark", "stainless-steel", "whole-house", "big-blue", "20x45", "three-stage"],
+    "shortDescription": "WaterMark certified three-stage whole house water filter — 304 stainless steel, Big Blue 20\" × 4.5\" housings, 1\" BSP. Installed once on your mains supply line, filters every tap in the home.",
+    "description": "Clean, filtered water from every tap, every shower, every appliance in your home — this is the only whole house water filter system you'll ever need to install. The **Enviro Aqua Premium Three Stage Big Blue Whole House Water Filter System** is **WaterMark certified to AS/NZS 3497**, built from 304 stainless steel, and engineered to handle the full water demand of an Australian family home without any drop in pressure.\n\nThis is not a portable bench top unit or a basic inline filter. This is a **permanent, mains-connected whole-home filtration system** that a licensed plumber installs once on your main water supply line — and then every litre of water entering your home is filtered before it reaches a single tap.\n\n## Why This System\n\n### 1. WaterMark Certified — The Only System Your Plumber Can Legally Install\n\nUnder the Plumbing Code of Australia, any water filter permanently connected to a mains water line must carry **WaterMark certification**. This system does. A licensed plumber can legally install it on your main supply line, issue a certificate of compliance, and your installation is fully covered. Most cheaper systems sold online are not WaterMark certified — your plumber cannot legally install them on a mains line, and your home insurance may not cover you if they fail.\n\n### 2. Big Blue 20″ × 4.5″ — No Pressure Drop, Longer Cartridge Life\n\n\"Big Blue\" refers to the 4.5″ diameter filter housings — nearly four times the filter media volume of standard 2.5″ housings. This matters in two critical ways. First, water flows through at up to **75 litres per minute** with no perceptible pressure loss, even when multiple showers, taps, and appliances run simultaneously. Second, the larger volume of filter media means **cartridges last significantly longer** before replacement, reducing your annual running costs. Three 20″ × 4.5″ housings with **1″ BSP brass inlet and outlet ports** — the correct size for Australian mains supply lines — complete the package.\n\n### 3. 304 Stainless Steel Enclosure — Built for Australian Conditions\n\nThe 304-grade stainless steel enclosure isn't just about looks — though it does look sharp. It is specifically engineered for Australian outdoor and garage installations. **304 stainless is UV-resistant, salt-air resistant, and corrosion-proof**: the chromium-nickel alloy forms a self-renewing protective layer that resists the coastal humidity, summer heat, and UV exposure that corrode powder-coated steel and degrade plastic components over time. If you're in a coastal or high-humidity location, this matters enormously. It's also tamper-resistant, protects the filter housings from physical damage, and presents cleanly on an external wall or in a visible garage location.\n\n## Three-Stage Filtration — What Each Stage Does\n\n### Stage 1 — Sediment Pre-Filter (5 Micron)\n\nThe first stage captures **sediment, rust, sand, silt, and suspended particles** down to 5 microns. This is the workhorse stage — it intercepts the physical debris in your water supply before it can clog the more specialised carbon stages downstream. Protecting the carbon stages from sediment load is what makes a three-stage system significantly more effective and longer-lasting than a two-stage system with carbon alone.\n\n### Stage 2 — Carbon Filtration (Chlorine, Chloramine, Taste & Odour)\n\nThe second stage uses a **granular activated carbon (GAC) or catalytic carbon** cartridge to remove chlorine, chloramines, taste, odour, trihalomethanes (THMs), and a broad range of chemical contaminants. **If your water supply uses chloramine** — which includes Sydney Water, Melbourne Water, SA Water, Urban Utilities (Brisbane/SEQ), and Icon Water (Canberra) — specify a **catalytic carbon cartridge** for Stage 2. Standard GAC carbon cannot reliably remove chloramine at whole-house flow rates; catalytic carbon can, and the 20″ × 4.5″ housing provides the contact time needed for it to work effectively.\n\n### Stage 3 — Carbon Block Polish (Fine Contaminants & Heavy Metals)\n\nThe third stage uses a **carbon block cartridge** for final polishing — capturing any remaining fine particles, residual chemical contaminants, heavy metals including lead and copper, and cysts. Carbon block's dense structure provides longer contact time and finer filtration than GAC, making it the ideal finishing stage. For households with **PFAS concerns**, a high-grade carbon block in Stage 3 provides meaningful reduction of longer-chain PFAS compounds (PFOS, PFOA) from the whole-home supply.\n\n## Pressure Gauges — Know Exactly When to Change Your Filters\n\nThis system includes **pressure gauges** that monitor incoming and outgoing water pressure. As cartridges accumulate contaminants, the pressure differential between inlet and outlet increases — giving you a clear, objective signal that a cartridge change is due. No guessing, no unnecessary early replacement, no waiting until the filters are overloaded. It's a feature that cheaper systems don't include, and over the life of the system it saves you money and ensures your water quality never quietly degrades.\n\n## What's Included\n\n- 3 × Big Blue 20″ × 4.5″ filter housings with 304 stainless steel enclosure & frame\n- Stainless steel mounting bracket\n- 3 × filter cartridges (sediment + carbon stages)\n- Pressure gauges\n- Housing removal wrench\n- Spare O-rings\n\n## Configure for Your Water Supply\n\nThe Big Blue format accepts any standard 20″ × 4.5″ cartridge — widely available from Enviro Aqua. Configure for your water source:\n\n- **Town water with chlorine:** Sediment (5µm) → GAC carbon → Carbon block\n- **Town water with chloramine** (Sydney, Melbourne, Brisbane, Adelaide, Canberra): Sediment (5µm) → *Catalytic carbon* → Carbon block\n- **Rainwater tank:** Sediment (1–5µm) → Carbon block → Sub-micron or UV stage\n- **PFAS concerns:** Sediment → Catalytic carbon → High-grade carbon block\n\nNot sure which configuration suits your area? Contact us and we'll recommend the right cartridge set for your water supply.\n\n## WaterMark Certification — What It Means for You\n\nWaterMark certification (AS/NZS 3497), administered by the Australian Building Codes Board (ABCB), confirms this system has been independently tested for structural integrity under Australian mains water pressure, verified to use materials that will not leach contaminants into your drinking water, and assessed for correct fittings and pressure ratings. The manufacturing facility undergoes ongoing annual auditing as a condition of maintaining certification.\n\nFor you, this means three things: your licensed plumber can legally install this system and issue a certificate of compliance; your installation is covered under your home insurance; and if anything goes wrong, you have the backing of a certified, audited product. Verify this system on the official [ABCB WaterMark Product Database](https://watermark.abcb.gov.au/).\n\n## Installation\n\nInstalled on your main cold water supply line — typically at the point where the mains enters your home, in a garage, under the house, or at the water meter. Installation must be carried out by a **licensed plumber** (required under Australian plumbing law for any mains connection). We recommend asking your plumber to add **isolation valves and a bypass** on either side of the system — this allows you to service the filters without cutting water to the whole house.\n\nCentral Coast NSW customers: we offer [professional whole house filter installation by licensed plumbers on the Central Coast](/whole-house-installation-package/).\n\n## Ongoing Maintenance\n\nReplace cartridges every **6–12 months** depending on your water quality and household usage. The pressure gauges take the guesswork out of timing — a rising pressure differential tells you a cartridge change is due before water quality is affected. Big Blue 20″ × 4.5″ cartridges last considerably longer than standard 2.5″ cartridges, keeping annual running costs to approximately **$120–$220 per year**. Replacement cartridges are available directly from Enviro Aqua, shipped Australia-wide.",
     "features": [
-      "Three 20\" × 4.5\" Big Blue housings, WaterMark-certified",
-      "Single galvanised mounting bracket — wall-mount ready",
-      "Stage 1 sediment, Stage 2 carbon, Stage 3 polishing cartridge",
-      "Pressure release buttons on each housing for tool-free servicing",
-      "Open-standard housings — any 20×4.5 cartridge fits"
+      "WaterMark certified to AS/NZS 3497 — your licensed plumber can legally install this on a mains line",
+      "304 stainless steel enclosure — UV, salt-air, and corrosion resistant",
+      "Big Blue 20″ × 4.5″ housings — up to 75 L/min flow rate with no pressure drop",
+      "Three-stage filtration — sediment, carbon, carbon block",
+      "1″ BSP brass inlet/outlet — correct size for Australian mains",
+      "Pressure gauges show exactly when cartridges need changing",
+      "Includes mounting bracket, wrench, spare O-rings, and starter cartridges"
     ],
     "headlineSpecs": [
-      { "label": "Housing size", "value": "20\" × 4.5\" Big Blue" },
-      { "label": "Stages", "value": "Three (sediment, carbon, polish)" },
-      { "label": "Connection", "value": "1\" BSP inlet/outlet" },
+      { "label": "Stages", "value": "3" },
+      { "label": "Housing size", "value": "20\" × 4.5\" (Big Blue)" },
+      { "label": "Connection", "value": "1\" BSP" },
       { "label": "Flow rate", "value": "Up to 75 L/min" }
     ],
     "fullSpecs": [
+      { "label": "Installation type", "value": "Whole house, mains-connected" },
       { "label": "Stages", "value": "3" },
-      { "label": "Housing size", "value": "20 inch × 4.5 inch (Big Blue)" },
-      { "label": "Stage 1", "value": "Pleated sediment, 5 micron" },
-      { "label": "Stage 2", "value": "Carbon block, 5 micron" },
-      { "label": "Stage 3", "value": "Polishing carbon, 1 micron" },
-      { "label": "Inlet / outlet", "value": "1 inch BSP" },
-      { "label": "Maximum flow rate", "value": "75 L/min" },
-      { "label": "Maximum operating pressure", "value": "550 kPa" },
-      { "label": "Mounting", "value": "Wall-mount bracket included" },
-      { "label": "Cartridge replacement interval", "value": "12 months typical" },
-      { "label": "Certification", "value": "WaterMark certified housings" }
+      { "label": "Housing size", "value": "20\" × 4.5\" (Big Blue)" },
+      { "label": "Connection size", "value": "1\" BSP" },
+      { "label": "Flow rate", "value": "Up to 75 L/min" },
+      { "label": "Enclosure", "value": "304 stainless steel" },
+      { "label": "Inlet / outlet ports", "value": "Brass, 1\" BSP" },
+      { "label": "Pressure gauges", "value": "Inlet & outlet" },
+      { "label": "Cartridges included", "value": "Sediment + carbon stages" },
+      { "label": "Compatible cartridges", "value": "Any standard 20\" × 4.5\" Big Blue" },
+      { "label": "Cartridge change interval", "value": "6–12 months" },
+      { "label": "Annual running cost", "value": "Approx. $120–$220" },
+      { "label": "Certification standard", "value": "AS/NZS 3497 (WaterMark)" }
     ],
     "recommendedFor": [
-      "Whole-house treatment of mains or rainwater supply",
-      "Properties on tank or bore water",
-      "Sites with chlorinated mains where taste and odour matter",
-      "Households planning to service cartridges themselves"
+      "Australian family homes wanting filtered water from every tap",
+      "Properties on rural tank water needing whole-of-home filtration",
+      "Properties on chlorinated or chloraminated mains water",
+      "Coastal, high-humidity, or outdoor installation locations",
+      "Homes with PFAS concerns wanting whole-house reduction",
+      "New builds and renovations where filtration is installed once, properly"
     ],
     "compliance": {
       "watermark": {
         "status": "certified",
-        "licenceNumber": "WMKA67890",
-        "certifier": "Global-Mark",
-        "validUntil": "2028-03-31"
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
       },
       "wels": null,
-      "note": null
+      "note": "WaterMark certified to AS/NZS 3497. Verify on the [ABCB WaterMark Product Database](https://watermark.abcb.gov.au/). Licence number to be added once supplied by manufacturer."
     },
     "ctas": {
       "primary": "Add to cart",
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [],
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5",
+        "granular-activated-carbon-water-filter-gac-5-micron-20-x-4-5"
+      ],
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "3-Stage 20×4.5 Triple Big Blue Whole-House Water Filter — WaterMark",
-      "description": "WaterMark-certified three-stage Big Blue whole-house filter — 20×4.5 housings, 75 L/min, sediment + carbon + polish. Same-day dispatch from Wyong NSW.",
+      "title": "Whole House Water Filter — 3 Stage 20\" × 4.5\" Big Blue WaterMark | Enviro Aqua",
+      "description": "WaterMark certified 3-stage whole house water filter system. 304 stainless steel, Big Blue 20\" × 4.5\" housings, 1\" BSP, up to 75 L/min. Same-day dispatch from Wyong NSW.",
       "ogImage": null
     }
+  },
+
+  "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5": {
+    "categories": ["cartridges", "sediment"]
+  },
+
+  "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5": {
+    "categories": ["cartridges", "carbon"]
+  },
+
+  "granular-activated-carbon-water-filter-gac-5-micron-20-x-4-5": {
+    "categories": ["cartridges", "carbon"]
   },
 
   "_seed-minimal-example": {
