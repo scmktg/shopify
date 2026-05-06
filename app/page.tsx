@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 import {
   ChevronDown,
@@ -19,7 +20,11 @@ import {
 import { CATEGORIES } from '@/content/categories';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
+import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+
+const INSTALL_PACKAGE_HANDLE =
+  'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
 
 // Re-render the homepage at most once a minute so featured-product
 // curation in Shopify shows up promptly on the live site.
@@ -92,12 +97,27 @@ async function loadFeatured() {
   return padded.slice(0, FEATURED_TARGET);
 }
 
+async function loadInstallHeroImage(): Promise<{
+  url: string;
+  alt: string;
+} | null> {
+  const product = await getProductByHandle(INSTALL_PACKAGE_HANDLE);
+  if (!product?.featuredImage) return null;
+  return {
+    url: product.featuredImage.url,
+    alt: product.featuredImage.altText ?? product.title,
+  };
+}
+
 export default async function HomePage() {
-  const featured = await loadFeatured();
+  const [featured, installHeroImage] = await Promise.all([
+    loadFeatured(),
+    loadInstallHeroImage(),
+  ]);
 
   return (
     <>
-      <Hero />
+      <Hero installHeroImage={installHeroImage} />
       <CategoryGrid />
       <TrustStrip />
       <FeaturedProducts products={featured} />
@@ -180,7 +200,11 @@ function Faq() {
   );
 }
 
-function Hero() {
+interface HeroProps {
+  installHeroImage: { url: string; alt: string } | null;
+}
+
+function Hero({ installHeroImage }: HeroProps) {
   return (
     <section className="bg-gray-50 border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -213,21 +237,52 @@ function Hero() {
             </p>
           </div>
 
-          {/* Decorative hero graphic placeholder. Swap for the brand
-              illustration when the asset is ready. */}
-          <div
-            aria-hidden="true"
-            className="hidden md:flex items-center justify-center"
-          >
-            <Droplet
-              size={260}
-              strokeWidth={1.25}
-              className="text-brand-blue"
-            />
-          </div>
+          <InstallHeroCard image={installHeroImage} />
         </div>
       </div>
     </section>
+  );
+}
+
+interface InstallHeroCardProps {
+  image: { url: string; alt: string } | null;
+}
+
+function InstallHeroCard({ image }: InstallHeroCardProps) {
+  return (
+    <div className="bg-white border border-gray-200 rounded p-5 md:p-6 flex flex-col gap-4">
+      <span className="self-start inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
+        Local offer — Central Coast NSW
+      </span>
+      <div className="flex gap-4 items-start">
+        <div className="relative flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 bg-white border border-gray-200 rounded overflow-hidden">
+          {image ? (
+            <Image
+              src={image.url}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 640px) 112px, 96px"
+              className="object-contain p-2"
+            />
+          ) : null}
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-lg md:text-xl font-semibold text-black leading-snug">
+            Whole House Water Filter — Installed for $2,299
+          </h3>
+          <p className="mt-2 text-sm text-black/70">
+            WaterMark certified system + local plumber. Filtered water at every
+            tap.
+          </p>
+        </div>
+      </div>
+      <Link
+        href="/whole-house-installation-package/"
+        className="self-start inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-5 py-2.5 rounded transition-colors text-sm"
+      >
+        Get a quote
+      </Link>
+    </div>
   );
 }
 
