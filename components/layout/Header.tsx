@@ -70,7 +70,7 @@ export function Header() {
 
         <div className="flex items-center gap-1">
           <SearchBar triggerClassName="inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
-          <CartButton className="hidden md:inline-flex relative items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
+          <CartButton className="relative inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
           <MobileMenu items={navItems} />
         </div>
       </div>

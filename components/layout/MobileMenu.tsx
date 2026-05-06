@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Menu, Search, ShoppingCart, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import clsx from 'clsx';
 
 interface NavItem {
@@ -43,7 +43,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
         aria-expanded={isOpen}
         aria-controls="mobile-menu-panel"
         onClick={() => setIsOpen(true)}
-        className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded hover:opacity-80"
+        className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors"
       >
         <Menu size={24} aria-hidden="true" />
       </button>
@@ -55,17 +55,19 @@ export function MobileMenu({ items }: MobileMenuProps) {
         aria-label="Site menu"
         inert={!isOpen}
         className={clsx(
-          'fixed inset-0 z-50 bg-black text-white md:hidden transition-transform duration-200 ease-out',
+          'fixed inset-0 z-50 bg-white text-black md:hidden transition-transform duration-200 ease-out',
           isOpen ? 'translate-x-0' : 'translate-x-full',
         )}
       >
-        <div className="flex items-center justify-between h-16 px-4 border-b border-white/10">
-          <span className="font-semibold text-lg tracking-wide">ENVIRO AQUA</span>
+        <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+          <span className="font-semibold text-lg tracking-wide text-black">
+            ENVIRO AQUA
+          </span>
           <button
             type="button"
             aria-label="Close menu"
             onClick={() => setIsOpen(false)}
-            className="inline-flex items-center justify-center h-10 w-10 rounded hover:opacity-80"
+            className="inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors"
           >
             <X size={24} aria-hidden="true" />
           </button>
@@ -77,31 +79,12 @@ export function MobileMenu({ items }: MobileMenuProps) {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="flex items-center min-h-12 text-lg font-medium border-b border-white/10"
+              className="flex items-center min-h-12 text-lg font-medium text-black hover:text-brand-blue border-b border-gray-200 transition-colors"
             >
               {item.label}
             </Link>
           ))}
         </nav>
-
-        <div className="flex items-center gap-2 px-4 pt-4">
-          <button
-            type="button"
-            aria-label="Search"
-            className="inline-flex items-center gap-2 min-h-12 px-4 rounded hover:opacity-80"
-          >
-            <Search size={20} aria-hidden="true" />
-            <span className="text-base">Search</span>
-          </button>
-          <button
-            type="button"
-            aria-label="Cart"
-            className="inline-flex items-center gap-2 min-h-12 px-4 rounded hover:opacity-80"
-          >
-            <ShoppingCart size={20} aria-hidden="true" />
-            <span className="text-base">Cart</span>
-          </button>
-        </div>
       </div>
     </>
   );
