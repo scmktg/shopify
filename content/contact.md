@@ -1,20 +1,29 @@
 ---
-title: "Contact Us"
-description: "Get in touch with Enviro Aqua. Email, phone, and contact form. Australian business hours, Mon–Fri."
+title: "Contact Enviro Aqua"
+description: "Phone, email, showroom address, and social channels for Enviro Aqua. Wyong NSW Central Coast showroom — local customers welcome."
 relatedLinks:
   - { label: "Help & buying guides", href: "/help/" }
   - { label: "Shipping & delivery", href: "/shipping/" }
   - { label: "Returns & warranty", href: "/returns/" }
 ---
 
-The fastest way to reach us is the form below. We respond to all enquiries within one business day.
+The fastest way to reach us is the phone or email below. We respond to all enquiries within one business day.
 
-## Direct contact
+## Phone, email, and social
 
+- **Phone:** [(02) 8772 8162](tel:+61287728162)
 - **Email:** [info@enviroaqua.com.au](mailto:info@enviroaqua.com.au)
-- **Phone:** _<!-- TODO: phone number to be confirmed before launch -->_
 - **Hours:** Monday to Friday, 9am – 5pm AEST (excluding NSW public holidays)
-- **Business address:** Central Coast NSW _<!-- TODO: full street address to be confirmed -->_
+- **Facebook:** [facebook.com/EnviroAqua.com.au](https://www.facebook.com/EnviroAqua.com.au/)
+- **Instagram:** [@enviro_aqua](https://www.instagram.com/enviro_aqua/)
+
+## Wyong showroom
+
+We have a showroom and warehouse on the Central Coast NSW. Local customers are welcome to visit during business hours.
+
+- **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
+- **Hours:** Monday to Friday, 9am – 5pm AEST
+- **Click & Collect:** free pickup from the showroom — orders are usually ready within two hours during business hours, and we will email or text you when yours is ready.
 
 ## What we can help with
 
@@ -25,8 +34,8 @@ The fastest way to reach us is the form below. We respond to all enquiries withi
 - Trade-account setup for installers ordering regularly
 - WaterMark licence number verification
 
-We do not currently offer installation. If you need a licensed plumber on the Central Coast, we can recommend installers we work with regularly — contact us with your suburb and the system you are installing.
+We do not currently offer installation. If you need a licensed plumber on the Central Coast, get in touch with the system you are installing — we can recommend installers we work with regularly.
 
 ## Privacy
 
-Information you submit through the form or by email is handled per our [privacy policy](/privacy/). We use your contact details to respond to your enquiry and nothing else.
+Information you send us is handled per our [privacy policy](/privacy/). We use your contact details to respond to your enquiry and nothing else.

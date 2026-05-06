@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { loadMarkdownPage } from '@/lib/content/markdown';
 import { StaticContentPage } from '@/components/editorial/StaticContentPage';
-import { ContactForm } from '@/components/contact/ContactForm';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
@@ -32,9 +31,7 @@ export default async function ContactPage() {
           breadcrumbs.map((b) => ({ name: b.name, path: b.href })),
         )}
       />
-      <StaticContentPage page={page} breadcrumbs={breadcrumbs}>
-        <ContactForm />
-      </StaticContentPage>
+      <StaticContentPage page={page} breadcrumbs={breadcrumbs} />
     </>
   );
 }
