@@ -1,0 +1,61 @@
+/**
+ * Single source of truth for Enviro Aqua's real business details.
+ *
+ * Anywhere the site renders a phone number, address, ABN, ACN, social
+ * link, opening hours, or returns/shipping policy reference should
+ * import from here rather than re-hardcoding the value. Markdown
+ * editorial content cannot import TS — those files have the values
+ * baked in by hand at the time of last update; when something here
+ * changes, search the repo for the old value and update both.
+ */
+export const BUSINESS_INFO = {
+  name: 'Enviro Aqua',
+  legalName: 'Enviro Aqua',
+  acn: '638 197 734',
+  abn: '24 638 197 734',
+  email: 'info@enviroaqua.com.au',
+  phone: {
+    /** Human-readable display form. */
+    display: '(02) 8772 8162',
+    /** E.164 form for the tel: link. */
+    tel: '+61287728162',
+  },
+  address: {
+    street: '6/45 Amsterdam Cct',
+    locality: 'Wyong',
+    region: 'NSW',
+    postalCode: '2259',
+    country: 'AU',
+  },
+  showroom: {
+    locality: 'Wyong, NSW',
+    /** Plain-English summary; same as opening hours. */
+    hours: 'Mon–Fri 9am–5pm AEST',
+    /** Schema.org openingHours format. */
+    schemaHours: 'Mo-Fr 09:00-17:00',
+  },
+  /** Same-day dispatch cutoff for orders received on a business day. */
+  orderCutoff: '12:00pm AEST',
+  returns: {
+    /** Days from delivery during which a return can be requested. */
+    windowDays: 14,
+    /** What's eligible — damaged/faulty only, not change-of-mind. */
+    scope: 'damaged-or-faulty',
+    defaultWarrantyMonths: 12,
+  },
+  social: {
+    facebook: 'https://www.facebook.com/EnviroAqua.com.au/',
+    instagram: 'https://www.instagram.com/enviro_aqua/',
+  },
+} as const;
+
+/** "6/45 Amsterdam Cct, Wyong, NSW 2259". */
+export function fullAddress(): string {
+  const a = BUSINESS_INFO.address;
+  return `${a.street}, ${a.locality}, ${a.region} ${a.postalCode}`;
+}
+
+/** "ABN 24 638 197 734 · ACN 638 197 734". */
+export function abnAcnLine(): string {
+  return `ABN ${BUSINESS_INFO.abn} · ACN ${BUSINESS_INFO.acn}`;
+}

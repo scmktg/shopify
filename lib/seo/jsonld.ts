@@ -1,5 +1,6 @@
 import type { Product } from '@/types/product';
 import type { FaqItem } from '@/lib/content/markdown';
+import { BUSINESS_INFO } from '@/content/business-info';
 import { absoluteUrl, getSiteUrl } from './siteUrl';
 
 export type JsonLd = Record<string, unknown>;
@@ -9,16 +10,50 @@ export function organisationSchema(): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Enviro Aqua',
+    name: BUSINESS_INFO.name,
     url,
     logo: absoluteUrl('/logo.svg'),
     description:
       "Australia's specialist water filtration retailer — wholesale prices for everyone.",
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'AU',
-      addressRegion: 'NSW',
+      streetAddress: BUSINESS_INFO.address.street,
+      addressLocality: BUSINESS_INFO.address.locality,
+      addressRegion: BUSINESS_INFO.address.region,
+      postalCode: BUSINESS_INFO.address.postalCode,
+      addressCountry: BUSINESS_INFO.address.country,
     },
+  };
+}
+
+/**
+ * LocalBusiness extends Organization, so the LocalBusiness emitted at
+ * the layout level covers Organization rich-results requirements as
+ * well. Used sitewide in app/layout.tsx for local SEO ranking.
+ */
+export function localBusinessSchema(): JsonLd {
+  const url = getSiteUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: BUSINESS_INFO.name,
+    url,
+    logo: absoluteUrl('/logo.svg'),
+    description:
+      "Australia's specialist water filtration retailer — wholesale prices for everyone.",
+    telephone: BUSINESS_INFO.phone.tel,
+    email: BUSINESS_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: BUSINESS_INFO.address.street,
+      addressLocality: BUSINESS_INFO.address.locality,
+      addressRegion: BUSINESS_INFO.address.region,
+      postalCode: BUSINESS_INFO.address.postalCode,
+      addressCountry: BUSINESS_INFO.address.country,
+    },
+    openingHours: BUSINESS_INFO.showroom.schemaHours,
+    priceRange: '$$',
+    sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
   };
 }
 
