@@ -25,7 +25,7 @@ export function PriceDisplay({ money, className }: PriceDisplayProps) {
     ? formatterFor(money.currencyCode).format(amount)
     : money.amount;
   return (
-    <span className={className}>
+    <span className={`tabular-nums ${className ?? ''}`}>
       {formatted} {money.currencyCode}
     </span>
   );

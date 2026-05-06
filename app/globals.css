@@ -17,3 +17,22 @@ body {
   font-family: var(--font-sans);
   line-height: 1.5;
 }
+
+/*
+ * Site-wide heading rhythm.
+ *
+ * The system font stack already gives us a neo-grotesque feel on
+ * macOS/iOS (San Francisco) and Windows (Segoe UI). We tighten the
+ * heading line-height and pull the tracking in slightly so titles
+ * feel transactional rather than editorial. Body line-height stays
+ * at 1.5 for comfortable reading.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}

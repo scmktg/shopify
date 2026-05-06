@@ -31,7 +31,7 @@ export function ProductTrustBlock({
   return (
     <section
       aria-label="Availability and shipping"
-      className="mt-6 flex flex-col gap-3 text-sm text-black"
+      className="mt-6 flex flex-col gap-2.5 text-sm text-black font-medium"
     >
       <StockLine stockStatus={stockStatus} stockCount={stockCount} />
 

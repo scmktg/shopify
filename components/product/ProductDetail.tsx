@@ -96,7 +96,7 @@ export function ProductDetail({
             {subcategoryLabel}
           </Link>
 
-          <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-black">
+          <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-black tracking-tight">
             {product.title}
           </h1>
 
@@ -110,7 +110,7 @@ export function ProductDetail({
             <div className="flex items-baseline gap-2 flex-wrap">
               <PriceDisplay
                 money={product.priceRange.minVariantPrice}
-                className="text-2xl font-semibold text-black"
+                className="text-3xl md:text-4xl font-bold text-black tracking-tight"
               />
               <span className="text-sm text-black/50">inc GST</span>
               {compareAt && (
@@ -224,7 +224,7 @@ function SpecificationsPanel({
             className="flex justify-between gap-4 border-b border-gray-100 py-2"
           >
             <dt className="font-medium text-black/70">{row.label}</dt>
-            <dd className="text-black text-right">{row.value}</dd>
+            <dd className="text-black text-right tabular-nums">{row.value}</dd>
           </div>
         ))}
       </dl>
