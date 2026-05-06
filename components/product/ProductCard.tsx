@@ -9,7 +9,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const href = getProductUrl(product.tags, product.handle);
+  const href = getProductUrl(product.handle);
   const image = product.featuredImage;
 
   return (

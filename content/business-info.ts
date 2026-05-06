@@ -54,6 +54,43 @@ export const BUSINESS_INFO = {
   /** Free-shipping order threshold (AUD). */
   shippingFreeThresholdAud: 200,
   /**
+   * Tiered shipping prices surfaced in the buy-box and trust strip.
+   * "from" prices — actual checkout cost depends on weight, zone,
+   * and Shopify shipping rules. The free-over threshold above
+   * dominates for orders that qualify.
+   */
+  shipping: {
+    standardFromAud: 10.95,
+    expressFromAud: 14.95,
+  },
+  /** One-line returns summary used in the buy-box meta and footer. */
+  returnsSummary: '14-day returns on damaged or faulty items',
+  /**
+   * Pickup window quoted on the click-and-collect buy-box line. The
+   * showroom locality and link are composed in the component.
+   */
+  clickAndCollectPickupWindow: 'usually ready in 2 hours',
+  /**
+   * Three short copy items for the brand trust strip rendered below
+   * every product page. Single line each, no card boxes — see
+   * components/product/BrandTrustStrip.tsx. Edit copy here, never
+   * in the component.
+   */
+  trustStrip: [
+    {
+      heading: 'Australian-owned',
+      body: 'Real Wyong NSW warehouse and showroom. ABN 24 638 197 734. Proper tax invoices on every order.',
+    },
+    {
+      heading: 'Same-day dispatch',
+      body: 'Orders placed before 12pm AEST on a business day ship the same day from Wyong. Tracked Australia-wide.',
+    },
+    {
+      heading: 'No proprietary lock-in',
+      body: 'Standard 10" and 20" Australian housings. Buy replacement cartridges from any supplier.',
+    },
+  ],
+  /**
    * Below this on-hand quantity, product pages render an amber
    * "Only N left in stock" indicator instead of plain "In stock".
    */

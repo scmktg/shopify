@@ -1,42 +1,42 @@
 import Link from 'next/link';
-import type {
-  CartridgeType,
-  InstallationType,
-  Product,
-  ProductMetafields,
-} from '@/types/product';
-import { sanitiseProductDescriptionHtml } from '@/lib/content/productHtml';
+import type { Product } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
+import type { ProductContent } from '@/lib/products/schema';
 import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
-import { WatermarkBadge } from './WatermarkBadge';
-import { CompatibleCartridges } from './CompatibleCartridges';
-import { RelatedSystems } from './RelatedSystems';
+import { CertificationSlot } from './CertificationSlot';
+import { ProductOverview } from './ProductOverview';
+import { ProductFeatures } from './ProductFeatures';
+import { HeadlineSpecs } from './HeadlineSpecs';
+import { RecommendedFor } from './RecommendedFor';
+import { FullSpecs } from './FullSpecs';
+import { ComplianceSection } from './ComplianceSection';
+import { BoughtTogether } from './BoughtTogether';
+import { MoreInCategory } from './MoreInCategory';
+import { BrandTrustStrip } from './BrandTrustStrip';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 import { MobileStickyBuyBar } from '@/components/cart/MobileStickyBuyBar';
 import { ProductTrustBlock, type StockStatus } from './ProductTrustBlock';
 import { DEFAULT_LOW_STOCK_THRESHOLD } from '@/lib/site-config';
 
-const INSTALL_PACKAGE_HANDLES: ReadonlySet<string> = new Set([
-  'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
-]);
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 
-function offersInstallPackage(product: Product): boolean {
-  return (
-    INSTALL_PACKAGE_HANDLES.has(product.handle) ||
-    product.tags.includes(INSTALL_PACKAGE_TAG)
-  );
+function offersInstallPackage(content: ProductContent): boolean {
+  return (content.tags ?? []).includes(INSTALL_PACKAGE_TAG);
 }
 
 interface ProductDetailProps {
+  /** Shopify-sourced commerce primitives (title, price, stock, images, variants, sku, handle). */
   product: Product;
+  /** Content from data/products.json[handle] — every non-commerce field. */
+  content: ProductContent;
   category: string;
   subcategory: string;
 }
 
 export function ProductDetail({
   product,
+  content,
   category,
   subcategory,
 }: ProductDetailProps) {
@@ -54,6 +54,11 @@ export function ProductDetail({
         firstVariant.quantityAvailable <= DEFAULT_LOW_STOCK_THRESHOLD
       ? 'low_stock'
       : 'in_stock';
+  const subcategoryNode = findSubcategory(category, subcategory);
+  const subcategoryLabel =
+    subcategoryNode?.subcategory.label ?? humaniseSlug(subcategory);
+  const boughtTogether = content.upsells?.boughtTogether ?? [];
+  const moreSource = content.upsells?.moreInCategory ?? 'auto';
 
   return (
     <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
@@ -81,12 +86,19 @@ export function ProductDetail({
       </nav>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-        <div className="md:sticky md:top-24">
+        <div>
           <ProductGallery images={product.images} title={product.title} />
         </div>
 
-        <div>
-          <h1 className="text-3xl md:text-4xl font-semibold text-black">
+        <div className="md:sticky md:top-24">
+          <Link
+            href={`/${category}/${subcategory}/`}
+            className="inline-block text-xs font-semibold uppercase tracking-wide text-brand-blue border border-brand-blue/30 bg-brand-blue-light px-3 py-1 rounded-full hover:bg-brand-blue hover:text-white transition-colors"
+          >
+            {subcategoryLabel}
+          </Link>
+
+          <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-black tracking-tight">
             {product.title}
           </h1>
 
@@ -96,33 +108,38 @@ export function ProductDetail({
             </p>
           )}
 
-          <div className="mt-4 flex items-baseline gap-3 flex-wrap">
-            <PriceDisplay
-              money={product.priceRange.minVariantPrice}
-              className="text-2xl font-semibold text-black"
-            />
-            {compareAt && (
-              <s className="text-base text-black/60">
-                <PriceDisplay money={compareAt} />
-              </s>
-            )}
-            {savings && (
-              <span className="text-sm font-semibold text-brand-blue">
-                Save {savings.amount} ({savings.percent}%)
-              </span>
-            )}
+          <div className="mt-4 flex items-baseline justify-between gap-4 flex-wrap">
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <PriceDisplay
+                money={product.priceRange.minVariantPrice}
+                className="text-3xl md:text-4xl font-bold text-black tracking-tight"
+              />
+              <span className="text-sm text-black/50">inc GST</span>
+              {compareAt && (
+                <s className="ml-2 text-base text-black/60">
+                  <PriceDisplay money={compareAt} />
+                </s>
+              )}
+              {savings && (
+                <span className="text-sm font-semibold text-brand-blue">
+                  Save {savings.amount} ({savings.percent}%)
+                </span>
+              )}
+            </div>
+            <span className="text-sm text-black/50">
+              Same price retail or trade
+            </span>
           </div>
 
-          {product.metafields.watermark_status && (
-            <div className="mt-4">
-              <WatermarkBadge status={product.metafields.watermark_status} />
-            </div>
-          )}
+          <div className="mt-4">
+            <CertificationSlot compliance={content.compliance} />
+          </div>
 
           {firstVariant && (
             <AddToCartButton
               variantId={firstVariant.id}
               available={inStock}
+              label={content.ctas?.primary ?? undefined}
             />
           )}
 
@@ -135,7 +152,7 @@ export function ProductDetail({
             />
           )}
 
-          {offersInstallPackage(product) && (
+          {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
               Live on the Central Coast NSW? Get this installed by a local
               plumber for $2,299 —{' '}
@@ -151,211 +168,37 @@ export function ProductDetail({
         </div>
       </div>
 
-      <section className="mt-12 border-t border-gray-200 pt-8">
-        <div
-          className="prose prose-sm max-w-none"
-          dangerouslySetInnerHTML={{
-            __html: sanitiseProductDescriptionHtml(product.descriptionHtml),
-          }}
-        />
-      </section>
+      <ProductOverview description={content.description} />
+      <ProductFeatures features={content.features} />
+      <HeadlineSpecs specs={content.headlineSpecs} />
+      <RecommendedFor items={content.recommendedFor} />
+      <FullSpecs specs={content.fullSpecs} />
+      <ComplianceSection compliance={content.compliance} />
 
-      <SpecificationsPanel metafields={product.metafields} />
+      {boughtTogether.length > 0 && (
+        <BoughtTogether handles={boughtTogether} />
+      )}
 
-      <CompatibleCartridges
-        housingSize={product.metafields.housing_size}
-        excludeHandle={product.handle}
-      />
-
-      <RelatedSystems
+      <MoreInCategory
+        source={moreSource}
         category={category}
         subcategory={subcategory}
-        subcategoryLabel={
-          findSubcategory(category, subcategory)?.subcategory.label ??
-          subcategory
-        }
         currentHandle={product.handle}
+        subcategoryLabel={subcategoryLabel}
       />
+
+      <BrandTrustStrip />
 
       {firstVariant && (
         <MobileStickyBuyBar
           variantId={firstVariant.id}
           available={inStock}
           price={product.priceRange.minVariantPrice}
+          title={product.title}
+          thumbnail={product.featuredImage ?? product.images[0] ?? null}
         />
       )}
     </article>
-  );
-}
-
-interface SpecRow {
-  label: string;
-  value: string;
-}
-
-function SpecificationsPanel({
-  metafields,
-}: {
-  metafields: ProductMetafields;
-}) {
-  const rows = buildSpecificationRows(metafields);
-  if (rows.length === 0) return null;
-
-  return (
-    <section className="mt-12 border-t border-gray-200 pt-8">
-      <h2 className="text-xl font-semibold text-black">Specifications</h2>
-      <dl className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
-        {rows.map((row) => (
-          <div
-            key={row.label}
-            className="flex justify-between gap-4 border-b border-gray-100 py-2"
-          >
-            <dt className="font-medium text-black/70">{row.label}</dt>
-            <dd className="text-black text-right">{row.value}</dd>
-          </div>
-        ))}
-      </dl>
-    </section>
-  );
-}
-
-function buildSpecificationRows(
-  m: ProductMetafields,
-): ReadonlyArray<SpecRow> {
-  const rows: SpecRow[] = [];
-
-  // WaterMark status itself is now rendered as <WatermarkBadge> next
-  // to the price; only the supporting detail rows go in the spec
-  // panel so we don't duplicate the visible label.
-  if (m.watermark_licence_number) {
-    rows.push({
-      label: 'WaterMark Licence',
-      value: m.watermark_licence_number,
-    });
-  }
-  if (m.watermark_certifier) {
-    rows.push({ label: 'Certifier', value: m.watermark_certifier });
-  }
-  if (m.watermark_valid_until) {
-    rows.push({
-      label: 'Certificate Valid Until',
-      value: formatIsoDate(m.watermark_valid_until),
-    });
-  }
-
-  if (m.wels_rating_stars !== null) {
-    rows.push({
-      label: 'WELS Rating',
-      value: `${m.wels_rating_stars} star${m.wels_rating_stars === 1 ? '' : 's'}`,
-    });
-  }
-  if (m.wels_registration_number) {
-    rows.push({
-      label: 'WELS Registration',
-      value: m.wels_registration_number,
-    });
-  }
-
-  if (m.installation_type) {
-    rows.push({
-      label: 'Installation Type',
-      value: formatInstallationType(m.installation_type),
-    });
-  }
-  if (m.stages !== null) {
-    rows.push({ label: 'Stages', value: String(m.stages) });
-  }
-  if (m.cartridge_type) {
-    rows.push({
-      label: 'Cartridge Type',
-      value: formatCartridgeType(m.cartridge_type),
-    });
-  }
-  if (m.micron_rating !== null) {
-    rows.push({
-      label: 'Micron Rating',
-      value: `${m.micron_rating} micron`,
-    });
-  }
-  if (m.housing_size) {
-    rows.push({ label: 'Housing Size', value: m.housing_size });
-  }
-  if (m.connection_size) {
-    rows.push({ label: 'Connection Size', value: m.connection_size });
-  }
-  if (m.flow_rate_lpm !== null) {
-    rows.push({ label: 'Flow Rate', value: `${m.flow_rate_lpm} L/min` });
-  }
-
-  if (m.voltage) {
-    rows.push({ label: 'Voltage', value: m.voltage });
-  }
-  if (m.capacity_l !== null) {
-    rows.push({ label: 'Capacity', value: `${m.capacity_l} L` });
-  }
-  if (m.bunded !== null) {
-    rows.push({ label: 'Bunded', value: m.bunded ? 'Yes' : 'No' });
-  }
-
-  if (m.country_of_origin) {
-    rows.push({ label: 'Country of Origin', value: m.country_of_origin });
-  }
-  if (m.warranty_months !== null) {
-    rows.push({
-      label: 'Warranty',
-      value:
-        m.warranty_months === 1
-          ? '1 month'
-          : `${m.warranty_months} months`,
-    });
-  }
-
-  return rows;
-}
-
-function formatInstallationType(type: InstallationType): string {
-  switch (type) {
-    case 'under-sink':
-      return 'Under Sink';
-    case 'whole-house':
-      return 'Whole House';
-    case 'bench-top':
-      return 'Bench Top';
-    case 'inline':
-      return 'Inline';
-    case 'countertop':
-      return 'Countertop';
-    case 'commercial':
-      return 'Commercial';
-  }
-}
-
-function formatCartridgeType(type: CartridgeType): string {
-  switch (type) {
-    case 'sediment':
-      return 'Sediment';
-    case 'carbon-cto':
-      return 'Carbon (CTO)';
-    case 'carbon-gac':
-      return 'Carbon (GAC)';
-    case 'ro-membrane':
-      return 'RO Membrane';
-    case 'alkaline':
-      return 'Alkaline';
-    case 'fluoride':
-      return 'Fluoride Removal';
-    case 't33':
-      return 'Post-Carbon T33';
-    case 'pleated':
-      return 'Pleated Washable';
-    case 'uf':
-      return 'Ultrafiltration';
-  }
-}
-
-function formatIsoDate(iso: string): string {
-  return new Intl.DateTimeFormat('en-AU', { dateStyle: 'long' }).format(
-    new Date(iso),
   );
 }
 

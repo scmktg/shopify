@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run validate:products",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "test:shopify": "tsx scripts/test-shopify-fetch.ts",
-    "audit:watermark": "tsx scripts/audit-watermark-status.ts"
+    "audit:watermark": "tsx scripts/audit-watermark-status.ts",
+    "validate:products": "tsx scripts/validate-products.ts",
+    "bootstrap:products": "tsx scripts/bootstrap-products-json.ts"
   },
   "dependencies": {
     "next": "^16.2.0",

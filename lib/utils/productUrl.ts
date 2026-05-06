@@ -1,42 +1,41 @@
-const PRIMARY_PREFIX = 'primary-cat:';
-const SUB_PREFIX = 'sub-cat:';
+import { getProductContent } from '@/lib/products/getProductContent';
 
 /**
- * Derives the canonical product URL from a product's tags. Every product
- * is expected to carry exactly one `primary-cat:<slug>` and one
- * `sub-cat:<slug>` tag (per docs/03-data-model.md). When a tag is
- * missing we fall back to a top-level handle URL — that path will 404,
+ * Derives the canonical product URL from a product handle by looking
+ * up its `categories` tuple in `data/products.json` (the single
+ * source of truth for category routing). When the handle has no
+ * entry we fall back to a top-level handle URL — that path will 404,
  * which surfaces the data-quality issue rather than hiding it.
+ *
+ * Pre-refactor this helper read Shopify tags; that path is gone with
+ * the universal Shopify boundary (Shopify owns commerce primitives
+ * only).
  */
-export function getProductUrl(
-  tags: ReadonlyArray<string>,
-  handle: string,
-): string {
-  const category = findTagValue(tags, PRIMARY_PREFIX);
-  const subcategory = findTagValue(tags, SUB_PREFIX);
-  if (category && subcategory) {
+export function getProductUrl(handle: string): string {
+  const content = getProductContent(handle);
+  if (content) {
+    const [category, subcategory] = content.categories;
     return `/${category}/${subcategory}/${handle}/`;
   }
   return `/${handle}/`;
 }
 
-export function getProductCategoryTags(
-  tags: ReadonlyArray<string>,
-): { category: string | null; subcategory: string | null } {
+export interface ProductCategoryPair {
+  category: string | null;
+  subcategory: string | null;
+}
+
+/**
+ * Returns the [category, subcategory] pair for a handle, or nulls
+ * when the handle is unknown to `products.json`. Used by the route
+ * to validate URL → product alignment, and by the Compatible /
+ * BoughtTogether rails to filter by category.
+ */
+export function getProductCategories(handle: string): ProductCategoryPair {
+  const content = getProductContent(handle);
+  if (!content) return { category: null, subcategory: null };
   return {
-    category: findTagValue(tags, PRIMARY_PREFIX),
-    subcategory: findTagValue(tags, SUB_PREFIX),
+    category: content.categories[0],
+    subcategory: content.categories[1],
   };
-}
-
-export function isWatermarkCertified(tags: ReadonlyArray<string>): boolean {
-  return tags.includes('cert:watermark');
-}
-
-function findTagValue(
-  tags: ReadonlyArray<string>,
-  prefix: string,
-): string | null {
-  const match = tags.find((tag) => tag.startsWith(prefix));
-  return match ? match.slice(prefix.length) : null;
 }

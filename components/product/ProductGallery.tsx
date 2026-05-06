@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
-import clsx from 'clsx';
+import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { ProductImage } from '@/types/product';
 
 interface ProductGalleryProps {
@@ -35,60 +35,72 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
     );
   }
 
+  const showArrows = images.length > 1;
   const selected = images[selectedIndex] ?? images[0]!;
   const heroAlt = isPlaceholderAlt(selected.altText)
-    ? `${title} — main product image`
+    ? `${title} — image ${selectedIndex + 1} of ${images.length}`
     : selected.altText!;
 
-  return (
-    <div>
-      <div className="relative aspect-square overflow-hidden rounded border border-gray-200 bg-white">
-        <Image
-          src={selected.url}
-          alt={heroAlt}
-          fill
-          priority
-          sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-contain"
-        />
-      </div>
+  const goPrev = () =>
+    setSelectedIndex((i) => (i - 1 + images.length) % images.length);
+  const goNext = () =>
+    setSelectedIndex((i) => (i + 1) % images.length);
 
-      {images.length > 1 && (
-        <ul
-          className="mt-4 flex gap-2 overflow-x-auto sm:grid sm:grid-cols-5 sm:gap-2 sm:overflow-visible"
-          role="list"
-        >
-          {images.map((image, index) => {
-            const isSelected = index === selectedIndex;
-            const thumbAlt = isPlaceholderAlt(image.altText)
-              ? `${title} — view ${index + 1}`
-              : image.altText!;
-            return (
-              <li key={image.url} className="flex-shrink-0">
-                <button
-                  type="button"
-                  aria-label={`Show ${thumbAlt}`}
-                  aria-current={isSelected}
-                  onClick={() => setSelectedIndex(index)}
-                  className={clsx(
-                    'relative aspect-square w-20 sm:w-auto overflow-hidden rounded border transition-colors',
-                    isSelected
-                      ? 'ring-2 ring-brand-blue border-transparent'
-                      : 'border-gray-200 hover:border-gray-400',
-                  )}
-                >
-                  <Image
-                    src={image.url}
-                    alt={thumbAlt}
-                    fill
-                    sizes="80px"
-                    className="object-contain"
-                  />
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+  // Keyboard navigation when the gallery wrapper has focus.
+  useEffect(() => {
+    if (!showArrows) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') goPrev();
+      else if (event.key === 'ArrowRight') goNext();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [showArrows, images.length]);
+
+  return (
+    <div
+      className="relative w-full max-w-[70vh] aspect-square mx-auto overflow-hidden rounded border border-gray-200 bg-white"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label={`${title} images`}
+    >
+      <Image
+        key={selected.url}
+        src={selected.url}
+        alt={heroAlt}
+        fill
+        priority
+        sizes="(min-width: 768px) 50vw, 100vw"
+        className="object-contain"
+      />
+
+      {showArrows && (
+        <>
+          <button
+            type="button"
+            onClick={goPrev}
+            aria-label="Previous image"
+            className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/90 hover:bg-white border border-gray-200 text-black shadow-none focus:outline-none focus:ring-2 focus:ring-brand-blue transition-colors"
+          >
+            <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={goNext}
+            aria-label="Next image"
+            className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/90 hover:bg-white border border-gray-200 text-black focus:outline-none focus:ring-2 focus:ring-brand-blue transition-colors"
+          >
+            <ChevronRight className="h-5 w-5" aria-hidden="true" />
+          </button>
+
+          <div
+            aria-live="polite"
+            aria-atomic="true"
+            className="sr-only"
+          >
+            Image {selectedIndex + 1} of {images.length}
+          </div>
+        </>
       )}
     </div>
   );

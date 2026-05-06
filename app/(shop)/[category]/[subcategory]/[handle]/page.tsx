@@ -3,11 +3,8 @@ import { notFound } from 'next/navigation';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { findSubcategory } from '@/content/categories';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
-import { getProductCategoryTags } from '@/lib/utils/productUrl';
-import {
-  metaDescriptionFromHtml,
-  sanitiseProductDescriptionHtml,
-} from '@/lib/content/productHtml';
+import { getProductContent } from '@/lib/products/getProductContent';
+import { markdownToPlainText } from '@/lib/products/markdown';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema, productSchema } from '@/lib/seo/jsonld';
 
@@ -19,12 +16,34 @@ interface ProductPageProps {
   }>;
 }
 
-// Force dynamic rendering during the post-WordPress-debris cleanup
-// window so the description sanitiser, WatermarkBadge, alt-text fix,
-// and cross-sell sections appear on the very next request after
-// deploy without waiting for ISR to flip. Step this back up to a
-// sensible revalidate (60–300s) once the live page is verified clean.
+// Force dynamic rendering during the post-products.json-cutover
+// window so a stale ISR cache doesn't render a Shopify-only page
+// while products.json is still being filled in. Step this up to
+// a sensible revalidate (60–300s) once the catalogue is fully
+// seeded and the live page is verified clean.
 export const revalidate = 0;
+
+const META_DESCRIPTION_MAX = 155;
+
+/**
+ * Resolve the meta description with the documented fallback chain:
+ *   1. content.seo.description
+ *   2. content.shortDescription
+ *   3. first ~155 chars of plain-text content.description (markdown
+ *      stripped via the same renderer pipeline used for the page).
+ *
+ * Never reads from Shopify's `description` / `seo` fields — those
+ * carry WordPress-import debris and would re-introduce the meta-tag
+ * leak the brief calls out.
+ */
+async function resolveMetaDescription(
+  content: ReturnType<typeof getProductContent>,
+): Promise<string> {
+  if (!content) return '';
+  if (content.seo?.description?.trim()) return content.seo.description.trim();
+  if (content.shortDescription?.trim()) return content.shortDescription.trim();
+  return markdownToPlainText(content.description, META_DESCRIPTION_MAX);
+}
 
 export async function generateMetadata({
   params,
@@ -32,19 +51,15 @@ export async function generateMetadata({
   const { category, subcategory, handle } = await params;
   const product = await getProductByHandle(handle);
   if (!product) return {};
+  const content = getProductContent(handle);
+  if (!content) return {};
 
-  const title = product.seo.title ?? product.title;
-  // Never derive meta description from product.description (plain
-  // text) — that field carries the same WordPress import debris in
-  // unwrapped form and leaks into Google's SERP snippet. Use the
-  // SEO description metafield first, then fall back to the first
-  // clean paragraph of the sanitised HTML.
-  const description =
-    product.seo.description?.trim() ||
-    metaDescriptionFromHtml(
-      sanitiseProductDescriptionHtml(product.descriptionHtml),
-    );
-  const images = product.featuredImage ? [product.featuredImage.url] : [];
+  const title = content.seo?.title ?? product.title;
+  const description = await resolveMetaDescription(content);
+  const ogImage =
+    content.seo?.ogImage ??
+    (product.featuredImage ? product.featuredImage.url : null);
+  const images = ogImage ? [ogImage] : [];
 
   return {
     title,
@@ -73,22 +88,38 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProductByHandle(handle);
   if (!product) notFound();
 
-  const productCategory = getProductCategoryTags(product.tags);
+  // Per the URL contract: every Shopify handle must have a
+  // products.json entry, enforced at build time. notFound() guards
+  // against the dev/edge case where the validator hasn't run.
+  const content = getProductContent(handle);
+  if (!content) notFound();
+
+  // The route's [category]/[subcategory] must match the entry's
+  // categories tuple. Source of truth is products.json — we no
+  // longer derive routing from Shopify tags.
   if (
-    productCategory.category !== category ||
-    productCategory.subcategory !== subcategory
+    content.categories[0] !== category ||
+    content.categories[1] !== subcategory
   ) {
     notFound();
   }
 
   const node = findSubcategory(category, subcategory);
   const pathname = `/${category}/${subcategory}/${handle}/`;
+  // Cap at 5000 chars: search engines truncate beyond this anyway,
+  // and bounding the JSON-LD payload keeps the inline <script> tag
+  // small. Long-form description content still renders in full on
+  // the page itself via ProductOverview.
+  const descriptionPlainText = await markdownToPlainText(
+    content.description,
+    5000,
+  );
 
   return (
     <>
       <JsonLdScript
         data={[
-          productSchema(product, pathname),
+          productSchema(product, content, pathname, descriptionPlainText),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
             { name: node?.category.label ?? category, path: `/${category}/` },
@@ -102,6 +133,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       />
       <ProductDetail
         product={product}
+        content={content}
         category={category}
         subcategory={subcategory}
       />
