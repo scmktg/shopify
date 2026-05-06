@@ -11,9 +11,12 @@ export function Header() {
   }));
 
   return (
-    <header className="sticky top-0 z-40 bg-black text-white">
+    <header className="sticky top-0 z-40 bg-white text-black border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="font-semibold text-lg tracking-wide">
+        <Link
+          href="/"
+          className="font-semibold text-lg tracking-wide text-black hover:text-brand-blue transition-colors"
+        >
           ENVIRO AQUA
         </Link>
 
@@ -29,21 +32,21 @@ export function Header() {
               >
                 <Link
                   href={`/${category.slug}/`}
-                  className="inline-flex items-center px-3 text-sm font-medium hover:underline underline-offset-4"
+                  className="inline-flex items-center px-3 text-sm font-medium text-black hover:text-brand-blue transition-colors"
                 >
                   {category.label}
                 </Link>
                 {category.subcategories.length > 0 && (
                   <div
                     role="presentation"
-                    className="absolute left-0 top-full w-64 bg-black border border-white/10 shadow-lg opacity-0 invisible translate-y-1 transition-[opacity,transform,visibility] duration-150 ease-out group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
+                    className="absolute left-0 top-full w-64 bg-white text-black border border-gray-200 opacity-0 invisible translate-y-1 transition-[opacity,transform,visibility] duration-150 ease-out group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0"
                   >
                     <ul className="py-2">
                       {category.subcategories.map((sub) => (
                         <li key={sub.slug}>
                           <Link
                             href={`/${category.slug}/${sub.slug}/`}
-                            className="block px-4 py-2 text-sm hover:bg-white/10"
+                            className="block px-4 py-2 text-sm hover:bg-gray-50 hover:text-brand-blue transition-colors"
                           >
                             {sub.label}
                           </Link>
@@ -52,7 +55,7 @@ export function Header() {
                       <li>
                         <Link
                           href={`/${category.slug}/`}
-                          className="block px-4 py-2 mt-1 text-sm font-semibold border-t border-white/10 hover:bg-white/10"
+                          className="block px-4 py-2 mt-1 text-sm font-semibold border-t border-gray-200 hover:bg-gray-50 hover:text-brand-blue transition-colors"
                         >
                           Shop all {category.label}
                         </Link>
@@ -66,8 +69,8 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1">
-          <SearchBar triggerClassName="inline-flex items-center justify-center h-10 w-10 rounded hover:opacity-80" />
-          <CartButton className="hidden md:inline-flex relative items-center justify-center h-10 w-10 rounded hover:opacity-80" />
+          <SearchBar triggerClassName="inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
+          <CartButton className="hidden md:inline-flex relative items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
           <MobileMenu items={navItems} />
         </div>
       </div>
