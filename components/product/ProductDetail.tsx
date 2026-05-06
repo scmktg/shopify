@@ -11,6 +11,18 @@ import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 
+const INSTALL_PACKAGE_HANDLES: ReadonlySet<string> = new Set([
+  'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
+]);
+const INSTALL_PACKAGE_TAG = 'offer:install-package';
+
+function offersInstallPackage(product: Product): boolean {
+  return (
+    INSTALL_PACKAGE_HANDLES.has(product.handle) ||
+    product.tags.includes(INSTALL_PACKAGE_TAG)
+  );
+}
+
 interface ProductDetailProps {
   product: Product;
   category: string;
@@ -86,6 +98,20 @@ export function ProductDetail({
               {inStock ? 'In stock' : 'Out of stock'}
             </span>
           </div>
+
+          {offersInstallPackage(product) && (
+            <div className="mt-4 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
+              Live on the Central Coast NSW? Get this installed by a local
+              plumber for $2,299 —{' '}
+              <Link
+                href="/whole-house-installation-package/"
+                className="text-brand-blue font-semibold hover:underline underline-offset-4"
+              >
+                see the install package
+              </Link>
+              .
+            </div>
+          )}
 
           {firstVariant && (
             <AddToCartButton
