@@ -36,7 +36,7 @@ To run the business we share information with the following service providers, e
 
 - **Shopify** — handles payments, checkout, order processing, and customer accounts. Shopify is the system of record for orders. See Shopify's privacy policy for their handling of payment information.
 - **Vercel** — hosts the website. May log IP addresses and request metadata for performance and abuse prevention.
-- **Google Analytics 4** — collects anonymised usage statistics. We use Google Analytics with IP anonymisation enabled. <!-- TODO: confirm GA4 ID is configured before launch -->
+- **Google Analytics 4** — collects anonymised usage statistics. We use Google Analytics with IP anonymisation enabled. <!-- TODO: confirm GA4 measurement ID is configured before launch -->
 - **Carriers** (Australia Post and others) — receive shipping information so they can deliver your order.
 
 We may also share information when required by law (court order, regulator request, fraud investigation).
@@ -63,7 +63,12 @@ Under the Privacy Act 1988 and the Australian Privacy Principles, you have the r
 - Request deletion of your information, subject to legal record-keeping obligations.
 - Lodge a complaint with the Office of the Australian Information Commissioner (OAIC) if you believe we have mishandled your information.
 
-To exercise these rights, contact us through the [contact page](/contact/) with the subject "Privacy enquiry". We respond within 30 days.
+To exercise these rights, contact us with the subject "Privacy enquiry":
+
+- **Email:** [info@enviroaqua.com.au](mailto:info@enviroaqua.com.au)
+- **Post:** Privacy Officer, Enviro Aqua, 6/45 Amsterdam Cct, Wyong NSW 2259
+
+We respond within 30 days.
 
 ## Changes to this policy
 

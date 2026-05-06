@@ -11,7 +11,7 @@ These Terms and Conditions ("Terms") govern your use of the Enviro Aqua website 
 
 ## 1. Who we are
 
-Enviro Aqua is an Australian-owned business based on the Central Coast NSW. <!-- TODO: insert legal entity name and ABN once finalised -->
+These Terms govern your relationship with Enviro Aqua (the trading name under ABN 24 638 197 734 / ACN 638 197 734), an Australian-owned business operating from 6/45 Amsterdam Cct, Wyong NSW 2259.
 
 ## 2. Orders and acceptance
 
