@@ -5,7 +5,6 @@ import type {
   InstallationType,
   Product,
   ProductMetafields,
-  WatermarkStatus,
 } from '@/types/product';
 import { sanitiseProductDescriptionHtml } from '@/lib/content/productHtml';
 import { findSubcategory } from '@/content/categories';
@@ -287,19 +286,6 @@ function buildSpecificationRows(
   }
 
   return rows;
-}
-
-function formatWatermarkStatus(status: WatermarkStatus): string {
-  switch (status) {
-    case 'certified':
-      return 'WaterMark Certified';
-    case 'pending':
-      return 'WaterMark Certification Pending';
-    case 'not_required':
-      return 'WaterMark Not Required';
-    case 'not_certified':
-      return 'Not WaterMark Certified';
-  }
 }
 
 function formatInstallationType(type: InstallationType): string {

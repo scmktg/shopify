@@ -19,6 +19,13 @@ interface ProductPageProps {
   }>;
 }
 
+// Force dynamic rendering during the post-WordPress-debris cleanup
+// window so the description sanitiser, WatermarkBadge, alt-text fix,
+// and cross-sell sections appear on the very next request after
+// deploy without waiting for ISR to flip. Step this back up to a
+// sensible revalidate (60–300s) once the live page is verified clean.
+export const revalidate = 0;
+
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {

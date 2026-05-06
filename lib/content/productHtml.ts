@@ -78,7 +78,7 @@ export function sanitiseProductDescriptionHtml(
   out = out.replace(/\\n/g, '');
 
   // 5. Strip zero-width whitespace.
-  out = out.replace(/[​‌‍﻿]/g, '');
+  out = out.replace(/[\u200B\u200C\u200D\uFEFF]/g, "");
 
   // 6. Drop H2 headings whose content matches a section we render
   //    structurally elsewhere on the page.
