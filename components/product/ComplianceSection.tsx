@@ -23,7 +23,7 @@ export async function ComplianceSection({ compliance }: ComplianceSectionProps) 
         Compliance &amp; certification
       </h2>
       <div
-        className="mt-4 prose prose-sm max-w-none"
+        className="mt-4 prose max-w-none"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </section>

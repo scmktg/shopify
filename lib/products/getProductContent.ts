@@ -50,7 +50,14 @@ export function getAllProductContent(): ProductContentMap {
  *   1. Exact subcategory match (categories[0] AND categories[1]).
  *   2. If fewer than `limit` results, widen to category-only match
  *      (categories[0] only) and dedupe.
- * Always excludes `excludeHandle`. Returns at most `limit` handles.
+ *
+ * Excludes `excludeHandle` exactly AND any handle that starts with
+ * `${excludeHandle}-` — this catches Shopify-side legacy duplicates
+ * like `<handle>-dup2` / `<handle>-old` that share the canonical
+ * stem. The data fix is to archive those duplicates in Shopify; this
+ * code-side guard keeps them out of the rail in the meantime.
+ *
+ * Returns at most `limit` handles.
  */
 export function findRelatedHandles(
   category: string,
@@ -60,8 +67,10 @@ export function findRelatedHandles(
 ): ReadonlyArray<string> {
   const exact: string[] = [];
   const wider: string[] = [];
+  const excludePrefix = `${excludeHandle}-`;
   for (const [handle, content] of Object.entries(map)) {
     if (handle === excludeHandle) continue;
+    if (handle.startsWith(excludePrefix)) continue;
     const [c, s] = content.categories;
     if (c !== category) continue;
     if (s === subcategory) {
