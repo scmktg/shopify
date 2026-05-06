@@ -79,6 +79,7 @@
 │   ├── cart/                 # Cart state and persistence
 │   └── utils/                # Generic helpers
 ├── content/                  # Markdown for use-cases, problems, locations, help
+│   ├── business-info.ts      # Single source for phone, address, ABN, ACN, hours, socials
 ├── docs/                     # This documentation pack
 ├── migration/                # Migration spreadsheet
 ├── public/                   # Static assets
@@ -89,6 +90,30 @@
 ```
 
 Tailwind v4 is configured CSS-first inside `app/globals.css` via the `@theme` directive — there is no `tailwind.config.ts` file. See `docs/05-design-system.md` for the brand-token block.
+
+## Business data — single source
+
+`content/business-info.ts` exports `BUSINESS_INFO`, a `const`-typed
+record holding every business-identity value the site renders: legal
+name, ABN, ACN, phone (display + tel:), email, full street address,
+showroom hours (plain English + schema.org format), order cutoff,
+returns window/scope, and social URLs. Helpers `fullAddress()` and
+`abnAcnLine()` produce the canonical formatted strings.
+
+**When the phone number, address, ABN, ACN, hours, or any other
+business identity field changes, edit `content/business-info.ts`
+only.** Components that render these values import from here directly
+(`components/layout/Footer.tsx`, `lib/seo/jsonld.ts`, etc.).
+
+Markdown editorial content cannot import TypeScript at render time,
+so `content/contact.md`, `content/about/index.md`, `content/shipping.md`,
+`content/returns.md`, `content/terms.md`, `content/privacy.md`, and
+`content/locations/central-coast-nsw.md` have business values baked
+in by hand. When `BUSINESS_INFO` changes, run:
+
+    grep -RIn "8772 8162\|Amsterdam\|24 638 197 734\|EnviroAqua.com.au\|enviro_aqua" content/
+
+…to find the markdown sites that need a parallel update.
 
 ## Key dependencies
 
