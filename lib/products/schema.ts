@@ -55,7 +55,11 @@ export interface ProductCompliance {
    * today and will be widened when the rendering work happens.
    */
   wels?: null;
-  /** Human-authored compliance note (plain text — no markdown). */
+  /**
+   * Markdown — same subset and renderer as `description`
+   * (paragraphs, bold, italic, unordered lists). Kept short:
+   * one or two sentences of human-authored compliance context.
+   */
   note?: string | null;
 }
 

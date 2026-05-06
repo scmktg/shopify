@@ -1,6 +1,10 @@
 import productData from '@/data/products.json';
 import type { ProductContent, ProductContentMap } from './schema';
 
+function isFileMetaKey(key: string): boolean {
+  return key.startsWith('__');
+}
+
 /**
  * In-memory accessors over `data/products.json`.
  *
@@ -18,7 +22,13 @@ import type { ProductContent, ProductContentMap } from './schema';
  * the boundary documented in `lib/products/schema.ts`.
  */
 
-const map: ProductContentMap = productData as unknown as ProductContentMap;
+const rawMap = productData as unknown as Record<string, ProductContent>;
+// Strip top-level metadata keys (e.g. `__placeholders`) so loader
+// callers never see them as products. The validator already skips
+// them; this keeps the runtime shape consistent.
+const map: ProductContentMap = Object.fromEntries(
+  Object.entries(rawMap).filter(([key]) => !isFileMetaKey(key)),
+) as ProductContentMap;
 
 /**
  * Returns the content entry for `handle`, or `null` when none
@@ -27,6 +37,7 @@ const map: ProductContentMap = productData as unknown as ProductContentMap;
  * is a build-failure case, not a render-with-blanks case.
  */
 export function getProductContent(handle: string): ProductContent | null {
+  if (isFileMetaKey(handle)) return null;
   return map[handle] ?? null;
 }
 

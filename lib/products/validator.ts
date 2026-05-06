@@ -66,7 +66,10 @@ export function validateProducts(input: unknown): ValidationResult {
   }
 
   const map = input as Record<string, unknown>;
-  const handles = Object.keys(map);
+  // Top-level keys prefixed with `__` are file metadata (e.g.
+  // `__placeholders`), not product entries. Skip them entirely —
+  // shape, cross-reference, and cross-Shopify checks all ignore them.
+  const handles = Object.keys(map).filter((k) => !isFileMetaKey(k));
 
   for (const handle of handles) {
     const entry = map[handle];
@@ -95,6 +98,10 @@ export function validateProducts(input: unknown): ValidationResult {
   }
 
   return { ok: errors.length === 0, errors };
+}
+
+export function isFileMetaKey(key: string): boolean {
+  return key.startsWith('__');
 }
 
 function validateEntry(
@@ -454,7 +461,7 @@ export async function validateAgainstShopify(
   const shopifyHandles = await fetchShopifyHandles();
   const shopifySet = new Set(shopifyHandles);
   const contentHandles = Object.keys(contentMap).filter(
-    (h) => !isScaffoldingHandle(h),
+    (h) => !isScaffoldingHandle(h) && !isFileMetaKey(h),
   );
   const contentSet = new Set(contentHandles);
 

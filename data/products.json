@@ -1,4 +1,12 @@
 {
+  "__placeholders": {
+    "_comment": "Top-level metadata block — JSON has no native comments. Top-level keys starting with `__` are skipped by the validator and the loader. Do not nest product entries under this key.",
+    "note": "Handles listed below contain placeholder content that needs replacement before launch. Empty list means every entry is real-data sourced. The audit script (npm run audit:watermark) reports any compliance.watermark.status='certified' with a missing licenceNumber regardless of whether the handle appears here.",
+    "handles": [
+      "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system"
+    ]
+  },
+
   "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
     "categories": ["bubblers", "commercial"],
     "tags": ["stainless-steel", "watermark", "filtered", "high-traffic"],
