@@ -41,6 +41,10 @@ export function ProductDetail({
   const firstVariant = product.variants[0];
   const inStock = firstVariant?.availableForSale ?? false;
   const compareAt = firstVariant?.compareAtPrice ?? null;
+  const savings = computeSavings(
+    product.priceRange.minVariantPrice,
+    compareAt,
+  );
 
   return (
     <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
@@ -77,16 +81,20 @@ export function ProductDetail({
             {product.title}
           </h1>
 
-          <div className="mt-4 flex items-baseline gap-3">
+          <div className="mt-4 flex items-baseline gap-3 flex-wrap">
             <PriceDisplay
               money={product.priceRange.minVariantPrice}
               className="text-2xl font-semibold text-black"
             />
             {compareAt && (
-              <PriceDisplay
-                money={compareAt}
-                className="text-base text-black/60 line-through"
-              />
+              <s className="text-base text-black/60">
+                <PriceDisplay money={compareAt} />
+              </s>
+            )}
+            {savings && (
+              <span className="text-sm font-semibold text-brand-blue">
+                Save {savings.amount} ({savings.percent}%)
+              </span>
             )}
           </div>
 
@@ -334,6 +342,27 @@ function formatIsoDate(iso: string): string {
   return new Intl.DateTimeFormat('en-AU', { dateStyle: 'long' }).format(
     new Date(iso),
   );
+}
+
+function computeSavings(
+  current: { amount: string; currencyCode: string },
+  compareAt: { amount: string; currencyCode: string } | null,
+): { amount: string; percent: number } | null {
+  if (!compareAt) return null;
+  if (compareAt.currencyCode !== current.currencyCode) return null;
+  const currentValue = Number.parseFloat(current.amount);
+  const compareValue = Number.parseFloat(compareAt.amount);
+  if (!Number.isFinite(currentValue) || !Number.isFinite(compareValue)) {
+    return null;
+  }
+  const diff = compareValue - currentValue;
+  if (diff <= 0) return null;
+  const formatted = new Intl.NumberFormat('en-AU', {
+    style: 'currency',
+    currency: current.currencyCode,
+  }).format(diff);
+  const percent = Math.round((diff / compareValue) * 100);
+  return { amount: formatted, percent };
 }
 
 function humaniseSlug(slug: string): string {
