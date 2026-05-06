@@ -10,6 +10,7 @@ import type {
 import { sanitiseProductDescriptionHtml } from '@/lib/content/productHtml';
 import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
+import { WatermarkBadge } from './WatermarkBadge';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 
 const INSTALL_PACKAGE_HANDLES: ReadonlySet<string> = new Set([
@@ -100,6 +101,12 @@ export function ProductDetail({
             </span>
           </div>
 
+          {product.metafields.watermark_status && (
+            <div className="mt-4">
+              <WatermarkBadge status={product.metafields.watermark_status} />
+            </div>
+          )}
+
           {offersInstallPackage(product) && (
             <div className="mt-4 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
               Live on the Central Coast NSW? Get this installed by a local
@@ -175,12 +182,9 @@ function buildSpecificationRows(
 ): ReadonlyArray<SpecRow> {
   const rows: SpecRow[] = [];
 
-  if (m.watermark_status) {
-    rows.push({
-      label: 'WaterMark Status',
-      value: formatWatermarkStatus(m.watermark_status),
-    });
-  }
+  // WaterMark status itself is now rendered as <WatermarkBadge> next
+  // to the price; only the supporting detail rows go in the spec
+  // panel so we don't duplicate the visible label.
   if (m.watermark_licence_number) {
     rows.push({
       label: 'WaterMark Licence',
