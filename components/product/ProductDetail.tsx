@@ -14,6 +14,7 @@ import { WatermarkBadge } from './WatermarkBadge';
 import { CompatibleCartridges } from './CompatibleCartridges';
 import { RelatedSystems } from './RelatedSystems';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
+import { MobileStickyBuyBar } from '@/components/cart/MobileStickyBuyBar';
 
 const INSTALL_PACKAGE_HANDLES: ReadonlySet<string> = new Set([
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
@@ -41,52 +42,66 @@ export function ProductDetail({
   const firstVariant = product.variants[0];
   const inStock = firstVariant?.availableForSale ?? false;
   const compareAt = firstVariant?.compareAtPrice ?? null;
+  const savings = computeSavings(
+    product.priceRange.minVariantPrice,
+    compareAt,
+  );
 
   return (
-    <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <div>
+    <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
+      <nav
+        aria-label="Breadcrumb"
+        className="text-sm text-black/70 mb-6 flex items-center gap-2 flex-wrap"
+      >
+        <Link href="/" className="hover:underline underline-offset-4">
+          Home
+        </Link>
+        <span aria-hidden="true">/</span>
+        <Link
+          href={`/${category}/`}
+          className="hover:underline underline-offset-4"
+        >
+          {humaniseSlug(category)}
+        </Link>
+        <span aria-hidden="true">/</span>
+        <Link
+          href={`/${category}/${subcategory}/`}
+          className="hover:underline underline-offset-4"
+        >
+          {humaniseSlug(subcategory)}
+        </Link>
+      </nav>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="md:sticky md:top-24">
           <ProductGallery images={product.images} title={product.title} />
         </div>
 
         <div>
-          <nav
-            aria-label="Breadcrumb"
-            className="text-sm text-black/70 mb-4 flex items-center gap-2 flex-wrap"
-          >
-            <Link href="/" className="hover:underline underline-offset-4">
-              Home
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href={`/${category}/`}
-              className="hover:underline underline-offset-4"
-            >
-              {humaniseSlug(category)}
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              href={`/${category}/${subcategory}/`}
-              className="hover:underline underline-offset-4"
-            >
-              {humaniseSlug(subcategory)}
-            </Link>
-          </nav>
-
           <h1 className="text-3xl md:text-4xl font-semibold text-black">
             {product.title}
           </h1>
 
-          <div className="mt-4 flex items-baseline gap-3">
+          {firstVariant?.sku && (
+            <p className="mt-2 text-sm text-black/60">
+              SKU: <span className="font-mono">{firstVariant.sku}</span>
+            </p>
+          )}
+
+          <div className="mt-4 flex items-baseline gap-3 flex-wrap">
             <PriceDisplay
               money={product.priceRange.minVariantPrice}
               className="text-2xl font-semibold text-black"
             />
             {compareAt && (
-              <PriceDisplay
-                money={compareAt}
-                className="text-base text-black/60 line-through"
-              />
+              <s className="text-base text-black/60">
+                <PriceDisplay money={compareAt} />
+              </s>
+            )}
+            {savings && (
+              <span className="text-sm font-semibold text-brand-blue">
+                Save {savings.amount} ({savings.percent}%)
+              </span>
             )}
           </div>
 
@@ -109,8 +124,19 @@ export function ProductDetail({
             </div>
           )}
 
+          {firstVariant && (
+            <AddToCartButton
+              variantId={firstVariant.id}
+              available={inStock}
+            />
+          )}
+
+          <p className="mt-3 text-xs text-black/60">
+            Free shipping on Australian orders over $200
+          </p>
+
           {offersInstallPackage(product) && (
-            <div className="mt-4 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
+            <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
               Live on the Central Coast NSW? Get this installed by a local
               plumber for $2,299 —{' '}
               <Link
@@ -122,26 +148,19 @@ export function ProductDetail({
               .
             </div>
           )}
-
-          {firstVariant && (
-            <AddToCartButton
-              variantId={firstVariant.id}
-              available={inStock}
-            />
-          )}
-
-          <p className="mt-3 text-xs text-black/60 text-center">
-            Free shipping on Australian orders over $200
-          </p>
-
-          <div
-            className="mt-8 prose prose-sm max-w-none"
-            dangerouslySetInnerHTML={{
-              __html: sanitiseProductDescriptionHtml(product.descriptionHtml),
-            }}
-          />
         </div>
       </div>
+
+      <section className="mt-12 border-t border-gray-200 pt-8">
+        <div
+          className="prose prose-sm max-w-none"
+          dangerouslySetInnerHTML={{
+            __html: sanitiseProductDescriptionHtml(product.descriptionHtml),
+          }}
+        />
+      </section>
+
+      <SpecificationsPanel metafields={product.metafields} />
 
       <CompatibleCartridges
         housingSize={product.metafields.housing_size}
@@ -158,7 +177,13 @@ export function ProductDetail({
         currentHandle={product.handle}
       />
 
-      <SpecificationsPanel metafields={product.metafields} />
+      {firstVariant && (
+        <MobileStickyBuyBar
+          variantId={firstVariant.id}
+          available={inStock}
+          price={product.priceRange.minVariantPrice}
+        />
+      )}
     </article>
   );
 }
@@ -332,6 +357,27 @@ function formatIsoDate(iso: string): string {
   return new Intl.DateTimeFormat('en-AU', { dateStyle: 'long' }).format(
     new Date(iso),
   );
+}
+
+function computeSavings(
+  current: { amount: string; currencyCode: string },
+  compareAt: { amount: string; currencyCode: string } | null,
+): { amount: string; percent: number } | null {
+  if (!compareAt) return null;
+  if (compareAt.currencyCode !== current.currencyCode) return null;
+  const currentValue = Number.parseFloat(current.amount);
+  const compareValue = Number.parseFloat(compareAt.amount);
+  if (!Number.isFinite(currentValue) || !Number.isFinite(compareValue)) {
+    return null;
+  }
+  const diff = compareValue - currentValue;
+  if (diff <= 0) return null;
+  const formatted = new Intl.NumberFormat('en-AU', {
+    style: 'currency',
+    currency: current.currencyCode,
+  }).format(diff);
+  const percent = Math.round((diff / compareValue) * 100);
+  return { amount: formatted, percent };
 }
 
 function humaniseSlug(slug: string): string {
