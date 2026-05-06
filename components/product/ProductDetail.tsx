@@ -81,6 +81,12 @@ export function ProductDetail({
             {product.title}
           </h1>
 
+          {firstVariant?.sku && (
+            <p className="mt-2 text-sm text-black/60">
+              SKU: <span className="font-mono">{firstVariant.sku}</span>
+            </p>
+          )}
+
           <div className="mt-4 flex items-baseline gap-3 flex-wrap">
             <PriceDisplay
               money={product.priceRange.minVariantPrice}
