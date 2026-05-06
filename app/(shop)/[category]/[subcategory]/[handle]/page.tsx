@@ -4,6 +4,10 @@ import { ProductDetail } from '@/components/product/ProductDetail';
 import { findSubcategory } from '@/content/categories';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductCategoryTags } from '@/lib/utils/productUrl';
+import {
+  metaDescriptionFromHtml,
+  sanitiseProductDescriptionHtml,
+} from '@/lib/content/productHtml';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema, productSchema } from '@/lib/seo/jsonld';
 
@@ -15,14 +19,6 @@ interface ProductPageProps {
   }>;
 }
 
-const META_DESCRIPTION_MAX = 155;
-
-function truncate(text: string, max: number): string {
-  const trimmed = text.trim();
-  if (trimmed.length <= max) return trimmed;
-  return `${trimmed.slice(0, max - 1).trimEnd()}…`;
-}
-
 export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
@@ -31,8 +27,16 @@ export async function generateMetadata({
   if (!product) return {};
 
   const title = product.seo.title ?? product.title;
+  // Never derive meta description from product.description (plain
+  // text) — that field carries the same WordPress import debris in
+  // unwrapped form and leaks into Google's SERP snippet. Use the
+  // SEO description metafield first, then fall back to the first
+  // clean paragraph of the sanitised HTML.
   const description =
-    product.seo.description ?? truncate(product.description, META_DESCRIPTION_MAX);
+    product.seo.description?.trim() ||
+    metaDescriptionFromHtml(
+      sanitiseProductDescriptionHtml(product.descriptionHtml),
+    );
   const images = product.featuredImage ? [product.featuredImage.url] : [];
 
   return {
@@ -42,6 +46,11 @@ export async function generateMetadata({
       canonical: `/${category}/${subcategory}/${handle}/`,
     },
     openGraph: {
+      title,
+      description,
+      images,
+    },
+    twitter: {
       title,
       description,
       images,

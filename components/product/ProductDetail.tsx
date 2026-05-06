@@ -7,6 +7,7 @@ import type {
   ProductMetafields,
   WatermarkStatus,
 } from '@/types/product';
+import { sanitiseProductDescriptionHtml } from '@/lib/content/productHtml';
 import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
@@ -120,9 +121,15 @@ export function ProductDetail({
             />
           )}
 
+          <p className="mt-3 text-xs text-black/60 text-center">
+            Free shipping on Australian orders over $200
+          </p>
+
           <div
             className="mt-8 prose prose-sm max-w-none"
-            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            dangerouslySetInnerHTML={{
+              __html: sanitiseProductDescriptionHtml(product.descriptionHtml),
+            }}
           />
         </div>
       </div>
