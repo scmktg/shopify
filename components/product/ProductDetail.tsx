@@ -14,6 +14,7 @@ import { WatermarkBadge } from './WatermarkBadge';
 import { CompatibleCartridges } from './CompatibleCartridges';
 import { RelatedSystems } from './RelatedSystems';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
+import { MobileStickyBuyBar } from '@/components/cart/MobileStickyBuyBar';
 
 const INSTALL_PACKAGE_HANDLES: ReadonlySet<string> = new Set([
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
@@ -47,7 +48,7 @@ export function ProductDetail({
   );
 
   return (
-    <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
       <nav
         aria-label="Breadcrumb"
         className="text-sm text-black/70 mb-6 flex items-center gap-2 flex-wrap"
@@ -175,6 +176,14 @@ export function ProductDetail({
         }
         currentHandle={product.handle}
       />
+
+      {firstVariant && (
+        <MobileStickyBuyBar
+          variantId={firstVariant.id}
+          available={inStock}
+          price={product.priceRange.minVariantPrice}
+        />
+      )}
     </article>
   );
 }
