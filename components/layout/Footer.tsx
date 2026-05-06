@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { Facebook, Instagram } from 'lucide-react';
+import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
 
 interface FooterLink {
   label: string;
@@ -57,31 +59,57 @@ export function Footer() {
           <FooterColumn title="Learn" links={LEARN_LINKS} />
           <FooterColumn title="About" links={ABOUT_LINKS} />
           <div>
-            <h2 className="text-sm font-semibold tracking-wider uppercase">Contact</h2>
+            <h2 className="text-sm font-semibold tracking-wider uppercase">
+              Contact
+            </h2>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <Link
-                  href="/contact/"
+                <a
+                  href={`tel:${BUSINESS_INFO.phone.tel}`}
                   className="hover:underline underline-offset-4"
                 >
-                  Contact us
-                </Link>
+                  {BUSINESS_INFO.phone.display}
+                </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@enviroaqua.com.au"
-                  className="hover:underline underline-offset-4"
+                  href={`mailto:${BUSINESS_INFO.email}`}
+                  className="hover:underline underline-offset-4 break-all"
                 >
-                  info@enviroaqua.com.au
+                  {BUSINESS_INFO.email}
                 </a>
               </li>
-              <li className="text-white/80">Mon–Fri 9am–5pm AEST</li>
+              <li className="text-white/80">{fullAddress()}</li>
+              <li className="text-white/80">{BUSINESS_INFO.showroom.hours}</li>
+              <li className="flex items-center gap-3 pt-2">
+                <a
+                  href={BUSINESS_INFO.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Enviro Aqua on Facebook"
+                  className="hover:opacity-80"
+                >
+                  <Facebook size={20} aria-hidden="true" />
+                </a>
+                <a
+                  href={BUSINESS_INFO.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Enviro Aqua on Instagram"
+                  className="hover:opacity-80"
+                >
+                  <Instagram size={20} aria-hidden="true" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-white/80">
-          <div>© 2026 Enviro Aqua &nbsp;|&nbsp; ABN: TBC</div>
+          <div>
+            © 2026 {BUSINESS_INFO.name} &nbsp;|&nbsp; ABN {BUSINESS_INFO.abn}{' '}
+            &nbsp;|&nbsp; ACN {BUSINESS_INFO.acn}
+          </div>
           <div className="flex items-center gap-4">
             <Link href="/privacy/" className="hover:underline underline-offset-4">
               Privacy
