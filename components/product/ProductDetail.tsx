@@ -8,9 +8,12 @@ import type {
   WatermarkStatus,
 } from '@/types/product';
 import { sanitiseProductDescriptionHtml } from '@/lib/content/productHtml';
+import { findSubcategory } from '@/content/categories';
 import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
 import { WatermarkBadge } from './WatermarkBadge';
+import { CompatibleCartridges } from './CompatibleCartridges';
+import { RelatedSystems } from './RelatedSystems';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 
 const INSTALL_PACKAGE_HANDLES: ReadonlySet<string> = new Set([
@@ -140,6 +143,21 @@ export function ProductDetail({
           />
         </div>
       </div>
+
+      <CompatibleCartridges
+        housingSize={product.metafields.housing_size}
+        excludeHandle={product.handle}
+      />
+
+      <RelatedSystems
+        category={category}
+        subcategory={subcategory}
+        subcategoryLabel={
+          findSubcategory(category, subcategory)?.subcategory.label ??
+          subcategory
+        }
+        currentHandle={product.handle}
+      />
 
       <SpecificationsPanel metafields={product.metafields} />
     </article>
