@@ -140,19 +140,41 @@ up when ready to write content.
 
 ## Outstanding placeholder items (cross-milestone)
 
-These were intentionally left as placeholders during the storefront
-build and need attention before launch:
+These need attention before launch:
 
-- `/about/`, `/about/our-pricing/`, `/contact/`, `/shipping/`,
-  `/returns/`, `/privacy/`, `/terms/` — links exist in the footer but
-  no pages render. They 404 today.
-- ABN in the footer is "TBC" — replace with the real ABN.
-- Phone number: footer says "Call us" without a number.
-- Logo asset: `/logo.svg` referenced by Organization schema but not
-  uploaded. Upload to `/public/logo.svg`.
+- Logo asset: `/logo.svg` referenced by LocalBusiness / Organization
+  schema but not uploaded. Upload to `/public/logo.svg`.
 - Variant selector on the product page (multi-variant products
   currently always add the first variant).
 - WaterMark non-certified warning banner on product pages.
 - Webhook handlers (`/api/webhooks/products|collections|inventory`)
   for on-demand revalidation. `SHOPIFY_WEBHOOK_SECRET` is documented
   in `docs/01` but no route handler consumes it yet.
+- Contact form on `/contact/` — intentionally removed because the
+  previous implementation was a stub that simulated success without
+  actually sending. Reinstate once a backend is wired (Formspree,
+  Vercel function, or direct email integration). The page currently
+  exposes phone, email, showroom address, and social links.
+- `NEXT_PUBLIC_GA_ID` not yet configured — flagged in
+  `content/privacy.md` and required before launch for analytics.
+
+### Resolved 2026-05
+
+- Real business data wired sitewide via `content/business-info.ts`:
+  phone (02) 8772 8162, email info@enviroaqua.com.au, address
+  6/45 Amsterdam Cct Wyong NSW 2259, ABN 24 638 197 734, ACN
+  638 197 734, Facebook + Instagram socials. Footer, /contact/,
+  /shipping/, /returns/, /about/, /terms/, /privacy/, and
+  /locations/central-coast-nsw/ all render the real values.
+- Returns policy corrected to 14 days from delivery, damaged or
+  faulty only (was incorrectly listed as 30-day change-of-mind).
+- Shipping rates updated from a single placeholder to the real
+  tiered Standard / Express structure plus free Click & Collect
+  from the Wyong showroom.
+- Same-day dispatch cutoff corrected from 1pm AEST → 12pm AEST.
+- LocalBusiness JSON-LD now emitted sitewide from `app/layout.tsx`
+  with the real address, phone, openingHours, and social sameAs
+  links — boosts local SEO ranking.
+- All `/about/`, `/about/our-pricing/`, `/contact/`, `/shipping/`,
+  `/returns/`, `/privacy/`, `/terms/` pages now resolve with real
+  content.
