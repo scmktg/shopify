@@ -163,6 +163,9 @@ export function transformShopifyProduct(raw: ShopifyProductRaw): Product {
 export function transformShopifyProductCard(
   raw: ShopifyProductCardRaw,
 ): ProductCardData {
+  const housingMf = raw.metafields.find(
+    (mf): mf is NonNullable<typeof mf> => mf?.key === 'housing_size',
+  );
   return {
     id: raw.id,
     handle: raw.handle,
@@ -171,5 +174,6 @@ export function transformShopifyProductCard(
     tags: raw.tags,
     featuredImage: raw.featuredImage,
     price: raw.priceRange.minVariantPrice,
+    housingSize: housingMf?.value ?? null,
   };
 }

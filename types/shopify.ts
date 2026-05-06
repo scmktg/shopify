@@ -64,6 +64,12 @@ export interface ShopifyProductCardRaw {
   tags: ReadonlyArray<string>;
   featuredImage: ProductImage | null;
   priceRange: { minVariantPrice: Money };
+  /**
+   * `metafields(identifiers: [...])` — same nullable-element semantics
+   * as the full product fragment. Only `housing_size` is fetched on
+   * card-shaped queries.
+   */
+  metafields: ReadonlyArray<ShopifyMetafield | null>;
 }
 
 export interface ShopifyProductByHandleResponse {

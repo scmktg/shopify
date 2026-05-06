@@ -100,9 +100,14 @@ export interface Product {
 }
 
 /**
- * Lightweight projection used in product grids, search suggestions, and
- * homepage tiles. Avoids fetching the full metafield set when all we
- * need is image, title, price, and certification tags.
+ * Lightweight projection used in product grids, search suggestions,
+ * and homepage tiles. Avoids fetching the full metafield set when
+ * all we need is image, title, price, and certification tags.
+ *
+ * `housingSize` is the only metafield carried on the card — needed
+ * for the "compatible cartridges" cross-sell on system product
+ * pages. Null when the product is not housing-sized (most non-
+ * filter products).
  */
 export interface ProductCardData {
   id: string;
@@ -112,4 +117,5 @@ export interface ProductCardData {
   tags: ReadonlyArray<string>;
   featuredImage: ProductImage | null;
   price: Money;
+  housingSize: string | null;
 }

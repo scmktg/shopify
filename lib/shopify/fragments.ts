@@ -22,6 +22,15 @@ export const PRODUCT_CARD_FRAGMENT = /* GraphQL */ `
         currencyCode
       }
     }
+    metafields(
+      identifiers: [
+        { namespace: "enviroaqua", key: "housing_size" }
+      ]
+    ) {
+      key
+      value
+      type
+    }
   }
 `;
 
