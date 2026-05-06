@@ -47,6 +47,27 @@ export const BUSINESS_INFO = {
     facebook: 'https://www.facebook.com/EnviroAqua.com.au/',
     instagram: 'https://www.instagram.com/enviro_aqua/',
   },
+  /**
+   * NSW Central Coast postcodes eligible for the Whole House
+   * Installation Package. Used by both the lead-form client
+   * validation and the /api/lead-installation route, so this
+   * is the single source of truth.
+   */
+  installPackagePostcodes: [
+    '2250',
+    '2251',
+    '2256',
+    '2257',
+    '2258',
+    '2259',
+    '2260',
+    '2261',
+    '2262',
+    '2263',
+    '2775',
+    '2778',
+    '2779',
+  ],
 } as const;
 
 /** "6/45 Amsterdam Cct, Wyong, NSW 2259". */

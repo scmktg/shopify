@@ -20,7 +20,8 @@
     "gray-matter": "^4.0.3",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "resend": "^4.0.1"
   },
   "devDependencies": {
     "typescript": "^5.7.3",
