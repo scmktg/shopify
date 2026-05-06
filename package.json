@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "test:shopify": "tsx scripts/test-shopify-fetch.ts"
+    "test:shopify": "tsx scripts/test-shopify-fetch.ts",
+    "audit:watermark": "tsx scripts/audit-watermark-status.ts"
   },
   "dependencies": {
     "next": "^16.2.0",
