@@ -184,11 +184,16 @@ script does two passes:
    `moreInCategory` handle exists in this file. Errors are blocking.
 2. **Async cross-Shopify pass.** Skipped when Shopify env vars
    (`SHOPIFY_STORE_DOMAIN`, `SHOPIFY_STOREFRONT_PRIVATE_TOKEN`,
-   `SHOPIFY_API_VERSION`) are absent. When set, confirms every
-   handle in `products.json` resolves to a real Shopify product
-   AND every Shopify product has a corresponding entry. Either
-   direction is a build failure — a Shopify product without a
-   `products.json` entry would render as a blank page.
+   `SHOPIFY_API_VERSION`) are absent. When set, runs two checks:
+   - **products.json → Shopify** (typo / stale entry guard). Every
+     handle in this file must resolve to a real Shopify product.
+     **Always blocks the build.**
+   - **Shopify → products.json** (migration backlog). Every Shopify
+     product should have a corresponding entry. Reports missing
+     handles as a **warning by default** during the staged rollout,
+     so partially-populated catalogues don't fail every preview
+     deploy. Set `STRICT_PRODUCTS_VALIDATION=1` in the production
+     build env to escalate this to a hard error before launch.
 
 Sample valid run:
 

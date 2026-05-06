@@ -104,38 +104,70 @@ async function main(): Promise<void> {
     },
   );
 
-  if (shopifyResult.ok) {
+  const strict = process.env['STRICT_PRODUCTS_VALIDATION'] === '1';
+
+  // Direction 1: products.json handle has no Shopify product. This is
+  // ALWAYS an error — it catches typos in handles and stale entries
+  // for products that were unpublished in Shopify.
+  const missingInShopify = shopifyResult.missingInShopify;
+
+  // Direction 2: Shopify product has no products.json entry. During
+  // the staged rollout this is a warning by default — entries are
+  // being added gradually as the catalogue is migrated. Set
+  // STRICT_PRODUCTS_VALIDATION=1 (e.g. in the production build env)
+  // to escalate it back to an error pre-launch.
+  const missingInProducts = shopifyResult.missingInProducts;
+
+  if (missingInShopify.length === 0 && missingInProducts.length === 0) {
     console.log(
       `${GREEN}✓${RESET} every products.json handle resolves in Shopify; every Shopify handle has a content entry`,
     );
     process.exit(0);
   }
 
-  console.error('');
-  console.error(`${RED}✖ Shopify ↔ products.json mismatch${RESET}`);
-  if (shopifyResult.missingInShopify.length > 0) {
+  if (missingInShopify.length > 0) {
     console.error('');
     console.error(
-      `  ${RED}Handles in products.json with no matching Shopify product:${RESET}`,
+      `${RED}✖ products.json references Shopify handles that don't exist:${RESET}`,
     );
-    for (const handle of shopifyResult.missingInShopify) {
-      console.error(`    - ${handle}`);
-    }
-  }
-  if (shopifyResult.missingInProducts.length > 0) {
-    console.error('');
-    console.error(
-      `  ${RED}Shopify products with no entry in products.json:${RESET}`,
-    );
-    for (const handle of shopifyResult.missingInProducts) {
+    for (const handle of missingInShopify) {
       console.error(`    - ${handle}`);
     }
     console.error('');
     console.error(
-      `  ${DIM}(merchant must add product to Shopify first; engineer adds the products.json entry; both ship together — no silent fallback.)${RESET}`,
+      `  ${DIM}(check for typos, or remove the stale entry if the product was unpublished in Shopify)${RESET}`,
     );
   }
-  process.exit(1);
+
+  if (missingInProducts.length > 0) {
+    const stream = strict ? console.error : console.warn;
+    const colour = strict ? RED : YELLOW;
+    const symbol = strict ? '✖' : '!';
+    stream('');
+    stream(
+      `${colour}${symbol} Shopify products with no entry in products.json (${missingInProducts.length}):${RESET}`,
+    );
+    for (const handle of missingInProducts) {
+      stream(`    - ${handle}`);
+    }
+    stream('');
+    if (strict) {
+      stream(
+        `  ${DIM}STRICT_PRODUCTS_VALIDATION is set — every Shopify product must have a products.json entry to ship.${RESET}`,
+      );
+    } else {
+      stream(
+        `  ${DIM}Migration backlog: warning only. Set STRICT_PRODUCTS_VALIDATION=1 (e.g. in production env) to escalate this to a build failure once the catalogue is fully populated.${RESET}`,
+      );
+    }
+  }
+
+  // Exit code policy:
+  //  - missingInShopify (typos / stale) → always fail.
+  //  - missingInProducts (migration backlog) → fail only when strict.
+  if (missingInShopify.length > 0) process.exit(1);
+  if (missingInProducts.length > 0 && strict) process.exit(1);
+  process.exit(0);
 }
 
 main().catch((error: unknown) => {
