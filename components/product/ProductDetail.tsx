@@ -54,6 +54,9 @@ export function ProductDetail({
         firstVariant.quantityAvailable <= DEFAULT_LOW_STOCK_THRESHOLD
       ? 'low_stock'
       : 'in_stock';
+  const subcategoryNode = findSubcategory(category, subcategory);
+  const subcategoryLabel =
+    subcategoryNode?.subcategory.label ?? humaniseSlug(subcategory);
 
   return (
     <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
@@ -86,7 +89,14 @@ export function ProductDetail({
         </div>
 
         <div>
-          <h1 className="text-3xl md:text-4xl font-semibold text-black">
+          <Link
+            href={`/${category}/${subcategory}/`}
+            className="inline-block text-xs font-semibold uppercase tracking-wide text-brand-blue border border-brand-blue/30 bg-brand-blue-light px-3 py-1 rounded-full hover:bg-brand-blue hover:text-white transition-colors"
+          >
+            {subcategoryLabel}
+          </Link>
+
+          <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-black">
             {product.title}
           </h1>
 
@@ -96,21 +106,27 @@ export function ProductDetail({
             </p>
           )}
 
-          <div className="mt-4 flex items-baseline gap-3 flex-wrap">
-            <PriceDisplay
-              money={product.priceRange.minVariantPrice}
-              className="text-2xl font-semibold text-black"
-            />
-            {compareAt && (
-              <s className="text-base text-black/60">
-                <PriceDisplay money={compareAt} />
-              </s>
-            )}
-            {savings && (
-              <span className="text-sm font-semibold text-brand-blue">
-                Save {savings.amount} ({savings.percent}%)
-              </span>
-            )}
+          <div className="mt-4 flex items-baseline justify-between gap-4 flex-wrap">
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <PriceDisplay
+                money={product.priceRange.minVariantPrice}
+                className="text-2xl font-semibold text-black"
+              />
+              <span className="text-sm text-black/50">inc GST</span>
+              {compareAt && (
+                <s className="ml-2 text-base text-black/60">
+                  <PriceDisplay money={compareAt} />
+                </s>
+              )}
+              {savings && (
+                <span className="text-sm font-semibold text-brand-blue">
+                  Save {savings.amount} ({savings.percent}%)
+                </span>
+              )}
+            </div>
+            <span className="text-sm text-black/50">
+              Same price retail or trade
+            </span>
           </div>
 
           {product.metafields.watermark_status && (
@@ -170,10 +186,7 @@ export function ProductDetail({
       <RelatedSystems
         category={category}
         subcategory={subcategory}
-        subcategoryLabel={
-          findSubcategory(category, subcategory)?.subcategory.label ??
-          subcategory
-        }
+        subcategoryLabel={subcategoryLabel}
         currentHandle={product.handle}
       />
 
