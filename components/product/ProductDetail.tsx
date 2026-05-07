@@ -11,6 +11,7 @@ import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
 import { FullSpecs } from './FullSpecs';
 import { ComplianceSection } from './ComplianceSection';
+import { BuyBanner } from './BuyBanner';
 import { BoughtTogether } from './BoughtTogether';
 import { MoreInCategory } from './MoreInCategory';
 import { BrandTrustStrip } from './BrandTrustStrip';
@@ -136,12 +137,14 @@ export function ProductDetail({
           </div>
 
           {firstVariant && (
-            <AddToCartButton
-              variantId={firstVariant.id}
-              available={inStock}
-              label={content.ctas?.primary ?? undefined}
-              enableBuyNow
-            />
+            <div className="mt-6">
+              <AddToCartButton
+                variantId={firstVariant.id}
+                available={inStock}
+                label={content.ctas?.primary ?? undefined}
+                enableBuyNow
+              />
+            </div>
           )}
 
           {firstVariant && (
@@ -174,6 +177,16 @@ export function ProductDetail({
       <ProductOverview description={content.description} />
       <ProductFeatures features={content.features} />
       <RecommendedFor items={content.recommendedFor} />
+
+      {firstVariant && (
+        <BuyBanner
+          variantId={firstVariant.id}
+          available={inStock}
+          price={product.priceRange.minVariantPrice}
+          ctaLabel={content.ctas?.primary ?? undefined}
+        />
+      )}
+
       <ComplianceSection compliance={content.compliance} />
 
       {boughtTogether.length > 0 && (
