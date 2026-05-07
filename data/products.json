@@ -355,13 +355,230 @@
     "categories": [
       "cartridges",
       "carbon"
-    ]
+    ],
+    "tags": [
+      "carbon-cto",
+      "20x45",
+      "five-micron",
+      "coconut-shell",
+      "carbon-block",
+      "big-blue",
+      "whole-house"
+    ],
+    "shortDescription": "Big Blue 20\" × 4.5\" coconut carbon block (CTO) — 5 micron. The standard whole-house carbon stage for chlorine, taste, and odour reduction at full Australian residential flow rates.",
+    "description": "The 20\" × 4.5\" Big Blue coconut carbon block — the carbon stage that pairs with a 20\" × 4.5\" sediment pre-filter to handle every drop of water entering an Australian home. This is the cartridge that does the chemistry in a whole-house filter: chlorine, chloramine residue, taste, and odour, removed before water reaches a single tap, shower, or appliance.\n\n## Why Big Blue Diameter Matters for Carbon\n\nWhole-house flow demand is the design challenge for any carbon stage. A modern Australian home running showers, the dishwasher, and the washing machine simultaneously can pull 50–75 litres per minute through the filter line. At those flow rates, contact time between water and carbon is short — and a slim 2.5\" cartridge would let chlorine break through to the downstream supply.\n\nThe 4.5\" Big Blue diameter solves this. **Nearly four times the cross-section of a slim cartridge means proportionally more carbon mass in contact with the water at any moment**, and the radial flow path is longer. The combination keeps chlorine reduction effective at whole-house flow, where slim formats can't.\n\n## Coconut Carbon, Block Format\n\nThe carbon source is coconut shell — higher surface area per gram than coal-based activated carbon, with no detectable heavy-metal residuals from the source material. Block construction (rather than granular fill) means longer water-to-carbon contact time at the same flow rate, no media migration into the downstream supply, and predictable pressure drop until end of life.\n\n## Standard Whole-House Spec\n\nThis cartridge fits as **Stage 2 carbon** in:\n\n- The WaterMark-certified [3-stage Big Blue whole-house system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/)\n- The [twin Big Blue whole-house system](/twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra/)\n- The [premium 3-stage Big Blue system](/premium-three-stage-big-blue-whole-house-water-filter-system/)\n- Any third-party 20\" × 4.5\" Big Blue housing\n\n## A Note on Chloramine\n\nIf your water supply uses **chloramine** rather than chlorine — which includes Sydney Water, Melbourne Water, SA Water, Urban Utilities (Brisbane/SEQ), and Icon Water (Canberra) — a standard coconut carbon block may not fully remove chloramine at whole-house flow rates. Catalytic carbon is the better choice for chloramine. Speak to us about your water supply if you're not sure which carbon format fits your area.\n\n## Specifications\n\n- **Cartridge size:** 20\" × 4.5\" (Big Blue)\n- **Media:** coconut-shell activated carbon block\n- **Micron rating:** 5 micron\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 6–12 months",
+    "features": [
+      "20\" × 4.5\" Big Blue — sized for whole-house flow rates",
+      "Coconut-shell activated carbon, block construction (CTO)",
+      "5 micron rating",
+      "Maintains chlorine reduction at whole-house flow where slim cartridges break through",
+      "Stage 2 carbon for any Big Blue 2-stage or 3-stage whole-house system",
+      "Operating envelope 5–40 °C, 0.1–0.4 MPa (14.5–58 PSI)",
+      "6–12 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Coconut activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Coconut-shell activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Treats",
+        "value": "Chlorine, chemical taste, odour"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "20\" × 4.5\" Big Blue whole-house Stage 2 carbon"
+      }
+    ],
+    "recommendedFor": [
+      "Stage 2 carbon in any Big Blue whole-house system",
+      "Properties on chlorinated town water (consult on chloramine areas)",
+      "Triple Big Blue installations needing the carbon stage replaced",
+      "Twin Big Blue systems on a 6–12 month service interval"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5",
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "twin-pair-water-filter-cartridges-carbon-sediment-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "20\" × 4.5\" Big Blue Coconut Carbon CTO Cartridge — 5 Micron | Enviro Aqua",
+      "description": "Big Blue 20\" × 4.5\" coconut carbon block. 5 micron, 14.5–58 PSI, 6–12 month change. Whole-house Stage 2 carbon for chlorine, taste, and odour reduction.",
+      "ogImage": null
+    }
   },
   "granular-activated-carbon-water-filter-gac-5-micron-20-x-4-5": {
     "categories": [
       "cartridges",
       "carbon"
-    ]
+    ],
+    "tags": [
+      "carbon-gac",
+      "20x45",
+      "five-micron",
+      "granular",
+      "big-blue",
+      "whole-house",
+      "high-flow"
+    ],
+    "shortDescription": "Big Blue 20\" × 4.5\" granular activated carbon (GAC) cartridge — 5 micron, 3–5 month service. The whole-house carbon format where low pressure drop matters more than block contact time.",
+    "description": "The 20\" × 4.5\" Big Blue granular activated carbon cartridge — the GAC counterpart to the [Big Blue carbon block](/coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5/). Same housing, same diameter, same drop-in format — different carbon construction, different performance trade-off.\n\n## Why Pick GAC at Big Blue Scale\n\nWhole-house Big Blue is the format where the GAC vs block decision actually has consequences worth weighing. Here's the trade-off in concrete terms:\n\n**Pick this GAC cartridge if:**\n- Your installation has marginal mains pressure and you can't afford additional pressure drop across the carbon stage\n- You're using this as a Stage 3 polish downstream of a sediment + carbon block in a 3-stage system, where the upstream stages have already done the bulk treatment\n- High peak flow events (multiple showers + dishwasher + washing machine simultaneously) need to pass without bottlenecking at the carbon stage\n\n**Pick the carbon block instead if:**\n- This is your single carbon stage on chlorinated mains and you want maximum chlorine reduction per cartridge\n- Service interval matters more than peak flow capacity — block runs 6–12 months vs GAC's 3–5\n- You'd rather not deal with the first-flush carbon-fines flush a fresh GAC cartridge releases\n\nNeither choice is universally correct. Match the cartridge to what your installation actually needs.\n\n## Whole-House Service Interval\n\nAt 3–5 months, this cartridge is on a faster replacement cycle than the equivalent block carbon. For whole-house installations with significant flow demand, plan two service visits a year. The shorter interval is the inherent trade-off for the lower pressure drop — granular media exposes more carbon surface to flowing water at any moment, which means the carbon depletes faster.\n\n## Manufacturer Claim and Honest Practice\n\nThe manufacturer's documentation lists this cartridge as treating chlorine, hydrogen sulfide, taste, odour — along with broader claims (bacteria, viruses, lead, arsenic, cadmium, iron). The chlorine, hydrogen sulfide, taste, and odour claims are well-established for activated carbon and the cartridge will deliver against those at whole-house flow rates. The microbiological and heavy-metal claims are not established performance for plain GAC media without certified specialised treatment — don't rely on this cartridge as your sole defence against bacteria, viruses, or heavy metals. For those concerns, [UV sterilisation](/big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/) and reverse osmosis are the established treatments.\n\n## Specifications\n\n- **Cartridge size:** 20\" × 4.5\" (Big Blue)\n- **Media:** granular activated carbon\n- **Micron rating:** 5 micron\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 3–5 months",
+    "features": [
+      "20\" × 4.5\" Big Blue — whole-house format with low pressure drop",
+      "Granular activated carbon (GAC) construction",
+      "5 micron rating",
+      "Established treatment for chlorine, hydrogen sulfide, taste, odour at whole-house flow",
+      "Drops into any 20\" × 4.5\" Big Blue housing",
+      "3–5 month replacement interval — plan two services a year"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Granular activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Granular (GAC)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "3–5 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Granular activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Granular (GAC)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Established treatment for",
+        "value": "Chlorine, hydrogen sulfide, taste, odour"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "3–5 months"
+      },
+      {
+        "label": "Application",
+        "value": "Whole-house Big Blue carbon stage, post-block polish, marginal-pressure installations"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house Big Blue installations with marginal mains pressure",
+      "Stage 3 polish carbon downstream of sediment + carbon block",
+      "Properties with high peak-flow events that bottleneck at block carbon",
+      "Owners willing to trade longer service interval for lower pressure drop"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5",
+        "big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system"
+      ],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "20\" × 4.5\" Big Blue GAC Carbon Cartridge — 5 Micron | Enviro Aqua",
+      "description": "Big Blue 20\" × 4.5\" granular activated carbon. 5 micron, 14.5–58 PSI, 3–5 month change. Whole-house carbon stage where low pressure drop matters.",
+      "ogImage": null
+    }
   },
   "_seed-minimal-example": {
     "categories": [
@@ -1326,9 +1543,100 @@
       "cartridges",
       "carbon"
     ],
-    "shortDescription": "Coconut activated carbon block (CTO) cartridge.",
+    "tags": [
+      "carbon-cto",
+      "10x25",
+      "five-pack",
+      "bulk",
+      "premium",
+      "coconut-shell"
+    ],
+    "shortDescription": "Five-pack of premium coconut activated carbon block (CTO) cartridges — 10\" × 2.5\". 2.5–5 years of carbon stages on a single order; ideal for property managers, RO services, and facilities with multiple housings.",
+    "description": "A five-pack of premium coconut activated carbon block (CTO) cartridges in the standard 10\" × 2.5\" format. Five cartridges in one order is the right buy when the cost of *not having a spare on the shelf* outweighs the upfront outlay — facilities managers running multiple under-sink or RO systems, plumbers servicing recurring customers, and property managers with several rentals all share that math.\n\n## When the Five-Pack Makes Sense\n\nA single household with one 2-stage under-sink filter changes the carbon stage roughly once a year. Five cartridges = five years of supply on the shelf, which is more than the carbon stays optimally adsorbent in storage. So the five-pack is **not** the right buy for a single home install.\n\nWhere it earns its place:\n\n- **Property managers** with five or more rental properties on a shared service schedule\n- **Plumbers and trade buyers** stocking truck inventory for callouts\n- **Café, salon, or office portfolio managers** running multiple point-of-use filters\n- **RO system owners** changing the Stage 2 carbon at every membrane service (faster cycle than under-sink)\n\n## What's in Each Cartridge\n\nEach unit is a coconut-shell activated carbon block sized to fit any standard 10\" × 2.5\" filter housing. Coconut carbon is the higher-grade source media — more surface area per gram than coal-based carbon, no detectable heavy-metal residuals from the source material. Block construction (rather than granular fill) gives extended water-to-carbon contact time at residential flow rates, which is what makes the carbon effective for chlorine, taste, and odour reduction.\n\nThe cartridges are a direct fit for any 10\" × 2.5\" housing — same physical size as the [single-pack premium CTO cartridge](/coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5/). Storage tip: keep unused cartridges in their sealed packaging, in a cool dry cupboard, away from solvents or strong odours — activated carbon is adsorbent in storage too, and will pick up volatile compounds from the surrounding air.",
+    "features": [
+      "Five-pack — bulk-buy pricing for trade, property managers, and multi-site operators",
+      "Coconut activated carbon block — premium grade vs coal-derived carbon",
+      "10\" × 2.5\" standard format — fits any housing of this size",
+      "Removes chlorine, chemical taste, and odour from drinking water",
+      "Block construction for extended water-to-carbon contact time",
+      "Direct fit for under-sink, RO, and bench-top installations"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Pack size",
+        "value": "5 cartridges"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Carbon source",
+        "value": "Coconut shell"
+      },
+      {
+        "label": "Carbon format",
+        "value": "Block (CTO)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "5 × CTO carbon block cartridges"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Coconut activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Treats",
+        "value": "Chlorine, chemical taste, odour"
+      },
+      {
+        "label": "Compatible housings",
+        "value": "Any standard 10\" × 2.5\""
+      }
+    ],
+    "recommendedFor": [
+      "Property managers servicing multiple rental properties",
+      "Plumbers and trade buyers stocking truck inventory",
+      "Café or office portfolio managers running multiple point-of-use filters",
+      "RO system owners changing the Stage 2 carbon at every service interval"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge pack — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5",
+        "twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Coconut activated carbon block (CTO) cartridge. Removes chlorine, chemical taste, and odour from drinking water through dense carbon adsorption."
+      "title": "5-Pack Premium CTO Carbon Cartridges — 10\" × 2.5\" Coconut Block | Enviro Aqua",
+      "description": "Five-pack of coconut activated carbon block (CTO) cartridges. 10\" × 2.5\" standard fit. Bulk-buy pricing for trade, property managers, and multi-site operators.",
+      "ogImage": null
     }
   },
   "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5": {
@@ -1336,9 +1644,113 @@
       "cartridges",
       "carbon"
     ],
-    "shortDescription": "Coconut activated carbon block (CTO) cartridge rated to 5 micron.",
+    "tags": [
+      "carbon-cto",
+      "10x25",
+      "five-micron",
+      "coconut-shell",
+      "carbon-block",
+      "under-sink"
+    ],
+    "shortDescription": "Coconut activated carbon block (CTO) cartridge — 10\" × 2.5\", 5 micron. Reduces chlorine, chemical taste, and odour. Rated 14.5–58 PSI / 5–40 °C.",
+    "description": "The coconut activated carbon block cartridge in the standard 10\" × 2.5\" format — the carbon stage that goes downstream of a sediment pre-filter in nearly every multi-stage residential filter. Where the sediment cartridge handles particulate, this cartridge handles the chemistry: **chlorine, chloramine residue, taste, and odour** are all reduced by adsorption onto the carbon block.\n\n## Block, Not Granular — What It Means in Practice\n\n\"CTO\" stands for **Chlorine, Taste, Odour** — the three things a carbon block does best. The distinction between this carbon block format and a granular-fill GAC cartridge is mechanical: the carbon here is bonded into a single dense block rather than packed as loose granules. Three consequences follow:\n\n- **Longer water-to-carbon contact time** at the same flow rate — water threads through the dense block rather than channelling between granules\n- **No carbon migration** — a block can't shed media into the downstream supply\n- **Predictable pressure drop** until the cartridge reaches end of life\n\nFor most residential drinking-water applications, block is the right format. Granular still has uses (whole-house high-flow installations where contact time is less critical) but block is the default for under-sink and RO point-of-use.\n\n## Coconut-Shell Carbon\n\nThe activated carbon source is coconut shell — the higher-grade source media for water filtration. Coconut activated carbon has more surface area per gram than coal-based carbons (typically 1100–1500 m²/g vs 800–1000 for coal), and avoids the heavy-metal residuals that some coal sources carry. The result is more effective chlorine and taste reduction per gram of media, and a cleaner finished water.\n\n## Operating Window\n\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 6–12 months depending on water quality and household usage\n\n## Where It Fits\n\nDirect fit for any 10\" × 2.5\" filter housing — the most common size in Australian residential filtration. Standard pairing: install behind a [10\" × 2.5\" PP sediment cartridge](/polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5/) as Stage 2 of a 2-stage under-sink filter, or as Stage 2 in any 5- or 6-stage RO system.",
+    "features": [
+      "Coconut-shell activated carbon — ~1100–1500 m²/g surface area",
+      "Block construction — longer contact time and no media migration vs granular",
+      "Reduces chlorine, chemical taste, and odour through adsorption",
+      "10\" × 2.5\" standard size — fits Australian residential housings",
+      "5 micron rating",
+      "Operating envelope 5–40 °C, 0.1–0.4 MPa (14.5–58 PSI)",
+      "6–12 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Coconut activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Coconut-shell activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Treats",
+        "value": "Chlorine, chemical taste, odour"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial water filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Stage 2 of any 2-stage under-sink filter",
+      "Stage 2 of multi-stage RO systems",
+      "Bench-top filters using the 10\" × 2.5\" canister",
+      "Households on chlorinated mains supplies wanting taste improvement"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2",
+        "5-x-premium-quality-cto-carbon-cartridges-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Coconut activated carbon block (CTO) cartridge rated to 5 micron."
+      "title": "10\" × 2.5\" Coconut Carbon CTO Cartridge — 5 Micron | Enviro Aqua",
+      "description": "Coconut activated carbon block (CTO) cartridge. 10\" × 2.5\", 5 micron, 14.5–58 PSI. Reduces chlorine, taste and odour. Stage 2 fit for under-sink and RO.",
+      "ogImage": null
     }
   },
   "coconut-activated-carbon-water-filter-cto-5-micron-10-x-4-5": {
@@ -1346,9 +1758,113 @@
       "cartridges",
       "carbon"
     ],
-    "shortDescription": "Coconut activated carbon block (CTO) cartridge rated to 5 micron.",
+    "tags": [
+      "carbon-cto",
+      "10x45",
+      "five-micron",
+      "coconut-shell",
+      "carbon-block",
+      "short-big-blue"
+    ],
+    "shortDescription": "Coconut activated carbon block in 10\" × 4.5\" short Big Blue format — 5 micron. Higher flow than slim 10\" × 2.5\" cartridges, half the height of a full Big Blue.",
+    "description": "The 10\" × 4.5\" short Big Blue coconut carbon block — same height as a standard residential cartridge but at the wider 4.5\" Big Blue diameter. The diameter is what matters here: at nearly four times the cross-sectional area of a 10\" × 2.5\" cartridge, this format carries significantly more carbon media in the same height, with correspondingly higher flow capacity and longer service life on the same water supply.\n\n## Why This Format Exists\n\nFull-height 20\" × 4.5\" Big Blue is the mainstream whole-house format. The short Big Blue version is the right answer when:\n\n- The housing cupboard or wall location doesn't have headroom for a 20\" cartridge\n- The installation is point-of-use rather than whole-house, but the higher Big Blue flow is still wanted\n- A caravan, RV, or compact rural setup is using Big Blue housings for ruggedness rather than for whole-house volume\n\nIt fits the [10\" × 4.5\" carbon whole-house housing](/whole-house-water-filter-1-stage-10-x-4-5-carbon/) directly, and the carbon stage of any [2-stage 10\" × 4.5\" sediment + carbon system](/whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon/).\n\n## What the Carbon Does\n\n**Chlorine, chemical taste, and odour reduction** through adsorption onto coconut-shell activated carbon, bonded into a dense block. The block format gives extended contact time at high flow rates — important here because the 4.5\" diameter means more water passing through at once, and contact time is what determines how much chlorine the carbon actually captures vs lets through.\n\n## Specifications\n\n- **Filter size:** 10\" × 4.5\" (short Big Blue)\n- **Media:** coconut-shell activated carbon block\n- **Micron rating:** 5 micron\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 6–12 months depending on water quality and usage\n\nReplaces the equivalent factory cartridge in any 10\" × 4.5\" Big Blue housing, OEM or aftermarket.",
+    "features": [
+      "10\" × 4.5\" short Big Blue format — higher flow than 10\" × 2.5\" cartridges",
+      "Coconut-shell activated carbon block (CTO)",
+      "5 micron rating",
+      "Reduces chlorine, chemical taste, and odour",
+      "Operating temperature 5–40 °C",
+      "Operating pressure 0.1–0.4 MPa (14.5–58 PSI)",
+      "6–12 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Coconut activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Coconut-shell activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Treats",
+        "value": "Chlorine, chemical taste, odour"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Short Big Blue housings, point-of-use and compact whole-house"
+      }
+    ],
+    "recommendedFor": [
+      "Short Big Blue 10\" × 4.5\" whole-house housings",
+      "Caravan, RV, and compact rural installations using Big Blue housings",
+      "Stage 2 carbon in 2-stage 10\" × 4.5\" sediment + carbon systems",
+      "Properties wanting Big Blue flow without the headroom for a 20\" cartridge"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5",
+        "whole-house-water-filter-1-stage-10-x-4-5-carbon",
+        "whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Coconut activated carbon block (CTO) cartridge rated to 5 micron."
+      "title": "10\" × 4.5\" Coconut Carbon CTO Cartridge — Short Big Blue | Enviro Aqua",
+      "description": "Coconut carbon block in short Big Blue 10\" × 4.5\" format. 5 micron, 14.5–58 PSI, 6–12 month change. Higher flow than slim 10\" × 2.5\" cartridges.",
+      "ogImage": null
     }
   },
   "coconut-activated-carbon-water-filter-cto-5-micron-20-x-2-5": {
@@ -1356,9 +1872,114 @@
       "cartridges",
       "carbon"
     ],
-    "shortDescription": "Coconut activated carbon block (CTO) cartridge rated to 5 micron.",
+    "tags": [
+      "carbon-cto",
+      "20x25",
+      "five-micron",
+      "coconut-shell",
+      "carbon-block",
+      "extended-life",
+      "slim-tall"
+    ],
+    "shortDescription": "Slim 20\" × 2.5\" coconut carbon block (CTO) — 5 micron. Doubles the carbon media volume of a 10\" cartridge in the same diameter, for longer chlorine-reduction service intervals.",
+    "description": "The 20\" × 2.5\" coconut carbon block — a tall slim cartridge that doubles the carbon media volume of the standard 10\" × 2.5\" without stepping up to the wider 4.5\" Big Blue diameter. For multi-stage systems built around the slim format, this is the format that buys longer service intervals on the same housing footprint.\n\n## Why More Media Length Helps Carbon\n\nA carbon stage's effectiveness depends on **contact time** — the duration each parcel of water spends in contact with the activated carbon. At a given flow rate, a taller cartridge means water spends longer threading through the carbon block before reaching the outlet. Two consequences:\n\n1. **Better chlorine reduction at high flow** — a 20\" cartridge can hold its chlorine-removal performance at flow rates where a 10\" cartridge starts to break through\n2. **Longer service life before saturation** — twice the carbon mass means twice the total chlorine the cartridge can adsorb before it's spent\n\nIn practice, a household running a 6-stage RO system with the slim 20\" format will typically see a full year of service from the carbon stages, where a 10\" version on the same supply might need replacing at 8–10 months.\n\n## Format and Fit\n\nFits **20\" × 2.5\" slim filter housings** — common in 3-stage and 6-stage RO replacement sets, and in slim-format whole-house systems. Pairs naturally with the [20\" × 2.5\" PP sediment cartridge](/polypropylene-sediment-water-filter-pp-5-micron-20-x-2-5/) as the carbon stage in a slim 2-stage installation, or fits the [3-stage 20\" × 2.5\" replacement set](/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5/) as Stage 2.\n\n## Specifications\n\n- **Media:** coconut-shell activated carbon block\n- **Micron rating:** 5 micron\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 6–12 months — plan toward the upper end of the range for typical household use, lower end for heavy-flow commercial",
+    "features": [
+      "20\" × 2.5\" slim format — doubles the carbon media of a 10\" cartridge in same diameter",
+      "Coconut-shell activated carbon, block construction (CTO)",
+      "5 micron rating",
+      "Better chlorine reduction at high flow vs shorter cartridges",
+      "Drops into any standard 20\" × 2.5\" slim filter housing",
+      "Operating envelope 5–40 °C, 0.1–0.4 MPa (14.5–58 PSI)",
+      "6–12 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Coconut activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Coconut-shell activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Treats",
+        "value": "Chlorine, chemical taste, odour"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "20\" × 2.5\" slim multi-stage and whole-house systems"
+      }
+    ],
+    "recommendedFor": [
+      "Stage 2 of slim 20\" × 2.5\" multi-stage filters",
+      "RO systems using the 20\" slim pre-filter format",
+      "Households wanting longer carbon-stage service vs 10\" cartridges",
+      "Slim whole-house installations on chlorinated mains"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-2-5",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5",
+        "20-x-2-5-whole-house-water-filter-replacement-sediment-carbon-gac-cartridges"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Coconut activated carbon block (CTO) cartridge rated to 5 micron."
+      "title": "20\" × 2.5\" Coconut Carbon CTO Cartridge — 5 Micron Slim | Enviro Aqua",
+      "description": "Slim 20\" × 2.5\" coconut carbon block. 5 micron, 14.5–58 PSI, 6–12 month change. Doubles the carbon media of a 10\" cartridge in the same diameter.",
+      "ogImage": null
     }
   },
   "granular-activated-carbon-water-filter-gac-5-micron-10-x-2-5": {
@@ -1366,9 +1987,111 @@
       "cartridges",
       "carbon"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "carbon-gac",
+      "10x25",
+      "five-micron",
+      "granular",
+      "high-flow"
+    ],
+    "shortDescription": "Granular activated carbon (GAC) cartridge — 10\" × 2.5\", 5 micron. Higher flow at lower pressure drop than carbon block; the right format where contact time is sufficient.",
+    "description": "Granular activated carbon (GAC) in the standard 10\" × 2.5\" format — the alternative carbon format to a CTO carbon block. Where a block packs activated carbon into a dense bonded structure, a GAC cartridge fills the cartridge body with **loose carbon granules**. The mechanical difference drives a different performance trade-off, and choosing between the two is the technical decision that matters for this cartridge.\n\n## GAC vs Carbon Block — The Real Difference\n\n- **Pressure drop:** GAC is significantly lower-resistance than carbon block. Water threads between granules instead of through dense block media.\n- **Contact time:** GAC offers **less** contact time per unit length than block, because water can channel between granules rather than being forced through the full media path.\n- **Surface area exposed:** loose granules expose more external surface area per gram than a bonded block does.\n- **Service life:** GAC saturates faster than block at the same usage level — the WP source rates this format at **3–5 months** vs 6–12 for block.\n- **Media migration:** loose granules can shed fines into the downstream supply, particularly during the first flush.\n\n## When to Pick GAC Over Block\n\n**GAC is the right choice when contact time isn't the bottleneck** — typically high-flow applications where pressure drop across a block would be unacceptable, or post-filter polish stages downstream of an RO membrane where the water is already largely treated. **Block is the right choice for residential drinking water at standard flow rates** — the longer contact time delivers better chlorine and taste reduction per cartridge.\n\nFor most Australian household under-sink installations, a coconut [carbon block (CTO)](/coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5/) is the better technical pick. GAC has a clear place in higher-flow whole-house Stage 2 or 3 polish, and as a low-cost taste-improvement cartridge.\n\n## Manufacturer Claims and What They Mean\n\nThe manufacturer's specification for this cartridge lists removal of \"bacteria, viruses, hydrogen sulfide, chlorine, lead, arsenic, cadmium\" and reduction of iron concentration. We present this as the supplier's stated specification. In practice, GAC is **well-established** for chlorine, hydrogen sulfide, taste, odour, and many volatile organic compounds, where adsorption onto activated carbon is the proven mechanism. **Bacteria and virus removal by plain GAC is not an established performance claim** without separate certified bacteriostatic media (typically silver-impregnated). **Heavy metal removal (lead, arsenic, cadmium) by plain GAC has limited capacity** — specialised media or reverse osmosis are the established treatments for these contaminants. If your concern is microbiology or heavy metals specifically, contact us about the appropriate cartridge or system.\n\n## Specifications\n\n- **Cartridge size:** 10\" × 2.5\"\n- **Media:** granular activated carbon\n- **Micron rating:** 5 micron\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 3–5 months",
+    "features": [
+      "Granular activated carbon — lower pressure drop than carbon block at the same flow",
+      "10\" × 2.5\" standard size",
+      "5 micron rating",
+      "Established for chlorine, hydrogen sulfide, taste, and odour reduction",
+      "Operating envelope 5–40 °C, 0.1–0.4 MPa (14.5–58 PSI)",
+      "3–5 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Granular activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Granular (GAC)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "3–5 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Granular activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Granular (GAC)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Established treatment for",
+        "value": "Chlorine, hydrogen sulfide, taste, odour"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "3–5 months"
+      },
+      {
+        "label": "Application",
+        "value": "High-flow carbon stage, post-RO polish, low-pressure-drop installations"
+      }
+    ],
+    "recommendedFor": [
+      "Post-RO carbon polish stage",
+      "High-flow installations where carbon-block pressure drop is excessive",
+      "Low-cost residential carbon stage with shorter service interval",
+      "Applications where contact time is not the bottleneck"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "10\" × 2.5\" GAC Granular Carbon Cartridge — 5 Micron | Enviro Aqua",
+      "description": "Granular activated carbon cartridge. 10\" × 2.5\", 5 micron. Lower pressure drop than carbon block; established for chlorine, hydrogen sulfide, taste, and odour.",
+      "ogImage": null
     }
   },
   "granular-activated-carbon-water-filter-gac-5-micron-20-x-2-5": {
@@ -1376,9 +2099,112 @@
       "cartridges",
       "carbon"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "carbon-gac",
+      "20x25",
+      "five-micron",
+      "granular",
+      "extended-life-vs-10",
+      "slim-tall"
+    ],
+    "shortDescription": "Slim 20\" × 2.5\" granular activated carbon (GAC) cartridge — 5 micron, 3–5 month service. Twice the granular carbon volume of a 10\" cartridge in the same diameter.",
+    "description": "The 20\" × 2.5\" granular activated carbon (GAC) cartridge — a tall slim format that doubles the granular carbon mass of a 10\" cartridge while keeping the same 2.5\" diameter. For multi-stage systems built around the slim format that need the GAC characteristic (low pressure drop, high flow tolerance) rather than carbon-block contact time, this is the format to step up to.\n\n## What Doubles When You Step Up\n\nA 10\" × 2.5\" GAC cartridge holds a fixed mass of granular carbon. The 20\" version holds roughly double, in the same housing diameter. Three things follow:\n\n1. **Twice the chlorine-adsorption capacity** before saturation — service life extends from the WP-rated 3–5 months toward the longer end of that range under the same usage\n2. **Reduced channelling risk** — a longer media bed gives water less opportunity to find a low-resistance path between granules without proper carbon contact\n3. **No flow penalty** — same diameter means the same maximum flow as the 10\" cartridge, but with more contact length\n\nWhere the slim format **doesn't** help is total flow capacity. For higher whole-house flow rates, the 4.5\" Big Blue diameter is the right step rather than the 20\" length.\n\n## When to Pick GAC at This Size\n\nThe slim 20\" GAC has its place in three setups:\n\n- **Multi-stage RO replacement sets** that use 20\" × 2.5\" pre-filters and want the GAC characteristic at Stage 2 or Stage 3\n- **Slim whole-house systems** where the housing is fixed and stepping up the format isn't possible\n- **Polish stages downstream** of an RO membrane, where the water is already largely treated and contact time matters less than pressure drop\n\nFor general residential drinking water at this size, a [coconut carbon block (CTO) at 20\" × 2.5\"](/coconut-activated-carbon-water-filter-cto-5-micron-20-x-2-5/) is the better technical pick — longer service interval (6–12 months vs 3–5) and better chlorine reduction per cartridge.\n\n## Specifications\n\n- **Cartridge size:** 20\" × 2.5\"\n- **Media:** granular activated carbon\n- **Micron rating:** 5 micron\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 3–5 months\n\nThe manufacturer's specification lists this cartridge as treating chlorine, hydrogen sulfide, taste, and odour — along with broader claims (bacteria, viruses, lead, arsenic, cadmium, iron) that are not established performance for plain GAC media without certified specialised treatment. Use this cartridge for the chlorine and taste job; for microbiology or heavy metals, speak to us about a specific cartridge or system.",
+    "features": [
+      "20\" × 2.5\" slim format — doubles GAC mass of a 10\" cartridge in same diameter",
+      "Granular activated carbon, low pressure drop",
+      "5 micron rating",
+      "Established treatment for chlorine, hydrogen sulfide, taste, and odour",
+      "Slim format suits multi-stage RO and 20\" whole-house housings",
+      "3–5 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Granular activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Granular (GAC)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "3–5 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Granular activated carbon"
+      },
+      {
+        "label": "Format",
+        "value": "Granular (GAC)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Established treatment for",
+        "value": "Chlorine, hydrogen sulfide, taste, odour"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "3–5 months"
+      },
+      {
+        "label": "Application",
+        "value": "20\" × 2.5\" slim multi-stage and post-RO polish"
+      }
+    ],
+    "recommendedFor": [
+      "20\" × 2.5\" slim multi-stage filtration systems",
+      "Post-RO polish stage in 6-stage RO replacement sets",
+      "Slim-format whole-house carbon stage with low pressure drop",
+      "Applications where granular media's flow characteristic matters more than block contact time"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-2-5",
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-2-5",
+        "6-stages-ro-cartridges-replacement-set-for-6-stages-ro-water-filter-system-5mic"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "20\" × 2.5\" GAC Granular Carbon Cartridge — 5 Micron Slim | Enviro Aqua",
+      "description": "Slim 20\" × 2.5\" granular activated carbon. 5 micron, 14.5–58 PSI, 3–5 month change. Doubles the GAC mass of a 10\" cartridge in the same diameter.",
+      "ogImage": null
     }
   },
   "6-stages-ro-cartridges-replacement-set-for-6-stages-ro-water-filter-system-5mic": {
