@@ -271,9 +271,119 @@
       "bubblers",
       "commercial"
     ],
-    "shortDescription": "Commercial-grade water bubbler / drinking fountain — built for high-traffic installations in offices, schools, gyms, re…",
+    "tags": [
+      "commercial",
+      "filtered",
+      "cold-water",
+      "high-traffic",
+      "freestanding"
+    ],
+    "shortDescription": "Freestanding commercial cold water bubbler — 20 L/hr cooling at 8–12°C, 200 W cooling, integrated PP sediment + activated carbon filtration, R290 refrigerant.",
+    "description": "A freestanding commercial cold-water bubbler engineered for high-traffic public installations — schools, offices, gyms, and retail venues that need a hands-off drinking fountain plumbed direct to the mains. The cabinet stands 99 cm tall on a 30 cm × 30 cm footprint, with the bubbler spout at 7 cm and a side tap at 25 cm so users can fill bottles without hunching.\n\nCooling is rated at **20 L/hr at 8–12 °C**, driven by a 200 W refrigeration circuit charged with R290 — a hydrocarbon refrigerant with a global warming potential roughly 1/3000th that of older R134a units. For a fountain that runs continuously through a school or office day, that's a meaningful reduction in lifetime environmental impact.\n\n## Filtration Built In\n\nA two-stage cartridge set sits inside the cabinet: a polypropylene sediment cartridge to trap rust, sand, and particulate, followed by an activated carbon cartridge that removes chlorine, taste, and odour from the supply. Both cartridges are accessible from inside the cabinet for service. Replacement cartridges are stocked separately and use the same 10\" × 2.5\" format common across the range.\n\n## Power and Connection\n\nWired for **220–240 V AC, 50/60 Hz** (also compatible with 100–127 V supplies in export markets). Mains plumbing connection is direct — a licensed plumber installs once on the cold supply, the unit runs from there. Model number **YL-600P** for service reference.\n\n## A Note on Compliance\n\nThe operational data carried in our system records this product as **not subject to WaterMark certification** under Australian plumbing regulations. The \"WM\" in the product name reflects the original supplier's nomenclature; we have not seen an active WaterMark licence number for this unit. If your installation requires WaterMark certification on the bubbler itself, we recommend the [Round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or [Square WaterMark bubbler](/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des/) instead — speak to your plumber about which certification path suits your project.",
+    "features": [
+      "20 L/hr cooling capacity at 8–12 °C — sized for sustained high-traffic use",
+      "R290 hydrocarbon refrigerant — low global warming potential vs R134a",
+      "Built-in two-stage filtration: PP sediment + activated carbon",
+      "Bubbler spout (7 cm) plus side tap (25 cm) for bottle filling",
+      "200 W cooling power on a 220–240 V (50/60 Hz) supply",
+      "Compact 30 cm × 30 cm footprint, 99 cm tall — fits against a wall",
+      "Direct mains connection — no bottles, no refills"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cooling capacity",
+        "value": "20 L/hr"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8–12 °C"
+      },
+      {
+        "label": "Cooling power",
+        "value": "200 W"
+      },
+      {
+        "label": "Refrigerant",
+        "value": "R290 (60 g)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Model",
+        "value": "YL-600P"
+      },
+      {
+        "label": "Format",
+        "value": "Freestanding, mains-connected"
+      },
+      {
+        "label": "Cooling capacity",
+        "value": "20 L/hr"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8–12 °C"
+      },
+      {
+        "label": "Cooling power",
+        "value": "200 W"
+      },
+      {
+        "label": "Refrigerant",
+        "value": "R290, 60 g charge"
+      },
+      {
+        "label": "Voltage",
+        "value": "220–240 V AC, 50/60 Hz (also 100–127 V 50/60 Hz)"
+      },
+      {
+        "label": "Filtration",
+        "value": "PP sediment + activated carbon (two-stage)"
+      },
+      {
+        "label": "Dimensions",
+        "value": "99 cm H × 30 cm W × 30 cm D"
+      },
+      {
+        "label": "Bubbler spout height",
+        "value": "7 cm above cabinet"
+      },
+      {
+        "label": "Tap height",
+        "value": "25 cm above cabinet"
+      }
+    ],
+    "recommendedFor": [
+      "Schools, universities, and TAFE campuses",
+      "Offices and large co-working spaces",
+      "Gyms, leisure centres, and sporting clubs",
+      "Retail and public venues with sustained foot traffic"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Recorded in our product system as not subject to WaterMark certification. Despite the 'WM' suffix in the product name, no active WaterMark licence has been verified for this unit. Speak to your plumber about certification requirements for your project."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bubbler-filter-cto-plus-pp",
+        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Commercial-grade water bubbler / drinking fountain — built for high-traffic installations in offices, schools, gyms, retail, and public venues."
+      "title": "Commercial Cold Water Bubbler — 20 L/hr Filtered Drinking Fountain | Enviro Aqua",
+      "description": "Freestanding commercial cold water bubbler. 20 L/hr at 8–12 °C, R290 refrigerant, built-in PP sediment + carbon filtration. Direct mains connection.",
+      "ogImage": null
     }
   },
   "commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des": {
@@ -281,9 +391,115 @@
       "bubblers",
       "commercial"
     ],
-    "shortDescription": "This product is WaterMark certified for Australian plumbing supply — required by Australian regulations for products th…",
+    "tags": [
+      "commercial",
+      "stainless-steel",
+      "watermark",
+      "filtered",
+      "square-cabinet",
+      "high-traffic"
+    ],
+    "shortDescription": "Square-cabinet commercial bubbler in SUS304 stainless steel — 20 L/hr cooling at 8–12 °C, R290 refrigerant, integrated two-stage filtration. WaterMark certification pending.",
+    "description": "The square-cabinet sibling to our [round commercial bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) — same SUS304 stainless steel build, same cooling and filtration spec, presented in a flat-sided cabinet that sits flush against a wall or in a corner installation. The square footprint matters more than it sounds: in a tight foyer, a school corridor, or behind a café counter, a flat back saves real floor space and avoids the awkward gap a cylindrical cabinet leaves.\n\n## Built for Continuous Service\n\n**SUS304 stainless steel** throughout — cabinet, frame, and exterior panels. SUS304 is the workhorse 18/8 alloy used across Australian commercial kitchens and food-service equipment, chosen here for its resistance to corrosion, easy cleaning, and tolerance for the daily wipe-downs a public-venue bubbler needs to stay hygienic.\n\nCooling delivers **20 L/hr at 8–12 °C** through a 200 W refrigeration loop, charged with **R290 hydrocarbon refrigerant** (60 g) — the low-GWP alternative to legacy R134a units. The unit stands 99 cm tall on a 30 cm × 30 cm footprint, with a 7 cm bubbler spout and a 25 cm tap height for bottle filling.\n\n## Filtration\n\nIntegrated two-stage cartridge filtration sits inside the cabinet: PP sediment to capture rust, sand, and particulate; activated carbon to remove chlorine, taste, and odour. Cartridges are accessible for routine service without dismantling the unit.\n\n## WaterMark Status — Read This Before Ordering\n\nThe product is recorded in our system as **WaterMark certification pending** — meaning the certification process is underway with the manufacturer, but a current WaterMark licence number has not yet been issued and verified at our end. **Until that licence is in place, your licensed plumber may not be able to issue a certificate of compliance for a permanent mains installation.** The product name includes \"WaterMark Certified\" reflecting the supplier's claim, but we will not state the unit as certified to you until we hold the licence number.\n\nIf you need a unit you can install on a mains supply *today* with a verified certification path, contact us — we can advise on the [round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or update you when this unit's certification is confirmed.",
+    "features": [
+      "Square cabinet — sits flush against walls and corners, saves footprint vs round designs",
+      "SUS304 stainless steel cabinet, frame, and panels",
+      "20 L/hr cooling at 8–12 °C with low-GWP R290 refrigerant",
+      "Integrated PP sediment + activated carbon filtration",
+      "200 W cooling power on standard 220–240 V mains",
+      "Bubbler spout (7 cm) plus side tap (25 cm) for filling bottles and jugs"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cooling capacity",
+        "value": "20 L/hr"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8–12 °C"
+      },
+      {
+        "label": "Cabinet material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Refrigerant",
+        "value": "R290 (60 g)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cabinet profile",
+        "value": "Square / flat-sided"
+      },
+      {
+        "label": "Cabinet material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Cooling capacity",
+        "value": "20 L/hr"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8–12 °C"
+      },
+      {
+        "label": "Cooling power",
+        "value": "200 W"
+      },
+      {
+        "label": "Refrigerant",
+        "value": "R290, 60 g charge"
+      },
+      {
+        "label": "Filtration",
+        "value": "PP sediment + activated carbon (two-stage)"
+      },
+      {
+        "label": "Dimensions",
+        "value": "99 cm H × 30 cm W × 30 cm D"
+      },
+      {
+        "label": "Bubbler spout height",
+        "value": "7 cm above cabinet"
+      },
+      {
+        "label": "Tap height",
+        "value": "25 cm above cabinet"
+      }
+    ],
+    "recommendedFor": [
+      "Foyers, corridors, and corner installations where a flat-back cabinet saves space",
+      "Cafés, retail, and food-service venues",
+      "Schools, gyms, and community facilities",
+      "Offices upgrading from bottled water dispensers"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "pending",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark certification pending. Manufacturer attribute lists the unit as 'Watermark Certified = Yes', but our product system records the licence as pending and we have no verified licence number to publish. Confirm certification status with us before scheduling a permanent mains installation."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bubbler-filter-cto-plus-pp",
+        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is WaterMark certified for Australian plumbing supply — required by Australian regulations for products that connect permanently to the mains…"
+      "title": "Square Stainless Steel Commercial Bubbler — Filtered, 20 L/hr | Enviro Aqua",
+      "description": "Flat-back square commercial drinking fountain in SUS304 stainless. 20 L/hr at 8–12 °C, R290 refrigerant, built-in two-stage filtration. WaterMark pending.",
+      "ogImage": null
     }
   },
   "stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap": {
@@ -291,9 +507,135 @@
       "bubblers",
       "commercial"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "under-counter",
+      "stainless-steel",
+      "chiller",
+      "commercial",
+      "compact"
+    ],
+    "shortDescription": "Under-counter cold water chiller — 5 L/hr cold capacity, 8 °C output, SUS304 stainless casing, 2.2 L cold tank, R134a refrigerant. Includes matching stainless tap.",
+    "description": "An under-counter cold water chiller for installations where the bubbler or tap sits visible on the bench, but the refrigeration unit hides in the cupboard below. The chiller is plumbed in line on the cold supply to a stainless steel tap — the result is chilled drinking water at the point of use, without a freestanding cabinet eating bench space.\n\nThis format is the right answer for café front-of-house, office kitchens, hotel back-of-house, and any fit-out where a freestanding bubbler doesn't suit the design but chilled drinking water is still needed.\n\n## Cold Capacity and Tank\n\nThe unit delivers **5 L/hr of cold water at 8 °C**, drawing from a 2.2 L insulated cold tank. The 2.2 L tank size means the first few glasses out are immediately cold — useful for a café service where the first customer of the morning shouldn't get lukewarm water while the chiller catches up. Power consumption is **140 W** under cooling load.\n\n## Refrigeration Hardware\n\nA **hermetically sealed compressor** with automatic overload protection drives the system, paired with an external copper coil evaporator and a wire-tube condenser cooled by a fan. The cold tank is insulated with expanded polystyrene to hold temperature between draws. Refrigerant is **R134a** (55 g charge) — this is an older HFC refrigerant rather than the low-GWP R290 used in our newer bubbler models; if refrigerant GWP is a procurement criterion, factor that in.\n\n## Build and Fittings\n\n**SUS304 stainless steel casing** throughout. Inlet and outlet are quick-type fittings sized for **1/4\" tubing** — so it integrates cleanly with standard RO-style plumbing kits and can run downstream of an existing under-sink filter. The unit measures **41 cm W × 21 cm D × 29 cm H** and weighs 12 kg, comfortable for a standard kitchen cupboard.\n\n## What's Included\n\n- Under-counter chiller unit (SUS304 stainless casing)\n- Matching stainless steel tap\n- 1-year warranty\n\nA licensed plumber should handle the installation, particularly the tap mount and mains connection. The chiller is point-of-use and downstream-of-meter; under Australian plumbing regulations this product is **not subject to WaterMark certification**.",
+    "features": [
+      "Under-counter format — chiller hides in the cupboard, only the tap is visible",
+      "5 L/hr cold water at 8 °C from a 2.2 L insulated cold tank",
+      "SUS304 stainless steel casing",
+      "Hermetically sealed compressor with automatic overload protection",
+      "External copper coil evaporator, fan-cooled wire-tube condenser",
+      "1/4\" quick-type inlet and outlet fittings",
+      "Matching stainless steel tap included; 1-year warranty"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cold capacity",
+        "value": "5 L/hr"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8 °C"
+      },
+      {
+        "label": "Cabinet material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Cold tank",
+        "value": "2.2 L insulated"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Format",
+        "value": "Under-counter chiller + stainless tap"
+      },
+      {
+        "label": "Cold water capacity",
+        "value": "5 L/hr"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8 °C (46 °F)"
+      },
+      {
+        "label": "Cold tank volume",
+        "value": "2.2 L"
+      },
+      {
+        "label": "Power consumption",
+        "value": "140 W"
+      },
+      {
+        "label": "Refrigerant",
+        "value": "R134a (HFC), 55 g charge"
+      },
+      {
+        "label": "Compressor",
+        "value": "Hermetically sealed, automatic overload protection"
+      },
+      {
+        "label": "Evaporator",
+        "value": "External copper coil"
+      },
+      {
+        "label": "Condenser",
+        "value": "Wire-tube, fan-cooled"
+      },
+      {
+        "label": "Insulation",
+        "value": "Expanded polystyrene"
+      },
+      {
+        "label": "Cabinet",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Inlet / outlet",
+        "value": "1/4\" quick-type fittings"
+      },
+      {
+        "label": "Dimensions",
+        "value": "41 cm W × 21 cm D × 29 cm H"
+      },
+      {
+        "label": "Weight",
+        "value": "12 kg"
+      },
+      {
+        "label": "Warranty",
+        "value": "1 year"
+      }
+    ],
+    "recommendedFor": [
+      "Café front-of-house installations where bench space is precious",
+      "Office kitchens and break rooms wanting chilled water without a freestanding unit",
+      "Hotels, serviced apartments, and B&Bs",
+      "Fit-outs adding chilled drinking water to an existing bench layout"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use, downstream-of-meter product — not subject to WaterMark certification under Australian plumbing regulations."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bubbler-filter-cto-plus-pp",
+        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Under-Counter Water Chiller — Stainless Steel + Tap | Enviro Aqua",
+      "description": "Under-counter cold water chiller with stainless tap. 5 L/hr at 8 °C, 2.2 L insulated cold tank, SUS304 casing, R134a, 1/4\" fittings. 1-year warranty.",
+      "ogImage": null
     }
   },
   "bubbler-filter-cto-plus-pp": {
@@ -301,9 +643,103 @@
       "bubblers",
       "parts"
     ],
-    "shortDescription": "Filtered hot and cold water cooler / drinking fountain.",
+    "tags": [
+      "replacement-cartridge",
+      "carbon-cto",
+      "pp-sediment",
+      "inline",
+      "10x2.5"
+    ],
+    "shortDescription": "Inline 2-in-1 replacement cartridge for water bubblers and coolers — 10\" × 2.5\" PP sediment + CTO carbon block, 5 micron. Fits the bubbler and water-cooler range.",
+    "description": "An inline replacement cartridge for the bubbler and water-cooler range — combining a polypropylene (PP) sediment stage and a CTO carbon block stage in the standard 10\" × 2.5\" format used across the line. When the water in your bubbler starts tasting flat, smelling chlorinated, or running off-colour, this is the part you change.\n\n## What Each Stage Does\n\nThe **PP sediment stage** is the workhorse: it captures rust, sand, silt, and any particulate that has made it past the home or building's mains filtration. By doing that work first, it stops sediment from prematurely loading the carbon stage downstream, which is what extends overall cartridge life.\n\nThe **CTO carbon block stage** then handles the chemistry — chlorine, chloramine residue, taste, and odour. \"CTO\" stands for chlorine, taste, and odour, which is exactly what carbon block is best at. The dense carbon block structure provides longer water-to-media contact time than granular carbon at the same flow rate, which is why CTO blocks are the standard for point-of-use polishing.\n\n## Compatible Models\n\nDesigned for the Enviro Aqua filtered bubbler and cooler range using **10\" × 2.5\" cartridges**. If your bubbler's housing accepts a 10\" × 2.5\" cartridge — and the vast majority of residential and small-commercial bubblers do — this is a direct fit.\n\n## When to Replace\n\nFor most installations, **every 6–12 months** is the right interval. Heavier-traffic commercial bubblers running through a working day will lean toward 6 months; a quiet residential cooler in a small office can stretch closer to 12. If the water starts tasting like the pre-filter water again — or if flow at the bubbler drops noticeably — change sooner.\n\nOrder a spare alongside the cartridge you're installing today; it saves a delivery wait when the next change is due.",
+    "features": [
+      "2-in-1 inline cartridge — PP sediment + CTO carbon block in one unit",
+      "Standard 10\" × 2.5\" format — fits the Enviro Aqua bubbler and cooler range",
+      "5 micron rating — captures rust, sand, and fine particulate",
+      "CTO carbon block removes chlorine, taste, and odour",
+      "Sediment-first design extends carbon-stage life",
+      "Replace every 6–12 months depending on usage"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Format",
+        "value": "10\" × 2.5\" inline"
+      },
+      {
+        "label": "Media",
+        "value": "PP sediment + CTO carbon"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "Inline 2-in-1"
+      },
+      {
+        "label": "Stage 1 media",
+        "value": "Polypropylene (PP) sediment"
+      },
+      {
+        "label": "Stage 2 media",
+        "value": "CTO carbon block"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Application",
+        "value": "Water bubblers and coolers"
+      },
+      {
+        "label": "Replacement interval",
+        "value": "6–12 months (usage-dependent)"
+      }
+    ],
+    "recommendedFor": [
+      "Routine 6–12 month replacement on filtered bubblers and coolers",
+      "Households and offices upgrading from a single carbon-only inline filter",
+      "Small commercial bubblers in cafés, offices, and clinics",
+      "Anyone wanting to keep a spare on hand for the next change-out"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet",
+        "filtered-hot-and-cold-water-cooler-direct-connect",
+        "bench-top-room-temperature-hot-and-cold-water-cooler-direct-connect"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Filtered hot and cold water cooler / drinking fountain. Direct-connect to your plumbing — no bottles to refill, no waste."
+      "title": "Bubbler Replacement Filter — PP Sediment + CTO Carbon, 10\" × 2.5\" | Enviro Aqua",
+      "description": "Inline 2-in-1 replacement cartridge for water bubblers and coolers. 10\" × 2.5\", 5 micron, PP sediment + CTO carbon block. 6–12 month change interval.",
+      "ogImage": null
     }
   },
   "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet": {
@@ -311,9 +747,94 @@
       "bubblers",
       "parts"
     ],
-    "shortDescription": "Filtered hot and cold water cooler / drinking fountain.",
+    "tags": [
+      "replacement-tap",
+      "chrome",
+      "press-type",
+      "1-4-thread",
+      "bubbler-spare"
+    ],
+    "shortDescription": "Press-type chrome-plated drinking fountain tap — 1/4\" male inlet thread, adjustable flow rate. Direct replacement for water cooler, bubbler, or drinking fountain spouts.",
+    "description": "The chrome-plated drinking fountain tap that fits across the bubbler and water-cooler range. When the original bubbler tap on a public drinking fountain has worn out — sticky button, dripping seal, scratched chrome — this is the press-type replacement that fits straight onto the standard 1/4\" inlet thread used by most bubbler and cooler designs.\n\n## Press-Type Activation\n\nThe tap uses a **press-type valve**: press to dispense, release to stop. Press-type taps are the standard for high-traffic public drinking fountains because they have no levers to break, no sensors to mis-fire, and no exposed cartridge to seize. The mechanism is mechanically simple and rated for the cycling that a school, office, or gym fountain takes through a working day.\n\n## Adjustable Flow Rate\n\nFlow rate is **adjustable** at the tap itself — useful when a fountain is plumbed into a higher-pressure mains line and would otherwise spray rather than arc cleanly. The adjustment lets you tune the drinking-arc to the cabinet height of the bubbler it's fitted to.\n\n## Fitting and Finish\n\n**Inlet:** 1/4\" male thread — the standard size used across the bubbler and cooler range. **Finish:** chrome-plated for corrosion resistance and easy cleaning. Wipes down with a standard food-service-safe cleaner.\n\n## Suitable Applications\n\nReplacement or addition for any water cooler, bubbler, or drinking fountain using a 1/4\" male-threaded tap fitting. Confirm the existing tap thread before ordering — most units in this category use 1/4\" but a small number of older or imported designs use other sizes.",
+    "features": [
+      "Press-type valve — no lever, no sensor, mechanically simple",
+      "1/4\" male inlet thread — fits the standard bubbler/cooler tap port",
+      "Chrome-plated for corrosion resistance and easy cleaning",
+      "Adjustable flow rate — tune the drinking arc to the cabinet height",
+      "Direct replacement or addition for bubblers, coolers, and drinking fountains"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Type",
+        "value": "Press-type drinking tap"
+      },
+      {
+        "label": "Inlet thread",
+        "value": "1/4\" male"
+      },
+      {
+        "label": "Finish",
+        "value": "Chrome-plated"
+      },
+      {
+        "label": "Flow",
+        "value": "Adjustable"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Application",
+        "value": "Replacement / addition for bubblers, coolers, and fountains"
+      },
+      {
+        "label": "Activation",
+        "value": "Press-type"
+      },
+      {
+        "label": "Inlet connection",
+        "value": "1/4\" male thread"
+      },
+      {
+        "label": "Finish",
+        "value": "Chrome-plated"
+      },
+      {
+        "label": "Flow rate",
+        "value": "Adjustable at tap"
+      }
+    ],
+    "recommendedFor": [
+      "Replacing a worn or sticking original bubbler tap",
+      "Adding a second drinking spout to an existing chiller installation",
+      "Plumbers servicing schools, offices, and gym drinking fountains",
+      "Spare-parts kits for facilities managers running multiple bubblers"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use spare part — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bubbler-filter-cto-plus-pp",
+        "commercial-rust-free-filtered-cold-water-bubbler-wm",
+        "stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Filtered hot and cold water cooler / drinking fountain. Direct-connect to your plumbing — no bottles to refill, no waste."
+      "title": "Drinking Fountain Tap — Chrome Press-Type, 1/4\" Thread | Enviro Aqua",
+      "description": "Press-type chrome drinking fountain tap. 1/4\" male inlet, adjustable flow. Direct replacement spout for water bubblers, coolers, and drinking fountains.",
+      "ogImage": null
     }
   },
   "bench-top-room-temperature-hot-and-cold-water-cooler-direct-connect": {
@@ -321,9 +842,119 @@
       "bubblers",
       "residential"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "bench-top",
+      "residential",
+      "hot-cold-ambient",
+      "direct-connect",
+      "filtered"
+    ],
+    "shortDescription": "Compact bench-top hot, cold, and ambient water cooler — direct mains connection, 3-stage built-in filtration, child-safe hot-water lock. 30 × 38 × 47 cm, 9 kg.",
+    "description": "A compact bench-top water cooler for the kitchen counter or office break-out — three temperatures on demand (hot, cold, room) from a direct mains connection, with the filtration built in and a child-safe lock on the hot tap. The cabinet is **47 cm tall** and sits on a 30 × 38 cm footprint, so it fits under a standard upper-cupboard rather than needing the full floor space of a dispenser tower.\n\nDirect-connect means no bottles, no refilling, and no plastic-bottle waste — the unit plumbs to the cold supply with standard 1/4\" tubing and pulls water as needed. Three-stage cartridge filtration sits inside the cabinet, treating the supply before it reaches the hot, cold, or ambient tap.\n\n## Hot, Cold, and Ambient — One Unit\n\nThe cooler delivers:\n\n- **Hot:** ≥ 90 °C output at 5 L/hr — sufficient for steady tea and coffee service through a working day\n- **Cold:** ≤ 10 °C output at 2–3 L/hr — chilled drinking water on demand\n- **Ambient:** room-temperature unfiltered tap for general use\n\nThe **safety lock on the hot tap** is a non-negotiable feature for any installation with kids or aged-care residents — the tap won't dispense hot water until the lock is released.\n\n## Working Environment\n\nDesigned to run reliably between **10 °C and 32 °C ambient** — covers the full range of a typical Australian indoor environment year-round, including unconditioned laundries and garages in milder climates. Finished in gloss black and white, the cabinet suits both residential kitchens and small office break rooms.\n\n## At a Glance\n\nFootprint: **30 cm W × 38 cm D × 47 cm H**. Weight: **9 kg**. Brand: Enviro Aqua. The unit is point-of-use and downstream-of-meter, so it sits outside WaterMark certification scope under Australian plumbing regulations — your licensed plumber will simply tap the cold supply and run 1/4\" line to the unit.",
+    "features": [
+      "Three temperatures from one unit — hot (≥90 °C), cold (≤10 °C), and room",
+      "Direct mains connection — no bottles to refill, no plastic waste",
+      "Three-stage cartridge filtration built into the cabinet",
+      "Child-safe lock on the hot-water tap",
+      "Compact 30 × 38 × 47 cm cabinet, 9 kg — fits under upper cupboards",
+      "Gloss black-and-white finish suits residential and small-office settings",
+      "Designed to run reliably between 10 °C and 32 °C ambient"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Hot water supply",
+        "value": "5 L/hr at ≥90 °C"
+      },
+      {
+        "label": "Cold water supply",
+        "value": "2–3 L/hr at ≤10 °C"
+      },
+      {
+        "label": "Format",
+        "value": "Bench-top, direct-connect"
+      },
+      {
+        "label": "Filtration",
+        "value": "3-stage built-in"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Format",
+        "value": "Bench-top, direct mains connection"
+      },
+      {
+        "label": "Hot water supply",
+        "value": "5 L/hr at ≥90 °C"
+      },
+      {
+        "label": "Cold water supply",
+        "value": "2–3 L/hr at ≤10 °C"
+      },
+      {
+        "label": "Ambient water",
+        "value": "Yes, separate tap"
+      },
+      {
+        "label": "Filtration",
+        "value": "3-stage built-in cartridge"
+      },
+      {
+        "label": "Hot tap safety",
+        "value": "Child-safe lock"
+      },
+      {
+        "label": "Working ambient temperature",
+        "value": "10–32 °C"
+      },
+      {
+        "label": "Dimensions",
+        "value": "30 cm W × 38 cm D × 47 cm H"
+      },
+      {
+        "label": "Weight",
+        "value": "9 kg"
+      },
+      {
+        "label": "Finish",
+        "value": "Gloss black and white"
+      },
+      {
+        "label": "Brand",
+        "value": "Enviro Aqua"
+      }
+    ],
+    "recommendedFor": [
+      "Home kitchens replacing a bottled water cooler",
+      "Small offices and break rooms",
+      "Aged-care and family settings (hot-tap lock matters here)",
+      "Granny flats, studios, and serviced apartments"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use, downstream-of-meter product — not subject to WaterMark certification under Australian plumbing regulations."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bubbler-filter-cto-plus-pp",
+        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Bench-Top Hot & Cold Water Cooler — Direct Connect | Enviro Aqua",
+      "description": "Compact 47 cm bench-top water cooler. Hot, cold and ambient on tap, built-in 3-stage filtration, child-safe hot lock. Direct mains, no bottles.",
+      "ogImage": null
     }
   },
   "direct-connect-water-cooler-dispenser-3stages-filter-hot-cold-and-room-temperatu": {
@@ -331,9 +962,127 @@
       "bubblers",
       "residential"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "freestanding",
+      "residential",
+      "hot-cold-ambient",
+      "direct-connect",
+      "three-stage-filter"
+    ],
+    "shortDescription": "Freestanding 95 cm tower water cooler — hot, cold, and ambient on direct mains, 3-stage built-in filtration, 550 W heating, 90 W cooling, child-safe hot lock.",
+    "description": "The full-height tower version of our direct-connect water cooler — same three-temperature dispense as the bench-top, but in a **95 cm freestanding cabinet** with the heating and cooling capacity to keep up with steady office or family-home use. Where the bench-top is 9 kg and 47 cm tall, this unit is 13 kg and stands tall enough to fill a kettle or large bottle without bending.\n\nThe cooler plumbs direct to the cold mains via 1/4\" tubing and runs from there — no 15 L barrels to lift, no rolling delivery contracts, no half-empty bottles taking up cupboard space.\n\n## Heating and Cooling Capacity\n\nDriven by **550 W of heating power** and **90 W of cooling**, the unit delivers:\n\n- **Hot water:** 5 L/hr at ≥ 90 °C\n- **Cold water:** 2–3 L/hr at ≤ 10 °C\n- **Ambient:** unheated, unchilled tap\n\nThe 550 W heating element matters for hot-tap throughput — a smaller heater would lag during back-to-back tea and coffee fills. The cold side at 90 W is sized to refill the cold tank between draws rather than chill on demand, which is the right tradeoff for residential and small-office usage patterns.\n\n## Filtration and Safety\n\nThe **three-stage built-in filter** treats the mains supply before it reaches any of the three taps. A **child-safe lock** on the hot tap prevents accidental scalds — this matters in any home with young children or in shared family-and-office settings.\n\n## Power and Environment\n\nWired for **220 V at 50 Hz**, plug-and-play on standard Australian mains. Designed to operate reliably between **10 °C and 32 °C ambient** — covers a typical indoor environment year-round.\n\n## Footprint and Finish\n\nFinished in gloss white and black on a **30 cm W × 38 cm D × 95 cm H** cabinet. Weight: 13 kg per the spec sheet (the WP attribute table also shows 16 kg in places — confirm at unboxing). The 30 × 38 cm footprint sits comfortably in a kitchen corner or beside a fridge.",
+    "features": [
+      "Freestanding 95 cm tower — fills tall bottles and kettles without bending",
+      "Hot (≥90 °C / 5 L/hr), cold (≤10 °C / 2–3 L/hr), and ambient on one cabinet",
+      "550 W heating element — keeps up with back-to-back hot fills",
+      "90 W cooling stage tuned for residential and small-office demand",
+      "Three-stage built-in filtration on the mains supply",
+      "Child-safe lock on the hot tap",
+      "Direct 220 V / 50 Hz mains, no bottles or refills"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Hot water supply",
+        "value": "5 L/hr at ≥90 °C"
+      },
+      {
+        "label": "Cold water supply",
+        "value": "2–3 L/hr at ≤10 °C"
+      },
+      {
+        "label": "Heating power",
+        "value": "550 W"
+      },
+      {
+        "label": "Cooling power",
+        "value": "90 W"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Format",
+        "value": "Freestanding tower, direct mains connection"
+      },
+      {
+        "label": "Hot water supply",
+        "value": "5 L/hr at ≥90 °C"
+      },
+      {
+        "label": "Cold water supply",
+        "value": "2–3 L/hr at ≤10 °C"
+      },
+      {
+        "label": "Ambient water",
+        "value": "Yes, separate tap"
+      },
+      {
+        "label": "Heating power",
+        "value": "550 W"
+      },
+      {
+        "label": "Cooling power",
+        "value": "90 W"
+      },
+      {
+        "label": "Voltage",
+        "value": "220 V, 50 Hz"
+      },
+      {
+        "label": "Filtration",
+        "value": "3-stage built-in cartridge"
+      },
+      {
+        "label": "Hot tap safety",
+        "value": "Child-safe lock"
+      },
+      {
+        "label": "Working ambient temperature",
+        "value": "10–32 °C"
+      },
+      {
+        "label": "Dimensions",
+        "value": "30 cm W × 38 cm D × 95 cm H"
+      },
+      {
+        "label": "Weight",
+        "value": "13 kg (manufacturer spec also shows 16 kg in places)"
+      },
+      {
+        "label": "Finish",
+        "value": "Gloss white and black"
+      }
+    ],
+    "recommendedFor": [
+      "Family homes wanting hot, cold, and ambient water without bottled deliveries",
+      "Small offices, clinics, and break rooms",
+      "Schools and daycare staff rooms (child-safe hot lock)",
+      "Home offices and granny flats"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use, downstream-of-meter product — not subject to WaterMark certification under Australian plumbing regulations."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bubbler-filter-cto-plus-pp",
+        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Freestanding Hot & Cold Water Cooler — 3-Stage Filter, Direct Connect | Enviro Aqua",
+      "description": "95 cm tower water cooler with hot (5 L/hr), cold (2–3 L/hr) and ambient. 550 W heating, 90 W cooling, 3-stage filter, child-safe hot lock. 220 V mains.",
+      "ogImage": null
     }
   },
   "filtered-hot-and-cold-water-cooler-direct-connect": {
@@ -341,9 +1090,122 @@
       "bubblers",
       "residential"
     ],
-    "shortDescription": "Filtered hot and cold water cooler / drinking fountain.",
+    "tags": [
+      "residential",
+      "hot-cold-ambient",
+      "direct-connect",
+      "carbon-sediment-filter"
+    ],
+    "shortDescription": "Direct-connect hot, cold, and ambient water cooler with built-in PP sediment + activated carbon filtration. 550 W heating, 90 W cooling, 220 V mains, child-safe hot lock.",
+    "description": "A direct-connect filtered water cooler delivering hot, cold, and ambient water from a single cabinet — the practical alternative to a bottled-water dispenser for any home or small office that wants chilled and boiling water without the rolling cost of barrel deliveries.\n\nWhat differentiates this model from the unit above is that the WP product attributes call out the filtration media explicitly: **activated carbon plus PP sediment**. The carbon stage handles chlorine, taste, and odour from the mains supply; the PP sediment stage captures rust, sand, and particulate before it reaches the carbon, which extends carbon-cartridge life. It's a two-media combination that does the practical work of treating Australian town water for drinking and beverage-making.\n\n## Three Taps, One Mains Connection\n\nFrom a single 1/4\" cold-mains feed, the unit dispenses:\n\n- **Hot:** 5 L/hr output at ≥ 90 °C\n- **Cold:** 2–3 L/hr output at ≤ 10 °C\n- **Ambient:** room-temperature, filtered\n\nA **child-safe lock** on the hot tap prevents accidental dispense — necessary in any household with kids and standard practice in commercial deployments.\n\n## Power Draw\n\n**550 W heating** and **90 W cooling**, on **220 V at 50 Hz** mains. Designed to operate continuously between **10 °C and 32 °C ambient** — fine for an unconditioned laundry or garage in temperate climates, fine year-round indoors.\n\n## Weight and Footprint\n\nThe attribute sheet lists **16 kg** for this configuration. Confirm a sturdy bench or floor location at install — this is not a unit you want to move regularly. Direct mains plumbing should be done by a licensed plumber for warranty cover; the unit itself is point-of-use and downstream-of-meter, outside WaterMark certification scope.",
+    "features": [
+      "Hot, cold, and ambient water from one cabinet, one mains connection",
+      "Two-media filtration: PP sediment + activated carbon",
+      "550 W heating, 90 W cooling on 220 V / 50 Hz mains",
+      "Hot at 5 L/hr ≥ 90 °C; cold at 2–3 L/hr ≤ 10 °C",
+      "Child-safe hot-tap lock",
+      "Designed for 10–32 °C ambient operation",
+      "16 kg cabinet — stable, settled installation"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Hot water supply",
+        "value": "5 L/hr at ≥90 °C"
+      },
+      {
+        "label": "Cold water supply",
+        "value": "2–3 L/hr at ≤10 °C"
+      },
+      {
+        "label": "Filtration",
+        "value": "PP sediment + activated carbon"
+      },
+      {
+        "label": "Power",
+        "value": "220 V / 50 Hz"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Format",
+        "value": "Direct-connect water cooler"
+      },
+      {
+        "label": "Hot water supply",
+        "value": "5 L/hr at ≥90 °C"
+      },
+      {
+        "label": "Cold water supply",
+        "value": "2–3 L/hr at ≤10 °C"
+      },
+      {
+        "label": "Ambient water",
+        "value": "Yes, separate tap"
+      },
+      {
+        "label": "Filtration media",
+        "value": "PP sediment + activated carbon"
+      },
+      {
+        "label": "Heating power",
+        "value": "550 W"
+      },
+      {
+        "label": "Cooling power",
+        "value": "90 W"
+      },
+      {
+        "label": "Voltage",
+        "value": "220 V, 50 Hz"
+      },
+      {
+        "label": "Hot tap safety",
+        "value": "Child-safe lock"
+      },
+      {
+        "label": "Working ambient temperature",
+        "value": "10–32 °C"
+      },
+      {
+        "label": "Weight",
+        "value": "16 kg"
+      },
+      {
+        "label": "Connection",
+        "value": "Direct mains"
+      }
+    ],
+    "recommendedFor": [
+      "Households wanting to ditch bottled water deliveries",
+      "Small offices and reception areas",
+      "Cafés and food trucks needing hot and cold filtered water in one footprint",
+      "Co-working spaces and shared kitchens"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use, downstream-of-meter product — not subject to WaterMark certification under Australian plumbing regulations."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bubbler-filter-cto-plus-pp",
+        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Filtered hot and cold water cooler / drinking fountain. Direct-connect to your plumbing — no bottles to refill, no waste."
+      "title": "Hot & Cold Water Cooler — Direct Connect, PP + Carbon Filter | Enviro Aqua",
+      "description": "Direct-connect filtered water cooler. Hot 5 L/hr, cold 2–3 L/hr, plus ambient. PP sediment + activated carbon filtration, 550 W / 90 W on 220 V mains.",
+      "ogImage": null
     }
   },
   "6-stage-reverse-osmosis-water-filters-set-with-75gpd-ro-membrane-and-alkaline-ca": {
