@@ -25,18 +25,20 @@ export function HeadlineSpecs({ specs }: HeadlineSpecsProps) {
   return (
     <section
       aria-label="Headline specifications"
-      className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4 border-y border-gray-200 py-6"
+      className="mt-12 bg-gray-50 border border-gray-200 rounded px-6 py-6"
     >
-      {visible.map((row) => (
-        <div key={row.label} className="flex flex-col">
-          <dt className="text-xs uppercase tracking-wide text-black/60">
-            {row.label}
-          </dt>
-          <dd className="mt-1 text-base font-semibold text-black">
-            {row.value}
-          </dd>
-        </div>
-      ))}
+      <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+        {visible.map((row) => (
+          <div key={row.label} className="flex flex-col">
+            <dt className="text-xs uppercase tracking-wide text-black/60">
+              {row.label}
+            </dt>
+            <dd className="mt-1 text-base font-semibold text-black">
+              {row.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }

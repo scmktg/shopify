@@ -14,7 +14,7 @@ interface FullSpecsProps {
 export function FullSpecs({ specs }: FullSpecsProps) {
   if (!specs || specs.length === 0) return null;
   return (
-    <section className="mt-12 border-t border-gray-200 pt-8">
+    <section className="mt-12 border-t border-gray-100 pt-8">
       <h2 className="text-2xl font-semibold text-black tracking-tight">
         Specifications
       </h2>

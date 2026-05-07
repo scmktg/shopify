@@ -168,11 +168,11 @@ export function ProductDetail({
         </div>
       </div>
 
+      <HeadlineSpecs specs={content.headlineSpecs} />
+      <FullSpecs specs={content.fullSpecs} />
       <ProductOverview description={content.description} />
       <ProductFeatures features={content.features} />
-      <HeadlineSpecs specs={content.headlineSpecs} />
       <RecommendedFor items={content.recommendedFor} />
-      <FullSpecs specs={content.fullSpecs} />
       <ComplianceSection compliance={content.compliance} />
 
       {boughtTogether.length > 0 && (

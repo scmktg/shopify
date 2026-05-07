@@ -12,7 +12,7 @@ interface ProductFeaturesProps {
 export function ProductFeatures({ features }: ProductFeaturesProps) {
   if (!features || features.length === 0) return null;
   return (
-    <section className="mt-8">
+    <section className="mt-12 border-t border-gray-100 pt-8">
       <h2 className="text-xl font-semibold text-black tracking-tight">
         Key features
       </h2>
