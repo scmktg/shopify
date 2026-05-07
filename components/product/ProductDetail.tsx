@@ -140,6 +140,7 @@ export function ProductDetail({
               variantId={firstVariant.id}
               available={inStock}
               label={content.ctas?.primary ?? undefined}
+              enableBuyNow
             />
           )}
 

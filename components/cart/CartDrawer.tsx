@@ -117,6 +117,13 @@ export function CartDrawer() {
               >
                 Checkout
               </a>
+              <Link
+                href="/cart/"
+                onClick={closeDrawer}
+                className="block w-full text-center mt-2 bg-white border border-black hover:bg-gray-50 text-black font-semibold py-3 px-6 rounded transition-colors"
+              >
+                View cart
+              </Link>
               <button
                 type="button"
                 onClick={closeDrawer}

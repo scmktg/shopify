@@ -28,6 +28,13 @@ interface CartContextValue {
   error: string | null;
   isOpen: boolean;
   addItem: (variantId: string, quantity?: number) => Promise<void>;
+  /**
+   * Add a variant to the cart and redirect to the Shopify checkout
+   * URL. Does not open the drawer — the user is leaving the
+   * storefront. Uses `window.location.assign` so the redirect is a
+   * real navigation rather than a client-side route push.
+   */
+  buyNow: (variantId: string, quantity?: number) => Promise<void>;
   updateItem: (lineId: string, quantity: number) => Promise<void>;
   removeItem: (lineId: string) => Promise<void>;
   openDrawer: () => void;
@@ -110,6 +117,29 @@ export function CartProvider({ children }: CartProviderProps) {
     [ensureCart],
   );
 
+  const buyNow = useCallback(
+    async (variantId: string, quantity = 1) => {
+      setError(null);
+      setIsMutating(true);
+      try {
+        const current = await ensureCart();
+        const updated = await addToCart(current.id, variantId, quantity);
+        setCart(updated);
+        // Hard nav off the storefront; client-side router is irrelevant
+        // for an external Shopify checkout URL.
+        if (typeof window !== 'undefined') {
+          window.location.assign(updated.checkoutUrl);
+        }
+      } catch (caught) {
+        setError(extractMessage(caught, 'Could not start checkout.'));
+        setIsMutating(false);
+      }
+      // Note: no finally — on success we're navigating away, so we leave
+      // isMutating=true to keep buttons disabled until the page unloads.
+    },
+    [ensureCart],
+  );
+
   const updateItem = useCallback(
     async (lineId: string, quantity: number) => {
       if (!cart) return;
@@ -156,6 +186,7 @@ export function CartProvider({ children }: CartProviderProps) {
       error,
       isOpen,
       addItem,
+      buyNow,
       updateItem,
       removeItem,
       openDrawer,
@@ -169,6 +200,7 @@ export function CartProvider({ children }: CartProviderProps) {
       error,
       isOpen,
       addItem,
+      buyNow,
       updateItem,
       removeItem,
       openDrawer,
