@@ -23,7 +23,9 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { getAllProductHandles } from '@/lib/shopify/queries/getAllProductHandles';
-import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
+// Uncached fetcher — `unstable_cache` requires Next.js's request-
+// scoped incremental cache and throws when called from a CLI script.
+import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import productData from '@/data/products.json';
 import type { ProductContentMap } from '@/lib/products/schema';
 
@@ -68,7 +70,7 @@ async function main(): Promise<void> {
     if (scanned % 25 === 0) {
       console.log(`[audit] Scanned ${scanned}/${handles.length}...`);
     }
-    const product = await getProductByHandle(handle);
+    const product = await fetchProductByHandle(handle);
     if (!product) continue;
     const text = `${product.title} ${product.description}`;
     const mentions = TEXT_RE.test(text);

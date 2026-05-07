@@ -17,7 +17,23 @@ const GET_PRODUCT_BY_HANDLE = /* GraphQL */ `
   }
 `;
 
-async function fetchProductByHandle(handle: string): Promise<Product | null> {
+/**
+ * Uncached fetch of a single product by handle.
+ *
+ * Exported alongside the cached `getProductByHandle` so out-of-
+ * request callers (CLI scripts, build-time tooling) can reach
+ * Shopify directly. `unstable_cache` requires Next.js's request-
+ * scoped incremental cache, which doesn't exist in a plain Node
+ * script context — calling the cached version from a CLI script
+ * throws `Invariant: incrementalCache missing in unstable_cache`.
+ *
+ * App Router code paths should continue to use `getProductByHandle`
+ * (the cached version) so multiple components rendering the same
+ * product within a request share one Shopify roundtrip.
+ */
+export async function fetchProductByHandle(
+  handle: string,
+): Promise<Product | null> {
   const result: ShopifyClientResponse<ShopifyProductByHandleResponse> =
     await shopifyClient.request<ShopifyProductByHandleResponse>(
       GET_PRODUCT_BY_HANDLE,
