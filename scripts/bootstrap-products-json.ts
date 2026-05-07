@@ -47,7 +47,11 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { getAllProductHandles } from '@/lib/shopify/queries/getAllProductHandles';
-import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
+// Use the uncached fetcher — `getProductByHandle` is wrapped in
+// `unstable_cache`, which requires Next.js's request-scoped
+// incremental cache and throws `Invariant: incrementalCache missing`
+// when called from a plain Node CLI script.
+import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { findSubcategory } from '@/content/categories';
 import {
   metaDescriptionFromHtml,
@@ -174,7 +178,7 @@ async function main(): Promise<void> {
       continue;
     }
 
-    const product = await getProductByHandle(handle);
+    const product = await fetchProductByHandle(handle);
     if (!product) {
       stats.shopifyMisses += 1;
       console.warn(

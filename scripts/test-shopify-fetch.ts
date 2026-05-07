@@ -1,4 +1,6 @@
-import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
+// Uncached fetcher — `unstable_cache` requires Next.js's request-
+// scoped incremental cache and throws when called from a CLI script.
+import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 
 const SUGGESTED_HANDLES = [
   'commercial-water-bubbler',
@@ -10,7 +12,7 @@ async function main(): Promise<void> {
   const handle = process.argv[2] ?? SUGGESTED_HANDLES[0];
 
   console.log(`[test:shopify] Fetching product by handle: "${handle}"`);
-  const product = await getProductByHandle(handle);
+  const product = await fetchProductByHandle(handle);
 
   if (!product) {
     console.log(`[test:shopify] No product found for handle "${handle}".`);
