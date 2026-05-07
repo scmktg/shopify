@@ -174,9 +174,10 @@ export function ProductDetail({
 
       <HeadlineSpecs specs={content.headlineSpecs} />
       <FullSpecs specs={content.fullSpecs} />
-      <ProductOverview description={content.description} />
-      <ProductFeatures features={content.features} />
-      <RecommendedFor items={content.recommendedFor} />
+      <ProductOverview
+        description={content.description}
+        shortDescription={content.shortDescription}
+      />
 
       {firstVariant && (
         <BuyBanner
@@ -187,6 +188,8 @@ export function ProductDetail({
         />
       )}
 
+      <ProductFeatures features={content.features} />
+      <RecommendedFor items={content.recommendedFor} />
       <ComplianceSection compliance={content.compliance} />
 
       {boughtTogether.length > 0 && (
