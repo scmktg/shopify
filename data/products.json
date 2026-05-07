@@ -598,18 +598,23 @@
       "high-traffic",
       "freestanding"
     ],
-    "shortDescription": "Freestanding commercial cold water bubbler — 20 L/hr cooling at 8–12 °C, 200 W cooling, integrated PP sediment + activated carbon filtration, R290 refrigerant.",
-    "description": "A freestanding commercial cold-water bubbler engineered for high-traffic public installations — schools, offices, gyms, and retail venues that need a hands-off drinking fountain plumbed direct to the mains. The cabinet stands 122 cm tall on a 41 cm × 41 cm footprint, with the bubbler spout at 7 cm and a side tap at 25 cm so users can fill bottles without hunching.\n\nCooling is rated at **20 L/hr at 8–12 °C**, driven by a 200 W refrigeration circuit charged with R290 — a hydrocarbon refrigerant with a global warming potential roughly 1/3000th that of older R134a units. For a fountain that runs continuously through a school or office day, that's a meaningful reduction in lifetime environmental impact.\n\n## Filtration Built In\n\nA two-stage cartridge set sits inside the cabinet: a polypropylene sediment cartridge to trap rust, sand, and particulate, followed by an activated carbon cartridge that removes chlorine, taste, and odour from the supply. Both cartridges are accessible from inside the cabinet for service. Replacement cartridges are stocked separately and use the same 10\" × 2.5\" format common across the range.\n\n## Power and Connection\n\nWired for **220–240 V AC, 50/60 Hz** (also compatible with 100–127 V supplies in export markets). Mains plumbing connection is direct — a licensed plumber installs once on the cold supply, the unit runs from there. Model number **YL-600P** for service reference.\n\n## A Note on Compliance\n\nThe operational data carried in our system records this product as **not subject to WaterMark certification** under Australian plumbing regulations. The \"WM\" in the product name reflects the original supplier's nomenclature; we have not seen an active WaterMark licence number for this unit. If your installation requires WaterMark certification on the bubbler itself, we recommend the [Round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or [Square WaterMark bubbler](/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des/) instead — speak to your plumber about which certification path suits your project.",
+    "shortDescription": "Freestanding commercial cold water bubbler in HDPE with granite-stone finish — 122 cm cabinet, 20 L/hr cooling at 8–12 °C, integrated PP sediment + activated carbon filtration, low-GWP R290 refrigerant.",
+    "description": "A freestanding commercial cold-water bubbler engineered for high-traffic public installations — schools, offices, gyms, and retail venues that need a hands-off drinking fountain plumbed direct to the mains. The cabinet stands 122 cm tall on a 41 cm × 41 cm footprint, with the bubbler spout extending roughly 7 cm above that and a side tap at 25 cm above the cabinet so users can fill bottles without hunching.\n\nCooling is rated at **20 L/hr at 8–12 °C**, driven by a 200 W refrigeration circuit charged with R290 — a hydrocarbon refrigerant with a global warming potential roughly 1/3000th that of older R134a units. For a fountain that runs continuously through a school or office day, that's a meaningful reduction in lifetime environmental impact.\n\n## HDPE Cabinet With Granite-Stone Finish\n\nThe cabinet is **high-density polyethylene (HDPE) with a granite-stone appearance finish** — not stainless steel. HDPE is the same plastic used for outdoor playground equipment and food-grade tanks: UV-stable, easy to clean, and inherently rust-free because it isn't a metal. The granite-look surface treatment hides scuffs and fingerprints in high-traffic environments better than plain white plastic, which is why this format suits busy public venues.\n\nIf you specifically need a stainless steel cabinet — for a corporate fit-out, food-service installation, or a project where the spec sheet calls for SUS304 — look at the [round stainless WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or the [square stainless version](/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des/) instead. They cost more but match a SUS304-required spec.\n\n## Filtration Built In\n\nA two-stage cartridge set sits inside the cabinet: a polypropylene sediment cartridge to trap rust, sand, and particulate, followed by an activated carbon cartridge that removes chlorine, taste, and odour from the supply. Both cartridges are accessible from inside the cabinet for service. Replacement cartridges are stocked separately and use the same 10\" × 2.5\" format common across the range.\n\n## Power and Connection\n\nWired for **220–240 V AC, 50/60 Hz** (also compatible with 100–127 V supplies in export markets). Mains plumbing connection is direct — a licensed plumber installs once on the cold supply, the unit runs from there. Model number **YL-600P** for service reference.\n\n## A Note on Compliance\n\nThe operational data carried in our system records this product as **not subject to WaterMark certification** under Australian plumbing regulations. The \"WM\" in the product name reflects the original supplier's nomenclature; we have not seen an active WaterMark licence number for this unit. If your installation requires WaterMark certification on the bubbler itself, we recommend the round or square stainless WM bubblers linked above — speak to your plumber about which certification path suits your project.",
     "features": [
+      "HDPE cabinet with granite-stone finish — inherently rust-free, UV-stable, easy to clean",
       "20 L/hr cooling capacity at 8–12 °C — sized for sustained high-traffic use",
       "R290 hydrocarbon refrigerant — low global warming potential vs R134a",
       "Built-in two-stage filtration: PP sediment + activated carbon",
-      "Bubbler spout (7 cm) plus side tap (25 cm) for bottle filling",
+      "Bubbler spout (~7 cm above cabinet) plus side tap at 25 cm for bottle filling",
       "200 W cooling power on a 220–240 V (50/60 Hz) supply",
-      "Compact 41 cm × 41 cm footprint, 122 cm tall — fits against a wall",
+      "122 cm cabinet on a 41 × 41 cm footprint — freestanding, against-wall friendly",
       "Direct mains connection — no bottles, no refills"
     ],
     "headlineSpecs": [
+      {
+        "label": "Cabinet",
+        "value": "HDPE, granite-stone finish"
+      },
       {
         "label": "Cooling capacity",
         "value": "20 L/hr"
@@ -621,10 +626,6 @@
       {
         "label": "Cooling power",
         "value": "200 W"
-      },
-      {
-        "label": "Refrigerant",
-        "value": "R290 (60 g)"
       }
     ],
     "fullSpecs": [
@@ -635,6 +636,14 @@
       {
         "label": "Format",
         "value": "Freestanding, mains-connected"
+      },
+      {
+        "label": "Cabinet",
+        "value": "High-density polyethylene (HDPE)"
+      },
+      {
+        "label": "Finish",
+        "value": "Granite-stone appearance"
       },
       {
         "label": "Cooling capacity",
@@ -661,12 +670,12 @@
         "value": "PP sediment + activated carbon (two-stage)"
       },
       {
-        "label": "Dimensions",
+        "label": "Cabinet dimensions",
         "value": "122 cm H × 41 cm W × 41 cm D"
       },
       {
         "label": "Bubbler spout height",
-        "value": "7 cm above cabinet"
+        "value": "~7 cm above cabinet (total reach ~129 cm)"
       },
       {
         "label": "Tap height",
@@ -701,8 +710,8 @@
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "Commercial Cold Water Bubbler — 20 L/hr Filtered Drinking Fountain | Enviro Aqua",
-      "description": "Freestanding commercial cold water bubbler. 20 L/hr at 8–12 °C, R290 refrigerant, built-in PP sediment + carbon filtration. Direct mains connection.",
+      "title": "Commercial Cold Water Bubbler — HDPE Granite Finish, Filtered 20 L/hr | Enviro Aqua",
+      "description": "Freestanding 122 cm commercial bubbler in HDPE with granite-stone finish. 20 L/hr cooling at 8–12 °C, R290 refrigerant, two-stage PP + carbon filtration. Rust-free by build, not certification.",
       "ogImage": null
     }
   },
