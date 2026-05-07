@@ -246,7 +246,110 @@
     "categories": [
       "cartridges",
       "sediment"
-    ]
+    ],
+    "tags": [
+      "sediment",
+      "polypropylene",
+      "20x45",
+      "big-blue",
+      "whole-house",
+      "five-micron"
+    ],
+    "shortDescription": "Single 20\" × 4.5\" Big Blue polypropylene sediment cartridge — 5 micron. The standard Stage 1 cartridge for whole-house Big Blue systems.",
+    "description": "The single 20\" × 4.5\" Big Blue polypropylene sediment cartridge — the cartridge that goes in Stage 1 of every standard whole-house Big Blue filter system in Australia. If you've got a triple-Big-Blue running on your mains, this is the first cartridge in the line.\n\n## What \"Big Blue\" Means in Practice\n\nThe 20\" × 4.5\" Big Blue format is the de facto standard for whole-house filtration because of two design facts that work together. First, the **4.5\" diameter** gives nearly four times the cross-sectional area of a 2.5\" slim cartridge — so water flows through at residential whole-house rates without pressure drop. Second, the **20\" height** doubles the media volume of a standard 10\" cartridge — so the sediment-holding capacity is large enough to last 6–12 months on Australian town water rather than needing changes every quarter.\n\nThis cartridge fits the WaterMark-certified [3-stage Big Blue whole-house system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) as the Stage 1 sediment, the [twin Big Blue system](/twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra/), and any third-party 20\" × 4.5\" Big Blue housing.\n\n## Specifications\n\n- **Media:** polypropylene, no chemical residuals\n- **Micron rating:** 5 microns\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 6–12 months\n\nFor a single cartridge purchase, this is the right SKU. If you're already on a 6-month replacement cycle and don't want the order-and-wait cycle, the [twin pack](/2x-poly-spun-water-filter-cartridge-5-micron-sediment-20-x-4-5-whole-house/) of the same cartridge is the better economic call.",
+    "features": [
+      "20\" × 4.5\" Big Blue — the standard whole-house Stage 1 format in Australia",
+      "5 micron polypropylene — captures sediment without chemical leaching",
+      "High-flow 4.5\" diameter — minimal pressure drop at whole-house flow rates",
+      "Operating pressure 0.1–0.4 MPa (14.5–58 PSI)",
+      "Operating temperature 5–40 °C",
+      "6–12 month change interval on typical town water"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Filter type",
+        "value": "Sediment — removes sand, dirt, rust, particles"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Whole-house Stage 1 sediment pre-filter"
+      }
+    ],
+    "recommendedFor": [
+      "Stage 1 of any 20\" × 4.5\" Big Blue whole-house system",
+      "Triple Big Blue installations needing the sediment cartridge replaced",
+      "Twin Big Blue systems on a 6-month change cycle",
+      "Properties on town water with average sediment load"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5",
+        "2x-poly-spun-water-filter-cartridge-5-micron-sediment-20-x-4-5-whole-house"
+      ],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "20\" × 4.5\" Big Blue Sediment Cartridge — 5 Micron PP | Enviro Aqua",
+      "description": "Single 20\" × 4.5\" Big Blue polypropylene sediment cartridge. 5 micron, 14.5–58 PSI, 5–40 °C. Stage 1 cartridge for whole-house Big Blue systems.",
+      "ogImage": null
+    }
   },
   "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5": {
     "categories": [
@@ -278,15 +381,15 @@
       "high-traffic",
       "freestanding"
     ],
-    "shortDescription": "Freestanding commercial cold water bubbler — 20 L/hr cooling at 8–12°C, 200 W cooling, integrated PP sediment + activated carbon filtration, R290 refrigerant.",
-    "description": "A freestanding commercial cold-water bubbler engineered for high-traffic public installations — schools, offices, gyms, and retail venues that need a hands-off drinking fountain plumbed direct to the mains. The cabinet stands 99 cm tall on a 30 cm × 30 cm footprint, with the bubbler spout at 7 cm and a side tap at 25 cm so users can fill bottles without hunching.\n\nCooling is rated at **20 L/hr at 8–12 °C**, driven by a 200 W refrigeration circuit charged with R290 — a hydrocarbon refrigerant with a global warming potential roughly 1/3000th that of older R134a units. For a fountain that runs continuously through a school or office day, that's a meaningful reduction in lifetime environmental impact.\n\n## Filtration Built In\n\nA two-stage cartridge set sits inside the cabinet: a polypropylene sediment cartridge to trap rust, sand, and particulate, followed by an activated carbon cartridge that removes chlorine, taste, and odour from the supply. Both cartridges are accessible from inside the cabinet for service. Replacement cartridges are stocked separately and use the same 10\" × 2.5\" format common across the range.\n\n## Power and Connection\n\nWired for **220–240 V AC, 50/60 Hz** (also compatible with 100–127 V supplies in export markets). Mains plumbing connection is direct — a licensed plumber installs once on the cold supply, the unit runs from there. Model number **YL-600P** for service reference.\n\n## A Note on Compliance\n\nThe operational data carried in our system records this product as **not subject to WaterMark certification** under Australian plumbing regulations. The \"WM\" in the product name reflects the original supplier's nomenclature; we have not seen an active WaterMark licence number for this unit. If your installation requires WaterMark certification on the bubbler itself, we recommend the [Round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or [Square WaterMark bubbler](/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des/) instead — speak to your plumber about which certification path suits your project.",
+    "shortDescription": "Freestanding commercial cold water bubbler — 20 L/hr cooling at 8–12 °C, 200 W cooling, integrated PP sediment + activated carbon filtration, R290 refrigerant.",
+    "description": "A freestanding commercial cold-water bubbler engineered for high-traffic public installations — schools, offices, gyms, and retail venues that need a hands-off drinking fountain plumbed direct to the mains. The cabinet stands 99 cm tall on a 30 cm × 30 cm footprint, with the bubbler spout at 7 cm and a side tap at 25 cm so users can fill bottles without hunching.\n\nCooling is rated at **20 L/hr at 8–12 °C**, driven by a 200 W refrigeration circuit charged with R290 — a hydrocarbon refrigerant with a global warming potential roughly 1/3000th that of older R134a units. For a fountain that runs continuously through a school or office day, that's a meaningful reduction in lifetime environmental impact.\n\n## Filtration Built In\n\nA two-stage cartridge set sits inside the cabinet: a polypropylene sediment cartridge to trap rust, sand, and particulate, followed by an activated carbon cartridge that removes chlorine, taste, and odour from the supply. Both cartridges are accessible from inside the cabinet for service. Replacement cartridges are stocked separately and use the same 10\" × 2.5\" format common across the range.\n\n## Power and Connection\n\nWired for **220–240 V AC, 50/60 Hz** (also compatible with 100–127 V supplies in export markets). Mains plumbing connection is direct — a licensed plumber installs once on the cold supply, the unit runs from there. Model number **YL-600P** for service reference.\n\n## A Note on Compliance\n\nThe operational data carried in our system records this product as **not subject to WaterMark certification** under Australian plumbing regulations. The \"WM\" in the product name reflects the original supplier's nomenclature; we have not seen an active WaterMark licence number for this unit. If your installation requires WaterMark certification on the bubbler itself, we recommend the [Round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or [Square WaterMark bubbler](/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des/) instead — speak to your plumber about which certification path suits your project.",
     "features": [
-      "20 L/hr cooling capacity at 8–12 °C — sized for sustained high-traffic use",
+      "20 L/hr cooling capacity at 8–12 °C — sized for sustained high-traffic use",
       "R290 hydrocarbon refrigerant — low global warming potential vs R134a",
       "Built-in two-stage filtration: PP sediment + activated carbon",
-      "Bubbler spout (7 cm) plus side tap (25 cm) for bottle filling",
-      "200 W cooling power on a 220–240 V (50/60 Hz) supply",
-      "Compact 30 cm × 30 cm footprint, 99 cm tall — fits against a wall",
+      "Bubbler spout (7 cm) plus side tap (25 cm) for bottle filling",
+      "200 W cooling power on a 220–240 V (50/60 Hz) supply",
+      "Compact 30 cm × 30 cm footprint, 99 cm tall — fits against a wall",
       "Direct mains connection — no bottles, no refills"
     ],
     "headlineSpecs": [
@@ -296,15 +399,15 @@
       },
       {
         "label": "Water temperature",
-        "value": "8–12 °C"
+        "value": "8–12 °C"
       },
       {
         "label": "Cooling power",
-        "value": "200 W"
+        "value": "200 W"
       },
       {
         "label": "Refrigerant",
-        "value": "R290 (60 g)"
+        "value": "R290 (60 g)"
       }
     ],
     "fullSpecs": [
@@ -322,19 +425,19 @@
       },
       {
         "label": "Water temperature",
-        "value": "8–12 °C"
+        "value": "8–12 °C"
       },
       {
         "label": "Cooling power",
-        "value": "200 W"
+        "value": "200 W"
       },
       {
         "label": "Refrigerant",
-        "value": "R290, 60 g charge"
+        "value": "R290, 60 g charge"
       },
       {
         "label": "Voltage",
-        "value": "220–240 V AC, 50/60 Hz (also 100–127 V 50/60 Hz)"
+        "value": "220–240 V AC, 50/60 Hz (also 100–127 V 50/60 Hz)"
       },
       {
         "label": "Filtration",
@@ -342,15 +445,15 @@
       },
       {
         "label": "Dimensions",
-        "value": "99 cm H × 30 cm W × 30 cm D"
+        "value": "99 cm H × 30 cm W × 30 cm D"
       },
       {
         "label": "Bubbler spout height",
-        "value": "7 cm above cabinet"
+        "value": "7 cm above cabinet"
       },
       {
         "label": "Tap height",
-        "value": "25 cm above cabinet"
+        "value": "25 cm above cabinet"
       }
     ],
     "recommendedFor": [
@@ -382,7 +485,7 @@
     },
     "seo": {
       "title": "Commercial Cold Water Bubbler — 20 L/hr Filtered Drinking Fountain | Enviro Aqua",
-      "description": "Freestanding commercial cold water bubbler. 20 L/hr at 8–12 °C, R290 refrigerant, built-in PP sediment + carbon filtration. Direct mains connection.",
+      "description": "Freestanding commercial cold water bubbler. 20 L/hr at 8–12 °C, R290 refrigerant, built-in PP sediment + carbon filtration. Direct mains connection.",
       "ogImage": null
     }
   },
@@ -399,15 +502,15 @@
       "square-cabinet",
       "high-traffic"
     ],
-    "shortDescription": "Square-cabinet commercial bubbler in SUS304 stainless steel — 20 L/hr cooling at 8–12 °C, R290 refrigerant, integrated two-stage filtration. WaterMark certification pending.",
-    "description": "The square-cabinet sibling to our [round commercial bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) — same SUS304 stainless steel build, same cooling and filtration spec, presented in a flat-sided cabinet that sits flush against a wall or in a corner installation. The square footprint matters more than it sounds: in a tight foyer, a school corridor, or behind a café counter, a flat back saves real floor space and avoids the awkward gap a cylindrical cabinet leaves.\n\n## Built for Continuous Service\n\n**SUS304 stainless steel** throughout — cabinet, frame, and exterior panels. SUS304 is the workhorse 18/8 alloy used across Australian commercial kitchens and food-service equipment, chosen here for its resistance to corrosion, easy cleaning, and tolerance for the daily wipe-downs a public-venue bubbler needs to stay hygienic.\n\nCooling delivers **20 L/hr at 8–12 °C** through a 200 W refrigeration loop, charged with **R290 hydrocarbon refrigerant** (60 g) — the low-GWP alternative to legacy R134a units. The unit stands 99 cm tall on a 30 cm × 30 cm footprint, with a 7 cm bubbler spout and a 25 cm tap height for bottle filling.\n\n## Filtration\n\nIntegrated two-stage cartridge filtration sits inside the cabinet: PP sediment to capture rust, sand, and particulate; activated carbon to remove chlorine, taste, and odour. Cartridges are accessible for routine service without dismantling the unit.\n\n## WaterMark Status — Read This Before Ordering\n\nThe product is recorded in our system as **WaterMark certification pending** — meaning the certification process is underway with the manufacturer, but a current WaterMark licence number has not yet been issued and verified at our end. **Until that licence is in place, your licensed plumber may not be able to issue a certificate of compliance for a permanent mains installation.** The product name includes \"WaterMark Certified\" reflecting the supplier's claim, but we will not state the unit as certified to you until we hold the licence number.\n\nIf you need a unit you can install on a mains supply *today* with a verified certification path, contact us — we can advise on the [round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or update you when this unit's certification is confirmed.",
+    "shortDescription": "Square-cabinet commercial bubbler in SUS304 stainless steel — 20 L/hr cooling at 8–12 °C, R290 refrigerant, integrated two-stage filtration. WaterMark certification pending.",
+    "description": "The square-cabinet sibling to our [round commercial bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) — same SUS304 stainless steel build, same cooling and filtration spec, presented in a flat-sided cabinet that sits flush against a wall or in a corner installation. The square footprint matters more than it sounds: in a tight foyer, a school corridor, or behind a café counter, a flat back saves real floor space and avoids the awkward gap a cylindrical cabinet leaves.\n\n## Built for Continuous Service\n\n**SUS304 stainless steel** throughout — cabinet, frame, and exterior panels. SUS304 is the workhorse 18/8 alloy used across Australian commercial kitchens and food-service equipment, chosen here for its resistance to corrosion, easy cleaning, and tolerance for the daily wipe-downs a public-venue bubbler needs to stay hygienic.\n\nCooling delivers **20 L/hr at 8–12 °C** through a 200 W refrigeration loop, charged with **R290 hydrocarbon refrigerant** (60 g) — the low-GWP alternative to legacy R134a units. The unit stands 99 cm tall on a 30 cm × 30 cm footprint, with a 7 cm bubbler spout and a 25 cm tap height for bottle filling.\n\n## Filtration\n\nIntegrated two-stage cartridge filtration sits inside the cabinet: PP sediment to capture rust, sand, and particulate; activated carbon to remove chlorine, taste, and odour. Cartridges are accessible for routine service without dismantling the unit.\n\n## WaterMark Status — Read This Before Ordering\n\nThe product is recorded in our system as **WaterMark certification pending** — meaning the certification process is underway with the manufacturer, but a current WaterMark licence number has not yet been issued and verified at our end. **Until that licence is in place, your licensed plumber may not be able to issue a certificate of compliance for a permanent mains installation.** The product name includes \"WaterMark Certified\" reflecting the supplier's claim, but we will not state the unit as certified to you until we hold the licence number.\n\nIf you need a unit you can install on a mains supply *today* with a verified certification path, contact us — we can advise on the [round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or update you when this unit's certification is confirmed.",
     "features": [
       "Square cabinet — sits flush against walls and corners, saves footprint vs round designs",
       "SUS304 stainless steel cabinet, frame, and panels",
-      "20 L/hr cooling at 8–12 °C with low-GWP R290 refrigerant",
+      "20 L/hr cooling at 8–12 °C with low-GWP R290 refrigerant",
       "Integrated PP sediment + activated carbon filtration",
-      "200 W cooling power on standard 220–240 V mains",
-      "Bubbler spout (7 cm) plus side tap (25 cm) for filling bottles and jugs"
+      "200 W cooling power on standard 220–240 V mains",
+      "Bubbler spout (7 cm) plus side tap (25 cm) for filling bottles and jugs"
     ],
     "headlineSpecs": [
       {
@@ -416,7 +519,7 @@
       },
       {
         "label": "Water temperature",
-        "value": "8–12 °C"
+        "value": "8–12 °C"
       },
       {
         "label": "Cabinet material",
@@ -424,7 +527,7 @@
       },
       {
         "label": "Refrigerant",
-        "value": "R290 (60 g)"
+        "value": "R290 (60 g)"
       }
     ],
     "fullSpecs": [
@@ -442,15 +545,15 @@
       },
       {
         "label": "Water temperature",
-        "value": "8–12 °C"
+        "value": "8–12 °C"
       },
       {
         "label": "Cooling power",
-        "value": "200 W"
+        "value": "200 W"
       },
       {
         "label": "Refrigerant",
-        "value": "R290, 60 g charge"
+        "value": "R290, 60 g charge"
       },
       {
         "label": "Filtration",
@@ -458,15 +561,15 @@
       },
       {
         "label": "Dimensions",
-        "value": "99 cm H × 30 cm W × 30 cm D"
+        "value": "99 cm H × 30 cm W × 30 cm D"
       },
       {
         "label": "Bubbler spout height",
-        "value": "7 cm above cabinet"
+        "value": "7 cm above cabinet"
       },
       {
         "label": "Tap height",
-        "value": "25 cm above cabinet"
+        "value": "25 cm above cabinet"
       }
     ],
     "recommendedFor": [
@@ -498,7 +601,7 @@
     },
     "seo": {
       "title": "Square Stainless Steel Commercial Bubbler — Filtered, 20 L/hr | Enviro Aqua",
-      "description": "Flat-back square commercial drinking fountain in SUS304 stainless. 20 L/hr at 8–12 °C, R290 refrigerant, built-in two-stage filtration. WaterMark pending.",
+      "description": "Flat-back square commercial drinking fountain in SUS304 stainless. 20 L/hr at 8–12 °C, R290 refrigerant, built-in two-stage filtration. WaterMark pending.",
       "ogImage": null
     }
   },
@@ -514,11 +617,11 @@
       "commercial",
       "compact"
     ],
-    "shortDescription": "Under-counter cold water chiller — 5 L/hr cold capacity, 8 °C output, SUS304 stainless casing, 2.2 L cold tank, R134a refrigerant. Includes matching stainless tap.",
-    "description": "An under-counter cold water chiller for installations where the bubbler or tap sits visible on the bench, but the refrigeration unit hides in the cupboard below. The chiller is plumbed in line on the cold supply to a stainless steel tap — the result is chilled drinking water at the point of use, without a freestanding cabinet eating bench space.\n\nThis format is the right answer for café front-of-house, office kitchens, hotel back-of-house, and any fit-out where a freestanding bubbler doesn't suit the design but chilled drinking water is still needed.\n\n## Cold Capacity and Tank\n\nThe unit delivers **5 L/hr of cold water at 8 °C**, drawing from a 2.2 L insulated cold tank. The 2.2 L tank size means the first few glasses out are immediately cold — useful for a café service where the first customer of the morning shouldn't get lukewarm water while the chiller catches up. Power consumption is **140 W** under cooling load.\n\n## Refrigeration Hardware\n\nA **hermetically sealed compressor** with automatic overload protection drives the system, paired with an external copper coil evaporator and a wire-tube condenser cooled by a fan. The cold tank is insulated with expanded polystyrene to hold temperature between draws. Refrigerant is **R134a** (55 g charge) — this is an older HFC refrigerant rather than the low-GWP R290 used in our newer bubbler models; if refrigerant GWP is a procurement criterion, factor that in.\n\n## Build and Fittings\n\n**SUS304 stainless steel casing** throughout. Inlet and outlet are quick-type fittings sized for **1/4\" tubing** — so it integrates cleanly with standard RO-style plumbing kits and can run downstream of an existing under-sink filter. The unit measures **41 cm W × 21 cm D × 29 cm H** and weighs 12 kg, comfortable for a standard kitchen cupboard.\n\n## What's Included\n\n- Under-counter chiller unit (SUS304 stainless casing)\n- Matching stainless steel tap\n- 1-year warranty\n\nA licensed plumber should handle the installation, particularly the tap mount and mains connection. The chiller is point-of-use and downstream-of-meter; under Australian plumbing regulations this product is **not subject to WaterMark certification**.",
+    "shortDescription": "Under-counter cold water chiller — 5 L/hr cold capacity, 8 °C output, SUS304 stainless casing, 2.2 L cold tank, R134a refrigerant. Includes matching stainless tap.",
+    "description": "An under-counter cold water chiller for installations where the bubbler or tap sits visible on the bench, but the refrigeration unit hides in the cupboard below. The chiller is plumbed in line on the cold supply to a stainless steel tap — the result is chilled drinking water at the point of use, without a freestanding cabinet eating bench space.\n\nThis format is the right answer for café front-of-house, office kitchens, hotel back-of-house, and any fit-out where a freestanding bubbler doesn't suit the design but chilled drinking water is still needed.\n\n## Cold Capacity and Tank\n\nThe unit delivers **5 L/hr of cold water at 8 °C**, drawing from a 2.2 L insulated cold tank. The 2.2 L tank size means the first few glasses out are immediately cold — useful for a café service where the first customer of the morning shouldn't get lukewarm water while the chiller catches up. Power consumption is **140 W** under cooling load.\n\n## Refrigeration Hardware\n\nA **hermetically sealed compressor** with automatic overload protection drives the system, paired with an external copper coil evaporator and a wire-tube condenser cooled by a fan. The cold tank is insulated with expanded polystyrene to hold temperature between draws. Refrigerant is **R134a** (55 g charge) — this is an older HFC refrigerant rather than the low-GWP R290 used in our newer bubbler models; if refrigerant GWP is a procurement criterion, factor that in.\n\n## Build and Fittings\n\n**SUS304 stainless steel casing** throughout. Inlet and outlet are quick-type fittings sized for **1/4\" tubing** — so it integrates cleanly with standard RO-style plumbing kits and can run downstream of an existing under-sink filter. The unit measures **41 cm W × 21 cm D × 29 cm H** and weighs 12 kg, comfortable for a standard kitchen cupboard.\n\n## What's Included\n\n- Under-counter chiller unit (SUS304 stainless casing)\n- Matching stainless steel tap\n- 1-year warranty\n\nA licensed plumber should handle the installation, particularly the tap mount and mains connection. The chiller is point-of-use and downstream-of-meter; under Australian plumbing regulations this product is **not subject to WaterMark certification**.",
     "features": [
       "Under-counter format — chiller hides in the cupboard, only the tap is visible",
-      "5 L/hr cold water at 8 °C from a 2.2 L insulated cold tank",
+      "5 L/hr cold water at 8 °C from a 2.2 L insulated cold tank",
       "SUS304 stainless steel casing",
       "Hermetically sealed compressor with automatic overload protection",
       "External copper coil evaporator, fan-cooled wire-tube condenser",
@@ -532,7 +635,7 @@
       },
       {
         "label": "Water temperature",
-        "value": "8 °C"
+        "value": "8 °C"
       },
       {
         "label": "Cabinet material",
@@ -540,7 +643,7 @@
       },
       {
         "label": "Cold tank",
-        "value": "2.2 L insulated"
+        "value": "2.2 L insulated"
       }
     ],
     "fullSpecs": [
@@ -554,19 +657,19 @@
       },
       {
         "label": "Water temperature",
-        "value": "8 °C (46 °F)"
+        "value": "8 °C (46 °F)"
       },
       {
         "label": "Cold tank volume",
-        "value": "2.2 L"
+        "value": "2.2 L"
       },
       {
         "label": "Power consumption",
-        "value": "140 W"
+        "value": "140 W"
       },
       {
         "label": "Refrigerant",
-        "value": "R134a (HFC), 55 g charge"
+        "value": "R134a (HFC), 55 g charge"
       },
       {
         "label": "Compressor",
@@ -594,11 +697,11 @@
       },
       {
         "label": "Dimensions",
-        "value": "41 cm W × 21 cm D × 29 cm H"
+        "value": "41 cm W × 21 cm D × 29 cm H"
       },
       {
         "label": "Weight",
-        "value": "12 kg"
+        "value": "12 kg"
       },
       {
         "label": "Warranty",
@@ -634,7 +737,7 @@
     },
     "seo": {
       "title": "Under-Counter Water Chiller — Stainless Steel + Tap | Enviro Aqua",
-      "description": "Under-counter cold water chiller with stainless tap. 5 L/hr at 8 °C, 2.2 L insulated cold tank, SUS304 casing, R134a, 1/4\" fittings. 1-year warranty.",
+      "description": "Under-counter cold water chiller with stainless tap. 5 L/hr at 8 °C, 2.2 L insulated cold tank, SUS304 casing, R134a, 1/4\" fittings. 1-year warranty.",
       "ogImage": null
     }
   },
@@ -849,25 +952,25 @@
       "direct-connect",
       "filtered"
     ],
-    "shortDescription": "Compact bench-top hot, cold, and ambient water cooler — direct mains connection, 3-stage built-in filtration, child-safe hot-water lock. 30 × 38 × 47 cm, 9 kg.",
-    "description": "A compact bench-top water cooler for the kitchen counter or office break-out — three temperatures on demand (hot, cold, room) from a direct mains connection, with the filtration built in and a child-safe lock on the hot tap. The cabinet is **47 cm tall** and sits on a 30 × 38 cm footprint, so it fits under a standard upper-cupboard rather than needing the full floor space of a dispenser tower.\n\nDirect-connect means no bottles, no refilling, and no plastic-bottle waste — the unit plumbs to the cold supply with standard 1/4\" tubing and pulls water as needed. Three-stage cartridge filtration sits inside the cabinet, treating the supply before it reaches the hot, cold, or ambient tap.\n\n## Hot, Cold, and Ambient — One Unit\n\nThe cooler delivers:\n\n- **Hot:** ≥ 90 °C output at 5 L/hr — sufficient for steady tea and coffee service through a working day\n- **Cold:** ≤ 10 °C output at 2–3 L/hr — chilled drinking water on demand\n- **Ambient:** room-temperature unfiltered tap for general use\n\nThe **safety lock on the hot tap** is a non-negotiable feature for any installation with kids or aged-care residents — the tap won't dispense hot water until the lock is released.\n\n## Working Environment\n\nDesigned to run reliably between **10 °C and 32 °C ambient** — covers the full range of a typical Australian indoor environment year-round, including unconditioned laundries and garages in milder climates. Finished in gloss black and white, the cabinet suits both residential kitchens and small office break rooms.\n\n## At a Glance\n\nFootprint: **30 cm W × 38 cm D × 47 cm H**. Weight: **9 kg**. Brand: Enviro Aqua. The unit is point-of-use and downstream-of-meter, so it sits outside WaterMark certification scope under Australian plumbing regulations — your licensed plumber will simply tap the cold supply and run 1/4\" line to the unit.",
+    "shortDescription": "Compact bench-top hot, cold, and ambient water cooler — direct mains connection, 3-stage built-in filtration, child-safe hot-water lock. 30 × 38 × 47 cm, 9 kg.",
+    "description": "A compact bench-top water cooler for the kitchen counter or office break-out — three temperatures on demand (hot, cold, room) from a direct mains connection, with the filtration built in and a child-safe lock on the hot tap. The cabinet is **47 cm tall** and sits on a 30 × 38 cm footprint, so it fits under a standard upper-cupboard rather than needing the full floor space of a dispenser tower.\n\nDirect-connect means no bottles, no refilling, and no plastic-bottle waste — the unit plumbs to the cold supply with standard 1/4\" tubing and pulls water as needed. Three-stage cartridge filtration sits inside the cabinet, treating the supply before it reaches the hot, cold, or ambient tap.\n\n## Hot, Cold, and Ambient — One Unit\n\nThe cooler delivers:\n\n- **Hot:** ≥ 90 °C output at 5 L/hr — sufficient for steady tea and coffee service through a working day\n- **Cold:** ≤ 10 °C output at 2–3 L/hr — chilled drinking water on demand\n- **Ambient:** room-temperature unfiltered tap for general use\n\nThe **safety lock on the hot tap** is a non-negotiable feature for any installation with kids or aged-care residents — the tap won't dispense hot water until the lock is released.\n\n## Working Environment\n\nDesigned to run reliably between **10 °C and 32 °C ambient** — covers the full range of a typical Australian indoor environment year-round, including unconditioned laundries and garages in milder climates. Finished in gloss black and white, the cabinet suits both residential kitchens and small office break rooms.\n\n## At a Glance\n\nFootprint: **30 cm W × 38 cm D × 47 cm H**. Weight: **9 kg**. Brand: Enviro Aqua. The unit is point-of-use and downstream-of-meter, so it sits outside WaterMark certification scope under Australian plumbing regulations — your licensed plumber will simply tap the cold supply and run 1/4\" line to the unit.",
     "features": [
-      "Three temperatures from one unit — hot (≥90 °C), cold (≤10 °C), and room",
+      "Three temperatures from one unit — hot (≥90 °C), cold (≤10 °C), and room",
       "Direct mains connection — no bottles to refill, no plastic waste",
       "Three-stage cartridge filtration built into the cabinet",
       "Child-safe lock on the hot-water tap",
-      "Compact 30 × 38 × 47 cm cabinet, 9 kg — fits under upper cupboards",
+      "Compact 30 × 38 × 47 cm cabinet, 9 kg — fits under upper cupboards",
       "Gloss black-and-white finish suits residential and small-office settings",
-      "Designed to run reliably between 10 °C and 32 °C ambient"
+      "Designed to run reliably between 10 °C and 32 °C ambient"
     ],
     "headlineSpecs": [
       {
         "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
+        "value": "5 L/hr at ≥90 °C"
       },
       {
         "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
+        "value": "2–3 L/hr at ≤10 °C"
       },
       {
         "label": "Format",
@@ -885,11 +988,11 @@
       },
       {
         "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
+        "value": "5 L/hr at ≥90 °C"
       },
       {
         "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
+        "value": "2–3 L/hr at ≤10 °C"
       },
       {
         "label": "Ambient water",
@@ -905,15 +1008,15 @@
       },
       {
         "label": "Working ambient temperature",
-        "value": "10–32 °C"
+        "value": "10–32 °C"
       },
       {
         "label": "Dimensions",
-        "value": "30 cm W × 38 cm D × 47 cm H"
+        "value": "30 cm W × 38 cm D × 47 cm H"
       },
       {
         "label": "Weight",
-        "value": "9 kg"
+        "value": "9 kg"
       },
       {
         "label": "Finish",
@@ -953,7 +1056,7 @@
     },
     "seo": {
       "title": "Bench-Top Hot & Cold Water Cooler — Direct Connect | Enviro Aqua",
-      "description": "Compact 47 cm bench-top water cooler. Hot, cold and ambient on tap, built-in 3-stage filtration, child-safe hot lock. Direct mains, no bottles.",
+      "description": "Compact 47 cm bench-top water cooler. Hot, cold and ambient on tap, built-in 3-stage filtration, child-safe hot lock. Direct mains, no bottles.",
       "ogImage": null
     }
   },
@@ -969,33 +1072,33 @@
       "direct-connect",
       "three-stage-filter"
     ],
-    "shortDescription": "Freestanding 95 cm tower water cooler — hot, cold, and ambient on direct mains, 3-stage built-in filtration, 550 W heating, 90 W cooling, child-safe hot lock.",
-    "description": "The full-height tower version of our direct-connect water cooler — same three-temperature dispense as the bench-top, but in a **95 cm freestanding cabinet** with the heating and cooling capacity to keep up with steady office or family-home use. Where the bench-top is 9 kg and 47 cm tall, this unit is 13 kg and stands tall enough to fill a kettle or large bottle without bending.\n\nThe cooler plumbs direct to the cold mains via 1/4\" tubing and runs from there — no 15 L barrels to lift, no rolling delivery contracts, no half-empty bottles taking up cupboard space.\n\n## Heating and Cooling Capacity\n\nDriven by **550 W of heating power** and **90 W of cooling**, the unit delivers:\n\n- **Hot water:** 5 L/hr at ≥ 90 °C\n- **Cold water:** 2–3 L/hr at ≤ 10 °C\n- **Ambient:** unheated, unchilled tap\n\nThe 550 W heating element matters for hot-tap throughput — a smaller heater would lag during back-to-back tea and coffee fills. The cold side at 90 W is sized to refill the cold tank between draws rather than chill on demand, which is the right tradeoff for residential and small-office usage patterns.\n\n## Filtration and Safety\n\nThe **three-stage built-in filter** treats the mains supply before it reaches any of the three taps. A **child-safe lock** on the hot tap prevents accidental scalds — this matters in any home with young children or in shared family-and-office settings.\n\n## Power and Environment\n\nWired for **220 V at 50 Hz**, plug-and-play on standard Australian mains. Designed to operate reliably between **10 °C and 32 °C ambient** — covers a typical indoor environment year-round.\n\n## Footprint and Finish\n\nFinished in gloss white and black on a **30 cm W × 38 cm D × 95 cm H** cabinet. Weight: 13 kg per the spec sheet (the WP attribute table also shows 16 kg in places — confirm at unboxing). The 30 × 38 cm footprint sits comfortably in a kitchen corner or beside a fridge.",
+    "shortDescription": "Freestanding 95 cm tower water cooler — hot, cold, and ambient on direct mains, 3-stage built-in filtration, 550 W heating, 90 W cooling, child-safe hot lock.",
+    "description": "The full-height tower version of our direct-connect water cooler — same three-temperature dispense as the bench-top, but in a **95 cm freestanding cabinet** with the heating and cooling capacity to keep up with steady office or family-home use. Where the bench-top is 9 kg and 47 cm tall, this unit is 13 kg and stands tall enough to fill a kettle or large bottle without bending.\n\nThe cooler plumbs direct to the cold mains via 1/4\" tubing and runs from there — no 15 L barrels to lift, no rolling delivery contracts, no half-empty bottles taking up cupboard space.\n\n## Heating and Cooling Capacity\n\nDriven by **550 W of heating power** and **90 W of cooling**, the unit delivers:\n\n- **Hot water:** 5 L/hr at ≥ 90 °C\n- **Cold water:** 2–3 L/hr at ≤ 10 °C\n- **Ambient:** unheated, unchilled tap\n\nThe 550 W heating element matters for hot-tap throughput — a smaller heater would lag during back-to-back tea and coffee fills. The cold side at 90 W is sized to refill the cold tank between draws rather than chill on demand, which is the right tradeoff for residential and small-office usage patterns.\n\n## Filtration and Safety\n\nThe **three-stage built-in filter** treats the mains supply before it reaches any of the three taps. A **child-safe lock** on the hot tap prevents accidental scalds — this matters in any home with young children or in shared family-and-office settings.\n\n## Power and Environment\n\nWired for **220 V at 50 Hz**, plug-and-play on standard Australian mains. Designed to operate reliably between **10 °C and 32 °C ambient** — covers a typical indoor environment year-round.\n\n## Footprint and Finish\n\nFinished in gloss white and black on a **30 cm W × 38 cm D × 95 cm H** cabinet. Weight: 13 kg per the spec sheet (the WP attribute table also shows 16 kg in places — confirm at unboxing). The 30 × 38 cm footprint sits comfortably in a kitchen corner or beside a fridge.",
     "features": [
-      "Freestanding 95 cm tower — fills tall bottles and kettles without bending",
-      "Hot (≥90 °C / 5 L/hr), cold (≤10 °C / 2–3 L/hr), and ambient on one cabinet",
-      "550 W heating element — keeps up with back-to-back hot fills",
-      "90 W cooling stage tuned for residential and small-office demand",
+      "Freestanding 95 cm tower — fills tall bottles and kettles without bending",
+      "Hot (≥90 °C / 5 L/hr), cold (≤10 °C / 2–3 L/hr), and ambient on one cabinet",
+      "550 W heating element — keeps up with back-to-back hot fills",
+      "90 W cooling stage tuned for residential and small-office demand",
       "Three-stage built-in filtration on the mains supply",
       "Child-safe lock on the hot tap",
-      "Direct 220 V / 50 Hz mains, no bottles or refills"
+      "Direct 220 V / 50 Hz mains, no bottles or refills"
     ],
     "headlineSpecs": [
       {
         "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
+        "value": "5 L/hr at ≥90 °C"
       },
       {
         "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
+        "value": "2–3 L/hr at ≤10 °C"
       },
       {
         "label": "Heating power",
-        "value": "550 W"
+        "value": "550 W"
       },
       {
         "label": "Cooling power",
-        "value": "90 W"
+        "value": "90 W"
       }
     ],
     "fullSpecs": [
@@ -1005,11 +1108,11 @@
       },
       {
         "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
+        "value": "5 L/hr at ≥90 °C"
       },
       {
         "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
+        "value": "2–3 L/hr at ≤10 °C"
       },
       {
         "label": "Ambient water",
@@ -1017,15 +1120,15 @@
       },
       {
         "label": "Heating power",
-        "value": "550 W"
+        "value": "550 W"
       },
       {
         "label": "Cooling power",
-        "value": "90 W"
+        "value": "90 W"
       },
       {
         "label": "Voltage",
-        "value": "220 V, 50 Hz"
+        "value": "220 V, 50 Hz"
       },
       {
         "label": "Filtration",
@@ -1037,15 +1140,15 @@
       },
       {
         "label": "Working ambient temperature",
-        "value": "10–32 °C"
+        "value": "10–32 °C"
       },
       {
         "label": "Dimensions",
-        "value": "30 cm W × 38 cm D × 95 cm H"
+        "value": "30 cm W × 38 cm D × 95 cm H"
       },
       {
         "label": "Weight",
-        "value": "13 kg (manufacturer spec also shows 16 kg in places)"
+        "value": "13 kg (manufacturer spec also shows 16 kg in places)"
       },
       {
         "label": "Finish",
@@ -1081,7 +1184,7 @@
     },
     "seo": {
       "title": "Freestanding Hot & Cold Water Cooler — 3-Stage Filter, Direct Connect | Enviro Aqua",
-      "description": "95 cm tower water cooler with hot (5 L/hr), cold (2–3 L/hr) and ambient. 550 W heating, 90 W cooling, 3-stage filter, child-safe hot lock. 220 V mains.",
+      "description": "95 cm tower water cooler with hot (5 L/hr), cold (2–3 L/hr) and ambient. 550 W heating, 90 W cooling, 3-stage filter, child-safe hot lock. 220 V mains.",
       "ogImage": null
     }
   },
@@ -1096,25 +1199,25 @@
       "direct-connect",
       "carbon-sediment-filter"
     ],
-    "shortDescription": "Direct-connect hot, cold, and ambient water cooler with built-in PP sediment + activated carbon filtration. 550 W heating, 90 W cooling, 220 V mains, child-safe hot lock.",
-    "description": "A direct-connect filtered water cooler delivering hot, cold, and ambient water from a single cabinet — the practical alternative to a bottled-water dispenser for any home or small office that wants chilled and boiling water without the rolling cost of barrel deliveries.\n\nWhat differentiates this model from the unit above is that the WP product attributes call out the filtration media explicitly: **activated carbon plus PP sediment**. The carbon stage handles chlorine, taste, and odour from the mains supply; the PP sediment stage captures rust, sand, and particulate before it reaches the carbon, which extends carbon-cartridge life. It's a two-media combination that does the practical work of treating Australian town water for drinking and beverage-making.\n\n## Three Taps, One Mains Connection\n\nFrom a single 1/4\" cold-mains feed, the unit dispenses:\n\n- **Hot:** 5 L/hr output at ≥ 90 °C\n- **Cold:** 2–3 L/hr output at ≤ 10 °C\n- **Ambient:** room-temperature, filtered\n\nA **child-safe lock** on the hot tap prevents accidental dispense — necessary in any household with kids and standard practice in commercial deployments.\n\n## Power Draw\n\n**550 W heating** and **90 W cooling**, on **220 V at 50 Hz** mains. Designed to operate continuously between **10 °C and 32 °C ambient** — fine for an unconditioned laundry or garage in temperate climates, fine year-round indoors.\n\n## Weight and Footprint\n\nThe attribute sheet lists **16 kg** for this configuration. Confirm a sturdy bench or floor location at install — this is not a unit you want to move regularly. Direct mains plumbing should be done by a licensed plumber for warranty cover; the unit itself is point-of-use and downstream-of-meter, outside WaterMark certification scope.",
+    "shortDescription": "Direct-connect hot, cold, and ambient water cooler with built-in PP sediment + activated carbon filtration. 550 W heating, 90 W cooling, 220 V mains, child-safe hot lock.",
+    "description": "A direct-connect filtered water cooler delivering hot, cold, and ambient water from a single cabinet — the practical alternative to a bottled-water dispenser for any home or small office that wants chilled and boiling water without the rolling cost of barrel deliveries.\n\nWhat differentiates this model from the unit above is that the WP product attributes call out the filtration media explicitly: **activated carbon plus PP sediment**. The carbon stage handles chlorine, taste, and odour from the mains supply; the PP sediment stage captures rust, sand, and particulate before it reaches the carbon, which extends carbon-cartridge life. It's a two-media combination that does the practical work of treating Australian town water for drinking and beverage-making.\n\n## Three Taps, One Mains Connection\n\nFrom a single 1/4\" cold-mains feed, the unit dispenses:\n\n- **Hot:** 5 L/hr output at ≥ 90 °C\n- **Cold:** 2–3 L/hr output at ≤ 10 °C\n- **Ambient:** room-temperature, filtered\n\nA **child-safe lock** on the hot tap prevents accidental dispense — necessary in any household with kids and standard practice in commercial deployments.\n\n## Power Draw\n\n**550 W heating** and **90 W cooling**, on **220 V at 50 Hz** mains. Designed to operate continuously between **10 °C and 32 °C ambient** — fine for an unconditioned laundry or garage in temperate climates, fine year-round indoors.\n\n## Weight and Footprint\n\nThe attribute sheet lists **16 kg** for this configuration. Confirm a sturdy bench or floor location at install — this is not a unit you want to move regularly. Direct mains plumbing should be done by a licensed plumber for warranty cover; the unit itself is point-of-use and downstream-of-meter, outside WaterMark certification scope.",
     "features": [
       "Hot, cold, and ambient water from one cabinet, one mains connection",
       "Two-media filtration: PP sediment + activated carbon",
-      "550 W heating, 90 W cooling on 220 V / 50 Hz mains",
-      "Hot at 5 L/hr ≥ 90 °C; cold at 2–3 L/hr ≤ 10 °C",
+      "550 W heating, 90 W cooling on 220 V / 50 Hz mains",
+      "Hot at 5 L/hr ≥ 90 °C; cold at 2–3 L/hr ≤ 10 °C",
       "Child-safe hot-tap lock",
-      "Designed for 10–32 °C ambient operation",
-      "16 kg cabinet — stable, settled installation"
+      "Designed for 10–32 °C ambient operation",
+      "16 kg cabinet — stable, settled installation"
     ],
     "headlineSpecs": [
       {
         "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
+        "value": "5 L/hr at ≥90 °C"
       },
       {
         "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
+        "value": "2–3 L/hr at ≤10 °C"
       },
       {
         "label": "Filtration",
@@ -1122,7 +1225,7 @@
       },
       {
         "label": "Power",
-        "value": "220 V / 50 Hz"
+        "value": "220 V / 50 Hz"
       }
     ],
     "fullSpecs": [
@@ -1132,11 +1235,11 @@
       },
       {
         "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
+        "value": "5 L/hr at ≥90 °C"
       },
       {
         "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
+        "value": "2–3 L/hr at ≤10 °C"
       },
       {
         "label": "Ambient water",
@@ -1148,15 +1251,15 @@
       },
       {
         "label": "Heating power",
-        "value": "550 W"
+        "value": "550 W"
       },
       {
         "label": "Cooling power",
-        "value": "90 W"
+        "value": "90 W"
       },
       {
         "label": "Voltage",
-        "value": "220 V, 50 Hz"
+        "value": "220 V, 50 Hz"
       },
       {
         "label": "Hot tap safety",
@@ -1164,11 +1267,11 @@
       },
       {
         "label": "Working ambient temperature",
-        "value": "10–32 °C"
+        "value": "10–32 °C"
       },
       {
         "label": "Weight",
-        "value": "16 kg"
+        "value": "16 kg"
       },
       {
         "label": "Connection",
@@ -1204,7 +1307,7 @@
     },
     "seo": {
       "title": "Hot & Cold Water Cooler — Direct Connect, PP + Carbon Filter | Enviro Aqua",
-      "description": "Direct-connect filtered water cooler. Hot 5 L/hr, cold 2–3 L/hr, plus ambient. PP sediment + activated carbon filtration, 550 W / 90 W on 220 V mains.",
+      "description": "Direct-connect filtered water cooler. Hot 5 L/hr, cold 2–3 L/hr, plus ambient. PP sediment + activated carbon filtration, 550 W / 90 W on 220 V mains.",
       "ogImage": null
     }
   },
@@ -1423,9 +1526,101 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "tags": [
+      "sediment",
+      "polypropylene",
+      "20x45",
+      "big-blue",
+      "whole-house",
+      "twin-pack",
+      "five-micron"
+    ],
+    "shortDescription": "Twin pack of polypropylene spun sediment cartridges — 20\" × 4.5\" Big Blue, 5 micron. One year of routine sediment filtration for a whole-house system at 6-month change intervals.",
+    "description": "A twin pack of 20\" × 4.5\" Big Blue polypropylene spun sediment cartridges, sized for whole-house filtration on a 6-month change cycle. Two cartridges in the pack — install the first now, keep the second on the shelf for the next change-out, and you've covered roughly a year of sediment filtration without re-ordering.\n\nThe spun-melt construction means the polypropylene fibres are extruded and bonded as a single continuous structure, with no plastic centre core. That's the build difference that matters in practice: water flows through the full cross-section of the cartridge, not just the outer wall, so the cartridge holds more dirt before pressure drop forces a change.\n\n## Why the Twin Pack\n\nFor a whole-house Big Blue filter running on Australian town water, **the sediment stage is the cartridge that hits replacement schedule first** — sediment loads it, not chemistry. Tank water and bore-fed properties go through them faster again. Buying in a pair drops the per-cartridge cost and means the spare is on the shelf the day the pressure differential or visible discolouration tells you it's time. No order-and-wait gap, no extending a tired cartridge by a month because the replacement hasn't arrived.\n\n## Fits Any Standard 20\" × 4.5\" Big Blue Housing\n\nDesigned for the 20\" × 4.5\" Big Blue format used across whole-house filtration, including the [3-stage Big Blue WaterMark system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/), the twin Big Blue, and any third-party housing of the same size. Install in the first stage of any multi-stage system as the sediment pre-filter — protecting the carbon stages and any RO membrane downstream from particulate load.",
+    "features": [
+      "Twin pack — two 20\" × 4.5\" Big Blue cartridges in one purchase",
+      "5 micron rating — captures sand, silt, rust, and visible sediment",
+      "Spun-melt polypropylene construction with no centre core",
+      "Sized for any standard 20\" × 4.5\" Big Blue housing",
+      "Right format for Stage 1 of any whole-house multi-stage filter",
+      "Cost-per-cartridge drops vs single-pack pricing"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Pack size",
+        "value": "2 cartridges"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene spun"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "2 × 20\" × 4.5\" sediment cartridges"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene, spun-melt construction"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Application",
+        "value": "Whole-house, Stage 1 sediment pre-filter"
+      },
+      {
+        "label": "Compatible housings",
+        "value": "Any standard 20\" × 4.5\" Big Blue"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house Big Blue installations on a 6-month change schedule",
+      "Properties on tank or bore water with high sediment load",
+      "Households wanting the next change-out cartridge already on hand",
+      "Multi-stage RO or carbon systems where sediment pre-filtration protects downstream stages"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5",
+        "granular-activated-carbon-water-filter-gac-5-micron-20-x-4-5",
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+      "title": "20\" × 4.5\" Sediment Cartridge Twin Pack — 5 Micron Big Blue | Enviro Aqua",
+      "description": "Twin pack of polypropylene spun sediment cartridges. 20\" × 4.5\" Big Blue, 5 micron, no centre core. Sized for whole-house filter Stage 1 on a 6-month cycle.",
+      "ogImage": null
     }
   },
   "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5": {
@@ -1433,9 +1628,108 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "tags": [
+      "sediment",
+      "polypropylene",
+      "10x25",
+      "five-micron",
+      "under-sink",
+      "ro-pre-filter"
+    ],
+    "shortDescription": "Standard 10\" × 2.5\" polypropylene sediment cartridge — 5 micron, rated 14.5–58 PSI / 5–40 °C. Pre-filter for under-sink, RO, and bench-top systems.",
+    "description": "The standard 10\" × 2.5\" polypropylene sediment cartridge — the workhorse pre-filter that goes in Stage 1 of nearly every multi-stage residential filter sold in Australia. RO systems, under-sink twin and triple housings, bench-top filters, fridge inline kits — they all use this size and this format.\n\n## What It Does and Why Stage 1\n\nThis is the cartridge that catches **sand, silt, rust flakes, and visible particulate** before water reaches the carbon stages or the RO membrane. That ordering matters: sediment is what physically clogs the dense carbon block downstream, and even a small amount of grit will slowly destroy the surface of an RO membrane. Spending $17 on a sediment pre-filter to protect a $60 carbon block and a $90 RO membrane is the maths that makes multi-stage filtration economic.\n\nRated to **5 microns**, which is the sweet spot for a Stage 1: fine enough to catch the particulate that matters for downstream protection, coarse enough to not load up and force a premature change.\n\n## Operating Window\n\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 6–12 months depending on water quality and household usage\n\nIf your incoming mains pressure runs above 58 PSI — common in parts of Sydney, Melbourne, and the Central Coast — install a pressure-limiting valve upstream. Cartridges run outside their rated pressure window will fail prematurely or split internally, dumping their sediment load downstream.\n\n## Where It Fits\n\nDesigned for any standard 10\" × 2.5\" filter housing — the most common size in Australian residential filtration. Same physical fit across RO systems, under-sink twin packs, bench-top filters, and the [single-stage clear sediment whole-house](/whole-house-water-filter-clear-sediment-1-stage/) housing.",
+    "features": [
+      "Standard 10\" × 2.5\" — the size used by most Australian residential filters",
+      "5 micron rating — catches sand, silt, rust, and visible particulate",
+      "Polypropylene construction — no chemical residuals",
+      "Operating pressure 0.1–0.4 MPa (14.5–58 PSI)",
+      "Operating temperature 5–40 °C",
+      "Replace every 6–12 months depending on water quality and usage"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Filter type",
+        "value": "Sediment — removes sand, dirt, rust, particles"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial water filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Stage 1 of any 10\" × 2.5\" multi-stage system",
+      "Under-sink RO and twin-cartridge installations",
+      "Bench-top filters with the 10\" × 2.5\" canister",
+      "Fridge and ice-maker inline pre-filtration"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5",
+        "granular-activated-carbon-water-filter-gac-5-micron-10-x-2-5",
+        "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+      "title": "10\" × 2.5\" PP Sediment Cartridge — 5 Micron, 14.5–58 PSI | Enviro Aqua",
+      "description": "Standard 10\" × 2.5\" polypropylene sediment cartridge. 5 micron, rated 5–40 °C and 14.5–58 PSI. Stage 1 pre-filter for RO, under-sink, and bench-top systems.",
+      "ogImage": null
     }
   },
   "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5": {
@@ -1443,9 +1737,108 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "tags": [
+      "sediment",
+      "polypropylene",
+      "10x45",
+      "big-blue-short",
+      "five-micron",
+      "high-flow"
+    ],
+    "shortDescription": "Short Big Blue 10\" × 4.5\" polypropylene sediment cartridge — 5 micron, higher flow than 10\" × 2.5\" formats. Rated 14.5–58 PSI, 5–40 °C, 6–12 month change interval.",
+    "description": "The 10\" × 4.5\" \"short Big Blue\" sediment cartridge — same height as a standard 10\" cartridge but at the 4.5\" Big Blue diameter. The diameter difference is what matters: nearly four times the cross-section of a 10\" × 2.5\" cartridge means significantly higher flow, less pressure drop, and longer service life on the same water supply.\n\n## When the Short Big Blue Format Is Right\n\nFull-height 20\" × 4.5\" Big Blue is the mainstream whole-house format. The 10\" × 4.5\" short version exists for installations where there isn't headroom for the full 20\" housing — under a kitchen sink, in a tight cupboard, or on a caravan or compact rural setup — but where the higher flow of a Big Blue diameter is still wanted over the smaller 10\" × 2.5\" cartridges.\n\nIt's the right cartridge for short Big Blue housings, including the [10\" × 4.5\" sediment whole-house filter](/whole-house-water-filter-1-stage-10-x-4-5-sediment/) and the [2-stage 10\" × 4.5\" sediment + carbon system](/whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon/).\n\n## Specifications\n\n**5 micron** rating with **polypropylene** construction — no chemical residuals leaching into the supply, compatible with potable drinking water systems. Rated for **5–40 °C** operating temperature and **0.1–0.4 MPa (14.5–58 PSI)** operating pressure. **6–12 month** change interval depending on the sediment load of the source water.\n\nFor Australian mains supplies running below 58 PSI it sits well within rated range. For high-pressure mains or for properties with a pressure pump on the inlet, fit a pressure-limiting valve upstream of the housing.",
+    "features": [
+      "10\" × 4.5\" short Big Blue format — higher flow than 10\" × 2.5\" cartridges",
+      "5 micron polypropylene construction with no chemical residuals",
+      "Operating pressure 0.1–0.4 MPa (14.5–58 PSI)",
+      "Operating temperature 5–40 °C",
+      "Drop-in replacement for 10\" × 4.5\" Big Blue housings",
+      "6–12 month change interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "14.5–58 PSI"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Filter type",
+        "value": "Sediment — removes sand, dirt, rust, particles"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial water filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Short Big Blue 10\" × 4.5\" whole-house housings",
+      "Under-sink installations needing Big Blue flow in a compact footprint",
+      "Caravan, RV, and rural setups with limited headroom",
+      "Stage 1 sediment pre-filter where 20\" × 4.5\" won't fit"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-4-5",
+        "whole-house-water-filter-1-stage-10-x-4-5-sediment",
+        "whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+      "title": "10\" × 4.5\" PP Sediment Cartridge — 5 Micron Short Big Blue | Enviro Aqua",
+      "description": "Short Big Blue 10\" × 4.5\" polypropylene sediment cartridge. 5 micron, 14.5–58 PSI, 5–40 °C, 6–12 month change. Higher flow than 10\" × 2.5\" formats.",
+      "ogImage": null
     }
   },
   "polypropylene-sediment-water-filter-pp-5-micron-20-x-2-5": {
@@ -1453,9 +1846,108 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "tags": [
+      "sediment",
+      "polypropylene",
+      "20x25",
+      "five-micron",
+      "extended-life",
+      "slim-tall"
+    ],
+    "shortDescription": "Slim 20\" × 2.5\" polypropylene sediment cartridge — 5 micron. Double the media of a standard 10\" cartridge in the same diameter, for longer service intervals.",
+    "description": "The 20\" × 2.5\" polypropylene sediment cartridge — same slim 2.5\" diameter as the standard residential filter but **twice the height**, doubling the filter media in the cartridge. For installations where the housing has the headroom but you don't want to step up to the wider 4.5\" Big Blue diameter, this is the format that buys longer service intervals on the same physical housing footprint.\n\n## Why Step Up From 10\" × 2.5\"\n\nA 10\" × 2.5\" cartridge holds a fixed amount of polypropylene media. When that media saturates with sediment, pressure drop rises and the cartridge has to come out — typically at the 6–12 month mark on Australian town water. The 20\" × 2.5\" doubles the media volume in the same diameter, which means it can carry roughly twice the sediment load before reaching the same pressure-drop threshold.\n\nIn practice, that translates to fewer cartridge changes per year, lower running cost over a 5-year horizon, and less time spent on the wrench. Where it doesn't translate is flow rate: same 2.5\" diameter means same maximum flow as the shorter cartridge — for higher flow, you need 4.5\" Big Blue.\n\n## Where It Fits\n\nDesigned for **20\" × 2.5\" slim filter housings** — common in 3-stage and 6-stage RO replacement sets, and in any whole-house multi-stage system built around the slim format. Fits the [3-stage 20\" × 2.5\" whole-house replacement set](/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5/).\n\n## Specifications\n\nRated to **5 microns** in **polypropylene** construction. Operating envelope is **5–40 °C** at **0.1–0.4 MPa (14.5–58 PSI)**. Replace every **6–12 months** depending on water quality and household usage; on tank or bore water with high sediment, plan toward the shorter end of that range.",
+    "features": [
+      "20\" × 2.5\" slim format — twice the media volume of a 10\" × 2.5\" cartridge",
+      "5 micron polypropylene with no chemical residuals",
+      "Drops into any standard 20\" × 2.5\" slim filter housing",
+      "Operating pressure 0.1–0.4 MPa (14.5–58 PSI)",
+      "Operating temperature 5–40 °C",
+      "6–12 month change interval — extended service vs 10\" formats"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Filter type",
+        "value": "Sediment — removes sand, dirt, rust, particles"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial water filtration"
+      }
+    ],
+    "recommendedFor": [
+      "20\" × 2.5\" slim whole-house housings",
+      "Multi-stage systems wanting longer change intervals at slim diameter",
+      "Replacement for 6-stage RO systems using the 20\" slim format",
+      "Households on town water wanting fewer cartridge changes per year"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-2-5",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5",
+        "20-x-2-5-whole-house-water-filter-replacement-sediment-carbon-gac-cartridges"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+      "title": "20\" × 2.5\" PP Sediment Cartridge — 5 Micron Slim | Enviro Aqua",
+      "description": "20\" × 2.5\" polypropylene sediment cartridge. 5 micron, 14.5–58 PSI, 5–40 °C. Twice the media of a 10\" cartridge in the same slim diameter.",
+      "ogImage": null
     }
   },
   "premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic": {
@@ -1463,9 +1955,108 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "twin-pack",
+      "sediment-and-carbon",
+      "10x25",
+      "five-micron",
+      "premium",
+      "under-sink"
+    ],
+    "shortDescription": "Premium 10\" × 2.5\" twin pack — polypropylene spun sediment + coconut carbon block. Replaces both stages of a 2-stage under-sink filter in one purchase.",
+    "description": "The premium twin pack — a polypropylene spun sediment cartridge paired with a coconut activated carbon block, both in the standard 10\" × 2.5\" format. This is the replacement set for any 2-stage under-sink filter, sized to refresh both cartridges in a single order.\n\n## What's in the Pack\n\n**Cartridge 1 — Polypropylene Spun Sediment, 5 micron.** The \"HPF\" (High Performance Filtration) construction uses polypropylene fibres that are spun and melted simultaneously, forming a single continuous structure with no internal centre core. The benefit of no centre core is that water uses the full radial cross-section of the cartridge rather than being constrained by an internal sleeve — which means higher flow at lower pressure drop, longer service life, and no plastic core to leach into the supply.\n\n**Cartridge 2 — Coconut Activated Carbon Block (CTO).** Coconut-shell carbon is the higher-grade carbon source — the activated structure has more surface area per gram than coal-based carbons, with no detectable heavy-metal residuals from the source material. The CTO designation (\"Chlorine, Taste, Odour\") describes what the carbon block is engineered to remove: chlorine, chloramines, taste compounds, and odour from the supply. Block construction (vs granular) gives longer water-to-carbon contact time at the same flow rate, which is what makes it effective.\n\n## Why Premium Over Standard\n\nThe sediment cartridge in this pack is specifically the spun-melt no-centre-core construction, and the carbon is coconut-shell rather than coal-derived. Both upgrades extend cartridge life and improve filtration performance — most noticeable on chlorinated mains supplies where the carbon stage does the heavy lifting. The [standard CTO + sediment 10\" × 2.5\" twin pack](/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr/) is fine for budget replacements; this one is for the customer who wants the cartridge that will last longer and treat the water more thoroughly.\n\n## Where It Fits\n\nFor any 10\" × 2.5\" 2-stage under-sink filter, including the [under-sink 2-stage sediment + carbon](/under-sink-water-filter-2-stage-sediment-carbon/) system. Also suits the first two stages of multi-stage RO systems that use the 10\" × 2.5\" pre-filter format.\n\nReplace as a pair every 6–12 months. The sediment cartridge typically reaches end-of-life first on Australian town water; replacing them together keeps the service interval predictable.",
+    "features": [
+      "2-cartridge pack covers both stages of a 2-stage under-sink filter",
+      "Spun-melt polypropylene sediment with no centre core",
+      "Coconut-shell activated carbon block (CTO) — premium grade vs coal-derived",
+      "Both cartridges 5 micron, 10\" × 2.5\" standard fit",
+      "Removes sediment, chlorine, taste, and odour in one set",
+      "6–12 month replacement interval on typical town water"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × PP sediment + 1 × coconut CTO carbon"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × PP sediment + 1 × coconut CTO carbon block"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Sediment construction",
+        "value": "Polypropylene spun-melt, no centre core"
+      },
+      {
+        "label": "Carbon source",
+        "value": "Coconut-shell activated carbon"
+      },
+      {
+        "label": "Carbon format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both stages)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "2-stage under-sink filters and RO pre-filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Replacement pack for 2-stage under-sink filters",
+      "Pre-filter stages 1 + 2 of multi-stage RO systems",
+      "Households on chlorinated mains wanting premium carbon over standard",
+      "Annual or six-monthly cartridge service for 10\" × 2.5\" systems"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge pack — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-2-stage-sediment-carbon",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Premium 10\" × 2.5\" Twin Pack — Coconut Carbon + PP Sediment | Enviro Aqua",
+      "description": "Premium 2-cartridge pack: spun-melt PP sediment + coconut CTO carbon block. Both 10\" × 2.5\", 5 micron. Replaces both stages of a 2-stage under-sink filter.",
+      "ogImage": null
     }
   },
   "twin-pair-water-filter-cartridges-carbon-sediment-5-micron-20-x-4-5": {
@@ -1473,9 +2064,114 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "twin-pack",
+      "sediment-and-carbon",
+      "20x45",
+      "big-blue",
+      "whole-house",
+      "five-micron",
+      "giardia-reduction"
+    ],
+    "shortDescription": "20\" × 4.5\" Big Blue twin pack — \"HPF\" spun-melt PP sediment + activated carbon CTO. 5 micron sediment reduces giardia. Replaces both stages of a 2-stage Big Blue whole-house filter.",
+    "description": "The whole-house twin pack — a 20\" × 4.5\" Big Blue spun-melt polypropylene sediment cartridge paired with a 20\" × 4.5\" Big Blue activated carbon block (CTO). Buying the pair together is the right move for any 2-stage Big Blue whole-house system on its annual or six-monthly service interval.\n\n## What This Pack Replaces\n\nFits both stages of any 2-stage 20\" × 4.5\" Big Blue whole-house system, and replaces the sediment + carbon stages of a 3-stage system (leave the polish stage on its own schedule). Compatible with the [twin Big Blue whole-house](/twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra/), [3-stage UV system](/big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/), [premium 3-stage Big Blue](/premium-three-stage-big-blue-whole-house-water-filter-system/), and any third-party 20\" × 4.5\" housing.\n\n## Three Things to Block — One Pack\n\nThe pair is engineered around the three contaminant categories that matter for whole-house water:\n\n1. **Sediment, dirt, rust** — handled by the PP sediment cartridge\n2. **Chemicals — chlorine, organics, taste, odour** — handled by the carbon block\n3. **Giardia cysts** — reduced by the 5-micron sediment stage\n\nThat last point is what makes the 5-micron sediment rating the technically correct choice rather than a coarser pre-filter. At 5 microns, polypropylene sediment filtration reduces giardia, which historically required expensive 5-micron carbon block to do. Pulling that job into the sediment stage means the carbon stage is freed up for chemistry — chlorine, chloramines, taste, odour — at whatever micron rating suits.\n\n## \"HPF\" Sediment Construction\n\nThe sediment cartridge uses **spun-melt polypropylene with no centre core** — the same \"HPF\" construction used in the 10\" × 2.5\" premium pack, scaled up to Big Blue diameter and length. The benefits scale with it: full radial water flow, smooth fibre structure that resists bacterial slime growth, and high sediment-holding capacity sized for whole-house volumes. The construction is rated for filtering cooking oil, which speaks to the chemical inertness suitable for drinking-water service.\n\n## Carbon Block, Whole-House Scale\n\nThe carbon stage is an activated carbon block in 20\" × 4.5\" Big Blue format — the dense block structure and large media volume give the contact time needed to handle whole-house flow rates without breakthrough. The combination of PP sediment + carbon block + Big Blue diameter is the standard Australian whole-house specification for chlorine and sediment removal.\n\nReplace as a pair every **6–12 months** depending on your water quality and household demand.",
+    "features": [
+      "20\" × 4.5\" Big Blue twin pack — both stages in one purchase",
+      "\"HPF\" spun-melt PP sediment with no centre core, scaled to Big Blue",
+      "Activated carbon block (CTO) for chlorine, taste, and odour",
+      "5 micron sediment rating reduces giardia cysts",
+      "Smooth fibre structure resists bacterial-slime growth",
+      "Direct fit for any 2-stage 20\" × 4.5\" Big Blue whole-house housing",
+      "6–12 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × HPF PP sediment + 1 × CTO carbon block"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Sediment construction",
+        "value": "Spun-melt, no centre core"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × HPF PP sediment + 1 × CTO carbon block"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Sediment construction",
+        "value": "\"HPF\" series, spun-melt polypropylene, no centre core"
+      },
+      {
+        "label": "Sediment removal",
+        "value": "Sediment, rust, sand, silt, algae"
+      },
+      {
+        "label": "Cyst reduction",
+        "value": "Reduces giardia at 5 micron sediment rating"
+      },
+      {
+        "label": "Carbon media",
+        "value": "Activated carbon block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both stages)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Whole-house 2-stage and 3-stage Big Blue systems"
+      }
+    ],
+    "recommendedFor": [
+      "Annual or six-monthly service of any 2-stage Big Blue whole-house system",
+      "Stages 1 and 2 replacement for 3-stage Big Blue installations",
+      "Properties wanting giardia reduction at the whole-house level",
+      "Tank-fed and mixed-supply homes needing both sediment and carbon stages"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge pack — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
+        "premium-three-stage-big-blue-whole-house-water-filter-system",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "20\" × 4.5\" Big Blue Twin Pack — HPF Sediment + Carbon CTO | Enviro Aqua",
+      "description": "Whole-house Big Blue twin pack: HPF spun-melt PP sediment + activated carbon CTO. Both 20\" × 4.5\", 5 micron. Reduces giardia, chlorine, sediment, odour.",
+      "ogImage": null
     }
   },
   "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr": {
@@ -1483,9 +2179,116 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "twin-pack",
+      "sediment-and-carbon",
+      "10x25",
+      "five-micron",
+      "under-sink",
+      "value"
+    ],
+    "shortDescription": "Standard 10\" × 2.5\" twin pack — PP sediment + carbon block CTO. Both 5 micron, 5 GPM flow, rated 5–40 °C and 14.5–58 PSI. Covers a full 2-stage under-sink replacement.",
+    "description": "The standard 10\" × 2.5\" twin pack — one polypropylene sediment cartridge and one carbon block CTO cartridge, supplied together for routine replacement of any 2-stage under-sink filter. This is the value-priced version of the cartridge pair: same size, same micron rating, same applications as the premium pack, with standard-grade media rather than the coconut-shell carbon and spun-melt no-core construction of the premium set.\n\n## What Each Cartridge Does\n\n- **Sediment Filter (PP, 5 micron)** — captures sand, dirt, rust, and visible particulate before the carbon stage. Goes in first because sediment is what physically clogs the dense carbon block downstream; pre-filtering sediment is what extends the carbon cartridge's service life.\n- **Carbon Block Filter (CTO, 5 micron)** — reduces chlorine, taste, and odour through the dense carbon block structure. Block construction means longer water-to-media contact time than granular carbon at the same flow rate.\n\n## Operating Spec\n\n- **Flow rate:** up to 5 GPM (≈19 L/min)\n- **Operating temperature:** 5–40 °C\n- **Operating pressure:** 0.1–0.4 MPa (14.5–58 PSI)\n- **Lifespan:** 6–12 months depending on water quality and household usage\n\n5 GPM flow is comfortable for a single point-of-use kitchen tap — for higher whole-house flow rates, the 4.5\" Big Blue diameter is the right format rather than this slim 2.5\" pair.\n\n## Where It Fits\n\nDirect replacement set for any 10\" × 2.5\" 2-stage under-sink filter — including the [under-sink 2-stage sediment + carbon](/under-sink-water-filter-2-stage-sediment-carbon/) system. Also suitable as the first two stages of an RO replacement when you don't need to swap the membrane and post-carbon at the same time.",
+    "features": [
+      "PP sediment + CTO carbon block, both 5 micron, both 10\" × 2.5\"",
+      "Flow rate up to 5 GPM (~19 L/min) for single-tap installations",
+      "Operating pressure 0.1–0.4 MPa (14.5–58 PSI)",
+      "Operating temperature 5–40 °C",
+      "Direct fit for 2-stage under-sink filter housings",
+      "6–12 month replacement interval"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × PP sediment + 1 × CTO carbon"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Flow rate",
+        "value": "Up to 5 GPM"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × PP sediment + 1 × CTO carbon block"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Sediment media",
+        "value": "Polypropylene"
+      },
+      {
+        "label": "Carbon format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both stages)"
+      },
+      {
+        "label": "Flow rate",
+        "value": "Up to 5 GPM"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–40 °C"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "0.1–0.4 MPa (14.5–58 PSI)"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial 2-stage filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Routine replacement of a 2-stage under-sink filter",
+      "First two stages of an RO replacement service",
+      "Single-tap kitchen filtration installations",
+      "Households wanting standard-grade replacement at value pricing"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge pack — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-2-stage-sediment-carbon",
+        "twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2",
+        "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Twin Pack 10\" × 2.5\" Cartridges — PP Sediment + CTO Carbon | Enviro Aqua",
+      "description": "Standard 2-cartridge pack: PP sediment + carbon block CTO. Both 10\" × 2.5\", 5 micron, 5 GPM, 14.5–58 PSI. Direct fit for 2-stage under-sink filters.",
+      "ogImage": null
     }
   },
   "twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2": {
@@ -1493,9 +2296,112 @@
       "cartridges",
       "sediment"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "twin-pack",
+      "sediment-and-carbon",
+      "10x25",
+      "five-micron",
+      "premium",
+      "giardia-reduction"
+    ],
+    "shortDescription": "Premium 10\" × 2.5\" twin pack — \"HPF\" spun-melt PP sediment + coconut CTO carbon. 5 micron sediment stage targets giardia cysts as well as particulate.",
+    "description": "The premium 10\" × 2.5\" twin pack — \"HPF\" series spun-melt polypropylene sediment paired with coconut-shell CTO carbon block. The reason this set sits above the standard twin pack on the shelf is what the 5-micron sediment stage does beyond particulate capture: at 5 microns, polypropylene sediment filtration **reduces giardia cysts** in the water, which historically was a job that required expensive 5-micron carbon filters specifically.\n\nThat one technical fact — that a properly-rated sediment cartridge handles giardia — is why the cartridge pairing in this set works the way it does.\n\n## The Three Things to Block\n\nFor drinking water, the three categories of contaminant that matter are:\n\n1. **Sediment, dirt, and rust** — physical particulate from the supply line\n2. **Chemicals — chlorine, organics, taste, and odour** — handled by the carbon stage\n3. **Giardia (cysts)** — handled by 5-micron sediment filtration in this pack\n\nThe 5-micron PP sediment stage in this set covers (1) and (3); the coconut CTO carbon covers (2). With giardia handled by the sediment stage, you have flexibility on the carbon micron rating since carbon's job is the chemistry, not the cysts.\n\n## Why \"HPF\" Construction Matters\n\nThe sediment cartridge is built using polypropylene that is **spun and melted simultaneously**, forming a single bonded structure with **no internal centre core**. Three things follow from that construction:\n\n- **No flow restriction:** water uses the full radial cross-section, not just the outer wall\n- **No bacterial-slime growth surface:** smooth fibre structure resists biofilm\n- **High sediment-holding capacity:** the cartridge runs longer between changes\n\nIt's also rated for **filtering cooking oil**, which speaks to the chemical inertness and structural integrity of the construction — a cartridge that would dissolve or shed in a cooking-oil application would be a bad pick for drinking water filtration too.\n\n## Carbon: Coconut, Block, CTO\n\nThe carbon stage uses coconut-shell activated carbon in block format. Coconut carbon has higher surface area per gram than coal-based carbons and avoids the heavy-metal residuals that some coal sources carry. Block construction gives extended water-to-carbon contact time vs granular fills — the right format for chlorine and chloramine reduction at residential flow rates.\n\n## Where It Fits\n\nDirect replacement for any 10\" × 2.5\" 2-stage under-sink filter — same physical fit as the [standard twin pack](/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr/) at higher media grade. Also suitable for the first two stages of an RO system using the 10\" × 2.5\" format.",
+    "features": [
+      "\"HPF\" spun-melt polypropylene sediment with no centre core",
+      "5 micron sediment rating reduces giardia cysts as well as particulate",
+      "Coconut-shell activated carbon block — higher surface area than coal-derived",
+      "Smooth fibre structure resists bacterial-slime growth",
+      "Both cartridges 10\" × 2.5\", drop-in for 2-stage under-sink housings",
+      "Premium-grade upgrade over the standard CTO + PP twin pack"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × HPF spun PP sediment + 1 × coconut CTO carbon"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Sediment construction",
+        "value": "Spun-melt, no centre core"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "1 × HPF spun PP sediment + 1 × coconut CTO carbon block"
+      },
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Sediment construction",
+        "value": "\"HPF\" series, spun-melt polypropylene, no centre core"
+      },
+      {
+        "label": "Sediment removal",
+        "value": "Sediment, rust, sand, silt, algae"
+      },
+      {
+        "label": "Cyst reduction",
+        "value": "Reduces giardia at 5 micron sediment rating"
+      },
+      {
+        "label": "Carbon source",
+        "value": "Coconut shell"
+      },
+      {
+        "label": "Carbon format",
+        "value": "Block (CTO)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both stages)"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial 2-stage filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Households wanting giardia-cyst reduction in addition to chlorine and sediment",
+      "Premium-grade replacement for 2-stage under-sink filters",
+      "RO pre-filter stages where carbon longevity matters",
+      "Properties on rural town water with variable particulate load"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge pack — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr",
+        "under-sink-water-filter-3-stage-sediment-carbon-alkaline",
+        "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Premium 10\" × 2.5\" Twin Pack — HPF Sediment + Coconut CTO Carbon | Enviro Aqua",
+      "description": "Premium pack: HPF spun-melt PP sediment + coconut CTO carbon block. Both 10\" × 2.5\", 5 micron. 5-micron sediment stage reduces giardia cysts.",
+      "ogImage": null
     }
   },
   "complete-bathroom-package-1b-matte-black-watermark-certified-wels-rated": {
