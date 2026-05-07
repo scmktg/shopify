@@ -4,10 +4,17 @@
     "note": "Handles listed below contain placeholder content that needs replacement before launch. Empty list means every entry is real-data sourced. The audit script (npm run audit:watermark) reports any compliance.watermark.status='certified' with a missing licenceNumber regardless of whether the handle appears here.",
     "handles": []
   },
-
   "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
-    "categories": ["bubblers", "commercial"],
-    "tags": ["stainless-steel", "watermark", "filtered", "high-traffic"],
+    "categories": [
+      "bubblers",
+      "commercial"
+    ],
+    "tags": [
+      "stainless-steel",
+      "watermark",
+      "filtered",
+      "high-traffic"
+    ],
     "shortDescription": "Plumbed-in commercial bubbler in SUS304 stainless steel — 20 L/hr cooling, WaterMark certified.",
     "description": "A high-traffic public-venue bubbler built around a SUS304 stainless steel cabinet and an integrated cooling and filtration unit. Direct mains connection — no bottles to refill, no cartridges to ship.\n\nDesigned for **continuous service** in offices, schools, gyms, and hospitality. The integrated drip tray with drainage system keeps the surrounding floor dry through peak hours, and the push-button activation copes with thousands of cycles a year without service.\n\n- Welded stainless steel frame and exterior panels\n- Integrated cooling unit, factory-tested for Australian mains pressure\n- Standard plumbing connections — any qualified plumber can install or service",
     "features": [
@@ -18,21 +25,60 @@
       "Standard plumbing inlets — no proprietary fittings"
     ],
     "headlineSpecs": [
-      { "label": "Cooling capacity", "value": "20 L/hr" },
-      { "label": "Water temperature", "value": "8–12°C" },
-      { "label": "Material", "value": "SUS304 stainless steel" },
-      { "label": "Connection", "value": "Direct mains" }
+      {
+        "label": "Cooling capacity",
+        "value": "20 L/hr"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8–12°C"
+      },
+      {
+        "label": "Material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Connection",
+        "value": "Direct mains"
+      }
     ],
     "fullSpecs": [
-      { "label": "Cabinet", "value": "304 stainless steel" },
-      { "label": "Profile", "value": "Round / cylindrical" },
-      { "label": "Cooling capacity", "value": "20 litres per hour" },
-      { "label": "Water temperature", "value": "8–12°C" },
-      { "label": "Activation", "value": "Push-button" },
-      { "label": "Filtration", "value": "Integrated cartridge" },
-      { "label": "Inlet connection", "value": "Standard 1/4 inch BSP" },
-      { "label": "Power", "value": "240 V AC" },
-      { "label": "Certification", "value": "WaterMark certified (AS/NZS 3497)" }
+      {
+        "label": "Cabinet",
+        "value": "304 stainless steel"
+      },
+      {
+        "label": "Profile",
+        "value": "Round / cylindrical"
+      },
+      {
+        "label": "Cooling capacity",
+        "value": "20 litres per hour"
+      },
+      {
+        "label": "Water temperature",
+        "value": "8–12°C"
+      },
+      {
+        "label": "Activation",
+        "value": "Push-button"
+      },
+      {
+        "label": "Filtration",
+        "value": "Integrated cartridge"
+      },
+      {
+        "label": "Inlet connection",
+        "value": "Standard 1/4 inch BSP"
+      },
+      {
+        "label": "Power",
+        "value": "240 V AC"
+      },
+      {
+        "label": "Certification",
+        "value": "WaterMark certified (AS/NZS 3497)"
+      }
     ],
     "recommendedFor": [
       "Offices and co-working spaces",
@@ -64,10 +110,19 @@
       "ogImage": null
     }
   },
-
   "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system": {
-    "categories": ["water-filters", "whole-house"],
-    "tags": ["watermark", "stainless-steel", "whole-house", "big-blue", "20x45", "three-stage"],
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "tags": [
+      "watermark",
+      "stainless-steel",
+      "whole-house",
+      "big-blue",
+      "20x45",
+      "three-stage"
+    ],
     "shortDescription": "WaterMark certified three-stage whole house water filter — 304 stainless steel, Big Blue 20\" × 4.5\" housings, 1\" BSP. Installed once on your mains supply line, filters every tap in the home.",
     "description": "Clean, filtered water from every tap, every shower, every appliance in your home — this is the only whole house water filter system you'll ever need to install. The **Enviro Aqua Premium Three Stage Big Blue Whole House Water Filter System** is **WaterMark certified to AS/NZS 3497**, built from 304 stainless steel, and engineered to handle the full water demand of an Australian family home without any drop in pressure.\n\nThis is not a portable bench top unit or a basic inline filter. This is a **permanent, mains-connected whole-home filtration system** that a licensed plumber installs once on your main water supply line — and then every litre of water entering your home is filtered before it reaches a single tap.\n\n## Why This System\n\n### 1. WaterMark Certified — The Only System Your Plumber Can Legally Install\n\nUnder the Plumbing Code of Australia, any water filter permanently connected to a mains water line must carry **WaterMark certification**. This system does. A licensed plumber can legally install it on your main supply line, issue a certificate of compliance, and your installation is fully covered. Most cheaper systems sold online are not WaterMark certified — your plumber cannot legally install them on a mains line, and your home insurance may not cover you if they fail.\n\n### 2. Big Blue 20″ × 4.5″ — No Pressure Drop, Longer Cartridge Life\n\n\"Big Blue\" refers to the 4.5″ diameter filter housings — nearly four times the filter media volume of standard 2.5″ housings. This matters in two critical ways. First, water flows through at up to **75 litres per minute** with no perceptible pressure loss, even when multiple showers, taps, and appliances run simultaneously. Second, the larger volume of filter media means **cartridges last significantly longer** before replacement, reducing your annual running costs. Three 20″ × 4.5″ housings with **1″ BSP brass inlet and outlet ports** — the correct size for Australian mains supply lines — complete the package.\n\n### 3. 304 Stainless Steel Enclosure — Built for Australian Conditions\n\nThe 304-grade stainless steel enclosure isn't just about looks — though it does look sharp. It is specifically engineered for Australian outdoor and garage installations. **304 stainless is UV-resistant, salt-air resistant, and corrosion-proof**: the chromium-nickel alloy forms a self-renewing protective layer that resists the coastal humidity, summer heat, and UV exposure that corrode powder-coated steel and degrade plastic components over time. If you're in a coastal or high-humidity location, this matters enormously. It's also tamper-resistant, protects the filter housings from physical damage, and presents cleanly on an external wall or in a visible garage location.\n\n## Three-Stage Filtration — What Each Stage Does\n\n### Stage 1 — Sediment Pre-Filter (5 Micron)\n\nThe first stage captures **sediment, rust, sand, silt, and suspended particles** down to 5 microns. This is the workhorse stage — it intercepts the physical debris in your water supply before it can clog the more specialised carbon stages downstream. Protecting the carbon stages from sediment load is what makes a three-stage system significantly more effective and longer-lasting than a two-stage system with carbon alone.\n\n### Stage 2 — Carbon Filtration (Chlorine, Chloramine, Taste & Odour)\n\nThe second stage uses a **granular activated carbon (GAC) or catalytic carbon** cartridge to remove chlorine, chloramines, taste, odour, trihalomethanes (THMs), and a broad range of chemical contaminants. **If your water supply uses chloramine** — which includes Sydney Water, Melbourne Water, SA Water, Urban Utilities (Brisbane/SEQ), and Icon Water (Canberra) — specify a **catalytic carbon cartridge** for Stage 2. Standard GAC carbon cannot reliably remove chloramine at whole-house flow rates; catalytic carbon can, and the 20″ × 4.5″ housing provides the contact time needed for it to work effectively.\n\n### Stage 3 — Carbon Block Polish (Fine Contaminants & Heavy Metals)\n\nThe third stage uses a **carbon block cartridge** for final polishing — capturing any remaining fine particles, residual chemical contaminants, heavy metals including lead and copper, and cysts. Carbon block's dense structure provides longer contact time and finer filtration than GAC, making it the ideal finishing stage. For households with **PFAS concerns**, a high-grade carbon block in Stage 3 provides meaningful reduction of longer-chain PFAS compounds (PFOS, PFOA) from the whole-home supply.\n\n## Pressure Gauges — Know Exactly When to Change Your Filters\n\nThis system includes **pressure gauges** that monitor incoming and outgoing water pressure. As cartridges accumulate contaminants, the pressure differential between inlet and outlet increases — giving you a clear, objective signal that a cartridge change is due. No guessing, no unnecessary early replacement, no waiting until the filters are overloaded. It's a feature that cheaper systems don't include, and over the life of the system it saves you money and ensures your water quality never quietly degrades.\n\n## What's Included\n\n- 3 × Big Blue 20″ × 4.5″ filter housings with 304 stainless steel enclosure & frame\n- Stainless steel mounting bracket\n- 3 × filter cartridges (sediment + carbon stages)\n- Pressure gauges\n- Housing removal wrench\n- Spare O-rings\n\n## Configure for Your Water Supply\n\nThe Big Blue format accepts any standard 20″ × 4.5″ cartridge — widely available from Enviro Aqua. Configure for your water source:\n\n- **Town water with chlorine:** Sediment (5µm) → GAC carbon → Carbon block\n- **Town water with chloramine** (Sydney, Melbourne, Brisbane, Adelaide, Canberra): Sediment (5µm) → *Catalytic carbon* → Carbon block\n- **Rainwater tank:** Sediment (1–5µm) → Carbon block → Sub-micron or UV stage\n- **PFAS concerns:** Sediment → Catalytic carbon → High-grade carbon block\n\nNot sure which configuration suits your area? Contact us and we'll recommend the right cartridge set for your water supply.\n\n## WaterMark Certification — What It Means for You\n\nWaterMark certification (AS/NZS 3497), administered by the Australian Building Codes Board (ABCB), confirms this system has been independently tested for structural integrity under Australian mains water pressure, verified to use materials that will not leach contaminants into your drinking water, and assessed for correct fittings and pressure ratings. The manufacturing facility undergoes ongoing annual auditing as a condition of maintaining certification.\n\nFor you, this means three things: your licensed plumber can legally install this system and issue a certificate of compliance; your installation is covered under your home insurance; and if anything goes wrong, you have the backing of a certified, audited product. Verify this system on the official [ABCB WaterMark Product Database](https://watermark.abcb.gov.au/).\n\n## Installation\n\nInstalled on your main cold water supply line — typically at the point where the mains enters your home, in a garage, under the house, or at the water meter. Installation must be carried out by a **licensed plumber** (required under Australian plumbing law for any mains connection). We recommend asking your plumber to add **isolation valves and a bypass** on either side of the system — this allows you to service the filters without cutting water to the whole house.\n\nCentral Coast NSW customers: we offer [professional whole house filter installation by licensed plumbers on the Central Coast](/whole-house-installation-package/).\n\n## Ongoing Maintenance\n\nReplace cartridges every **6–12 months** depending on your water quality and household usage. The pressure gauges take the guesswork out of timing — a rising pressure differential tells you a cartridge change is due before water quality is affected. Big Blue 20″ × 4.5″ cartridges last considerably longer than standard 2.5″ cartridges, keeping annual running costs to approximately **$120–$220 per year**. Replacement cartridges are available directly from Enviro Aqua, shipped Australia-wide.",
     "features": [
@@ -80,25 +135,76 @@
       "Includes mounting bracket, wrench, spare O-rings, and starter cartridges"
     ],
     "headlineSpecs": [
-      { "label": "Stages", "value": "3" },
-      { "label": "Housing size", "value": "20\" × 4.5\" (Big Blue)" },
-      { "label": "Connection", "value": "1\" BSP" },
-      { "label": "Flow rate", "value": "Up to 75 L/min" }
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Housing size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Connection",
+        "value": "1\" BSP"
+      },
+      {
+        "label": "Flow rate",
+        "value": "Up to 75 L/min"
+      }
     ],
     "fullSpecs": [
-      { "label": "Installation type", "value": "Whole house, mains-connected" },
-      { "label": "Stages", "value": "3" },
-      { "label": "Housing size", "value": "20\" × 4.5\" (Big Blue)" },
-      { "label": "Connection size", "value": "1\" BSP" },
-      { "label": "Flow rate", "value": "Up to 75 L/min" },
-      { "label": "Enclosure", "value": "304 stainless steel" },
-      { "label": "Inlet / outlet ports", "value": "Brass, 1\" BSP" },
-      { "label": "Pressure gauges", "value": "Inlet & outlet" },
-      { "label": "Cartridges included", "value": "Sediment + carbon stages" },
-      { "label": "Compatible cartridges", "value": "Any standard 20\" × 4.5\" Big Blue" },
-      { "label": "Cartridge change interval", "value": "6–12 months" },
-      { "label": "Annual running cost", "value": "Approx. $120–$220" },
-      { "label": "Certification standard", "value": "AS/NZS 3497 (WaterMark)" }
+      {
+        "label": "Installation type",
+        "value": "Whole house, mains-connected"
+      },
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Housing size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Connection size",
+        "value": "1\" BSP"
+      },
+      {
+        "label": "Flow rate",
+        "value": "Up to 75 L/min"
+      },
+      {
+        "label": "Enclosure",
+        "value": "304 stainless steel"
+      },
+      {
+        "label": "Inlet / outlet ports",
+        "value": "Brass, 1\" BSP"
+      },
+      {
+        "label": "Pressure gauges",
+        "value": "Inlet & outlet"
+      },
+      {
+        "label": "Cartridges included",
+        "value": "Sediment + carbon stages"
+      },
+      {
+        "label": "Compatible cartridges",
+        "value": "Any standard 20\" × 4.5\" Big Blue"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Annual running cost",
+        "value": "Approx. $120–$220"
+      },
+      {
+        "label": "Certification standard",
+        "value": "AS/NZS 3497 (WaterMark)"
+      }
     ],
     "recommendedFor": [
       "Australian family homes wanting filtered water from every tap",
@@ -136,20 +242,1688 @@
       "ogImage": null
     }
   },
-
   "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5": {
-    "categories": ["cartridges", "sediment"]
+    "categories": [
+      "cartridges",
+      "sediment"
+    ]
   },
-
   "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5": {
-    "categories": ["cartridges", "carbon"]
+    "categories": [
+      "cartridges",
+      "carbon"
+    ]
   },
-
   "granular-activated-carbon-water-filter-gac-5-micron-20-x-4-5": {
-    "categories": ["cartridges", "carbon"]
+    "categories": [
+      "cartridges",
+      "carbon"
+    ]
   },
-
   "_seed-minimal-example": {
-    "categories": ["plumbing", "kitchen-taps"]
+    "categories": [
+      "plumbing",
+      "kitchen-taps"
+    ]
+  },
+  "commercial-rust-free-filtered-cold-water-bubbler-wm": {
+    "categories": [
+      "bubblers",
+      "commercial"
+    ],
+    "shortDescription": "Commercial-grade water bubbler / drinking fountain — built for high-traffic installations in offices, schools, gyms, re…",
+    "seo": {
+      "description": "Commercial-grade water bubbler / drinking fountain — built for high-traffic installations in offices, schools, gyms, retail, and public venues."
+    }
+  },
+  "commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des": {
+    "categories": [
+      "bubblers",
+      "commercial"
+    ],
+    "shortDescription": "This product is WaterMark certified for Australian plumbing supply — required by Australian regulations for products th…",
+    "seo": {
+      "description": "This product is WaterMark certified for Australian plumbing supply — required by Australian regulations for products that connect permanently to the mains…"
+    }
+  },
+  "stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap": {
+    "categories": [
+      "bubblers",
+      "commercial"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "bubbler-filter-cto-plus-pp": {
+    "categories": [
+      "bubblers",
+      "parts"
+    ],
+    "shortDescription": "Filtered hot and cold water cooler / drinking fountain.",
+    "seo": {
+      "description": "Filtered hot and cold water cooler / drinking fountain. Direct-connect to your plumbing — no bottles to refill, no waste."
+    }
+  },
+  "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet": {
+    "categories": [
+      "bubblers",
+      "parts"
+    ],
+    "shortDescription": "Filtered hot and cold water cooler / drinking fountain.",
+    "seo": {
+      "description": "Filtered hot and cold water cooler / drinking fountain. Direct-connect to your plumbing — no bottles to refill, no waste."
+    }
+  },
+  "bench-top-room-temperature-hot-and-cold-water-cooler-direct-connect": {
+    "categories": [
+      "bubblers",
+      "residential"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "direct-connect-water-cooler-dispenser-3stages-filter-hot-cold-and-room-temperatu": {
+    "categories": [
+      "bubblers",
+      "residential"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "filtered-hot-and-cold-water-cooler-direct-connect": {
+    "categories": [
+      "bubblers",
+      "residential"
+    ],
+    "shortDescription": "Filtered hot and cold water cooler / drinking fountain.",
+    "seo": {
+      "description": "Filtered hot and cold water cooler / drinking fountain. Direct-connect to your plumbing — no bottles to refill, no waste."
+    }
+  },
+  "6-stage-reverse-osmosis-water-filters-set-with-75gpd-ro-membrane-and-alkaline-ca": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Reverse osmosis membrane — the heart of any RO system.",
+    "seo": {
+      "description": "Reverse osmosis membrane — the heart of any RO system."
+    }
+  },
+  "5-x-premium-quality-cto-carbon-cartridges-10-x-2-5": {
+    "categories": [
+      "cartridges",
+      "carbon"
+    ],
+    "shortDescription": "Coconut activated carbon block (CTO) cartridge.",
+    "seo": {
+      "description": "Coconut activated carbon block (CTO) cartridge. Removes chlorine, chemical taste, and odour from drinking water through dense carbon adsorption."
+    }
+  },
+  "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5": {
+    "categories": [
+      "cartridges",
+      "carbon"
+    ],
+    "shortDescription": "Coconut activated carbon block (CTO) cartridge rated to 5 micron.",
+    "seo": {
+      "description": "Coconut activated carbon block (CTO) cartridge rated to 5 micron."
+    }
+  },
+  "coconut-activated-carbon-water-filter-cto-5-micron-10-x-4-5": {
+    "categories": [
+      "cartridges",
+      "carbon"
+    ],
+    "shortDescription": "Coconut activated carbon block (CTO) cartridge rated to 5 micron.",
+    "seo": {
+      "description": "Coconut activated carbon block (CTO) cartridge rated to 5 micron."
+    }
+  },
+  "coconut-activated-carbon-water-filter-cto-5-micron-20-x-2-5": {
+    "categories": [
+      "cartridges",
+      "carbon"
+    ],
+    "shortDescription": "Coconut activated carbon block (CTO) cartridge rated to 5 micron.",
+    "seo": {
+      "description": "Coconut activated carbon block (CTO) cartridge rated to 5 micron."
+    }
+  },
+  "granular-activated-carbon-water-filter-gac-5-micron-10-x-2-5": {
+    "categories": [
+      "cartridges",
+      "carbon"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "granular-activated-carbon-water-filter-gac-5-micron-20-x-2-5": {
+    "categories": [
+      "cartridges",
+      "carbon"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "6-stages-ro-cartridges-replacement-set-for-6-stages-ro-water-filter-system-5mic": {
+    "categories": [
+      "cartridges",
+      "cartridge-sets"
+    ],
+    "shortDescription": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc.",
+    "seo": {
+      "description": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc."
+    }
+  },
+  "inline-water-filter-replacement-set-3-stages-sediment-carbon-ro-membrane-10": {
+    "categories": [
+      "cartridges",
+      "cartridge-sets"
+    ],
+    "shortDescription": "Polypropylene sediment cartridge, removes sand, dirt, rust particles, and visible sediment from your water supply.",
+    "seo": {
+      "description": "Polypropylene sediment cartridge, removes sand, dirt, rust particles, and visible sediment from your water supply."
+    }
+  },
+  "water-filter-replacement-set-premium-6-stages-5-micron-10": {
+    "categories": [
+      "cartridges",
+      "cartridge-sets"
+    ],
+    "shortDescription": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement…",
+    "seo": {
+      "description": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement cartridge set."
+    }
+  },
+  "water-filter-replacement-set-standard-6-stages-5-micron-10": {
+    "categories": [
+      "cartridges",
+      "cartridge-sets"
+    ],
+    "shortDescription": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement…",
+    "seo": {
+      "description": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement cartridge set."
+    }
+  },
+  "reusable-100-micron-strainer-water-filter-washable-filter-sediment-10x2-5": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Size: 10\" x 2.5\" Rating: 100 micron Type: Washable/Re-usable",
+    "seo": {
+      "description": "Size: 10\" x 2.5\" Rating: 100 micron Type: Washable/Re-usable"
+    }
+  },
+  "washable-and-reusable-water-filter-pleated-5-micron-10-x-4-5": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Reusable pleated sediment cartridge rated to 5 micron.",
+    "seo": {
+      "description": "Reusable pleated sediment cartridge rated to 5 micron. Washable design — rinse, replace, and continue using."
+    }
+  },
+  "washable-and-reusable-water-filter-pleated-5-micron-20-x-4-5": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Reusable pleated sediment cartridge rated to 5 micron.",
+    "seo": {
+      "description": "Reusable pleated sediment cartridge rated to 5 micron. Washable design — rinse, replace, and continue using."
+    }
+  },
+  "inline-uf-ultrafiltration-filter-cartridge": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Ultrafiltration (UF) cartridge — removes bacteria, cysts, and particulate down to 0.01 micron.",
+    "seo": {
+      "description": "Ultrafiltration (UF) cartridge — removes bacteria, cysts, and particulate down to 0.01 micron. Membrane filtration without the waste-water of RO."
+    }
+  },
+  "inline-water-filter-alkaline-ph-neutralising-10-x-2": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Alkaline pH-balancing cartridge.",
+    "seo": {
+      "description": "Alkaline pH-balancing cartridge. Re-mineralises filtered water and raises pH, adding back beneficial minerals removed during reverse osmosis."
+    }
+  },
+  "inline-water-filter-fluoride-removal-10-x-2": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Fluoride-removal cartridge using activated alumina media.",
+    "seo": {
+      "description": "Fluoride-removal cartridge using activated alumina media. Reduces fluoride to safe levels alongside chlorine and chemical contaminants."
+    }
+  },
+  "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2": {
+    "categories": [
+      "cartridges",
+      "specialty-cartridges"
+    ],
+    "shortDescription": "Inline post-carbon T33 cartridge — final polish stage for RO and multi-stage systems.",
+    "seo": {
+      "description": "Inline post-carbon T33 cartridge — final polish stage for RO and multi-stage systems."
+    }
+  },
+  "2-pics-75gpd-reverse-osmosis-membrane-membrane-replacement-filter-280l-per-day": {
+    "categories": [
+      "cartridges",
+      "reverse-osmosis-membranes"
+    ],
+    "shortDescription": "Reverse osmosis membrane — the heart of any RO system.",
+    "seo": {
+      "description": "Reverse osmosis membrane — the heart of any RO system."
+    }
+  },
+  "5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf": {
+    "categories": [
+      "cartridges",
+      "reverse-osmosis-membranes"
+    ],
+    "shortDescription": "Replacement filter cartridge for water filtration systems.",
+    "seo": {
+      "description": "Replacement filter cartridge for water filtration systems. Quality media, Australian-friendly fittings, wholesale pricing direct to homeowners and trade."
+    }
+  },
+  "reverse-osmosis-ro-membrane-400-gpd-approx-1500-litres-per-day": {
+    "categories": [
+      "cartridges",
+      "reverse-osmosis-membranes"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "2x-poly-spun-water-filter-cartridge-5-micron-sediment-20-x-4-5-whole-house": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "seo": {
+      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+    }
+  },
+  "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "seo": {
+      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+    }
+  },
+  "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "seo": {
+      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+    }
+  },
+  "polypropylene-sediment-water-filter-pp-5-micron-20-x-2-5": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your…",
+    "seo": {
+      "description": "Polypropylene sediment cartridge rated to 5 micron, removes sand, dirt, rust particles, and visible sediment from your water supply."
+    }
+  },
+  "premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "twin-pair-water-filter-cartridges-carbon-sediment-5-micron-20-x-4-5": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2": {
+    "categories": [
+      "cartridges",
+      "sediment"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "complete-bathroom-package-1b-matte-black-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-1c-polished-chrome-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-1g-brushed-gold-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-2b-matte-black-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-2c-polished-chrome-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-2g-brushed-gold-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-3b-matte-black-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-3c-polished-chrome-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-3g-brushed-gold-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-4b-matte-black-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-4c-polished-chrome-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "complete-bathroom-package-4g-brushed-gold-watermark-certified-wels-rated": {
+    "categories": [
+      "plumbing",
+      "bundles"
+    ],
+    "shortDescription": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean…",
+    "seo": {
+      "description": "Redefine your bathroom with a professionally curated set of premium, WaterMark-certified essentials—designed for clean aesthetics, functional reliability,…"
+    }
+  },
+  "12cm-bathroom-mixer-tap-in-polished-chrome": {
+    "categories": [
+      "plumbing",
+      "bathroom-taps"
+    ],
+    "shortDescription": "Enhance your bathroom with the Modern Bathroom Basin Mixer Tap, designed for style, functionality, and durability.",
+    "seo": {
+      "description": "Enhance your bathroom with the Modern Bathroom Basin Mixer Tap, designed for style, functionality, and durability."
+    }
+  },
+  "12cm-bathroom-mixer-tap-in-polished-chrome-extended-sprout": {
+    "categories": [
+      "plumbing",
+      "bathroom-taps"
+    ],
+    "shortDescription": "Upgrade your kitchen or laundry with the Modern Kitchen &amp; Laundry Mixer Tap, designed for style, functionality, and…",
+    "seo": {
+      "description": "Upgrade your kitchen or laundry with the Modern Kitchen &amp; Laundry Mixer Tap, designed for style, functionality, and extended reach."
+    }
+  },
+  "16cm-bathroom-mixer-tap-in-polished-chrome": {
+    "categories": [
+      "plumbing",
+      "bathroom-taps"
+    ],
+    "shortDescription": "Upgrade your bathroom or kitchen with the 19cm Bathroom Mixer Tap in Polished Chrome, a stylish and functional addition…",
+    "seo": {
+      "description": "Upgrade your bathroom or kitchen with the 19cm Bathroom Mixer Tap in Polished Chrome, a stylish and functional addition to any sink."
+    }
+  },
+  "3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Transform your kitchen with this sophisticated 3-way water filter tap, available in four luxurious finishes: Matte Blac…",
+    "seo": {
+      "description": "Transform your kitchen with this sophisticated 3-way water filter tap, available in four luxurious finishes: Matte Black, Brushed Gold, Brushed Nickel and…"
+    }
+  },
+  "gooseneck-kitchen-mixer-tap-in-polished-chrome": {
+    "categories": [
+      "plumbing",
+      "kitchen-taps"
+    ],
+    "shortDescription": "Elevate your kitchen experience with this premium mixer tap, boasting a 360° swivel spout that provides unparalleled fl…",
+    "seo": {
+      "description": "Elevate your kitchen experience with this premium mixer tap, boasting a 360° swivel spout that provides unparalleled flexibility and convenience during mea…"
+    }
+  },
+  "spring-loaded-tap-kitchen-mixer-in-brushed-nickel": {
+    "categories": [
+      "plumbing",
+      "kitchen-taps"
+    ],
+    "shortDescription": "Elevate your kitchen with this spring-loaded kitchen mixer tap in a stunning brushed nickel finish.",
+    "seo": {
+      "description": "Elevate your kitchen with this spring-loaded kitchen mixer tap in a stunning brushed nickel finish."
+    }
+  },
+  "tall-spring-loaded-kitchen-mixer-with-pull-out-spray-in-polished-chrome": {
+    "categories": [
+      "plumbing",
+      "kitchen-taps"
+    ],
+    "shortDescription": "Designed for both home and commercial kitchens, the Tall Spring-Loaded Kitchen Mixer Tap with Pull-Out Spray stands at…",
+    "seo": {
+      "description": "Designed for both home and commercial kitchens, the Tall Spring-Loaded Kitchen Mixer Tap with Pull-Out Spray stands at an impressive 66cm, offering excepti…"
+    }
+  },
+  "bathroom-water-saving-round-shower-set-round-rainfall-head-shower-wels-watermark": {
+    "categories": [
+      "plumbing",
+      "bathroom-taps"
+    ],
+    "shortDescription": "Complete shower system — rainfall head with adjustable mixer, designed and constructed for the Australian plumbing mark…",
+    "seo": {
+      "description": "Complete shower system — rainfall head with adjustable mixer, designed and constructed for the Australian plumbing market."
+    }
+  },
+  "shower-filter-15-stages-includes-extra-cartridge": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Multi-stage shower filter — removes chlorine, chloramines, and chemical residue from your shower water for healthier sk…",
+    "seo": {
+      "description": "Multi-stage shower filter — removes chlorine, chloramines, and chemical residue from your shower water for healthier skin and hair."
+    }
+  },
+  "in-wall-dual-flush-toilet-button-faceplate-circular-design-in-black-chrome-gold": {
+    "categories": [
+      "plumbing",
+      "toilets"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "in-wall-dual-flush-toilet-button-faceplate-rectangular-design-in-black-chrome-go": {
+    "categories": [
+      "plumbing",
+      "toilets"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce": {
+    "categories": [
+      "plumbing",
+      "toilets"
+    ],
+    "shortDescription": "This product is WELS-rated (4-star) and WaterMark-certified, meeting Australian standards for water efficiency (AS/NZS…",
+    "seo": {
+      "description": "This product is WELS-rated (4-star) and WaterMark-certified, meeting Australian standards for water efficiency (AS/NZS 6400:2016) and plumbing compliance (…"
+    }
+  },
+  "rimless-watermark-wash-down-toilet-soft-close-seat-wels-rated-local-pickup-centr": {
+    "categories": [
+      "plumbing",
+      "toilets"
+    ],
+    "shortDescription": "Modern, Hygienic &amp; Water-Saving – Available for Local Pickup in Central Coast, NSW!",
+    "seo": {
+      "description": "Modern, Hygienic &amp; Water-Saving – Available for Local Pickup in Central Coast, NSW!"
+    }
+  },
+  "toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels": {
+    "categories": [
+      "plumbing",
+      "toilets"
+    ],
+    "shortDescription": "Condition Brand New: A brand-new, unused, unopened, undamaged item in its original packaging (where packaging … Read mo…",
+    "seo": {
+      "description": "Condition Brand New: A brand-new, unused, unopened, undamaged item in its original packaging (where packaging … Read moreabout the condition Brand Enviro A…"
+    }
+  },
+  "12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe": {
+    "categories": [
+      "pumps-and-tanks",
+      "pumps"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect": {
+    "categories": [
+      "pumps-and-tanks",
+      "components"
+    ],
+    "shortDescription": "Pump system component — pressure switches, gauges, and pressure tank fittings for water filter and RO installations.",
+    "seo": {
+      "description": "Pump system component — pressure switches, gauges, and pressure tank fittings for water filter and RO installations. Quality parts at wholesale pricing."
+    }
+  },
+  "24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect": {
+    "categories": [
+      "pumps-and-tanks",
+      "components"
+    ],
+    "shortDescription": "Pump system component — pressure switches, gauges, and pressure tank fittings for water filter and RO installations.",
+    "seo": {
+      "description": "Pump system component — pressure switches, gauges, and pressure tank fittings for water filter and RO installations. Quality parts at wholesale pricing."
+    }
+  },
+  "water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi": {
+    "categories": [
+      "pumps-and-tanks",
+      "components"
+    ],
+    "shortDescription": "Pump system component — pressure switches, gauges, and pressure tank fittings for water filter and RO installations.",
+    "seo": {
+      "description": "Pump system component — pressure switches, gauges, and pressure tank fittings for water filter and RO installations. Quality parts at wholesale pricing."
+    }
+  },
+  "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v": {
+    "categories": [
+      "pumps-and-tanks",
+      "pumps"
+    ],
+    "shortDescription": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications.",
+    "seo": {
+      "description": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications. Reliable performance, suitable for rural and off-grid installations."
+    }
+  },
+  "dc12v-280w-submersible-solar-power-water-well-pump-garden-farm-ranch-23ft-lift": {
+    "categories": [
+      "pumps-and-tanks",
+      "pumps"
+    ],
+    "shortDescription": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications.",
+    "seo": {
+      "description": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications. Reliable performance, suitable for rural and off-grid installations."
+    }
+  },
+  "single-phase-submersible-clean-water-pump-370w-lift-10m": {
+    "categories": [
+      "pumps-and-tanks",
+      "pumps"
+    ],
+    "shortDescription": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications.",
+    "seo": {
+      "description": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications. Reliable performance, suitable for rural and off-grid installations."
+    }
+  },
+  "stainless-electric-solar-booster-pump-100w-home-water-booster-pump": {
+    "categories": [
+      "pumps-and-tanks",
+      "pumps"
+    ],
+    "shortDescription": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications.",
+    "seo": {
+      "description": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications. Reliable performance, suitable for rural and off-grid installations."
+    }
+  },
+  "typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd": {
+    "categories": [
+      "pumps-and-tanks",
+      "pumps"
+    ],
+    "shortDescription": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications.",
+    "seo": {
+      "description": "Water pressure pump for tank-fed homes, irrigation, and water transfer applications. Reliable performance, suitable for rural and off-grid installations."
+    }
+  },
+  "1-inch-flexible-stainless-steel-hose-for-pressure-tank": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "12l-vertical-solar-system-water-pressure-tank-expantion-tank-3-2-gallons": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "19l-vertical-solar-system-water-pressure-tank-expantion-tank-5-06-gallons": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "bladder-for-100l-pressure-water-tank-drinking-water-compatible-made-in-italy": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "bladder-for-12l-pressure-water-tank-drinking-water-compatible-made-in-italy": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "bladder-for-19l-pressure-water-tank-drinking-water-compatible-made-in-italy": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "bladder-for-50l-pressure-water-tank-drinking-water-compatible-made-in-italy": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "bladder-for-8l-pressure-water-tank-drinking-water-compatible-made-in-italy": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond": {
+    "categories": [
+      "pumps-and-tanks",
+      "pressure-tanks"
+    ],
+    "shortDescription": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation.",
+    "seo": {
+      "description": "Water pressure tank — required component in RO systems, well pumps, and any pressurised water installation."
+    }
+  },
+  "ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump": {
+    "categories": [
+      "pumps-and-tanks",
+      "pumps"
+    ],
+    "shortDescription": "24V DC RO booster pump — increases water pressure into your reverse osmosis system, improving production rate and final…",
+    "seo": {
+      "description": "24V DC RO booster pump — increases water pressure into your reverse osmosis system, improving production rate and final water quality."
+    }
+  },
+  "bench-top-water-filter-carbon-1-stage": {
+    "categories": [
+      "water-filters",
+      "bench-top"
+    ],
+    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "seo": {
+      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+    }
+  },
+  "bench-top-water-filter-sediment-1-stage": {
+    "categories": [
+      "water-filters",
+      "bench-top"
+    ],
+    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "seo": {
+      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+    }
+  },
+  "bench-top-water-filter-sediment-carbon-2-stage": {
+    "categories": [
+      "water-filters",
+      "bench-top"
+    ],
+    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "seo": {
+      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+    }
+  },
+  "diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps": {
+    "categories": [
+      "water-filters",
+      "bench-top"
+    ],
+    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "seo": {
+      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+    }
+  },
+  "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters": {
+    "categories": [
+      "water-filters",
+      "bench-top"
+    ],
+    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "seo": {
+      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+    }
+  },
+  "diverter-valve-tap-connector-for-1-4-tube-benchtop-water-filters": {
+    "categories": [
+      "water-filters",
+      "bench-top"
+    ],
+    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "seo": {
+      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+    }
+  },
+  "commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd": {
+    "categories": [
+      "water-filters",
+      "commercial"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "commercial-reverse-osmosis-ro-desalination-plant-ro-3000-lpd-800-gpd-with-pressu": {
+    "categories": [
+      "water-filters",
+      "commercial"
+    ],
+    "shortDescription": "Specifications: Model 800GPD",
+    "seo": {
+      "description": "Specifications: Model 800GPD"
+    }
+  },
+  "commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment": {
+    "categories": [
+      "water-filters",
+      "commercial"
+    ],
+    "shortDescription": "The functions of each part of the water treatment plant",
+    "seo": {
+      "description": "The functions of each part of the water treatment plant"
+    }
+  },
+  "1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge-ro": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "2-x-water-filter-fitting-tee-quick-connect-1-4-tee-6mm-fridge-enviro-aqua": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-sediment-steel-bracket": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "2x-home-plastic-3-way-water-purifier-filters-tube-quick-connect-fitting-white": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "30-pics-1-4-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings-6mm": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "30-pics-3-8-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "5-x-1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "5-x-fridge-water-filter-fitting-threaded-elbow-quick-connect-6mm-x-1-4-push-fit": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "5-x-water-filter-fitting-joiner-quick-connect-1-4-6mm-fridge-enviro-aqua": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "50psi-pressure-limiting-protection-dual-check-valve-quick-connect-water-filter-r": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "inline-shutoff-ball-valve-push-fit-quick-connect-1-4": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Inline water filter cartridge designed for fridge, ice maker, and point-of-use installations.",
+    "seo": {
+      "description": "Inline water filter cartridge designed for fridge, ice maker, and point-of-use installations."
+    }
+  },
+  "plastic-opening-handle-spanner-wrench-for-10x2-5-water-filter-housing-universal": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "ro-wrench-for-water-filter-wrenching-1812-housing-of-reverse-osmosis-membrane": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "reverse-osmosis-ro-residential-1-4-drain-clamp": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "standard-10-x-2-5-water-filter-standard-water-filter-housing-white-universal": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "tank-ball-valve-push-fit-quick-connect-1-4": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "tap-thread-adaptor-suitable-for-countertop-systems-22mm-to-24mm": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "water-filter-fitting-joiner-quick-connect-3-8-enviro-aqua": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "water-filter-fitting-tee-quick-connect-3-8-enviro-aqua": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "water-filter-tube-high-pressure-nsf-pipe-1-4-6mm-lldpe": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "water-filter-tube-high-pressure-nsf-pipe-3-8-lldpe": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "3-way-ro-system-water-shut-off-stop-valve-1-4-x-1-4-quick-connect-x-1-2": {
+    "categories": [
+      "water-filters",
+      "parts"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap": {
+    "categories": [
+      "water-filters",
+      "reverse-osmosis"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "5-stages-ro-system-stainless-steel-tap": {
+    "categories": [
+      "water-filters",
+      "reverse-osmosis"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic": {
+    "categories": [
+      "cartridges",
+      "cartridge-sets"
+    ],
+    "shortDescription": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc.",
+    "seo": {
+      "description": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc."
+    }
+  },
+  "under-sink-water-filter-4-stage-reverse-osmosis-system": {
+    "categories": [
+      "water-filters",
+      "reverse-osmosis"
+    ],
+    "shortDescription": "This 4-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on deman…",
+    "seo": {
+      "description": "This 4-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on demand."
+    }
+  },
+  "under-sink-water-filter-5-stage-reverse-osmosis-system": {
+    "categories": [
+      "water-filters",
+      "reverse-osmosis"
+    ],
+    "shortDescription": "This 5-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on deman…",
+    "seo": {
+      "description": "This 5-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on demand."
+    }
+  },
+  "under-sink-water-filter-6-stage-reverse-osmosis-system": {
+    "categories": [
+      "water-filters",
+      "reverse-osmosis"
+    ],
+    "shortDescription": "This 6-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on deman…",
+    "seo": {
+      "description": "This 6-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on demand."
+    }
+  },
+  "under-sink-water-filter-2-stage-sediment-carbon": {
+    "categories": [
+      "water-filters",
+      "under-sink"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "under-sink-water-filter-3-stage-sediment-carbon-alkaline": {
+    "categories": [
+      "water-filters",
+      "under-sink"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "uv-0-5-1-gpm-11w-filters-uv-water-sterilizer-filter-220v-phillip-lamp": {
+    "categories": [
+      "water-filters",
+      "uv-sterilisation"
+    ],
+    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "seo": {
+      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+    }
+  },
+  "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc": {
+    "categories": [
+      "water-filters",
+      "uv-sterilisation"
+    ],
+    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "seo": {
+      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+    }
+  },
+  "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v": {
+    "categories": [
+      "water-filters",
+      "uv-sterilisation"
+    ],
+    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "seo": {
+      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+    }
+  },
+  "uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v": {
+    "categories": [
+      "water-filters",
+      "uv-sterilisation"
+    ],
+    "shortDescription": "UV 25W 12LPM | Ultraviolet Water Sterilizer Filter 304SS Tube +Philips c-uv Lamp.",
+    "seo": {
+      "description": "UV 25W 12LPM | Ultraviolet Water Sterilizer Filter 304SS Tube +Philips c-uv Lamp. Condition is Brand New. Sent with Standard Delivery - Registered."
+    }
+  },
+  "uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v": {
+    "categories": [
+      "water-filters",
+      "uv-sterilisation"
+    ],
+    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "seo": {
+      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+    }
+  },
+  "ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins": {
+    "categories": [
+      "water-filters",
+      "uv-sterilisation"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp": {
+    "categories": [
+      "water-filters",
+      "uv-sterilisation"
+    ],
+    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "seo": {
+      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+    }
+  },
+  "20-x-2-5-whole-house-water-filter-replacement-sediment-carbon-gac-cartridges": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "Cartridge Filters",
+    "seo": {
+      "description": "Cartridge Filters"
+    }
+  },
+  "3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "4-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "premium-three-stage-big-blue-whole-house-water-filter-system": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-1-stage-10-x-2-5-carbon": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-1-stage-10-x-2-5-sediment": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-1-stage-10-x-4-5-carbon": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-1-stage-10-x-4-5-sediment": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-2-stage-10-x-4-5-washable-reusable": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-clear-carbon-1-stage": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-clear-sediment-1-stage": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "whole-house-water-filter-clear-sediment-carbon-2-stage": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
+  },
+  "3-way-kitchen-tap-for-ro-water-filters-mixer-in-shiny-gold": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Compliance information available on request.",
+    "seo": {
+      "description": "Compliance information available on request."
+    }
+  },
+  "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture.",
+    "seo": {
+      "description": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture."
+    }
+  },
+  "bathroom-wall-basin-sink-shower-mixer-tap-faucet-round-chrome-bath-spout-wels": {
+    "categories": [
+      "plumbing",
+      "bathroom-taps"
+    ],
+    "shortDescription": "Important: this product is NOT WaterMark certified.",
+    "seo": {
+      "description": "Important: this product is NOT WaterMark certified."
+    }
+  },
+  "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "seo": {
+      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+    }
+  },
+  "double-handle-reverse-osmosis-water-filter-tap-ro-kitchen-faucet-in-chrome": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "seo": {
+      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+    }
+  },
+  "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture.",
+    "seo": {
+      "description": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture."
+    }
+  },
+  "premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "seo": {
+      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+    }
+  },
+  "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "seo": {
+      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+    }
+  },
+  "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel": {
+    "categories": [
+      "plumbing",
+      "kitchen-taps"
+    ],
+    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "seo": {
+      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+    }
+  },
+  "pull-down-spray-tap-kitchen-mixer-in-brushed-nickel": {
+    "categories": [
+      "plumbing",
+      "kitchen-taps"
+    ],
+    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "seo": {
+      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+    }
+  },
+  "spring-loaded-3-way-ro-tap-kitchen-mixer-in-black-chrome-and-nickel": {
+    "categories": [
+      "plumbing",
+      "ro-filter-taps"
+    ],
+    "shortDescription": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture.",
+    "seo": {
+      "description": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture."
+    }
+  },
+  "tall-29cm-round-basin-mixer-tap-in-matte-black-or-polished-chrome": {
+    "categories": [
+      "plumbing",
+      "bathroom-taps"
+    ],
+    "shortDescription": "Important: this product is NOT WaterMark certified.",
+    "seo": {
+      "description": "Important: this product is NOT WaterMark certified."
+    }
+  },
+  "back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels": {
+    "categories": [
+      "plumbing",
+      "toilets"
+    ],
+    "shortDescription": "Compliance information available on request.",
+    "seo": {
+      "description": "Compliance information available on request."
+    }
+  },
+  "in-wall-concealed-cistern-toilet-rimless-floor-mount-pan-chrome-buttons-wels": {
+    "categories": [
+      "plumbing",
+      "toilets"
+    ],
+    "shortDescription": "Compliance information available on request.",
+    "seo": {
+      "description": "Compliance information available on request."
+    }
+  },
+  "chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l": {
+    "categories": [
+      "pumps-and-tanks",
+      "dosing-tanks"
+    ],
+    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "seo": {
+      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+    }
+  },
+  "commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd": {
+    "categories": [
+      "water-filters",
+      "commercial"
+    ],
+    "shortDescription": "Specifications: Model 800GPD",
+    "seo": {
+      "description": "Specifications: Model 800GPD"
+    }
+  },
+  "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system-dup2": {
+    "categories": [
+      "water-filters",
+      "whole-house"
+    ],
+    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "seo": {
+      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+    }
   }
 }
