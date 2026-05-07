@@ -10,7 +10,7 @@ interface RecommendedForProps {
 export function RecommendedFor({ items }: RecommendedForProps) {
   if (!items || items.length === 0) return null;
   return (
-    <section className="mt-8">
+    <section className="mt-12 border-t border-gray-100 pt-8">
       <h2 className="text-xl font-semibold text-black tracking-tight">
         Recommended for
       </h2>

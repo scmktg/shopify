@@ -38,7 +38,7 @@ export async function ProductOverview({ description }: ProductOverviewProps) {
   return (
     <section
       aria-label="Product overview"
-      className="mt-12 border-t border-gray-200 pt-8"
+      className="mt-12 border-t border-gray-100 pt-8"
     >
       <div
         className="prose max-w-none"

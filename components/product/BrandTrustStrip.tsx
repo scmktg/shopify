@@ -19,7 +19,7 @@ export function BrandTrustStrip() {
   return (
     <section
       aria-label="About Enviro Aqua"
-      className="mt-12 border-t border-gray-200 pt-6"
+      className="mt-12 border-t border-gray-100 pt-6"
     >
       <ul className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-4">
         {TRUST_STRIP.map((item, index) => {
