@@ -86,8 +86,16 @@ export function AddToCartButton({
   return (
     <div className="mt-6 flex flex-col gap-3">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+        {/*
+          Mobile: stepper spans the full row, −/+ buttons grow to
+          fill the gutters either side of the centered qty input,
+          so the row visually balances with the Add-to-cart button
+          below it.
+          Desktop (sm+): stepper collapses to intrinsic width and
+          sits next to the Add-to-cart button on a single row.
+        */}
         <div
-          className="inline-flex items-stretch border border-black rounded overflow-hidden"
+          className="flex sm:inline-flex w-full sm:w-auto items-stretch border border-black rounded overflow-hidden"
           aria-label="Quantity"
         >
           <button
@@ -95,7 +103,7 @@ export function AddToCartButton({
             onClick={dec}
             disabled={quantity <= 1 || !available || anyBusy}
             aria-label="Decrease quantity"
-            className="px-3 text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+            className="flex-1 sm:flex-none sm:px-3 text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
           >
             −
           </button>
@@ -107,14 +115,14 @@ export function AddToCartButton({
             value={quantity}
             onChange={(e) => onTyped(e.target.value)}
             aria-label="Quantity"
-            className="w-12 text-center text-black bg-white border-x border-black focus:outline-none focus:ring-2 focus:ring-brand-blue [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="w-12 flex-shrink-0 text-center text-black bg-white border-x border-black focus:outline-none focus:ring-2 focus:ring-brand-blue [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           />
           <button
             type="button"
             onClick={inc}
             disabled={quantity >= MAX_QTY || !available || anyBusy}
             aria-label="Increase quantity"
-            className="px-3 text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+            className="flex-1 sm:flex-none sm:px-3 text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
           >
             +
           </button>
@@ -135,7 +143,7 @@ export function AddToCartButton({
           type="button"
           onClick={onBuyNow}
           disabled={!available || anyBusy}
-          className="w-full bg-white border border-black hover:bg-gray-50 disabled:bg-gray-50 disabled:text-gray-400 disabled:border-gray-300 disabled:cursor-not-allowed text-black font-semibold py-3 px-6 rounded transition-colors"
+          className="w-full bg-black hover:bg-black/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
         >
           {buyNowLabel}
         </button>
