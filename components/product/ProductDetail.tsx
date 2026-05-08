@@ -178,6 +178,9 @@ export function ProductDetail({
         description={content.description}
         shortDescription={content.shortDescription}
       />
+      <ProductFeatures features={content.features} />
+      <RecommendedFor items={content.recommendedFor} />
+      <ComplianceSection compliance={content.compliance} />
 
       {firstVariant && (
         <BuyBanner
@@ -187,10 +190,6 @@ export function ProductDetail({
           ctaLabel={content.ctas?.primary ?? undefined}
         />
       )}
-
-      <ProductFeatures features={content.features} />
-      <RecommendedFor items={content.recommendedFor} />
-      <ComplianceSection compliance={content.compliance} />
 
       {boughtTogether.length > 0 && (
         <BoughtTogether handles={boughtTogether} />
