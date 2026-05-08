@@ -1542,9 +1542,115 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Reverse osmosis membrane — the heart of any RO system.",
+    "tags": [
+      "ro-replacement-set",
+      "six-stage",
+      "alkaline",
+      "75gpd-membrane",
+      "10x25",
+      "complete-set"
+    ],
+    "shortDescription": "Complete 6-stage RO replacement set with 75 GPD membrane and alkaline cartridge — covers every consumable in a 6-stage under-sink RO system in one order.",
+    "description": "A complete 6-stage RO replacement set: sediment + carbon stages + a 75 GPD reverse osmosis membrane + the alkaline post-stage that re-mineralises the permeate water. One SKU covers everything that needs replacing in a 6-stage RO system on its full service interval.\n\n## What's in the Set\n\nPer the manufacturer's parts breakdown:\n\n- **1 × Sediment filter, 10\" × 2.5\"** — PP sediment pre-filter\n- **1 × Granular activated carbon (GAC) filter, 10\" × 2.5\"** — chlorine and organics reduction; protects the RO membrane downstream\n- **1 × Activated carbon block filter, 10\" × 2.5\"** — secondary chlorine and chemical polishing\n- **1 × GAC in-line post-membrane filter** — taste polishing on the permeate side\n- **1 × 75 GPD RO membrane** — the purification stage\n- **1 × Alkaline cartridge** — re-mineralises and balances pH after RO, putting beneficial minerals back into the water that the RO process strips out\n\n## Why a 6-Stage System Adds the Alkaline Stage\n\nReverse osmosis is highly effective at removing dissolved contaminants — but it removes beneficial minerals along with the bad. RO permeate water has a low TDS reading and a slightly acidic pH, which some people find tastes \"flat\". The alkaline cartridge re-introduces calcium, magnesium, and other minerals back into the water and lifts the pH back toward neutral. The result is RO-purified water with the mineral profile and taste of natural spring water.\n\n## Service Interval\n\nReplace the cartridge stages every 6–12 months on typical Australian town water; the membrane every ~24 months. The carbon stages are the most service-critical — if they saturate, chlorine breakthrough damages the membrane irreversibly. Keep the carbons fresh and the membrane will reach its rated lifespan.\n\nFits any standard 6-stage under-sink RO system using 10\" × 2.5\" cartridges and a standard 10\" × 2.5\" RO membrane element.",
+    "features": [
+      "Complete 6-stage RO refresh — sediment, GAC, carbon block, post-GAC, RO membrane, alkaline",
+      "Includes the alkaline cartridge for pH and mineral balancing on the permeate",
+      "Includes a 75 GPD RO membrane element",
+      "All standard 10\" cartridge format — fits standard 6-stage residential RO systems",
+      "Single-SKU service — one order, one delivery, full refresh"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages covered",
+        "value": "6"
+      },
+      {
+        "label": "Items in set",
+        "value": "5 cartridges + 1 RO membrane"
+      },
+      {
+        "label": "Membrane",
+        "value": "75 GPD"
+      },
+      {
+        "label": "Includes alkaline stage",
+        "value": "Yes"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "5 cartridges + 1 RO membrane (6 stages)"
+      },
+      {
+        "label": "Item 1",
+        "value": "Sediment filter, 10\" × 2.5\""
+      },
+      {
+        "label": "Item 2",
+        "value": "Granular activated carbon (GAC) filter, 10\" × 2.5\""
+      },
+      {
+        "label": "Item 3",
+        "value": "Activated carbon block filter, 10\" × 2.5\""
+      },
+      {
+        "label": "Item 4",
+        "value": "GAC in-line post-membrane filter"
+      },
+      {
+        "label": "Item 5",
+        "value": "75 GPD RO membrane"
+      },
+      {
+        "label": "Item 6",
+        "value": "Alkaline cartridge"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Compatible systems",
+        "value": "Standard 6-stage under-sink RO with alkaline"
+      }
+    ],
+    "recommendedFor": [
+      "Annual or biennial service of a 6-stage RO system with alkaline",
+      "Owners wanting RO purity with re-mineralised, balanced-pH drinking water",
+      "Plumbers and trade buyers stocking 6-stage RO consumables",
+      "Households inheriting an alkaline-equipped RO system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-6-stage-reverse-osmosis-system",
+        "inline-water-filter-alkaline-ph-neutralising-10-x-2",
+        "2-pics-75gpd-reverse-osmosis-membrane-membrane-replacement-filter-280l-per-day"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Reverse osmosis membrane — the heart of any RO system."
+      "title": "6-Stage RO Replacement Set — 75 GPD Membrane + Alkaline Cartridge | Enviro Aqua",
+      "description": "Complete 6-stage RO refresh: sediment, GAC, carbon block, post-GAC, 75 GPD membrane, alkaline. All 10\" format. Direct fit for 6-stage under-sink RO systems.",
+      "ogImage": null
     }
   },
   "5-x-premium-quality-cto-carbon-cartridges-10-x-2-5": {
@@ -2221,9 +2327,119 @@
       "cartridges",
       "cartridge-sets"
     ],
-    "shortDescription": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc.",
+    "tags": [
+      "ro-replacement-set",
+      "six-stage",
+      "alkaline",
+      "five-micron",
+      "10-format",
+      "ro-membrane-included"
+    ],
+    "shortDescription": "Complete 6-stage RO replacement cartridge set — sediment, GAC, carbon block, RO membrane, post-carbon, alkaline. All 5 micron, 10\" format. Single-SKU service for a 6-stage RO system.",
+    "description": "The full 6-stage cartridge replacement set for a 6-stage reverse osmosis system — every consumable in one order, sized for the standard 10\" cartridge format used in residential RO under-sink installations.\n\nWhere the 5-stage version produces RO-purified water at the tap, the 6-stage system adds an **alkaline post-stage** that re-mineralises the permeate water and lifts pH back toward neutral. The result is purified water with the mineral profile of natural spring water rather than the slightly flat taste of straight RO output.\n\n## What's in the Set\n\nPer the manufacturer's per-stage breakdown:\n\n- **Stage 1 — PP spun sediment filter:** removes particles, dust, mud, rust\n- **Stage 2 — Granular activated carbon (GAC):** removes chlorine, organics, odour, turbidity — protects the RO membrane downstream\n- **Stage 3 — Block carbon or sediment:** secondary chlorine/chemical polishing or additional sediment\n- **Stage 4 — RO membrane:** removes bacteria, heavy metals, salts, dissolved minerals, and chemical residues by reverse osmosis\n- **Stage 5 — Post-carbon filter:** final taste polish on the permeate water\n- **Stage 6 — Alkaline cartridge:** re-mineralises and adjusts pH to neutralise the slight acidity of RO water\n\n## How This Set Compares\n\nThis set is the **standard-tier 6-stage replacement** at $145.95. Two related options worth knowing about:\n\n- The [premium 6-stage set](/water-filter-replacement-set-premium-6-stages-5-micron-10/) at $149.95 uses a coconut activated carbon block in place of the standard carbon block, for higher-grade chlorine reduction and longer carbon-stage service life\n- The [standard 6-stage set](/water-filter-replacement-set-standard-6-stages-5-micron-10/) at $114.95 is the lowest-tier 6-stage replacement with the same cartridge topology\n\n## Service Interval\n\nReplace cartridges every 6–12 months; the RO membrane on a longer ~24-month cycle. Keep the carbons fresh — chlorine breakthrough through saturated carbons damages RO membranes irreversibly.",
+    "features": [
+      "Complete 6-stage cartridge set — sediment, GAC, carbon block, RO membrane, post-carbon, alkaline",
+      "Includes the alkaline post-stage for re-mineralisation and pH balancing",
+      "5 micron rating across the cartridge stages",
+      "Standard 10\" format — fits 6-stage under-sink RO systems",
+      "Single-SKU service — covers a complete 6-stage RO refresh"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages covered",
+        "value": "6"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Includes alkaline",
+        "value": "Yes"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "Cartridges + RO membrane covering 6 stages"
+      },
+      {
+        "label": "Stage 1",
+        "value": "PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block or sediment (configuration-dependent)"
+      },
+      {
+        "label": "Stage 4",
+        "value": "RO membrane"
+      },
+      {
+        "label": "Stage 5",
+        "value": "Post-carbon filter"
+      },
+      {
+        "label": "Stage 6",
+        "value": "Alkaline cartridge — pH and mineral re-balancing"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\""
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      }
+    ],
+    "recommendedFor": [
+      "Annual or biennial service of a 6-stage RO system with alkaline",
+      "Households running RO systems with re-mineralised drinking water",
+      "Plumbers and trade buyers stocking 6-stage RO consumables",
+      "Owners wanting standard-tier replacement at mid-range pricing"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-6-stage-reverse-osmosis-system",
+        "water-filter-replacement-set-premium-6-stages-5-micron-10",
+        "water-filter-replacement-set-standard-6-stages-5-micron-10"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc."
+      "title": "6-Stage RO Cartridge Set — With Alkaline, 5 Micron, 10\" Format | Enviro Aqua",
+      "description": "Complete 6-stage RO cartridge replacement: sediment, GAC, carbon block, RO membrane, post-carbon, alkaline. 5 micron, 10\" format. Standard-tier mid-range option.",
+      "ogImage": null
     }
   },
   "inline-water-filter-replacement-set-3-stages-sediment-carbon-ro-membrane-10": {
@@ -2231,9 +2447,110 @@
       "cartridges",
       "cartridge-sets"
     ],
-    "shortDescription": "Polypropylene sediment cartridge, removes sand, dirt, rust particles, and visible sediment from your water supply.",
+    "tags": [
+      "ro-replacement-set",
+      "three-stage",
+      "inline",
+      "sediment-carbon-ro",
+      "10-format"
+    ],
+    "shortDescription": "3-stage inline replacement set for compact RO and inline filtration systems — sediment, carbon, RO membrane. All 10\" inline format. The right SKU for inline RO setups, not full under-sink systems.",
+    "description": "A 3-stage inline replacement set — polypropylene sediment, activated carbon, and a reverse osmosis membrane, all in 10\" inline format. This set is sized for **inline filtration systems** rather than the full under-sink 4/5/6-stage RO units. If your filter is a compact inline RO setup with 1/4\" tubing connecting three filter housings in a row, this is the SKU.\n\n## What's in the Set\n\n- **Sediment filter (PP):** removes sand, dirt, rust particles, and visible sediment from the feed water. Goes in first to protect the carbon and membrane downstream.\n- **Carbon filter (activated carbon):** reduces chlorine, taste, odour, and chemical contaminants. Critical for protecting the RO membrane that follows.\n- **RO membrane:** removes dissolved solids, fluoride, heavy metals, and most chemical residues by reverse osmosis.\n\n## How This Set Differs from the 5-Stage Set\n\nA 3-stage inline RO is the simpler cousin of a 5-stage under-sink RO. Three stages instead of five (no granular carbon Stage 2, no post-carbon Stage 5), inline housings instead of stacked under-sink modules. The trade-off: lower cost, less bench space under the sink, but slightly less aggressive treatment than the full 5-stage. For tank-water and aquarium-feed applications where ultra-pure RO output isn't needed and footprint matters, the 3-stage is the right tool.\n\nIf you've got a full residential 5-stage under-sink RO, this isn't the right set — the [5-stage RO replacement set](/5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic/) covers that configuration.\n\n## Service Interval\n\nReplace cartridges every 6–12 months; the membrane every ~24 months. As with any RO system, keeping the carbon stage fresh is the single most important thing for membrane lifespan — chlorine breakthrough through saturated carbon damages the membrane irreversibly.",
+    "features": [
+      "3-stage inline replacement set — sediment, carbon, RO membrane",
+      "All 10\" inline format — fits compact inline RO and aquarium filtration setups",
+      "Lower-cost alternative to 5/6-stage under-sink RO replacements",
+      "Includes the membrane on the longer service interval",
+      "Single-SKU service for inline RO systems"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages covered",
+        "value": "3"
+      },
+      {
+        "label": "Set contents",
+        "value": "Sediment + carbon + RO membrane"
+      },
+      {
+        "label": "Format",
+        "value": "10\" inline"
+      },
+      {
+        "label": "Includes membrane",
+        "value": "Yes"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "PP sediment + activated carbon + RO membrane"
+      },
+      {
+        "label": "Stages covered",
+        "value": "3"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" inline"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Polypropylene sediment"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Activated carbon"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Reverse osmosis membrane"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Compatible systems",
+        "value": "Inline 3-stage RO and aquarium filtration setups"
+      }
+    ],
+    "recommendedFor": [
+      "Inline 3-stage RO systems",
+      "Aquarium and pond RO setups",
+      "Compact RO installations where bench space is limited",
+      "Cost-conscious RO replacement vs full 5/6-stage under-sink"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic",
+        "2-pics-75gpd-reverse-osmosis-membrane-membrane-replacement-filter-280l-per-day",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Polypropylene sediment cartridge, removes sand, dirt, rust particles, and visible sediment from your water supply."
+      "title": "3-Stage Inline RO Replacement Set — Sediment, Carbon, Membrane | Enviro Aqua",
+      "description": "3-stage inline replacement: PP sediment + activated carbon + RO membrane. All 10\" inline format. For inline RO systems, aquariums, and compact RO installations.",
+      "ogImage": null
     }
   },
   "water-filter-replacement-set-premium-6-stages-5-micron-10": {
@@ -2241,9 +2558,120 @@
       "cartridges",
       "cartridge-sets"
     ],
-    "shortDescription": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement…",
+    "tags": [
+      "ro-replacement-set",
+      "six-stage",
+      "premium",
+      "coconut-carbon",
+      "alkaline",
+      "five-micron"
+    ],
+    "shortDescription": "Premium 6-stage RO replacement set — sediment, GAC, premium coconut carbon block, RO membrane, post-carbon, alkaline. The upgraded variant of the standard 6-stage set, with coconut-shell carbon for better chlorine reduction.",
+    "description": "The premium-tier replacement set for a 6-stage reverse osmosis system. Same six-stage topology as the [standard 6-stage set](/water-filter-replacement-set-standard-6-stages-5-micron-10/), with one specific cartridge upgraded: the carbon block at Stage 3 is **coconut-shell activated carbon** rather than standard coal-based carbon block.\n\n## What's in the Set\n\n- **1 × Sediment filter (5 micron)** — PP spun sediment pre-filter\n- **1 × Granular activated carbon (GAC) filter** — chlorine and organics reduction; protects the RO membrane\n- **1 × Premium coconut carbon block filter** — the upgraded cartridge in this set; coconut-shell carbon has higher surface area per gram than coal-based carbon and avoids the heavy-metal residuals that some coal sources carry\n- **1 × Reverse osmosis membrane** — the actual purification stage\n- **1 × Post-carbon filter** — final taste polish\n- **1 × Alkaline filter** — re-mineralises and balances pH after RO\n\n## What the Coconut Carbon Upgrade Actually Buys\n\nCoconut-shell activated carbon delivers two practical improvements over coal-based carbon block at the same flow rate and cartridge size:\n\n- **Higher chlorine and chloramine reduction per cartridge** — the higher surface area gives more adsorption capacity per gram of media\n- **No heavy-metal residuals** from the source material — some coal-based carbons contain trace heavy metals from the coal itself; coconut carbon doesn't\n\nIs it worth the small price uplift over the standard 6-stage set? On chlorinated mains supplies where the carbon stage is doing real work — yes, the upgrade pays back in longer service intervals and cleaner finished water. On RO systems primarily targeting fluoride or heavy metals (where the membrane does the heavy lifting), the difference is smaller.\n\n## Service Interval\n\nReplace cartridges every 6–12 months depending on water quality and usage; the membrane every ~24 months. Standard advice: keep the carbons fresh — chlorine breakthrough through saturated carbon damages RO membranes irreversibly.\n\n## Compatible Systems\n\nFits any standard 6-stage under-sink RO system using 10\" cartridges and a standard 10\" × 2.5\" RO membrane element — including our [6-stage RO with alkaline](/under-sink-water-filter-6-stage-reverse-osmosis-system/).",
+    "features": [
+      "Premium 6-stage replacement — sediment, GAC, coconut carbon block, RO membrane, post-carbon, alkaline",
+      "Premium coconut activated carbon block — higher chlorine adsorption per cartridge",
+      "5 micron rating across the cartridge stages",
+      "All 10\" format — fits standard 6-stage under-sink RO systems",
+      "Includes alkaline post-stage for RO water re-mineralisation",
+      "Single-SKU service for a complete premium 6-stage RO refresh"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages covered",
+        "value": "6"
+      },
+      {
+        "label": "Tier",
+        "value": "Premium"
+      },
+      {
+        "label": "Carbon block",
+        "value": "Coconut-shell activated"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "5 cartridges + 1 RO membrane (6 stages)"
+      },
+      {
+        "label": "Item 1",
+        "value": "Sediment filter (5 micron)"
+      },
+      {
+        "label": "Item 2",
+        "value": "Granular activated carbon (GAC) filter"
+      },
+      {
+        "label": "Item 3",
+        "value": "Premium coconut activated carbon block"
+      },
+      {
+        "label": "Item 4",
+        "value": "Reverse osmosis membrane"
+      },
+      {
+        "label": "Item 5",
+        "value": "Post-carbon filter"
+      },
+      {
+        "label": "Item 6",
+        "value": "Alkaline filter"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      }
+    ],
+    "recommendedFor": [
+      "Premium service of a 6-stage RO system on chlorinated mains",
+      "Households wanting longer carbon-stage service intervals",
+      "Owners specifying coconut carbon over coal-based for source quality",
+      "Annual or biennial full RO refresh at premium tier"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-6-stage-reverse-osmosis-system",
+        "water-filter-replacement-set-standard-6-stages-5-micron-10",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement cartridge set."
+      "title": "Premium 6-Stage RO Replacement Set — Coconut Carbon, Alkaline | Enviro Aqua",
+      "description": "Premium 6-stage RO cartridge set with coconut activated carbon block. Sediment, GAC, coconut carbon, RO membrane, post-carbon, alkaline. 5 micron, 10\" format.",
+      "ogImage": null
     }
   },
   "water-filter-replacement-set-standard-6-stages-5-micron-10": {
@@ -2251,9 +2679,120 @@
       "cartridges",
       "cartridge-sets"
     ],
-    "shortDescription": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement…",
+    "tags": [
+      "ro-replacement-set",
+      "six-stage",
+      "standard",
+      "alkaline",
+      "five-micron",
+      "value"
+    ],
+    "shortDescription": "Standard 6-stage RO replacement set — sediment, GAC, carbon block, RO membrane, post-carbon, alkaline. The value-priced 6-stage replacement at $114.95.",
+    "description": "The standard-tier replacement set for a 6-stage reverse osmosis system — the value-priced 6-stage refresh covering all six cartridge stages including the alkaline post-stage and a 75 GPD RO membrane.\n\nWhere the [premium 6-stage set](/water-filter-replacement-set-premium-6-stages-5-micron-10/) uses coconut-shell activated carbon block, this standard set uses regular activated carbon block at the carbon stage. Same cartridge topology, same compatible systems, lower component cost per cartridge.\n\n## What's in the Set\n\n- **1 × Sediment filter (5 micron)** — PP spun sediment pre-filter for sand, dirt, rust capture\n- **1 × Granular activated carbon (GAC) filter** — chlorine and organics reduction; protects the RO membrane downstream\n- **1 × Carbon block filter** — secondary chlorine and chemical polishing\n- **1 × Reverse osmosis membrane** — the purification stage\n- **1 × Post-carbon filter** — final taste polish on the permeate water\n- **1 × Alkaline filter** — re-mineralises and balances pH for spring-water taste\n\n## When the Standard Tier Is the Right Buy\n\nThree scenarios:\n\n- **Cost-sensitive replacement** — $35 cheaper than the premium tier, on a service that recurs every 6–12 months\n- **Soft or low-chlorine supply** — if your incoming water is on the lower end of the chlorine range, the carbon stage isn't working as hard, and the difference between coconut and standard carbon block is smaller in finished-water terms\n- **Bulk service across multiple properties** — property managers servicing several RO installations at once may prefer the standard tier across the portfolio for predictable bulk costing\n\nIf you're in a chloraminated supply area (Sydney, Melbourne, Brisbane, Adelaide, Canberra) or want longer carbon-stage service intervals, the premium tier with coconut carbon is the better technical pick.\n\n## Service Interval and Compatibility\n\nReplace cartridges every 6–12 months; membrane every ~24 months. Fits any standard 6-stage under-sink RO system using 10\" cartridges and a standard 10\" × 2.5\" RO membrane element.",
+    "features": [
+      "Standard 6-stage replacement — sediment, GAC, carbon block, RO membrane, post-carbon, alkaline",
+      "Value-priced — same topology as premium tier at lower component cost",
+      "5 micron rating across the cartridge stages",
+      "Includes alkaline post-stage for re-mineralisation",
+      "All 10\" format — fits standard 6-stage under-sink RO systems",
+      "Single-SKU service for a complete 6-stage refresh"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages covered",
+        "value": "6"
+      },
+      {
+        "label": "Tier",
+        "value": "Standard"
+      },
+      {
+        "label": "Includes alkaline",
+        "value": "Yes"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "5 cartridges + 1 RO membrane (6 stages)"
+      },
+      {
+        "label": "Item 1",
+        "value": "Sediment filter (5 micron)"
+      },
+      {
+        "label": "Item 2",
+        "value": "Granular activated carbon (GAC) filter"
+      },
+      {
+        "label": "Item 3",
+        "value": "Carbon block filter"
+      },
+      {
+        "label": "Item 4",
+        "value": "Reverse osmosis membrane"
+      },
+      {
+        "label": "Item 5",
+        "value": "Post-carbon filter"
+      },
+      {
+        "label": "Item 6",
+        "value": "Alkaline filter"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      }
+    ],
+    "recommendedFor": [
+      "Cost-sensitive 6-stage RO service on annual or biennial schedules",
+      "Properties on soft or lower-chlorine supplies where carbon load is moderate",
+      "Property managers servicing multiple 6-stage RO systems at bulk pricing",
+      "Owners wanting the alkaline post-stage at the standard tier"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-6-stage-reverse-osmosis-system",
+        "water-filter-replacement-set-premium-6-stages-5-micron-10",
+        "6-stages-ro-cartridges-replacement-set-for-6-stages-ro-water-filter-system-5mic"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Maintain the optimal performance of your 6-stage reverse osmosis water filtration system with this complete replacement cartridge set."
+      "title": "Standard 6-Stage RO Replacement Set — Sediment, Carbon, RO + Alkaline | Enviro Aqua",
+      "description": "Standard 6-stage RO cartridge set: sediment, GAC, carbon block, RO membrane, post-carbon, alkaline. 5 micron, 10\" format. Value-priced 6-stage RO refresh at $114.95.",
+      "ogImage": null
     }
   },
   "reusable-100-micron-strainer-water-filter-washable-filter-sediment-10x2-5": {
@@ -2261,9 +2800,105 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Size: 10\" x 2.5\" Rating: 100 micron Type: Washable/Re-usable",
+    "tags": [
+      "reusable",
+      "washable",
+      "100-micron",
+      "strainer",
+      "10x25",
+      "tank-water",
+      "aquarium"
+    ],
+    "shortDescription": "Reusable 100 micron sediment strainer — 10\" × 2.5\", 250 mm long, washable. The coarse pre-filter for tank, dam, bore, and rainwater systems where leaves, algae, and large particulate would clog a finer cartridge in days.",
+    "description": "A reusable 100 micron sediment strainer cartridge — a washable filter sized for the very dirty end of the water-source spectrum, where finer disposable cartridges would saturate within days and end up costing more in replacements than the original installation. **Tank water, dam water, bore water, rainwater catchment, fish tanks, and any source that has visible particulate going into it** — this is the format that handles those upstream of the actual filtration.\n\n## What 100 Micron Means in Practice\n\n100 micron is a coarse rating by drinking-water standards — about the diameter of a thick human hair. It's deliberately coarse: the strainer's job is to catch the visible chunks (leaves, sand, algae fronds, insect parts, large rust flakes) before they reach the finer cartridges downstream, not to polish water for drinking. A 5 micron sediment cartridge installed first on dam water would clog within hours; the 100 micron strainer takes that load instead, then the 5 micron sediment goes second and lasts as designed.\n\n## Washable, Not Disposable\n\nThe key feature that distinguishes this from a disposable PP sediment cartridge: when the strainer reaches its capacity, you unscrew the housing, **rinse the cartridge under a hose, and reinstall**. No replacement cost, no shipping wait. The screw-off end caps make access for cleaning straightforward.\n\nFor a tank-water system on a small property, the running cost of this strainer over a year is essentially zero — just the original purchase. Compared to changing disposable PP cartridges every 6–8 weeks at the same sediment load, the savings build quickly.\n\n## Specifications\n\n- **Cartridge size:** 10\" × 2.5\" (fits all 10\" × 2.5\" housings)\n- **Length:** 250 mm\n- **Micron rating:** 100 micron — single rating (not available in finer ratings)\n- **Type:** washable, reusable\n- **Construction:** screw-off end caps for cleaning access",
+    "features": [
+      "Reusable — rinse, reinstall, repeat (no consumable cost)",
+      "100 micron rating — catches leaves, algae, sand, large particulate",
+      "10\" × 2.5\" standard housing fit",
+      "Screw-off end caps for easy cleaning access",
+      "Sized for tank, dam, bore, rainwater, and aquarium systems",
+      "Coarse pre-filter that protects finer cartridges downstream"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Length",
+        "value": "250 mm"
+      },
+      {
+        "label": "Micron rating",
+        "value": "100 micron"
+      },
+      {
+        "label": "Type",
+        "value": "Washable / reusable"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Length",
+        "value": "250 mm"
+      },
+      {
+        "label": "Micron rating",
+        "value": "100 micron (single rating only)"
+      },
+      {
+        "label": "Type",
+        "value": "Washable, reusable"
+      },
+      {
+        "label": "Construction",
+        "value": "Screw-off end caps for cleaning access"
+      },
+      {
+        "label": "Application",
+        "value": "Tank, dam, bore, rainwater, aquarium pre-filtration"
+      },
+      {
+        "label": "Compatible housings",
+        "value": "Any standard 10\" × 2.5\""
+      }
+    ],
+    "recommendedFor": [
+      "Tank-water and rainwater systems on rural properties",
+      "Dam and bore water with high visible particulate load",
+      "Fish tanks and aquarium pre-filtration",
+      "Coarse pre-filter ahead of finer 5 micron sediment cartridges"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "washable-and-reusable-water-filter-pleated-5-micron-10-x-4-5",
+        "inline-uf-ultrafiltration-filter-cartridge"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Size: 10\" x 2.5\" Rating: 100 micron Type: Washable/Re-usable"
+      "title": "Reusable 100 Micron Sediment Strainer — 10\" × 2.5\" Washable | Enviro Aqua",
+      "description": "Reusable 100 micron strainer cartridge. 10\" × 2.5\", 250 mm, screw-off end caps, washable. Coarse pre-filter for tank, dam, bore, rainwater, and aquarium systems.",
+      "ogImage": null
     }
   },
   "washable-and-reusable-water-filter-pleated-5-micron-10-x-4-5": {
@@ -2271,9 +2906,102 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Reusable pleated sediment cartridge rated to 5 micron.",
+    "tags": [
+      "pleated",
+      "reusable",
+      "washable",
+      "10x45",
+      "five-micron",
+      "short-big-blue",
+      "extended-life"
+    ],
+    "shortDescription": "Reusable pleated sediment cartridge — 10\" × 4.5\" short Big Blue, 5 micron. Washable design extends cartridge life substantially vs disposable PP, dropping long-term running cost.",
+    "description": "A reusable pleated sediment cartridge in 10\" × 4.5\" short Big Blue format — the format that suits whole-house and high-flow installations where a slim 10\" × 2.5\" cartridge can't move enough water at the system's flow rate.\n\nThe key feature is **washable construction**: when the cartridge reaches its dirt-loaded threshold and pressure drop rises, the cartridge comes out of the housing, gets rinsed clean, and goes back in. No new cartridge to order, no service interruption, no waste to landfill. Over the long-term life of the cartridge — typically several years before the pleated media itself wears out — the running cost compares favourably to repeatedly buying disposable PP cartridges over the same period.\n\n## Pleated vs Spun PP\n\nThe pleated construction is what distinguishes this format from a standard polypropylene spun cartridge. Pleated media accordion-folds a sheet of filter material into a high-surface-area structure inside the cartridge body. Three differences in practice:\n\n- **Higher surface area** in the same housing volume — more dirt-holding capacity per cartridge\n- **Washable** — the rigid pleated structure holds up to rinsing, where loose-spun PP fibres compress and lose their micron rating after washing\n- **Longer overall service life** — typically several wash cycles before the media itself reaches end of life\n\n## Specifications\n\n- **Cartridge size:** 10\" × 4.5\" (standard short Big Blue fit)\n- **Micron rating:** 5 micron\n- **Type:** pleated, washable\n- **Lifespan:** 6–12 months between washes depending on water quality and usage; multi-year overall service life with proper washing\n- **Application:** residential and commercial water filtration\n\n## Where It Fits\n\nDirect fit for any 10\" × 4.5\" short Big Blue housing — including the [10\" × 4.5\" sediment whole-house housing](/whole-house-water-filter-1-stage-10-x-4-5-sediment/) and the [2-stage washable & reusable whole-house filter](/whole-house-water-filter-2-stage-10-x-4-5-washable-reusable/). The format suits properties wanting to minimise consumable cost and waste over the life of the system, particularly off-grid and rural installations where filter delivery isn't fast.",
+    "features": [
+      "Pleated construction — higher surface area than spun PP, washable for reuse",
+      "10\" × 4.5\" short Big Blue format",
+      "5 micron rating",
+      "Removes sand, dirt, rust, and visible particles",
+      "Washable design substantially extends cartridge service life",
+      "Drops long-term running cost vs disposable cartridges",
+      "Suits residential and commercial water filtration"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Type",
+        "value": "Pleated, washable"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months between washes"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 4.5\" (short Big Blue, standard fit)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Filter type",
+        "value": "Pleated, washable"
+      },
+      {
+        "label": "Removes",
+        "value": "Sand, dirt, rust, visible particles"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months between washes; multi-year overall service life"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial water filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house and commercial filter housings of 10\" × 4.5\" size",
+      "Off-grid and rural installations where minimising consumables matters",
+      "Properties on tank or bore water with consistent sediment load",
+      "Owners wanting to reduce filter waste to landfill"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-1-stage-10-x-4-5-sediment",
+        "whole-house-water-filter-2-stage-10-x-4-5-washable-reusable",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Reusable pleated sediment cartridge rated to 5 micron. Washable design — rinse, replace, and continue using."
+      "title": "Pleated Reusable Cartridge — 10\" × 4.5\", 5 Micron Washable | Enviro Aqua",
+      "description": "Reusable pleated sediment cartridge. 10\" × 4.5\" short Big Blue, 5 micron, washable. Substantially longer service life than disposable PP, lower running cost.",
+      "ogImage": null
     }
   },
   "washable-and-reusable-water-filter-pleated-5-micron-20-x-4-5": {
@@ -2281,9 +3009,102 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Reusable pleated sediment cartridge rated to 5 micron.",
+    "tags": [
+      "pleated",
+      "reusable",
+      "washable",
+      "20x45",
+      "five-micron",
+      "big-blue",
+      "whole-house"
+    ],
+    "shortDescription": "Reusable pleated sediment cartridge — 20\" × 4.5\" Big Blue, 5 micron. Washable construction in the standard whole-house format; pairs higher dirt-holding capacity with multi-year reuse.",
+    "description": "The 20\" × 4.5\" Big Blue version of the pleated reusable cartridge — same washable construction as the [10\" × 4.5\" short Big Blue version](/washable-and-reusable-water-filter-pleated-5-micron-10-x-4-5/), scaled to the standard whole-house Big Blue diameter and full height.\n\n## Why the Big Blue Format Suits a Pleated Reusable\n\nWhole-house installations move significantly more water than point-of-use filters — 50–75 L/min during peak demand events, when showers, dishwashers, and washing machines all run at once. A 10\" × 2.5\" pleated cartridge can't sustain that flow without unacceptable pressure drop. The 20\" × 4.5\" Big Blue diameter solves the flow problem and the height doubles the dirt-holding capacity vs the 10\" version, both of which extend the time between washes.\n\nFor a whole-house filter on tank or bore water, the Big Blue pleated reusable runs **substantially longer between washes** than the 10\" version on the same supply, while keeping the multi-year reusable lifespan that's the format's whole reason for existing.\n\n## Specifications\n\n- **Cartridge size:** 20\" × 4.5\" (standard Big Blue fit)\n- **Micron rating:** 5 micron\n- **Type:** pleated, washable\n- **Lifespan:** 6–12 months between washes; multi-year overall service life\n- **Application:** residential and commercial water filtration\n\n## Where It Fits\n\nDirect fit for any 20\" × 4.5\" Big Blue housing — including standard whole-house single-stage and multi-stage Big Blue systems. Drop-in replacement for an existing disposable PP sediment cartridge in any compatible housing; no system modifications required.\n\nFor a one-time setup that minimises ongoing filter cost over a 5- to 10-year horizon, the upfront investment in this cartridge over a disposable PP pays back within the first 18–24 months on most installations.",
+    "features": [
+      "20\" × 4.5\" Big Blue — standard whole-house format",
+      "Pleated, washable construction with multi-year service life",
+      "5 micron rating",
+      "Higher dirt-holding capacity than 10\" pleated version",
+      "Removes sand, dirt, rust, and visible particles",
+      "Drop-in replacement for disposable PP sediment cartridges",
+      "Significant long-term cost reduction vs repeatedly buying disposables"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Type",
+        "value": "Pleated, washable"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months between washes"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "20\" × 4.5\" (Big Blue, standard fit)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Filter type",
+        "value": "Pleated, washable"
+      },
+      {
+        "label": "Removes",
+        "value": "Sand, dirt, rust, visible particles"
+      },
+      {
+        "label": "Lifespan",
+        "value": "6–12 months between washes; multi-year overall service life"
+      },
+      {
+        "label": "Application",
+        "value": "Residential and commercial water filtration"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house Big Blue installations on a long-term cost basis",
+      "Off-grid and rural properties wanting to minimise consumable costs",
+      "Tank, bore, and rainwater systems with consistent sediment load",
+      "Owners replacing recurring disposable PP cartridge spend with a one-time investment"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Reusable pleated sediment cartridge rated to 5 micron. Washable design — rinse, replace, and continue using."
+      "title": "Pleated Reusable Cartridge — 20\" × 4.5\" Big Blue, 5 Micron Washable | Enviro Aqua",
+      "description": "Reusable pleated sediment cartridge in 20\" × 4.5\" Big Blue. 5 micron, washable, multi-year service life. Drop-in replacement for whole-house Big Blue housings.",
+      "ogImage": null
     }
   },
   "inline-uf-ultrafiltration-filter-cartridge": {
@@ -2291,9 +3112,100 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Ultrafiltration (UF) cartridge — removes bacteria, cysts, and particulate down to 0.01 micron.",
+    "tags": [
+      "ultrafiltration",
+      "uf",
+      "inline",
+      "membrane-filtration",
+      "tank-water",
+      "no-waste-water"
+    ],
+    "shortDescription": "Inline ultrafiltration (UF) cartridge — hollow-fibre membrane filtration to 0.01 micron, removes bacteria, cysts, and fine particulate. No waste-water like RO; suits tank water and microbiological-reduction applications.",
+    "description": "An inline ultrafiltration (UF) cartridge — a hollow-fibre membrane filter that physically separates bacteria, cysts, and fine particulate from the water by forcing it through pores measured at the molecular scale. Where reverse osmosis goes finer (down to dissolved ions) and produces waste water in the process, ultrafiltration sits one step coarser and produces no waste — every drop in becomes a drop out, just with the microbes and particulate trapped on the upstream side of the membrane.\n\n## What UF Removes — and What It Doesn't\n\nUF membranes filter at approximately **0.01 micron**. At that pore size, the cartridge captures:\n\n- **Bacteria** (typical size 0.5–5 micron — well above the membrane pore size)\n- **Protozoan cysts** including Giardia and Cryptosporidium\n- **Suspended particulate** including fine sediment, organic matter, and turbidity\n- **Most viruses** in the larger size range, though some smaller viruses (~0.02 micron) can pass through\n\nUF does **not** remove dissolved contaminants — chlorine, fluoride, dissolved metals, and other ionic species pass through the membrane. Pair UF with a carbon stage upstream for chlorine and taste, or with reverse osmosis if dissolved-solid reduction matters.\n\n## When UF Makes Sense vs RO\n\n- **Tank water and rainwater systems:** UF for microbiological reduction without losing 50%+ of the water to RO reject. Pair with a sediment pre-filter and carbon for taste.\n- **Town water with microbiological concerns** (boil-water alerts, contamination events): UF as a polish stage adds a physical barrier against pathogens.\n- **Anywhere RO is overkill:** UF is simpler, has no waste line, no pump or pressure tank, and runs on standard mains pressure.\n\n## Compatible Systems\n\nInline format — connects directly into a 1/4\" tubing run on a multi-stage filter or RO system. Typically installed as a polish stage in 6-stage and 7-stage filtration setups, or as a standalone microbiological barrier in a tank-water system after sediment and carbon pre-filtration.",
+    "features": [
+      "Hollow-fibre UF membrane filtering to ~0.01 micron",
+      "Removes bacteria, protozoan cysts (Giardia, Cryptosporidium), and fine particulate",
+      "No waste water — unlike RO, every drop in becomes a drop out",
+      "Runs on standard mains pressure — no pump or pressure tank required",
+      "Inline format — connects directly into 1/4\" tubing runs",
+      "Suits tank water, rainwater, and microbiological-reduction applications"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Filtration",
+        "value": "Ultrafiltration (UF), ~0.01 micron"
+      },
+      {
+        "label": "Format",
+        "value": "Inline cartridge"
+      },
+      {
+        "label": "Removes",
+        "value": "Bacteria, cysts, particulate"
+      },
+      {
+        "label": "Waste water",
+        "value": "None"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Filtration technology",
+        "value": "Ultrafiltration (UF), hollow-fibre membrane"
+      },
+      {
+        "label": "Pore size",
+        "value": "~0.01 micron"
+      },
+      {
+        "label": "Removes",
+        "value": "Bacteria, cysts (Giardia, Cryptosporidium), fine particulate"
+      },
+      {
+        "label": "Does not remove",
+        "value": "Chlorine, fluoride, dissolved minerals, dissolved metals"
+      },
+      {
+        "label": "Format",
+        "value": "Inline cartridge"
+      },
+      {
+        "label": "Application",
+        "value": "Tank water, rainwater, microbiological polish stage"
+      }
+    ],
+    "recommendedFor": [
+      "Tank-water and rainwater systems wanting microbiological reduction without RO waste",
+      "Multi-stage RO and filtration systems adding a UF polish stage",
+      "Properties on town water during boil-water alerts or after contamination events",
+      "Off-grid and rural setups where RO infrastructure isn't practical"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement / inline cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5",
+        "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Ultrafiltration (UF) cartridge — removes bacteria, cysts, and particulate down to 0.01 micron. Membrane filtration without the waste-water of RO."
+      "title": "Inline Ultrafiltration (UF) Cartridge — 0.01 Micron Membrane | Enviro Aqua",
+      "description": "Hollow-fibre ultrafiltration cartridge filtering to 0.01 micron. Removes bacteria, cysts, particulate. Inline, no waste water. For tank, rain, and polish-stage use.",
+      "ogImage": null
     }
   },
   "inline-water-filter-alkaline-ph-neutralising-10-x-2": {
@@ -2301,9 +3213,112 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Alkaline pH-balancing cartridge.",
+    "tags": [
+      "alkaline",
+      "ph-balancing",
+      "remineralisation",
+      "10x2",
+      "inline",
+      "post-ro"
+    ],
+    "shortDescription": "Inline alkaline pH-balancing cartridge — 10\" × 2\", re-mineralises RO permeate water and lifts pH. The post-RO stage that turns flat-tasting purified water into mineral-balanced drinking water.",
+    "description": "An inline alkaline cartridge sized for 10\" × 2\" housings — the cartridge that goes after the RO membrane in a 6-stage or 7-stage RO system to put minerals back into the water and balance the slightly acidic pH of straight RO output.\n\n## Why Alkaline After RO\n\nReverse osmosis is highly effective at removing dissolved contaminants, but the process strips out beneficial minerals (calcium, magnesium, potassium) along with the bad stuff. Pure RO permeate has very low TDS, slightly acidic pH (typically 5.5–6.5), and a flat taste many people describe as \"missing something\". The alkaline cartridge solves three problems with one stage:\n\n1. **Re-mineralisation:** the cartridge media releases small amounts of calcium and magnesium back into the water as it passes through\n2. **pH adjustment:** lifts the pH from slightly acidic up toward neutral or slightly alkaline (typically pH 7.5–8.5 depending on flow rate)\n3. **Taste improvement:** mineral content gives the water the natural mouthfeel of spring water rather than the flat taste of pure RO\n\n## Where It Fits\n\nInstalled as the **final stage** of a 6-stage RO system, downstream of the post-carbon stage. The water enters the alkaline cartridge after every other purification step is complete, so what's added at this stage is what reaches the tap.\n\n## Specifications\n\n- **Cartridge size:** 10\" × 2\"\n- **Format:** inline\n- **Connection:** 1/4\" tube\n- **Micron rating:** 5 micron\n- **Maximum flow rate:** 0.5 GPM\n- **Operating pressure:** 35–80 PSI (241–551 kPa)\n- **Operating temperature:** 5–45 °C",
+    "features": [
+      "Re-mineralises RO permeate — adds calcium, magnesium back into the water",
+      "Lifts pH from slightly acidic toward neutral / slightly alkaline",
+      "Improves taste — mineral content gives RO water spring-water mouthfeel",
+      "10\" × 2\" inline format with 1/4\" tube connections",
+      "Operating pressure 35–80 PSI, 5–45 °C",
+      "Final-stage cartridge for 6-stage and 7-stage RO systems"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2\""
+      },
+      {
+        "label": "Format",
+        "value": "Inline"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tube"
+      },
+      {
+        "label": "Function",
+        "value": "Re-mineralisation, pH lift"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2\""
+      },
+      {
+        "label": "Format",
+        "value": "Inline"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tube"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Maximum flow rate",
+        "value": "0.5 GPM"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "35–80 PSI (241–551 kPa)"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–45 °C"
+      },
+      {
+        "label": "Function",
+        "value": "Re-mineralisation and pH adjustment"
+      },
+      {
+        "label": "Application",
+        "value": "Final stage of 6/7-stage RO systems"
+      }
+    ],
+    "recommendedFor": [
+      "Final stage of 6-stage and 7-stage RO systems",
+      "Owners wanting RO purity with the taste of mineral water",
+      "Anyone finding straight RO water tastes flat or slightly acidic",
+      "Replacement for an existing alkaline cartridge in a 6-stage system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-6-stage-reverse-osmosis-system",
+        "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2",
+        "6-stages-ro-cartridges-replacement-set-for-6-stages-ro-water-filter-system-5mic"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Alkaline pH-balancing cartridge. Re-mineralises filtered water and raises pH, adding back beneficial minerals removed during reverse osmosis."
+      "title": "Inline Alkaline Cartridge — 10\" × 2\", Re-Mineralises RO Water | Enviro Aqua",
+      "description": "Inline alkaline cartridge for post-RO re-mineralisation. 10\" × 2\", 1/4\" tube, 5 micron, 0.5 GPM, 35–80 PSI, 5–45 °C. Final stage of 6-stage RO systems.",
+      "ogImage": null
     }
   },
   "inline-water-filter-fluoride-removal-10-x-2": {
@@ -2311,9 +3326,107 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Fluoride-removal cartridge using activated alumina media.",
+    "tags": [
+      "fluoride-removal",
+      "activated-alumina",
+      "10x2",
+      "inline",
+      "specialty"
+    ],
+    "shortDescription": "Inline fluoride-removal cartridge — 10\" × 2\", activated alumina media. The specialised stage that targets fluoride specifically; carbon and sediment cartridges don't reduce fluoride.",
+    "description": "An inline fluoride-removal cartridge using **activated alumina** media — the specialised cartridge that targets fluoride specifically. This matters because the standard cartridges in a multi-stage filter (sediment, carbon, even RO membranes to some degree) don't reliably remove fluoride. If fluoride reduction is what you're trying to achieve, this is the cartridge that does the work.\n\n## Why Activated Alumina\n\nActivated alumina (aluminium oxide, Al₂O₃) is a porous ceramic media with a very high surface area per gram, and it has a specific affinity for fluoride ions in water. As water passes through the media bed, fluoride is adsorbed onto the alumina surface and held there until the cartridge reaches saturation. This is the established water-treatment method for fluoride removal at point-of-use scale — the same mechanism used in larger municipal-scale fluoride treatment plants, scaled down to a residential cartridge.\n\nActivated alumina also captures some other contaminants in passing — chlorine residue and certain heavy metals — but its primary role and design optimisation is fluoride.\n\n## Where It Fits\n\nInline format with **1/4\" tubing connections** — sized for installation as a polish stage downstream of carbon and sediment pre-filters. Typical installation: sediment → carbon → fluoride cartridge → tap. Putting it after carbon matters: residual chlorine reaching the alumina media reduces its fluoride-adsorption capacity.\n\n## Service Life\n\nThe cartridge has a rated service life of approximately **1500 gallons (5680 L) or 12 months**, whichever comes first. After that, the alumina media saturates and fluoride breakthrough begins. Replacement is the only option — activated alumina cannot be regenerated at home.\n\n## Specifications\n\n- **Cartridge size:** 10\" × 2\"\n- **Format:** inline\n- **Connection:** 1/4\" tube\n- **Service life:** 1500 gallons or 1 year\n- **Operating temperature:** 5–45 °C\n- **Media:** activated alumina",
+    "features": [
+      "Activated alumina media — the established treatment for fluoride removal",
+      "Targets fluoride specifically — carbon and sediment cartridges don't reduce fluoride",
+      "Reduces some chlorine residue and selected heavy metals as a secondary benefit",
+      "10\" × 2\" inline format with 1/4\" tube connections",
+      "Service life 1500 gallons or 1 year — whichever comes first",
+      "Operating temperature 5–45 °C"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2\""
+      },
+      {
+        "label": "Media",
+        "value": "Activated alumina"
+      },
+      {
+        "label": "Service life",
+        "value": "1500 gal / 1 year"
+      },
+      {
+        "label": "Function",
+        "value": "Fluoride removal"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2\""
+      },
+      {
+        "label": "Media",
+        "value": "Activated alumina (Al₂O₃)"
+      },
+      {
+        "label": "Format",
+        "value": "Inline"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tube"
+      },
+      {
+        "label": "Service life",
+        "value": "1500 gallons (5680 L) or 12 months"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–45 °C"
+      },
+      {
+        "label": "Function",
+        "value": "Fluoride reduction; secondary chlorine and heavy-metal capture"
+      },
+      {
+        "label": "Application",
+        "value": "Polish stage downstream of carbon pre-filter"
+      }
+    ],
+    "recommendedFor": [
+      "Households on fluoridated municipal water wanting fluoride reduction",
+      "Multi-stage filter installations adding a fluoride-targeted stage",
+      "Properties on natural-fluoride bore water above acceptable thresholds",
+      "Anyone for whom fluoride reduction is the specific goal"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Fluoride-removal cartridge using activated alumina media. Reduces fluoride to safe levels alongside chlorine and chemical contaminants."
+      "title": "Inline Fluoride-Removal Cartridge — 10\" × 2\", Activated Alumina | Enviro Aqua",
+      "description": "Inline fluoride cartridge using activated alumina media. 10\" × 2\", 1/4\" tube, 1500 gal / 1 year service life, 5–45 °C. The cartridge for fluoride specifically.",
+      "ogImage": null
     }
   },
   "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2": {
@@ -2321,9 +3434,116 @@
       "cartridges",
       "specialty-cartridges"
     ],
-    "shortDescription": "Inline post-carbon T33 cartridge — final polish stage for RO and multi-stage systems.",
+    "tags": [
+      "post-carbon",
+      "t33",
+      "inline",
+      "10x2",
+      "five-micron",
+      "ro-polish"
+    ],
+    "shortDescription": "Inline T33 post-carbon polish cartridge — 10\" × 2\", 5 micron. The final-stage cartridge in RO and multi-stage systems that polishes taste before water reaches the tap.",
+    "description": "An inline T33 post-carbon cartridge — the final polish stage in a multi-stage RO system. \"T33\" describes the standard inline post-carbon format used across the residential RO industry: a small inline cartridge with activated carbon media, sized for installation downstream of the RO storage tank, just before the tap.\n\n## Why a Post-Carbon Stage Exists\n\nA 5-stage or 6-stage RO system produces purified water at the membrane and stores it in a pressure tank below the sink, ready to be drawn at the tap. But water sitting in a plastic storage tank for hours can pick up faint plastic-tasting compounds from the tank lining, even with food-grade tank materials. The T33 post-carbon stage sits between the storage tank and the tap, removing those storage-related taste artefacts at the moment the water is dispensed. The result is consistently clean-tasting RO water at the tap, regardless of how long the tank has been sitting.\n\n## Specifications\n\n- **Cartridge size:** 10\" × 2\"\n- **Media:** activated carbon\n- **Micron rating:** 5 micron\n- **Format:** inline\n- **Connection:** 1/4\" tube\n- **Maximum flow rate:** 0.5 GPM\n- **Operating pressure:** 35–80 PSI (241–551 kPa)\n- **Operating temperature:** 5–45 °C\n- **Service life:** 1500 gallons (5680 L) or 12 months\n\n## Where It Fits\n\nFinal stage of any 4/5/6-stage RO system using the standard T33 post-carbon format. Replace at every annual service — the post-carbon stage is one of the easier ones to overlook because it sits hidden after the storage tank, but a saturated post-carbon shows up in the tap water as a return of plastic-tank taste.",
+    "features": [
+      "Final-stage polish cartridge for 4/5/6-stage RO systems",
+      "Removes storage-tank taste artefacts at the point of dispense",
+      "10\" × 2\" inline format with 1/4\" tube connections",
+      "5 micron rating, activated carbon media",
+      "Service life 1500 gallons or 12 months — annual replacement",
+      "Operating pressure 35–80 PSI, 5–45 °C"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2\""
+      },
+      {
+        "label": "Media",
+        "value": "Activated carbon (T33)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Service life",
+        "value": "1500 gal / 1 year"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Cartridge size",
+        "value": "10\" × 2\""
+      },
+      {
+        "label": "Media",
+        "value": "Activated carbon (T33 inline)"
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Format",
+        "value": "Inline"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tube"
+      },
+      {
+        "label": "Maximum flow rate",
+        "value": "0.5 GPM"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "35–80 PSI (241–551 kPa)"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "5–45 °C"
+      },
+      {
+        "label": "Service life",
+        "value": "1500 gallons (5680 L) or 12 months"
+      },
+      {
+        "label": "Application",
+        "value": "Final polish stage for RO and multi-stage systems"
+      }
+    ],
+    "recommendedFor": [
+      "Final stage of 4/5/6-stage RO systems",
+      "Annual service of an under-sink RO with storage tank",
+      "Replacement when tap water starts to taste 'tanky' or plastic-flavoured",
+      "Plumbers servicing residential RO installations"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-5-stage-reverse-osmosis-system",
+        "inline-water-filter-alkaline-ph-neutralising-10-x-2",
+        "12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Inline post-carbon T33 cartridge — final polish stage for RO and multi-stage systems."
+      "title": "Inline T33 Post-Carbon Cartridge — 10\" × 2\", 5 Micron | Enviro Aqua",
+      "description": "T33 inline post-carbon polish cartridge. 10\" × 2\", 5 micron, 1/4\" tube, 0.5 GPM, 35–80 PSI, 5–45 °C. 1500 gal / 1 year service. Final stage for RO systems.",
+      "ogImage": null
     }
   },
   "2-pics-75gpd-reverse-osmosis-membrane-membrane-replacement-filter-280l-per-day": {
@@ -4392,9 +5612,114 @@
       "cartridges",
       "cartridge-sets"
     ],
-    "shortDescription": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc.",
+    "tags": [
+      "ro-replacement-set",
+      "five-stage",
+      "ro-membrane-included",
+      "10-format",
+      "five-micron"
+    ],
+    "shortDescription": "Complete 5-stage RO replacement cartridge set — PP sediment, granular carbon, carbon block, RO membrane, post-carbon. All cartridges 10\" format, sized for any standard 5-stage under-sink RO system.",
+    "description": "The full 5-stage cartridge set for a standard reverse osmosis under-sink system — every consumable that needs replacing on a service interval, ordered as one SKU. The set covers the same cartridge topology used by the great majority of residential 5-stage RO systems sold in Australia.\n\n## What's in the Set\n\n- **Stage 1 — PP spun sediment filter:** removes sand, dust, mud, rust, and visible particulate from the feed water. The workhorse pre-filter that stops sediment from clogging the carbon stages and damaging the RO membrane downstream.\n- **Stage 2 — Granular activated carbon (GAC):** removes chlorine, organics, odour, and turbidity. **Critical for protecting the RO membrane** — chlorine destroys TFC membranes within weeks if it reaches them.\n- **Stage 3 — Carbon block (CTO) or sediment:** secondary chlorine and chemical reduction, or additional sediment polishing depending on the specific system configuration. Polishes the feed before it enters the membrane.\n- **Stage 4 — RO membrane:** the actual purification stage. Removes bacteria, heavy metals, salts, dissolved minerals, and most chemical residues from the running water by forcing it through a semi-permeable membrane at pressure.\n- **Stage 5 — Post-carbon filter:** final taste polish on the permeate water before it reaches the tap.\n\n## How This Set Compares\n\nIf you own a 5-stage RO system, this set covers everything in one order at a price below the sum of individual cartridges. For a budget-priced replacement on the standard 75 GPD residential format, the [5-stage replacement set with 75 GPD membrane (NSF series)](/5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf/) is a lower-cost alternative — same cartridge topology, lower-tier components.\n\nReplace cartridges every 6–12 months, RO membrane every ~24 months. If you've let the carbons run past 6 months, change them before fitting the membrane — chlorine breakthrough through saturated carbon is what kills RO membranes early.",
+    "features": [
+      "Complete 5-stage RO cartridge replacement — sediment, GAC, carbon block, RO membrane, post-carbon",
+      "Standard 10\" cartridge format — fits the great majority of residential 5-stage RO systems",
+      "5 micron rating across the cartridge stages",
+      "Cartridges replace every 6–12 months; membrane every ~24 months",
+      "Single-SKU service — one order covers a full RO refresh"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages covered",
+        "value": "5"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Includes membrane",
+        "value": "Yes"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "Cartridges + RO membrane covering 5 stages"
+      },
+      {
+        "label": "Stage 1",
+        "value": "PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block or sediment (configuration-dependent)"
+      },
+      {
+        "label": "Stage 4",
+        "value": "RO membrane"
+      },
+      {
+        "label": "Stage 5",
+        "value": "Post-carbon filter"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\""
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Compatible systems",
+        "value": "Standard 5-stage under-sink RO"
+      }
+    ],
+    "recommendedFor": [
+      "Annual or biennial service of a 5-stage under-sink RO system",
+      "Owners replacing cartridges and membrane in a single visit",
+      "Plumbers and trade buyers wanting one SKU per RO refresh",
+      "Households inheriting an RO system of unknown service history"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-5-stage-reverse-osmosis-system",
+        "5-stages-ro-system-stainless-steel-tap",
+        "5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "The 1st Stage: PP Spun Filter for removing the particles, dust, mud etc."
+      "title": "5-Stage RO Cartridge Replacement Set — 5 Micron, Includes Membrane | Enviro Aqua",
+      "description": "Complete 5-stage RO cartridge replacement: PP sediment, GAC, carbon block, RO membrane, post-carbon. 10\" format. Direct fit for standard 5-stage RO systems.",
+      "ogImage": null
     }
   },
   "under-sink-water-filter-4-stage-reverse-osmosis-system": {
