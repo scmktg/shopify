@@ -2331,9 +2331,113 @@
       "cartridges",
       "reverse-osmosis-membranes"
     ],
-    "shortDescription": "Reverse osmosis membrane — the heart of any RO system.",
+    "tags": [
+      "ro-membrane",
+      "75gpd",
+      "twin-pack",
+      "tfc",
+      "10x25",
+      "replacement"
+    ],
+    "shortDescription": "Twin pack of 75 GPD reverse osmosis membranes — 280 L/day each, 10\" × 2.5\" element, rated 55–100 PSI / 4–52 °C. Two membranes covers ~4 years of RO service at the standard 24-month change interval.",
+    "description": "A twin pack of 75 GPD reverse osmosis (RO) membranes — the semi-permeable thin-film composite (TFC) elements that do the actual purification work in a multi-stage RO drinking-water system. The membrane is what separates an RO system from a regular carbon filter: water is forced through molecular-sized pores at pressure, leaving dissolved solids, fluoride, heavy metals, and most chemical contaminants behind on the reject side and producing high-purity permeate on the other.\n\n## Why a Twin Pack\n\nRO membrane lifespan is the longest of any cartridge in the system — typically **24 months** under normal Australian town water conditions, where pre-filter sediment and carbon stages protect the membrane from the things that would otherwise destroy it. Twin pack = one for the next change-out, one for the change after that. Roughly four years of RO service in a single order, at the per-membrane price drop of buying in pairs.\n\n## Performance\n\n- **Production rate:** 75 GPD = 280 L/day\n- **Standard rejection:** TFC membranes of this class typically reduce up to 99% of total dissolved solids (TDS) under their rated test conditions, with progressive decline over the cartridge's lifespan\n\nReal-world performance depends heavily on feed water TDS, temperature, and pressure. Cold-water-fed systems on tank water at low mains pressure will produce less per day than the rated 280 L; warm-feed systems on properly pressurised mains can hit the rated figure.\n\n## Operating Window — Read This Before Installing\n\n- **Element size:** 10\" × 2.5\" (standard RO membrane format)\n- **Operating pressure:** 55–100 PSI\n- **Operating temperature:** 4–52 °C\n- **Critical — chlorine intolerance:** RO membranes of this class are **destroyed by free chlorine**. Every RO system must have a functioning activated carbon stage upstream of the membrane to remove residual chlorine from the feed water. If your carbon cartridge is past its replacement interval, change it before fitting the new membrane — a fresh membrane installed downstream of a saturated carbon stage will fail in weeks rather than years.\n\n## Where It Fits\n\nDirect replacement for any standard 10\" × 2.5\" RO membrane housing — the format used in the [4-stage](/under-sink-water-filter-4-stage-reverse-osmosis-system/), [5-stage](/under-sink-water-filter-5-stage-reverse-osmosis-system/), and [6-stage under-sink RO systems](/under-sink-water-filter-6-stage-reverse-osmosis-system/), and most third-party residential RO units sold in Australia.\n\nIf you also need replacement pre-filter cartridges (sediment + carbon stages) at the same service, the [5-stage RO replacement set](/5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf/) is the better order — it bundles the cartridges and a single 75 GPD membrane at lower combined cost.",
+    "features": [
+      "Twin pack — two 75 GPD RO membranes for staged replacement over ~4 years of service",
+      "75 GPD production rate (280 L/day) per membrane",
+      "Standard 10\" × 2.5\" element — fits any compatible RO housing",
+      "Operating pressure 55–100 PSI",
+      "Operating temperature 4–52 °C",
+      "Replace every ~24 months under normal use with functioning pre-filters",
+      "Direct fit for 4/5/6-stage RO systems and most third-party residential RO units"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Pack size",
+        "value": "2 membranes"
+      },
+      {
+        "label": "Production rate",
+        "value": "75 GPD (280 L/day) each"
+      },
+      {
+        "label": "Element size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Replacement interval",
+        "value": "~24 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Pack contents",
+        "value": "2 × 75 GPD RO membranes"
+      },
+      {
+        "label": "Element type",
+        "value": "Thin-film composite (TFC), spiral-wound"
+      },
+      {
+        "label": "Element size",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Production rate (each)",
+        "value": "75 GPD = 280 L/day"
+      },
+      {
+        "label": "Operating pressure",
+        "value": "55–100 PSI (3.8–6.9 bar)"
+      },
+      {
+        "label": "Operating temperature",
+        "value": "4–52 °C"
+      },
+      {
+        "label": "Chlorine tolerance",
+        "value": "Requires carbon pre-filter — chlorine destroys the membrane"
+      },
+      {
+        "label": "Replacement interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Application",
+        "value": "Residential 4/5/6-stage RO systems"
+      }
+    ],
+    "recommendedFor": [
+      "Households running an under-sink RO system on a 24-month membrane cycle",
+      "Property managers with multiple RO installations on shared service schedules",
+      "Plumbers and trade buyers stocking RO consumables",
+      "Owners wanting the next membrane on the shelf at the per-pair price"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement RO membrane — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Reverse osmosis membrane — the heart of any RO system."
+      "title": "RO Membrane Twin Pack — 75 GPD / 280 L/day, 10\" × 2.5\" | Enviro Aqua",
+      "description": "Twin pack of 75 GPD reverse osmosis membranes. 280 L/day each, 10\" × 2.5\" element, 55–100 PSI, 4–52 °C. ~24-month replacement interval. Fits 4/5/6-stage RO.",
+      "ogImage": null
     }
   },
   "5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf": {
@@ -2341,9 +2445,115 @@
       "cartridges",
       "reverse-osmosis-membranes"
     ],
-    "shortDescription": "Replacement filter cartridge for water filtration systems.",
+    "tags": [
+      "ro-replacement-set",
+      "five-stage",
+      "75gpd-membrane",
+      "10x25",
+      "annual-service"
+    ],
+    "shortDescription": "Complete 5-stage RO replacement set — 4 cartridges plus one 75 GPD RO membrane, all 10\" format. The single order that covers a full annual service on any standard 5-stage under-sink RO system.",
+    "description": "The complete replacement set for a standard 5-stage reverse osmosis under-sink system — four pre-filter and post-filter cartridges plus one 75 GPD RO membrane, all in the 10\" format used by the great majority of residential RO units sold in Australia. One order, one delivery, one service visit covers everything that needs replacing on an annual to biennial schedule.\n\n## What's in the Set\n\nA 5-stage RO system replaces these components on this schedule:\n\n- **Stage 1 — Sediment pre-filter (PP, 1–5 micron):** captures sand, dirt, rust before they reach downstream stages. Replace every 6 months.\n- **Stage 2 — Granular activated carbon (GAC):** removes free chlorine from the feed water. **Critical for protecting the RO membrane downstream** — chlorine destroys TFC membranes in weeks. Replace every 6 months.\n- **Stage 3 — Carbon block (CTO):** secondary chlorine and chemical reduction; polishes the feed before it reaches the membrane. Replace every 6 months.\n- **Stage 4 — RO membrane (75 GPD TFC):** the actual purification stage — reduces dissolved solids, fluoride, heavy metals, and most chemical contaminants. Replace every ~24 months.\n- **Stage 5 — In-line post-carbon (T33):** final polish on the permeate before it reaches the tap, removing any residual taste from the storage tank. Replace every 12 months.\n\n## Why Buy the Set Rather Than Individual Cartridges\n\nTwo reasons:\n\n1. **Combined pricing:** the bundle drops below the sum of individual cartridge prices, particularly for the membrane.\n2. **Scheduling sanity:** the membrane lasts 4× longer than the pre-filters, but it's faster on a single service visit to replace everything together than to track separate change schedules per cartridge. Most RO owners run two service intervals per year: at the 6-month mark, replace just the three carbon/sediment pre-filters; at the 12-month mark, replace pre-filters + post-carbon. This set covers the longer service that includes the membrane every second year.\n\n## Compatible Systems\n\nDirect fit for any standard 5-stage under-sink RO system using 10\" cartridges and a 10\" × 2.5\" RO membrane element — including our [5-stage RO with 3-way tap](/5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap/), the [5-stage RO with stainless tap](/5-stages-ro-system-stainless-steel-tap/), and the great majority of third-party residential 5-stage RO systems sold in Australia.\n\n## A Note on Membrane Replacement Timing\n\nThe RO membrane in this set has a typical service life of around 24 months under normal Australian town water conditions, where the upstream carbon stages stay current and the feed water is reasonable quality. If you've let the carbon pre-filters run past their 6-month replacement, the membrane in this set may need replacing sooner than expected on its first service — chlorine breakthrough damages TFC membranes irreversibly. Keeping the carbons fresh is the single most important thing you can do for membrane lifespan.",
+    "features": [
+      "Complete annual+ RO service in one order — 4 cartridges plus 75 GPD membrane",
+      "All cartridges 10\" format — fits standard residential 5-stage RO systems",
+      "Includes the membrane on the longer biennial service interval",
+      "Combined pricing below the sum of individual cartridge prices",
+      "Direct fit for our 5-stage RO systems and most third-party residential units",
+      "75 GPD membrane with TFC construction"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Set contents",
+        "value": "4 cartridges + 1 RO membrane"
+      },
+      {
+        "label": "Stages covered",
+        "value": "5"
+      },
+      {
+        "label": "Membrane production",
+        "value": "75 GPD"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\""
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "4 pre/post-filter cartridges + 1 RO membrane"
+      },
+      {
+        "label": "Stages covered",
+        "value": "5"
+      },
+      {
+        "label": "Stage 1",
+        "value": "PP sediment pre-filter, 10\" × 2.5\""
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC), 10\" × 2.5\""
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block (CTO), 10\" × 2.5\""
+      },
+      {
+        "label": "Stage 4",
+        "value": "75 GPD RO membrane, 10\" × 2.5\" element"
+      },
+      {
+        "label": "Stage 5",
+        "value": "In-line post-carbon (T33)"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "Pre-filters & post-carbon: 6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Compatible systems",
+        "value": "Standard 5-stage under-sink RO using 10\" cartridges"
+      }
+    ],
+    "recommendedFor": [
+      "Annual or biennial full service of a 5-stage under-sink RO system",
+      "Owners servicing the membrane and pre-filters together on a single visit",
+      "Plumbers and trade buyers wanting one SKU for a complete RO refresh",
+      "Households inheriting an RO system of unknown service history (start fresh on all stages)"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge & membrane set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-5-stage-reverse-osmosis-system",
+        "5-stages-ro-system-stainless-steel-tap",
+        "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Replacement filter cartridge for water filtration systems. Quality media, Australian-friendly fittings, wholesale pricing direct to homeowners and trade."
+      "title": "5-Stage RO Replacement Set — 4 Cartridges + 75 GPD Membrane | Enviro Aqua",
+      "description": "Complete 5-stage RO replacement: PP sediment, GAC, CTO carbon block, 75 GPD membrane and T33 post-carbon. All 10\" format — fits standard 5-stage under-sink RO.",
+      "ogImage": null
     }
   },
   "reverse-osmosis-ro-membrane-400-gpd-approx-1500-litres-per-day": {
@@ -2351,9 +2561,137 @@
       "cartridges",
       "reverse-osmosis-membranes"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "ro-membrane",
+      "400gpd",
+      "high-volume",
+      "tfc",
+      "commercial",
+      "tfc-3013-400"
+    ],
+    "shortDescription": "TFC-3013-400 high-volume reverse osmosis membrane — 400 GPD (1512 L/day), 97% stable desalination, 95% minimum. For commercial RO systems and high-demand residential builds.",
+    "description": "The **TFC-3013-400** — a 400 GPD reverse osmosis membrane element designed for commercial RO systems, high-demand residential setups, and small-business water purification installations. At 400 GPD = **1512 L/day**, this element produces roughly 5× the daily volume of a standard 75 GPD residential membrane, suiting installations where peak demand or storage-tank refill rate matters more than the smaller residential format can deliver.\n\n## Documented Performance\n\nUnder the manufacturer's standard test conditions (65 PSI, 25 °C, 500 ppm NaCl feed, pH 6.5–7.5, 15% recovery rate):\n\n- **Stable desalination rejection:** 97%\n- **Minimum desalination rejection:** 95%\n- **Mean permeable flow:** 400 GPD (1512 L/day)\n- **Active film area:** 16 ft² (1.92 m²)\n\nThese are tested figures, not generic \"up to 99%\" marketing claims — documented at the same test conditions used across the industry.\n\n## Operating Window\n\n- **Maximum operating pressure:** 300 PSI (2.07 MPa)\n- **Maximum feed water temperature:** 45 °C\n- **Maximum feed water silt density index (SDI):** 5\n- **Feed water pH range, continuous operation:** 3–10\n- **Feed water pH range, short-term cleaning:** 2–12\n- **Maximum pressure drop across element:** 10 PSI (0.07 MPa)\n\n## Critical — Chlorine Tolerance\n\n**Maximum feed water free chlorine: < 0.1 ppm.** This is the most important number on this spec sheet for installation planning. Standard Australian town water is dosed at 0.5–1.5 ppm free chlorine — already 5×15× above the membrane's tolerance. The membrane will be destroyed within weeks if installed without an effective activated carbon stage upstream to remove residual chlorine from the feed.\n\nFor any installation:\n\n- Always run an activated carbon stage upstream of this membrane\n- Replace the carbon stage on its scheduled interval (6–12 months) without exceptions — a saturated carbon stage allows chlorine breakthrough that destroys the membrane downstream\n- Test the feed pre-membrane periodically with a free-chlorine test kit if you're running on highly chlorinated supply\n\n## Where It Fits\n\nReplacement element for commercial RO systems using the **3013** housing format — including our [commercial RO 1500 LPD / 400 GPD desalination plant](/commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd/) and equivalent third-party commercial RO units. Not a residential drop-in for under-sink systems — the 3013 housing is significantly larger than the standard 10\" × 2.5\" RO housing used in 4/5/6-stage residential setups.\n\nIf you're sizing a high-volume RO build from scratch, contact us before ordering — a TFC-3013-400 needs the right housing, the right pre-filter sizing for its flow rate, and a feed-water analysis to size correctly.",
+    "features": [
+      "TFC-3013-400 high-volume RO membrane",
+      "400 GPD = 1512 L/day production at standard test conditions",
+      "97% stable desalination, 95% minimum (tested at 65 PSI, 25 °C, 500 ppm NaCl)",
+      "16 ft² (1.92 m²) active membrane film area",
+      "Maximum operating pressure 300 PSI (2.07 MPa)",
+      "Feed water pH range 3–10 continuous operation",
+      "Requires functioning activated carbon pre-filter — chlorine destroys the element"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Production rate",
+        "value": "400 GPD (1512 L/day)"
+      },
+      {
+        "label": "Stable desalination",
+        "value": "97% (95% minimum)"
+      },
+      {
+        "label": "Model",
+        "value": "TFC-3013-400"
+      },
+      {
+        "label": "Active film area",
+        "value": "16 ft² (1.92 m²)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Model",
+        "value": "TFC-3013-400"
+      },
+      {
+        "label": "Element type",
+        "value": "Thin-film composite (TFC), spiral-wound"
+      },
+      {
+        "label": "Mean permeable flow",
+        "value": "400 GPD (1512 L/day)"
+      },
+      {
+        "label": "Stable desalination rejection",
+        "value": "97%"
+      },
+      {
+        "label": "Minimum desalination rejection",
+        "value": "95%"
+      },
+      {
+        "label": "Active film area",
+        "value": "16 ft² (1.92 m²)"
+      },
+      {
+        "label": "Test conditions",
+        "value": "65 PSI, 25 °C, 500 ppm NaCl, pH 6.5–7.5, 15% recovery"
+      },
+      {
+        "label": "Maximum operating pressure",
+        "value": "300 PSI (2.07 MPa)"
+      },
+      {
+        "label": "Maximum feed water temperature",
+        "value": "45 °C"
+      },
+      {
+        "label": "Maximum feed silt density index (SDI)",
+        "value": "5"
+      },
+      {
+        "label": "Feed water chlorine tolerance",
+        "value": "< 0.1 ppm — carbon pre-filter mandatory"
+      },
+      {
+        "label": "Feed pH range (continuous)",
+        "value": "3–10"
+      },
+      {
+        "label": "Feed pH range (short-term cleaning)",
+        "value": "2–12"
+      },
+      {
+        "label": "Maximum pressure drop across element",
+        "value": "10 PSI (0.07 MPa)"
+      },
+      {
+        "label": "Application",
+        "value": "Commercial RO systems and high-volume residential builds"
+      }
+    ],
+    "recommendedFor": [
+      "Commercial RO replacement on 3013-housing systems",
+      "High-volume residential builds where 75 GPD residential membranes are undersized",
+      "Small-business water purification (café, salon, ice production, lab feed)",
+      "Replacement element for our commercial 400/800 GPD RO desalination plants"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement RO membrane element — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd",
+        "ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump",
+        "ro-wrench-for-water-filter-wrenching-1812-housing-of-reverse-osmosis-membrane"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "TFC-3013-400 RO Membrane — 400 GPD / 1500 L per Day, 97% Rejection | Enviro Aqua",
+      "description": "TFC-3013-400 commercial RO membrane. 400 GPD (1512 L/day), 97% stable / 95% minimum desalination, 1.92 m² active film. Max 300 PSI, 45 °C, < 0.1 ppm chlorine.",
+      "ogImage": null
     }
   },
   "2x-poly-spun-water-filter-cartridge-5-micron-sediment-20-x-4-5-whole-house": {
