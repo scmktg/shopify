@@ -133,9 +133,9 @@ export function AddToCartButton({
           type="button"
           onClick={onAdd}
           disabled={!available || anyBusy}
-          className="flex-1 bg-brand-blue hover:bg-brand-blue-hover disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
+          className="btn-shine flex-1 bg-brand-blue hover:bg-brand-blue-hover disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
         >
-          {addLabel}
+          <span className="relative z-10">{addLabel}</span>
         </button>
       </div>
 
@@ -144,9 +144,9 @@ export function AddToCartButton({
           type="button"
           onClick={onBuyNow}
           disabled={!available || anyBusy}
-          className="w-full bg-black hover:bg-black/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
+          className="btn-shine btn-shine--alt w-full bg-black hover:bg-black/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
         >
-          {buyNowLabel}
+          <span className="relative z-10">{buyNowLabel}</span>
         </button>
       )}
     </div>
