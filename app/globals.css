@@ -38,34 +38,31 @@ h6 {
 }
 
 /*
- * Subtle "shine" sweep for primary purchase CTAs.
+ * Subtle "shine" sweep across the product hero image.
  *
- * Used on Add to cart and Buy now in the buy box and BuyBanner. The
- * sweep is intentionally faint — barely registers consciously, just
- * enough peripheral motion to subtly draw the eye. Two variants
- * (`btn-shine` and `btn-shine--alt`) sit half a cycle apart so the
- * Add-to-cart and Buy-now buttons never shine simultaneously.
+ * A faint diagonal gradient strip sweeps across the gallery roughly
+ * every 8 seconds — barely registers consciously, just enough
+ * peripheral motion to subtly draw the eye to the product. White
+ * shine is invisible against the gallery's white padding and only
+ * lights up against actual product pixels, which reads like a
+ * natural sheen rather than a UI animation.
  *
- * Pseudo-element is absolutely positioned with `pointer-events: none`
- * so it never intercepts clicks. Button content is wrapped in a
- * `relative z-10` span so the shine renders behind the label rather
- * than washing over it. Animation is suppressed on disabled buttons
- * (e.g. out-of-stock / mid-redirect) and for users with
- * prefers-reduced-motion.
+ * Pseudo-element is `pointer-events: none` so it never intercepts
+ * clicks (the gallery has interactive prev/next chevrons). Animation
+ * is suppressed for users with prefers-reduced-motion.
  */
 @keyframes shineSweep {
   0%   { transform: translateX(-150%) skewX(-20deg); }
-  20%  { transform: translateX(250%)  skewX(-20deg); }
+  25%  { transform: translateX(250%)  skewX(-20deg); }
   100% { transform: translateX(250%)  skewX(-20deg); }
 }
 
-.btn-shine {
+.image-shine {
   position: relative;
-  overflow: hidden;
   isolation: isolate;
 }
 
-.btn-shine::before {
+.image-shine::after {
   content: '';
   position: absolute;
   top: 0;
@@ -73,25 +70,19 @@ h6 {
   left: 0;
   width: 35%;
   pointer-events: none;
+  z-index: 1;
   background: linear-gradient(
     100deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.25) 50%,
     transparent 100%
   );
   transform: translateX(-150%) skewX(-20deg);
-}
-
-.btn-shine:not(:disabled)::before {
-  animation: shineSweep 6s ease-in-out infinite;
-}
-
-.btn-shine--alt:not(:disabled)::before {
-  animation-delay: 3s;
+  animation: shineSweep 8s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn-shine:not(:disabled)::before {
+  .image-shine::after {
     animation: none;
   }
 }
