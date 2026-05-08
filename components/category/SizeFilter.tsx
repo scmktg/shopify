@@ -15,12 +15,14 @@ interface SizeFilterProps {
 }
 
 /**
- * Cartridge-size pill filter for the cartridges category pages.
+ * Cartridge-size pill filter. Compact — shares a single horizontal
+ * filter strip with the count and the sort dropdown rather than
+ * occupying its own labelled fieldset row.
  *
  * State is in-memory only (parent owns it). No URL search-param
- * wiring per CLAUDE.md hard rule #3 ("No URL filter parameters that
- * get indexed"). If the URL needs to reflect the filter at some
- * point, switch to non-indexable hash params at that time.
+ * wiring per CLAUDE.md hard rule #3 ("No URL filter parameters
+ * that get indexed"). If the URL needs to reflect the filter, use
+ * non-indexable hash params at that time.
  */
 export function SizeFilter({ value, onChange, counts }: SizeFilterProps) {
   const allCount = counts
@@ -31,15 +33,19 @@ export function SizeFilter({ value, onChange, counts }: SizeFilterProps) {
     : null;
 
   return (
-    <fieldset className="flex flex-wrap items-center gap-2">
-      <legend className="text-sm font-medium text-black/70 mr-2">
+    <div
+      role="group"
+      aria-label="Filter by cartridge size"
+      className="flex flex-wrap items-center gap-1.5"
+    >
+      <span className="text-[11px] font-semibold uppercase tracking-wider text-black/55 mr-1">
         Size
-      </legend>
+      </span>
 
       <Pill
         active={value === null}
         onClick={() => onChange(null)}
-        label={allCount === null ? 'All sizes' : `All (${allCount})`}
+        label={allCount === null ? 'All' : `All (${allCount})`}
       />
 
       {CARTRIDGE_SIZE_OPTIONS.map((opt) => {
@@ -57,7 +63,7 @@ export function SizeFilter({ value, onChange, counts }: SizeFilterProps) {
           />
         );
       })}
-    </fieldset>
+    </div>
   );
 }
 
@@ -76,7 +82,7 @@ function Pill({ active, disabled = false, onClick, label }: PillProps) {
       disabled={disabled}
       aria-pressed={active}
       className={clsx(
-        'inline-flex items-center px-3.5 py-1.5 rounded-full text-sm font-medium border transition-colors tabular-nums',
+        'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border transition-colors tabular-nums',
         active
           ? 'bg-black text-white border-black'
           : 'bg-white text-black border-gray-300 hover:border-black',

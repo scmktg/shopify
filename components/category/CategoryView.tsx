@@ -157,29 +157,34 @@ export function CategoryView({
   }, [enableSizeFilter, size, products]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <div className="flex flex-col gap-4 mb-6">
-        {enableSizeFilter && (
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+      {/*
+        Single compact filter strip. On sm+ everything sits on one
+        row: size pills (cartridges only) on the left, count + sort
+        on the right. Mobile stacks naturally via flex-wrap.
+        Result: only ~40px of vertical space above the grid instead
+        of three separate ~40px rows.
+      */}
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 mb-4 md:mb-6">
+        {enableSizeFilter ? (
           <SizeFilter
             value={size}
             onChange={setSize}
             counts={sizeCounts}
           />
+        ) : (
+          // Spacer keeps the count + sort pinned to the right when
+          // the size filter isn't rendered (water-filters, plumbing,
+          // pumps, bubblers).
+          <span />
         )}
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-          <p className="text-sm text-black/70 tabular-nums">
+        <div className="flex items-center gap-3 ml-auto">
+          <p className="text-xs text-black/60 tabular-nums whitespace-nowrap">
             {visibleProducts.length}{' '}
-            {visibleProducts.length === 1 ? 'product' : 'products'}{' '}
-            shown
-            {enableSizeFilter && size && (
-              <>
-                {' '}· filtered to{' '}
-                {CARTRIDGE_SIZE_OPTIONS.find((o) => o.value === size)?.label}
-              </>
-            )}
+            {visibleProducts.length === 1 ? 'product' : 'products'}
+            {enableSizeFilter && size && ' · filtered'}
           </p>
-
           <SortDropdown
             value={sort}
             onChange={handleSortChange}
@@ -245,16 +250,16 @@ function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
     <div className="relative inline-flex items-center">
       <span
         id="sort-by-label"
-        className="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm text-black/55 pointer-events-none"
+        className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-semibold uppercase tracking-wider text-black/55 pointer-events-none"
       >
-        Sort:
+        Sort
       </span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value as SortValue)}
         disabled={disabled}
         aria-labelledby="sort-by-label"
-        className="appearance-none bg-white border border-gray-300 hover:border-gray-400 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 rounded-md pl-[3.25rem] pr-9 py-2.5 text-sm font-medium text-black cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+        className="appearance-none bg-white border border-gray-300 hover:border-black focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 rounded-full pl-12 pr-8 py-1 text-xs font-medium text-black cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
       >
         {SORT_OPTIONS.map((opt) => (
           <option key={opt.value} value={opt.value}>
@@ -263,7 +268,7 @@ function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
         ))}
       </select>
       <ChevronDown
-        className="pointer-events-none absolute right-3 h-4 w-4 text-black/60"
+        className="pointer-events-none absolute right-2.5 h-3.5 w-3.5 text-black/60"
         aria-hidden="true"
       />
     </div>
