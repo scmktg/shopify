@@ -1,22 +1,37 @@
 import { renderProductMarkdown } from '@/lib/products/markdown';
 
 interface ProductOverviewProps {
+  /** Long-form markdown body. Preferred when present. */
   description?: string;
+  /**
+   * One-line tagline. Used as the body when `description` is absent
+   * — bootstrapped products.json entries (~165 of the catalogue
+   * post-backfill) only carry `shortDescription`, and a one-line
+   * description still reads better than no body at all.
+   */
+  shortDescription?: string;
 }
 
 /**
- * Renders the products.json `description` field as HTML through the
- * server-only markdown renderer. The component is server-side; the
- * parser never reaches a client bundle.
+ * Renders the products.json description as HTML through the
+ * server-only markdown renderer. Prefers `description` (long-form
+ * markdown). Falls back to `shortDescription` rendered as a single
+ * paragraph when the long form isn't populated. Returns null when
+ * neither is present so the caller doesn't have to guard the
+ * conditional render.
  *
- * Returns null when no description is set so the caller doesn't have
- * to guard the conditional render.
+ * The parser is server-side only; it never reaches a client bundle.
  */
-export async function ProductOverview({ description }: ProductOverviewProps) {
-  if (!description?.trim()) return null;
+export async function ProductOverview({
+  description,
+  shortDescription,
+}: ProductOverviewProps) {
+  const source = description?.trim() ? description : shortDescription?.trim();
+  if (!source) return null;
+
   let html = '';
   try {
-    html = await renderProductMarkdown(description);
+    html = await renderProductMarkdown(source);
   } catch (error) {
     // Defensive: a single bad markdown input shouldn't take down the
     // whole product page. Log and skip the section in production;

@@ -11,6 +11,7 @@ import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
 import { FullSpecs } from './FullSpecs';
 import { ComplianceSection } from './ComplianceSection';
+import { BuyBanner } from './BuyBanner';
 import { BoughtTogether } from './BoughtTogether';
 import { MoreInCategory } from './MoreInCategory';
 import { BrandTrustStrip } from './BrandTrustStrip';
@@ -136,12 +137,14 @@ export function ProductDetail({
           </div>
 
           {firstVariant && (
-            <AddToCartButton
-              variantId={firstVariant.id}
-              available={inStock}
-              label={content.ctas?.primary ?? undefined}
-              enableBuyNow
-            />
+            <div className="mt-6">
+              <AddToCartButton
+                variantId={firstVariant.id}
+                available={inStock}
+                label={content.ctas?.primary ?? undefined}
+                enableBuyNow
+              />
+            </div>
           )}
 
           {firstVariant && (
@@ -171,10 +174,22 @@ export function ProductDetail({
 
       <HeadlineSpecs specs={content.headlineSpecs} />
       <FullSpecs specs={content.fullSpecs} />
-      <ProductOverview description={content.description} />
+      <ProductOverview
+        description={content.description}
+        shortDescription={content.shortDescription}
+      />
       <ProductFeatures features={content.features} />
       <RecommendedFor items={content.recommendedFor} />
       <ComplianceSection compliance={content.compliance} />
+
+      {firstVariant && (
+        <BuyBanner
+          variantId={firstVariant.id}
+          available={inStock}
+          price={product.priceRange.minVariantPrice}
+          ctaLabel={content.ctas?.primary ?? undefined}
+        />
+      )}
 
       {boughtTogether.length > 0 && (
         <BoughtTogether handles={boughtTogether} />

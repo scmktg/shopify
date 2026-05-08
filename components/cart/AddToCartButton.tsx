@@ -84,7 +84,7 @@ export function AddToCartButton({
   const anyBusy = busy || buyingNow || isMutating;
 
   return (
-    <div className="mt-6 flex flex-col gap-3">
+    <div className="flex flex-col gap-3">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
         {/*
           Mobile: stepper spans the full row, −/+ buttons grow to
