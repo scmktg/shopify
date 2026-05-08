@@ -29,3 +29,42 @@ export const PHONE_TEL = BUSINESS_INFO.phone.tel;
 export const SHOWROOM_LOCALITY = BUSINESS_INFO.showroom.locality;
 
 export const BACK_IN_STOCK_ENDPOINT = '/api/back-in-stock';
+
+/**
+ * Top promotional banner copy. Rendered by
+ * `components/layout/PromoBanner.tsx` on every page above the
+ * header. Edit the strings here — the merchant should never have
+ * to touch component code to change a banner line.
+ *
+ * Static line: shown on desktop, hidden on mobile to keep the strip
+ * single-line. The rotating items rotate every ~5s in both layouts.
+ */
+export const PROMO_STATIC_LINE =
+  'Same price retail or trade. No accounts, no minimums.';
+
+export interface PromoRotatingItem {
+  text: string;
+  href: string;
+}
+
+export const PROMO_ROTATING_ITEMS: ReadonlyArray<PromoRotatingItem> = [
+  {
+    text: 'Same-day dispatch from Wyong NSW · order before 12pm',
+    href: '/shipping/',
+  },
+  {
+    text: 'Free Click & Collect from our Wyong showroom',
+    href: '/about/',
+  },
+  {
+    text: 'Australian-stocked · plumber-grade product',
+    href: '/about/our-pricing/',
+  },
+  {
+    text: 'Not sure which filter? 60-second filter finder',
+    href: '/water-problems/',
+  },
+];
+
+/** Auto-advance interval for the rotating side, in milliseconds. */
+export const PROMO_ROTATION_MS = 5000;

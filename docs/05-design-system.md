@@ -66,13 +66,35 @@ Do not introduce additional brand colours. If a new shade is needed, justify it 
                                                                   ↑ border-b border-gray-200
 ```
 
-- **Top utility bar** — black background, white text, ~32px tall, displays the wholesale message. Unchanged from v1.
+- **Top utility bar** — see "Promotional banner" section below. The black strip above the white header.
 - **Main header** — `bg-white text-black border-b border-gray-200`, sticky on scroll. The bottom border is the visual separator from page content (no shadow per the design rules).
 - **Wordmark** — text-only "ENVIRO AQUA" in `font-semibold text-black` on the left. No logo image; the wordmark is the brand mark.
 - **Nav** — black text in centre/right; hover state is `hover:text-brand-blue` (no underline shift).
 - **Search and cart icons** — black, hover to brand-blue. Cart badge stays brand-blue with white text (it stands out on the white header).
 - **Mega menu dropdown** — `bg-white text-black` with a 1px gray-200 border for separation. Hover state on dropdown items is `hover:bg-gray-50` (subtle); active link is `text-brand-blue`.
 - **Mobile** — hamburger button (black icon) opens a full-screen white overlay with black text and a black X close button. Nav items are large tappable rows with `hover:text-brand-blue`.
+
+## Promotional banner
+
+The black strip running across the very top of every page, above the white header. Rendered by `components/layout/PromoBanner.tsx` and mounted in `app/layout.tsx`.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│ Same price retail or trade…       Same-day dispatch from W… │ <- 36–40px, black bg
+└─────────────────────────────────────────────────────────────┘
+```
+
+- **Background** — black, white text, no border.
+- **Height** — `h-9` mobile (~36px), `h-10` (`sm+`) desktop (~40px). Fixed so mounting the banner doesn't shift the page below.
+- **Type** — `text-[12px]` mobile, `text-[13px]` desktop. Normal weight. Subtle, not bold.
+- **Padding** — horizontal padding matches the page gutter (`px-4 sm:px-6 lg:px-8`). Vertical padding is implicit from the row height.
+- **Sticky behaviour** — banner does **not** sticky on scroll. The header sticks; the banner scrolls away.
+- **Layout (sm+)** — two columns sharing the row: a static line on the left, a rotating message on the right.
+- **Layout (mobile, < 640px)** — static line is hidden; only the rotating side renders, centre-aligned.
+- **Rotation** — the right side carousels through ~4 messages, one at a time, auto-advancing every 5 seconds. Crossfade transition (500ms). Pauses on hover and on focus so users can read and click. Each rotating item is a real `<a>` link.
+- **Accessibility** — `aria-live="polite"` on the rotating container; only the active item has `aria-hidden={false}` and `tabIndex={0}`. Inactive items are non-focusable and pointer-events-none.
+
+**Editing copy or links:** edit `PROMO_STATIC_LINE`, `PROMO_ROTATING_ITEMS`, and `PROMO_ROTATION_MS` in `lib/site-config.ts`. The component is purely structural — no copy or link strings live in `PromoBanner.tsx`.
 
 ## Footer
 

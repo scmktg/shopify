@@ -59,7 +59,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
 
   return (
     <div
-      className="image-shine relative w-full max-w-[70vh] aspect-square mx-auto overflow-hidden rounded border border-gray-200 bg-white"
+      className="relative w-full max-w-[70vh] aspect-square mx-auto overflow-hidden rounded border border-gray-200 bg-white"
       role="region"
       aria-roledescription="carousel"
       aria-label={`${title} images`}
