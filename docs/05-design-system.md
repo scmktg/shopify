@@ -91,10 +91,14 @@ The black strip running across the very top of every page, above the white heade
 - **Sticky behaviour** — banner does **not** sticky on scroll. The header sticks; the banner scrolls away.
 - **Layout (sm+)** — two columns sharing the row: a static line on the left, a rotating message on the right.
 - **Layout (mobile, < 640px)** — static line is hidden; only the rotating side renders, centre-aligned.
+- **Colour hierarchy** — three weights of white on the black strip:
+  - Static **primary** (`font-semibold text-white`) — the brand-promise hook.
+  - Static **secondary** (`text-white/60`) — the supporting clause, light grey.
+  - Rotating link (`text-white/80 hover:text-white`) — sits between the two; brightens on hover.
 - **Rotation** — the right side carousels through ~4 messages, one at a time, auto-advancing every 5 seconds. Crossfade transition (500ms). Pauses on hover and on focus so users can read and click. Each rotating item is a real `<a>` link.
 - **Accessibility** — `aria-live="polite"` on the rotating container; only the active item has `aria-hidden={false}` and `tabIndex={0}`. Inactive items are non-focusable and pointer-events-none.
 
-**Editing copy or links:** edit `PROMO_STATIC_LINE`, `PROMO_ROTATING_ITEMS`, and `PROMO_ROTATION_MS` in `lib/site-config.ts`. The component is purely structural — no copy or link strings live in `PromoBanner.tsx`.
+**Editing copy or links:** edit `PROMO_STATIC.primary`, `PROMO_STATIC.secondary`, `PROMO_ROTATING_ITEMS`, and `PROMO_ROTATION_MS` in `lib/site-config.ts`. The component is purely structural — no copy or link strings live in `PromoBanner.tsx`.
 
 ## Footer
 

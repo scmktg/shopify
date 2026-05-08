@@ -36,11 +36,18 @@ export const BACK_IN_STOCK_ENDPOINT = '/api/back-in-stock';
  * header. Edit the strings here — the merchant should never have
  * to touch component code to change a banner line.
  *
- * Static line: shown on desktop, hidden on mobile to keep the strip
- * single-line. The rotating items rotate every ~5s in both layouts.
+ * Static line is split into two parts so each gets its own visual
+ * weight: `primary` is the brand-promise hook (semibold white),
+ * `secondary` is the supporting clause (light grey). Both render
+ * on the same line on desktop; both are hidden on mobile so the
+ * strip stays single-line.
+ *
+ * The rotating items rotate every ~5s in both layouts.
  */
-export const PROMO_STATIC_LINE =
-  'Same price retail or trade. No accounts, no minimums.';
+export const PROMO_STATIC = {
+  primary: 'Same price retail or trade.',
+  secondary: 'No accounts, no minimums.',
+} as const;
 
 export interface PromoRotatingItem {
   text: string;

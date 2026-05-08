@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {
   PROMO_ROTATING_ITEMS,
   PROMO_ROTATION_MS,
-  PROMO_STATIC_LINE,
+  PROMO_STATIC,
 } from '@/lib/site-config';
 
 /**
@@ -54,7 +54,10 @@ export function PromoBanner() {
     <div className="bg-black text-white text-[12px] sm:text-[13px]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-9 sm:h-10 flex items-center justify-center sm:justify-between gap-4">
         <p className="hidden sm:block min-w-0 truncate">
-          {PROMO_STATIC_LINE}
+          <span className="font-semibold text-white">
+            {PROMO_STATIC.primary}
+          </span>{' '}
+          <span className="text-white/60">{PROMO_STATIC.secondary}</span>
         </p>
 
         <div
@@ -82,7 +85,7 @@ export function PromoBanner() {
                   <Link
                     href={item.href}
                     tabIndex={active ? 0 : -1}
-                    className="text-white hover:underline underline-offset-4 truncate max-w-full"
+                    className="text-white/80 hover:text-white hover:underline underline-offset-4 truncate max-w-full transition-colors"
                   >
                     {item.text}{' '}
                     <span aria-hidden="true">→</span>
