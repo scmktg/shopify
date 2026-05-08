@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useMemo, useState, useTransition } from 'react';
+import { ChevronDown } from 'lucide-react';
 import {
   getProducts,
   type ProductSortKey,
@@ -8,6 +9,12 @@ import {
 import type { ProductCardData } from '@/types/product';
 import type { ShopifyPageInfo } from '@/types/shopify';
 import { ProductGrid } from '@/components/product/ProductGrid';
+import { SizeFilter } from './SizeFilter';
+import {
+  CARTRIDGE_SIZE_OPTIONS,
+  getCartridgeSize,
+  type CartridgeSize,
+} from '@/lib/utils/cartridgeSize';
 
 type SortValue =
   | 'default'
@@ -51,6 +58,14 @@ interface CategoryViewProps {
   initialPageInfo: ShopifyPageInfo;
   query: string;
   pageSize?: number;
+  /**
+   * When the visitor is browsing the cartridges category, surface
+   * a size-pill filter (10"/20" length × 2.5"/4.5" diameter). The
+   * filter is in-memory and reflects only what's currently loaded
+   * — paired with a generous pageSize on cartridge routes, all
+   * sizes are visible without further fetches.
+   */
+  enableSizeFilter?: boolean;
 }
 
 export function CategoryView({
@@ -58,12 +73,14 @@ export function CategoryView({
   initialPageInfo,
   query,
   pageSize = 24,
+  enableSizeFilter = false,
 }: CategoryViewProps) {
   const [products, setProducts] = useState<ReadonlyArray<ProductCardData>>(
     initialProducts,
   );
   const [pageInfo, setPageInfo] = useState<ShopifyPageInfo>(initialPageInfo);
   const [sort, setSort] = useState<SortValue>('default');
+  const [size, setSize] = useState<CartridgeSize | null>(null);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
@@ -114,31 +131,83 @@ export function CategoryView({
     });
   };
 
+  // Derive size-bucket counts from the currently-loaded products
+  // so the filter shows realistic numbers, and dim sizes that have
+  // zero matches in the current set.
+  const sizeCounts = useMemo(() => {
+    if (!enableSizeFilter) return undefined;
+    const counts: Record<CartridgeSize, number> = {
+      '10x2.5': 0,
+      '10x4.5': 0,
+      '20x2.5': 0,
+      '20x4.5': 0,
+    };
+    for (const product of products) {
+      const detected = getCartridgeSize(product.handle);
+      if (detected) counts[detected] += 1;
+    }
+    return counts;
+  }, [enableSizeFilter, products]);
+
+  const visibleProducts = useMemo(() => {
+    if (!enableSizeFilter || !size) return products;
+    return products.filter(
+      (product) => getCartridgeSize(product.handle) === size,
+    );
+  }, [enableSizeFilter, size, products]);
+
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
-        <p className="text-sm text-black/70">
-          {products.length}{' '}
-          {products.length === 1 ? 'product' : 'products'} shown
-        </p>
-        <label className="text-sm text-black inline-flex items-center gap-2">
-          <span>Sort by</span>
-          <select
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+      {/*
+        Single compact filter strip. On sm+ everything sits on one
+        row: size pills (cartridges only) on the left, count + sort
+        on the right. Mobile stacks naturally via flex-wrap.
+        Result: only ~40px of vertical space above the grid instead
+        of three separate ~40px rows.
+      */}
+      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 mb-4 md:mb-6">
+        {enableSizeFilter ? (
+          <SizeFilter
+            value={size}
+            onChange={setSize}
+            counts={sizeCounts}
+          />
+        ) : (
+          // Spacer keeps the count + sort pinned to the right when
+          // the size filter isn't rendered (water-filters, plumbing,
+          // pumps, bubblers).
+          <span />
+        )}
+
+        <div className="flex items-center gap-3 ml-auto">
+          <p className="text-xs text-black/60 tabular-nums whitespace-nowrap">
+            {visibleProducts.length}{' '}
+            {visibleProducts.length === 1 ? 'product' : 'products'}
+            {enableSizeFilter && size && ' · filtered'}
+          </p>
+          <SortDropdown
             value={sort}
-            onChange={(e) => handleSortChange(e.target.value as SortValue)}
+            onChange={handleSortChange}
             disabled={isPending}
-            className="border border-gray-300 rounded px-2 py-1.5 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
-          >
-            {SORT_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
-        </label>
+          />
+        </div>
       </div>
 
-      <ProductGrid products={products} />
+      <ProductGrid products={visibleProducts} />
+
+      {visibleProducts.length === 0 && size !== null && (
+        <p className="mt-8 text-center text-sm text-black/70">
+          No products in this size on the current page.{' '}
+          <button
+            type="button"
+            onClick={() => setSize(null)}
+            className="text-brand-blue underline underline-offset-4 hover:text-brand-blue-hover"
+          >
+            Clear filter
+          </button>
+          .
+        </p>
+      )}
 
       {error && (
         <p role="alert" className="mt-6 text-sm text-red-600">
@@ -158,6 +227,50 @@ export function CategoryView({
           </button>
         </div>
       )}
+    </div>
+  );
+}
+
+interface SortDropdownProps {
+  value: SortValue;
+  onChange: (value: SortValue) => void;
+  disabled: boolean;
+}
+
+/**
+ * Modern sort dropdown — styled native <select>.
+ *
+ * Uses `appearance-none` to strip native chrome, layered behind a
+ * Lucide ChevronDown for the affordance. Keeps the real <select>
+ * underneath so we get keyboard nav, screen-reader labelling, and
+ * the native iOS/Android picker on mobile for free.
+ */
+function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
+  return (
+    <div className="relative inline-flex items-center">
+      <span
+        id="sort-by-label"
+        className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-semibold uppercase tracking-wider text-black/55 pointer-events-none"
+      >
+        Sort
+      </span>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value as SortValue)}
+        disabled={disabled}
+        aria-labelledby="sort-by-label"
+        className="appearance-none bg-white border border-gray-300 hover:border-black focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 rounded-full pl-12 pr-8 py-1 text-xs font-medium text-black cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+      >
+        {SORT_OPTIONS.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
+      <ChevronDown
+        className="pointer-events-none absolute right-2.5 h-3.5 w-3.5 text-black/60"
+        aria-hidden="true"
+      />
     </div>
   );
 }

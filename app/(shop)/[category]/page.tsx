@@ -66,6 +66,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         initialPageInfo={page.pageInfo}
         query={query}
         pageSize={PAGE_SIZE}
+        enableSizeFilter={category === 'cartridges'}
       />
     </>
   );

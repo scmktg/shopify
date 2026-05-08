@@ -70,6 +70,7 @@ export default async function SubcategoryPage({
         initialPageInfo={page.pageInfo}
         query={query}
         pageSize={PAGE_SIZE}
+        enableSizeFilter={category === 'cartridges'}
       />
     </>
   );
