@@ -5592,9 +5592,129 @@
       "water-filters",
       "reverse-osmosis"
     ],
-    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "tags": [
+      "reverse-osmosis",
+      "five-stage",
+      "under-sink",
+      "three-way-tap",
+      "premium-bundle",
+      "no-extra-tap-hole"
+    ],
+    "shortDescription": "Premium 5-stage under-sink RO system bundled with a 3-way kitchen tap — hot, cold, and filtered water from a single fixture. No extra tap hole drilled. PP sediment, GAC, carbon block, TFC RO membrane, post-carbon.",
+    "description": "The premium-tier 5-stage under-sink reverse osmosis bundle — the [standard 5-stage RO system](/under-sink-water-filter-5-stage-reverse-osmosis-system/) paired with a **3-way kitchen mixer tap** that combines hot, cold, and RO-filtered water into one fixture. The reason it costs significantly more than the standalone 5-stage system isn't the filtration — those stages are identical — it's the tap.\n\n## Why a 3-Way Tap Matters for Renovations\n\nA standard RO installation requires drilling a **second tap hole** in the bench or sink for the dedicated drinking-water faucet. On stone benchtops, stainless splashbacks, or new builds with one factory hole, that's a non-trivial job: stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nA 3-way mixer tap solves this by routing three water sources through one body — the existing hot, the existing cold, and a third internal channel for the RO permeate. The tap installs in your existing single hole. No drilling, no extra fixture, no second handle on the bench.\n\nFor renovations, new kitchens, or owners who simply prefer a single-fixture bench, the 3-way bundle saves the cost (and risk) of stone drilling. The bundle pricing reflects the real cost of a quality 3-way tap added to the system.\n\n## Five-Stage Filtration\n\nIdentical to the standalone 5-stage RO:\n\n- **Stage 1 — PP spun sediment filter:** sand, dirt, rust\n- **Stage 2 — Granular activated carbon (GAC):** chlorine and organics; protects the RO membrane\n- **Stage 3 — Carbon block (CTO):** secondary chlorine and chemical polish\n- **Stage 4 — TFC RO membrane:** the purification stage; manufacturer specification reduces up to 99% of TDS, heavy metals, fluoride, arsenic, mercury, and over 1,000 contaminants\n- **Stage 5 — Post-carbon polish:** final taste polish on the permeate\n\nAll cartridges 10\" × 2.5\" standard format. Connections 1/4\" tubing throughout.\n\n## What's Included\n\n- 5-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- 3-way kitchen mixer tap (hot / cold / filtered)\n- Pressure storage tank\n- Mounting hardware and 1/4\" tubing\n- Installation manual\n\n## Service Interval and Compatibility\n\nReplace cartridges every 6–12 months; RO membrane every ~24 months. The [5-stage RO replacement set](/5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic/) covers a complete refresh in one SKU. Keep the carbon stages fresh — chlorine breakthrough through saturated carbon is what kills RO membranes early.",
+    "features": [
+      "5-stage RO under-sink system bundled with a premium 3-way kitchen tap",
+      "Single tap, three water sources — hot, cold, and RO-filtered water",
+      "No extra tap hole required — fits the existing single bench hole",
+      "TFC RO membrane reducing up to 99% of TDS per manufacturer spec",
+      "PP sediment, GAC, carbon block, RO membrane, post-carbon polish",
+      "Pressure storage tank for on-demand filtered water at the tap",
+      "All 10\" × 2.5\" standard cartridges — widely available replacements"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "5"
+      },
+      {
+        "label": "Tap",
+        "value": "3-way (hot / cold / filtered)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Storage tank",
+        "value": "Included"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Under-sink reverse osmosis with 3-way tap"
+      },
+      {
+        "label": "Stages",
+        "value": "5"
+      },
+      {
+        "label": "Stage 1",
+        "value": "PP spun sediment filter (5 micron)"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block (CTO)"
+      },
+      {
+        "label": "Stage 4",
+        "value": "TFC RO membrane"
+      },
+      {
+        "label": "Stage 5",
+        "value": "Post-carbon polish"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Tap",
+        "value": "3-way kitchen mixer (hot / cold / RO-filtered)"
+      },
+      {
+        "label": "Storage tank",
+        "value": "Pressure tank included"
+      },
+      {
+        "label": "Connection size",
+        "value": "1/4\" tubing"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      }
+    ],
+    "recommendedFor": [
+      "Renovations and new kitchens where a second tap hole is impractical",
+      "Stone benchtops where extra drilling carries fabrication risk",
+      "Owners wanting a clean single-fixture bench",
+      "Households after RO purity without the visual clutter of a separate filter tap"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic",
+        "under-sink-water-filter-6-stage-reverse-osmosis-system",
+        "12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+      "title": "5-Stage RO Under-Sink System with 3-Way Tap — No Extra Hole | Enviro Aqua",
+      "description": "Premium 5-stage RO bundle with 3-way kitchen mixer (hot / cold / filtered). PP sediment, GAC, carbon block, TFC RO membrane, post-carbon. 12 L pressure tank.",
+      "ogImage": null
     }
   },
   "5-stages-ro-system-stainless-steel-tap": {
@@ -5602,9 +5722,128 @@
       "water-filters",
       "reverse-osmosis"
     ],
-    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "tags": [
+      "reverse-osmosis",
+      "five-stage",
+      "under-sink",
+      "stainless-steel-tap",
+      "ro-membrane"
+    ],
+    "shortDescription": "5-stage under-sink RO system with a stainless steel filter tap — PP sediment, GAC, carbon block, TFC RO membrane, post-carbon polish. Pressure storage tank included. Mid-tier 5-stage at $349.95.",
+    "description": "A complete 5-stage under-sink reverse osmosis system supplied with a **stainless steel filter tap** — the mid-priced 5-stage option, sitting between the no-tap [4-stage RO system](/under-sink-water-filter-4-stage-reverse-osmosis-system/) and the premium [5-stage with 3-way tap bundle](/5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap/).\n\n## What This Tier Buys You\n\nThe filtration is identical to the standalone 5-stage RO system. The difference between this SKU and the cheaper 5-stage equivalent is the **dedicated stainless steel filter tap included in the bundle** — a separate fixture that you (or your plumber) installs through a second hole in the bench or sink, dedicated to dispensing RO-filtered water.\n\n- The filter tap is solid stainless steel — won't pit, rust, or stain over the life of the system\n- Installs through a 12 mm bench hole (drilled if not already present)\n- Connects to the system via 1/4\" tubing\n\nIf your bench already has a knock-out for an extra tap hole, or you're happy with a separate fixture for filtered water, this is the right tier. If you can't drill a second hole — stone benchtop, single-hole sink — step up to the [3-way tap bundle](/5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap/) instead.\n\n## Five-Stage Filtration\n\n- **Stage 1 — PP spun sediment filter:** removes particles, dust, mud, sand, and rust from the feed\n- **Stage 2 — Granular activated carbon (GAC):** removes chlorine, organics, odour, turbidity — protects the RO membrane downstream\n- **Stage 3 — Carbon block (CTO):** secondary chlorine and chemical polish\n- **Stage 4 — TFC RO membrane:** the purification stage — 0.0001 micron precision, removes bacteria, heavy metals, salts, fluoride, and dissolved contaminants per manufacturer specification\n- **Stage 5 — Post-carbon polish:** final taste adjustment on the permeate water\n\nAll cartridges in standard 10\" × 2.5\" format — the most widely-stocked size in Australia, so replacements are easy to source.\n\n## What's Included\n\n- 5-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- Stainless steel filter tap\n- Pressure storage tank\n- Mounting hardware and 1/4\" tubing\n- Installation manual\n\n## Service Interval\n\nReplace cartridges every 6–12 months; RO membrane every ~24 months. The [5-stage RO replacement set](/5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic/) covers all five cartridges plus a fresh 75 GPD membrane in one SKU.",
+    "features": [
+      "Complete 5-stage under-sink RO with stainless steel filter tap",
+      "TFC RO membrane at 0.0001 micron precision per manufacturer spec",
+      "PP sediment, GAC, carbon block, RO membrane, post-carbon",
+      "Pressure storage tank for on-demand filtered water",
+      "Solid stainless steel tap — no pitting, rust, or stain over time",
+      "All 10\" × 2.5\" cartridges — widely-stocked Australian standard",
+      "1/4\" tubing connections throughout"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "5"
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel filter tap"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Storage tank",
+        "value": "Included"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Under-sink reverse osmosis"
+      },
+      {
+        "label": "Stages",
+        "value": "5"
+      },
+      {
+        "label": "Stage 1",
+        "value": "PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block (CTO)"
+      },
+      {
+        "label": "Stage 4",
+        "value": "TFC RO membrane"
+      },
+      {
+        "label": "Stage 5",
+        "value": "Post-carbon polish"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel filter tap (separate fixture)"
+      },
+      {
+        "label": "Storage tank",
+        "value": "Pressure tank included"
+      },
+      {
+        "label": "Connection size",
+        "value": "1/4\" tubing"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      }
+    ],
+    "recommendedFor": [
+      "Households wanting full 5-stage RO at mid-range pricing",
+      "Owners with bench/sink space for a dedicated filter tap",
+      "Properties on chlorinated mains or rural tank water",
+      "Replacement of an aging 5-stage RO with a fresh complete system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic",
+        "5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap",
+        "2-pics-75gpd-reverse-osmosis-membrane-membrane-replacement-filter-280l-per-day"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+      "title": "5-Stage RO Under-Sink System with Stainless Steel Tap | Enviro Aqua",
+      "description": "5-stage under-sink RO with stainless steel filter tap. PP sediment, GAC, carbon block, TFC RO membrane, post-carbon polish. 10\" × 2.5\" cartridges, pressure tank.",
+      "ogImage": null
     }
   },
   "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic": {
@@ -5727,9 +5966,133 @@
       "water-filters",
       "reverse-osmosis"
     ],
-    "shortDescription": "This 4-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on deman…",
+    "tags": [
+      "reverse-osmosis",
+      "four-stage",
+      "under-sink",
+      "ro-membrane",
+      "fluoride-removal",
+      "12l-tank"
+    ],
+    "shortDescription": "4-stage under-sink reverse osmosis system with 12 L pressure storage tank — PP sediment, carbon block, TFC RO membrane, T33 post-carbon polish. Reduces fluoride, chlorine, heavy metals, dissolved solids.",
+    "description": "A 4-stage under-sink reverse osmosis system — the entry point into proper RO filtration. Four cartridges and a 12 L pressure storage tank fitted under your kitchen sink, producing clean filtered water at a dedicated tap, on demand.\n\n## Why an RO System (and Why 4 Stages Is the Minimum)\n\nA standard 2- or 3-stage filter handles chlorine and sediment, but the cartridges in those systems can't reduce **fluoride, heavy metals, or dissolved solids**. Reverse osmosis is the only point-of-use technology that removes those contaminants — it forces water through a semi-permeable TFC membrane at 0.0001 micron precision, leaving dissolved contaminants behind on the reject side and producing high-purity permeate water on the other.\n\nFour stages is the minimum cartridge count for an effective RO build because the membrane needs protection. Without sediment pre-filtering, particulate clogs the membrane. Without carbon pre-filtering, residual chlorine in the feed water destroys the membrane within weeks. The post-carbon polish at the end keeps the storage-tank water tasting fresh.\n\n## Four-Stage Filtration\n\n- **Stage 1 — PP spun sediment filter (5 micron):** removes sand, dirt, mud, and particulate; protects the membrane and downstream stages\n- **Stage 2 — Carbon block (CTO):** removes chlorine and organics. **Critical for membrane protection** — chlorine destroys TFC membranes irreversibly within weeks if it reaches them\n- **Stage 3 — TFC RO membrane:** the purification stage; manufacturer specification reduces up to 99% of TDS, heavy metals, fluoride, arsenic, mercury, and over 1,000 contaminants\n- **Stage 4 — T33 post-carbon polish:** final taste polish on the permeate water before it reaches the tap; removes any residual taste from the storage tank\n\nAll cartridges in standard 10\" × 2.5\" format. Connection 1/4\" tubing throughout.\n\n## What's Included\n\n- 4-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- 12 L pressure storage tank\n- Stainless steel filter faucet\n- 1/2\" threaded inlet block and valve\n- 2 m of 1/4\" tubing\n- Mounting hardware\n- Pressure-reducing valve\n- Opening spanners (10\" housing + RO membrane)\n- Quick-connect hose fittings\n- Installation manual\n\n## How This Tier Compares\n\n- **4-stage (this product):** PP, carbon block, RO, T33 — the entry RO build\n- **[5-stage](/under-sink-water-filter-5-stage-reverse-osmosis-system/):** adds a granular activated carbon (GAC) stage between sediment and carbon block for longer chlorine-reduction life and better membrane protection\n- **[6-stage](/under-sink-water-filter-6-stage-reverse-osmosis-system/):** adds an alkaline mineral cartridge for re-mineralised, pH-balanced RO water\n\n## Install and Service\n\nDIY install in 1–2 hours, or licensed plumber. Tap hole drilling required if the bench doesn't already have one. Replace cartridges every 6–12 months; RO membrane every ~24 months. The [3-stage inline replacement set](/inline-water-filter-replacement-set-3-stages-sediment-carbon-ro-membrane-10/) covers the pre-filters and membrane in one SKU.",
+    "features": [
+      "4-stage RO: PP sediment, carbon block, TFC RO membrane, T33 post-carbon",
+      "TFC RO membrane at 0.0001 micron — reduces fluoride, heavy metals, TDS per manufacturer spec",
+      "12 L pressure storage tank — on-demand filtered water at the tap",
+      "Stainless steel filter faucet included",
+      "Complete DIY install kit including pressure-reducing valve and tubing",
+      "All cartridges 10\" × 2.5\" — widely-stocked Australian standard",
+      "Suitable for chlorinated municipal water and rural tank-fed homes"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "4"
+      },
+      {
+        "label": "Storage tank",
+        "value": "12 L"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tubing"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Under-sink reverse osmosis"
+      },
+      {
+        "label": "Stages",
+        "value": "4"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Carbon block (CTO)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "TFC RO membrane (0.0001 micron)"
+      },
+      {
+        "label": "Stage 4",
+        "value": "T33 post-carbon polish"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Storage tank",
+        "value": "12 L pressure tank (included)"
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel filter faucet (included)"
+      },
+      {
+        "label": "Connection size",
+        "value": "1/4\" tubing"
+      },
+      {
+        "label": "Suitable for",
+        "value": "Mains and tank water"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Install time",
+        "value": "1–2 hours DIY, or licensed plumber"
+      }
+    ],
+    "recommendedFor": [
+      "Households on fluoridated municipal water",
+      "Cost-conscious entry into RO filtration",
+      "Tank-fed rural properties wanting full-spectrum drinking water purification",
+      "Replacement of an aging RO with a fresh complete system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-5-stage-reverse-osmosis-system",
+        "inline-water-filter-replacement-set-3-stages-sediment-carbon-ro-membrane-10",
+        "12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This 4-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on demand."
+      "title": "4-Stage RO Under-Sink Water Filter System — 12 L Tank | Enviro Aqua",
+      "description": "4-stage RO under-sink system. PP sediment, carbon block, TFC RO membrane (0.0001 micron), T33 post-carbon. 12 L pressure tank, stainless faucet. Reduces fluoride.",
+      "ogImage": null
     }
   },
   "under-sink-water-filter-5-stage-reverse-osmosis-system": {
@@ -5737,9 +6100,138 @@
       "water-filters",
       "reverse-osmosis"
     ],
-    "shortDescription": "This 5-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on deman…",
+    "tags": [
+      "reverse-osmosis",
+      "five-stage",
+      "under-sink",
+      "ro-membrane",
+      "fluoride-removal",
+      "12l-tank",
+      "coconut-carbon"
+    ],
+    "shortDescription": "5-stage under-sink reverse osmosis system — PP sediment, GAC, carbon block, TFC RO membrane, acid-washed coconut carbon polish. 12 L pressure tank. Filters out 99% of TDS per manufacturer specification.",
+    "description": "A 5-stage under-sink reverse osmosis system — the standard mid-range RO build, adding a **dedicated granular activated carbon (GAC) stage** between the sediment pre-filter and the carbon block for substantially better membrane protection than the entry-level 4-stage build. For most Australian households on chlorinated municipal supplies, this is the right tier.\n\n## Why 5 Stages Outperform 4\n\nThe critical difference between the [4-stage](/under-sink-water-filter-4-stage-reverse-osmosis-system/) and this 5-stage build is the addition of **Stage 2 — a granular activated carbon (GAC) stage** that handles the bulk of the chlorine load before the water reaches the carbon block. Three practical effects:\n\n- The carbon block stage no longer has to do all the chlorine work alone, so it lasts longer between replacements\n- Better chlorine reduction per cartridge service interval — less risk of chlorine breakthrough damaging the RO membrane\n- The membrane sees cleaner feed water, reaches its rated lifespan more reliably\n\nFor a chlorinated supply (every Australian municipal water source), this matters. The cost difference between 4-stage and 5-stage is small relative to the membrane longevity it buys.\n\n## Five-Stage Filtration\n\n- **Stage 1 — PP spun sediment filter (5 micron):** removes sand, dirt, particulate\n- **Stage 2 — Granular activated carbon (GAC):** removes the bulk of chlorine, odour, fine particulates\n- **Stage 3 — Carbon block (CTO):** secondary chlorine and chemical polish; refines water quality before the membrane\n- **Stage 4 — TFC RO membrane:** the purification stage; manufacturer specification reduces up to 99% of TDS, heavy metals, arsenic, mercury, fluoride, and over 1,000 contaminants\n- **Stage 5 — Post-carbon polish (acid-washed coconut carbon):** smooth, refined taste finish on the permeate water before it reaches the tap\n\nAll cartridges 10\" × 2.5\" standard format. 12 L pressure storage tank for on-demand water at the tap.\n\n## What's Included\n\n- 5-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- 12 L pressure storage tank\n- Stainless steel filter faucet\n- 1/2\" threaded inlet block and valve\n- 2 m of 1/4\" tubing\n- Mounting hardware, pressure-reducing valve\n- Opening spanners (10\" housing + RO membrane)\n- Quick-connect hose fittings\n- Installation manual\n\n## Service Interval\n\nReplace cartridges every 6–12 months; RO membrane every ~24 months. The [5-stage RO replacement cartridge set](/5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic/) covers all five cartridges plus a fresh membrane in one SKU.\n\n## Bench-Hole Considerations\n\nThis system uses a **separate stainless steel filter faucet** that requires a dedicated hole in the bench or sink. If your benchtop is stone or you don't want a second tap fixture, consider the [5-stage with 3-way tap bundle](/5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap/) instead — same filtration, single fixture, no extra drilling.",
+    "features": [
+      "5-stage RO with dedicated GAC pre-filter — better membrane protection than 4-stage builds",
+      "PP sediment, GAC, carbon block, TFC RO membrane, acid-washed coconut carbon polish",
+      "TFC RO membrane reducing up to 99% of TDS per manufacturer specification",
+      "12 L pressure storage tank — on-demand filtered water at the tap",
+      "Stainless steel filter faucet included",
+      "Complete DIY install kit including pressure-reducing valve and 2 m of tubing",
+      "Suits municipal mains and rural tank water"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "5"
+      },
+      {
+        "label": "Storage tank",
+        "value": "12 L"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tubing"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Under-sink reverse osmosis"
+      },
+      {
+        "label": "Stages",
+        "value": "5"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block (CTO)"
+      },
+      {
+        "label": "Stage 4",
+        "value": "TFC RO membrane (0.0001 micron)"
+      },
+      {
+        "label": "Stage 5",
+        "value": "Acid-washed coconut post-carbon polish"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Storage tank",
+        "value": "12 L pressure tank (included)"
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel filter faucet (included)"
+      },
+      {
+        "label": "Connection size",
+        "value": "1/4\" tubing"
+      },
+      {
+        "label": "Suitable for",
+        "value": "Mains and tank water"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Install time",
+        "value": "1–2 hours DIY, or licensed plumber"
+      }
+    ],
+    "recommendedFor": [
+      "Australian households on chlorinated municipal water",
+      "Owners wanting fluoride and heavy-metal reduction at the drinking tap",
+      "Replacement of an aging 4-stage or 5-stage RO with a fresh system",
+      "Rural properties on tank water needing full-spectrum drinking water filtration"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic",
+        "under-sink-water-filter-6-stage-reverse-osmosis-system",
+        "5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This 5-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on demand."
+      "title": "5-Stage RO Under-Sink Water Filter System — 12 L Tank | Enviro Aqua",
+      "description": "5-stage RO with dedicated GAC stage. PP sediment, GAC, carbon block, TFC RO membrane, coconut post-carbon. 12 L pressure tank. Reduces 99% TDS per spec.",
+      "ogImage": null
     }
   },
   "under-sink-water-filter-6-stage-reverse-osmosis-system": {
@@ -5747,9 +6239,143 @@
       "water-filters",
       "reverse-osmosis"
     ],
-    "shortDescription": "This 6-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on deman…",
+    "tags": [
+      "reverse-osmosis",
+      "six-stage",
+      "under-sink",
+      "alkaline",
+      "remineralisation",
+      "ro-membrane",
+      "fluoride-removal",
+      "12l-tank"
+    ],
+    "shortDescription": "6-stage under-sink RO system — PP sediment, GAC, carbon block, TFC RO membrane, coconut post-carbon, plus alkaline mineral cartridge for re-mineralisation and pH lift. 12 L pressure tank.",
+    "description": "A 6-stage under-sink reverse osmosis system — our top-tier residential RO build, adding an **alkaline mineral cartridge** as Stage 6 to re-mineralise the permeate water and lift pH back toward neutral. The result is RO-purified water with the mineral profile and mouthfeel of natural spring water rather than the slightly flat taste of straight RO output.\n\n## What the Alkaline Stage Adds\n\nReverse osmosis is highly effective at removing dissolved contaminants — but it removes beneficial minerals (calcium, magnesium, potassium) along with the bad. Pure RO permeate has very low TDS, slightly acidic pH (typically 5.5–6.5), and a flat taste many people describe as \"missing something\".\n\nThe alkaline cartridge in Stage 6 solves three things in one stage:\n\n- **Re-mineralisation:** releases calcium and magnesium back into the water as it passes through\n- **pH adjustment:** lifts the pH from slightly acidic toward neutral or slightly alkaline\n- **Taste improvement:** mineral content gives the water the natural mouthfeel of spring water\n\nFor anyone who's tasted straight RO water and found it lacking, the 6-stage build is what fixes that.\n\n## Six-Stage Filtration\n\n- **Stage 1 — PP spun sediment filter (5 micron):** sand, dirt, rust, particulate\n- **Stage 2 — Granular activated carbon (GAC):** bulk chlorine reduction; protects the membrane\n- **Stage 3 — Carbon block (CTO):** secondary chlorine and chemical polish\n- **Stage 4 — TFC RO membrane:** purification stage at 0.0001 micron; manufacturer specification reduces up to 99% of TDS, heavy metals, arsenic, mercury, fluoride, and over 1,000 contaminants\n- **Stage 5 — Post-carbon polish (acid-washed coconut carbon):** smooth, refined taste finish on the permeate water\n- **Stage 6 — Alkaline mineral cartridge:** re-mineralisation and pH lift to neutralise the slight acidity of straight RO\n\nAll cartridges 10\" × 2.5\" standard format. 12 L pressure storage tank.\n\n## What's Included\n\n- 6-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- 12 L pressure storage tank\n- Stainless steel filter faucet\n- 1/2\" threaded inlet block and valve\n- 2 m of 1/4\" tubing\n- Mounting hardware, pressure-reducing valve\n- Opening spanners (10\" housing + RO membrane)\n- Quick-connect hose fittings\n- Installation manual\n\n## Service Interval\n\nReplace cartridges every 6–12 months; RO membrane every ~24 months. Two replacement-set options to suit your service preference:\n\n- [Standard 6-stage replacement set](/water-filter-replacement-set-standard-6-stages-5-micron-10/) — value-priced cartridge set with regular carbon block\n- [Premium 6-stage replacement set](/water-filter-replacement-set-premium-6-stages-5-micron-10/) — upgraded with coconut carbon block for chloraminated supplies (Sydney, Melbourne, Brisbane, Adelaide, Canberra)\n\n## How This Tier Compares\n\n- **5-stage:** same RO purification, no alkaline. Suits owners who like the cleaner RO taste.\n- **6-stage (this product):** adds alkaline. Suits owners who want spring-water mouthfeel and pH balance.",
+    "features": [
+      "6-stage RO with alkaline mineral cartridge — re-mineralised, pH-balanced drinking water",
+      "PP sediment, GAC, carbon block, TFC RO membrane, coconut post-carbon, alkaline",
+      "TFC RO membrane reducing up to 99% of TDS per manufacturer specification",
+      "Reduces fluoride, chlorine, heavy metals, arsenic, mercury, dissolved solids",
+      "12 L pressure storage tank — on-demand filtered water",
+      "Stainless steel filter faucet included",
+      "All cartridges 10\" × 2.5\" — widely-stocked Australian standard"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "6"
+      },
+      {
+        "label": "Storage tank",
+        "value": "12 L"
+      },
+      {
+        "label": "Includes alkaline",
+        "value": "Yes"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Under-sink reverse osmosis with alkaline"
+      },
+      {
+        "label": "Stages",
+        "value": "6"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block (CTO)"
+      },
+      {
+        "label": "Stage 4",
+        "value": "TFC RO membrane (0.0001 micron)"
+      },
+      {
+        "label": "Stage 5",
+        "value": "Acid-washed coconut post-carbon polish"
+      },
+      {
+        "label": "Stage 6",
+        "value": "Alkaline mineral cartridge"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Storage tank",
+        "value": "12 L pressure tank (included)"
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel filter faucet (included)"
+      },
+      {
+        "label": "Connection size",
+        "value": "1/4\" tubing"
+      },
+      {
+        "label": "Suitable for",
+        "value": "Mains and tank water"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Membrane change interval",
+        "value": "~24 months"
+      },
+      {
+        "label": "Install time",
+        "value": "1–2 hours DIY, or licensed plumber"
+      }
+    ],
+    "recommendedFor": [
+      "Owners wanting RO purity with the taste of mineral water",
+      "Households on chloraminated supplies (Sydney, Melbourne, Brisbane, Adelaide, Canberra)",
+      "Anyone finding straight RO water tastes flat or too acidic",
+      "Top-tier residential drinking water filtration"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "water-filter-replacement-set-premium-6-stages-5-micron-10",
+        "water-filter-replacement-set-standard-6-stages-5-micron-10",
+        "under-sink-water-filter-5-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This 6-stage reverse osmosis system installs under your kitchen sink to deliver clean, filtered drinking water on demand."
+      "title": "6-Stage RO Under-Sink Filter — With Alkaline Mineral Stage | Enviro Aqua",
+      "description": "6-stage RO system: PP sediment, GAC, carbon block, TFC RO membrane, coconut post-carbon, alkaline. 12 L pressure tank. Re-mineralised, pH-balanced RO water.",
+      "ogImage": null
     }
   },
   "under-sink-water-filter-2-stage-sediment-carbon": {
@@ -5757,9 +6383,129 @@
       "water-filters",
       "under-sink"
     ],
-    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "tags": [
+      "under-sink",
+      "two-stage",
+      "sediment-carbon",
+      "diy-install",
+      "10x25",
+      "five-micron"
+    ],
+    "shortDescription": "2-stage under-sink water filter — 5 micron PP sediment + 5 micron carbon block. Complete kit with stainless steel faucet, pressure-reducing valve, fittings, and tubing. DIY-installable in 1–2 hours.",
+    "description": "A complete 2-stage under-sink water filter kit — the simplest, most cost-effective drinking-water filtration option. The 2-stage configuration handles the two contaminant categories that matter most for taste and basic safety: sediment (sand, dirt, rust particles) and chlorine (the chemical responsible for the swimming-pool smell and taste of treated mains water). For households on reasonable-quality municipal water who don't need fluoride or heavy-metal reduction, this is the right tier.\n\n## Two-Stage Filtration\n\n- **Stage 1 — 5 micron PP spun sediment filter:** captures sand, dirt, rust, and visible particulate from the feed water. The first line of defence; protects the carbon stage and the system fittings from sediment clogging.\n- **Stage 2 — 5 micron carbon block filter:** removes chlorine, taste, odour, and a range of organic chemical contaminants. The dense carbon block construction provides better contact time and finer filtration than loose granular carbon.\n\nBoth cartridges are standard 10\" × 2.5\" format — the most widely-stocked size in Australia.\n\n## What's Included\n\nA complete DIY install kit, no extra parts to source:\n\n- Twin filter housing system with 1/4\" ports\n- 5 micron PP sediment cartridge (starter)\n- 5 micron carbon block cartridge (starter)\n- Stainless steel filter faucet\n- 1/2\" threaded inlet block and valve\n- 2 m of 1/4\" tubing (white)\n- Pressure-reducing valve (protects the filter housings from high mains pressure)\n- Quick-connect hose fittings\n- Opening spanner for cartridge changes\n\n## DIY Install or Plumber\n\nA reasonably handy homeowner can install this in 1–2 hours: connect to the cold supply line under the sink, mount the filter bracket, drill a tap hole if your bench doesn't have one, run tubing. The included pressure-reducing valve protects the housings from high-pressure mains supplies.\n\nIf you'd rather have a licensed plumber do the work, the install is straightforward and shouldn't take longer than an hour of plumber time.\n\n## Where This Tier Fits in the Range\n\n- **2-stage (this product):** sediment + carbon — best for chlorine and taste\n- **[3-stage with alkaline](/under-sink-water-filter-3-stage-sediment-carbon-alkaline/):** adds re-mineralisation and pH lift\n- **[4-stage RO](/under-sink-water-filter-4-stage-reverse-osmosis-system/):** adds reverse osmosis for fluoride, heavy metals, dissolved solids\n\n## Service Interval\n\nReplace cartridges every 6–12 months depending on water quality. Replacement cartridges are stocked individually — the [5 micron PP sediment](/polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5/) and [5 micron coconut carbon block](/coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5/) — or as a [twin pack](/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr/).",
+    "features": [
+      "2-stage filtration: 5 micron PP sediment + 5 micron carbon block",
+      "Removes chlorine, taste, odour, sediment, rust",
+      "Complete DIY kit — stainless steel faucet, all fittings included",
+      "Pressure-reducing valve included — protects housings on high-pressure mains",
+      "10\" × 2.5\" cartridges — widely-stocked Australian standard",
+      "1/4\" tubing connections — standard residential filter format",
+      "Suits both mains-supply and tank water"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (both stages)"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tubing"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Under-sink water filter, twin housing"
+      },
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron carbon block (CTO)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Connection size",
+        "value": "1/4\" tubing"
+      },
+      {
+        "label": "Inlet block",
+        "value": "1/2\" threaded with isolation valve"
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel filter faucet (included)"
+      },
+      {
+        "label": "Pressure-reducing valve",
+        "value": "Included"
+      },
+      {
+        "label": "Tubing supplied",
+        "value": "2 m of 1/4\" white tubing"
+      },
+      {
+        "label": "Suitable for",
+        "value": "Mains and tank water"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Install time",
+        "value": "1–2 hours DIY, or licensed plumber"
+      }
+    ],
+    "recommendedFor": [
+      "Households on chlorinated municipal water wanting better taste",
+      "Cost-conscious filtration without the complexity of an RO system",
+      "Renters or short-stay properties (system can be removed and reinstalled)",
+      "Backup or secondary tap filtration in a larger filter setup"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Under-sink filter — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-3-stage-sediment-carbon-alkaline",
+        "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr",
+        "premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+      "title": "2-Stage Under-Sink Water Filter — Sediment + Carbon, Complete Kit | Enviro Aqua",
+      "description": "2-stage under-sink filter: 5 micron PP sediment + 5 micron carbon block. Includes stainless steel faucet, fittings, tubing, pressure-reducing valve. DIY install.",
+      "ogImage": null
     }
   },
   "under-sink-water-filter-3-stage-sediment-carbon-alkaline": {
@@ -5767,9 +6513,134 @@
       "water-filters",
       "under-sink"
     ],
-    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "tags": [
+      "under-sink",
+      "three-stage",
+      "sediment-carbon-alkaline",
+      "remineralisation",
+      "diy-install",
+      "10x25",
+      "five-micron"
+    ],
+    "shortDescription": "3-stage under-sink water filter — 5 micron PP sediment, 5 micron carbon block, plus an alkaline cartridge for re-mineralisation and pH lift. Complete kit with stainless steel faucet and DIY fittings.",
+    "description": "A 3-stage under-sink water filter that adds an **alkaline mineral stage** to the standard sediment-and-carbon configuration — the right tier for owners who want chlorine reduction *and* the mineral profile of natural spring water at the tap, without stepping up to the cost and complexity of a reverse osmosis system.\n\n## Three-Stage Filtration\n\n- **Stage 1 — 5 micron PP spun sediment filter:** captures sand, dirt, rust, and visible particulate. Protects the carbon stage and the alkaline media downstream.\n- **Stage 2 — 5 micron carbon block:** removes chlorine, taste, odour, and a range of organic chemical contaminants. Higher contact time than granular carbon.\n- **Stage 3 — Alkaline mineral cartridge:** introduces calcium, magnesium, and other minerals back into the water and lifts pH from neutral toward slightly alkaline. The result is filtered water with the mouthfeel of mineral water rather than the flat taste some people perceive in heavily-purified water.\n\nAll cartridges in standard 10\" × 2.5\" format — the most widely-stocked Australian filter size.\n\n## When the 3-Stage Makes Sense vs RO\n\n- **3-stage (this product):** sediment, chlorine, taste, and mineral enhancement. Doesn't reduce fluoride, dissolved solids, or heavy metals.\n- **[4-stage RO](/under-sink-water-filter-4-stage-reverse-osmosis-system/) and up:** adds the RO membrane for full-spectrum contaminant reduction including fluoride and heavy metals. Significantly more aggressive treatment.\n\nIf your concern is taste and chlorine, and you want the perceived benefit of mineralised water, the 3-stage gets you there. If you're targeting fluoride or specific contaminant reduction, step up to RO.\n\n## What's Included\n\nA complete DIY kit:\n\n- Triple housing filter system with 1/4\" ports\n- 5 micron PP sediment cartridge (starter)\n- 5 micron carbon block cartridge (starter)\n- Alkaline mineral cartridge (starter)\n- Stainless steel filter faucet\n- 1/2\" threaded inlet block and valve\n- 2 m of 1/4\" tubing (white)\n- Pressure-reducing valve\n- Quick-connect hose fittings\n- Opening spanner for cartridge changes\n\n## Install\n\nDIY install for handy homeowners (1–2 hours), or a licensed plumber. Connects to the cold water supply line under the sink. Tap hole drilling required if the bench doesn't already have one.\n\n## Service Interval\n\nReplace the sediment and carbon cartridges every 6–12 months on typical Australian town water. The alkaline cartridge typically lasts 12 months or 1500 gallons — whichever comes first. Replacement cartridges available individually or as a configured set.",
+    "features": [
+      "3-stage filtration: sediment, carbon, and alkaline mineralisation",
+      "Re-mineralises filtered water and lifts pH toward slightly alkaline",
+      "Removes chlorine, sediment, taste, and odour",
+      "Complete DIY kit — stainless steel faucet and all fittings included",
+      "Pressure-reducing valve protects housings on high-pressure mains",
+      "10\" × 2.5\" cartridges — widely-stocked Australian standard",
+      "Suits both mains and tank water supply"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Stage 3",
+        "value": "Alkaline + pH lift"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tubing"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Under-sink water filter, triple housing"
+      },
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP spun sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron carbon block (CTO)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Alkaline mineral cartridge"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Connection size",
+        "value": "1/4\" tubing"
+      },
+      {
+        "label": "Inlet block",
+        "value": "1/2\" threaded with isolation valve"
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel filter faucet (included)"
+      },
+      {
+        "label": "Pressure-reducing valve",
+        "value": "Included"
+      },
+      {
+        "label": "Tubing supplied",
+        "value": "2 m of 1/4\" white tubing"
+      },
+      {
+        "label": "Suitable for",
+        "value": "Mains and tank water"
+      },
+      {
+        "label": "Cartridge change interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Install time",
+        "value": "1–2 hours DIY, or licensed plumber"
+      }
+    ],
+    "recommendedFor": [
+      "Households wanting filtered water with the taste of mineral water",
+      "Owners on chlorinated mains supplies with no fluoride concerns",
+      "Anyone finding pure-RO water tastes too flat",
+      "Upgrade from a 2-stage filter without going to RO complexity"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Under-sink filter — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "under-sink-water-filter-2-stage-sediment-carbon",
+        "inline-water-filter-alkaline-ph-neutralising-10-x-2",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+      "title": "3-Stage Under-Sink Filter — Sediment + Carbon + Alkaline | Enviro Aqua",
+      "description": "3-stage under-sink filter: 5 micron PP sediment, 5 micron carbon block, alkaline mineral cartridge. Re-mineralised filtered water with pH lift. Stainless faucet.",
+      "ogImage": null
     }
   },
   "uv-0-5-1-gpm-11w-filters-uv-water-sterilizer-filter-220v-phillip-lamp": {
