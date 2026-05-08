@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { Minus, Plus } from 'lucide-react';
 import { useCart } from './CartProvider';
 
 interface AddToCartButtonProps {
@@ -95,7 +96,7 @@ export function AddToCartButton({
           sits next to the Add-to-cart button on a single row.
         */}
         <div
-          className="flex sm:inline-flex w-full sm:w-auto items-stretch border border-black rounded overflow-hidden"
+          className="flex sm:inline-flex w-full sm:w-auto items-stretch h-12 border border-gray-300 rounded-md bg-white overflow-hidden"
           aria-label="Quantity"
         >
           <button
@@ -103,9 +104,9 @@ export function AddToCartButton({
             onClick={dec}
             disabled={quantity <= 1 || !available || anyBusy}
             aria-label="Decrease quantity"
-            className="flex-1 sm:flex-none sm:px-3 text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+            className="flex-1 sm:flex-none sm:w-11 inline-flex items-center justify-center text-black/70 hover:text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
           >
-            −
+            <Minus className="h-4 w-4" aria-hidden="true" strokeWidth={2.25} />
           </button>
           <input
             type="number"
@@ -115,16 +116,16 @@ export function AddToCartButton({
             value={quantity}
             onChange={(e) => onTyped(e.target.value)}
             aria-label="Quantity"
-            className="w-12 flex-shrink-0 text-center text-black bg-white border-x border-black focus:outline-none focus:ring-2 focus:ring-brand-blue [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="w-14 flex-shrink-0 text-center text-black font-medium bg-transparent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-blue [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           />
           <button
             type="button"
             onClick={inc}
             disabled={quantity >= MAX_QTY || !available || anyBusy}
             aria-label="Increase quantity"
-            className="flex-1 sm:flex-none sm:px-3 text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+            className="flex-1 sm:flex-none sm:w-11 inline-flex items-center justify-center text-black/70 hover:text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
           >
-            +
+            <Plus className="h-4 w-4" aria-hidden="true" strokeWidth={2.25} />
           </button>
         </div>
 

@@ -59,6 +59,74 @@ export function localBusinessSchema(): JsonLd {
   };
 }
 
+/**
+ * Store-scoped LocalBusiness schema for the /showroom landing page.
+ * Augments the sitewide LocalBusiness with geo coordinates, a
+ * full openingHoursSpecification (Mon–Fri 09:00–17:00), an
+ * areaServed list (Central Coast suburbs), and a hasMap link to
+ * Google Maps. Use this on the showroom page only — the layout
+ * already emits the sitewide LocalBusiness on every page.
+ */
+export interface StoreSchemaInput {
+  /** Latitude of the storefront. */
+  latitude: number;
+  /** Longitude of the storefront. */
+  longitude: number;
+  /** Suburb names for `areaServed`. Plain strings, no postcode. */
+  areaServed: ReadonlyArray<string>;
+  /** Google Maps URL the schema should link to via `hasMap`. */
+  mapUrl: string;
+}
+
+export function storeSchema(input: StoreSchemaInput): JsonLd {
+  const url = getSiteUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Store',
+    name: BUSINESS_INFO.name,
+    url: `${url}/showroom/`,
+    image: absoluteUrl('/logo.svg'),
+    description:
+      'Walk-in water filter showroom on the NSW Central Coast. Big Blue systems on display, full cartridge stock, free Click & Collect.',
+    telephone: BUSINESS_INFO.phone.tel,
+    email: BUSINESS_INFO.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: BUSINESS_INFO.address.street,
+      addressLocality: BUSINESS_INFO.address.locality,
+      addressRegion: BUSINESS_INFO.address.region,
+      postalCode: BUSINESS_INFO.address.postalCode,
+      addressCountry: BUSINESS_INFO.address.country,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: input.latitude,
+      longitude: input.longitude,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+        ],
+        opens: '09:00',
+        closes: '17:00',
+      },
+    ],
+    hasMap: input.mapUrl,
+    areaServed: input.areaServed.map((name) => ({
+      '@type': 'City',
+      name,
+    })),
+    priceRange: '$',
+    sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
+  };
+}
+
 export function websiteSchema(): JsonLd {
   const url = getSiteUrl();
   return {

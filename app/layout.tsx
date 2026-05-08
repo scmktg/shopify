@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { TopBanner } from '@/components/layout/TopBanner';
+import { PromoBanner } from '@/components/layout/PromoBanner';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CartProvider } from '@/components/cart/CartProvider';
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className="flex flex-col min-h-screen">
         <JsonLdScript data={[localBusinessSchema(), websiteSchema()]} />
         <CartProvider>
-          <TopBanner />
+          <PromoBanner />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
