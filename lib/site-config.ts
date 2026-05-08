@@ -68,7 +68,7 @@ export const PROMO_ROTATING_ITEMS: ReadonlyArray<PromoRotatingItem> = [
     href: '/about/our-pricing/',
   },
   {
-    text: 'Not sure which filter? 60-second filter finder',
+    text: 'Not sure which filter, learn more here',
     href: '/help/which-filter/',
   },
 ];

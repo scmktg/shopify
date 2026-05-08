@@ -1,11 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import {
-  FilterFinderQuiz,
-  type ProductCardInfo,
-} from '@/components/help/FilterFinderQuiz';
-import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
-import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import {
   breadcrumbSchema,
@@ -15,42 +9,25 @@ import { BUSINESS_INFO } from '@/content/business-info';
 
 export const metadata: Metadata = {
   title:
-    'Filter Finder — Find the Right Water Filter in 60 Seconds',
+    'How to Choose a Water Filter — Australian Buying Guide',
   description:
-    "Answer 3–4 questions and we'll recommend the exact water filter system for your home. Town water, tank water, bore water — every situation, every budget. AU-stocked, same-day dispatch.",
+    "Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern. Town water, tank, bore — every situation. AU-stocked, same-day dispatch from Wyong NSW.",
   alternates: { canonical: '/help/which-filter/' },
   openGraph: {
     title:
-      'Filter Finder — Find the Right Water Filter in 60 Seconds',
+      'How to Choose a Water Filter — Australian Buying Guide',
     description:
-      "Answer 3–4 questions and we'll recommend the exact water filter system for your home.",
+      'Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern.',
     url: '/help/which-filter/',
-    type: 'website',
+    type: 'article',
   },
   twitter: {
     title:
-      'Filter Finder — Find the Right Water Filter in 60 Seconds',
+      'How to Choose a Water Filter — Australian Buying Guide',
     description:
-      "Answer 3–4 questions and we'll recommend the exact water filter system for your home.",
+      'Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern.',
   },
 };
-
-// Force fresh price/availability per request — Shopify primitives
-// drift, and a stale recommendation card with the wrong price reads
-// worse than a fresh fetch on a low-traffic page.
-export const revalidate = 0;
-
-const QUIZ_PRODUCT_HANDLES: ReadonlyArray<string> = [
-  'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
-  'under-sink-water-filter-2-stage-sediment-carbon',
-  '5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap',
-  'under-sink-water-filter-6-stage-reverse-osmosis-system',
-  'bench-top-water-filter-sediment-carbon-2-stage',
-  'big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system',
-  '3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system',
-  'uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v',
-  'uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v',
-];
 
 const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   {
@@ -75,41 +52,7 @@ const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
 ];
 
-async function loadProductMap(): Promise<
-  Readonly<Record<string, ProductCardInfo>>
-> {
-  const entries = await Promise.all(
-    QUIZ_PRODUCT_HANDLES.map(async (handle) => {
-      try {
-        const product = await fetchProductByHandle(handle);
-        if (!product) return null;
-        return [
-          handle,
-          {
-            handle: product.handle,
-            title: product.title,
-            href: getProductUrl(product.handle),
-            price: product.priceRange.minVariantPrice,
-            image: product.featuredImage,
-          } satisfies ProductCardInfo,
-        ] as const;
-      } catch (error) {
-        if (process.env.NODE_ENV !== 'production') {
-          console.warn(
-            `[which-filter] Failed to fetch ${handle}:`,
-            error,
-          );
-        }
-        return null;
-      }
-    }),
-  );
-  return Object.fromEntries(entries.filter((e): e is NonNullable<typeof e> => e !== null));
-}
-
-export default async function FilterFinderPage() {
-  const productMap = await loadProductMap();
-
+export default function FilterFinderPage() {
   return (
     <>
       <JsonLdScript
@@ -117,21 +60,12 @@ export default async function FilterFinderPage() {
           breadcrumbSchema([
             { name: 'Home', path: '/' },
             { name: 'Help & guides', path: '/help/' },
-            { name: 'Filter finder', path: '/help/which-filter/' },
+            {
+              name: 'How to choose a water filter',
+              path: '/help/which-filter/',
+            },
           ]),
           faqPageSchema(FAQS.map((f) => ({ q: f.q, a: f.a }))),
-          {
-            '@context': 'https://schema.org',
-            '@type': 'QAPage',
-            mainEntity: {
-              '@type': 'Question',
-              name: 'Which water filter do I need for my home?',
-              acceptedAnswer: {
-                '@type': 'Answer',
-                text: "Answer four short questions about your water source, where you want filtered water, and what you're concerned about. The recommended system follows from your answers — town water on a property you own and want every tap covered points at a Three-Stage Big Blue whole-house system; town water at one tap with PFAS or fluoride concerns points at a 5-stage reverse-osmosis under-sink system; tank water always pairs filtration with UV sterilisation.",
-              },
-            },
-          },
         ]}
       />
 
@@ -139,120 +73,101 @@ export default async function FilterFinderPage() {
         {/* HERO */}
         <header>
           <p className="text-sm font-semibold tracking-wider uppercase text-brand-blue">
-            Filter finder
+            Buying guide
           </p>
           <h1 className="mt-2 text-4xl md:text-5xl font-semibold text-black tracking-tight">
-            Find the right water filter in 60 seconds
+            How to choose a water filter
           </h1>
           <p className="mt-4 text-lg text-black/80 leading-snug max-w-2xl">
-            Three to four questions about your water source, where
-            you want it filtered, and what you&apos;re concerned
-            about. We&apos;ll recommend the system that fits — no
-            guesswork, no upsell.
+            Three decisions in order. Start with the source, then
+            decide where you want the filtration, then pick the
+            technology that matches your contaminants of concern.
+            No upsell, no marketing — just the architecture.
           </p>
         </header>
 
-        {/* QUIZ */}
-        <div className="mt-10">
-          <FilterFinderQuiz productMap={productMap} />
-        </div>
-
         {/* EDUCATIONAL CONTENT */}
-        <section className="mt-16 border-t border-gray-100 pt-12">
-          <h2 className="text-3xl md:text-4xl font-semibold text-black tracking-tight">
-            How to choose a water filter — without the quiz
-          </h2>
-          <p className="mt-3 text-base text-black/70">
-            Three decisions in order. Start with the source, then
-            decide where you want the filtration, then pick the
-            technology that matches the contaminants.
+        <section className="mt-12 prose max-w-none">
+          <h2>Start with where the water comes from</h2>
+          <p>
+            <strong>Town water (mains)</strong> in Australia is
+            treated to AS/NZS 3500 with chlorine or chloramine for
+            disinfection. The water that arrives at your property is
+            generally safe to drink, but the chlorine dose affects
+            taste and odour and the supply network can pick up
+            sediment and rust between the treatment plant and your
+            house. Carbon filtration is the standard answer.
+          </p>
+          <p>
+            <strong>Rainwater tank</strong> is collected from your
+            roof and never disinfected. It carries leaf debris,
+            dust, bird droppings, and live bacterial load including
+            E. coli and Giardia. Tank water needs both physical
+            filtration (sediment + carbon) and UV sterilisation —
+            UV alone leaves sediment, filtration alone leaves
+            bacteria.
+          </p>
+          <p>
+            <strong>Bore or spring water</strong> varies by location
+            and depth. Without a recent water test, specifying the
+            right system is guesswork. Get a test first — your local
+            council usually offers low-cost residential tests, or
+            we can recommend a private testing service.
           </p>
 
-          <div className="mt-8 prose max-w-none">
-            <h3>Start with where the water comes from</h3>
-            <p>
-              <strong>Town water (mains)</strong> in Australia is
-              treated to AS/NZS 3500 with chlorine or chloramine for
-              disinfection. The water that arrives at your property
-              is generally safe to drink, but the chlorine dose
-              affects taste and odour and the supply network can
-              pick up sediment and rust between the treatment plant
-              and your house. Carbon filtration is the standard
-              answer.
-            </p>
-            <p>
-              <strong>Rainwater tank</strong> is collected from your
-              roof and never disinfected. It carries leaf debris,
-              dust, bird droppings, and live bacterial load
-              including E. coli and Giardia. Tank water needs both
-              physical filtration (sediment + carbon) and UV
-              sterilisation — UV alone leaves sediment, filtration
-              alone leaves bacteria.
-            </p>
-            <p>
-              <strong>Bore or spring water</strong> varies by
-              location and depth. Without a recent water test,
-              specifying the right system is guesswork. Get a test
-              first — your local council usually offers low-cost
-              residential tests, or we can recommend a private
-              testing service.
-            </p>
+          <h2>Decide where you want it filtered</h2>
+          <p>
+            <strong>Whole-house</strong> systems plumb into the
+            mains supply line where it enters your property and
+            filter every tap, shower, and appliance. They need a
+            licensed plumber to install (Australian plumbing law),
+            they need WaterMark certification (same reason), and
+            they make sense when you own the property and care
+            about more than just drinking water — chlorinated
+            showers irritate skin, sediment-laden water shortens
+            the life of dishwashers and washing machines.
+          </p>
+          <p>
+            <strong>Point-of-use</strong> systems filter one
+            outlet — typically a kitchen tap with a dedicated
+            filtered-water faucet. Cheaper, simpler, often the
+            right answer if you only care about drinking water.
+            Under-sink models are tidier; bench-top models pack up
+            and move with you.
+          </p>
 
-            <h3>Decide where you want it filtered</h3>
-            <p>
-              <strong>Whole-house</strong> systems plumb into the
-              mains supply line where it enters your property and
-              filter every tap, shower, and appliance. They need a
-              licensed plumber to install (Australian plumbing law),
-              they need WaterMark certification (same reason), and
-              they make sense when you own the property and care
-              about more than just drinking water — chlorinated
-              showers irritate skin, sediment-laden water shortens
-              the life of dishwashers and washing machines.
-            </p>
-            <p>
-              <strong>Point-of-use</strong> systems filter one
-              outlet — typically a kitchen tap with a dedicated
-              filtered-water faucet. Cheaper, simpler, often the
-              right answer if you only care about drinking water.
-              Under-sink models are tidier; bench-top models pack
-              up and move with you.
-            </p>
-
-            <h3>Pick the technology that matches your concern</h3>
-            <ul>
-              <li>
-                <strong>Carbon (block or GAC):</strong> chlorine,
-                chloramine, taste, odour, basic chemicals. The
-                workhorse stage in almost every system.
-              </li>
-              <li>
-                <strong>Reverse osmosis:</strong> fluoride, PFAS /
-                forever chemicals, dissolved heavy metals (lead,
-                copper), nitrate, total dissolved solids. Slow but
-                thorough.
-              </li>
-              <li>
-                <strong>UV sterilisation:</strong> bacteria,
-                viruses, protozoa. Doesn&apos;t filter — it
-                inactivates pathogens with 254 nm UV-C light. Always
-                paired with sediment + carbon upstream.
-              </li>
-              <li>
-                <strong>Sediment:</strong> rust, sand, silt,
-                suspended solids. Always the first stage on tank or
-                bore water; protects the carbon stages downstream.
-              </li>
-            </ul>
-            <p>
-              Most homes need a combination. Town water on a
-              property you own typically wants sediment + carbon +
-              polishing carbon at the mains line. Tank water adds UV
-              after the carbon stages. Drinking-only setups concerned
-              about PFAS or fluoride add a small RO unit at the
-              kitchen tap.
-            </p>
-          </div>
+          <h2>Pick the technology that matches your concern</h2>
+          <ul>
+            <li>
+              <strong>Carbon (block or GAC):</strong> chlorine,
+              chloramine, taste, odour, basic chemicals. The
+              workhorse stage in almost every system.
+            </li>
+            <li>
+              <strong>Reverse osmosis:</strong> fluoride, PFAS /
+              forever chemicals, dissolved heavy metals (lead,
+              copper), nitrate, total dissolved solids. Slow but
+              thorough.
+            </li>
+            <li>
+              <strong>UV sterilisation:</strong> bacteria, viruses,
+              protozoa. Doesn&apos;t filter — it inactivates
+              pathogens with 254 nm UV-C light. Always paired with
+              sediment + carbon upstream.
+            </li>
+            <li>
+              <strong>Sediment:</strong> rust, sand, silt, suspended
+              solids. Always the first stage on tank or bore water;
+              protects the carbon stages downstream.
+            </li>
+          </ul>
+          <p>
+            Most homes need a combination. Town water on a property
+            you own typically wants sediment + carbon + polishing
+            carbon at the mains line. Tank water adds UV after the
+            carbon stages. Drinking-only setups concerned about
+            PFAS or fluoride add a small RO unit at the kitchen tap.
+          </p>
         </section>
 
         {/* FAQ */}
@@ -272,6 +187,36 @@ export default async function FilterFinderPage() {
               </div>
             ))}
           </dl>
+        </section>
+
+        {/* TALK TO US CTA */}
+        <section className="mt-12">
+          <div className="bg-brand-blue-light border border-brand-blue/20 rounded-lg p-6 md:p-8">
+            <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+              Still unsure?
+            </h2>
+            <p className="mt-3 text-base text-black/80 leading-snug max-w-2xl">
+              Bore water, mixed sources, very high TDS readings, or
+              a multi-property setup all need a conversation, not a
+              guide. Bring a recent water test if you have one — call
+              us or visit the Wyong showroom and we&apos;ll spec the
+              right system.
+            </p>
+            <div className="mt-5 flex flex-col sm:flex-row gap-3">
+              <a
+                href={`tel:${BUSINESS_INFO.phone.tel}`}
+                className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors tabular-nums"
+              >
+                Call {BUSINESS_INFO.phone.display}
+              </a>
+              <Link
+                href="/showroom/"
+                className="inline-flex items-center justify-center bg-white border border-black hover:bg-gray-50 text-black font-semibold py-3 px-6 rounded transition-colors"
+              >
+                Visit the Wyong showroom →
+              </Link>
+            </div>
+          </div>
         </section>
 
         {/* RELATED LINKS */}
@@ -321,12 +266,12 @@ export default async function FilterFinderPage() {
               </Link>
             </li>
             <li>
-              <a
-                href={`tel:${BUSINESS_INFO.phone.tel}`}
-                className="text-brand-blue hover:underline underline-offset-4 tabular-nums"
+              <Link
+                href="/contact/"
+                className="text-brand-blue hover:underline underline-offset-4"
               >
-                Call {BUSINESS_INFO.phone.display} →
-              </a>
+                Contact →
+              </Link>
             </li>
           </ul>
         </section>
