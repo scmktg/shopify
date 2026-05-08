@@ -61,7 +61,7 @@ export const PROMO_ROTATING_ITEMS: ReadonlyArray<PromoRotatingItem> = [
   },
   {
     text: 'Free Click & Collect from our Wyong showroom',
-    href: '/about/',
+    href: '/showroom/',
   },
   {
     text: 'Australian-stocked · plumber-grade product',
@@ -69,7 +69,7 @@ export const PROMO_ROTATING_ITEMS: ReadonlyArray<PromoRotatingItem> = [
   },
   {
     text: 'Not sure which filter? 60-second filter finder',
-    href: '/water-problems/',
+    href: '/help/which-filter/',
   },
 ];
 
