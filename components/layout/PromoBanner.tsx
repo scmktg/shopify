@@ -53,15 +53,30 @@ export function PromoBanner() {
   return (
     <div className="bg-black text-white text-[12px] sm:text-[13px]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-9 sm:h-10 flex items-center justify-center sm:justify-between gap-4">
-        <p className="hidden sm:block min-w-0 truncate">
+        {/*
+          Static line — always visible. On mobile the rotating side
+          is hidden, so the static line is the only thing on the
+          row; we centre it via the outer `justify-center`. On sm+
+          it sits to the left and the rotating side sits to its
+          right via the outer `sm:justify-between`.
+        */}
+        <p className="min-w-0 truncate text-center sm:text-left">
           <span className="font-semibold text-white">
             {PROMO_STATIC.primary}
           </span>{' '}
           <span className="text-white/60">{PROMO_STATIC.secondary}</span>
         </p>
 
+        {/*
+          Rotating side — hidden on mobile, sm+ only. `flex-1` lets
+          the column take whatever row space is left after the
+          static line; absolutely-stacked items inside fill that
+          column (so it must NOT be flex-initial / w-auto, otherwise
+          there's no box for them to render into). The active link
+          is right-aligned via `justify-end`.
+        */}
         <div
-          className="relative flex-1 sm:flex-initial sm:w-auto sm:max-w-md h-full"
+          className="hidden sm:block relative flex-1 h-full"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
@@ -78,7 +93,7 @@ export function PromoBanner() {
                 <li
                   key={item.href}
                   aria-hidden={!active}
-                  className={`absolute inset-0 flex items-center justify-center sm:justify-end transition-opacity duration-500 ${
+                  className={`absolute inset-0 flex items-center justify-end transition-opacity duration-500 ${
                     active ? 'opacity-100' : 'opacity-0 pointer-events-none'
                   }`}
                 >

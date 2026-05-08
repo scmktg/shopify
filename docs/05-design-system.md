@@ -90,7 +90,7 @@ The black strip running across the very top of every page, above the white heade
 - **Padding** — horizontal padding matches the page gutter (`px-4 sm:px-6 lg:px-8`). Vertical padding is implicit from the row height.
 - **Sticky behaviour** — banner does **not** sticky on scroll. The header sticks; the banner scrolls away.
 - **Layout (sm+)** — two columns sharing the row: a static line on the left, a rotating message on the right.
-- **Layout (mobile, < 640px)** — static line is hidden; only the rotating side renders, centre-aligned.
+- **Layout (mobile, < 640px)** — rotating side is hidden; only the static line renders, centre-aligned.
 - **Colour hierarchy** — three weights of white on the black strip:
   - Static **primary** (`font-semibold text-white`) — the brand-promise hook.
   - Static **secondary** (`text-white/60`) — the supporting clause, light grey.

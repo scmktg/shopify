@@ -45,7 +45,7 @@ export const BACK_IN_STOCK_ENDPOINT = '/api/back-in-stock';
  * The rotating items rotate every ~5s in both layouts.
  */
 export const PROMO_STATIC = {
-  primary: 'Same price retail or trade.',
+  primary: 'Same wholesale price, retail or trade.',
   secondary: 'No accounts, no minimums.',
 } as const;
 
