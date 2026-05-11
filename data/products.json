@@ -38,10 +38,6 @@
         "value": "SUS304 stainless steel"
       },
       {
-        "label": "Connection",
-        "value": "Direct mains"
-      },
-      {
         "label": "Lead free",
         "value": "Yes"
       }
@@ -633,10 +629,6 @@
         "value": "8–12 °C"
       },
       {
-        "label": "Cooling power",
-        "value": "200 W"
-      },
-      {
         "label": "Lead free",
         "value": "Yes"
       }
@@ -772,10 +764,6 @@
       {
         "label": "Cabinet material",
         "value": "SUS304 stainless steel"
-      },
-      {
-        "label": "Refrigerant",
-        "value": "R290 (60 g)"
       },
       {
         "label": "Lead free",
