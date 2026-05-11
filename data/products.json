@@ -4961,6 +4961,10 @@
       {
         "label": "WaterMark certified",
         "value": "Yes (all water-contact items)"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -4977,31 +4981,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -5142,6 +5123,10 @@
       {
         "label": "WaterMark certified",
         "value": "Yes (all water-contact items)"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -5158,31 +5143,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -5323,6 +5285,10 @@
       {
         "label": "WaterMark certified",
         "value": "Yes (all water-contact items)"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -5339,31 +5305,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -5508,6 +5451,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and wall-hung PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -5524,31 +5471,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -5693,6 +5617,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and wall-hung PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -5709,31 +5637,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -5878,6 +5783,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and wall-hung PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -5894,31 +5803,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -6063,6 +5949,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and 600 mm wall-hung PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -6080,31 +5970,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -6249,6 +6116,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and 600 mm wall-hung PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -6266,31 +6137,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -6435,6 +6283,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and 600 mm wall-hung PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -6452,31 +6304,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -6621,6 +6450,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and 1,200 mm free-standing PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -6638,31 +6471,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -6807,6 +6617,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and 1,200 mm free-standing PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -6824,31 +6638,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -6993,6 +6784,10 @@
       {
         "label": "Included extras",
         "value": "LED smart mirror (three colour temperature settings) and 1,200 mm free-standing PVC cabinet with soft-close drawers"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -7010,31 +6805,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "registrations": [
-          {
-            "item": "Basin tap",
-            "registration": "T30756",
-            "starRating": 4,
-            "flowRate": "7.5 L/min"
-          },
-          {
-            "item": "Overhead shower",
-            "registration": "S16794",
-            "starRating": 3,
-            "flowRate": "9 L/min"
-          },
-          {
-            "item": "Toilet",
-            "registration": "L07489",
-            "starRating": 4,
-            "flowRate": "4.5 / 3 L (dual flush)"
-          }
-        ],
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756), overhead shower (S16794), and rimless toilet suite (L07489). Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
+      "wels": null,
+      "note": "All water-contact items in the package are WaterMark certified per supplier specification. Three WELS registrations cover the basin tap (T30756, 4 stars at 7.5 L/min), overhead shower (S16794, 3 stars at 9 L/min), and rimless toilet suite (L07489, 4 stars at 4.5/3 L dual flush) under AS/NZS 6400:2016. Hand shower is not WELS rated. Non-water-contact items (hooks, rails, drain plugs, accessories) do not require WaterMark certification under the Australian plumbing standard."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -7157,13 +6929,7 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 4,
-        "flowRate": "7.5 L/min",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
+      "wels": null,
       "note": "WaterMark certified to AS/NZS 3718. WELS rated 4 stars at 7.5 L/min under AS/NZS 6400:2016. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
@@ -7298,13 +7064,7 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 4,
-        "flowRate": "7.5 L/min",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
+      "wels": null,
       "note": "WaterMark certified to AS/NZS 3718. WELS rated 4 stars at 7.5 L/min under AS/NZS 6400:2016. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
@@ -7438,13 +7198,7 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 4,
-        "flowRate": "7.5 L/min",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
+      "wels": null,
       "note": "WaterMark certified to AS/NZS 3718. WELS rated 4 stars at 7.5 L/min under AS/NZS 6400:2016. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
@@ -7578,13 +7332,7 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 4,
-        "flowRate": "7.5 L/min",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
+      "wels": null,
       "note": "WaterMark certified to AS/NZS 3718 (Plumbing fittings — General requirements). WELS rated 4 stars at 7.5 L/min under AS/NZS 6400:2016. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
@@ -7708,13 +7456,7 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 5,
-        "flowRate": "6 L/min",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
+      "wels": null,
       "note": "WaterMark certified to AS/NZS 3718. WELS rated 5 stars at 6 L/min under AS/NZS 6400:2016 — strong water-efficiency rating. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
@@ -7853,13 +7595,7 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 5,
-        "flowRate": "6 L/min",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
+      "wels": null,
       "note": "WaterMark certified to AS/NZS 3718. WELS rated 5 stars at 6 L/min under AS/NZS 6400:2016. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
@@ -8014,6 +7750,10 @@
       {
         "label": "Pickup",
         "value": "Local pickup available — Central Coast NSW"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -8030,14 +7770,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 4,
-        "flowRate": "4.5 / 3 L (dual flush)",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "WaterMark certified per supplier specification. WELS 4-star rated with 4.5/3L dual flush. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
+      "wels": null,
+      "note": "WaterMark certified per supplier specification. WELS 4-star rated with 4.5/3 L dual flush under AS/NZS 6400:2016. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -8147,6 +7881,10 @@
       {
         "label": "Pickup",
         "value": "Local pickup available — Central Coast NSW"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -8163,14 +7901,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": 4,
-        "flowRate": "4.5 / 3 L (dual flush)",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "WaterMark certified per supplier specification. WELS 4-star rated with 4.5/3L dual flush. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
+      "wels": null,
+      "note": "WaterMark certified per supplier specification. WELS 4-star rated with 4.5/3 L dual flush under AS/NZS 6400:2016. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -8288,6 +8020,10 @@
       {
         "label": "WELS rated",
         "value": "Yes"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -8304,14 +8040,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": null,
-        "flowRate": null,
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "WaterMark certified and WELS rated per supplier specification. Star rating and flow rate not specified in source data — to be confirmed against supplier documentation along with licence number and WELS registration."
+      "wels": null,
+      "note": "WaterMark certified and WELS rated per supplier specification, under AS/NZS 6400:2016. Star rating, flow rate, licence number, and WELS registration to be confirmed against supplier documentation."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -13920,6 +13650,10 @@
       {
         "label": "WELS rated",
         "value": "Yes"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -13936,14 +13670,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": null,
-        "flowRate": "3 / 4.5 L (dual flush)",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "WaterMark certified per supplier instruction. WELS rated with 3L/4.5L dual flush. Star rating and registration number to be confirmed against supplier documentation."
+      "wels": null,
+      "note": "WaterMark certified per supplier instruction. WELS rated with 3/4.5 L dual flush under AS/NZS 6400:2016. Star rating, licence number, and registration number to be confirmed against supplier documentation."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -14070,6 +13798,10 @@
       {
         "label": "Material",
         "value": "Ceramic"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
       }
     ],
     "recommendedFor": [
@@ -14086,14 +13818,8 @@
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "status": "rated",
-        "starRating": null,
-        "flowRate": "3-6 L (dual flush)",
-        "registrationNumber": null,
-        "standard": "AS/NZS 6400:2016"
-      },
-      "note": "WaterMark certified — Licence number WMK26775 (confirmed in supplier source data). Additionally CE certified and WELS rated. WELS star rating and registration number to be confirmed against supplier documentation."
+      "wels": null,
+      "note": "WaterMark certified — Licence number WMK26775 (confirmed in supplier source data). Additionally CE certified and WELS rated, with 3-6 L dual flush under AS/NZS 6400:2016. WELS star rating and registration number to be confirmed against supplier documentation."
     },
     "ctas": {
       "primary": "Add to cart",
