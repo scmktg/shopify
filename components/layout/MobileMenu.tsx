@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   Menu,
@@ -168,7 +169,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
             onClick={close}
             className="inline-flex items-center"
           >
-            <img
+            <Image
               src="/logo.webp"
               alt="Enviro Aqua"
               width={160}

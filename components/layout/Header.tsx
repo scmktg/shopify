@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { CATEGORIES } from '@/content/categories';
 import { CartButton } from '@/components/cart/CartButton';
@@ -18,11 +19,13 @@ export function Header() {
           aria-label="Enviro Aqua — home"
           className="inline-flex items-center"
         >
-          <img
+          <Image
             src="/logo.webp"
             alt="Enviro Aqua"
             width={160}
             height={40}
+            priority
+            fetchPriority="high"
             className="h-9 w-auto"
           />
         </Link>
