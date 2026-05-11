@@ -1,78 +1,65 @@
 import clsx from 'clsx';
-import type { ProductCompliance } from '@/lib/products/schema';
+import { Check } from 'lucide-react';
+import type { ProductCompliance, SpecRow } from '@/lib/products/schema';
 
-interface WatermarkBadgeProps {
-  /**
-   * `square` — small overlay tile for product cards (top-right of
-   * the image area).
-   * `rectangle` — wider page-level mark for the buy box / product
-   * hero, with the logo plus a "WaterMark certified" caption.
-   */
-  variant: 'square' | 'rectangle';
+interface BadgeProps {
   className?: string;
 }
 
 /**
- * Red WaterMark certification mark.
+ * Twin compliance badges shown together in the buy box.
  *
- * Uses the scoped `--color-wmk-red` token declared in
- * `app/globals.css` — the single permitted exception to the
- * blue-only accent rule (see `docs/05-design-system.md`). The
- * official mark image is served from `/public/wmk-logo.svg`; until
- * that asset is supplied the badge still renders as a recognisable
- * red tile with the textual "WMK" fallback inside the alt text and
- * a typographic fallback for sighted users.
+ * Both are the same red rectangular pill, same height, same
+ * typography — so when rendered side by side they read as a paired
+ * trust set. Red comes from the scoped `--color-wmk-red` token,
+ * which is the single permitted exception to the blue-only accent
+ * rule (see `docs/05-design-system.md`).
  *
- * Rendered only for WaterMark-certified products. Detection lives
- * in `isWatermarkCertified`, fed from either the full
- * `compliance.watermark.status` or the lightweight `tags` array
- * carried on `ProductCardData`.
+ * `WatermarkBadge` renders when the product is WaterMark certified.
+ * `LeadFreeBadge` renders independently when the product's specs
+ * declare it lead-free — see `isLeadFree`. They can appear together
+ * or alone; nothing assumes one implies the other.
+ *
+ * The official WMK mark is served from `/public/wmk-logo.svg`. A
+ * small "WMK" text fallback sits behind the <img> so the badge is
+ * still recognisable before the asset is supplied.
  */
-export function WatermarkBadge({ variant, className }: WatermarkBadgeProps) {
-  if (variant === 'square') {
-    return (
-      <div
-        role="img"
-        aria-label="WaterMark certified"
-        className={clsx(
-          'relative z-10 flex items-center justify-center bg-wmk-red text-white rounded-sm shadow-md ring-1 ring-black/10 h-11 w-11',
-          className,
-        )}
-      >
-        <BadgeMark className="h-7 w-7" />
-        <span className="sr-only">WaterMark certified</span>
-      </div>
-    );
-  }
 
+const BADGE_BASE_CLASSES =
+  'inline-flex items-center gap-2 rounded-md bg-wmk-red px-4 py-2 text-sm font-semibold tracking-wide text-white shadow-sm';
+
+export function WatermarkBadge({ className }: BadgeProps) {
   return (
-    <div
+    <span
       role="img"
       aria-label="WaterMark certified"
-      className={clsx(
-        'inline-flex items-center gap-2 bg-wmk-red text-white rounded px-3 py-1.5 text-sm font-semibold tracking-wide',
-        className,
-      )}
+      className={clsx(BADGE_BASE_CLASSES, className)}
     >
-      <BadgeMark className="h-5 w-5" />
-      WaterMark certified
-    </div>
+      <WmkMark />
+      WaterMark Certified
+    </span>
   );
 }
 
-/**
- * The visible mark inside the red tile. Renders the supplied SVG at
- * `/public/wmk-logo.svg` layered above a "WMK" text fallback, so
- * the badge is still recognisable when the official asset hasn't
- * been dropped in yet. Once the SVG is present (transparent or
- * red-tinted background, white foreground) it covers the text.
- */
-function BadgeMark({ className }: { className?: string }) {
+export function LeadFreeBadge({ className }: BadgeProps) {
   return (
-    <span className={clsx('relative inline-flex items-center justify-center', className)}>
+    <span
+      role="img"
+      aria-label="Lead free"
+      className={clsx(BADGE_BASE_CLASSES, className)}
+    >
+      <Check className="h-4 w-4" strokeWidth={3} aria-hidden="true" />
+      Lead Free
+    </span>
+  );
+}
+
+function WmkMark() {
+  return (
+    <span className="relative inline-flex h-5 w-5 items-center justify-center">
       <span
         aria-hidden="true"
-        className="absolute inset-0 flex items-center justify-center font-bold leading-none tracking-tight text-[0.65rem]"
+        className="absolute inset-0 flex items-center justify-center text-[0.55rem] font-bold leading-none tracking-tight"
       >
         WMK
       </span>
@@ -86,24 +73,31 @@ function BadgeMark({ className }: { className?: string }) {
   );
 }
 
-/**
- * True when a product is genuinely WaterMark certified. Accepts
- * either the full compliance payload (used on product detail pages)
- * or the tags array carried on `ProductCardData` (used in grids and
- * search). The `watermark` tag is applied to certified products
- * during the migration import, so it's a reliable signal at the
- * card level.
- */
 export function isWatermarkCertified(input: {
   compliance?: ProductCompliance;
   tags?: ReadonlyArray<string>;
 }): boolean {
   if (input.compliance?.watermark?.status === 'certified') return true;
-  // Accept both the documented `cert:watermark` form (per
-  // docs/03-data-model.md tag taxonomy) and the bare `watermark`
-  // form used in the offline migration data. Live Shopify product
-  // tags currently use a mix.
   const tags = input.tags;
   if (!tags) return false;
   return tags.includes('watermark') || tags.includes('cert:watermark');
+}
+
+/**
+ * True when any spec row on the product declares lead-free
+ * compliance. Matches loosely so authors can use either a dedicated
+ * row (`{label: 'Lead free', value: 'Yes'}`) or a material /
+ * compliance row that mentions it (`{label: 'Material', value:
+ * 'Lead-free brass'}`).
+ */
+export function isLeadFree(input: {
+  headlineSpecs?: readonly SpecRow[];
+  fullSpecs?: readonly SpecRow[];
+}): boolean {
+  const rows: readonly SpecRow[] = [
+    ...(input.headlineSpecs ?? []),
+    ...(input.fullSpecs ?? []),
+  ];
+  const re = /lead[\s-]?free/i;
+  return rows.some((row) => re.test(row.label) || re.test(row.value));
 }
