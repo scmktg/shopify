@@ -6,11 +6,11 @@ import { CategoryView } from '@/components/category/CategoryView';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema, collectionSchema } from '@/lib/seo/jsonld';
 
-// Shopify products are tagged with either `watermark` or
-// `cert:watermark` (legacy spelling kept during the WordPress import).
-// Filtering the listing on tag is the only option — the Storefront API
-// doesn't expose metafield filters on the products query.
-const WATERMARK_QUERY = 'tag:watermark OR tag:cert:watermark';
+// Shopify products are tagged with `cert:watermark`. The colon makes
+// the tag look like a field separator to Shopify search, so the value
+// has to be quoted; `tag:watermark` (no colon) is included as a
+// fallback for any products tagged with the plain form.
+const WATERMARK_QUERY = 'tag:watermark OR tag:"cert:watermark"';
 const PAGE_SIZE = 48;
 const PATH = '/watermark-certified/';
 const TITLE = 'WaterMark Certified Products';
