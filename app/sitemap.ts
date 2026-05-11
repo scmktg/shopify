@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next';
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
 import { CATEGORIES } from '@/content/categories';
 import { listMarkdownSlugs } from '@/lib/content/markdown';
 import { getAllProductHandles } from '@/lib/shopify/queries/getAllProductHandles';
@@ -50,6 +52,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: 'monthly',
         priority,
       });
+    }
+
+    // Also walk one level of nested sub-pages (e.g. /use/commercial-and-cafe/schools).
+    const sectionDir = path.join(process.cwd(), 'content', section);
+    let entries: import('node:fs').Dirent[] = [];
+    try {
+      entries = await fs.readdir(sectionDir, { withFileTypes: true });
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
+      if (!entry.isDirectory()) continue;
+      const subDir = path.join(sectionDir, entry.name);
+      const subFiles = await fs.readdir(subDir);
+      for (const file of subFiles) {
+        if (!file.endsWith('.md') || file === 'index.md') continue;
+        const subslug = file.replace(/\.md$/, '');
+        editorialEntries.push({
+          url: `${base}/${section}/${entry.name}/${subslug}/`,
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: priority - 0.1,
+        });
+      }
     }
   }
 
