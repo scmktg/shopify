@@ -113,7 +113,7 @@ The black strip running across the very top of every page, above the white heade
 │  │ SHOP        │ LEARN       │ ABOUT       │ CONTACT    │  │
 │  │ Water Filt. │ Guides      │ Our Pricing │ Phone      │  │
 │  │ Cartridges  │ Problems    │ About Us    │ Email      │  │
-│  │ Bubblers    │ Use Cases   │ Shipping    │ Hours      │  │
+│  │ Bubblers&C. │ Use Cases   │ Shipping    │ Hours      │  │
 │  │ Pumps       │             │ Returns     │            │  │
 │  │ Plumbing    │             │             │            │  │
 │  └─────────────┴─────────────┴─────────────┴────────────┘  │

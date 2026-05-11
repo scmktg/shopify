@@ -5,7 +5,7 @@
 5 items only. In this order, left to right:
 
 ```
-WATER FILTERS    CARTRIDGES    BUBBLERS    PUMPS & TANKS    PLUMBING
+WATER FILTERS    CARTRIDGES    BUBBLERS & COOLERS    PUMPS & TANKS    PLUMBING
 ```
 
 Plus utility nav (right side): Search, Cart.
@@ -33,10 +33,10 @@ Sitewide top banner above the nav: **"Wholesale prices for everyone — no accou
 ├── /cartridges/specialty-cartridges/   # alkaline, fluoride, T33, UF, pleated
 └── /cartridges/cartridge-sets/
 
-/bubblers/
-├── /bubblers/commercial/
-├── /bubblers/residential/
-└── /bubblers/parts/
+/bubblers-and-coolers/
+├── /bubblers-and-coolers/bubblers/
+├── /bubblers-and-coolers/coolers-and-chillers/
+└── /bubblers-and-coolers/parts/
 
 /pumps-and-tanks/
 ├── /pumps-and-tanks/pumps/             # 12V, RO booster, pressure, solar, submersible
@@ -73,6 +73,11 @@ permanently redirected (308) in `next.config.js`:
 | `/pumps-and-tanks/pressure-pumps/` | `/pumps-and-tanks/pumps/` | Pumps consolidated; sub-filter via `?type=pressure` |
 | `/pumps-and-tanks/replacement-bladders/` | `/pumps-and-tanks/pressure-tanks/` | Bladders folded into pressure-tanks |
 | `/plumbing/showers/` | `/plumbing/bathroom-taps/` | Showers absorbed into bathroom range |
+| `/bubblers/` | `/bubblers-and-coolers/` | Category renamed to include coolers/chillers |
+| `/bubblers/commercial/:handle` | `/bubblers-and-coolers/bubblers/:handle` | Commercial = stainless-steel drinking bubblers |
+| `/bubblers/residential/:handle` | `/bubblers-and-coolers/coolers-and-chillers/:handle` | "Residential" units were all hot/cold/chilled coolers |
+| `/bubblers/parts/:handle` | `/bubblers-and-coolers/parts/:handle` | Parts subcategory unchanged, only parent path |
+| `/bubblers/commercial/stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap/` | `/bubblers-and-coolers/coolers-and-chillers/<same>/` | Under-counter chiller moved out of commercial bubblers (per-product override) |
 
 Products affected by the consolidation must be re-tagged in Shopify
 (`primary-cat:` / `sub-cat:`). Products in the new `pumps` subcategory

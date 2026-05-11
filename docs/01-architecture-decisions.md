@@ -50,7 +50,7 @@
 │   ├── (shop)/               # Public shopping routes
 │   │   ├── water-filters/
 │   │   ├── cartridges/
-│   │   ├── bubblers/
+│   │   ├── bubblers-and-coolers/
 │   │   ├── pumps-and-tanks/
 │   │   ├── plumbing/
 │   │   └── ...

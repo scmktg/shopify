@@ -153,7 +153,7 @@ Examples:
 - `EA-PUMP-12V-KIT` — Pump, 12V, Kit
 - `EA-DT-100L-BUND` — Dosing Tank, 100L, Bunded
 
-Category codes: `WF` (water filters), `CART` (cartridges), `BUB` (bubblers), `PUMP`, `TANK`, `DT` (dosing tank), `PLB` (plumbing), `PARTS`.
+Category codes: `WF` (water filters), `CART` (cartridges), `BUB` (bubblers & coolers), `PUMP`, `TANK`, `DT` (dosing tank), `PLB` (plumbing), `PARTS`.
 
 ## Image standards
 
