@@ -37,7 +37,7 @@ export function CertificationSlot({ content }: CertificationSlotProps) {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-wrap items-center gap-2">
-        {wmkCertified && <WatermarkBadge />}
+        {wmkCertified && <WatermarkBadge href="/watermark-certified/" />}
         {wmkPending && (
           <span
             role="img"

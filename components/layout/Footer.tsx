@@ -15,6 +15,7 @@ const SHOP_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'Bubblers & Coolers', href: '/bubblers-and-coolers/' },
   { label: 'Pumps & Tanks', href: '/pumps-and-tanks/' },
   { label: 'Plumbing', href: '/plumbing/' },
+  { label: 'WaterMark Products', href: '/watermark-certified/' },
 ];
 
 const LEARN_LINKS: ReadonlyArray<FooterLink> = [
