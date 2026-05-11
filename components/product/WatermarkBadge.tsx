@@ -35,16 +35,11 @@ export function WatermarkBadge({ variant, className }: WatermarkBadgeProps) {
         role="img"
         aria-label="WaterMark certified"
         className={clsx(
-          'flex items-center justify-center bg-wmk-red text-white rounded-sm shadow-md ring-1 ring-black/10 h-10 w-10',
+          'relative z-10 flex items-center justify-center bg-wmk-red text-white rounded-sm shadow-md ring-1 ring-black/10 h-11 w-11',
           className,
         )}
       >
-        <img
-          src="/wmk-logo.svg"
-          alt=""
-          aria-hidden="true"
-          className="h-7 w-7 object-contain"
-        />
+        <BadgeMark className="h-7 w-7" />
         <span className="sr-only">WaterMark certified</span>
       </div>
     );
@@ -59,14 +54,35 @@ export function WatermarkBadge({ variant, className }: WatermarkBadgeProps) {
         className,
       )}
     >
+      <BadgeMark className="h-5 w-5" />
+      WaterMark certified
+    </div>
+  );
+}
+
+/**
+ * The visible mark inside the red tile. Renders the supplied SVG at
+ * `/public/wmk-logo.svg` layered above a "WMK" text fallback, so
+ * the badge is still recognisable when the official asset hasn't
+ * been dropped in yet. Once the SVG is present (transparent or
+ * red-tinted background, white foreground) it covers the text.
+ */
+function BadgeMark({ className }: { className?: string }) {
+  return (
+    <span className={clsx('relative inline-flex items-center justify-center', className)}>
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 flex items-center justify-center font-bold leading-none tracking-tight text-[0.65rem]"
+      >
+        WMK
+      </span>
       <img
         src="/wmk-logo.svg"
         alt=""
         aria-hidden="true"
-        className="h-5 w-5 object-contain"
+        className="relative h-full w-full object-contain"
       />
-      WaterMark certified
-    </div>
+    </span>
   );
 }
 
@@ -83,6 +99,11 @@ export function isWatermarkCertified(input: {
   tags?: ReadonlyArray<string>;
 }): boolean {
   if (input.compliance?.watermark?.status === 'certified') return true;
-  if (input.tags?.includes('watermark')) return true;
-  return false;
+  // Accept both the documented `cert:watermark` form (per
+  // docs/03-data-model.md tag taxonomy) and the bare `watermark`
+  // form used in the offline migration data. Live Shopify product
+  // tags currently use a mix.
+  const tags = input.tags;
+  if (!tags) return false;
+  return tags.includes('watermark') || tags.includes('cert:watermark');
 }
