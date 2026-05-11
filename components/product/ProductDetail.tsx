@@ -5,6 +5,8 @@ import type { ProductContent } from '@/lib/products/schema';
 import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
 import { CertificationSlot } from './CertificationSlot';
+import { CertificationBanner } from './CertificationBanner';
+import { isWatermarkCertified } from './WatermarkBadge';
 import { ProductOverview } from './ProductOverview';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
@@ -171,6 +173,10 @@ export function ProductDetail({
           )}
         </div>
       </div>
+
+      {isWatermarkCertified({ compliance: content.compliance }) && (
+        <CertificationBanner />
+      )}
 
       <HeadlineSpecs specs={content.headlineSpecs} />
       <FullSpecs specs={content.fullSpecs} />
