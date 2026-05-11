@@ -63,11 +63,15 @@ export interface ShopifyProductCardRaw {
   productType: string;
   tags: ReadonlyArray<string>;
   featuredImage: ProductImage | null;
-  priceRange: { minVariantPrice: Money };
+  priceRange: {
+    minVariantPrice: Money;
+    maxVariantPrice: Money;
+  };
   /**
    * `metafields(identifiers: [...])` — same nullable-element semantics
-   * as the full product fragment. Only `housing_size` is fetched on
-   * card-shaped queries.
+   * as the full product fragment. Card queries fetch housing_size,
+   * card_key_spec, and watermark_licence_number; anything else is
+   * loaded only on the PDP fragment.
    */
   metafields: ReadonlyArray<ShopifyMetafield | null>;
 }

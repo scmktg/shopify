@@ -21,10 +21,16 @@ export const PRODUCT_CARD_FRAGMENT = /* GraphQL */ `
         amount
         currencyCode
       }
+      maxVariantPrice {
+        amount
+        currencyCode
+      }
     }
     metafields(
       identifiers: [
         { namespace: "enviroaqua", key: "housing_size" }
+        { namespace: "enviroaqua", key: "card_key_spec" }
+        { namespace: "enviroaqua", key: "watermark_licence_number" }
       ]
     ) {
       key

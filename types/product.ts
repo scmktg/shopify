@@ -109,6 +109,12 @@ export interface Product {
  * pages. Null when the product is not housing-sized (most non-
  * filter products).
  */
+export interface ProductCardRating {
+  /** 0–5, one decimal. Renders nothing when undefined — no fake stars. */
+  value: number;
+  count: number;
+}
+
 export interface ProductCardData {
   id: string;
   handle: string;
@@ -116,6 +122,29 @@ export interface ProductCardData {
   productType: string;
   tags: ReadonlyArray<string>;
   featuredImage: ProductImage | null;
+  /** Lowest variant price — used directly for single-price products, and as the "from" anchor on multi-price ranges. */
   price: Money;
+  /** Highest variant price. Used to detect price-range products ("from $X"). */
+  priceMax: Money;
   housingSize: string | null;
+  /**
+   * Optional one-line differentiator surfaced on the card, e.g.
+   * "Removes: chlorine, sediment, taste". Sourced from the
+   * `enviroaqua.card_key_spec` Shopify metafield. Null when unset —
+   * the card omits the row entirely rather than rendering a
+   * placeholder.
+   */
+  keySpec: string | null;
+  /**
+   * WaterMark licence number for the badge on the card. Null when
+   * unset — the badge is hidden, not stubbed out.
+   */
+  watermarkLicence: string | null;
+  /**
+   * Customer rating + review count. Currently not populated (no
+   * reviews integration); kept on the type as a stable insertion
+   * point so wiring in Judge.me / Stamped later is a single-call
+   * change. ProductCard renders nothing when this is omitted.
+   */
+  rating?: ProductCardRating;
 }

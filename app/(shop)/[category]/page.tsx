@@ -5,6 +5,11 @@ import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
+import {
+  CategoryBuyingGuide,
+  CategoryIntro,
+} from '@/components/category/CategoryContent';
+import { loadCategoryContent } from '@/lib/content/categoryContent';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import {
   breadcrumbSchema,
@@ -41,6 +46,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const page = await getProducts({ query, first: PAGE_SIZE });
 
   const intro = getCategoryIntro(category);
+  const longForm = await loadCategoryContent(category);
 
   const pathname = `/${node.slug}/`;
 
@@ -61,6 +67,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         categorySlug={node.slug}
         subcategories={node.subcategories}
       />
+      {longForm?.introHtml && <CategoryIntro introHtml={longForm.introHtml} />}
       <CategoryView
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
@@ -68,6 +75,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         pageSize={PAGE_SIZE}
         enableSizeFilter={category === 'cartridges'}
       />
+      {longForm && (
+        <CategoryBuyingGuide
+          buyingGuide={longForm.buyingGuide}
+          faq={longForm.faq}
+        />
+      )}
     </>
   );
 }
