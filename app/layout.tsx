@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   },
   description:
     'Wholesale prices on water filters, cartridges, and filtration systems for every Australian home, trade, and business. One price for everyone.',
+  icons: {
+    icon: [{ url: '/favicon.jpeg', type: 'image/jpeg' }],
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
+  },
 };
 
 interface RootLayoutProps {
