@@ -1,4 +1,4 @@
-import type { Product } from '@/types/product';
+import type { Money, Product } from '@/types/product';
 import type { FaqItem } from '@/lib/content/markdown';
 import type { ProductContent } from '@/lib/products/schema';
 import { BUSINESS_INFO } from '@/content/business-info';
@@ -178,6 +178,105 @@ export function faqPageSchema(items: ReadonlyArray<FaqItem>): JsonLd {
   };
 }
 
+// Free-shipping threshold and 14-day damaged/faulty returns are
+// documented in /content/shipping.md and /content/returns.md. The
+// under-$200 standard-shipping rate is size-tiered ($10.95–$23.95) so
+// we deliberately omit per-product flat rates from JSON-LD — there's
+// no per-product size signal to drive an accurate value, and quoting
+// the cheapest tier would mislead shoppers on bulky items.
+const FREE_SHIPPING_THRESHOLD_AUD = 200;
+const RETURN_WINDOW_DAYS = 14;
+
+/**
+ * Build-time-derived price validity window. Google Merchant guidance
+ * recommends a near-term date so stale prices are flagged. Twelve
+ * months from the page's render time is the longest reasonable
+ * window for ISR-regenerated pages on this store.
+ */
+function priceValidUntil(): string {
+  const d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  return d.toISOString().slice(0, 10);
+}
+
+function shippingDetails(): JsonLd {
+  return {
+    '@type': 'OfferShippingDetails',
+    shippingDestination: {
+      '@type': 'DefinedRegion',
+      addressCountry: 'AU',
+    },
+    shippingRate: {
+      '@type': 'MonetaryAmount',
+      value: '0',
+      currency: 'AUD',
+    },
+    eligibleTransactionVolume: {
+      '@type': 'PriceSpecification',
+      minPrice: FREE_SHIPPING_THRESHOLD_AUD,
+      priceCurrency: 'AUD',
+    },
+    deliveryTime: {
+      '@type': 'ShippingDeliveryTime',
+      handlingTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 0,
+        maxValue: 1,
+        unitCode: 'DAY',
+      },
+      transitTime: {
+        '@type': 'QuantitativeValue',
+        minValue: 2,
+        maxValue: 5,
+        unitCode: 'DAY',
+      },
+    },
+  };
+}
+
+function returnPolicy(): JsonLd {
+  return {
+    '@type': 'MerchantReturnPolicy',
+    applicableCountry: 'AU',
+    returnPolicyCategory:
+      'https://schema.org/MerchantReturnFiniteReturnWindow',
+    merchantReturnDays: RETURN_WINDOW_DAYS,
+    returnMethod: 'https://schema.org/ReturnByMail',
+    returnFees: 'https://schema.org/FreeReturn',
+  };
+}
+
+interface PriceSpread {
+  /** Set when every variant carries the same price; null on a spread. */
+  uniformPrice: string | null;
+  lowPrice: string;
+  highPrice: string;
+}
+
+function spreadVariantPrices(
+  variants: Product['variants'],
+  fallback: Money,
+): PriceSpread {
+  if (variants.length === 0) {
+    return {
+      uniformPrice: fallback.amount,
+      lowPrice: fallback.amount,
+      highPrice: fallback.amount,
+    };
+  }
+  const amounts = variants.map((v) => Number.parseFloat(v.price.amount));
+  const minIdx = amounts.indexOf(Math.min(...amounts));
+  const maxIdx = amounts.indexOf(Math.max(...amounts));
+  const low = variants[minIdx]?.price.amount ?? fallback.amount;
+  const high = variants[maxIdx]?.price.amount ?? fallback.amount;
+  const allEqual = amounts.every((a) => a === amounts[0]);
+  return {
+    uniformPrice: allEqual ? low : null,
+    lowPrice: low,
+    highPrice: high,
+  };
+}
+
 export function productSchema(
   product: Product,
   content: ProductContent,
@@ -186,9 +285,12 @@ export function productSchema(
 ): JsonLd {
   const firstVariant = product.variants[0];
   const images = product.images.map((image) => image.url);
-  const offerAvailability = firstVariant?.availableForSale
+  const anyInStock = product.variants.some((v) => v.availableForSale);
+  const offerAvailability = anyInStock
     ? 'https://schema.org/InStock'
     : 'https://schema.org/OutOfStock';
+  const url = absoluteUrl(pathname);
+  const currencyCode = product.priceRange.minVariantPrice.currencyCode;
 
   // Spec rows under additionalProperty: pull from products.json
   // fullSpecs verbatim — JSON-LD just wants name + value pairs.
@@ -212,6 +314,41 @@ export function productSchema(
     ? `${category.label} / ${subcategoryLabel}`
     : `${catSlug}/${subSlug}`;
 
+  // Single-vendor catalogue: defer to Shopify's vendor field when
+  // populated, fall back to the store brand otherwise. Don't invent
+  // a manufacturer.
+  const brandName = product.vendor?.trim() || 'Enviro Aqua';
+
+  const spread = spreadVariantPrices(
+    product.variants,
+    product.priceRange.minVariantPrice,
+  );
+
+  const sharedOfferFields: JsonLd = {
+    url,
+    priceCurrency: currencyCode,
+    availability: offerAvailability,
+    itemCondition: 'https://schema.org/NewCondition',
+    priceValidUntil: priceValidUntil(),
+    shippingDetails: shippingDetails(),
+    hasMerchantReturnPolicy: returnPolicy(),
+  };
+
+  const offers: JsonLd =
+    product.variants.length > 1 && spread.uniformPrice === null
+      ? {
+          '@type': 'AggregateOffer',
+          ...sharedOfferFields,
+          lowPrice: spread.lowPrice,
+          highPrice: spread.highPrice,
+          offerCount: product.variants.length,
+        }
+      : {
+          '@type': 'Offer',
+          ...sharedOfferFields,
+          price: spread.uniformPrice ?? spread.lowPrice,
+        };
+
   const schema: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -222,16 +359,9 @@ export function productSchema(
     category: categoryString,
     brand: {
       '@type': 'Brand',
-      name: 'Enviro Aqua',
+      name: brandName,
     },
-    offers: {
-      '@type': 'Offer',
-      url: absoluteUrl(pathname),
-      priceCurrency: product.priceRange.minVariantPrice.currencyCode,
-      price: product.priceRange.minVariantPrice.amount,
-      availability: offerAvailability,
-      itemCondition: 'https://schema.org/NewCondition',
-    },
+    offers,
   };
 
   if (additionalProperty.length > 0) {

@@ -1,10 +1,20 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Check } from 'lucide-react';
 import type { ProductCompliance, SpecRow } from '@/lib/products/schema';
 
 interface BadgeProps {
   className?: string;
+}
+
+interface WatermarkBadgeProps extends BadgeProps {
+  /**
+   * When set, the badge renders as a link to the given path (used on
+   * product pages to point at the WaterMark certified landing).
+   * Omit on the landing page itself so it isn't a self-link.
+   */
+  href?: string;
 }
 
 /**
@@ -27,13 +37,9 @@ interface BadgeProps {
 const BADGE_BASE_CLASSES =
   'inline-flex items-center gap-2 rounded-md bg-wmk-red px-4 py-2 text-sm font-semibold tracking-wide text-white shadow-sm';
 
-export function WatermarkBadge({ className }: BadgeProps) {
-  return (
-    <span
-      role="img"
-      aria-label="WaterMark certified"
-      className={clsx(BADGE_BASE_CLASSES, className)}
-    >
+export function WatermarkBadge({ className, href }: WatermarkBadgeProps) {
+  const content = (
+    <>
       <Image
         src="/watermark.png"
         alt=""
@@ -43,6 +49,32 @@ export function WatermarkBadge({ className }: BadgeProps) {
         className="h-7 w-7 object-contain"
       />
       WaterMark Certified
+    </>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        aria-label="WaterMark certified — see all WaterMark certified products"
+        className={clsx(
+          BADGE_BASE_CLASSES,
+          'transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wmk-red',
+          className,
+        )}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <span
+      role="img"
+      aria-label="WaterMark certified"
+      className={clsx(BADGE_BASE_CLASSES, className)}
+    >
+      {content}
     </span>
   );
 }
