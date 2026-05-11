@@ -20,9 +20,7 @@ interface BadgeProps {
  * declare it lead-free — see `isLeadFree`. They can appear together
  * or alone; nothing assumes one implies the other.
  *
- * The official WMK mark is served from `/public/watermark.png`. A
- * small "WMK" text fallback sits behind the <img> so the badge is
- * still recognisable before the asset is supplied.
+ * The official WMK mark is served from `/public/watermark.png`.
  */
 
 const BADGE_BASE_CLASSES =
@@ -35,7 +33,12 @@ export function WatermarkBadge({ className }: BadgeProps) {
       aria-label="WaterMark certified"
       className={clsx(BADGE_BASE_CLASSES, className)}
     >
-      <WmkMark />
+      <img
+        src="/watermark.png"
+        alt=""
+        aria-hidden="true"
+        className="h-7 w-7 object-contain"
+      />
       WaterMark Certified
     </span>
   );
@@ -48,27 +51,8 @@ export function LeadFreeBadge({ className }: BadgeProps) {
       aria-label="Lead free"
       className={clsx(BADGE_BASE_CLASSES, className)}
     >
-      <Check className="h-4 w-4" strokeWidth={3} aria-hidden="true" />
+      <Check className="h-7 w-7" strokeWidth={3} aria-hidden="true" />
       Lead Free
-    </span>
-  );
-}
-
-function WmkMark() {
-  return (
-    <span className="relative inline-flex h-5 w-5 items-center justify-center">
-      <span
-        aria-hidden="true"
-        className="absolute inset-0 flex items-center justify-center text-[0.55rem] font-bold leading-none tracking-tight"
-      >
-        WMK
-      </span>
-      <img
-        src="/watermark.png"
-        alt=""
-        aria-hidden="true"
-        className="relative h-full w-full object-contain"
-      />
     </span>
   );
 }
