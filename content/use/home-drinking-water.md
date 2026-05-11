@@ -7,6 +7,8 @@ relatedLinks:
   - { label: "Under-sink water filters", href: "/water-filters/under-sink/" }
   - { label: "Reverse osmosis systems", href: "/water-filters/reverse-osmosis/" }
   - { label: "Chlorine and taste removal", href: "/water-problems/chlorine-and-taste/" }
+  - { label: "Whole-home filtration", href: "/use/whole-home-filtration/" }
+  - { label: "Whole house water filter cost", href: "/help/whole-house-cost/" }
 faq:
   - q: "Is filtered water actually better than tap water in Australia?"
     a: "Australian mains water meets the Australian Drinking Water Guidelines, so it is safe. What filters change is taste and odour — chlorine used for disinfection, sediment picked up between the treatment plant and your tap, and any plumbing tang from old pipes. Reverse osmosis goes further and reduces dissolved solids, including fluoride."
@@ -25,6 +27,18 @@ There are three styles of system that suit Australian homes:
 - **Under-sink filters** — the most common choice. A cartridge sits under the sink, connects to the cold-water line, and feeds a dedicated filtered tap on the bench. Filtered water on demand, no jug to refill, no fridge dispenser to clean. DIY-installable for most kitchens.
 - **Bench-top filters** — sit on the bench, connect to the existing kitchen tap with a diverter, no permanent plumbing. The right call for rentals or apartments where you cannot drill into the bench.
 - **Reverse osmosis (RO)** — five or six stages, removes nearly everything down to dissolved solids, including fluoride. Slower output and produces wastewater, so usually paired with a small storage tank and a dedicated filtered tap.
+
+## What you actually notice
+
+Day to day, an under-sink filter changes a few specific things:
+
+- **The kettle stops growing scale rings** — at least the chlorine-driven part of the discoloration. Hard-water scale still forms unless you also have a scale-control stage.
+- **Tap water actually gets drunk** — kids, visitors, anyone who finds chlorinated tap water off-putting tend to drink more of it once it stops tasting like a swimming pool.
+- **The bottled-water habit dies quietly** — most households cancel their delivery or stop buying 24-packs within a few weeks. Bottled water is $2–$5 per litre; filtered tap water is roughly 5 cents per litre including cartridges.
+- **Coffee and tea taste cleaner** — filtered water makes a real, blind-test-able difference on lighter teas and pour-over coffee. Espresso less so, but still measurable.
+- **The fridge water dispenser stops being the only "clean" tap** — and you stop replacing the fridge filter on whatever subscription the manufacturer set up.
+
+None of these are reasons by themselves. Together they pay back the install fast.
 
 ## How to choose
 
