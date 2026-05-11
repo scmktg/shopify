@@ -1,57 +1,56 @@
-import { ShieldCheck, ShieldAlert } from 'lucide-react';
-import type { ProductCompliance } from '@/lib/products/schema';
+import { ShieldAlert } from 'lucide-react';
+import type { ProductContent, ProductCompliance } from '@/lib/products/schema';
+import {
+  WatermarkBadge,
+  LeadFreeBadge,
+  isLeadFree,
+} from './WatermarkBadge';
 
 interface CertificationSlotProps {
-  compliance?: ProductCompliance;
+  content: ProductContent;
 }
 
 /**
- * Buy-box badge slot driven by `products.json[handle].compliance`.
- * Render rules:
- *   - watermark.status === 'certified' → blue ShieldCheck badge plus
- *     a small caption listing licence / certifier / validUntil for
- *     fields that are set.
- *   - watermark.status === 'pending'   → amber ShieldAlert badge,
- *     no caption.
- *   - watermark.status === 'not_required' / 'not_certified' / null
- *     → render nothing. Don't surface a "not required" message by
- *     default; if a product genuinely needs that messaging it goes
- *     in compliance.note (rendered by ComplianceSection).
+ * Buy-box badge slot. Renders the WaterMark and Lead Free badges as
+ * an inline pair when they apply, with the WaterMark licence
+ * caption underneath when set.
+ *
+ *   - watermark.status === 'certified' → red WaterMark Certified pill
+ *   - lead-free declared in specs       → red Lead Free pill
+ *   - watermark.status === 'pending'   → amber WaterMark pending pill
+ *                                        (replaces the certified pill)
+ *
+ * Both compliance signals are independent — a product may carry
+ * either, both, or neither. Nothing here implies that WMK
+ * certification means lead-free, or vice versa.
  */
-export function CertificationSlot({ compliance }: CertificationSlotProps) {
-  const wm = compliance?.watermark;
-  if (!wm) return null;
-  if (wm.status !== 'certified' && wm.status !== 'pending') return null;
+export function CertificationSlot({ content }: CertificationSlotProps) {
+  const wm = content.compliance?.watermark ?? null;
+  const wmkCertified = wm?.status === 'certified';
+  const wmkPending = wm?.status === 'pending';
+  const leadFree = isLeadFree(content);
 
-  if (wm.status === 'pending') {
-    return (
-      <div
-        className="inline-flex items-center gap-2 rounded border border-amber-300 bg-amber-50 px-3 py-1.5 text-sm font-semibold text-amber-900"
-        role="img"
-        aria-label="WaterMark certification pending"
-      >
-        <ShieldAlert className="h-4 w-4" aria-hidden="true" />
-        WaterMark certification pending
-      </div>
-    );
-  }
+  if (!wmkCertified && !wmkPending && !leadFree) return null;
 
-  // status === 'certified' — caption fields render only when set.
-  const caption = formatCaption(wm);
+  const caption = wmkCertified && wm ? formatCaption(wm) : null;
 
   return (
-    <div className="flex flex-col gap-1.5">
-      <div
-        className="inline-flex w-fit items-center gap-2 rounded border border-brand-blue/40 bg-brand-blue-light px-3 py-1.5 text-sm font-semibold text-brand-blue"
-        role="img"
-        aria-label="WaterMark certified"
-      >
-        <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-        WaterMark certified
+    <div className="flex flex-col gap-2">
+      <div className="flex flex-wrap items-center gap-2">
+        {wmkCertified && <WatermarkBadge />}
+        {wmkPending && (
+          <span
+            role="img"
+            aria-label="WaterMark certification pending"
+            className="inline-flex items-center gap-2 rounded-md border border-amber-300 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900"
+          >
+            <ShieldAlert className="h-4 w-4" aria-hidden="true" />
+            WaterMark Pending
+          </span>
+        )}
+        {leadFree && <LeadFreeBadge />}
       </div>
-      {caption && (
-        <p className="text-xs text-black/60">{caption}</p>
-      )}
+      {caption && <p className="text-xs text-black/60">{caption}</p>}
     </div>
   );
 }

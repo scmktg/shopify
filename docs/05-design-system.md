@@ -37,6 +37,10 @@ Same values, same rules — only the configuration mechanism has changed:
 
 Do not introduce additional brand colours. If a new shade is needed, justify it against `docs/01-architecture-decisions.md` first.
 
+### Single permitted exception: WaterMark badge red
+
+The official Australian WaterMark Certification Scheme mark is red, not blue. To represent it faithfully on product cards and product pages, a single scoped token `--color-wmk-red` (`#C8102E`) is declared in `app/globals.css` and used **only** by `components/product/WatermarkBadge.tsx`. It is not part of the general palette. Do not use it for buttons, links, error states, or anywhere else.
+
 ## Typography
 
 - **Font**: System font stack (no web fonts in v1 — keeps it fast)
@@ -109,7 +113,7 @@ The black strip running across the very top of every page, above the white heade
 │  │ SHOP        │ LEARN       │ ABOUT       │ CONTACT    │  │
 │  │ Water Filt. │ Guides      │ Our Pricing │ Phone      │  │
 │  │ Cartridges  │ Problems    │ About Us    │ Email      │  │
-│  │ Bubblers    │ Use Cases   │ Shipping    │ Hours      │  │
+│  │ Bubblers&C. │ Use Cases   │ Shipping    │ Hours      │  │
 │  │ Pumps       │             │ Returns     │            │  │
 │  │ Plumbing    │             │             │            │  │
 │  └─────────────┴─────────────┴─────────────┴────────────┘  │

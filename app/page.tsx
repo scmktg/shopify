@@ -33,7 +33,7 @@ export const revalidate = 60;
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
   'water-filters': Droplet,
   cartridges: Filter,
-  bubblers: GlassWater,
+  'bubblers-and-coolers': GlassWater,
   'pumps-and-tanks': Gauge,
   plumbing: Wrench,
 };
@@ -43,7 +43,8 @@ const CATEGORY_BLURBS: Record<string, string> = {
     'Under-sink, whole-house, RO, UV, bench-top, inline, and commercial systems.',
   cartridges:
     'Sediment, carbon, RO membranes, alkaline, fluoride removal, and full sets.',
-  bubblers: 'Commercial and residential drinking bubblers, plus parts.',
+  'bubblers-and-coolers':
+    'Drinking bubblers, water coolers and chillers, plus parts.',
   'pumps-and-tanks':
     '12V pumps, RO booster pumps, pressure tanks, dosing tanks.',
   plumbing: 'Filter-friendly taps, showers, toilets, and bundles.',

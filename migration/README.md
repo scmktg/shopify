@@ -166,7 +166,7 @@ The current 50-product "Fittings & Parts" category is broken up across the new s
 - ~22 items → `/water-filters/parts/` (housings, fittings, valves, tubing, wrenches)
 - ~5 items → `/cartridges/...` (RO membranes, cartridge sets that were misfiled)
 - ~3 items → `/pumps-and-tanks/components/` (pressure switches, gauges)
-- 1 item → `/bubblers/parts/` (drinking fountain tap)
+- 1 item → `/bubblers-and-coolers/parts/` (drinking fountain tap)
 - ~10 items → CUT
 - Rest → moved to existing categories
 

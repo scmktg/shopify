@@ -11,7 +11,7 @@ const SHOP_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'Water Filters', href: '/water-filters/' },
   { label: 'Whole House Install Package', href: '/whole-house-installation-package/' },
   { label: 'Cartridges', href: '/cartridges/' },
-  { label: 'Bubblers', href: '/bubblers/' },
+  { label: 'Bubblers & Coolers', href: '/bubblers-and-coolers/' },
   { label: 'Pumps & Tanks', href: '/pumps-and-tanks/' },
   { label: 'Plumbing', href: '/plumbing/' },
 ];

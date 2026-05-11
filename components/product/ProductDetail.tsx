@@ -133,7 +133,7 @@ export function ProductDetail({
           </div>
 
           <div className="mt-4">
-            <CertificationSlot compliance={content.compliance} />
+            <CertificationSlot content={content} />
           </div>
 
           {firstVariant && (

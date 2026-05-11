@@ -25,11 +25,17 @@ interface SizeFilterProps {
  * non-indexable hash params at that time.
  */
 export function SizeFilter({ value, onChange, counts }: SizeFilterProps) {
+  // When counts are supplied, omit sizes that have zero matches
+  // entirely rather than rendering them disabled — a category with
+  // no 4.5" cartridges shouldn't even hint that the option exists.
+  const visibleOptions = counts
+    ? CARTRIDGE_SIZE_OPTIONS.filter((opt) => (counts[opt.value] ?? 0) > 0)
+    : CARTRIDGE_SIZE_OPTIONS;
+
+  if (counts && visibleOptions.length === 0) return null;
+
   const allCount = counts
-    ? CARTRIDGE_SIZE_OPTIONS.reduce(
-        (sum, opt) => sum + (counts[opt.value] ?? 0),
-        0,
-      )
+    ? visibleOptions.reduce((sum, opt) => sum + (counts[opt.value] ?? 0), 0)
     : null;
 
   return (
@@ -48,16 +54,14 @@ export function SizeFilter({ value, onChange, counts }: SizeFilterProps) {
         label={allCount === null ? 'All' : `All (${allCount})`}
       />
 
-      {CARTRIDGE_SIZE_OPTIONS.map((opt) => {
+      {visibleOptions.map((opt) => {
         const count = counts?.[opt.value];
-        const disabled = count === 0;
         const label =
           count !== undefined ? `${opt.label} (${count})` : opt.label;
         return (
           <Pill
             key={opt.value}
             active={value === opt.value}
-            disabled={disabled}
             onClick={() => onChange(opt.value)}
             label={label}
           />
@@ -69,24 +73,21 @@ export function SizeFilter({ value, onChange, counts }: SizeFilterProps) {
 
 interface PillProps {
   active: boolean;
-  disabled?: boolean;
   onClick: () => void;
   label: string;
 }
 
-function Pill({ active, disabled = false, onClick, label }: PillProps) {
+function Pill({ active, onClick, label }: PillProps) {
   return (
     <button
       type="button"
       onClick={onClick}
-      disabled={disabled}
       aria-pressed={active}
       className={clsx(
         'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border transition-colors tabular-nums',
         active
           ? 'bg-black text-white border-black'
           : 'bg-white text-black border-gray-300 hover:border-black',
-        disabled && 'opacity-40 cursor-not-allowed hover:border-gray-300',
       )}
     >
       {label}
