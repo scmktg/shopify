@@ -51,17 +51,16 @@ const nextConfig = {
       ['/bubblers', '/bubblers-and-coolers'],
     ];
 
-    // 2026-05 blog migration (Phase 1). The legacy WordPress blog at
+    // 2026-05 blog migration. The legacy WordPress blog at
     // enviroaqua.com.au had 18 posts; this map sends every old URL to
     // its planned home in the Learn IA so nothing 404s when the WP
     // site is switched off.
     //
-    // Where the planned final destination doesn't exist yet (Phase 2
-    // /serving/* hub and Phase 3 promoted Learn pages), the source
-    // URL is temporarily pointed at the closest existing Learn page
-    // or hub. The "FINAL:" comment above each interim row records the
-    // permanent target — flip the destination to that URL when the
-    // page ships in a later phase.
+    // Bucket 3 (local pages) now points at the existing /locations/
+    // section. Bucket 2 (promote pages) still routes to the closest
+    // existing Learn page or hub — each interim row carries a
+    // "FINAL:" comment naming the permanent destination. Flip the
+    // destination on that row when the Phase 3 page ships.
     const BLOG_MIGRATION_REDIRECTS = [
       // Bucket 1 — MERGE (final targets exist)
       [
@@ -72,10 +71,9 @@ const nextConfig = {
         '/benefits-of-installing-an-under-sink-water-filter',
         '/use/home-drinking-water',
       ],
-      // FINAL: /serving/central-coast (Phase 2)
       [
         '/whole-house-water-filters-central-coast',
-        '/use/whole-home-filtration',
+        '/locations/central-coast-nsw',
       ],
 
       // Bucket 2 — PROMOTE (final pages ship in Phase 3)
@@ -121,20 +119,23 @@ const nextConfig = {
       // FINAL: /help/bunded-tank-regulations
       ['/bunded-chemical-tank-australia-regulations-compliance', '/help'],
 
-      // Bucket 3 — LOCAL (final /serving/* pages ship in Phase 2)
-      ['/water-filters-central-coast-nsw', '/use/whole-home-filtration'],
-      ['/whole-house-water-filters-gosford-nsw', '/use/whole-home-filtration'],
+      // Bucket 3 — LOCAL (final /locations/* pages live alongside the
+      // existing /locations/central-coast-nsw hub — the brief's
+      // planned /serving/ section was consolidated into the existing
+      // /locations/ route to avoid two parallel local sections).
+      ['/water-filters-central-coast-nsw', '/locations/central-coast-nsw'],
+      ['/whole-house-water-filters-gosford-nsw', '/locations/gosford-nsw'],
       [
         '/whole-house-water-filters-tuggerah-wyong-nsw',
-        '/use/whole-home-filtration',
+        '/locations/tuggerah-wyong-nsw',
       ],
       [
         '/whole-house-water-filters-terrigal-kincumber-nsw',
-        '/use/whole-home-filtration',
+        '/locations/terrigal-kincumber-nsw',
       ],
       [
         '/whole-house-water-filters-umina-beach-woy-woy',
-        '/use/whole-home-filtration',
+        '/locations/umina-woy-woy-nsw',
       ],
 
       // Blog index — kill it. The wildcard catches paginated pages,
