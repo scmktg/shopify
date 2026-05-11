@@ -15,9 +15,16 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          className="font-semibold text-lg tracking-wide text-black hover:text-brand-blue transition-colors"
+          aria-label="Enviro Aqua — home"
+          className="inline-flex items-center"
         >
-          ENVIRO AQUA
+          <img
+            src="/logo.webp"
+            alt="Enviro Aqua"
+            width={160}
+            height={40}
+            className="h-9 w-auto"
+          />
         </Link>
 
         <nav

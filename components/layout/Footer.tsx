@@ -55,6 +55,15 @@ export function Footer() {
   return (
     <footer className="bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <Link href="/" aria-label="Enviro Aqua — home" className="inline-block mb-8">
+          <img
+            src="/logo.webp"
+            alt="Enviro Aqua"
+            width={160}
+            height={40}
+            className="h-10 w-auto"
+          />
+        </Link>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <FooterColumn title="Shop" links={SHOP_LINKS} />
           <FooterColumn title="Learn" links={LEARN_LINKS} />
