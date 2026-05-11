@@ -189,14 +189,17 @@ const nextConfig = {
     }
 
     for (const [oldPath, newPath] of BLOG_MIGRATION_REDIRECTS) {
+      // Site canonical URLs have no trailing slash — emit slashless
+      // destinations so legacy WP traffic resolves in one hop instead
+      // of chaining 308 → /foo/ → 308 → /foo.
       rules.push({
         source: oldPath,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
       rules.push({
         source: `${oldPath}/`,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
     }
@@ -207,7 +210,7 @@ const nextConfig = {
     // by the entry above.
     rules.push({
       source: '/blog/:path*',
-      destination: '/water-problems/',
+      destination: '/water-problems',
       permanent: true,
     });
 
