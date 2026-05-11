@@ -12,7 +12,7 @@ import { ProductGrid } from '@/components/product/ProductGrid';
 import { SizeFilter } from './SizeFilter';
 import {
   CARTRIDGE_SIZE_OPTIONS,
-  getCartridgeSize,
+  getProductCartridgeSize,
   type CartridgeSize,
 } from '@/lib/utils/cartridgeSize';
 
@@ -137,13 +137,14 @@ export function CategoryView({
   const sizeCounts = useMemo(() => {
     if (!enableSizeFilter) return undefined;
     const counts: Record<CartridgeSize, number> = {
+      '10x2': 0,
       '10x2.5': 0,
       '10x4.5': 0,
       '20x2.5': 0,
       '20x4.5': 0,
     };
     for (const product of products) {
-      const detected = getCartridgeSize(product.handle);
+      const detected = getProductCartridgeSize(product);
       if (detected) counts[detected] += 1;
     }
     return counts;
@@ -152,7 +153,7 @@ export function CategoryView({
   const visibleProducts = useMemo(() => {
     if (!enableSizeFilter || !size) return products;
     return products.filter(
-      (product) => getCartridgeSize(product.handle) === size,
+      (product) => getProductCartridgeSize(product) === size,
     );
   }, [enableSizeFilter, size, products]);
 
