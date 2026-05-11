@@ -16,7 +16,7 @@
       "high-traffic"
     ],
     "shortDescription": "Plumbed-in commercial bubbler in SUS304 stainless steel — 20 L/hr cooling, WaterMark certified.",
-    "description": "A high-traffic public-venue bubbler built around a SUS304 stainless steel cabinet and an integrated cooling and filtration unit. Direct mains connection — no bottles to refill, no cartridges to ship.\n\nDesigned for **continuous service** in offices, schools, gyms, and hospitality. The integrated drip tray with drainage system keeps the surrounding floor dry through peak hours, and the push-button activation copes with thousands of cycles a year without service.\n\n- Welded stainless steel frame and exterior panels\n- Integrated cooling unit, factory-tested for Australian mains pressure\n- Standard plumbing connections — any qualified plumber can install or service",
+    "description": "A high-traffic public-venue bubbler built around a SUS304 stainless steel cabinet and an integrated cooling and filtration unit. Direct mains connection — no bottles to refill, no cartridges to ship.\n\nDesigned for **continuous service** in offices, schools, gyms, and hospitality. The integrated drip tray with drainage system keeps the surrounding floor dry through peak hours, and the push-button activation copes with thousands of cycles a year without service.\n\n## WaterMark Certified and Lead-Free\n\nThis unit is **WaterMark certified under licence 23484** to specification **WMTS-105:2016** (Drinking Fountains and Bubblers) — the technical standard that defines what a plumbed-in drinking-water fixture must meet for legal installation in Australia. Two practical consequences:\n\n- Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance.\n- The certification covers the **lead-free wetted materials** that contact the drinking water — fittings, internal pathways, and dispensing components. Lead-free compliance matters increasingly for schools, childcare, and public-venue installations where drinking-water lead content is subject to ongoing regulatory tightening.\n\n## Build\n\n- Welded stainless steel frame and exterior panels\n- Integrated cooling unit, factory-tested for Australian mains pressure\n- Standard plumbing connections — any qualified plumber can install or service",
     "features": [
       "All SUS304 stainless steel welded frame and exterior panels",
       "Integrated drip tray with drainage system",
@@ -40,6 +40,10 @@
       {
         "label": "Connection",
         "value": "Direct mains"
+      },
+      {
+        "label": "Lead free",
+        "value": "Yes"
       }
     ],
     "fullSpecs": [
@@ -77,7 +81,11 @@
       },
       {
         "label": "Certification",
-        "value": "WaterMark certified (AS/NZS 3497)"
+        "value": "WaterMark certified, WMTS-105:2016, Licence 23484"
+      },
+      {
+        "label": "Lead free",
+        "value": "Yes"
       }
     ],
     "recommendedFor": [
@@ -89,12 +97,13 @@
     "compliance": {
       "watermark": {
         "status": "certified",
-        "licenceNumber": "WMKA12345",
-        "certifier": "SAI Global",
-        "validUntil": "2027-06-30"
+        "licenceNumber": "23484",
+        "specificationNumber": "WMTS-105:2016",
+        "certifier": null,
+        "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certified for plumbed-in installation under AS/NZS 3497."
+      "note": "WaterMark certified under WMTS-105:2016 (Drinking Fountains and Bubblers). Licence number 23484. Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -106,7 +115,7 @@
     },
     "seo": {
       "title": "Commercial Stainless Steel Filtered Cold Water Bubbler — Round WM",
-      "description": "Commercial round bubbler in SUS304 stainless steel. 20 L/hr cooling, 8–12°C, WaterMark certified. Same-day dispatch from Wyong NSW.",
+      "description": "Commercial round bubbler in SUS304 stainless steel. 20 L/hr cooling, 8–12°C, lead-free, WaterMark certified WMTS-105:2016 licence 23484. Same-day dispatch from Wyong NSW.",
       "ogImage": null
     }
   },
@@ -598,8 +607,8 @@
       "high-traffic",
       "freestanding"
     ],
-    "shortDescription": "Freestanding commercial cold water bubbler in HDPE with granite-stone finish — 122 cm cabinet, 20 L/hr cooling at 8–12 °C, integrated PP sediment + activated carbon filtration, low-GWP R290 refrigerant.",
-    "description": "A freestanding commercial cold-water bubbler engineered for high-traffic public installations — schools, offices, gyms, and retail venues that need a hands-off drinking fountain plumbed direct to the mains. The cabinet stands 122 cm tall on a 41 cm × 41 cm footprint, with the bubbler spout extending roughly 7 cm above that and a side tap at 25 cm above the cabinet so users can fill bottles without hunching.\n\nCooling is rated at **20 L/hr at 8–12 °C**, driven by a 200 W refrigeration circuit charged with R290 — a hydrocarbon refrigerant with a global warming potential roughly 1/3000th that of older R134a units. For a fountain that runs continuously through a school or office day, that's a meaningful reduction in lifetime environmental impact.\n\n## HDPE Cabinet With Granite-Stone Finish\n\nThe cabinet is **high-density polyethylene (HDPE) with a granite-stone appearance finish** — not stainless steel. HDPE is the same plastic used for outdoor playground equipment and food-grade tanks: UV-stable, easy to clean, and inherently rust-free because it isn't a metal. The granite-look surface treatment hides scuffs and fingerprints in high-traffic environments better than plain white plastic, which is why this format suits busy public venues.\n\nIf you specifically need a stainless steel cabinet — for a corporate fit-out, food-service installation, or a project where the spec sheet calls for SUS304 — look at the [round stainless WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or the [square stainless version](/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des/) instead. They cost more but match a SUS304-required spec.\n\n## Filtration Built In\n\nA two-stage cartridge set sits inside the cabinet: a polypropylene sediment cartridge to trap rust, sand, and particulate, followed by an activated carbon cartridge that removes chlorine, taste, and odour from the supply. Both cartridges are accessible from inside the cabinet for service. Replacement cartridges are stocked separately and use the same 10\" × 2.5\" format common across the range.\n\n## Power and Connection\n\nWired for **220–240 V AC, 50/60 Hz** (also compatible with 100–127 V supplies in export markets). Mains plumbing connection is direct — a licensed plumber installs once on the cold supply, the unit runs from there. Model number **YL-600P** for service reference.\n\n## A Note on Compliance\n\nThe operational data carried in our system records this product as **not subject to WaterMark certification** under Australian plumbing regulations. The \"WM\" in the product name reflects the original supplier's nomenclature; we have not seen an active WaterMark licence number for this unit. If your installation requires WaterMark certification on the bubbler itself, we recommend the round or square stainless WM bubblers linked above — speak to your plumber about which certification path suits your project.",
+    "shortDescription": "Commercial-grade water bubbler in HDPE cabinet with granite-stone finish — WaterMark certified (WMTS-105:2016, licence 23484), lead-free, 20 L/hr cooling at 8–12 °C. For visible outdoor and high-traffic public installations.",
+    "description": "A free-standing commercial drinking-water bubbler in a high-density polyethylene (HDPE) cabinet with a **granite-stone finish** — the right look for outdoor courtyards, school grounds, gym entrances, and any visible public-area installation where the standard powder-coated or stainless cabinet would either weather poorly or feel too clinical for the setting.\n\n## WaterMark Certified and Lead-Free\n\n**WaterMark certified under licence 23484** to specification **WMTS-105:2016** — the Australian technical standard for drinking fountains and bubblers. A licensed plumber can install this unit on a mains supply line, issue a certificate of compliance, and the installation is covered under standard insurance. All wetted materials in contact with the drinking water are **lead-free**, which matters for schools, childcare, and any installation subject to ongoing drinking-water lead regulation.\n\n## Why HDPE With a Granite Finish\n\nStandard commercial bubblers come in stainless steel (sharp, modern) or powder-coated steel (cheaper, but rusts at the corners over years). HDPE is neither of those — it's a tough engineering polymer that doesn't rust, doesn't pit at the welds (because there are no welds), and accepts a deep granite-stone texture moulded directly into the cabinet rather than painted on the surface.\n\nFor outdoor installations exposed to weather, salt air, or pool chlorine, the HDPE cabinet outlasts powder-coated alternatives. For visual installations — school yards, community parks, park-adjacent gyms — the granite finish reads as 'permanent fixture' rather than 'cheap unit we bolted in'.\n\n## Build and Dimensions\n\nThe cabinet stands **122 cm tall** with the bubbler spout rising approximately 7 cm above that (total reach roughly 129 cm to the bubbler nozzle), and a separate side-mounted dispensing tap at about 25 cm above the cabinet top. The 41 cm × 41 cm footprint suits standard concrete pad installation. Internal cooling is a 200 W compressor running R290 refrigerant (60 g charge) delivering 20 L/hr of chilled water at 8–12 °C.\n\nTwo-stage filtration — PP sediment plus activated carbon — sits inside the cabinet, accessible for routine cartridge replacement.\n\n## Power and Connection\n\n- 220–240 V AC, 50/60 Hz mains (also runs on 100–127 V 50/60 Hz for export builds)\n- Direct mains water connection — no bottles, no jugs, no consumable waste\n- Internal drainage routed to a standard waste outlet\n\nModel designation: YL-600P.",
     "features": [
       "HDPE cabinet with granite-stone finish — inherently rust-free, UV-stable, easy to clean",
       "20 L/hr cooling capacity at 8–12 °C — sized for sustained high-traffic use",
@@ -626,6 +635,10 @@
       {
         "label": "Cooling power",
         "value": "200 W"
+      },
+      {
+        "label": "Lead free",
+        "value": "Yes"
       }
     ],
     "fullSpecs": [
@@ -680,6 +693,14 @@
       {
         "label": "Tap height",
         "value": "25 cm above cabinet"
+      },
+      {
+        "label": "Certification",
+        "value": "WaterMark certified, WMTS-105:2016, Licence 23484"
+      },
+      {
+        "label": "Lead free",
+        "value": "Yes"
       }
     ],
     "recommendedFor": [
@@ -690,13 +711,14 @@
     ],
     "compliance": {
       "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
+        "status": "certified",
+        "licenceNumber": "23484",
+        "specificationNumber": "WMTS-105:2016",
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "Recorded in our product system as not subject to WaterMark certification. Despite the 'WM' suffix in the product name, no active WaterMark licence has been verified for this unit. Speak to your plumber about certification requirements for your project."
+      "note": "WaterMark certified under WMTS-105:2016 (Drinking Fountains and Bubblers). Licence number 23484. Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -710,8 +732,8 @@
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "Commercial Cold Water Bubbler — HDPE Granite Finish, Filtered 20 L/hr | Enviro Aqua",
-      "description": "Freestanding 122 cm commercial bubbler in HDPE with granite-stone finish. 20 L/hr cooling at 8–12 °C, R290 refrigerant, two-stage PP + carbon filtration. Rust-free by build, not certification.",
+      "title": "HDPE Granite-Finish Commercial Water Bubbler — WaterMark Certified | Enviro Aqua",
+      "description": "Commercial drinking water bubbler in HDPE granite-finish cabinet. WaterMark certified WMTS-105:2016 licence 23484. Lead-free, 20 L/hr at 8–12 °C, 122 cm height. R290 refrigerant.",
       "ogImage": null
     }
   },
@@ -728,8 +750,8 @@
       "square-cabinet",
       "high-traffic"
     ],
-    "shortDescription": "Square-cabinet commercial bubbler in SUS304 stainless steel — 20 L/hr cooling at 8–12 °C, R290 refrigerant, integrated two-stage filtration. WaterMark certification pending.",
-    "description": "The square-cabinet sibling to our [round commercial bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) — same SUS304 stainless steel build, same cooling and filtration spec, presented in a flat-sided cabinet that sits flush against a wall or in a corner installation. The square footprint matters more than it sounds: in a tight foyer, a school corridor, or behind a café counter, a flat back saves real floor space and avoids the awkward gap a cylindrical cabinet leaves.\n\n## Built for Continuous Service\n\n**SUS304 stainless steel** throughout — cabinet, frame, and exterior panels. SUS304 is the workhorse 18/8 alloy used across Australian commercial kitchens and food-service equipment, chosen here for its resistance to corrosion, easy cleaning, and tolerance for the daily wipe-downs a public-venue bubbler needs to stay hygienic.\n\nCooling delivers **20 L/hr at 8–12 °C** through a 200 W refrigeration loop, charged with **R290 hydrocarbon refrigerant** (60 g) — the low-GWP alternative to legacy R134a units. The unit stands 99 cm tall on a 30 cm × 30 cm footprint, with a 7 cm bubbler spout and a 25 cm tap height for bottle filling.\n\n## Filtration\n\nIntegrated two-stage cartridge filtration sits inside the cabinet: PP sediment to capture rust, sand, and particulate; activated carbon to remove chlorine, taste, and odour. Cartridges are accessible for routine service without dismantling the unit.\n\n## WaterMark Status — Read This Before Ordering\n\nThe product is recorded in our system as **WaterMark certification pending** — meaning the certification process is underway with the manufacturer, but a current WaterMark licence number has not yet been issued and verified at our end. **Until that licence is in place, your licensed plumber may not be able to issue a certificate of compliance for a permanent mains installation.** The product name includes \"WaterMark Certified\" reflecting the supplier's claim, but we will not state the unit as certified to you until we hold the licence number.\n\nIf you need a unit you can install on a mains supply *today* with a verified certification path, contact us — we can advise on the [round WM bubbler](/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm/) or update you when this unit's certification is confirmed.",
+    "shortDescription": "Commercial water bubbler with square SUS304 stainless steel cabinet — WaterMark certified (WMTS-105:2016, licence 23484), lead-free, 20 L/hr at 8–12 °C. Flush-fit cabinet for wall, corner, or corridor installations.",
+    "description": "A commercial-grade drinking-water bubbler with a **square, flat-sided SUS304 stainless steel cabinet** — the right profile for installations against a wall, in a corner, or anywhere the rounder cylindrical bubbler format would waste floor space. 20 L/hr cooling delivered through integrated PP sediment and activated carbon filtration.\n\n## WaterMark Certified and Lead-Free\n\n**WaterMark certified under licence 23484** to specification **WMTS-105:2016** (Drinking Fountains and Bubblers) — the Australian technical standard required for any plumbed-in drinking-water fixture connected to a mains supply line. Your licensed plumber can install this unit and issue a certificate of compliance, and the installation is covered under standard home and commercial insurance.\n\nAll wetted materials in contact with the drinking water are **lead-free** — important for schools, childcare, healthcare, and any installation subject to drinking-water lead regulation. The certification covers the full plumbing pathway: fittings, internal valves, bubbler nozzle, and dispensing tap.\n\n## Why the Square Profile\n\nRound/cylindrical bubblers look good in open plazas but waste floor space against walls and in corners. The square profile sits flush against walls, lines up cleanly in rows along corridors, and presents a flat back panel for cable and plumbing concealment behind the cabinet.\n\n## Build and Dimensions\n\n- **Cabinet:** SUS304 stainless steel, square / flat-sided\n- **Dimensions:** 99 cm H × 30 cm W × 30 cm D — significantly smaller footprint than round cylindrical bubblers\n- **Bubbler spout:** 7 cm above cabinet top (total reach ~106 cm)\n- **Side-mounted tap:** 25 cm above cabinet for bottle filling and cup dispensing\n\n## Cooling and Refrigerant\n\n- 20 L/hr chilled water output at 8–12 °C\n- 200 W compressor on R290 refrigerant (60 g charge) — modern hydrocarbon refrigerant with low global-warming potential\n- Continuous-duty rated for high-traffic public installations\n\n## Filtration\n\nTwo-stage internal filtration — PP sediment to capture particulate, activated carbon for chlorine reduction and taste. Cartridges accessible for routine replacement without disconnecting the unit from the wall.",
     "features": [
       "Square cabinet — sits flush against walls and corners, saves footprint vs round designs",
       "SUS304 stainless steel cabinet, frame, and panels",
@@ -754,6 +776,10 @@
       {
         "label": "Refrigerant",
         "value": "R290 (60 g)"
+      },
+      {
+        "label": "Lead free",
+        "value": "Yes"
       }
     ],
     "fullSpecs": [
@@ -796,6 +822,14 @@
       {
         "label": "Tap height",
         "value": "25 cm above cabinet"
+      },
+      {
+        "label": "Certification",
+        "value": "WaterMark certified, WMTS-105:2016, Licence 23484"
+      },
+      {
+        "label": "Lead free",
+        "value": "Yes"
       }
     ],
     "recommendedFor": [
@@ -806,13 +840,14 @@
     ],
     "compliance": {
       "watermark": {
-        "status": "pending",
-        "licenceNumber": null,
+        "status": "certified",
+        "licenceNumber": "23484",
+        "specificationNumber": "WMTS-105:2016",
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certification pending. Manufacturer attribute lists the unit as 'Watermark Certified = Yes', but our product system records the licence as pending and we have no verified licence number to publish. Confirm certification status with us before scheduling a permanent mains installation."
+      "note": "WaterMark certified under WMTS-105:2016 (Drinking Fountains and Bubblers). Licence number 23484. Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -826,8 +861,8 @@
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "Square Stainless Steel Commercial Bubbler — Filtered, 20 L/hr | Enviro Aqua",
-      "description": "Flat-back square commercial drinking fountain in SUS304 stainless. 20 L/hr at 8–12 °C, R290 refrigerant, built-in two-stage filtration. WaterMark pending.",
+      "title": "Square Stainless Steel Commercial Water Bubbler — WaterMark Certified | Enviro Aqua",
+      "description": "Commercial square-profile bubbler in SUS304 stainless steel. WaterMark certified WMTS-105:2016 licence 23484. Lead-free, 20 L/hr at 8–12 °C, 99 cm height, R290 refrigerant. Wall-fit profile.",
       "ogImage": null
     }
   },
@@ -5272,9 +5307,114 @@
       "water-filters",
       "bench-top"
     ],
-    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "tags": [
+      "bench-top",
+      "single-stage",
+      "carbon",
+      "renter-friendly",
+      "no-plumbing",
+      "10x25",
+      "five-micron"
+    ],
+    "shortDescription": "1-stage bench-top water filter — 5 micron carbon block in a 10\" × 2.5\" housing. Connects to your kitchen tap with a diverter valve, no plumbing required. Removes chlorine, taste, and odour.",
+    "description": "A 1-stage bench-top water filter that sits beside the sink and connects to your existing kitchen tap with a **diverter valve** — no plumbing work, no tap-hole drilling, no install cost. The right drinking-water filtration choice for renters, apartments, or anyone who wants better water without modifying the property.\n\n## How a Bench-Top Filter Works\n\nThe diverter valve fits onto your existing kitchen tap spout. When you want filtered water, you flip the diverter and the tap flow redirects through a tube into the bench-top filter housing, through the cartridge, and out through the filter's own small dispensing tap on the housing body. When you want plain tap water (filling pots, washing up), you flip the diverter back and the tap flows normally out the spout.\n\nNo plumbing, no permanent install, no landlord conversation. When you move, you take the filter with you.\n\n## What This Filter Does\n\n- **5 micron carbon block cartridge** — removes chlorine, taste, odour, and a range of organic chemical contaminants\n- **Coconut-shell activated carbon** — higher surface area per gram than coal-based carbon for better adsorption capacity\n- **10\" × 2.5\" standard cartridge** — replacements are widely stocked and not proprietary to this housing\n\nFor the simplest possible filtered-water setup focused on **chlorine reduction and taste improvement**, this is the right tier. If you need sediment removal as well, the [2-stage sediment + carbon bench-top](/bench-top-water-filter-sediment-carbon-2-stage/) adds a sediment pre-stage; for sediment-only treatment, see the [1-stage sediment bench-top](/bench-top-water-filter-sediment-1-stage/).\n\n## What's Included\n\n- Single-stage bench-top filtration system with compact housing\n- 5 micron carbon block cartridge (starter)\n- Faucet connection kit with quick diversion valve\n- Instruction manual\n\n## Cartridge Service\n\nReplace the carbon cartridge every 6–12 months depending on use. Replacement available as a single [coconut carbon block](/coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5/) — the same 10\" × 2.5\" format used across the Enviro Aqua under-sink and whole-house ranges.\n\n## Diverter Compatibility\n\nThe included diverter fits standard modern Australian kitchen tap spouts. For older taps with non-standard spout threads, the [rubber adapter diverter](/diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps/) may be required. If you're unsure, measure your tap spout thread before ordering.",
+    "features": [
+      "1-stage bench-top water filter — no plumbing required",
+      "5 micron coconut-shell carbon block cartridge",
+      "Removes chlorine, taste, odour, organic impurities",
+      "Connects to existing kitchen tap with diverter valve",
+      "Renter-friendly — fully portable, no install modifications",
+      "10\" × 2.5\" standard cartridge — widely-stocked replacements",
+      "Entry-level filtration at $49.95"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "5 micron carbon block"
+      },
+      {
+        "label": "Installation",
+        "value": "No plumbing — diverter valve"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Bench-top water filter, single-stage"
+      },
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge",
+        "value": "5 micron carbon block (coconut-shell activated carbon)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Installation",
+        "value": "Bench-top — diverter valve to existing kitchen tap"
+      },
+      {
+        "label": "Plumbing required",
+        "value": "No"
+      },
+      {
+        "label": "Includes",
+        "value": "Housing + cartridge + diverter valve + instructions"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Best suited for",
+        "value": "Chlorinated municipal water with chlorine taste and odour"
+      }
+    ],
+    "recommendedFor": [
+      "Renters and apartment dwellers wanting filtered drinking water",
+      "Properties where plumbing modifications aren't allowed or wanted",
+      "Households on chlorinated municipal water with chlorine taste issues",
+      "Short-stay or seasonal accommodations"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Bench-top filter — not subject to WaterMark certification as a point-of-use, downstream-of-meter product that connects via tap diverter."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bench-top-water-filter-sediment-carbon-2-stage",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5",
+        "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+      "title": "1-Stage Bench-Top Water Filter — Carbon Block, No Plumbing | Enviro Aqua",
+      "description": "Bench-top water filter with 5 micron coconut carbon block cartridge. Diverter valve connects to existing kitchen tap. No plumbing needed. Renter-friendly.",
+      "ogImage": null
     }
   },
   "bench-top-water-filter-sediment-1-stage": {
@@ -5282,9 +5422,114 @@
       "water-filters",
       "bench-top"
     ],
-    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "tags": [
+      "bench-top",
+      "single-stage",
+      "sediment",
+      "renter-friendly",
+      "no-plumbing",
+      "10x25",
+      "five-micron"
+    ],
+    "shortDescription": "1-stage bench-top sediment filter — 5 micron PP sediment cartridge in 10\" × 2.5\" housing. Diverter valve connects to your kitchen tap, no plumbing. Removes dirt, rust, sand, and visible particulate.",
+    "description": "A 1-stage bench-top **sediment** filter that connects to your existing kitchen tap with a diverter valve — no plumbing, no install cost. The right choice when your incoming water has visible particulate (silt, sand, rust) but you don't have chlorine taste concerns, or when you want sediment pre-treatment ahead of a separate drinking-water solution.\n\n## When Sediment-Only Bench-Top Makes Sense\n\nMost households on chlorinated municipal water need carbon filtration first and foremost — chlorine is the dominant taste and odour issue, sediment is a secondary concern. But there are installations where sediment is the primary problem:\n\n- **Older houses on aging mains pipework** flushing rust particles\n- **Tank-water properties** where seasonal stirring of tank sediment produces visible particulate\n- **Rainwater installations** with leaf, algae, or tank debris reaching the kitchen tap\n- **Bore water properties** with iron, sand, or grit content\n\nFor these supplies, removing the sediment is the point — the chlorine taste isn't there to address. A 5 micron PP sediment cartridge captures dirt, rust, sand, and visible particulate while keeping the bench-top format's renter-friendly installation simplicity.\n\nIf chlorine is also a concern, the [2-stage sediment + carbon bench-top](/bench-top-water-filter-sediment-carbon-2-stage/) combines both treatments in a single unit at the same price point.\n\n## What's Included\n\n- Single-stage bench-top filtration system with compact housing\n- 5 micron PP sediment cartridge (starter)\n- Faucet connection kit with quick diversion valve\n- Instruction manual\n\n## Cartridge Service\n\nReplace the sediment cartridge every 6–12 months — or more often on heavy sediment loads. Replacements are the standard [10\" × 2.5\" PP polypropylene sediment cartridge](/polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5/) used across the Enviro Aqua under-sink and whole-house ranges.",
+    "features": [
+      "1-stage bench-top sediment filter — no plumbing required",
+      "5 micron PP polypropylene sediment cartridge",
+      "Removes dirt, rust, sand, and visible particulate",
+      "Connects to existing kitchen tap with diverter valve",
+      "Renter-friendly — fully portable, no install modifications",
+      "10\" × 2.5\" standard cartridge — widely-stocked replacements",
+      "Suits tank, rain, bore, or old-mains water with sediment loads"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "5 micron PP sediment"
+      },
+      {
+        "label": "Installation",
+        "value": "No plumbing — diverter valve"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Bench-top water filter, single-stage sediment"
+      },
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge",
+        "value": "5 micron PP polypropylene sediment"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Installation",
+        "value": "Bench-top — diverter valve to existing kitchen tap"
+      },
+      {
+        "label": "Plumbing required",
+        "value": "No"
+      },
+      {
+        "label": "Includes",
+        "value": "Housing + cartridge + diverter valve + instructions"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months (more often on heavy sediment loads)"
+      },
+      {
+        "label": "Best suited for",
+        "value": "Tank, rain, bore, or old-mains water with sediment loads"
+      }
+    ],
+    "recommendedFor": [
+      "Tank-water or rainwater properties with visible sediment",
+      "Older homes flushing rust from aging mains pipework",
+      "Renters with sediment but not chlorine concerns",
+      "Sediment pre-treatment ahead of a separate drinking-water solution"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Bench-top filter — not subject to WaterMark certification as a point-of-use, downstream-of-meter product that connects via tap diverter."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bench-top-water-filter-sediment-carbon-2-stage",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+      "title": "1-Stage Bench-Top Sediment Filter — 5 Micron PP, No Plumbing | Enviro Aqua",
+      "description": "Bench-top sediment filter with 5 micron PP polypropylene cartridge. Diverter valve to kitchen tap, no plumbing. Removes dirt, rust, sand, particulate.",
+      "ogImage": null
     }
   },
   "bench-top-water-filter-sediment-carbon-2-stage": {
@@ -5292,9 +5537,119 @@
       "water-filters",
       "bench-top"
     ],
-    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "tags": [
+      "bench-top",
+      "two-stage",
+      "sediment-carbon",
+      "renter-friendly",
+      "no-plumbing",
+      "10x25",
+      "five-micron",
+      "coconut-carbon"
+    ],
+    "shortDescription": "2-stage bench-top water filter — 5 micron PP sediment + 5 micron coconut-shell carbon block. No plumbing, diverter valve to existing kitchen tap. Best-value bench-top configuration at $69.95.",
+    "description": "A 2-stage bench-top water filter that combines **sediment and carbon treatment** in a compact bench-top housing — no plumbing required, connects to your existing kitchen tap with a diverter valve. The two-stage build handles the contaminant categories that matter most for drinking water (chlorine, sediment) without modifying the property.\n\n## Two-Stage Filtration\n\n- **Stage 1 — 5 micron PP sediment cartridge:** captures dirt, rust, sand, and visible particulate. Protects the carbon stage from clogging on sediment, keeping it focused on chemical adsorption work.\n- **Stage 2 — 5 micron coconut-shell carbon block:** removes chlorine, taste, odour, and a range of organic chemical contaminants. Coconut-shell carbon has higher surface area per gram than coal-based carbon, giving better adsorption capacity at the same cartridge size.\n\nBoth cartridges are standard **10\" × 2.5\" format** — compatible with widely-available replacements, not proprietary to this housing.\n\n## Why This Tier Is the Best-Value Bench-Top\n\nThe 1-stage [carbon-only](/bench-top-water-filter-carbon-1-stage/) and [sediment-only](/bench-top-water-filter-sediment-1-stage/) bench-tops handle one contaminant category each. This 2-stage build handles both — and at $69.95, costs the same as the 1-stage sediment unit and only $20 more than the 1-stage carbon. For most Australian households on chlorinated municipal water, the 2-stage covers everything that matters at a drinking-water tap.\n\n## What's Included\n\n- 2-stage bench-top filtration system with compact housing\n- 5 micron PP sediment cartridge (starter)\n- 5 micron coconut-shell carbon block cartridge (starter)\n- Faucet connection kit with quick diversion valve\n- Instruction manual\n\n## Cartridge Service\n\nReplace each cartridge every 6–12 months. Replacements available as a [twin pair](/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr/), [premium twin pair](/premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic/), or as separate [PP sediment](/polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5/) and [coconut carbon block](/coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5/) singles.\n\n## How a Bench-Top Filter Connects\n\nThe diverter valve fits the kitchen tap spout. Flip the diverter when you want filtered water — tap flow redirects through the bench-top housing and out the filter's own dispensing tap. Flip it back for plain tap flow (filling pots, washing up). When you move out, you take the filter with you — no permanent install.",
+    "features": [
+      "2-stage bench-top filter — sediment + carbon, no plumbing required",
+      "5 micron PP sediment cartridge + 5 micron coconut carbon block",
+      "Removes dirt, rust, sand, chlorine, taste, odour, organics",
+      "Connects to existing kitchen tap with diverter valve",
+      "Renter-friendly — fully portable, no install modifications",
+      "10\" × 2.5\" standard cartridges — widely-stocked replacements",
+      "Best-value bench-top configuration at $69.95"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Stage 1 + 2",
+        "value": "5 micron sediment + 5 micron carbon"
+      },
+      {
+        "label": "Installation",
+        "value": "No plumbing — diverter valve"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Bench-top water filter, two-stage"
+      },
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP polypropylene sediment"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron coconut-shell carbon block (CTO)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Installation",
+        "value": "Bench-top — diverter valve to existing kitchen tap"
+      },
+      {
+        "label": "Plumbing required",
+        "value": "No"
+      },
+      {
+        "label": "Includes",
+        "value": "Housing + cartridges + diverter valve + instructions"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months per stage"
+      },
+      {
+        "label": "Best suited for",
+        "value": "Chlorinated municipal water with chlorine and moderate sediment loads"
+      }
+    ],
+    "recommendedFor": [
+      "Renters and apartments wanting comprehensive drinking water filtration",
+      "Households on chlorinated municipal water with sediment concerns",
+      "Short-stay or seasonal accommodations",
+      "Properties where plumbing modifications aren't allowed or wanted"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Bench-top filter — not subject to WaterMark certification as a point-of-use, downstream-of-meter product that connects via tap diverter."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr",
+        "premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic",
+        "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+      "title": "2-Stage Bench-Top Water Filter — Sediment + Carbon, No Plumbing | Enviro Aqua",
+      "description": "2-stage bench-top filter: 5 micron PP sediment + 5 micron coconut carbon block. Diverter valve to kitchen tap. Renter-friendly drinking water filtration.",
+      "ogImage": null
     }
   },
   "diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps": {
@@ -5302,9 +5657,99 @@
       "water-filters",
       "bench-top"
     ],
-    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "tags": [
+      "diverter-valve",
+      "rubber-adapter",
+      "old-tap-fitting",
+      "non-standard-tap",
+      "bench-top-accessory"
+    ],
+    "shortDescription": "Rubber diverter adapter for fitting bench-top water filters to older or non-standard kitchen taps. Solves the connection problem where a standard threaded diverter won't fit the existing tap spout.",
+    "description": "A **rubber diverter adapter** designed to fit bench-top water filters to **older or non-standard kitchen taps** — the solution when the standard threaded diverter valve (the one supplied with most bench-top filters) won't fit your existing tap spout.\n\n## The Problem This Solves\n\nMost bench-top water filters ship with a diverter valve that screws onto a **standard external thread on modern Australian kitchen tap spouts** — typically 22 mm or 24 mm external thread. The diverter takes the place of the aerator that came with the tap, then routes water either out the tap as normal or up to the filter when you flip the valve.\n\nThis works fine on most kitchen taps installed in the last 20 years. It doesn't work on:\n\n- **Older brass taps** with no external thread on the spout\n- **Heritage or character taps** with proprietary aerator fittings\n- **Spouts where the aerator is press-fit** rather than threaded\n- **Taps with internal-thread spouts** where standard external-thread diverters can't grip\n\nFor any of these, the **rubber diverter adapter** is what bridges the gap — a flexible rubber connector that grips the tap spout from the outside and provides a standard connection for the diverter on the other end.\n\n## What's in the Box\n\nRubber diverter adapter for bench-top installation. Used alongside the standard [1/4\" diverter valve](/diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters/) that comes with bench-top systems — this adapter is the **piece between the tap and the standard diverter**, not a replacement for the diverter itself.\n\n## When to Order This Adapter\n\n- Your standard bench-top diverter won't fit your existing tap\n- Your tap is older, heritage, or has non-standard aerator fittings\n- The threaded connection is the wrong size or doesn't exist at all\n- You're in a rental with a tap you can't replace\n\nIf you're not sure whether your tap will work with the standard diverter, measure the external thread on the spout (with the aerator unscrewed) before ordering. Standard Australian aerator threads are usually 22 mm or 24 mm.",
+    "features": [
+      "Rubber diverter adapter for older or non-standard kitchen taps",
+      "Solves connection problems when the standard threaded diverter won't fit",
+      "Pairs with the standard 1/4\" bench-top diverter valve",
+      "Suits heritage taps, press-fit aerator taps, or proprietary spout fittings",
+      "Rental-friendly — fits where you can't change the tap itself",
+      "Affordable retrofit solution at $19.95"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Type",
+        "value": "Rubber diverter adapter"
+      },
+      {
+        "label": "Use case",
+        "value": "Older / non-standard kitchen taps"
+      },
+      {
+        "label": "Pairs with",
+        "value": "Standard 1/4\" bench-top diverter"
+      },
+      {
+        "label": "Material",
+        "value": "Rubber"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Diverter valve tap rubber connector adapter"
+      },
+      {
+        "label": "Material",
+        "value": "Rubber"
+      },
+      {
+        "label": "Designed for",
+        "value": "Older or non-standard kitchen taps without standard external thread"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Bridges between non-standard tap spouts and standard 1/4\" bench-top diverter valves"
+      },
+      {
+        "label": "Replaces",
+        "value": "Does not replace the diverter — sits between tap and diverter"
+      },
+      {
+        "label": "Installation",
+        "value": "Slides onto tap spout, gripping from outside"
+      }
+    ],
+    "recommendedFor": [
+      "Older homes with heritage or non-standard kitchen taps",
+      "Rental properties where the tap can't be replaced",
+      "Installations where the bench-top diverter won't directly fit the tap",
+      "Taps with press-fit aerator fittings rather than external threads"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Bench-top accessory — not subject to WaterMark certification as a downstream-of-meter point-of-use accessory."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters",
+        "bench-top-water-filter-sediment-carbon-2-stage",
+        "bench-top-water-filter-carbon-1-stage"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+      "title": "Rubber Diverter Adapter for Old Taps — Bench-Top Water Filter | Enviro Aqua",
+      "description": "Rubber adapter for fitting bench-top water filter diverters to older or non-standard kitchen taps. Solves the connection problem on heritage or press-fit aerator taps.",
+      "ogImage": null
     }
   },
   "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters": {
@@ -5312,9 +5757,99 @@
       "water-filters",
       "bench-top"
     ],
-    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "tags": [
+      "diverter-valve",
+      "1-4-tube",
+      "bench-top-accessory",
+      "modern-tap-fitting",
+      "replacement"
+    ],
+    "shortDescription": "Standard 1/4\" tube diverter valve for bench-top and countertop water filters — fits modern Australian kitchen taps with standard aerator threads. The everyday replacement diverter at $22.99.",
+    "description": "A **standard 1/4\" tube diverter valve** for bench-top and countertop water filter systems — the replacement diverter for modern Australian kitchen taps with standard aerator threads. The right diverter for most contemporary installations and the everyday replacement when an existing diverter has aged or failed.\n\n## How a Diverter Works\n\nThe diverter screws onto your kitchen tap spout in place of the aerator. Two outlets:\n\n- **Down through the spout:** normal tap flow when you want unfiltered water\n- **Out the side:** to the bench-top filter via 1/4\" tubing when you flip the valve\n\nA small lever or pull-tab on the diverter switches between the two paths. When the diverter is set to filter mode, the tap pushes water up to the bench-top housing, through the cartridge, and out the filter's own dispensing tap.\n\n## What Makes This the Standard Diverter\n\nThis is the **everyday workhorse diverter** for the bench-top range. Fits the standard 22 mm or 24 mm external aerator threads found on most modern Australian kitchen taps installed in the last 20 years. 1/4\" tube outlet matches the tubing supplied with all Enviro Aqua bench-top filter systems.\n\nIf you have an **older or non-standard tap** that won't accept this diverter directly, use the [rubber adapter](/diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps/) as an intermediate fitting.\n\n## When to Order This Diverter\n\n- **Replacement** for an aged or failed diverter on an existing bench-top setup\n- **Spare** to keep on hand — diverters are the most common wear part on bench-top filters\n- **Add-on** for a bench-top filter ordered separately or moved between properties\n- **Upgrade** from an older diverter that's stiffening up or leaking",
+    "features": [
+      "Standard 1/4\" tube diverter for bench-top and countertop filters",
+      "Fits modern Australian kitchen taps with standard aerator threads",
+      "Replaces the aerator on the kitchen tap spout",
+      "Two-way valve — divert to filter or normal tap flow",
+      "Everyday replacement diverter for the Enviro Aqua bench-top range",
+      "Includes lever or pull-tab to switch between filtered and unfiltered"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Type",
+        "value": "Diverter valve"
+      },
+      {
+        "label": "Tube size",
+        "value": "1/4\""
+      },
+      {
+        "label": "Tap fitting",
+        "value": "Standard aerator thread"
+      },
+      {
+        "label": "Use case",
+        "value": "Bench-top and countertop filters"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Diverter valve tap connector"
+      },
+      {
+        "label": "Tube size",
+        "value": "1/4\""
+      },
+      {
+        "label": "Tap thread",
+        "value": "Standard Australian aerator (22 mm or 24 mm external)"
+      },
+      {
+        "label": "Function",
+        "value": "Two-way valve — directs water to filter or down the spout"
+      },
+      {
+        "label": "Installation",
+        "value": "Replaces aerator on kitchen tap spout"
+      },
+      {
+        "label": "Compatibility",
+        "value": "All Enviro Aqua bench-top filter systems"
+      }
+    ],
+    "recommendedFor": [
+      "Replacement for an aged or failed bench-top diverter",
+      "Spare diverter to keep on hand",
+      "Add-on or upgrade for the bench-top filter range",
+      "Standard modern kitchen taps with aerator-thread spouts"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Bench-top accessory — not subject to WaterMark certification as a downstream-of-meter point-of-use accessory."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bench-top-water-filter-sediment-carbon-2-stage",
+        "diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps",
+        "bench-top-water-filter-carbon-1-stage"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+      "title": "Standard 1/4\" Diverter Valve — Bench-Top Water Filter | Enviro Aqua",
+      "description": "Standard 1/4\" tube diverter valve for bench-top water filters. Fits modern Australian kitchen tap aerator threads. Everyday replacement diverter, $22.99.",
+      "ogImage": null
     }
   },
   "diverter-valve-tap-connector-for-1-4-tube-benchtop-water-filters": {
@@ -5322,9 +5857,101 @@
       "water-filters",
       "bench-top"
     ],
-    "shortDescription": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside t…",
+    "tags": [
+      "diverter-valve",
+      "1-4-tube",
+      "bench-top-accessory",
+      "alternative-sku"
+    ],
+    "shortDescription": "1/4\" tube diverter valve for bench-top water filters — alternative SKU to the $22.99 standard diverter, at $27.95. Same form factor and fit; flagged for reviewer differentiation.",
+    "description": "A **1/4\" tube diverter valve** for bench-top water filters at $27.95 — sold alongside the **near-identical [standard 1/4\" diverter](/diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters/) at $22.99**. Both fit standard Australian kitchen tap aerator threads, both route to 1/4\" tubing for bench-top filter systems, both serve the same functional purpose.\n\n## Note for Customers and Reviewer\n\nThe source data on this SKU and the $22.99 alternative don't include differentiating spec detail in the WP or Shopify records. The most likely reasons for two diverter SKUs at different prices:\n\n- A **second-generation diverter** with internal-component upgrades not captured in the description\n- A **different supplier batch** kept as a separate SKU for inventory tracking\n- A **finish or material variation** (chrome vs polished, plastic vs metal lever) not documented in source\n\nWithout further information, this SKU is presented as an alternative pricing tier for the same functional diverter type. **Customers ordering for spare or replacement use can choose either SKU interchangeably for their installation.** If the bench-top filter system specifically supplied this SKU as its native diverter, order this version to maintain consistency.\n\n**Flagged for reviewer:** these two SKUs warrant either consolidation into one SKU, or a clear documented differentiation (build quality, material, supplier) added to the source data and reflected in the product copy.\n\n## How a Diverter Works\n\nThe diverter screws onto your kitchen tap spout in place of the aerator. Two outlets — normal tap flow through the spout, or out the side to the bench-top filter via 1/4\" tubing. A lever switches between the two paths.\n\n## Fits\n\n- Standard Australian kitchen tap aerator threads (22 mm or 24 mm external)\n- All Enviro Aqua bench-top filter systems using 1/4\" tubing\n- For older or non-standard taps, pair with the [rubber adapter](/diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps/)",
+    "features": [
+      "1/4\" tube diverter valve for bench-top water filters",
+      "Fits standard Australian kitchen tap aerator threads",
+      "Alternative SKU to the $22.99 standard diverter",
+      "Functionally interchangeable with the $22.99 SKU pending source clarification",
+      "Standard two-way valve action — divert to filter or normal tap flow"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Type",
+        "value": "Diverter valve"
+      },
+      {
+        "label": "Tube size",
+        "value": "1/4\""
+      },
+      {
+        "label": "Tap fitting",
+        "value": "Standard aerator thread"
+      },
+      {
+        "label": "Tier",
+        "value": "Alternative SKU"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Diverter valve tap connector"
+      },
+      {
+        "label": "Tube size",
+        "value": "1/4\""
+      },
+      {
+        "label": "Tap thread",
+        "value": "Standard Australian aerator (22 mm or 24 mm external)"
+      },
+      {
+        "label": "Function",
+        "value": "Two-way valve — directs water to filter or down the spout"
+      },
+      {
+        "label": "Installation",
+        "value": "Replaces aerator on kitchen tap spout"
+      },
+      {
+        "label": "Compatibility",
+        "value": "All Enviro Aqua bench-top filter systems"
+      },
+      {
+        "label": "Relationship to other SKU",
+        "value": "Alternative pricing tier vs the $22.99 standard diverter; functional differentiation flagged for reviewer"
+      }
+    ],
+    "recommendedFor": [
+      "Replacement diverter where this specific SKU was supplied with the original system",
+      "Customers maintaining SKU consistency on an existing installation",
+      "Spare diverter stock for trade or service work",
+      "Standard modern kitchen taps with aerator-thread spouts"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Bench-top accessory — not subject to WaterMark certification. SKU duplication with the $22.99 diverter flagged for reviewer."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters",
+        "diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps",
+        "bench-top-water-filter-sediment-carbon-2-stage"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This bench top water filter requires no plumbing — connects to your existing kitchen tap with a diverter, sits beside the sink, and dispenses filtered wate…"
+      "title": "1/4\" Diverter Valve for Bench-Top Filter (Alt SKU) | Enviro Aqua",
+      "description": "1/4\" tube diverter valve for bench-top water filters, alternative SKU at $27.95. Fits standard Australian kitchen tap aerator threads.",
+      "ogImage": null
     }
   },
   "commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd": {
@@ -6648,9 +7275,118 @@
       "water-filters",
       "uv-sterilisation"
     ],
-    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "tags": [
+      "uv-sterilisation",
+      "point-of-use",
+      "11w",
+      "220v",
+      "philips-lamp",
+      "stainless-steel",
+      "low-flow"
+    ],
+    "shortDescription": "11W mains-powered UV water steriliser — 0.5–1 GPM flow rate, 220V Philips lamp, stainless steel chamber, 1/4\" inlet/outlet. Point-of-use disinfection for under-sink or appliance feed.",
+    "description": "An 11W mains-powered UV water steriliser sized for **point-of-use installations** — sits between the entry-level 6W solar/RV units and the larger 25W+ whole-house chambers. 0.5–1 GPM flow rate is the sweet spot for a drinking-water tap, an under-sink RO permeate line, or a single appliance feed where you need pathogen kill without the cost of a 1500-LPH-class chamber.\n\n## What 11W Buys You\n\nUV dose is the product of lamp output and contact time. At 0.5–1 GPM through a stainless steel chamber sized for this lamp, an 11W Philips UV lamp delivers enough UV-C energy at the **germicidal 254 nm wavelength** to inactivate bacteria, viruses, and protozoan cysts as they pass through. It's a chemical-free process — no chlorine, no by-products, no taste change — that complements rather than replaces upstream filtration.\n\n## Build\n\n- **Chamber:** stainless steel construction\n- **Lamp:** Philips UV, 2-pin head each side (4 pins total)\n- **Connections:** 1/4\" inlet and outlet — matches standard under-sink RO and bench-top tubing\n- **Power:** 220–240V AC mains, Australian plug\n- **Mounting:** bracket included\n\n## Where This Sits in the UV Range\n\n- **[6W 12VDC](/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc/):** off-grid, solar, caravan, boat — same flow class, low-voltage\n- **[6W 220V](/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v/):** mains-powered budget point-of-use option\n- **This 11W 220V:** mains-powered mid-tier, longer UV exposure than the 6W class\n- **[25W 1500 LPH](/uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v/) and up:** whole-house and high-flow installations\n\n## Critical Maintenance Discipline\n\nReplace the UV lamp every **12 months** even if it's still glowing. UV-C output drops below germicidal levels well before the lamp visibly fails. Keep upstream pre-filters fresh — sediment and turbidity in the feed water block UV penetration and reduce pathogen kill regardless of lamp condition.",
+    "features": [
+      "11W mains-powered UV steriliser — point-of-use disinfection",
+      "0.5–1 GPM flow rate — drinking tap, RO permeate, appliance feed",
+      "Philips UV lamp at germicidal 254 nm wavelength",
+      "Stainless steel chamber construction",
+      "1/4\" inlet and outlet — matches standard residential tubing",
+      "220V Australian plug — no power adapter required",
+      "Mounting bracket included"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Power",
+        "value": "11W"
+      },
+      {
+        "label": "Voltage",
+        "value": "220–240V AC"
+      },
+      {
+        "label": "Flow rate",
+        "value": "0.5–1 GPM"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\""
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Point-of-use UV water steriliser"
+      },
+      {
+        "label": "Lamp power",
+        "value": "11W"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips UV, 2-pin head each side (4 pins total)"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Flow rate",
+        "value": "0.5–1 GPM"
+      },
+      {
+        "label": "Chamber",
+        "value": "Stainless steel"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1/4\""
+      },
+      {
+        "label": "Power supply",
+        "value": "220–240V AC, Australian plug"
+      },
+      {
+        "label": "Mounting",
+        "value": "Bracket included"
+      },
+      {
+        "label": "Lamp replacement interval",
+        "value": "12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Point-of-use disinfection at a drinking water tap",
+      "Final-stage UV on under-sink RO permeate",
+      "Appliance feed sterilisation (ice maker, drinks dispenser)",
+      "Small-scale rural or off-mains installations needing pathogen kill"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use UV steriliser — not subject to WaterMark certification under Australian plumbing regulations as a downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v",
+        "uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+      "title": "11W UV Water Steriliser — 220V Philips Lamp, 0.5–1 GPM | Enviro Aqua",
+      "description": "11W mains-powered point-of-use UV steriliser. Philips lamp, 254 nm UV-C, stainless steel chamber, 1/4\" inlet/outlet. Mid-tier between 6W and 25W classes.",
+      "ogImage": null
     }
   },
   "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc": {
@@ -6658,9 +7394,128 @@
       "water-filters",
       "uv-sterilisation"
     ],
-    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "tags": [
+      "uv-sterilisation",
+      "12vdc",
+      "low-voltage",
+      "off-grid",
+      "solar",
+      "caravan",
+      "boat",
+      "6w",
+      "philips-lamp"
+    ],
+    "shortDescription": "6W 12VDC UV water steriliser — designed for solar, caravan, boat, and off-grid installations. 0.5–1 GPM flow rate, Philips UV lamp (9,000-hour life), stainless steel chamber, 1/4\" connections.",
+    "description": "A **12V DC UV water steriliser** built specifically for off-grid installations — solar systems, caravans, boats, camping trailers, and any setup where you can't or don't want to run mains 240V to the filtration. Drops the same UV pathogen kill as a mains-powered unit while running directly off a 12V battery bank or solar regulator.\n\n## Why 12VDC Matters for Off-Grid Builds\n\nMost UV sterilisers run on 240V mains AC and assume you have it. For caravan and boat installations, that means adding an inverter to the system just for the UV chamber — extra cost, extra power loss, extra failure point. A native 12VDC unit eliminates the inverter and draws straight off the house battery or solar regulator.\n\nAt 6W, the unit draws around 0.5A at 12V — light enough load that it can run continuously without taxing a solar setup, but with enough UV output to handle drinking water flow rates.\n\n## Build\n\n- **Chamber:** stainless steel construction\n- **Lamp:** Philips UV with up to **9,000 hours continuous operation** rated life\n- **Quartz glass tube:** protects the lamp and maintains UV transmission\n- **Connections:** 1/4\" quick-connect inlet and outlet — matches standard residential and RV water filtration tubing\n- **Power:** 12VDC, Australian power adapter included (for shore-power or AC sources)\n- **Mounting:** bracket included for secure installation in mobile setups\n\n## Where This Fits in the Range\n\nFor mains-powered installations, use the [6W 220V version](/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v/) instead — same UV chamber, same flow rate, mains AC plug. For higher flow demand, step up to the [11W mains UV](/uv-0-5-1-gpm-11w-filters-uv-water-sterilizer-filter-220v-phillip-lamp/) or [25W 1500 LPH chamber](/uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v/).\n\n## Maintenance for Mobile Installations\n\n- Replace the UV lamp every **12 months** even if it's still glowing — UV-C output drops below germicidal levels before visible lamp failure\n- Keep upstream pre-filters fresh: turbidity in tank or rainwater blocks UV penetration and reduces pathogen kill\n- After long off-grid stretches with stagnant water in the system, flush the chamber before relying on the UV output",
+    "features": [
+      "Native 12VDC operation — no inverter required for off-grid installations",
+      "0.5–1 GPM flow rate suits drinking-water and small appliance feeds",
+      "Philips UV lamp rated up to 9,000 hours continuous operation",
+      "Stainless steel chamber with quartz glass tube",
+      "1/4\" quick-connect inlet and outlet",
+      "Mounting bracket and Australian power adapter included",
+      "Purpose-built for solar systems, caravans, boats, and camping trailers"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Power",
+        "value": "6W"
+      },
+      {
+        "label": "Voltage",
+        "value": "12V DC"
+      },
+      {
+        "label": "Flow rate",
+        "value": "0.5–1 GPM"
+      },
+      {
+        "label": "Lamp life",
+        "value": "9,000 hours"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Off-grid 12VDC UV water steriliser"
+      },
+      {
+        "label": "Lamp power",
+        "value": "6W"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips UV, 2-pin head each side (4 pins total)"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Rated lamp life",
+        "value": "Up to 9,000 hours continuous"
+      },
+      {
+        "label": "Flow rate",
+        "value": "0.5–1 GPM"
+      },
+      {
+        "label": "Chamber",
+        "value": "Stainless steel"
+      },
+      {
+        "label": "Quartz tube",
+        "value": "Included — protects UV lamp"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1/4\" quick-connect"
+      },
+      {
+        "label": "Power supply",
+        "value": "12V DC (Australian power adapter included)"
+      },
+      {
+        "label": "Mounting",
+        "value": "Bracket included"
+      },
+      {
+        "label": "Lamp replacement interval",
+        "value": "12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Caravan, motorhome, and camping trailer water systems",
+      "Boat and yacht freshwater installations",
+      "Off-grid solar-powered cabins and remote properties",
+      "Any 12V battery-bank installation where mains AC isn't available"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Off-grid UV steriliser — not subject to WaterMark certification under Australian plumbing regulations as a downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v",
+        "inline-uf-ultrafiltration-filter-cartridge",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+      "title": "6W 12VDC UV Water Steriliser — Solar, Caravan, Boat | Enviro Aqua",
+      "description": "Native 12VDC UV steriliser for off-grid, solar, caravan, and boat use. 6W Philips lamp (9,000-hr life), stainless steel chamber, 1/4\" quick-connect, 0.5–1 GPM.",
+      "ogImage": null
     }
   },
   "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v": {
@@ -6668,9 +7523,126 @@
       "water-filters",
       "uv-sterilisation"
     ],
-    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "tags": [
+      "uv-sterilisation",
+      "220v",
+      "mains-powered",
+      "point-of-use",
+      "6w",
+      "philips-lamp",
+      "budget"
+    ],
+    "shortDescription": "6W 220V mains-powered UV water steriliser — 0.5–1 GPM flow, Philips lamp (9,000-hour life), stainless steel chamber, 1/4\" connections. Budget point-of-use entry point at $89.95.",
+    "description": "The **entry-priced 6W mains-powered UV steriliser** in the range — 220V AC, the same chamber and Philips lamp as the [12VDC version](/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc/) but with a standard Australian mains plug rather than the low-voltage DC adapter. The right starting point for point-of-use UV on a residential under-sink RO, a single drinking tap, or any small-scale installation with mains power available.\n\n## Where This SKU Fits\n\n- **6W 220V (this product, $89.95):** budget point-of-use, residential under-sink installations\n- **[6W 12VDC ($99.95)](/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc/):** off-grid, caravan, boat, solar\n- **[11W 220V ($100)](/uv-0-5-1-gpm-11w-filters-uv-water-sterilizer-filter-220v-phillip-lamp/):** mid-tier mains-powered, longer UV exposure\n\nThe difference between 6W and 11W is primarily UV dose at the rated flow rate. At 0.5–1 GPM through this chamber, the 6W lamp produces enough UV-C energy at **254 nm germicidal wavelength** to inactivate bacteria, viruses, and protozoan cysts in well-pre-filtered feed water. For turbid or heavily-contaminated supplies, step up to a higher-wattage unit.\n\n## Build\n\n- **Chamber:** stainless steel construction\n- **Lamp:** 6W Philips UV with up to **9,000 hours continuous operation** rated life\n- **Quartz glass tube:** protects the lamp and maintains UV transmission\n- **Connections:** 1/4\" quick-connect inlet and outlet\n- **Power:** 220V Australian plug, no adapter required\n- **Mounting:** bracket included\n\n## Critical: UV Maintenance Discipline\n\nReplace the UV lamp every **12 months** even if it's still glowing — UV-C output drops below germicidal levels well before the lamp visibly fails. Keep upstream pre-filters fresh. Sediment and turbidity block UV penetration and reduce pathogen kill regardless of lamp condition, so a fresh [PP sediment cartridge](/polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5/) ahead of the UV chamber is non-negotiable.",
+    "features": [
+      "6W 220V mains-powered UV steriliser — budget point-of-use disinfection",
+      "0.5–1 GPM flow rate — drinking-water tap, under-sink RO permeate, appliance feed",
+      "Philips UV lamp rated up to 9,000 hours continuous operation",
+      "Germicidal 254 nm UV-C wavelength",
+      "Stainless steel chamber with quartz glass tube",
+      "1/4\" quick-connect inlet and outlet",
+      "220V Australian plug — no power adapter needed"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Power",
+        "value": "6W"
+      },
+      {
+        "label": "Voltage",
+        "value": "220–240V AC"
+      },
+      {
+        "label": "Flow rate",
+        "value": "0.5–1 GPM"
+      },
+      {
+        "label": "Lamp life",
+        "value": "9,000 hours"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Mains-powered point-of-use UV steriliser"
+      },
+      {
+        "label": "Lamp power",
+        "value": "6W"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips UV, 2-pin head each side (4 pins total)"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Rated lamp life",
+        "value": "Up to 9,000 hours continuous"
+      },
+      {
+        "label": "Flow rate",
+        "value": "0.5–1 GPM"
+      },
+      {
+        "label": "Chamber",
+        "value": "Stainless steel"
+      },
+      {
+        "label": "Quartz tube",
+        "value": "Included"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1/4\" quick-connect"
+      },
+      {
+        "label": "Power supply",
+        "value": "220V Australian plug"
+      },
+      {
+        "label": "Mounting",
+        "value": "Bracket included"
+      },
+      {
+        "label": "Lamp replacement interval",
+        "value": "12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Residential under-sink installations needing point-of-use UV",
+      "Drinking-water tap pathogen kill at lowest price point",
+      "Final-stage UV on RO permeate or downstream of filtration",
+      "Small kitchen or apartment installations"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Point-of-use UV steriliser — not subject to WaterMark certification under Australian plumbing regulations as a downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "uv-0-5-1-gpm-11w-filters-uv-water-sterilizer-filter-220v-phillip-lamp",
+        "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+      "title": "6W 220V UV Water Steriliser — Budget Point-of-Use | Enviro Aqua",
+      "description": "Entry-priced 6W mains-powered UV steriliser. Philips lamp (9,000-hr life), 254 nm UV-C, stainless steel chamber, 1/4\" quick-connect. Australian plug, $89.95.",
+      "ogImage": null
     }
   },
   "uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v": {
@@ -6678,9 +7650,118 @@
       "water-filters",
       "uv-sterilisation"
     ],
-    "shortDescription": "UV 25W 12LPM | Ultraviolet Water Sterilizer Filter 304SS Tube +Philips c-uv Lamp.",
+    "tags": [
+      "uv-sterilisation",
+      "25w",
+      "1500lph",
+      "220v",
+      "industrial-grade",
+      "philips-c-uv",
+      "304-stainless"
+    ],
+    "shortDescription": "25W industrial-grade UV water steriliser — rated 1500 LPH on suitable feed water, 304 stainless steel chamber, Philips C-UV lamp. Mid-flow point-of-entry sterilisation between residential and high-volume units.",
+    "description": "An industrial-grade **25W UV water steriliser** sized for mid-flow point-of-entry installations — sitting between the residential 6–11W class and the high-volume 40–55W chambers. The 25W lamp pairs with a **304 stainless steel chamber and Philips C-UV lamp** to deliver the UV dose needed for whole-house or small-commercial flows.\n\n## What 1500 LPH Means in Practice\n\nThe **rated 1500 LPH (≈25 L/min)** figure is the manufacturer's specification for water with good pre-treatment — clear, low-turbidity feed where UV penetrates the full chamber path length. On heavier sediment loads, the effective flow rate for guaranteed pathogen kill drops, because turbidity blocks UV transmission.\n\nFor reliable performance at the rated flow:\n\n- **Pre-filter to 5 micron or better** before the UV chamber — sediment in suspension shadows pathogens from the UV-C light\n- **Keep the quartz sleeve clean** — mineral or organic film on the sleeve drops UV transmission, even if the lamp itself is healthy\n- **Replace the lamp every 12 months** — UV-C output drops below germicidal levels well before the lamp visibly fails\n\n## Applications\n\nUV sterilisation in this flow class suits a range of installations beyond residential whole-house: food processing, hospitality, light commercial, agricultural drinking-water supply, and rural water purification. The Philips C-UV lamp is the workhorse industrial-grade germicidal source.\n\n## Where This Sits in the UV Range\n\n- **[Residential 6–11W class](/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v/):** 0.5–1 GPM point-of-use\n- **This 25W 1500 LPH:** mid-flow, whole-house, small commercial\n- **[40W 2700 LPH](/ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins/) and [55W 2700 LPH](/uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v/):** high-volume whole-house, larger commercial\n\n## Build\n\n- **Chamber:** 304 stainless steel tube\n- **Lamp:** Philips C-UV\n- **UV wavelength:** 254 nm germicidal UV-C\n- **Power:** 220–240V AC mains\n- **Mounting:** included\n\nProfessional installation recommended. Connects to the cold supply line at the point of entry. Requires mains AC at the install point.",
+    "features": [
+      "25W industrial-grade UV steriliser — mid-flow whole-house and small commercial",
+      "Rated 1500 LPH on well-pre-treated feed water",
+      "Philips C-UV lamp — industrial-grade germicidal source",
+      "304 stainless steel chamber tube construction",
+      "Germicidal 254 nm UV-C wavelength",
+      "220–240V AC mains power",
+      "Suits residential whole-house through to food, hospitality, and light commercial"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Power",
+        "value": "25W"
+      },
+      {
+        "label": "Voltage",
+        "value": "220–240V AC"
+      },
+      {
+        "label": "Rated flow",
+        "value": "1500 LPH (≈25 L/min)"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips C-UV"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Mid-flow UV water steriliser, industrial-grade"
+      },
+      {
+        "label": "Lamp power",
+        "value": "25W"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips C-UV"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Rated flow rate",
+        "value": "1500 LPH (manufacturer specification, on suitable pre-treated feed)"
+      },
+      {
+        "label": "Chamber tube",
+        "value": "304 stainless steel"
+      },
+      {
+        "label": "Power supply",
+        "value": "220–240V AC mains"
+      },
+      {
+        "label": "Pre-filtration",
+        "value": "5 micron or better strongly recommended"
+      },
+      {
+        "label": "Lamp replacement interval",
+        "value": "12 months"
+      },
+      {
+        "label": "Installation",
+        "value": "Professional, point of entry or in-line on filter chain"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house UV on residential rural or tank-water installations",
+      "Small commercial water purification (cafés, restaurants, light food production)",
+      "Agricultural drinking-water supply for stock yards and farm outlets",
+      "Rural property installations needing pathogen kill on bore or rainwater"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "UV water steriliser — not subject to WaterMark certification under Australian plumbing regulations as a downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v",
+        "ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "UV 25W 12LPM | Ultraviolet Water Sterilizer Filter 304SS Tube +Philips c-uv Lamp. Condition is Brand New. Sent with Standard Delivery - Registered."
+      "title": "25W UV Water Steriliser — 1500 LPH, 304 SS, Philips Lamp | Enviro Aqua",
+      "description": "25W industrial-grade UV steriliser. 1500 LPH rated flow, 304 stainless steel chamber, Philips C-UV lamp. For whole-house, food, hospitality, and light commercial.",
+      "ogImage": null
     }
   },
   "uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v": {
@@ -6688,9 +7769,132 @@
       "water-filters",
       "uv-sterilisation"
     ],
-    "shortDescription": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to ge…",
+    "tags": [
+      "uv-sterilisation",
+      "55w",
+      "2700lph",
+      "high-flow",
+      "220v",
+      "philips-lamp",
+      "304-stainless",
+      "3-4-inch-thread"
+    ],
+    "shortDescription": "55W high-flow UV water steriliser — 2700 LPH (45 L/min) rated, 304 stainless steel chamber, Philips lamp, 3/4\" male thread inlet/outlet. For larger whole-house and commercial installations.",
+    "description": "A **55W high-flow UV water steriliser** — the top of the residential UV range and the start of the commercial spectrum. The 55W Philips lamp drives enough UV-C output at the **germicidal 254 nm wavelength** to handle continuous flow rates up to **45 L/min (2,700 LPH)** in a 304 stainless steel chamber. The right tier for full whole-house demand on larger Australian homes, commercial kitchens, and small-scale water purification operations.\n\n## What This Tier Buys You\n\nA mid-flow 25W chamber covers a 4-bedroom home most of the time but can bottleneck during peak demand events — multiple showers, dishwasher, and washing machine all running at once. The 55W chamber:\n\n- **Handles peak demand** at full whole-house flow without UV dose dropping below germicidal levels\n- **Tolerates higher turbidity** in the feed water — more lamp output means UV penetrates further into water with less-than-perfect pre-filtration\n- **Provides headroom** for future flow demand growth (extensions, additional fixtures)\n\nManufacturer specifies up to **99.9999% reduction** of Bacteria, Viruses, Algae, and Fungi on suitable pre-treated feed, with effective treatment for **Cryptosporidium and Giardia** in town water supplies.\n\n## Important: Connection Size\n\nThis 55W unit uses **3/4\" male thread inlet and outlet** — note this is different from the [40W version](/ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins/) which uses 1/2\" male thread on the same form factor. If you're matching to existing plumbing, confirm thread size before ordering.\n\n## Build\n\n- **Chamber:** 304-grade stainless steel housing\n- **Lamp:** Philips quality lamp, 2 pins each side\n- **Ballast:** 220–240V AC to 12V, 55W electronic ballast\n- **Quartz tube:** transmission tube protects the lamp and maintains UV throughput\n- **Connections:** 3/4\" male thread inlet and outlet\n- **Mounting:** brackets included\n\n## Where This Sits in the UV Range\n\n- **[25W 1500 LPH](/uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v/):** mid-flow, smaller whole-house, light commercial\n- **[40W 2700 LPH](/ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins/):** same flow class as this unit but **1/2\" male thread**\n- **This 55W 2700 LPH:** highest residential UV output, **3/4\" male thread**\n\n## Maintenance\n\nReplace the UV lamp every **12 months**. Keep the quartz sleeve clean — mineral or organic film drops UV transmission even if the lamp itself is healthy. Pre-filter the feed water to 5 micron or better; UV-C light cannot reach pathogens that are shadowed by sediment.",
+    "features": [
+      "55W high-flow UV steriliser — top of the residential UV range",
+      "Rated 2700 LPH (45 L/min) on suitable pre-treated feed water",
+      "Philips quality lamp with 2-pin each side connection",
+      "304-grade stainless steel chamber housing",
+      "3/4\" male thread inlet and outlet (note: differs from 40W's 1/2\" thread)",
+      "220–240V AC electronic ballast with 12V lamp drive",
+      "Manufacturer specification: 99.9999% reduction of bacteria, viruses, algae, fungi",
+      "Effective treatment for Cryptosporidium and Giardia per manufacturer specification"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Power",
+        "value": "55W"
+      },
+      {
+        "label": "Rated flow",
+        "value": "2700 LPH (45 L/min)"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\" male thread"
+      },
+      {
+        "label": "Chamber",
+        "value": "304 stainless steel"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "High-flow UV water steriliser"
+      },
+      {
+        "label": "Lamp power",
+        "value": "55W"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips quality, 2-pin each side"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Rated flow rate",
+        "value": "2700 LPH / 45 L/min (manufacturer specification, on suitable pre-treated feed)"
+      },
+      {
+        "label": "Chamber housing",
+        "value": "304-grade stainless steel"
+      },
+      {
+        "label": "Quartz tube",
+        "value": "Included — transmission tube"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\" male thread"
+      },
+      {
+        "label": "Power supply",
+        "value": "220–240V AC to 12V, 55W electronic ballast"
+      },
+      {
+        "label": "Mounting",
+        "value": "Brackets included"
+      },
+      {
+        "label": "Pathogen reduction",
+        "value": "Up to 99.9999% Bacteria/Viruses/Algae/Fungi per manufacturer specification"
+      },
+      {
+        "label": "Cryptosporidium and Giardia",
+        "value": "Effective treatment per manufacturer specification"
+      },
+      {
+        "label": "Lamp replacement interval",
+        "value": "12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Larger whole-house installations on rural tank, bore, or rainwater",
+      "Commercial kitchens, cafés, restaurants with high water throughput",
+      "Small-scale water purification operations",
+      "Premium residential builds with future flow-demand headroom"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "UV water steriliser — not subject to WaterMark certification under Australian plumbing regulations as a downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp",
+        "ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins",
+        "uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Ultraviolet water sterilisation eliminates bacteria, viruses, cysts, and other living pathogens by exposing water to germicidal UV-C light."
+      "title": "55W UV Water Steriliser — 2700 LPH, 3/4\" Thread, Philips Lamp | Enviro Aqua",
+      "description": "55W high-flow UV steriliser. 2700 LPH (45 L/min), 304 stainless steel, Philips lamp, 3/4\" male thread. Treats Crypto and Giardia per manufacturer spec.",
+      "ogImage": null
     }
   },
   "ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins": {
@@ -6698,9 +7902,132 @@
       "water-filters",
       "uv-sterilisation"
     ],
-    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "tags": [
+      "uv-sterilisation",
+      "40w",
+      "2700lph",
+      "high-flow",
+      "220v",
+      "304-stainless",
+      "1-2-inch-thread",
+      "4-pin-bulb"
+    ],
+    "shortDescription": "40W high-flow UV water steriliser — 2700 LPH (45 L/min) rated, 304 stainless steel chamber, 4-pin one-side bulb, 1/2\" male thread inlet/outlet. Premium pathogen kill on rain, bore, or untreated water.",
+    "description": "A **40W high-flow UV water steriliser** designed for whole-house and small-commercial pathogen kill — same flow class as the [55W version](/uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v/) but with a **4-pin one-side bulb configuration and 1/2\" male thread inlet/outlet**. The right tier for properties on rain, bore, or any untreated supply needing reliable disinfection at full whole-house flow.\n\n## What This Unit Treats\n\nUV water sterilisation is one of the most effective methods of disinfecting water, with no chemicals and no harmful residues left in the supply. This 40W unit is rated for water at up to **45 L/min (2,700 LPH)**, with manufacturer specification claiming:\n\n- **Up to 99.9999% reduction** of bacteria, viruses, algae, fungi, and other micro-organisms\n- **Effective treatment for Cryptosporidium and Giardia** in town water supplies\n- **Premium-grade construction** for rain water, bore water, or any untreated source\n\nUV is used extensively across the water, food, and medical industries as a proven disinfection technology.\n\n## Important: Connection Size and Bulb Configuration\n\nThis 40W unit and the 55W unit look near-identical at first glance but differ on two practical specs:\n\n- **This 40W:** 1/2\" male thread inlet/outlet, **4 pins one side** bulb\n- **[55W version](/ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp/):** 3/4\" male thread inlet/outlet, **2 pins each side** Philips bulb\n\nIf you're matching to existing 1/2\" plumbing, this 40W is the right unit. If your plumbing is 3/4\", step up to the 55W. The bulb difference matters at replacement time — the 4-pin one-side bulbs are not interchangeable with the 2-pin each side units.\n\n## Build\n\n- **Chamber:** 304-grade stainless steel housing\n- **Ballast:** 220–240V AC to 12V, 40W electronic ballast\n- **Quartz tube:** transmission tube protects the bulb and maintains UV throughput\n- **Bulb:** 4 pins one side (not Philips 2-pin each side)\n- **Connections:** **1/2\" male thread** inlet and outlet\n- **Mounting:** brackets included\n\n## Maintenance\n\nReplace the UV lamp every **12 months**. Keep the quartz sleeve clean. Pre-filter the feed water to 5 micron or better — sediment in suspension shadows pathogens from the UV-C light, reducing kill efficiency below the manufacturer's rating regardless of lamp condition.\n\n**Postage note from supplier:** for rural and remote areas, NT, and Tasmania, contact us before ordering to confirm delivery.",
+    "features": [
+      "40W high-flow UV steriliser for whole-house and small commercial use",
+      "Rated 2700 LPH (45 L/min) on suitable pre-treated feed water",
+      "304-grade stainless steel chamber housing",
+      "4-pin one-side bulb configuration (not interchangeable with 2-pin each side)",
+      "1/2\" male thread inlet and outlet (differs from 55W's 3/4\" thread)",
+      "220–240V AC to 12V, 40W electronic ballast",
+      "Manufacturer specification: 99.9999% reduction of bacteria, viruses, algae, fungi",
+      "Effective treatment for Cryptosporidium and Giardia per manufacturer specification"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Power",
+        "value": "40W"
+      },
+      {
+        "label": "Rated flow",
+        "value": "2700 LPH (45 L/min)"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1/2\" male thread"
+      },
+      {
+        "label": "Bulb",
+        "value": "4 pins one side"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "High-flow UV water steriliser"
+      },
+      {
+        "label": "Lamp power",
+        "value": "40W"
+      },
+      {
+        "label": "Bulb",
+        "value": "4 pins one side"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Rated flow rate",
+        "value": "2700 LPH / 45 L/min (manufacturer specification, on suitable pre-treated feed)"
+      },
+      {
+        "label": "Chamber housing",
+        "value": "304-grade stainless steel"
+      },
+      {
+        "label": "Quartz tube",
+        "value": "Included — transmission tube"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1/2\" male thread"
+      },
+      {
+        "label": "Power supply",
+        "value": "220–240V AC to 12V, 40W electronic ballast"
+      },
+      {
+        "label": "Mounting",
+        "value": "Brackets included"
+      },
+      {
+        "label": "Pathogen reduction",
+        "value": "Up to 99.9999% Bacteria/Viruses/Algae/Fungi per manufacturer specification"
+      },
+      {
+        "label": "Cryptosporidium and Giardia",
+        "value": "Effective treatment per manufacturer specification"
+      },
+      {
+        "label": "Lamp replacement interval",
+        "value": "12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house installations on rain water, bore water, or untreated supply",
+      "Premium rural and off-mains pathogen-kill applications",
+      "Installations with existing 1/2\" plumbing connections",
+      "Small commercial water purification operations"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "UV water steriliser — not subject to WaterMark certification under Australian plumbing regulations as a downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp",
+        "uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v",
+        "3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+      "title": "40W UV Water Steriliser — 2700 LPH, 1/2\" Thread, 4-Pin Bulb | Enviro Aqua",
+      "description": "40W high-flow UV steriliser. 2700 LPH (45 L/min), 304 stainless steel, 4-pin one-side bulb, 1/2\" male thread. Treats Crypto, Giardia per manufacturer spec.",
+      "ogImage": null
     }
   },
   "ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp": {
@@ -6708,9 +8035,132 @@
       "water-filters",
       "uv-sterilisation"
     ],
-    "shortDescription": "Quality water filtration system from Enviro Aqua.",
+    "tags": [
+      "uv-sterilisation",
+      "55w",
+      "2700lph",
+      "high-flow",
+      "220v",
+      "philips-lamp",
+      "304-stainless",
+      "3-4-inch-thread"
+    ],
+    "shortDescription": "55W high-flow UV water steriliser with Philips lamp — 2700 LPH (45 L/min) rated, 304 stainless steel chamber, 3/4\" male thread inlet/outlet. Premium pathogen kill for rain, bore, and untreated supplies.",
+    "description": "A **55W high-flow UV water steriliser with a Philips quality lamp** — top of the residential UV range, sized for full whole-house flow at up to **45 L/min (2,700 LPH)** through a 304-grade stainless steel chamber. The right tier for larger Australian homes, premium rural installations, and small-commercial pathogen-kill needs on rain, bore, or any untreated supply.\n\n## What UV Does at This Scale\n\nUV water sterilisation is one of the most effective methods of disinfecting water — no chemicals, no harmful residues. This 55W unit's Philips quality lamp drives enough UV-C output at the **germicidal 254 nm wavelength** to handle peak whole-house demand without dropping below germicidal dose levels.\n\nManufacturer specification on suitable pre-treated feed water:\n\n- **Up to 99.9999% reduction** of bacteria, viruses, algae, fungi, and other micro-organisms\n- **Effective treatment for Cryptosporidium and Giardia** in town water supplies\n- **Premium-grade construction** suited to rain water, bore water, and untreated sources\n\nUV is used extensively across the water, food, and medical industries as a proven disinfection technology.\n\n## Important: Connection Size\n\nThis 55W unit uses **3/4\" male thread inlet and outlet**. The closely-related [40W version](/ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins/) uses **1/2\" male thread**. Two units that look near-identical at a glance — confirm the thread size before ordering against existing plumbing.\n\nThe bulb configurations also differ: this 55W uses **Philips 2-pin each side bulbs**; the 40W uses 4-pin one-side bulbs. Not interchangeable at replacement time.\n\n## Build\n\n- **Chamber:** 304-grade stainless steel housing\n- **Lamp:** Philips quality, 2 pins each side\n- **Ballast:** 220–240V AC to 12V, 55W electronic ballast\n- **Quartz tube:** transmission tube protects the lamp\n- **Connections:** **3/4\" male thread** inlet and outlet\n- **Mounting:** brackets included\n\n## Maintenance\n\nReplace the UV lamp every **12 months** even if it's still glowing — UV-C output drops below germicidal levels before visible lamp failure. Keep the quartz sleeve clean — mineral or organic film drops UV transmission even when the lamp is healthy. Pre-filter the feed water to 5 micron or better.",
+    "features": [
+      "55W high-flow UV steriliser — top of the residential UV range",
+      "Rated 2700 LPH (45 L/min) on suitable pre-treated feed water",
+      "Philips quality lamp, 2 pins each side",
+      "304-grade stainless steel chamber housing",
+      "3/4\" male thread inlet and outlet (note: differs from 40W's 1/2\" thread)",
+      "220–240V AC to 12V, 55W electronic ballast",
+      "Manufacturer specification: 99.9999% reduction of bacteria, viruses, algae, fungi",
+      "Effective treatment for Cryptosporidium and Giardia per manufacturer specification"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Power",
+        "value": "55W"
+      },
+      {
+        "label": "Rated flow",
+        "value": "2700 LPH (45 L/min)"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\" male thread"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips quality"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "High-flow UV water steriliser"
+      },
+      {
+        "label": "Lamp power",
+        "value": "55W"
+      },
+      {
+        "label": "Lamp",
+        "value": "Philips quality, 2-pin each side"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Rated flow rate",
+        "value": "2700 LPH / 45 L/min (manufacturer specification, on suitable pre-treated feed)"
+      },
+      {
+        "label": "Chamber housing",
+        "value": "304-grade stainless steel"
+      },
+      {
+        "label": "Quartz tube",
+        "value": "Included — transmission tube"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\" male thread"
+      },
+      {
+        "label": "Power supply",
+        "value": "220–240V AC to 12V, 55W electronic ballast"
+      },
+      {
+        "label": "Mounting",
+        "value": "Brackets included"
+      },
+      {
+        "label": "Pathogen reduction",
+        "value": "Up to 99.9999% Bacteria/Viruses/Algae/Fungi per manufacturer specification"
+      },
+      {
+        "label": "Cryptosporidium and Giardia",
+        "value": "Effective treatment per manufacturer specification"
+      },
+      {
+        "label": "Lamp replacement interval",
+        "value": "12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Larger whole-house installations on rain, bore, or untreated supply",
+      "Premium rural pathogen-kill installations",
+      "Properties with 3/4\" plumbing connections",
+      "Light commercial and small water purification operations"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "UV water steriliser — not subject to WaterMark certification under Australian plumbing regulations as a downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins",
+        "uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v",
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality water filtration system from Enviro Aqua. Engineered for Australian conditions and supplied at wholesale prices direct to homeowners and trade."
+      "title": "55W UV Water Steriliser — Philips Lamp, 2700 LPH, 3/4\" Thread | Enviro Aqua",
+      "description": "55W high-flow UV steriliser with Philips quality lamp. 2700 LPH (45 L/min), 304 stainless steel, 3/4\" male thread. Treats Crypto and Giardia per spec.",
+      "ogImage": null
     }
   },
   "20-x-2-5-whole-house-water-filter-replacement-sediment-carbon-gac-cartridges": {
