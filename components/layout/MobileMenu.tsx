@@ -11,7 +11,7 @@ import {
   Instagram,
   MapPin,
   Clock,
-  ChevronRight,
+  ChevronDown,
 } from 'lucide-react';
 import clsx from 'clsx';
 import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
@@ -38,43 +38,86 @@ const ABOUT_LINKS: ReadonlyArray<NavItem> = [
   { label: 'Returns', href: '/returns/' },
 ];
 
-interface MenuSectionProps {
+interface CollapsibleSectionProps {
+  id: string;
   title: string;
   links: ReadonlyArray<NavItem>;
+  isOpen: boolean;
+  onToggle: () => void;
   onLinkClick: () => void;
 }
 
-function MenuSection({ title, links, onLinkClick }: MenuSectionProps) {
+function CollapsibleSection({
+  id,
+  title,
+  links,
+  isOpen,
+  onToggle,
+  onLinkClick,
+}: CollapsibleSectionProps) {
+  const panelId = `mobile-menu-${id}-panel`;
   return (
-    <div>
-      <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">
-        {title}
-      </h2>
-      <ul className="mt-3 divide-y divide-white/10">
-        {links.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              onClick={onLinkClick}
-              className="group flex items-center justify-between py-3 text-lg font-medium text-white hover:text-brand-blue transition-colors"
-            >
-              <span>{link.label}</span>
-              <ChevronRight
-                size={18}
-                aria-hidden="true"
-                className="text-white/30 transition-all group-hover:text-brand-blue group-hover:translate-x-0.5"
-              />
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div className="border-b border-white/10">
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        className="flex w-full items-center justify-between py-4 text-xl font-semibold text-white"
+      >
+        <span>{title}</span>
+        <ChevronDown
+          size={20}
+          aria-hidden="true"
+          className={clsx(
+            'text-white/60 transition-transform duration-200',
+            isOpen && 'rotate-180',
+          )}
+        />
+      </button>
+      <div
+        id={panelId}
+        className={clsx(
+          'grid transition-[grid-template-rows] duration-300 ease-out',
+          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+        )}
+      >
+        <ul
+          className={clsx(
+            'overflow-hidden',
+            isOpen ? 'visible' : 'invisible',
+          )}
+        >
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                onClick={onLinkClick}
+                className="block py-2.5 pl-1 text-base text-white/80 hover:text-brand-blue transition-colors"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+          <li aria-hidden="true" className="h-3" />
+        </ul>
+      </div>
     </div>
   );
 }
 
+type SectionId = 'shop' | 'learn' | 'about';
+
 export function MobileMenu({ items }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [openSections, setOpenSections] = useState<Record<SectionId, boolean>>({
+    shop: false,
+    learn: false,
+    about: false,
+  });
   const close = () => setIsOpen(false);
+  const toggleSection = (id: SectionId) =>
+    setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }));
 
   useEffect(() => {
     if (!isOpen) return;
@@ -143,20 +186,35 @@ export function MobileMenu({ items }: MobileMenuProps) {
           </button>
         </div>
 
-        <div className="px-6 py-6 space-y-8 pb-12">
-          <nav aria-label="Mobile shop">
-            <MenuSection title="Shop" links={items} onLinkClick={close} />
+        <div className="px-6 pt-2 pb-12">
+          <nav aria-label="Mobile primary">
+            <CollapsibleSection
+              id="shop"
+              title="Shop"
+              links={items}
+              isOpen={openSections.shop}
+              onToggle={() => toggleSection('shop')}
+              onLinkClick={close}
+            />
+            <CollapsibleSection
+              id="learn"
+              title="Learn"
+              links={LEARN_LINKS}
+              isOpen={openSections.learn}
+              onToggle={() => toggleSection('learn')}
+              onLinkClick={close}
+            />
+            <CollapsibleSection
+              id="about"
+              title="About"
+              links={ABOUT_LINKS}
+              isOpen={openSections.about}
+              onToggle={() => toggleSection('about')}
+              onLinkClick={close}
+            />
           </nav>
 
-          <nav aria-label="Mobile learn">
-            <MenuSection title="Learn" links={LEARN_LINKS} onLinkClick={close} />
-          </nav>
-
-          <nav aria-label="Mobile about">
-            <MenuSection title="About" links={ABOUT_LINKS} onLinkClick={close} />
-          </nav>
-
-          <div className="pt-6 border-t border-white/10 space-y-3">
+          <div className="mt-8 space-y-3">
             <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">
               Get in touch
             </h2>
@@ -178,7 +236,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
             </a>
           </div>
 
-          <div className="space-y-2 text-sm text-white/80">
+          <div className="mt-6 space-y-2 text-sm text-white/80">
             <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/50">
               Showroom
             </h2>
@@ -200,7 +258,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="mt-6 flex items-center gap-3">
             <a
               href={BUSINESS_INFO.social.facebook}
               target="_blank"
