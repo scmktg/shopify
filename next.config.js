@@ -52,15 +52,12 @@ const nextConfig = {
     ];
 
     // 2026-05 blog migration. The legacy WordPress blog at
-    // enviroaqua.com.au had 18 posts; this map sends every old URL to
-    // its planned home in the Learn IA so nothing 404s when the WP
-    // site is switched off.
-    //
-    // Bucket 3 (local pages) now points at the existing /locations/
-    // section. Bucket 2 (promote pages) still routes to the closest
-    // existing Learn page or hub — each interim row carries a
-    // "FINAL:" comment naming the permanent destination. Flip the
-    // destination on that row when the Phase 3 page ships.
+    // enviroaqua.com.au had 18 posts; every old URL is mapped to its
+    // permanent destination in the Learn IA. Bucket 1 (merge) folds
+    // into existing Learn pages; Bucket 2 (promote) lands on new
+    // Phase 3 Learn pages; Bucket 3 (local) lands on /locations/*
+    // suburb pages. The blog index and any /blog/* path go to the
+    // Water problems hub.
     const BLOG_MIGRATION_REDIRECTS = [
       // Bucket 1 — MERGE (final targets exist)
       [
@@ -76,48 +73,44 @@ const nextConfig = {
         '/locations/central-coast-nsw',
       ],
 
-      // Bucket 2 — PROMOTE (final pages ship in Phase 3)
-      // FINAL: /water-problems/chloramine-and-pfas
+      // Bucket 2 — PROMOTE (final pages live in the Learn IA)
       [
         '/whole-house-water-filter-chloramine-pfas-australia',
-        '/water-problems/chlorine-and-taste',
+        '/water-problems/chloramine-and-pfas',
       ],
-      // FINAL: /help/whole-house-cost
-      [
-        '/whole-house-water-filter-cost-australia',
-        '/help/which-water-filter-to-choose',
-      ],
-      // FINAL: /use/commercial-and-cafe/schools
+      ['/whole-house-water-filter-cost-australia', '/help/whole-house-cost'],
       [
         '/best-watermark-certified-water-bubblers-australian-schools-2026',
-        '/use/commercial-and-cafe',
+        '/use/commercial-and-cafe/schools',
       ],
       [
         '/watermark-certified-water-bubblers-australian-schools',
-        '/use/commercial-and-cafe',
+        '/use/commercial-and-cafe/schools',
       ],
-      // FINAL: /use/commercial-and-cafe/gyms-and-fitness
       [
         '/commercial-drinking-fountain-gym-office-australia-2026',
-        '/use/commercial-and-cafe',
+        '/use/commercial-and-cafe/gyms-and-fitness',
       ],
       [
         '/commercial-water-bubblers-gyms-fitness-centres-australia',
-        '/use/commercial-and-cafe',
+        '/use/commercial-and-cafe/gyms-and-fitness',
       ],
-      // FINAL: /help/bubblers-vs-coolers
-      ['/commercial-water-bubblers-vs-water-coolers-australia', '/help'],
-      // FINAL: /use/bore-water-treatment
+      [
+        '/commercial-water-bubblers-vs-water-coolers-australia',
+        '/help/bubblers-vs-coolers',
+      ],
       [
         '/chemical-dosing-tank-bore-water-treatment-australia',
-        '/use/rural-tank-water',
+        '/use/bore-water-treatment',
       ],
       [
         '/chemical-dosing-tanks-australia-buyers-guide',
-        '/use/rural-tank-water',
+        '/use/bore-water-treatment',
       ],
-      // FINAL: /help/bunded-tank-regulations
-      ['/bunded-chemical-tank-australia-regulations-compliance', '/help'],
+      [
+        '/bunded-chemical-tank-australia-regulations-compliance',
+        '/help/bunded-tank-regulations',
+      ],
 
       // Bucket 3 — LOCAL (final /locations/* pages live alongside the
       // existing /locations/central-coast-nsw hub — the brief's

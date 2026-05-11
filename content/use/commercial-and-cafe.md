@@ -6,6 +6,9 @@ productGridTitle: "Commercial systems"
 relatedLinks:
   - { label: "Commercial water filters", href: "/water-filters/commercial/" }
   - { label: "Commercial bubblers", href: "/bubblers-and-coolers/bubblers/" }
+  - { label: "Bubblers for schools", href: "/use/commercial-and-cafe/schools/" }
+  - { label: "Bubblers for gyms and fitness", href: "/use/commercial-and-cafe/gyms-and-fitness/" }
+  - { label: "Coolers and bubblers for offices", href: "/use/commercial-and-cafe/offices/" }
   - { label: "Hard water and scale (workshop)", href: "/water-filters/whole-house/" }
 faq:
   - q: "What kind of filter does an espresso machine need?"
