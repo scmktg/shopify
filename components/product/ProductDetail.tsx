@@ -94,8 +94,12 @@ export function ProductDetail({
         <div className="md:sticky md:top-24">
           <Link
             href={`/${category}/${subcategory}/`}
-            className="inline-block text-xs font-semibold uppercase tracking-wide text-brand-blue border border-brand-blue/30 bg-brand-blue-light px-3 py-1 rounded-full hover:bg-brand-blue hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-brand-blue bg-brand-blue/[0.07] hover:bg-brand-blue/[0.12] px-2.5 py-1 rounded-md transition-colors"
           >
+            <span
+              aria-hidden="true"
+              className="size-1.5 rounded-full bg-brand-blue/70"
+            />
             {subcategoryLabel}
           </Link>
 
