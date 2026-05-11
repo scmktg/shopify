@@ -51,6 +51,97 @@ const nextConfig = {
       ['/bubblers', '/bubblers-and-coolers'],
     ];
 
+    // 2026-05 blog migration (Phase 1). The legacy WordPress blog at
+    // enviroaqua.com.au had 18 posts; this map sends every old URL to
+    // its planned home in the Learn IA so nothing 404s when the WP
+    // site is switched off.
+    //
+    // Where the planned final destination doesn't exist yet (Phase 2
+    // /serving/* hub and Phase 3 promoted Learn pages), the source
+    // URL is temporarily pointed at the closest existing Learn page
+    // or hub. The "FINAL:" comment above each interim row records the
+    // permanent target — flip the destination to that URL when the
+    // page ships in a later phase.
+    const BLOG_MIGRATION_REDIRECTS = [
+      // Bucket 1 — MERGE (final targets exist)
+      [
+        '/best-whole-house-water-filter-australia-2026',
+        '/use/whole-home-filtration',
+      ],
+      [
+        '/benefits-of-installing-an-under-sink-water-filter',
+        '/use/home-drinking-water',
+      ],
+      // FINAL: /serving/central-coast (Phase 2)
+      [
+        '/whole-house-water-filters-central-coast',
+        '/use/whole-home-filtration',
+      ],
+
+      // Bucket 2 — PROMOTE (final pages ship in Phase 3)
+      // FINAL: /water-problems/chloramine-and-pfas
+      [
+        '/whole-house-water-filter-chloramine-pfas-australia',
+        '/water-problems/chlorine-and-taste',
+      ],
+      // FINAL: /help/whole-house-cost
+      [
+        '/whole-house-water-filter-cost-australia',
+        '/help/which-water-filter-to-choose',
+      ],
+      // FINAL: /use/commercial-and-cafe/schools
+      [
+        '/best-watermark-certified-water-bubblers-australian-schools-2026',
+        '/use/commercial-and-cafe',
+      ],
+      [
+        '/watermark-certified-water-bubblers-australian-schools',
+        '/use/commercial-and-cafe',
+      ],
+      // FINAL: /use/commercial-and-cafe/gyms-and-fitness
+      [
+        '/commercial-drinking-fountain-gym-office-australia-2026',
+        '/use/commercial-and-cafe',
+      ],
+      [
+        '/commercial-water-bubblers-gyms-fitness-centres-australia',
+        '/use/commercial-and-cafe',
+      ],
+      // FINAL: /help/bubblers-vs-coolers
+      ['/commercial-water-bubblers-vs-water-coolers-australia', '/help'],
+      // FINAL: /use/bore-water-treatment
+      [
+        '/chemical-dosing-tank-bore-water-treatment-australia',
+        '/use/rural-tank-water',
+      ],
+      [
+        '/chemical-dosing-tanks-australia-buyers-guide',
+        '/use/rural-tank-water',
+      ],
+      // FINAL: /help/bunded-tank-regulations
+      ['/bunded-chemical-tank-australia-regulations-compliance', '/help'],
+
+      // Bucket 3 — LOCAL (final /serving/* pages ship in Phase 2)
+      ['/water-filters-central-coast-nsw', '/use/whole-home-filtration'],
+      ['/whole-house-water-filters-gosford-nsw', '/use/whole-home-filtration'],
+      [
+        '/whole-house-water-filters-tuggerah-wyong-nsw',
+        '/use/whole-home-filtration',
+      ],
+      [
+        '/whole-house-water-filters-terrigal-kincumber-nsw',
+        '/use/whole-home-filtration',
+      ],
+      [
+        '/whole-house-water-filters-umina-beach-woy-woy',
+        '/use/whole-home-filtration',
+      ],
+
+      // Blog index — kill it. The wildcard catches paginated pages,
+      // category/tag/author archives, and the RSS feed.
+      ['/blog', '/water-problems'],
+    ];
+
     const rules = [];
     for (const [oldPath, newPath] of SUBCAT_REDIRECTS) {
       rules.push({
@@ -102,6 +193,29 @@ const nextConfig = {
         permanent: true,
       });
     }
+
+    for (const [oldPath, newPath] of BLOG_MIGRATION_REDIRECTS) {
+      rules.push({
+        source: oldPath,
+        destination: `${newPath}/`,
+        permanent: true,
+      });
+      rules.push({
+        source: `${oldPath}/`,
+        destination: `${newPath}/`,
+        permanent: true,
+      });
+    }
+
+    // Catch every other path under /blog/ — paginated indexes,
+    // category/tag/author archives, the RSS feed — and send them to
+    // the Water problems hub. The exact /blog landing page is handled
+    // by the entry above.
+    rules.push({
+      source: '/blog/:path*',
+      destination: '/water-problems/',
+      permanent: true,
+    });
 
     return rules;
   },
