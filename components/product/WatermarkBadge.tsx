@@ -20,7 +20,7 @@ interface BadgeProps {
  * declare it lead-free — see `isLeadFree`. They can appear together
  * or alone; nothing assumes one implies the other.
  *
- * The official WMK mark is served from `/public/wmk-logo.svg`. A
+ * The official WMK mark is served from `/public/watermark.png`. A
  * small "WMK" text fallback sits behind the <img> so the badge is
  * still recognisable before the asset is supplied.
  */
@@ -64,7 +64,7 @@ function WmkMark() {
         WMK
       </span>
       <img
-        src="/wmk-logo.svg"
+        src="/watermark.png"
         alt=""
         aria-hidden="true"
         className="relative h-full w-full object-contain"
