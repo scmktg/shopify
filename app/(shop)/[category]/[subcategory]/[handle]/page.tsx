@@ -16,12 +16,10 @@ interface ProductPageProps {
   }>;
 }
 
-// Force dynamic rendering during the post-products.json-cutover
-// window so a stale ISR cache doesn't render a Shopify-only page
-// while products.json is still being filled in. Step this up to
-// a sensible revalidate (60–300s) once the catalogue is fully
-// seeded and the live page is verified clean.
-export const revalidate = 0;
+// ISR — page is statically rendered and refreshed every 5 minutes.
+// The two underlying fetches (Shopify product, products.json content)
+// are themselves cached, so revalidation is cheap.
+export const revalidate = 300;
 
 const META_DESCRIPTION_MAX = 155;
 

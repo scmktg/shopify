@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import { Check } from 'lucide-react';
 import type { ProductCompliance, SpecRow } from '@/lib/products/schema';
 
@@ -33,10 +34,12 @@ export function WatermarkBadge({ className }: BadgeProps) {
       aria-label="WaterMark certified"
       className={clsx(BADGE_BASE_CLASSES, className)}
     >
-      <img
+      <Image
         src="/watermark.png"
         alt=""
         aria-hidden="true"
+        width={28}
+        height={28}
         className="h-7 w-7 object-contain"
       />
       WaterMark Certified
