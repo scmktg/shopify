@@ -7224,9 +7224,123 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Transform your kitchen with this sophisticated 3-way water filter tap, available in four luxurious finishes: Matte Blac…",
+    "tags": [
+      "3-way-tap",
+      "ro-filter-tap",
+      "kitchen-mixer",
+      "four-finishes",
+      "matte-black",
+      "brushed-gold",
+      "brushed-nickel",
+      "polished-chrome",
+      "watermark-certified",
+      "wels-4-star",
+      "t40393"
+    ],
+    "shortDescription": "Sophisticated 3-way filtered kitchen tap — hot, cold, and RO-filtered water from a single fixture. Available in matte black, brushed gold, brushed nickel, or polished chrome. WaterMark certified, WELS 4★ at 7.5 L/min (T40393).",
+    "description": "A 3-way filtered kitchen tap that delivers hot, cold, and RO-filtered water through a single sleek fixture — available in four luxurious finishes to match any contemporary kitchen palette. The premium choice for RO installations where you don't want to drill a second tap hole.\n\n## Four Finish Options\n\n- **Matte Black** — high-contrast contemporary look, pairs with timber and stone benchtops\n- **Brushed Gold** — warm metallic accent, suits premium and statement-piece kitchens\n- **Brushed Nickel** — warm-toned, forgiving of fingerprints, neutral with most palettes\n- **Polished Chrome** — bright timeless finish, works with both warm and cool colour palettes\n\nAll four finishes share the same internal mechanism, the same dimensions, and the same WaterMark + WELS certification — the choice is purely visual.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels:\n\n- **Hot** from the standard hot supply line\n- **Cold** from the standard cold supply line\n- **Filtered** from a separate RO permeate line through its own internal channel\n\nThe filtered-water channel is **physically separated** from the hot/cold pathway inside the tap — RO permeate doesn't carry chlorine, so it can't mix back with chlorinated mains water through the standard mixer cartridge. A dedicated lever or button on the tap activates the filtered output.\n\n## Why This Solves the Second-Tap-Hole Problem\n\nStandard RO installations require **two tap holes in the bench** — one for the kitchen mixer, one for the dedicated filter dispensing tap. On stone benchtops, single-hole sinks, or new builds with sealed splashbacks, drilling that second hole is a non-trivial job: stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nThis 3-way tap routes all three water sources through one tap body — install in your existing single bench hole, route the RO permeate to the dedicated channel, done. No drilling, no extra fixture, no second handle on the bench.\n\n## Australian Compliance\n\n**WaterMark certified** to **AS/NZS 3718** (Plumbing fittings — General requirements). Your licensed plumber can install this on a mains supply line and issue a certificate of compliance.\n\n**WELS 4-star rated at 7.5 L/min** under AS/NZS 6400:2016 — the standard water-efficient rating. WELS registration number **T40393**.\n\n## Where This Tap Fits\n\n- Stone benchtop renovations where a second tap hole isn't practical\n- Single-hole sink installations needing both standard and RO-filtered water\n- New kitchen builds wanting a clean single-fixture bench\n- RO system upgrades replacing separate filter taps with a unified fixture\n- Premium kitchens choosing one of the four finishes as a design accent",
+    "features": [
+      "3-way function — hot, cold, and RO-filtered water through one tap",
+      "Four finish options: matte black, brushed gold, brushed nickel, polished chrome",
+      "Eliminates the need for a second tap hole in the bench",
+      "Filtered-water channel physically separated from hot/cold pathway",
+      "WaterMark certified to AS/NZS 3718",
+      "WELS 4-star rated at 7.5 L/min — registration T40393",
+      "Works with any standard reverse osmosis system via 1/4\" tubing"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Function",
+        "value": "3-way (hot / cold / filtered)"
+      },
+      {
+        "label": "Finishes",
+        "value": "Black / gold / nickel / chrome"
+      },
+      {
+        "label": "WELS rating",
+        "value": "4★ at 7.5 L/min"
+      },
+      {
+        "label": "Certification",
+        "value": "WaterMark certified"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "3-way filtered kitchen mixer tap"
+      },
+      {
+        "label": "Operation",
+        "value": "3-way function (hot, cold, RO-filtered)"
+      },
+      {
+        "label": "Available finishes",
+        "value": "Matte Black, Brushed Gold, Brushed Nickel, Polished Chrome"
+      },
+      {
+        "label": "RO compatibility",
+        "value": "Standard 1/4\" tubing"
+      },
+      {
+        "label": "WaterMark certified",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark standard",
+        "value": "AS/NZS 3718"
+      },
+      {
+        "label": "WELS rating",
+        "value": "4 stars"
+      },
+      {
+        "label": "WELS flow rate",
+        "value": "7.5 L/min"
+      },
+      {
+        "label": "WELS registration",
+        "value": "T40393"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
+      }
+    ],
+    "recommendedFor": [
+      "Stone benchtop renovations where a second tap hole is impractical",
+      "Premium kitchens choosing a deliberate finish across multiple options",
+      "New builds wanting a single-fixture clean bench with RO compatibility",
+      "RO upgrades replacing separate filter taps with one unified fixture"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": null,
+        "specificationNumber": "AS/NZS 3718",
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark certified to AS/NZS 3718 (Plumbing fittings — General requirements). WELS rated 4 stars at 7.5 L/min under AS/NZS 6400:2016 — WELS registration T40393. Specific WaterMark licence number to be confirmed against supplier documentation."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel",
+        "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel",
+        "under-sink-water-filter-5-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Transform your kitchen with this sophisticated 3-way water filter tap, available in four luxurious finishes: Matte Black, Brushed Gold, Brushed Nickel and…"
+      "title": "3-Way Filtered Kitchen Tap — 4 Finishes, WaterMark, WELS 4★ T40393 | Enviro Aqua",
+      "description": "3-way kitchen mixer with hot, cold, and RO-filtered water. Matte black, brushed gold, brushed nickel, or polished chrome. WaterMark certified, WELS 4★ 7.5 L/min (T40393).",
+      "ogImage": null
     }
   },
   "gooseneck-kitchen-mixer-tap-in-polished-chrome": {
@@ -7621,9 +7735,133 @@
       "plumbing",
       "bathroom-taps"
     ],
-    "shortDescription": "Complete shower system — rainfall head with adjustable mixer, designed and constructed for the Australian plumbing mark…",
+    "tags": [
+      "shower-set",
+      "rainfall-shower",
+      "wall-mounted",
+      "brass",
+      "watermark-certified",
+      "wels-rated",
+      "round",
+      "complete-set"
+    ],
+    "shortDescription": "Complete shower set with round rainfall head, hand shower, and wall-mounted mixer — solid brass construction, water-saving design. WaterMark and WELS certified for legal mains installation.",
+    "description": "A complete round shower set built around a **rainfall overhead head**, a hand shower, and an adjustable wall-mounted mixer — sized for residential bathroom installations where you want both the indulgent overhead spray and the practical handheld for cleaning, rinsing, and accessibility.\n\n## Why a Two-Head Configuration\n\nA fixed rainfall head alone is great for the overhead spray experience but useless for rinsing the bath after kids, cleaning the shower walls, or directing water where you actually need it. A hand shower alone is practical but doesn't give you the wide, gentle overhead spray that most people install a shower for.\n\nA two-head set gives you both — switch via the mixer between the rainfall head and the hand shower (or in some configurations, run both together for a more enveloping shower experience).\n\n## Build\n\n- **Material:** brass body throughout — corrosion-resistant for long-term humid bathroom environments\n- **Heads:** round rainfall overhead + round hand shower\n- **Mixer:** adjustable wall-mounted single lever\n- **Installation:** wall mounted\n- **Finish:** silver / chrome (model 17003 in chrome/black)\n- **Warranty:** 1 year manufacturer\n\n## Compliance\n\n**WaterMark certified** and **WELS rated** per supplier specification. Additionally certified to **CE** (European) and **cUPC** (US-Canadian plumbing) standards. Your licensed plumber can install this on a mains supply line and issue a certificate of compliance.\n\nUnder Australian plumbing regulations, only WaterMark-certified showers may be permanently plumbed into a mains supply — this product meets that requirement, so the install is legal and the home insurance position is sound.\n\n## Pre-Install Note\n\nBefore install, flush the supply pipework to clear sediment, sand, or scale that could otherwise enter the mixer cartridge or restrict the rainfall head perforations. This is the most common cause of warranty claims on shower sets — a 30-second flush prevents it.",
+    "features": [
+      "Complete round shower set — rainfall overhead + hand shower + adjustable mixer",
+      "Brass body construction throughout",
+      "Wall-mounted installation",
+      "WaterMark certified for legal Australian mains installation",
+      "WELS rated water-saving design",
+      "Additional CE and cUPC plumbing certifications",
+      "1 year manufacturer warranty",
+      "Model 17003"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Style",
+        "value": "Round rainfall + hand shower"
+      },
+      {
+        "label": "Material",
+        "value": "Brass"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mounted"
+      },
+      {
+        "label": "Certification",
+        "value": "WaterMark + WELS"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Complete shower set (rainfall head + hand shower + mixer)"
+      },
+      {
+        "label": "Model",
+        "value": "17003"
+      },
+      {
+        "label": "Material",
+        "value": "Brass body"
+      },
+      {
+        "label": "Finish",
+        "value": "Chrome (silver)"
+      },
+      {
+        "label": "Overhead head",
+        "value": "Round rainfall"
+      },
+      {
+        "label": "Hand shower",
+        "value": "Included, round"
+      },
+      {
+        "label": "Mixer",
+        "value": "Adjustable wall-mounted single lever"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall mounted"
+      },
+      {
+        "label": "WaterMark certified",
+        "value": "Yes"
+      },
+      {
+        "label": "WELS rated",
+        "value": "Yes"
+      },
+      {
+        "label": "Additional certifications",
+        "value": "CE, cUPC"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
+      },
+      {
+        "label": "Warranty",
+        "value": "1 year manufacturer"
+      }
+    ],
+    "recommendedFor": [
+      "Bathroom renovations needing a complete shower fixture in one purchase",
+      "Households wanting both rainfall and handheld options at every shower",
+      "New builds requiring WaterMark and WELS-certified shower installation",
+      "Properties with accessibility needs (handheld for seated showering)"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": null,
+        "specificationNumber": "AS/NZS 3718",
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark certified and WELS rated per supplier specification, under AS/NZS 3718 (plumbing fittings) and AS/NZS 6400:2016 (water efficiency). Additional CE and cUPC certifications confirmed. Specific WaterMark licence number and WELS registration to be confirmed against supplier documentation."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "bathroom-wall-basin-sink-shower-mixer-tap-faucet-round-chrome-bath-spout-wels",
+        "shower-filter-15-stages-includes-extra-cartridge",
+        "12cm-bathroom-mixer-tap-in-polished-chrome"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Complete shower system — rainfall head with adjustable mixer, designed and constructed for the Australian plumbing market."
+      "title": "Round Rainfall Shower Set — WaterMark, WELS, Brass | Enviro Aqua",
+      "description": "Complete round shower set with rainfall overhead, hand shower, and wall-mounted mixer. Brass body, WaterMark + WELS + CE + cUPC certified. Model 17003.",
+      "ogImage": null
     }
   },
   "shower-filter-15-stages-includes-extra-cartridge": {
@@ -7641,9 +7879,103 @@
       "plumbing",
       "toilets"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "toilet-button",
+      "in-wall-cistern-accessory",
+      "faceplate",
+      "circular",
+      "matte-black",
+      "polished-chrome",
+      "brushed-gold",
+      "brushed-nickel",
+      "dual-flush",
+      "abs"
+    ],
+    "shortDescription": "In-wall dual-flush toilet button faceplate — circular dual-button design for concealed cisterns. ABS construction, four finish options (matte black, polished chrome, brushed gold, brushed nickel). Universal compatibility.",
+    "description": "A **dual-flush button faceplate** for in-wall concealed cistern toilets — the visible flush-button assembly that sits on the wall face above the toilet pan, with two buttons (large for full flush, small for half flush) in a clean circular design.\n\n## What This Replaces or Complements\n\nIn-wall concealed cistern toilet installations have two visible elements on the bathroom wall side:\n\n1. **The toilet pan** (mounted to the floor or wall below)\n2. **The flush button faceplate** (mounted on the wall above the pan, operating the cistern hidden behind the wall)\n\nThe **faceplate is the customer-visible interface** with the otherwise-invisible plumbing — it's what the user touches every day, and it's what defines the visual personality of the toilet installation.\n\nThis faceplate is the **circular design variant** — round buttons in a round surround. The contrast option to the rectangular faceplate, which uses square geometry in the same finish range.\n\n## Four Finish Options\n\n- **Matte Black** — high-contrast modern accent against white wall tile\n- **Polished Chrome** — bright timeless finish, neutral with most palettes\n- **Brushed Gold** — warm metallic, premium statement piece\n- **Brushed Nickel** — warm-toned metallic, forgiving of fingerprints, neutral with most palettes\n\nAll four finishes are applied over an ABS substrate — durable, corrosion-resistant, and easy to clean.\n\n## Dual-Flush Operation\n\n- **Large button:** full flush (typically 4.5 L)\n- **Small button:** half flush (typically 3 L)\n\nThe water-saving dual-flush system is the standard configuration for modern Australian toilets. The button design makes the selection visually intuitive — bigger button for bigger flush, smaller button for smaller flush.\n\n## Build\n\n- **Material:** high-quality ABS plastic — corrosion-resistant, dimensionally stable, easy to clean\n- **Design:** circular dual-button\n- **Operation:** smooth easy-press for comfortable use\n- **Compatibility:** universal — fits a range of concealed in-wall cisterns\n\nABS plastic is the standard premium faceplate material — it resists staining, doesn't corrode in the wet bathroom environment, and accepts a wide range of plated finishes without surface degradation.\n\n## Compatibility\n\nFits a **range of concealed in-wall cisterns** — including the [Enviro Aqua in-wall concealed cistern toilet system](/in-wall-concealed-cistern-toilet-rimless-floor-mount-pan-chrome-buttons-wels/). Confirm cistern compatibility before ordering — different cistern brands use different button-rod mechanisms.\n\n## Where This Faceplate Fits\n\n- Premium bathroom builds with in-wall concealed cistern toilets\n- Renovations replacing an aged faceplate with a refreshed finish\n- Bathrooms choosing the circular design over rectangular as a design preference\n- Cistern installations needing finish coordination with other bathroom fixtures",
+    "features": [
+      "Circular dual-button faceplate for in-wall concealed cisterns",
+      "Large button for full flush, smaller button for half flush",
+      "Four finishes: matte black, polished chrome, brushed gold, brushed nickel",
+      "ABS construction — corrosion-resistant and easy to clean",
+      "Smooth easy-press operation",
+      "Universal compatibility with a range of concealed in-wall cisterns",
+      "Minimalist circular design"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Design",
+        "value": "Circular dual-button"
+      },
+      {
+        "label": "Finishes",
+        "value": "Black / chrome / gold / nickel"
+      },
+      {
+        "label": "Material",
+        "value": "ABS"
+      },
+      {
+        "label": "Operation",
+        "value": "Dual flush"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "In-wall dual-flush toilet button faceplate"
+      },
+      {
+        "label": "Design",
+        "value": "Circular dual-button"
+      },
+      {
+        "label": "Available finishes",
+        "value": "Matte Black, Polished Chrome, Brushed Gold, Brushed Nickel"
+      },
+      {
+        "label": "Material",
+        "value": "High-quality ABS plastic"
+      },
+      {
+        "label": "Function",
+        "value": "Dual flush (large button = full, small button = half)"
+      },
+      {
+        "label": "Operation",
+        "value": "Smooth easy-press buttons"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Universal — fits a range of concealed in-wall cisterns"
+      },
+      {
+        "label": "Mounting",
+        "value": "Wall-face above toilet pan"
+      }
+    ],
+    "recommendedFor": [
+      "Premium bathroom builds with in-wall concealed cistern toilets",
+      "Renovations refreshing the faceplate finish on an existing cistern",
+      "Bathrooms choosing circular over rectangular design language",
+      "Cistern installations coordinating finish with other bathroom fixtures"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "in-wall-dual-flush-toilet-button-faceplate-rectangular-design-in-black-chrome-go",
+        "in-wall-concealed-cistern-toilet-rimless-floor-mount-pan-chrome-buttons-wels",
+        "back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Circular Dual-Flush Toilet Button Faceplate — 4 Finishes | Enviro Aqua",
+      "description": "Circular dual-button faceplate for in-wall concealed cistern toilets. ABS construction, four finishes: matte black, polished chrome, brushed gold, brushed nickel.",
+      "ogImage": null
     }
   },
   "in-wall-dual-flush-toilet-button-faceplate-rectangular-design-in-black-chrome-go": {
@@ -7651,9 +7983,103 @@
       "plumbing",
       "toilets"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "toilet-button",
+      "in-wall-cistern-accessory",
+      "faceplate",
+      "rectangular",
+      "matte-black",
+      "polished-chrome",
+      "brushed-gold",
+      "brushed-nickel",
+      "dual-flush",
+      "abs"
+    ],
+    "shortDescription": "In-wall dual-flush toilet button faceplate — rectangular dual-button design for concealed cisterns. ABS construction, four finish options. Universal compatibility with concealed in-wall cisterns.",
+    "description": "A **dual-flush button faceplate** for in-wall concealed cistern toilets in a **rectangular design** — the contrast option to the circular faceplate variant, using square geometry for installations where straight-edge design language predominates.\n\n## Why Rectangular Over Circular\n\nThe choice between rectangular and circular faceplates is purely aesthetic — both use the same dual-button mechanism, both fit the same range of cisterns, both come in the same four finishes. The decision comes down to which geometry matches the rest of the bathroom design:\n\n- **Rectangular (this product):** suits bathrooms with straight-edge tile patterns, rectangular vanity bowls, and modern minimalist design language. Reads as more architectural, more deliberate.\n- **[Circular variant](/in-wall-dual-flush-toilet-button-faceplate-circular-design-in-black-chrome-gold/):** suits bathrooms with curved fixtures (round basins, circular mirrors), softer design language, or where the rectangular feels too hard-edged.\n\nFor most contemporary residential bathrooms in Australia, rectangular faceplates are the more common choice — they pair naturally with the rectangular vanity bowls, rectangular mirrors, and tile patterns that dominate modern builds.\n\n## Four Finish Options\n\nAll four finishes share the same internal mechanism and ABS substrate. Choice is purely visual:\n\n- **Matte Black** — high-contrast modern accent\n- **Polished Chrome** — bright timeless finish\n- **Brushed Gold** — warm metallic premium statement\n- **Brushed Nickel** — neutral warm-toned, fingerprint-forgiving\n\n## Dual-Flush Operation\n\n- **Large button:** full flush (typically 4.5 L)\n- **Small button:** half flush (typically 3 L)\n\nWater-saving dual-flush is the standard configuration for modern Australian toilets. The button-size convention is universal: bigger button for bigger flush.\n\n## Build\n\n- **Material:** high-quality ABS plastic — corrosion-resistant, easy to clean, accepts premium finishes\n- **Design:** rectangular dual-button\n- **Operation:** smooth easy-press for comfortable use\n- **Compatibility:** universal — fits a range of concealed in-wall cisterns\n\n## Compatibility\n\nFits a **range of concealed in-wall cisterns** — including the [Enviro Aqua in-wall concealed cistern toilet system](/in-wall-concealed-cistern-toilet-rimless-floor-mount-pan-chrome-buttons-wels/). Confirm cistern compatibility before ordering.\n\n## Where This Faceplate Fits\n\n- Modern minimalist bathrooms with straight-edge design language\n- Bathrooms with rectangular vanity bowls and mirrors\n- Renovations replacing an aged faceplate with a refreshed finish\n- Cistern installations choosing rectangular geometry over circular",
+    "features": [
+      "Rectangular dual-button faceplate for in-wall concealed cisterns",
+      "Large button for full flush, smaller button for half flush",
+      "Four finishes: matte black, polished chrome, brushed gold, brushed nickel",
+      "ABS construction — corrosion-resistant and easy to clean",
+      "Smooth easy-press operation",
+      "Universal compatibility with a range of concealed in-wall cisterns",
+      "Modern minimalist rectangular design"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Design",
+        "value": "Rectangular dual-button"
+      },
+      {
+        "label": "Finishes",
+        "value": "Black / chrome / gold / nickel"
+      },
+      {
+        "label": "Material",
+        "value": "ABS"
+      },
+      {
+        "label": "Operation",
+        "value": "Dual flush"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "In-wall dual-flush toilet button faceplate"
+      },
+      {
+        "label": "Design",
+        "value": "Rectangular dual-button"
+      },
+      {
+        "label": "Available finishes",
+        "value": "Matte Black, Polished Chrome, Brushed Gold, Brushed Nickel"
+      },
+      {
+        "label": "Material",
+        "value": "High-quality ABS plastic"
+      },
+      {
+        "label": "Function",
+        "value": "Dual flush (large button = full, small button = half)"
+      },
+      {
+        "label": "Operation",
+        "value": "Smooth easy-press buttons"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Universal — fits a range of concealed in-wall cisterns"
+      },
+      {
+        "label": "Mounting",
+        "value": "Wall-face above toilet pan"
+      }
+    ],
+    "recommendedFor": [
+      "Modern minimalist bathrooms with straight-edge design language",
+      "Bathrooms with rectangular vanity bowls and mirrors",
+      "Renovations refreshing the faceplate finish on an existing cistern",
+      "Cistern installations choosing rectangular over circular geometry"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "in-wall-dual-flush-toilet-button-faceplate-circular-design-in-black-chrome-gold",
+        "in-wall-concealed-cistern-toilet-rimless-floor-mount-pan-chrome-buttons-wels",
+        "back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Rectangular Dual-Flush Toilet Button Faceplate — 4 Finishes | Enviro Aqua",
+      "description": "Rectangular dual-button faceplate for in-wall concealed cistern toilets. ABS construction, four finishes: matte black, polished chrome, brushed gold, brushed nickel.",
+      "ogImage": null
     }
   },
   "rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce": {
@@ -13210,9 +13636,89 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Compliance information available on request.",
+    "tags": [
+      "3-way-tap",
+      "ro-filter-tap",
+      "kitchen-mixer",
+      "shiny-gold",
+      "premium-finish"
+    ],
+    "shortDescription": "Sophisticated 3-way kitchen mixer in shiny gold — hot, cold, and filtered water from one fixture. Eliminates the need for a second tap hole. RO-compatible.",
+    "description": "A 3-way kitchen mixer in a luxurious **shiny gold finish** — the same single-fixture hot/cold/filtered function as the standard 3-way range, in a brighter, higher-impact gold tone than the brushed gold variant.\n\n## Shiny Gold vs Brushed Gold — What's the Difference\n\nGold finishes split into two distinct families:\n\n- **Shiny gold (this tap):** polished, mirror-like surface. Higher visual impact, brighter reflection, reads as a feature-piece in the kitchen. Shows fingerprints and water spots more readily than brushed.\n- **Brushed gold:** textured matte-warm finish. More forgiving day-to-day, reads as a deliberate design choice rather than a statement piece.\n\nBoth are equally valid choices — the decision is about how visible you want the tap to be as a kitchen feature. For statement-piece installs (feature kitchens, hospitality, design-led builds), shiny gold lands. For more restrained palettes, brushed gold sits back into the design.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels — hot, cold, and RO-filtered. The filtered-water channel is **physically separated** from the hot/cold pathway, so chlorine-free RO permeate stays separated from the chlorinated mains supply.\n\nThe practical benefit: **one tap hole serves both your standard kitchen mixing and your RO drinking water**. No second hole in the bench, no extra fixture, no second handle.\n\n## Build\n\n- **Material:** brass body\n- **Finish:** shiny gold (polished)\n- **Operation:** 3-way function (hot, cold, filtered)\n- **Compatibility:** any reverse osmosis filtration system via standard 1/4\" tubing\n\n## Where This Tap Fits\n\n- Feature-piece kitchens where the tap is intended to draw the eye\n- Premium and statement bathrooms wanting a higher-impact gold finish\n- Renovations on stone benchtops avoiding the second-tap-hole problem\n- RO installations where the standalone filter tap doesn't suit the visual palette",
+    "features": [
+      "3-way function — hot, cold, and RO-filtered water through one tap",
+      "Shiny gold finish — polished, higher visual impact than brushed gold",
+      "Eliminates the need for a second tap hole",
+      "Filtered-water channel physically separated from hot/cold pathway",
+      "Compatible with any standard RO system via 1/4\" tubing",
+      "Brass body construction"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Function",
+        "value": "3-way (hot / cold / filtered)"
+      },
+      {
+        "label": "Finish",
+        "value": "Shiny gold"
+      },
+      {
+        "label": "Body",
+        "value": "Brass"
+      },
+      {
+        "label": "RO compatibility",
+        "value": "1/4\" tubing"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "3-way kitchen mixer tap"
+      },
+      {
+        "label": "Operation",
+        "value": "3-way function (hot, cold, filtered)"
+      },
+      {
+        "label": "Finish",
+        "value": "Shiny gold"
+      },
+      {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
+        "label": "RO compatibility",
+        "value": "Standard 1/4\" tubing"
+      },
+      {
+        "label": "Style",
+        "value": "Modern, single-fixture"
+      }
+    ],
+    "recommendedFor": [
+      "Feature kitchens choosing the tap as a visual centrepiece",
+      "Premium and statement bathroom/kitchen builds",
+      "Stone benchtop renovations avoiding the second-tap-hole problem",
+      "RO installations where finish coordination matters"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c",
+        "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel",
+        "under-sink-water-filter-5-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Compliance information available on request."
+      "title": "3-Way Kitchen Tap RO Mixer — Shiny Gold | Enviro Aqua",
+      "description": "3-way kitchen mixer in shiny gold polished finish. Hot, cold, and RO-filtered water through one tap. Brass body, standard 1/4\" tubing RO compatibility.",
+      "ogImage": null
     }
   },
   "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel": {
@@ -13471,9 +13977,110 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "tags": [
+      "ro-filter-tap",
+      "polished-chrome",
+      "nsf-certified",
+      "single-handle",
+      "compact",
+      "22cm"
+    ],
+    "shortDescription": "Deluxe RO filter tap in polished chrome — NSF-certified faucet for reverse osmosis systems. 22.5 cm height, standard 1/4\" tube connection. Compact dedicated drinking-water tap.",
+    "description": "A deluxe **dedicated RO drinking-water tap** in polished chrome — the simple single-output tap that sits next to your kitchen mixer and dispenses purified RO water through a separate spout. NSF-certified for water-contact material safety, finished in polished chrome to match standard kitchen mixers.\n\n## What a Dedicated RO Tap Does\n\nReverse osmosis systems can dispense their output two ways:\n\n- **Through a 3-way kitchen mixer** that combines RO with hot and cold (more expensive, single tap hole)\n- **Through a dedicated separate tap** like this one (cheaper, requires a second tap hole)\n\nFor most under-sink RO installations, a **dedicated tap is the standard arrangement** — it keeps the filtered water output completely independent of the kitchen mixer's mechanism, makes the install simpler, and costs significantly less than a 3-way replacement of the main kitchen tap.\n\nThe trade-off is one extra hole in the bench. On standard laminate or pre-drilled stainless sinks, that's a 5-minute job. On stone benchtops, factor in the cost of stone fabrication or look at the [3-way alternative](/3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c/).\n\n## Build\n\n- **Material:** brass body\n- **Finish:** polished chrome — matches standard kitchen mixer finishes\n- **Height:** 22.5 cm\n- **Operation:** single-handle ergonomic lever for filtered water dispensing\n- **Connection:** standard 1/4\" tube for direct connection to any RO system\n\nThe 22.5 cm height clears typical drinking glasses and small jugs cleanly without dominating the bench next to the main kitchen mixer.\n\n## Where This Tap Fits\n\n- Standard under-sink RO installations needing a separate dispensing tap\n- Replacement of an aged or failed RO filter tap\n- Budget-conscious RO setups where a 3-way kitchen mixer isn't justified\n- Laminate or pre-drilled benchtop installations where the second hole is straightforward",
+    "features": [
+      "Dedicated single-output RO drinking-water tap",
+      "Polished chrome finish — matches standard kitchen mixer finishes",
+      "22.5 cm height — clears glasses and small jugs cleanly",
+      "Single-handle ergonomic lever for smooth operation",
+      "Brass body construction",
+      "Standard 1/4\" tube connection — fits any RO system",
+      "NSF-certified water-contact materials"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Type",
+        "value": "Dedicated RO filter tap"
+      },
+      {
+        "label": "Finish",
+        "value": "Polished chrome"
+      },
+      {
+        "label": "Height",
+        "value": "22.5 cm"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tube"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Dedicated reverse osmosis dispensing tap"
+      },
+      {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
+        "label": "Finish",
+        "value": "Polished chrome"
+      },
+      {
+        "label": "Overall height",
+        "value": "22.5 cm"
+      },
+      {
+        "label": "Operation",
+        "value": "Single-handle ergonomic lever"
+      },
+      {
+        "label": "Connection",
+        "value": "Standard 1/4\" tube"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Any reverse osmosis water filter system"
+      },
+      {
+        "label": "Material certification",
+        "value": "NSF certified for water-contact materials"
+      }
+    ],
+    "recommendedFor": [
+      "Standard under-sink RO installations needing a dedicated dispensing tap",
+      "Replacement of an aged or failed RO filter tap",
+      "Budget-conscious RO setups where a 3-way mixer isn't justified",
+      "Polished chrome kitchen finish palettes"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "specificationNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Dedicated RO dispensing tap for under-sink filter systems. NSF certified for water-contact material safety per supplier specification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "double-handle-reverse-osmosis-water-filter-tap-ro-kitchen-faucet-in-chrome",
+        "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf",
+        "under-sink-water-filter-5-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+      "title": "Deluxe RO Filter Tap — Polished Chrome, NSF Certified, 22.5cm | Enviro Aqua",
+      "description": "Dedicated RO drinking-water tap in polished chrome. 22.5 cm height, brass body, NSF certified materials, standard 1/4\" tube. For under-sink reverse osmosis systems.",
+      "ogImage": null
     }
   },
   "double-handle-reverse-osmosis-water-filter-tap-ro-kitchen-faucet-in-chrome": {
@@ -13481,9 +14088,98 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "tags": [
+      "ro-filter-tap",
+      "double-handle",
+      "polished-chrome",
+      "classic-design",
+      "high-arc",
+      "25cm"
+    ],
+    "shortDescription": "Double-handle RO filter tap in polished chrome — classic two-handle design with high-arc spout for filling bottles and containers. 25 cm height, brass body, 1/4\" tube connection.",
+    "description": "A double-handle RO filter tap in polished chrome — the classic two-handle design that delivers a more traditional aesthetic than the modern single-lever taps, with a **high-arc spout** sized for filling bottles, water jugs, and containers without the constant bowl-clearance fiddling of lower-profile dispensing taps.\n\n## When the Two-Handle Design Makes Sense\n\nMost contemporary RO filter taps use a single ergonomic handle or lever. The two-handle format is the older, more traditional choice — and there are a few reasons it persists:\n\n- **Aesthetic match** with classic, period, or traditional kitchen styles where a single-lever modern tap looks out of place\n- **Familiar operation** for households where everyone (including older family members) knows how a two-handle tap works without explanation\n- **Mechanical simplicity** — fewer moving parts than a single-lever cartridge, easier servicing\n- **Visual indication** — you can see at a glance whether the tap is open and closed\n\nFor a classic kitchen with traditional cabinetry, a double-handle filter tap reads as a deliberate styling choice rather than an oversight.\n\n## Build\n\n- **Material:** brass with polished chrome finish — corrosion-resistant and timeless\n- **Height:** 25 cm overall — high-arc spout for taller vessels\n- **Style:** modern two-handle design with ergonomic handles\n- **Connection:** standard 1/4\" tube — fits any RO system\n\n## High-Arc Spout Practical Benefits\n\nA 25 cm tap with high-arc spout clears:\n\n- **Standard drinking glasses** with bench-space margin\n- **Water bottles** (typical 750 mL bottles fit upright)\n- **Small jugs** (1 L jugs without tilting)\n- **Cleaning during refill** — you can swap vessels under the spout without raising the tap\n\n## Where This Tap Fits\n\n- Traditional or period-style kitchens with classic cabinetry\n- Households preferring two-handle operation for familiarity\n- RO installations where high-arc spout clearance matters daily\n- Polished chrome finish palettes",
+    "features": [
+      "Classic two-handle design — traditional aesthetic",
+      "High-arc spout — clears bottles, jugs, and small containers",
+      "25 cm overall height",
+      "Polished chrome finish on brass body",
+      "Corrosion-resistant for long-term wet-area use",
+      "Standard 1/4\" tube connection — fits any RO system"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Type",
+        "value": "Double-handle RO tap"
+      },
+      {
+        "label": "Finish",
+        "value": "Polished chrome"
+      },
+      {
+        "label": "Height",
+        "value": "25 cm"
+      },
+      {
+        "label": "Spout",
+        "value": "High-arc"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Double-handle reverse osmosis dispensing tap"
+      },
+      {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
+        "label": "Finish",
+        "value": "Polished chrome"
+      },
+      {
+        "label": "Overall height",
+        "value": "25 cm"
+      },
+      {
+        "label": "Spout style",
+        "value": "High-arc"
+      },
+      {
+        "label": "Operation",
+        "value": "Two ergonomic handles"
+      },
+      {
+        "label": "Connection",
+        "value": "Standard 1/4\" tube"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Any reverse osmosis water filter system"
+      }
+    ],
+    "recommendedFor": [
+      "Traditional and period-style kitchens",
+      "Households preferring two-handle operation",
+      "Installations where high-arc spout clearance matters",
+      "RO setups in polished chrome finish palettes"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome",
+        "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf",
+        "under-sink-water-filter-5-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+      "title": "Double-Handle RO Filter Tap — Polished Chrome, High-Arc, 25cm | Enviro Aqua",
+      "description": "Double-handle RO filter tap in polished chrome. Classic two-handle design with high-arc spout. 25 cm height, brass body, standard 1/4\" tube connection.",
+      "ogImage": null
     }
   },
   "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel": {
@@ -13491,9 +14187,97 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture.",
+    "tags": [
+      "3-way-tap",
+      "ro-filter-tap",
+      "kitchen-mixer",
+      "luxurious",
+      "matte-black",
+      "brushed-nickel",
+      "33cm",
+      "premium"
+    ],
+    "shortDescription": "Luxurious 3-way kitchen mixer with hot, cold, and RO-filtered water — 33.5 cm height, brass body in matte black or brushed nickel. Premium statement-piece tap for refined kitchen spaces.",
+    "description": "A luxurious 3-way kitchen mixer designed as the **statement-piece centrepiece** of refined kitchen spaces — hot, cold, and RO-filtered water through a single 33.5 cm-tall fixture, in either matte black or brushed nickel. The premium positioning over the standard 3-way range — more height, more visual presence, the tap intended to be noticed rather than blend in.\n\n## What Makes This the Luxurious Variant\n\nThe [standard 3-way kitchen mixer range](/3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c/) covers the practical 3-way RO function at a conventional height. This luxurious variant differs on:\n\n- **Height:** 33.5 cm overall — significantly taller than the standard 3-way, dominating the bench visually as a feature element rather than a utilitarian fixture\n- **Visual mass:** thicker body proportions, more presence at the sink\n- **Build positioning:** marketed as the centrepiece tap for refined kitchen spaces where the tap itself is the design feature\n\n## Finish Options\n\n- **Matte Black:** high-contrast modern accent. Pairs with white quartz, natural timber, and warm-tone palettes. Reads as a deliberate design choice rather than a default.\n- **Brushed Nickel:** warm-toned metallic. More forgiving of fingerprints than polished finishes, neutral with most palettes, works with stainless steel appliances.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels — hot, cold, and RO-filtered. The filtered channel is physically separated from the hot/cold pathway, so chlorine-free RO permeate doesn't mix with the chlorinated mains supply.\n\nA dedicated lever or button on the tap activates filtered output. The practical benefit: **one tap hole, three water sources** — solves the second-tap-hole problem on stone benchtops without compromising the filter water quality.\n\n## Build\n\n- **Body:** brass throughout\n- **Finish:** matte black or brushed nickel\n- **Overall height:** 33.5 cm\n- **Operation:** 3-way function (hot, cold, RO-filtered)\n- **RO compatibility:** any standard reverse osmosis system via 1/4\" tubing\n\n## Where This Tap Fits\n\n- Premium kitchens where the tap is intended to be a visual centrepiece\n- Designer-led builds choosing statement fixtures over utilitarian choices\n- Stone benchtop renovations on premium builds avoiding the second-tap-hole problem\n- RO installations in matte black or brushed nickel finish palettes",
+    "features": [
+      "Luxurious 3-way kitchen mixer — statement-piece height and proportions",
+      "33.5 cm overall height — dominates the bench as a visual feature",
+      "Matte black or brushed nickel finish options",
+      "Hot, cold, and RO-filtered water through one fixture",
+      "Brass body construction",
+      "Filtered-water channel physically separated from hot/cold pathway",
+      "Works with any RO system via standard 1/4\" tubing"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Style",
+        "value": "Luxurious 3-way"
+      },
+      {
+        "label": "Height",
+        "value": "33.5 cm"
+      },
+      {
+        "label": "Finishes",
+        "value": "Matte black or brushed nickel"
+      },
+      {
+        "label": "Function",
+        "value": "Hot / cold / filtered"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Luxurious 3-way kitchen mixer tap"
+      },
+      {
+        "label": "Operation",
+        "value": "3-way function (hot, cold, filtered water)"
+      },
+      {
+        "label": "Overall height",
+        "value": "33.5 cm"
+      },
+      {
+        "label": "Available finishes",
+        "value": "Matte Black, Brushed Nickel"
+      },
+      {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Reverse osmosis filtration systems"
+      },
+      {
+        "label": "Connection",
+        "value": "Standard 1/4\" tubing"
+      }
+    ],
+    "recommendedFor": [
+      "Premium kitchens choosing the tap as a visual centrepiece",
+      "Designer-led builds with statement fixture aesthetics",
+      "Stone benchtop renovations avoiding second-tap-hole drilling",
+      "Matte black or brushed nickel finish palettes"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c",
+        "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel",
+        "under-sink-water-filter-5-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture."
+      "title": "Luxurious 3-Way Kitchen Mixer Tap — Matte Black or Brushed Nickel, 33.5cm | Enviro Aqua",
+      "description": "Luxurious 3-way kitchen mixer for RO water filters. 33.5 cm height statement tap, brass body, matte black or brushed nickel. Hot, cold, and filtered water.",
+      "ogImage": null
     }
   },
   "premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold": {
@@ -13501,9 +14285,107 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "tags": [
+      "ro-filter-tap",
+      "sus304-stainless",
+      "matte-black",
+      "brushed-gold",
+      "brushed-nickel",
+      "swanneck",
+      "360-degree-rotation",
+      "premium",
+      "nsf-approved"
+    ],
+    "shortDescription": "Premium RO filter tap in SUS304 stainless steel — swanneck design with 360° rotation, three finish options. 36 cm overall (28 cm above bench), 11 mm threaded, 1/4\" tube connection.",
+    "description": "A premium **SUS304 stainless steel** RO filter tap — the engineered-stainless alternative to standard brass filter taps. The chromium-nickel alloy is corrosion-proof, salt-air resistant, and won't pit at the base over years of water exposure. The right choice when you want a dedicated RO dispensing tap that holds its finish indefinitely.\n\n## Why SUS304 Over Brass\n\nMost dedicated RO filter taps are brass with a plated finish. That works fine on most installations. SUS304 stainless steel offers three meaningful upgrades:\n\n- **Material-level corrosion resistance** — the alloy itself doesn't corrode; there's no plating that can wear through\n- **No leaching risk** at the water-contact surfaces over decades of use\n- **Salt-air and coastal install tolerance** — for Australian coastal homes where brass taps eventually show pitting at the base, SUS304 holds its finish indefinitely\n\nFor a tap that handles drinking water specifically — the highest-value water in the household — the material upgrade matters more here than on a kitchen mixer where any taste change is masked by cooking.\n\n## Swanneck Design with 360° Rotation\n\nThe **swanneck profile** sweeps the spout outlet forward of the tap base — useful for filling vessels positioned at the front of the sink rather than directly under the tap. The **360° rotation** lets the spout swing fully around the base, including out of the way when not in use.\n\nFor double-bowl sinks or installations where the filter tap shares space with the main kitchen mixer, the rotation flexibility prevents the dispensing point from being awkward.\n\n## Three Finish Options\n\n- **Matte Black** — high-contrast modern accent\n- **Brushed Gold** — warm metallic, premium statement\n- **Brushed Nickel** — neutral warm-toned, works with most palettes\n\nAll three finishes are applied over the SUS304 substrate — they share the same corrosion-proof underlying material.\n\n## Specifications\n\n- **Material:** SUS304 stainless steel\n- **Style:** Modern swanneck design with 360° rotation\n- **Dimensions:** 36 cm × 12 cm overall — **28 cm above the bench**\n- **Thread:** 11 mm threaded base\n- **Connection:** Standard 1/4\" tube\n- **Approval:** NSF approved for water-contact materials\n\n## Where This Tap Fits\n\n- Coastal and high-humidity properties where brass taps eventually corrode\n- Premium RO installations choosing material-grade upgrades\n- Designer kitchens where swanneck profile and 360° rotation suit the visual language\n- Health-conscious installations prioritising NSF-approved materials at the drinking-water tap",
+    "features": [
+      "SUS304 stainless steel construction — material-grade corrosion resistance",
+      "Modern swanneck design with 360° rotation",
+      "Three finish options: matte black, brushed gold, brushed nickel",
+      "36 cm overall — 28 cm above the bench",
+      "11 mm threaded base — fits standard tap holes",
+      "NSF approved for water-contact materials",
+      "Standard 1/4\" tube connection for any RO system",
+      "Salt-air resistant — suits coastal installations"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Finishes",
+        "value": "Black / gold / nickel"
+      },
+      {
+        "label": "Design",
+        "value": "Swanneck, 360° rotation"
+      },
+      {
+        "label": "Above bench",
+        "value": "28 cm"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Premium dedicated RO filter tap"
+      },
+      {
+        "label": "Material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Available finishes",
+        "value": "Matte Black, Brushed Gold, Brushed Nickel"
+      },
+      {
+        "label": "Style",
+        "value": "Modern swanneck with 360° rotation"
+      },
+      {
+        "label": "Overall dimensions",
+        "value": "36 cm × 12 cm"
+      },
+      {
+        "label": "Height above bench",
+        "value": "28 cm"
+      },
+      {
+        "label": "Thread",
+        "value": "11 mm threaded base"
+      },
+      {
+        "label": "Connection",
+        "value": "Standard 1/4\" tube"
+      },
+      {
+        "label": "Material certification",
+        "value": "NSF approved"
+      }
+    ],
+    "recommendedFor": [
+      "Coastal and high-humidity properties where brass taps eventually corrode",
+      "Premium RO installations choosing material-grade upgrades",
+      "Designer kitchens with swanneck visual language",
+      "Health-conscious installations prioritising NSF-approved materials"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome",
+        "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf",
+        "under-sink-water-filter-6-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+      "title": "Premium RO Filter Tap — SUS304 Stainless, NSF, Swanneck 360° | Enviro Aqua",
+      "description": "Premium SUS304 stainless steel RO filter tap. Swanneck with 360° rotation, three finishes, NSF approved. 28 cm above bench, 11 mm thread, 1/4\" tube.",
+      "ogImage": null
     }
   },
   "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf": {
@@ -13511,9 +14393,99 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "tags": [
+      "ro-filter-tap",
+      "nsf-approved",
+      "premium",
+      "lead-free",
+      "ceramic-disc",
+      "standard-tubing"
+    ],
+    "shortDescription": "Premium NSF-approved water filter tap for RO drinking water — lead-free, ceramic disc cartridge, 6.5 cm long threaded base (suits most benchtops), 11 mm thread diameter, standard 1/4\" tubing.",
+    "description": "A premium NSF-approved water filter faucet specifically engineered for RO drinking-water dispensing — built around three quality fundamentals that distinguish a long-lasting filter tap from the cheap commodity alternatives: **lead-free materials, ceramic disc cartridge, and a threaded base long enough for real benchtops**.\n\n## What 'Premium' Actually Means Here\n\nThe RO filter tap market is full of cheap commodity options that look fine in product photos and fail within 12–24 months. Three failure modes account for most of them:\n\n- **Leaded brass** — older or unbranded brass alloys can leach trace lead into drinking water. Premium taps use certified lead-free brass.\n- **Rubber-washer cartridge** — the old-style washer mechanism that drips within a year as the washer compresses. Premium taps use ceramic discs that handle thousands of cycles drip-free.\n- **Short threaded base** — many cheap taps have a base too short to clamp through a real Australian benchtop (stone or thick laminate), forcing the installer to bodge an extension or refuse the job.\n\nThis tap addresses all three explicitly:\n\n- **NSF approved** for water-contact material safety — material certification by NSF International\n- **Lead-free** construction throughout the water pathway\n- **Quality ceramic disc** cartridge\n- **6.5 cm threaded base length** — long enough for most benchtops including standard stone thicknesses\n- **10.8 mm thread diameter** (~11 mm) — fits standard filter-tap holes\n\n## What FYI Section Says (Source-Verified)\n\nThe original product copy makes a few practical points worth surfacing:\n\n- **99% of water filter systems in the Australian market use 1/4\" (6 mm) tubing** — this tap fits any of them\n- **The longer threaded base** is the most common reason for premium-tap upcharges; cheap taps fail at install on thick benchtops\n- **Lead-free + ceramic disc** is the spec combination that determines real-world longevity\n\n## Build\n\n- **Approval:** NSF approved (material safety evaluated by NSF International)\n- **Cartridge:** quality ceramic disc\n- **Lead-free** materials throughout\n- **Connection:** 1/4\" (6 mm) tube — universal RO standard\n- **Thread:** 6.5 cm long, 10.8 mm diameter — fits most benchtops including stone\n\n## Where This Tap Fits\n\n- Long-term residential RO installations where build quality is the priority\n- Stone benchtop installations needing the longer threaded base\n- Health-conscious households specifically choosing NSF-approved, lead-free materials\n- Trade installs where cartridge longevity matters across multiple service calls",
+    "features": [
+      "NSF approved for water-contact material safety",
+      "Lead-free construction throughout",
+      "Quality ceramic disc cartridge — drip-free across thousands of cycles",
+      "6.5 cm threaded base — fits most benchtops including stone",
+      "11 mm thread diameter — standard filter-tap hole",
+      "Fits any 1/4\" (6 mm) tubing — works with 99% of RO systems",
+      "Premium build positioning over commodity RO filter taps"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Approval",
+        "value": "NSF approved"
+      },
+      {
+        "label": "Materials",
+        "value": "Lead-free"
+      },
+      {
+        "label": "Cartridge",
+        "value": "Ceramic disc"
+      },
+      {
+        "label": "Connection",
+        "value": "1/4\" tube"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Premium dedicated RO filter dispensing tap"
+      },
+      {
+        "label": "Material certification",
+        "value": "NSF approved (water-contact material safety)"
+      },
+      {
+        "label": "Lead-free",
+        "value": "Yes — throughout water pathway"
+      },
+      {
+        "label": "Cartridge",
+        "value": "Quality ceramic disc"
+      },
+      {
+        "label": "Threaded base length",
+        "value": "6.5 cm — fits most Australian benchtops including stone"
+      },
+      {
+        "label": "Thread diameter",
+        "value": "10.8 mm (~11 mm)"
+      },
+      {
+        "label": "Tube connection",
+        "value": "1/4\" (6 mm) — universal RO standard"
+      },
+      {
+        "label": "Compatibility",
+        "value": "99% of RO water filter systems in the market"
+      }
+    ],
+    "recommendedFor": [
+      "Long-term residential RO installations prioritising build quality",
+      "Stone benchtop installations needing the longer threaded base",
+      "Health-conscious households choosing NSF-approved, lead-free materials",
+      "Trade installs where cartridge longevity reduces service calls"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome",
+        "premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold",
+        "under-sink-water-filter-5-stage-reverse-osmosis-system"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+      "title": "Premium RO Filter Tap — NSF Approved, Lead-Free, Ceramic Disc | Enviro Aqua",
+      "description": "Premium RO water filter tap, NSF approved, lead-free, ceramic disc cartridge. 6.5 cm threaded base fits most benchtops including stone. 1/4\" tube, 11 mm thread.",
+      "ogImage": null
     }
   },
   "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel": {
@@ -13521,9 +14493,105 @@
       "plumbing",
       "kitchen-taps"
     ],
-    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "tags": [
+      "kitchen-tap",
+      "pull-down",
+      "brushed-nickel",
+      "wels-5-star",
+      "modern",
+      "ergonomic",
+      "solid-brass",
+      "41cm"
+    ],
+    "shortDescription": "Modern pull-down kitchen mixer in brushed nickel — 41 cm height, ergonomic spout, 2-way hot/cold function. Brass body. WELS 5-star water-efficient rating.",
+    "description": "A modern pull-down kitchen mixer in brushed nickel — the clean-lined contemporary form that suits minimalist kitchens with the practical benefit of an extended-reach pull-down spray head for rinsing large pots, washing produce, or cleaning the sink itself.\n\n## What Brushed Nickel Brings to a Kitchen\n\nBrushed nickel sits between polished chrome and matte black on the kitchen finish spectrum:\n\n- **Less bright than chrome** — no mirror-shine, doesn't show every water spot\n- **Warmer than matte black** — works with both warm timber and cool stone benchtops\n- **More forgiving than either** — small marks and fingerprints disappear into the brushed grain\n\nFor kitchens with stainless steel appliances, brushed nickel ties the finish palette together; for kitchens with warmer materials, it provides a softer metallic accent than polished chrome would.\n\n## Build\n\n- **Material:** brass body with brushed nickel finish — corrosion-resistant for long-term wet-area use\n- **Height:** 41 cm overall\n- **Operation:** 2-way function (hot and cold) — standard kitchen mixer\n- **Style:** modern pull-down sprayer with ergonomic spout for extended reach\n- **Handle:** single lever, precise temperature and flow control\n\n## Pull-Down vs Pull-Out\n\nPull-down spray heads extend by drawing the head straight down from a tall spout — the right format for taller mixers like this 41 cm unit. Pull-out heads pull horizontally from a shorter spout — better suited to lower-profile taps. The pull-down arrangement gives you the longest reach for filling tall vessels or rinsing items at the back of double-bowl sinks.\n\n## WELS 5-Star Water Efficiency\n\n**WELS 5-star rated** — the higher water-efficiency tier for residential kitchen mixers. Lower flow rate than standard 4-star taps without compromising the practical feel of flow at the spout, delivered through an efficient aerator.\n\n## Where This Tap Fits\n\n- Contemporary residential kitchens with brushed-nickel or warm-tone finish palettes\n- Mid-range to high-end builds wanting WELS 5-star water efficiency\n- Double-bowl sink installations benefiting from the extended pull-down reach\n- Renovations replacing an aged chrome kitchen mixer with a more deliberate finish",
+    "features": [
+      "Modern pull-down kitchen mixer with ergonomic spout",
+      "41 cm overall height — clears most kitchen sinks and tall vessels",
+      "Brushed nickel finish — warm-toned, forgiving of fingerprints",
+      "Brass body construction",
+      "Single-lever 2-way hot/cold operation",
+      "WELS 5-star water-efficient rating",
+      "Pull-down spray head for extended reach"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Height",
+        "value": "41 cm"
+      },
+      {
+        "label": "Finish",
+        "value": "Brushed nickel"
+      },
+      {
+        "label": "Style",
+        "value": "Modern pull-down"
+      },
+      {
+        "label": "WELS rating",
+        "value": "5 stars"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Pull-down kitchen mixer tap"
+      },
+      {
+        "label": "Overall height",
+        "value": "41 cm"
+      },
+      {
+        "label": "Finish",
+        "value": "Brushed nickel"
+      },
+      {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
+        "label": "Operation",
+        "value": "2-way function (hot and cold)"
+      },
+      {
+        "label": "Spray head",
+        "value": "Pull-down with ergonomic spout"
+      },
+      {
+        "label": "Handle",
+        "value": "Single lever"
+      },
+      {
+        "label": "WELS rating",
+        "value": "5 stars"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
+      }
+    ],
+    "recommendedFor": [
+      "Contemporary kitchens with brushed-nickel or warm-tone finishes",
+      "Mid-range to high-end builds prioritising WELS 5-star water efficiency",
+      "Double-bowl sink installations using the pull-down reach",
+      "Replacement of an aged chrome mixer with a more deliberate finish choice"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "pull-down-spray-tap-kitchen-mixer-in-brushed-nickel",
+        "spring-loaded-tap-kitchen-mixer-in-brushed-nickel",
+        "gooseneck-kitchen-mixer-tap-in-polished-chrome"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+      "title": "Pull-Down Modern Kitchen Mixer — Brushed Nickel, WELS 5★ | Enviro Aqua",
+      "description": "Modern pull-down kitchen mixer in brushed nickel. 41 cm height, brass body, ergonomic spout, WELS 5-star water-efficient rating. 2-way hot/cold operation.",
+      "ogImage": null
     }
   },
   "pull-down-spray-tap-kitchen-mixer-in-brushed-nickel": {
@@ -13531,9 +14599,98 @@
       "plumbing",
       "kitchen-taps"
     ],
-    "shortDescription": "Quality kitchen mixer tap, designed for the Australian market.",
+    "tags": [
+      "kitchen-tap",
+      "pull-down-spray",
+      "brushed-nickel",
+      "modern",
+      "solid-brass",
+      "ceramic-disc"
+    ],
+    "shortDescription": "Pull-down spray kitchen mixer in brushed nickel — solid brass body, ceramic disc cartridge, modern minimalist styling. Designed for the Australian market with standard 1/4\" supply connections.",
+    "description": "A pull-down spray kitchen mixer in brushed nickel — the streamlined modern kitchen mixer with a removable spray head that extends down from the spout for rinsing, washing, and directing water around the sink. Sits at the practical end of the kitchen mixer range — well-built, simple, no commercial-style spring exposed.\n\n## Build\n\n- **Body:** solid brass throughout — corrosion-resistant, long-term durable\n- **Finish:** brushed nickel — warm metallic tone that hides fingerprints and water spots\n- **Cartridge:** single-lever ceramic disc — drip-free operation, long cartridge life\n- **Spray head:** pull-down with flexible hose for extended reach\n- **Connection:** standard residential cold/hot supply\n\nCeramic disc cartridges replace the old-style rubber washer mechanism — no washer to wear out, smoother lever action, drip-free across thousands of cycles.\n\n## Why Pull-Down Spray Over Fixed Spout\n\nA fixed-spout mixer covers the day-to-day cooking and washing-up use case fine. Where it falls short:\n\n- **Rinsing large pots** that don't fit under the spout\n- **Washing produce** in a bowl at the back of the sink\n- **Cleaning the sink itself** — directing water around the bowl after use\n- **Filling tall jugs** or vessels that won't fit upright under the spout\n\nThe pull-down head fixes all four. After use, it snaps back into the spout cleanly — magnetic docking on most modern designs keeps it from drifting out of position.\n\n## Where This Tap Fits\n\n- Standard residential kitchens wanting the practical benefit of a removable spray head\n- Brushed-nickel finish palettes pairing with stainless steel appliances\n- Mid-range kitchen renovations replacing a basic single-spout mixer\n- Households where multiple users need adjustable reach at the sink",
+    "features": [
+      "Pull-down spray head — extended reach for rinsing and cleaning",
+      "Brushed nickel finish — warm metallic, hides fingerprints",
+      "Solid brass body construction",
+      "Single-lever ceramic disc cartridge — drip-free operation",
+      "Modern minimalist styling",
+      "Designed for the Australian market with standard supply connections"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Style",
+        "value": "Pull-down spray"
+      },
+      {
+        "label": "Finish",
+        "value": "Brushed nickel"
+      },
+      {
+        "label": "Body",
+        "value": "Solid brass"
+      },
+      {
+        "label": "Cartridge",
+        "value": "Ceramic disc"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Pull-down spray kitchen mixer tap"
+      },
+      {
+        "label": "Finish",
+        "value": "Brushed nickel"
+      },
+      {
+        "label": "Body material",
+        "value": "Solid brass"
+      },
+      {
+        "label": "Cartridge",
+        "value": "Single-lever ceramic disc"
+      },
+      {
+        "label": "Spray head",
+        "value": "Pull-down with flexible hose"
+      },
+      {
+        "label": "Operation",
+        "value": "Single-lever, hot and cold"
+      },
+      {
+        "label": "Connection",
+        "value": "Standard residential supply"
+      },
+      {
+        "label": "Includes",
+        "value": "Tap body, mounting hardware, flexible hoses, installation manual"
+      }
+    ],
+    "recommendedFor": [
+      "Standard residential kitchens wanting pull-down spray functionality",
+      "Brushed-nickel finish palettes with stainless steel appliances",
+      "Mid-range kitchen renovations and replacements",
+      "Households where adjustable reach at the sink matters daily"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel",
+        "spring-loaded-tap-kitchen-mixer-in-brushed-nickel",
+        "gooseneck-kitchen-mixer-tap-in-polished-chrome"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Quality kitchen mixer tap, designed for the Australian market. Solid brass construction, ceramic disc cartridge for smooth long-term operation."
+      "title": "Pull-Down Spray Kitchen Mixer — Brushed Nickel, Solid Brass | Enviro Aqua",
+      "description": "Pull-down spray kitchen mixer in brushed nickel. Solid brass, ceramic disc cartridge. Extended reach for rinsing and cleaning. Standard residential supply connections.",
+      "ogImage": null
     }
   },
   "spring-loaded-3-way-ro-tap-kitchen-mixer-in-black-chrome-and-nickel": {
@@ -13541,9 +14698,111 @@
       "plumbing",
       "ro-filter-taps"
     ],
-    "shortDescription": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture.",
+    "tags": [
+      "3-way-tap",
+      "spring-loaded",
+      "ro-filter-tap",
+      "kitchen-mixer",
+      "pull-down",
+      "matte-black",
+      "polished-chrome",
+      "brushed-nickel",
+      "44cm"
+    ],
+    "shortDescription": "Spring-loaded 3-way kitchen mixer — combines hot, cold, and RO-filtered water in a single fixture with a flexible pull-down sprayer. 44 cm height, available in matte black, polished chrome, or brushed nickel.",
+    "description": "A spring-loaded 3-way kitchen mixer that combines the **flexible-coil pull-down spray** of a commercial-style kitchen tap with the **3-way hot/cold/RO-filtered functionality** of an RO-compatible fixture. The top of the 3-way tap range — and the only one with the exposed-spring industrial styling.\n\n## What This Tier Buys You\n\nThe other 3-way taps in the range ([standard](/3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c/), [luxurious](/luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel/), [pull-down](/3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel/)) cover most installation needs. This spring-loaded variant adds:\n\n- **The commercial-style aesthetic** — exposed coil spring as a deliberate design feature\n- **Spring-loaded movement** — the spout holds in any position you draw it to, then recoils smoothly when released\n- **Pull-down nozzle reach** — 18 cm of extended depth on the pull-down\n- **Taller overall profile** — 44 cm height clears deep sinks and large vessels\n\nFor kitchens that lean toward commercial-style design language (open shelving, stainless splashbacks, professional-grade appliances), this is the tap that ties the room together.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels — hot, cold, and RO-filtered. The filtered channel is physically separated from the hot/cold pathway, so chlorine-free RO permeate stays unmixed with the chlorinated mains supply. A dedicated lever or button activates filtered output.\n\nOne tap hole, three water sources — solves the second-tap-hole problem on stone benchtops and single-hole sinks.\n\n## Three Finish Options\n\n- **Matte Black** — high-contrast contemporary accent\n- **Polished Chrome** — bright timeless finish, works with most palettes\n- **Brushed Nickel** — warm-toned metallic, forgiving of fingerprints\n\nAll three finishes are visually distinct but share the same internal mechanism and physical dimensions.\n\n## Build and Dimensions\n\n- **Material:** brass body throughout\n- **Style:** modern spring-loaded with flexible pull-down sprayer\n- **Height:** 44 cm overall\n- **Width:** 14.4 cm\n- **Depth (pull-down nozzle):** 18 cm extended\n- **Operation:** 3-way function (hot, cold, RO-filtered)\n- **RO compatibility:** any standard reverse osmosis system via 1/4\" tubing\n\n## Where This Tap Fits\n\n- Commercial-style residential kitchens with industrial design language\n- Premium kitchens wanting both 3-way RO functionality and flexible-coil aesthetics\n- Stone benchtop renovations needing 3-way function (avoids second tap hole) plus pull-down reach\n- Larger or double-bowl sinks where the 44 cm height matches the bench scale",
+    "features": [
+      "Spring-loaded 3-way kitchen mixer — commercial-style with RO compatibility",
+      "Combines hot, cold, and RO-filtered water in one tap",
+      "Exposed coil spring with flexible pull-down sprayer",
+      "44 cm overall height, 18 cm pull-down nozzle depth",
+      "Three finish options: matte black, polished chrome, brushed nickel",
+      "Brass body construction",
+      "Filtered-water channel physically separated from hot/cold pathway",
+      "Works with any RO system via 1/4\" tubing"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Style",
+        "value": "Spring-loaded 3-way"
+      },
+      {
+        "label": "Height",
+        "value": "44 cm"
+      },
+      {
+        "label": "Finishes",
+        "value": "Black / chrome / nickel"
+      },
+      {
+        "label": "Function",
+        "value": "Hot / cold / filtered"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Spring-loaded 3-way RO kitchen mixer tap"
+      },
+      {
+        "label": "Operation",
+        "value": "3-way function (hot, cold, filtered water)"
+      },
+      {
+        "label": "Overall height",
+        "value": "44 cm"
+      },
+      {
+        "label": "Width",
+        "value": "14.4 cm"
+      },
+      {
+        "label": "Pull-down nozzle depth",
+        "value": "18 cm extended"
+      },
+      {
+        "label": "Available finishes",
+        "value": "Matte Black, Polished Chrome, Brushed Nickel"
+      },
+      {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
+        "label": "Spring",
+        "value": "Exposed coil with flexible pull-down"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Reverse osmosis filtration systems"
+      },
+      {
+        "label": "Connection",
+        "value": "Standard 1/4\" tubing"
+      }
+    ],
+    "recommendedFor": [
+      "Commercial-style residential kitchens with industrial design language",
+      "Premium kitchens wanting both 3-way and flexible-coil aesthetics",
+      "Stone benchtop renovations avoiding second-tap-hole drilling",
+      "Larger double-bowl sinks matching the 44 cm height scale"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel",
+        "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel",
+        "tall-spring-loaded-kitchen-mixer-with-pull-out-spray-in-polished-chrome"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Three-way kitchen mixer tap — combines hot, cold, and filtered RO water in a single fixture."
+      "title": "Spring-Loaded 3-Way RO Kitchen Mixer — Black, Chrome, or Nickel | Enviro Aqua",
+      "description": "Spring-loaded 3-way kitchen mixer with RO-filtered water. 44 cm height, brass body, flexible pull-down spray. Matte black, polished chrome, or brushed nickel.",
+      "ogImage": null
     }
   },
   "tall-29cm-round-basin-mixer-tap-in-matte-black-or-polished-chrome": {
@@ -13551,9 +14810,100 @@
       "plumbing",
       "bathroom-taps"
     ],
-    "shortDescription": "Important: this product is NOT WaterMark certified.",
+    "tags": [
+      "bathroom-tap",
+      "tall-basin-mixer",
+      "29cm",
+      "matte-black",
+      "polished-chrome",
+      "vessel-basin",
+      "solid-brass",
+      "stainless-steel"
+    ],
+    "shortDescription": "Tall 29cm round basin mixer tap — designed for above-counter and vessel basins where standard low-profile taps don't clear the bowl. Available in matte black or polished chrome. Solid brass with stainless steel.",
+    "description": "A 29 cm tall round basin mixer tap sized specifically for **above-counter and vessel basins** — the modern bathroom installation where the basin bowl sits on top of the vanity rather than below it, and a standard 12 cm or 16 cm mixer is too short to clear the bowl rim cleanly.\n\n## When 29 cm Is the Right Height\n\nThe vessel basin trend has driven a clear height hierarchy in bathroom mixers:\n\n- **12 cm:** standard inset basins — bowl sits flush with the vanity top\n- **16 cm:** taller inset or shallow above-counter basins\n- **29 cm (this product):** **vessel basins and feature bowls** — bowl rim sits 12–18 cm above the vanity\n\nAt 29 cm to the spout outlet, this tap clears typical vessel basin rims with comfortable clearance for hands or vessels under the spout. Visually it's also sized correctly for the basin — a short tap next to a tall vessel basin looks undersized; the 29 cm matches the bowl height proportionally.\n\n## Two Finishes\n\n- **Matte Black:** the high-contrast contemporary look. Pairs with white bowls and natural stone vanities; reads as a deliberate design choice rather than a default.\n- **Polished Chrome:** the timeless brighter finish. Pairs with both warm and cool colour palettes; cleans up to a mirror shine with regular wiping.\n\n## Build\n\n- **Body:** solid brass and stainless steel — durable, resistant to wear, won't pit at the base over years of water exposure\n- **Operation:** single-lever handle for precise temperature and flow control\n- **Installation:** deck-mounted, fits standard single-tap-hole basins\n\n## Where This Tap Fits\n\n- **Above-counter vessel basins** (the primary intended application)\n- **Modern vanity setups** where the basin is a visual feature\n- **Renovations choosing a taller mixer as a deliberate aesthetic accent**\n- **Hospitality and feature bathrooms** wanting visual impact at the basin\n\nFor a standard inset basin, this tap is overkill on height — look at the [12 cm](/12cm-bathroom-mixer-tap-in-polished-chrome/) or [16 cm](/16cm-bathroom-mixer-tap-in-polished-chrome/) versions instead.",
+    "features": [
+      "Tall 29 cm round profile — sized for above-counter vessel basins",
+      "Available in matte black or polished chrome",
+      "Solid brass and stainless steel construction",
+      "Single-lever handle for precise water control",
+      "Deck-mounted — fits standard single-tap-hole basins",
+      "Round profile pairs with both circular and rectangular bowl designs"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Height",
+        "value": "29 cm"
+      },
+      {
+        "label": "Style",
+        "value": "Round, tall basin"
+      },
+      {
+        "label": "Finishes",
+        "value": "Matte black or polished chrome"
+      },
+      {
+        "label": "Material",
+        "value": "Solid brass + stainless"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Tall basin mixer tap, deck-mounted"
+      },
+      {
+        "label": "Overall height",
+        "value": "29 cm"
+      },
+      {
+        "label": "Profile",
+        "value": "Round"
+      },
+      {
+        "label": "Available finishes",
+        "value": "Matte Black, Polished Chrome"
+      },
+      {
+        "label": "Body material",
+        "value": "Solid brass and stainless steel"
+      },
+      {
+        "label": "Operation",
+        "value": "Single-lever handle"
+      },
+      {
+        "label": "Mounting",
+        "value": "Deck-mounted, single tap hole"
+      },
+      {
+        "label": "Best suited for",
+        "value": "Above-counter vessel basins"
+      }
+    ],
+    "recommendedFor": [
+      "Above-counter and vessel basin installations",
+      "Modern vanity designs where the basin is a feature element",
+      "Hospitality and feature bathrooms wanting visual height impact",
+      "Renovations replacing a standard mixer that's too short for a new vessel basin"
+    ],
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "16cm-bathroom-mixer-tap-in-polished-chrome",
+        "12cm-bathroom-mixer-tap-in-polished-chrome",
+        "12cm-bathroom-mixer-tap-in-polished-chrome-extended-sprout"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Important: this product is NOT WaterMark certified."
+      "title": "Tall 29cm Round Basin Mixer Tap — Matte Black or Polished Chrome | Enviro Aqua",
+      "description": "Tall 29 cm round basin mixer for above-counter and vessel basins. Solid brass and stainless. Matte black or polished chrome. Single-lever handle.",
+      "ogImage": null
     }
   },
   "back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels": {
