@@ -1,5 +1,6 @@
-import { ShieldCheck, ShieldAlert } from 'lucide-react';
+import { ShieldAlert } from 'lucide-react';
 import type { ProductCompliance } from '@/lib/products/schema';
+import { WatermarkBadge } from './WatermarkBadge';
 
 interface CertificationSlotProps {
   compliance?: ProductCompliance;
@@ -8,8 +9,8 @@ interface CertificationSlotProps {
 /**
  * Buy-box badge slot driven by `products.json[handle].compliance`.
  * Render rules:
- *   - watermark.status === 'certified' → blue ShieldCheck badge plus
- *     a small caption listing licence / certifier / validUntil for
+ *   - watermark.status === 'certified' → red WaterMark badge plus a
+ *     small caption listing licence / certifier / validUntil for
  *     fields that are set.
  *   - watermark.status === 'pending'   → amber ShieldAlert badge,
  *     no caption.
@@ -41,17 +42,8 @@ export function CertificationSlot({ compliance }: CertificationSlotProps) {
 
   return (
     <div className="flex flex-col gap-1.5">
-      <div
-        className="inline-flex w-fit items-center gap-2 rounded border border-brand-blue/40 bg-brand-blue-light px-3 py-1.5 text-sm font-semibold text-brand-blue"
-        role="img"
-        aria-label="WaterMark certified"
-      >
-        <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-        WaterMark certified
-      </div>
-      {caption && (
-        <p className="text-xs text-black/60">{caption}</p>
-      )}
+      <WatermarkBadge variant="rectangle" />
+      {caption && <p className="text-xs text-black/60">{caption}</p>}
     </div>
   );
 }

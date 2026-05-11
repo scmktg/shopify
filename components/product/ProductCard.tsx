@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { ProductCardData } from '@/types/product';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { PriceDisplay } from './PriceDisplay';
+import { WatermarkBadge, isWatermarkCertified } from './WatermarkBadge';
 
 interface ProductCardProps {
   product: ProductCardData;
@@ -11,6 +12,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const href = getProductUrl(product.handle);
   const image = product.featuredImage;
+  const watermarkCertified = isWatermarkCertified({ tags: product.tags });
 
   return (
     <article className="group">
@@ -35,6 +37,12 @@ export function ProductCard({ product }: ProductCardProps) {
             <div
               aria-hidden="true"
               className="absolute inset-0 bg-gray-100"
+            />
+          )}
+          {watermarkCertified && (
+            <WatermarkBadge
+              variant="square"
+              className="absolute top-2 right-2"
             />
           )}
         </div>
