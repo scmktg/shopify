@@ -51,7 +51,7 @@ export function LeadFreeBadge({ className }: BadgeProps) {
       aria-label="Lead free"
       className={clsx(BADGE_BASE_CLASSES, className)}
     >
-      <Check className="h-4 w-4" strokeWidth={3} aria-hidden="true" />
+      <Check className="h-7 w-7" strokeWidth={3} aria-hidden="true" />
       Lead Free
     </span>
   );
