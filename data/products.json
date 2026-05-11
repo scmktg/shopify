@@ -6,8 +6,8 @@
   },
   "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
     "categories": [
-      "bubblers",
-      "commercial"
+      "bubblers-and-coolers",
+      "bubblers"
     ],
     "tags": [
       "stainless-steel",
@@ -588,8 +588,8 @@
   },
   "commercial-rust-free-filtered-cold-water-bubbler-wm": {
     "categories": [
-      "bubblers",
-      "commercial"
+      "bubblers-and-coolers",
+      "bubblers"
     ],
     "tags": [
       "commercial",
@@ -717,8 +717,8 @@
   },
   "commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des": {
     "categories": [
-      "bubblers",
-      "commercial"
+      "bubblers-and-coolers",
+      "bubblers"
     ],
     "tags": [
       "commercial",
@@ -833,8 +833,8 @@
   },
   "stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap": {
     "categories": [
-      "bubblers",
-      "commercial"
+      "bubblers-and-coolers",
+      "coolers-and-chillers"
     ],
     "tags": [
       "under-counter",
@@ -969,7 +969,7 @@
   },
   "bubbler-filter-cto-plus-pp": {
     "categories": [
-      "bubblers",
+      "bubblers-and-coolers",
       "parts"
     ],
     "tags": [
@@ -1073,7 +1073,7 @@
   },
   "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet": {
     "categories": [
-      "bubblers",
+      "bubblers-and-coolers",
       "parts"
     ],
     "tags": [
@@ -1168,8 +1168,8 @@
   },
   "bench-top-room-temperature-hot-and-cold-water-cooler-direct-connect": {
     "categories": [
-      "bubblers",
-      "residential"
+      "bubblers-and-coolers",
+      "coolers-and-chillers"
     ],
     "tags": [
       "bench-top",
@@ -1288,8 +1288,8 @@
   },
   "direct-connect-water-cooler-dispenser-3stages-filter-hot-cold-and-room-temperatu": {
     "categories": [
-      "bubblers",
-      "residential"
+      "bubblers-and-coolers",
+      "coolers-and-chillers"
     ],
     "tags": [
       "freestanding",
@@ -1416,8 +1416,8 @@
   },
   "filtered-hot-and-cold-water-cooler-direct-connect": {
     "categories": [
-      "bubblers",
-      "residential"
+      "bubblers-and-coolers",
+      "coolers-and-chillers"
     ],
     "tags": [
       "residential",
@@ -6718,9 +6718,104 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "Cartridge Filters",
+    "tags": [
+      "replacement-cartridge-set",
+      "three-stage",
+      "20x25",
+      "five-micron",
+      "whole-house-cartridges",
+      "coconut-carbon"
+    ],
+    "shortDescription": "3-cartridge replacement set for 20\" × 2.5\" whole-house filter systems — 5 micron PP sediment + 5 micron carbon block + 5 micron GAC (coconut shell). 6-month service interval per cartridge.",
+    "description": "A 3-cartridge replacement set sized for whole-house filter systems using **20\" × 2.5\" housings** — the slimmer of the two common whole-house cartridge formats, often found on smaller installations or older systems pre-dating the Big Blue standardisation.\n\n## What's in the Set\n\n- **Stage 1 — 5 micron PP sediment cartridge:** 100% pure polypropylene fibres, high dirt-holding capacity. Removes dust, particles, and rust before they reach the carbon stages downstream.\n- **Stage 2 — 5 micron carbon block:** dense block carbon construction. Removes free chlorine, odour, organic contaminants, pesticides, and the chemicals responsible for taste and odour in chlorinated supplies.\n- **Stage 3 — 5 micron GAC (coconut-shell granular activated carbon):** higher-surface-area activated carbon from coconut shell rather than coal. Provides additional chlorine reduction and chemical adsorption capacity in the polish stage.\n\n## Service Interval\n\nEach cartridge has a recommended replacement interval of **approximately 6 months** under typical Australian town water conditions. Installations on heavier sediment loads (rural tank water, bore water with iron) may need more frequent changes; installations on light-use cabins or seasonal properties can stretch slightly longer.\n\n## Compatibility\n\nFits any standard whole-house 20\" × 2.5\" cartridge housing. If your system is the wider Big Blue 20\" × 4.5\" format, use the [3-stage 20\" × 4.5\" replacement set](/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5/) instead — the cartridges look similar but the diameters are not interchangeable.",
+    "features": [
+      "3-cartridge replacement set for 20\" × 2.5\" whole-house systems",
+      "Stage 1: 5 micron PP sediment — particles, dust, rust",
+      "Stage 2: 5 micron carbon block — chlorine, taste, odour, organics",
+      "Stage 3: 5 micron coconut-shell GAC — additional chlorine and chemical polish",
+      "Approximately 6-month replacement interval per cartridge",
+      "Drop-in fit for any 20\" × 2.5\" whole-house housing"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Set contents",
+        "value": "3 cartridges"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (all stages)"
+      },
+      {
+        "label": "Service interval",
+        "value": "~6 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "PP sediment + carbon block + GAC (3 cartridges)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP sediment (100% polypropylene)"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron carbon block"
+      },
+      {
+        "label": "Stage 3",
+        "value": "5 micron GAC (coconut-shell granular activated carbon)"
+      },
+      {
+        "label": "Recommended service interval",
+        "value": "~6 months per cartridge"
+      },
+      {
+        "label": "Compatible housings",
+        "value": "Standard 20\" × 2.5\" whole-house housings"
+      }
+    ],
+    "recommendedFor": [
+      "Annual or biannual service of a 20\" × 2.5\" whole-house filter system",
+      "Owners servicing two cartridge changes per year on shared schedule",
+      "Replacement of an aging cartridge set after a missed service interval",
+      "Plumbers and trade buyers stocking 20\" × 2.5\" consumables"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5",
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-2-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "Cartridge Filters"
+      "title": "3-Cartridge Replacement Set — 20\" × 2.5\" Whole-House, 5 Micron | Enviro Aqua",
+      "description": "3-cartridge replacement: PP sediment, carbon block, coconut-shell GAC. All 5 micron, 20\" × 2.5\" format. ~6-month service interval. Fits standard whole-house housings.",
+      "ogImage": null
     }
   },
   "3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system": {
@@ -6728,9 +6823,122 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "three-stage",
+      "uv-sterilisation",
+      "big-blue",
+      "20x45",
+      "rural-water",
+      "tank-water"
+    ],
+    "shortDescription": "3-stage whole-house water filter with UV ultraviolet sterilisation — Big Blue 20\" × 4.5\" housings plus 254 nm germicidal UV lamp. Treats every tap in the home from the mains supply.",
+    "description": "A 3-stage whole-house water filter integrated with a **254 nm UV sterilisation chamber** — the configuration that adds physical pathogen kill to the standard sediment-and-carbon treatment. Installed at the point of entry, it treats every tap, shower, and outlet in the building.\n\n## Why UV Belongs on Tank and Bore Water\n\nFiltration cartridges remove particulate, chlorine, and most chemical contaminants — but they don't kill bacteria, viruses, or protozoan cysts. On municipal mains water that's already chlorinated, this rarely matters. On **rural tank water, bore water, or any unchlorinated supply**, microbiological contamination is a real concern. UV-C light at the germicidal wavelength of 254 nm damages the DNA of bacteria, viruses, and cysts as water passes through the chamber, rendering them unable to reproduce.\n\nIt's a **chemical-free disinfection method** — no chlorine taste, no by-products, no residual added to the water. The UV lamp consumes a few tens of watts and runs continuously.\n\n## Three-Stage Configuration\n\n- **Stage 1 — Sediment filtration:** removes silt, dirt, and rust from the incoming water. Critical for UV: the lamp can only kill what the light reaches, so suspended particulate that shadows pathogens must be filtered out first.\n- **Stage 2 — Carbon block filter:** reduces chlorine (where present), taste, and odour. Removes organic contaminants that affect drinking water taste downstream.\n- **Stage 3 — UV disinfection chamber:** 254 nm UV-C germicidal lamp in a stainless steel chamber. Inactivates bacteria, viruses, and protozoan cysts in the flowing water.\n\nBig Blue 20\" × 4.5\" cartridge housings provide the flow capacity needed for whole-house demand. Bracketed wall-mount design for compact installation.\n\n## Important: UV Maintenance Discipline\n\nUV systems work only when the lamp is operating at full output. Two ongoing service requirements that owners sometimes overlook:\n\n- **Replace the UV lamp every 12 months** even if it's still glowing — UV-C output drops below germicidal levels well before the lamp fails visually\n- **Keep the pre-filter cartridges fresh** — turbid or sediment-laden water blocks UV penetration, and a saturated carbon stage allowing chlorine through can foul the UV quartz sleeve\n\n## Installation\n\nProfessional installation is strongly recommended. The system requires power (240 V mains) at the install point and connects to the cold supply line at the point of entry. A licensed plumber and a basic electrical connection are needed for compliant installation.\n\n## Compliance\n\nThis system is not subject to WaterMark certification under Australian plumbing regulations — it's a downstream-of-meter point-of-entry product. If your installation specifically requires WaterMark on the filter housings (some council requirements or insurance policies), step up to the [WaterMark-certified 3-stage Big Blue system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) instead.",
+    "features": [
+      "3-stage whole-house treatment with integrated UV sterilisation",
+      "Germicidal 254 nm UV-C wavelength — proven pathogen kill",
+      "Big Blue 20\" × 4.5\" cartridge housings for whole-house flow",
+      "Treats every fixture in the home from a single point of entry",
+      "Chemical-free disinfection — no chlorine taste, no by-products",
+      "Suits rural tank water, bore water, or municipal supply with quality concerns",
+      "Bracketed wall-mount design"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Housings",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Installation",
+        "value": "Whole-house, point of entry"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Whole-house filter + UV sterilisation"
+      },
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Sediment filtration (removes silt, dirt, rust)"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Carbon block (chlorine, taste, odour, organics)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "UV disinfection chamber"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm UV-C (germicidal)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Installation",
+        "value": "Whole-house, point of entry"
+      },
+      {
+        "label": "UV lamp replacement",
+        "value": "Every 12 months"
+      },
+      {
+        "label": "Cartridge replacement",
+        "value": "Every 6–12 months"
+      },
+      {
+        "label": "Power required",
+        "value": "Yes — 240 V mains"
+      }
+    ],
+    "recommendedFor": [
+      "Rural properties on tank water or bore water",
+      "Homes on unchlorinated supply with microbiological concerns",
+      "Properties downstream of past water-quality incidents",
+      "Whole-house treatment requiring chemical-free disinfection"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter and UV system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-entry, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "4-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system",
+        "premium-three-stage-big-blue-whole-house-water-filter-system",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "3-Stage Whole-House Filter + UV Steriliser — Big Blue 20\" × 4.5\" | Enviro Aqua",
+      "description": "3-stage whole-house filter with 254 nm UV-C sterilisation. Big Blue 20\" × 4.5\" housings. Sediment, carbon, UV disinfection. For tank, bore, and rural water.",
+      "ogImage": null
     }
   },
   "4-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system": {
@@ -6738,9 +6946,126 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "four-stage",
+      "uv-sterilisation",
+      "big-blue",
+      "20x45",
+      "rural-water",
+      "tank-water"
+    ],
+    "shortDescription": "4-stage whole-house filter and UV sterilisation system — Big Blue 20\" × 4.5\" housings plus 254 nm UV-C disinfection. The upgraded tier of the 3-stage UV system with an additional carbon polishing stage.",
+    "description": "The 4-stage upgrade of the [3-stage whole-house filter and UV system](/3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/) — same Big Blue 20\" × 4.5\" housings, same 254 nm UV-C disinfection chamber, with an **additional carbon stage** for longer chlorine-reduction service intervals and finer chemical polishing before the water enters the UV chamber.\n\n## Why 4 Stages Over 3\n\nA 3-stage UV system handles sediment, basic carbon polishing, and UV disinfection. Where the 3-stage version puts the carbon work on a single cartridge, this 4-stage build splits that work across **two distinct carbon stages**: one bulk-reduction granular activated carbon stage and one polish carbon block. Three practical effects:\n\n- The carbon stages share the chlorine and chemical adsorption load, so each stage lasts longer between replacements\n- Better chemical reduction in the finished water reaching the UV chamber — cleaner water means more effective UV pathogen kill\n- Less risk of chemical breakthrough during the back-half of the cartridge service cycle\n\nFor properties with heavier chlorine loads, persistent taste/odour issues, or installations where missing a service interval is likely, the 4-stage build buys real margin over the 3-stage equivalent.\n\n## Four-Stage Configuration\n\n- **Stage 1 — Sediment filtration:** removes silt, dirt, and rust from the incoming water\n- **Stage 2 — Granular activated carbon (GAC):** bulk reduction of chlorine and organic contaminants\n- **Stage 3 — Carbon block polish:** finer chemical polishing and additional chlorine adsorption\n- **Stage 4 — UV disinfection chamber:** 254 nm UV-C germicidal lamp\n\n## Maintenance\n\nReplace the UV lamp every 12 months. Cartridges every 6–12 months depending on incoming water quality. The same UV-maintenance discipline applies as for the 3-stage system: a degraded UV lamp or fouled quartz sleeve compromises pathogen kill even with healthy lamp glow, so calendar-based replacement matters.\n\n## Installation and Power\n\nProfessional installation recommended. The system requires a 240 V mains connection at the install point and connects to the cold supply line at the point of entry. A licensed plumber and a basic electrical connection are needed for compliant installation.",
+    "features": [
+      "4-stage whole-house treatment with integrated UV-C sterilisation",
+      "Two carbon stages — GAC plus polishing carbon block",
+      "Big Blue 20\" × 4.5\" cartridge housings",
+      "254 nm germicidal UV-C disinfection",
+      "Longer carbon-stage service intervals vs 3-stage UV equivalent",
+      "Cleaner pre-UV water — better pathogen-kill efficacy",
+      "Bracketed wall-mount design with steel mounting bracket"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "4"
+      },
+      {
+        "label": "Housings",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      },
+      {
+        "label": "Carbon stages",
+        "value": "GAC + carbon block"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Whole-house filter + UV sterilisation"
+      },
+      {
+        "label": "Stages",
+        "value": "4"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Sediment filtration"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "Carbon block polish"
+      },
+      {
+        "label": "Stage 4",
+        "value": "UV disinfection chamber"
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm UV-C (germicidal)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Installation",
+        "value": "Whole-house, point of entry"
+      },
+      {
+        "label": "UV lamp replacement",
+        "value": "Every 12 months"
+      },
+      {
+        "label": "Cartridge replacement",
+        "value": "Every 6–12 months"
+      },
+      {
+        "label": "Power required",
+        "value": "Yes — 240 V mains"
+      }
+    ],
+    "recommendedFor": [
+      "Rural properties with high chlorine load on tank or bore supply",
+      "Households wanting longer carbon-stage service intervals",
+      "Upgrade from a 3-stage UV system to a more aggressive treatment configuration",
+      "Properties with persistent taste, odour, or chemical concerns plus microbiological worries"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter and UV system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-entry, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system",
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "4-Stage Whole-House Filter + UV Steriliser — Big Blue 20\" × 4.5\" | Enviro Aqua",
+      "description": "4-stage Big Blue 20\" × 4.5\" filter and 254 nm UV-C steriliser. Sediment, GAC, carbon block, UV disinfection. For rural tank, bore, or chlorinated supply.",
+      "ogImage": null
     }
   },
   "big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system": {
@@ -6748,9 +7073,129 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "two-stage",
+      "uv-sterilisation",
+      "big-blue",
+      "20x45",
+      "twin-housing"
+    ],
+    "shortDescription": "Big Blue twin-housing whole-house water filter with UV sterilisation — 20\" × 4.5\" sediment + carbon plus 254 nm UV-C disinfection. 1\" inlet/outlet. The entry-level UV-equipped whole-house system.",
+    "description": "A Big Blue twin-housing whole-house water filter integrated with **254 nm UV-C disinfection** — the entry-level point-of-entry filtration with built-in pathogen kill. The configuration uses two Big Blue 20\" × 4.5\" cartridges (sediment + carbon) before the water passes through the UV chamber.\n\n## Where This Sits in the UV Range\n\n- **This system ($499.95):** entry-level twin-cartridge Big Blue + UV — sediment and carbon plus UV disinfection\n- **[3-stage UV system ($1299.95)](/3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/):** adds a third filtration stage and typically more capable UV chamber\n- **[4-stage UV system ($1499.95)](/4-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/):** the top tier — additional carbon stage for longer service intervals\n\nIf your install demands UV disinfection but doesn't need the depth of cartridge filtration in the 3-stage or 4-stage builds, this is the right price point.\n\n## What's Included\n\n- Twin Big Blue 20\" × 4.5\" filter housings\n- White-coated metal frame for support\n- 5 micron poly sediment cartridge (starter)\n- 5 micron coconut-shell carbon block cartridge (starter)\n- UV disinfection chamber with 254 nm UV-C lamp\n- Built-in pressure release valve\n- 1\" inlet and outlet ports\n- Wall-mount bracket\n\n## Two-Stage Filtration + UV Disinfection\n\n- **Stage 1 — 5 micron PP sediment:** captures silt, dirt, rust, and visible particulate. Critical pre-treatment for the UV chamber — suspended particles shadow pathogens from the UV light.\n- **Stage 2 — 5 micron coconut-shell carbon block:** removes chlorine, taste, odour, and organic contaminants. Coconut-shell carbon has higher surface area per gram than coal-based carbon, giving better adsorption capacity at the same cartridge size.\n- **UV chamber:** 254 nm UV-C germicidal lamp inactivates bacteria, viruses, and protozoan cysts. Chemical-free disinfection.\n\n## Maintenance Notes\n\nReplace the UV lamp every 12 months even if it's still glowing — UV-C output drops below germicidal levels well before the lamp fails. Keep the sediment cartridge fresh: turbidity blocks UV penetration. Replace cartridges every 6–12 months on typical supplies.\n\n## Installation\n\nProfessional installation recommended. Connects to the cold supply line at the point of entry. Requires 240 V mains power at the install point for the UV chamber.",
+    "features": [
+      "Big Blue twin-housing whole-house filter with integrated UV-C sterilisation",
+      "1\" inlet and outlet ports for whole-house flow demand",
+      "5 micron PP sediment and 5 micron coconut-shell carbon block cartridges",
+      "254 nm germicidal UV-C wavelength for pathogen kill",
+      "White-coated metal frame and built-in pressure release valve",
+      "Wall-mount bracketed design — compact installation footprint",
+      "Entry-level UV-equipped Big Blue at $499.95"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "2 + UV"
+      },
+      {
+        "label": "Housings",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "UV wavelength",
+        "value": "254 nm (germicidal UV-C)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Big Blue twin filter + UV sterilisation"
+      },
+      {
+        "label": "Cartridge stages",
+        "value": "2 (plus UV chamber)"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP sediment"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron coconut-shell carbon block"
+      },
+      {
+        "label": "Disinfection",
+        "value": "254 nm UV-C germicidal lamp"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Frame",
+        "value": "White-coated metal"
+      },
+      {
+        "label": "Pressure release valve",
+        "value": "Built-in"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "UV lamp replacement",
+        "value": "Every 12 months"
+      },
+      {
+        "label": "Cartridge replacement",
+        "value": "Every 6–12 months"
+      },
+      {
+        "label": "Power required",
+        "value": "Yes — 240 V mains"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house installations needing UV at entry-level price point",
+      "Tank or bore water properties wanting basic filter + UV combination",
+      "Rural homes on unchlorinated supply with microbiological concerns",
+      "Cost-conscious upgrade from a non-UV Big Blue system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter and UV system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-entry, downstream-of-meter product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system",
+        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
+        "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "Big Blue Whole-House Filter + UV Steriliser — 254 nm UV-C | Enviro Aqua",
+      "description": "Big Blue twin-housing whole-house filter with 254 nm UV-C sterilisation. 20\" × 4.5\", 1\" inlet/outlet. 5 micron sediment + coconut carbon block. Entry-level UV.",
+      "ogImage": null
     }
   },
   "deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy": {
@@ -6758,9 +7203,119 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "whole-house",
+      "three-stage",
+      "stainless-steel",
+      "lockable",
+      "big-blue",
+      "20x45",
+      "premium",
+      "outdoor-rated"
+    ],
+    "shortDescription": "Premium 3-stage Big Blue whole-house filter in SUS304 stainless steel cabinet with lockable access door — protects the system from weather and tampering. Three 5 micron cartridges: PP sediment, GAC, coconut carbon.",
+    "description": "A 3-stage Big Blue whole-house water filter housed inside a **SUS304 stainless steel cabinet with a lockable access door** — the premium tier in the residential whole-house range, built for visible installations and exposed locations where the standard plastic-housing systems would weather poorly or get tampered with.\n\n## Why a Stainless Steel Cabinet\n\nStandard whole-house systems mount the filter housings exposed on a wall or frame. That works fine for a garage or under-house installation, but on properties where the system sits on an external wall, in a carport, or anywhere visible from the street, two problems show up:\n\n- **Australian sun and weather** — UV degrades plastic housings and brackets over years. White-coated metal frames rust at coastal sites. The filter cartridges themselves are fine, but the system around them ages visibly.\n- **Tampering and curiosity** — accessible filter housings in a visible location invite kids, vandals, or service contractors who shouldn't be touching the system.\n\nThe **SUS304 stainless steel cabinet** solves both. The chromium-nickel alloy is UV-stable, salt-air resistant, and has the self-renewing protective layer that defines stainless. The **lockable access door** means only people with the key open the cabinet — service the cartridges, then lock it again.\n\n## Three-Stage Filtration\n\n- **Stage 1 — 5 micron PP sediment cartridge:** removes silt, dirt, sand, rust before the carbon stages\n- **Stage 2 — 5 micron granular activated carbon (GAC):** bulk reduction of chlorine and organic contaminants\n- **Stage 3 — 5 micron coconut-shell carbon block:** secondary polish; coconut carbon has higher surface area than coal-based for better chemical adsorption capacity\n\nAll cartridges Big Blue 20\" × 4.5\" — the standard whole-house format. Replacements are widely stocked and not proprietary to this enclosure.\n\n## Where This Tier Fits\n\n- **This system ($1,300):** SUS304 stainless cabinet, lockable, 3-stage Big Blue\n- **[Premium 3-stage Big Blue ($599)](/premium-three-stage-big-blue-whole-house-water-filter-system/):** same 3-stage filtration, white-coated metal frame, no enclosed cabinet\n- **[WaterMark-certified 3-stage ($1,199.95)](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/):** same 3-stage build but the [Big Blue WaterMark system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) is the WaterMark-certified option for mains-connected installations where compliance matters\n\nThe stainless cabinet adds visual and physical protection — it does not add WaterMark certification.\n\n## Installation\n\nProfessional installation recommended. Mounts to an external or internal wall at the point of entry. 1\" inlet and outlet connections match standard Australian mains supply line.",
+    "features": [
+      "SUS304 stainless steel cabinet — UV-stable, salt-air resistant, corrosion-proof",
+      "Lockable access door — tamper-resistant for visible installations",
+      "3-stage Big Blue 20\" × 4.5\" filtration",
+      "5 micron PP sediment, 5 micron GAC, 5 micron coconut-shell carbon block",
+      "Wall-mount design suited to external or visible installations",
+      "Premium tier with visual finish to match high-end residential builds",
+      "Standard 20\" × 4.5\" cartridges — widely-stocked replacements"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Cabinet",
+        "value": "SUS304 stainless steel, lockable"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (all stages)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Premium whole-house filter with stainless cabinet"
+      },
+      {
+        "label": "Cabinet material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Access",
+        "value": "Lockable door"
+      },
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron PP polypropylene sediment"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "5 micron coconut-shell carbon block"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Properties with visible or exposed whole-house filter installations",
+      "Coastal homes where standard powder-coated frames corrode",
+      "Households wanting tamper-resistance on the system",
+      "High-end residential builds where visual finish matters"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter system — not subject to WaterMark certification as a downstream-of-meter point-of-entry product. The stainless cabinet adds physical and visual protection, not certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "premium-three-stage-big-blue-whole-house-water-filter-system",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "Deluxe Stainless Steel Lockable 3-Stage Big Blue Whole-House Filter | Enviro Aqua",
+      "description": "Premium 3-stage Big Blue 20\" × 4.5\" in SUS304 stainless steel cabinet with lockable door. PP sediment, GAC, coconut carbon block. For exposed installations.",
+      "ogImage": null
     }
   },
   "premium-three-stage-big-blue-whole-house-water-filter-system": {
@@ -6768,9 +7323,129 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "three-stage",
+      "big-blue",
+      "20x45",
+      "pressure-gauges",
+      "premium"
+    ],
+    "shortDescription": "Premium 3-stage Big Blue whole-house water filter — 20\" × 4.5\" housings, white-coated metal frame, 1\" inlet/outlet, two pressure gauges. 5 micron PP sediment, GAC, coconut carbon block.",
+    "description": "A premium 3-stage whole-house water filter built on the standard **Big Blue 20\" × 4.5\" cartridge format** with a white-coated metal frame and **two pressure gauges** that show inlet and outlet pressure at a glance — the visual signal owners use to time cartridge changes accurately rather than guessing.\n\n## Why the Pressure Gauges Matter\n\nThe single most common service mistake on whole-house filters is **changing cartridges too early or too late**. Too early wastes money; too late means cartridges are saturated and contaminants reach the house water. Two pressure gauges (one before the cartridges, one after) make the timing decision objective:\n\n- New, clean cartridges show roughly equal inlet and outlet pressure\n- As cartridges accumulate sediment and dirt, the pressure differential grows\n- A clear differential — typically once outlet pressure drops noticeably below inlet — means the cartridges are loaded and replacement is due\n\nIt's a small spec line that saves real money over the life of the system, and removes the guesswork that leads to early or late changes.\n\n## Three-Stage Filtration\n\n- **Stage 1 — 5 micron poly sediment filter:** removes silt, dirt, sand, rust\n- **Stage 2 — 5 micron quality GAC:** bulk chlorine reduction; granular activated carbon for high contact area\n- **Stage 3 — 5 micron quality coconut carbon block:** secondary polish; coconut-shell carbon for higher surface area per gram than coal-based\n\n## Build and Installation\n\n- **Housings:** Big Blue 20\" × 4.5\" — the standard Australian whole-house cartridge size\n- **Frame:** white-coated metal for support\n- **Connections:** 1\" inlet and outlet — correct size for Australian mains supply lines\n- **Width:** approximately 58 cm (frame and housings combined)\n- **Includes:** plastic spanner for cartridge-housing opening, two pressure gauges, full cartridge set ready out of the box\n\nProfessional installation recommended. Mounts at the cold mains supply line at the point of entry.\n\n## Where This Tier Fits\n\n- **This system ($599):** white-coated metal frame, 3-stage, with pressure gauges — the standard premium 3-stage build\n- **[WaterMark-certified 3-stage ($1,199.95)](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/):** same 3-stage filtration in a Watermark-certified configuration for plumbed-in mains installations where certification is required\n- **[Deluxe stainless lockable ($1,300)](/deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy/):** SUS304 cabinet with lockable door — visual and tamper-resistance upgrade over this tier",
+    "features": [
+      "Premium 3-stage Big Blue whole-house filter",
+      "Two pressure gauges — objective signal for cartridge replacement timing",
+      "20\" × 4.5\" Big Blue housings — high-flow whole-house format",
+      "1\" inlet and outlet — standard Australian mains supply size",
+      "White-coated metal frame, plastic spanner included",
+      "5 micron PP sediment, 5 micron GAC, 5 micron coconut carbon block",
+      "Approximately 58 cm overall width"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Pressure gauges",
+        "value": "Inlet and outlet"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Premium whole-house filter, 3-stage"
+      },
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron poly sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron granular activated carbon (GAC)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "5 micron coconut carbon block"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Frame",
+        "value": "White-coated metal"
+      },
+      {
+        "label": "Pressure gauges",
+        "value": "Two (inlet + outlet)"
+      },
+      {
+        "label": "Approximate width",
+        "value": "58 cm"
+      },
+      {
+        "label": "Tools included",
+        "value": "Plastic spanner for housing opening"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months (or when pressure differential indicates)"
+      }
+    ],
+    "recommendedFor": [
+      "Australian family homes wanting whole-house filtration at every tap",
+      "Owners who want the pressure-gauge feedback for accurate service timing",
+      "Replacement of an older or non-Big-Blue whole-house system",
+      "Properties on chlorinated municipal water or rural tank supply"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter system — not subject to WaterMark certification as a downstream-of-meter point-of-entry product. For WaterMark-certified installation, see the [Big Blue WaterMark 3-stage system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/)."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5",
+        "deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "Premium 3-Stage Big Blue Whole-House Filter — With Pressure Gauges | Enviro Aqua",
+      "description": "Premium 3-stage Big Blue 20\" × 4.5\" whole-house filter. White-coated metal frame, 1\" inlet/outlet, two pressure gauges. PP sediment, GAC, coconut carbon block.",
+      "ogImage": null
     }
   },
   "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra": {
@@ -6778,9 +7453,113 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "two-stage",
+      "twin-housing",
+      "big-blue",
+      "20x45",
+      "starter-set"
+    ],
+    "shortDescription": "Twin Big Blue 20\" × 4.5\" whole-house filter system — 2-stage configuration with bracket and full cartridge set plus extra replacement cartridges. Mid-range Big Blue at $299.95.",
+    "description": "A twin-housing Big Blue 20\" × 4.5\" whole-house filter system in **2-stage configuration** — the value-priced way to get full Big Blue cartridge size on a whole-house install, supplied with the initial cartridge set plus an extra spare set so the first cartridge change is already in the cupboard.\n\n## What's in the Package\n\n- Twin Big Blue 20\" × 4.5\" filter housings\n- Mounting bracket\n- Starter cartridge set (sediment + carbon)\n- **Extra replacement cartridge set included** — covers the first service interval out of the box\n\n## Two-Stage Filtration\n\nThe 2-stage configuration handles the two contaminant categories that matter most for whole-house filtration: sediment (silt, dirt, sand, rust) and chlorine + chemical contaminants. Each cartridge is 20\" × 4.5\" Big Blue format — significantly larger surface area than the slimmer 20\" × 2.5\" format, meaning:\n\n- **Higher flow capacity** — handles peak demand events (multiple showers + dishwasher + washing machine running simultaneously) without pressure drop\n- **Longer cartridge life** between replacements — bigger media volume to load with sediment and adsorb chemicals\n\nFor most Australian family homes on municipal water, 2-stage Big Blue treatment covers everything that needs treating at the whole-house level.\n\n## When 2-Stage Big Blue Is the Right Choice\n\n- **Family homes on municipal water** wanting sediment and chlorine reduction at every tap, without the cost of 3-stage premium systems\n- **Owners who service their own filters** — the included spare cartridge set means the first service is already accounted for\n- **Properties needing more flow capacity** than 10\" × 4.5\" or 20\" × 2.5\" formats can deliver\n\n## Step Up When\n\nIf you need an additional carbon stage for heavier chlorine reduction, longer service intervals, or finer polishing, look at the [premium 3-stage Big Blue system](/premium-three-stage-big-blue-whole-house-water-filter-system/). If your installation requires WaterMark certification, the [Big Blue WaterMark 3-stage system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) is the certified option.\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry. Big Blue housings carry the full whole-house flow without restriction.",
+    "features": [
+      "Twin Big Blue 20\" × 4.5\" filter housings with mounting bracket",
+      "2-stage filtration: sediment + carbon",
+      "Starter cartridge set plus an extra spare replacement set included",
+      "Big Blue 20\" × 4.5\" cartridge format — high flow, long cartridge life",
+      "Removes silt, dirt, sand, rust, chlorine, pesticides, and chemicals",
+      "Mid-range Big Blue at $299.95",
+      "Protects appliances, hot water heater, and washing machine from sediment"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Housings",
+        "value": "Twin"
+      },
+      {
+        "label": "Spare cartridges included",
+        "value": "Yes (extra set)"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Twin Big Blue whole-house filter, 2-stage"
+      },
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Carbon filter"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Housings",
+        "value": "Twin Big Blue with mounting bracket"
+      },
+      {
+        "label": "Includes",
+        "value": "Bracket + starter cartridges + extra spare cartridge set"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Family homes wanting Big Blue filtration at mid-range pricing",
+      "Owners who service their own filters and want the spare set included",
+      "Properties on chlorinated municipal water or moderate tank-water sediment",
+      "Replacement of an older or smaller-format whole-house system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter system — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "premium-three-stage-big-blue-whole-house-water-filter-system",
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "Twin Big Blue 20\" × 4.5\" Whole-House Filter — 2-Stage with Spare Cartridges | Enviro Aqua",
+      "description": "Twin Big Blue 20\" × 4.5\" 2-stage whole-house filter system. Sediment + carbon, bracket and extra replacement cartridge set included. Mid-range Big Blue.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5": {
@@ -6788,9 +7567,103 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter produc…",
+    "tags": [
+      "replacement-cartridge-set",
+      "three-stage",
+      "20x25",
+      "five-micron",
+      "whole-house-cartridges"
+    ],
+    "shortDescription": "3-cartridge replacement set for 20\" × 2.5\" whole-house filter systems — Stage 1 5 micron poly sediment, Stage 2 5 micron GAC, Stage 3 5 micron coconut activated carbon block.",
+    "description": "A 3-cartridge replacement set sized for **20\" × 2.5\" Big Blue whole-house filter systems** — the slimmer 20\" cartridge format that came before the wider 4.5\" Big Blue standard, still widely installed on older or smaller-footprint whole-house systems.\n\n## What's in the Set\n\nPer the manufacturer's per-stage breakdown:\n\n- **Stage 1 — Sediment filtration, 5 micron:** removes rust, dirt, and large particles using a poly sediment filter\n- **Stage 2 — Granular activated carbon (GAC), 5 micron:** eliminates unpleasant tastes, odours, and chlorine — the bulk chlorine-reduction stage\n- **Stage 3 — Coconut activated carbon block, 5 micron:** finer polish targeting residual contaminants; coconut-shell carbon for higher surface area than coal-based\n\n## Service Interval\n\nEach cartridge has a recommended replacement interval of approximately 6 months under typical Australian town water conditions. Heavier loads (rural tank, bore, or hard water) may need more frequent changes; lighter use or seasonal installations can stretch longer.\n\n## Compatibility\n\nFits any standard 20\" × 2.5\" Big Blue cartridge housing. If your system uses the wider 20\" × 4.5\" format, use the [3-stage 20\" × 4.5\" replacement set](/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5/) instead. Cartridges of these two sizes are **not interchangeable** despite both being labelled \"Big Blue\".\n\n## Who This Set Is For\n\n- **Owners of existing 20\" × 2.5\" whole-house systems** running on annual or biannual service intervals\n- **Properties wanting to extend appliance life** — the right service interval on whole-house cartridges is what protects every fixture downstream\n- **Plumbers and trade buyers** stocking 20\" × 2.5\" consumables for service jobs\n\nIf you've inherited a whole-house system of unknown service history, this set is the right starting point for a complete fresh-up.",
+    "features": [
+      "3-cartridge replacement set for 20\" × 2.5\" whole-house systems",
+      "Stage 1: 5 micron poly sediment — dirt, rust, sand",
+      "Stage 2: 5 micron GAC — bulk chlorine and odour reduction",
+      "Stage 3: 5 micron coconut activated carbon block — finer polish",
+      "Approximately 6-month replacement interval per cartridge",
+      "Standard 20\" × 2.5\" Big Blue compatible — not interchangeable with 20\" × 4.5\""
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Set contents",
+        "value": "3 cartridges"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron (all stages)"
+      },
+      {
+        "label": "Service interval",
+        "value": "~6 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "PP sediment + GAC + coconut carbon block (3 cartridges)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "20\" × 2.5\""
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron poly sediment filter"
+      },
+      {
+        "label": "Stage 2",
+        "value": "5 micron GAC (granular activated carbon)"
+      },
+      {
+        "label": "Stage 3",
+        "value": "5 micron coconut activated carbon block"
+      },
+      {
+        "label": "Recommended service interval",
+        "value": "~6 months per cartridge"
+      },
+      {
+        "label": "Compatible housings",
+        "value": "Standard 20\" × 2.5\" whole-house housings (not 20\" × 4.5\")"
+      }
+    ],
+    "recommendedFor": [
+      "Owners servicing a 20\" × 2.5\" whole-house filter on annual or biannual schedule",
+      "Properties inheriting a whole-house system needing a fresh-up",
+      "Hard water or chlorinated supply installations",
+      "Plumbers stocking 20\" × 2.5\" consumables for service work"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "20-x-2-5-whole-house-water-filter-replacement-sediment-carbon-gac-cartridges",
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-2-5",
+        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This product is not subject to WaterMark certification — it is a point-of-use, removable, or downstream-of-meter product where WaterMark certification does…"
+      "title": "3-Stage Whole-House Replacement Set — 20\" × 2.5\", 5 Micron | Enviro Aqua",
+      "description": "3-cartridge replacement set for 20\" × 2.5\" whole-house systems. PP sediment + GAC + coconut carbon block, all 5 micron. ~6-month service interval.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5": {
@@ -6798,9 +7671,104 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "replacement-cartridge-set",
+      "three-stage",
+      "20x45",
+      "five-micron",
+      "big-blue",
+      "whole-house-cartridges"
+    ],
+    "shortDescription": "3-cartridge replacement set for 20\" × 4.5\" Big Blue whole-house systems — 5 micron sediment + carbon + GAC. Fits the premium, WaterMark, and deluxe stainless 3-stage Big Blue ranges.",
+    "description": "A 3-cartridge replacement set sized for **20\" × 4.5\" Big Blue whole-house filter systems** — the standard whole-house cartridge format used across the Australian residential filter market. One SKU covers a complete service refresh on any standard 3-stage Big Blue installation.\n\n## What's in the Set\n\n- **Stage 1 — 5 micron sediment cartridge:** removes silt, dirt, sand, rust\n- **Stage 2 — Carbon cartridge:** bulk chlorine and chemical contaminant reduction\n- **Stage 3 — 5 micron polish cartridge:** finer chemical and chlorine polish\n\nAll cartridges 20\" × 4.5\" Big Blue format.\n\n## Service Interval\n\nApproximately 6–12 months per cartridge under typical Australian town water conditions. Properties on heavier sediment loads (rural tank, bore water with iron content) may need more frequent changes. The premium 3-stage Big Blue systems with built-in [pressure gauges](/premium-three-stage-big-blue-whole-house-water-filter-system/) take the timing guesswork out — the pressure differential between inlet and outlet signals when replacement is due.\n\n## Compatible Systems\n\nFits the full Big Blue 20\" × 4.5\" 3-stage range:\n\n- [Premium 3-stage Big Blue with pressure gauges](/premium-three-stage-big-blue-whole-house-water-filter-system/)\n- [WaterMark-certified 3-stage Big Blue](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/)\n- [Deluxe stainless steel lockable 3-stage Big Blue](/deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy/)\n- Any third-party 20\" × 4.5\" Big Blue 3-stage system using standard cartridge format\n\n**Note:** 20\" × 4.5\" cartridges are not interchangeable with 20\" × 2.5\" cartridges. Confirm your housing diameter before ordering — the slimmer 2.5\" format uses the [20\" × 2.5\" 3-stage set](/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5/) instead.",
+    "features": [
+      "3-cartridge replacement set for Big Blue 20\" × 4.5\" whole-house systems",
+      "5 micron sediment + carbon + polish across the three stages",
+      "Fits premium, WaterMark, and deluxe stainless 3-stage Big Blue ranges",
+      "Approximately 6–12 month service interval per cartridge",
+      "One SKU covers a complete annual service refresh",
+      "Big Blue 20\" × 4.5\" — Australian whole-house standard format"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Set contents",
+        "value": "3 cartridges"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Micron rating",
+        "value": "5 micron"
+      },
+      {
+        "label": "Service interval",
+        "value": "6–12 months"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Set contents",
+        "value": "3 cartridges covering 3-stage filtration"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Stage 1",
+        "value": "5 micron sediment"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Carbon"
+      },
+      {
+        "label": "Stage 3",
+        "value": "5 micron polish"
+      },
+      {
+        "label": "Recommended service interval",
+        "value": "6–12 months per cartridge"
+      },
+      {
+        "label": "Compatible housings",
+        "value": "20\" × 4.5\" Big Blue (not interchangeable with 20\" × 2.5\")"
+      }
+    ],
+    "recommendedFor": [
+      "Annual or biannual service of a 3-stage Big Blue whole-house system",
+      "Owners of premium, WaterMark, or deluxe stainless 3-stage Big Blue installations",
+      "Plumbers stocking Big Blue consumables for service jobs",
+      "Replacement after a missed service interval or system handover"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Replacement cartridge set — not subject to WaterMark certification."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "premium-three-stage-big-blue-whole-house-water-filter-system",
+        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "3-Stage Big Blue Replacement Set — 20\" × 4.5\", 5 Micron | Enviro Aqua",
+      "description": "3-cartridge replacement set for Big Blue 20\" × 4.5\" whole-house systems. Sediment + carbon + polish, all 5 micron. Fits premium, WaterMark, and deluxe ranges.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-1-stage-10-x-2-5-carbon": {
@@ -6808,9 +7776,109 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "single-stage",
+      "carbon",
+      "10x25",
+      "carbon-block",
+      "entry-level"
+    ],
+    "shortDescription": "Single-stage 10\" × 2.5\" whole-house carbon filter — UV-resistant polypropylene housing, 3/4\" inlet/outlet ports. Removes chlorine, taste, odour, and organic impurities at the point of entry.",
+    "description": "A single-stage 10\" × 2.5\" whole-house carbon filter — the simplest, most cost-effective entry into whole-house treatment when chlorine, taste, and odour are the only concerns. Installed at the point of entry, it treats every tap and outlet in the building.\n\n## Build\n\n- **Housing:** UV-resistant, glass-fibre-reinforced polypropylene — built to handle outdoor and exposed installations\n- **Ports:** 3/4\" inlet and outlet\n- **Pressure-relief button** for hassle-free cartridge changes (releases trapped pressure in the housing before opening)\n\n## What It Does\n\n- **Removes chlorine** and the chemical taste associated with chlorinated municipal water\n- **Reduces odours** — sulphur, chemical, and the swimming-pool smell common to heavily-chlorinated supplies\n- **Captures organic impurities** that affect taste and clarity\n- **Improves taste and clarity** across every tap in the home\n\nFor whole-house installations where the supply is already low-sediment (clean municipal mains, polished tank water), a single carbon stage covers the practical treatment need at the lowest cost.\n\n## When 1-Stage 10\" × 2.5\" Is the Right Choice\n\n- **Smaller homes, units, or low-flow installations** where the larger Big Blue 20\" × 4.5\" format is overkill\n- **Carbon-only treatment needs** — chlorine taste, no sediment concern\n- **Pre-filter for a downstream system** where you only need to protect the next stage from chlorine\n- **Caravans, boats, or off-grid setups** where the compact 10\" × 2.5\" format fits the available space\n\nFor heavier sediment loads, step up to a [2-stage sediment + carbon configuration](/whole-house-water-filter-clear-sediment-carbon-2-stage/) or a [Big Blue format](/whole-house-water-filter-1-stage-10-x-4-5-carbon/). For unchlorinated supplies with microbiological concerns, look at the [UV-equipped systems](/3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/).\n\n## Installation\n\nProfessional installation recommended for warranty and compliance. Connects to cold mains supply line at the point of entry.",
+    "features": [
+      "Single-stage 10\" × 2.5\" whole-house carbon filter",
+      "Removes chlorine, taste, odour, and organic impurities",
+      "UV-resistant, glass-fibre-reinforced polypropylene housing — outdoor-rated",
+      "3/4\" inlet and outlet ports",
+      "Pressure-relief button for hassle-free cartridge changes",
+      "Entry-level whole-house treatment for chlorine-and-taste needs",
+      "Compact 10\" × 2.5\" format suits smaller homes and tight installations"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "Carbon block"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Single-stage whole-house filter"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "Activated carbon block"
+      },
+      {
+        "label": "Housing material",
+        "value": "UV-resistant glass-fibre-reinforced polypropylene"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\""
+      },
+      {
+        "label": "Pressure-relief button",
+        "value": "Yes"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Smaller homes or units on chlorinated municipal water",
+      "Properties wanting chlorine and taste reduction only",
+      "Compact whole-house installations where space is limited",
+      "Pre-filter ahead of a more specialised downstream system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-1-stage-10-x-2-5-sediment",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5",
+        "whole-house-water-filter-1-stage-10-x-4-5-carbon"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "1-Stage Whole-House Carbon Filter — 10\" × 2.5\", 3/4\" Ports | Enviro Aqua",
+      "description": "Single-stage 10\" × 2.5\" whole-house carbon filter. UV-resistant polypropylene housing, 3/4\" ports, pressure-relief button. Chlorine, taste, odour reduction.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-1-stage-10-x-2-5-sediment": {
@@ -6818,9 +7886,109 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "single-stage",
+      "sediment",
+      "10x25",
+      "pp-sediment",
+      "entry-level"
+    ],
+    "shortDescription": "Single-stage 10\" × 2.5\" whole-house sediment filter — UV-resistant polypropylene housing, 3/4\" inlet/outlet ports. Removes dirt, rust, sand, and visible particulate at the point of entry.",
+    "description": "A single-stage 10\" × 2.5\" whole-house sediment filter — the simplest entry into whole-house particulate removal. Mounted at the point of entry, it traps the dirt, rust, sand, and visible particles that would otherwise reach every tap, appliance, and fixture in the building.\n\n## Build\n\n- **Housing:** UV-resistant, glass-fibre-reinforced polypropylene — handles outdoor and exposed installations\n- **Ports:** 3/4\" inlet and outlet\n- **Pressure-relief button** for hassle-free cartridge changes\n- **Cartridge:** standard 10\" × 2.5\" PP polypropylene sediment\n\n## What It Does\n\nA sediment filter is the workhorse pre-treatment for any whole-house system. It removes:\n\n- **Sand and grit** from older mains lines or tank installations\n- **Rust particles** flushed from steel pipes or hot water systems\n- **Visible dirt** in suspended form\n- **Larger particulate** that would otherwise foul cartridges, appliance valves, and the showerhead\n\nWhat a sediment filter doesn't do: it doesn't remove chlorine, taste, or chemical contaminants. If your incoming water has chlorine taste or odour, pair this filter with a [carbon stage](/whole-house-water-filter-1-stage-10-x-2-5-carbon/) — or step up to a [combined sediment + carbon 2-stage system](/whole-house-water-filter-clear-sediment-carbon-2-stage/).\n\n## Why a Sediment Filter Belongs on Most Whole-House Builds\n\n- **Protects downstream cartridges** in multi-stage systems — sediment loads kill carbon stages and RO membranes much faster than the cartridges themselves wear out\n- **Protects appliances** — sediment is the leading cause of premature hot water heater failure, washing machine inlet valve issues, and showerhead clogging\n- **Improves apparent clarity** at the tap\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry.",
+    "features": [
+      "Single-stage 10\" × 2.5\" whole-house sediment filter",
+      "Removes dirt, rust, sand, and visible particulate",
+      "UV-resistant, glass-fibre-reinforced polypropylene housing",
+      "3/4\" inlet and outlet ports",
+      "Pressure-relief button for hassle-free cartridge changes",
+      "Protects appliances, hot water systems, and downstream cartridges",
+      "Compact 10\" × 2.5\" format for small-footprint installations"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "PP sediment"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Single-stage whole-house filter"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "PP polypropylene sediment"
+      },
+      {
+        "label": "Housing material",
+        "value": "UV-resistant glass-fibre-reinforced polypropylene"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "3/4\""
+      },
+      {
+        "label": "Pressure-relief button",
+        "value": "Yes"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Smaller homes wanting sediment removal at every tap",
+      "Pre-filter ahead of a downstream carbon or RO system",
+      "Tank-water installations on a tight budget",
+      "Properties with visible particulate in the supply"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-1-stage-10-x-2-5-carbon",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
+        "whole-house-water-filter-clear-sediment-carbon-2-stage"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "1-Stage Whole-House Sediment Filter — 10\" × 2.5\", 3/4\" Ports | Enviro Aqua",
+      "description": "Single-stage 10\" × 2.5\" whole-house sediment filter. UV-resistant polypropylene, 3/4\" ports, pressure-relief button. Removes dirt, rust, sand, particulate.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-1-stage-10-x-4-5-carbon": {
@@ -6828,9 +7996,109 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "single-stage",
+      "carbon",
+      "10x45",
+      "short-big-blue",
+      "higher-flow"
+    ],
+    "shortDescription": "Single-stage 10\" × 4.5\" whole-house carbon filter — short Big Blue format with significantly higher flow and longer cartridge life than 10\" × 2.5\". 1\" inlet/outlet, steel mounting bracket.",
+    "description": "A single-stage 10\" × 4.5\" whole-house carbon filter — the **short Big Blue format**. The 4.5\" diameter sits between the slim 10\" × 2.5\" residential format and the full 20\" × 4.5\" Big Blue standard. For homes wanting Big Blue flow capacity but with limited vertical space for a 20\" cartridge, this is the right format.\n\n## Why 4.5\" Diameter Matters for Whole-House Flow\n\nA standard 10\" × 2.5\" cartridge restricts whole-house flow noticeably during peak demand events — multiple showers, dishwasher, washing machine simultaneously. The 4.5\" wide Big Blue housing accommodates a significantly larger carbon block cartridge, delivering:\n\n- **Higher flow capacity** — no perceptible pressure drop during peak household demand\n- **Longer cartridge life** between replacements — bigger media volume holds more chlorine adsorption capacity\n- **Better contact time** — water spends longer in contact with the carbon media for finer chemical reduction\n\n## What It Does\n\n- Removes chlorine and chemical taste from chlorinated supplies\n- Reduces odour and the swimming-pool smell of heavily-chlorinated water\n- Captures organic impurities affecting taste and clarity\n- Improves water quality at every fixture without sacrificing flow rate\n\nFor sediment removal, pair with the [10\" × 4.5\" sediment housing](/whole-house-water-filter-1-stage-10-x-4-5-sediment/) or step up to the [2-stage sediment + carbon configuration](/whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon/).\n\n## Build\n\n- **Housing:** heavy-duty Big Blue\n- **Mounting:** steel mounting bracket for secure wall installation\n- **Ports:** 1\" inlet and outlet — correct for Australian mains supply\n- **Cartridge:** 10\" × 4.5\" carbon block\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry. The 1\" connections accept the standard Australian mains supply line without reducers.",
+    "features": [
+      "Single-stage 10\" × 4.5\" short Big Blue whole-house carbon filter",
+      "Removes chlorine, taste, odour, and organic contaminants",
+      "Higher flow capacity than standard 10\" × 2.5\" format",
+      "Longer cartridge life — larger carbon media volume",
+      "1\" inlet and outlet — standard Australian mains connection",
+      "Steel mounting bracket included",
+      "Heavy-duty Big Blue housing construction"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "Carbon block"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Single-stage whole-house filter, short Big Blue"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "Activated carbon block"
+      },
+      {
+        "label": "Housing",
+        "value": "Big Blue heavy-duty"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Mounting",
+        "value": "Steel bracket included"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Larger households needing higher flow than 10\" × 2.5\" delivers",
+      "Properties with limited vertical space for full 20\" Big Blue cartridges",
+      "Owners wanting Big Blue flow capacity without 20\" footprint",
+      "Replacement of a 10\" × 2.5\" carbon system constrained by flow"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-1-stage-10-x-4-5-sediment",
+        "whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "1-Stage Whole-House Carbon Filter — 10\" × 4.5\" Short Big Blue | Enviro Aqua",
+      "description": "Single-stage 10\" × 4.5\" short Big Blue carbon filter. 1\" inlet/outlet, steel bracket. Higher flow and longer cartridge life than 10\" × 2.5\" format.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-1-stage-10-x-4-5-sediment": {
@@ -6838,9 +8106,109 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "single-stage",
+      "sediment",
+      "10x45",
+      "short-big-blue",
+      "higher-flow"
+    ],
+    "shortDescription": "Single-stage 10\" × 4.5\" whole-house sediment filter — short Big Blue format with 5 micron sediment cartridge. Heavy-duty steel mounting bracket, 1\" inlet/outlet ports.",
+    "description": "A single-stage 10\" × 4.5\" whole-house sediment filter — the **short Big Blue format** for higher-flow installations. The 4.5\" wide Big Blue housing accommodates a high-capacity 5-micron sediment cartridge, delivering significantly better flow and longer service life than the standard 10\" × 2.5\" format while keeping the compact 10\" cartridge height.\n\n## Why the 4.5\" Diameter Matters\n\nWhole-house sediment treatment fails in two ways: cartridges saturate too fast on heavy sediment loads, or flow drops below household demand as sediment accumulates. The Big Blue 4.5\" diameter solves both:\n\n- **Larger media volume** holds more sediment before replacement is needed\n- **Lower face velocity** through the cartridge — sediment captures gently rather than being forced through, extending capacity\n- **No flow restriction** at typical Australian household peak demand\n\nFor properties on heavier sediment loads (rural tank water, bore water, older mains pipework), the 10\" × 4.5\" sediment cartridge is what holds up where a 10\" × 2.5\" would saturate within weeks.\n\n## Where This Format Fits\n\n- **Higher-flow households** needing whole-house sediment but with vertical space constraints for full 20\" Big Blue\n- **Tank water and bore water properties** with significant sediment loads\n- **Pre-filter for a downstream carbon or RO system** where sediment capacity matters\n- **Standalone sediment treatment** at every tap\n\n## Build\n\n- **Housing:** heavy-duty Big Blue\n- **Cartridge:** 5 micron sediment, 10\" × 4.5\"\n- **Mounting:** steel mounting bracket\n- **Ports:** 1\" inlet and outlet — standard Australian mains size\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry.",
+    "features": [
+      "Single-stage 10\" × 4.5\" short Big Blue whole-house sediment filter",
+      "5 micron sediment cartridge — removes dirt, rust, sand, visible particulate",
+      "Higher flow capacity than 10\" × 2.5\" format",
+      "Longer service life — larger media volume before saturation",
+      "1\" inlet and outlet — standard Australian mains connection",
+      "Heavy-duty steel mounting bracket included",
+      "Heavy-duty Big Blue housing"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "5 micron PP sediment"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Single-stage whole-house filter, short Big Blue"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "PP polypropylene sediment, 5 micron"
+      },
+      {
+        "label": "Housing",
+        "value": "Big Blue heavy-duty"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Mounting",
+        "value": "Steel bracket included"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Properties on tank or bore water with significant sediment loads",
+      "Larger households needing more sediment capacity than 10\" × 2.5\" provides",
+      "Pre-filter ahead of carbon, RO, or UV downstream systems",
+      "Installations where vertical space limits full 20\" Big Blue"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-1-stage-10-x-4-5-carbon",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5",
+        "washable-and-reusable-water-filter-pleated-5-micron-10-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "1-Stage Whole-House Sediment Filter — 10\" × 4.5\" Short Big Blue | Enviro Aqua",
+      "description": "Single-stage 10\" × 4.5\" short Big Blue sediment filter. 5 micron PP sediment, 1\" inlet/outlet, steel bracket. Higher flow and longer life than 10\" × 2.5\".",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon": {
@@ -6848,9 +8216,116 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "two-stage",
+      "sediment-carbon",
+      "10x45",
+      "short-big-blue"
+    ],
+    "shortDescription": "2-stage 10\" × 4.5\" short Big Blue whole-house filter — sediment + carbon. 1\" inlet/outlet ports. Combined sediment and chlorine treatment in a compact short-Big-Blue footprint.",
+    "description": "A 2-stage 10\" × 4.5\" short Big Blue whole-house filter combining sediment and carbon treatment in a single mounting frame — the configuration that handles the two contaminant categories that matter most for whole-house quality without requiring the full vertical space of a 20\" Big Blue installation.\n\n## Two-Stage Configuration\n\n- **Stage 1 — Sediment cartridge:** removes silt, dirt, sand, rust, and visible particulate from the incoming water. Protects the carbon stage and downstream appliances.\n- **Stage 2 — Carbon block cartridge:** removes chlorine, taste, odour, and organic chemical contaminants. Stage 1 sediment filtering keeps Stage 2 carbon working at its rated lifespan rather than fouling early on sediment loads.\n\nBoth cartridges 10\" × 4.5\" short Big Blue format. The arrangement gets you full Big Blue flow capacity at every tap while staying within the smaller installation footprint that suits compact mechanical rooms or under-house spaces.\n\n## When This Tier Fits\n\n- **Whole-house treatment without the 20\" footprint** — installations where vertical space, garage layout, or under-house clearance can't fit full Big Blue 20\" cartridges\n- **Family homes on chlorinated municipal supply** with moderate sediment concerns\n- **Replacement of an aging 10\" × 2.5\" twin system** that's hit its flow ceiling\n- **Pre-filter ahead of a downstream specialised system** (RO, UV, water softener)\n\n## Step Up When\n\nFor heavier sediment or longer service intervals between cartridge changes, step up to the full [Big Blue 20\" × 4.5\" 2-stage twin system](/twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra/). For UV pathogen kill on rural water, look at the [UV-equipped systems](/big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/).\n\n## Build\n\n- **Housings:** twin 10\" × 4.5\" short Big Blue\n- **Mounting:** wall-mount bracket\n- **Ports:** 1\" inlet and outlet\n- **Cartridges:** sediment (starter) + carbon block (starter)\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry.",
+    "features": [
+      "2-stage 10\" × 4.5\" short Big Blue whole-house filter",
+      "Sediment + carbon — combined particulate and chlorine treatment",
+      "Higher flow capacity than 10\" × 2.5\" twin systems",
+      "1\" inlet and outlet — Australian mains standard connection",
+      "Compact short-Big-Blue footprint — fits where full 20\" can't",
+      "Removes dirt, rust, sediment, chlorine, taste, odour",
+      "Wall-mount bracket included"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Stage layout",
+        "value": "Sediment + carbon"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "2-stage whole-house filter, short Big Blue"
+      },
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Sediment cartridge"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Carbon block cartridge"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\""
+      },
+      {
+        "label": "Housings",
+        "value": "Twin Big Blue heavy-duty"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Mounting",
+        "value": "Wall-mount bracket"
+      },
+      {
+        "label": "Installation",
+        "value": "Point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Homes wanting whole-house sediment + carbon without 20\" Big Blue footprint",
+      "Compact mechanical rooms or under-house installations",
+      "Replacement of an undersized 10\" × 2.5\" twin system",
+      "Pre-filter ahead of a downstream RO, UV, or softener system"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
+        "whole-house-water-filter-2-stage-10-x-4-5-washable-reusable",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "2-Stage Short Big Blue Whole-House Filter — 10\" × 4.5\" Sediment + Carbon | Enviro Aqua",
+      "description": "2-stage 10\" × 4.5\" short Big Blue whole-house filter. Sediment + carbon block, 1\" inlet/outlet. Compact Big Blue alternative to full 20\" installations.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-2-stage-10-x-4-5-washable-reusable": {
@@ -6858,9 +8333,122 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "two-stage",
+      "washable-reusable",
+      "pleated",
+      "10x45",
+      "short-big-blue",
+      "low-running-cost"
+    ],
+    "shortDescription": "2-stage 10\" × 4.5\" short Big Blue whole-house filter with washable, reusable pleated cartridge — lower long-term running cost than disposable cartridge systems. 1\" inlet/outlet ports.",
+    "description": "A 2-stage 10\" × 4.5\" short Big Blue whole-house filter built around a **washable, reusable pleated sediment cartridge** at Stage 1 rather than a disposable PP cartridge. The premise: cartridges that get rinsed clean and reinstalled cost dramatically less to run over a 5- to 10-year horizon than cartridges replaced every 6–12 months.\n\n## Why a Reusable Pleated Cartridge\n\nA standard 10\" × 4.5\" PP sediment cartridge gets thrown away when it saturates — typically every 6–12 months. Over a decade that's 10–20 cartridges per filter housing, plus shipping cost and landfill waste.\n\nA **pleated washable cartridge** holds up to repeated rinsing because its rigid pleated structure doesn't compress like loose-spun PP fibres do. When pressure drop signals it's loaded, you remove the cartridge, rinse it under a hose, and reinstall. No replacement to order, no waste to bin, no shipping interruption. The pleated media itself eventually wears out after several years of wash cycles, but the per-year running cost over that period is substantially lower than disposable.\n\nFor rural properties where filter delivery takes time and budget matters, or for owners prioritising landfill reduction, the washable approach makes financial and environmental sense.\n\n## Two-Stage Configuration\n\n- **Stage 1 — Washable pleated sediment cartridge:** captures sediment, rinse-clean and reuse design\n- **Stage 2 — Carbon block:** chlorine, taste, odour, organics — replaceable cartridge\n\nThe Stage 2 carbon block is **not** reusable — activated carbon adsorbs chlorine and chemicals permanently into its media, so it does need standard 6–12 month replacement. The washable economy comes from Stage 1.\n\n## Build\n\n- **Housings:** twin 10\" × 4.5\" short Big Blue\n- **Stage 1 cartridge:** [pleated reusable, 5 micron](/washable-and-reusable-water-filter-pleated-5-micron-10-x-4-5/)\n- **Stage 2 cartridge:** carbon block, 10\" × 4.5\"\n- **Ports:** 1\" inlet and outlet\n- **Mounting:** wall-mount bracket\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry.",
+    "features": [
+      "2-stage whole-house filter with washable reusable Stage 1 sediment cartridge",
+      "Significantly lower long-term running cost vs disposable cartridge systems",
+      "Pleated reusable sediment cartridge — rinse, reinstall, reuse",
+      "Stage 2 carbon block for chlorine, taste, odour",
+      "10\" × 4.5\" short Big Blue housings with 1\" inlet/outlet",
+      "Reduces filter waste to landfill",
+      "Suits off-grid and rural properties where consumable supply is slow"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Washable pleated reusable"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\" (short Big Blue)"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "2-stage whole-house filter with reusable Stage 1"
+      },
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Washable pleated sediment cartridge (5 micron, reusable)"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Carbon block cartridge (replaceable, 6–12 month cycle)"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 4.5\""
+      },
+      {
+        "label": "Housings",
+        "value": "Twin short Big Blue"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Mounting",
+        "value": "Wall-mount bracket"
+      },
+      {
+        "label": "Stage 1 reuse cycle",
+        "value": "Rinse and reinstall when pressure differential indicates"
+      },
+      {
+        "label": "Stage 1 overall life",
+        "value": "Multi-year before pleated media end of life"
+      },
+      {
+        "label": "Stage 2 replacement interval",
+        "value": "6–12 months"
+      }
+    ],
+    "recommendedFor": [
+      "Off-grid and rural properties where consumable delivery is slow",
+      "Owners focused on reducing landfill waste from filter cartridges",
+      "Long-term cost-conscious installations on a 5–10 year horizon",
+      "Properties with consistent sediment load that suits a washable Stage 1"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "washable-and-reusable-water-filter-pleated-5-micron-10-x-4-5",
+        "whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "2-Stage Whole-House Filter with Reusable Cartridge — 10\" × 4.5\" | Enviro Aqua",
+      "description": "2-stage short Big Blue whole-house filter with washable reusable pleated Stage 1 + carbon block Stage 2. 1\" inlet/outlet. Low long-term running cost.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-clear-carbon-1-stage": {
@@ -6868,9 +8456,109 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "single-stage",
+      "carbon",
+      "clear-housing",
+      "10x25",
+      "visible-monitoring"
+    ],
+    "shortDescription": "Single-stage clear-housing whole-house carbon filter — 10\" × 2.5\", 1\" inlet/outlet. The clear housing lets you visually monitor cartridge condition. Removes chlorine, taste, odour, organics.",
+    "description": "A single-stage whole-house carbon filter with a **clear housing** that lets you visually monitor the cartridge condition without unscrewing the bowl — a simple feature that completely changes the service experience for owners who'd otherwise be guessing at cartridge replacement timing.\n\n## Why a Clear Housing Changes Things\n\nA solid-bowl filter housing hides the cartridge from view. Owners change cartridges on a calendar schedule (typically 6 or 12 months) regardless of actual saturation. That's fine, but it often means changing too early (waste of money) or too late (no warning when conditions push cartridges to early saturation).\n\nA clear housing shows you the cartridge state:\n\n- **A clean new cartridge** sits white and bright inside the housing\n- **A loaded cartridge** discolours visibly — sediment buildup, brown staining from rust or chlorine, or grey saturation\n- **A failed cartridge** shows channels or breaks in the media\n\nFor whole-house installations where the filter housing sits exposed (garage wall, under-house clearance, mechanical room), the clear-housing version is a meaningful service-discipline upgrade.\n\n## What It Does\n\n- Removes chlorine and chemical taste from chlorinated municipal supplies\n- Reduces odours — sulphur, chlorine, organic\n- Captures organic impurities affecting taste and clarity\n- Protects appliances from chlorine attack on rubber seals and plastics over years\n\n## Build\n\n- **Housing:** clear bowl, polycarbonate construction\n- **Ports:** 1\" inlet and outlet — Australian mains supply size\n- **Cartridge:** activated carbon, 10\" × 2.5\"\n\n## Limitations of the Clear Housing\n\nClear housings transmit light, which is why they're not used in commercial UV systems or in applications where biological growth on the cartridge is a concern. For typical household installations on chlorinated water, biological growth isn't an issue — the chlorine kills it before it reaches the cartridge. If your supply is **unchlorinated tank or bore water**, prefer an opaque-housing filter and consider a [UV-equipped system](/3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system/) for pathogen treatment.\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry.",
+    "features": [
+      "Single-stage 10\" × 2.5\" whole-house carbon filter with clear housing",
+      "Visually monitor cartridge condition without disassembly",
+      "Removes chlorine, taste, odour, organic contaminants",
+      "1\" inlet and outlet — Australian mains standard",
+      "Compact 10\" × 2.5\" cartridge format",
+      "Suits chlorinated municipal water supplies",
+      "Better service-discipline aid than solid-housing systems"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Housing",
+        "value": "Clear bowl"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Single-stage whole-house filter, clear bowl"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "Activated carbon"
+      },
+      {
+        "label": "Housing",
+        "value": "Clear polycarbonate bowl"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months, or when visually discoloured"
+      },
+      {
+        "label": "Best suited for",
+        "value": "Chlorinated municipal water (not tank or unchlorinated supplies)"
+      }
+    ],
+    "recommendedFor": [
+      "Households on chlorinated municipal water wanting visual service feedback",
+      "Visible filter installations where condition monitoring matters",
+      "Owners who service their own filters and want objective timing cues",
+      "Compact whole-house installations with chlorine and taste concerns"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-clear-sediment-1-stage",
+        "whole-house-water-filter-clear-sediment-carbon-2-stage",
+        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "1-Stage Clear-Housing Whole-House Carbon Filter — 10\" × 2.5\" | Enviro Aqua",
+      "description": "Single-stage 10\" × 2.5\" whole-house carbon filter with clear housing. Visually monitor cartridge condition. 1\" inlet/outlet. Chlorine, taste, odour reduction.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-clear-sediment-1-stage": {
@@ -6878,9 +8566,109 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "single-stage",
+      "sediment",
+      "clear-housing",
+      "10x25",
+      "visible-monitoring"
+    ],
+    "shortDescription": "Single-stage clear-housing whole-house sediment filter — 10\" × 2.5\" PP sediment cartridge, 1\" inlet/outlet. The clear housing lets you watch sediment buildup at a glance, no guesswork.",
+    "description": "A single-stage whole-house sediment filter with a **clear housing** that shows sediment buildup as it happens — the cartridge transitions from clean white to visibly discoloured as it captures dirt, rust, and particulate, giving you an unambiguous signal when replacement is due.\n\n## Why the Clear Housing Wins on Sediment Cartridges\n\nSediment cartridges show their state more visibly than any other filter type. A new PP sediment cartridge is bright white; a loaded one discolours through tan, brown, and red-brown depending on what's in the supply. Through a clear housing:\n\n- **Tan staining** = typical sand and silt loading on tank water\n- **Brown discolouration** = rust particles from older pipework\n- **Red-brown banding** = iron content in bore or rainwater supplies\n- **Uneven discolouration** = channelling or media failure (cartridge needs immediate replacement)\n\nFor whole-house installations on tank, bore, or rainwater supplies — where sediment load is unpredictable — visual feedback is dramatically more useful than a calendar reminder.\n\n## What It Does\n\n- Removes dirt, rust, sand, and visible particulate at the point of entry\n- Protects every appliance, fixture, and tap in the building from sediment\n- Pre-treats incoming water for any downstream carbon, RO, or UV system\n- Improves apparent clarity at every tap\n\n## Applications\n\nDesigned for whole-house treatment and also suits caravans, boats, rainwater harvesting, and any installation where visible particulate is the concern. The clear housing makes it particularly useful for:\n\n- **Rainwater tank systems** where leaf, algae, and tank-debris loads vary seasonally\n- **Rural properties** with intermittent sediment events (storms, pump cycling, tank disturbance)\n- **Pre-filtration ahead of a downstream system** where sediment timing matters for the downstream cartridges\n\n## Build\n\n- **Housing:** clear polycarbonate bowl\n- **Cartridge:** PP polypropylene sediment, 10\" × 2.5\"\n- **Ports:** 1\" inlet and outlet — Australian mains standard\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry.",
+    "features": [
+      "Single-stage 10\" × 2.5\" whole-house sediment filter with clear housing",
+      "Visually monitor sediment buildup — no guesswork on replacement timing",
+      "Removes dirt, rust, sand, and visible particulate",
+      "1\" inlet and outlet — Australian mains standard",
+      "Suits whole-house, caravan, boat, and rainwater installations",
+      "Protects every appliance and fixture downstream",
+      "Ideal pre-filter ahead of carbon, RO, or UV systems"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "1"
+      },
+      {
+        "label": "Housing",
+        "value": "Clear bowl"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Single-stage whole-house filter, clear bowl"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Cartridge type",
+        "value": "PP polypropylene sediment"
+      },
+      {
+        "label": "Housing",
+        "value": "Clear polycarbonate bowl"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months, or when visually loaded"
+      },
+      {
+        "label": "Applications",
+        "value": "Whole-house, caravan, boat, rainwater systems"
+      }
+    ],
+    "recommendedFor": [
+      "Tank, bore, and rainwater systems with variable sediment loads",
+      "Owners who want visible feedback on cartridge condition",
+      "Caravan, boat, and rainwater harvesting setups",
+      "Pre-filter ahead of carbon, RO, or UV downstream treatment"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-clear-carbon-1-stage",
+        "whole-house-water-filter-clear-sediment-carbon-2-stage",
+        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "1-Stage Clear-Housing Whole-House Sediment Filter — 10\" × 2.5\" | Enviro Aqua",
+      "description": "Single-stage 10\" × 2.5\" whole-house sediment filter with clear housing. Visible buildup monitoring, PP sediment cartridge, 1\" inlet/outlet. Tank, rain, caravan.",
+      "ogImage": null
     }
   },
   "whole-house-water-filter-clear-sediment-carbon-2-stage": {
@@ -6888,9 +8676,114 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "two-stage",
+      "sediment-carbon",
+      "clear-housing",
+      "10x25",
+      "visible-monitoring",
+      "brass-ports"
+    ],
+    "shortDescription": "2-stage clear-housing whole-house filter — 10\" × 2.5\" sediment + carbon, 1/2\" brass ports. Visual cartridge monitoring through both clear bowls. Combined sediment and chlorine treatment.",
+    "description": "A 2-stage whole-house filter with **clear housings on both stages** and **1/2\" brass ports** — the configuration that combines visible cartridge monitoring with solid-brass plumbing connections in a compact 10\" × 2.5\" twin-housing footprint.\n\n## Two-Stage Configuration with Visual Monitoring\n\n- **Stage 1 — Sediment cartridge in clear housing:** removes dirt, rust, sand. The clear bowl shows sediment buildup so replacement is timed to actual saturation, not calendar guesswork.\n- **Stage 2 — Carbon cartridge in clear housing:** removes chlorine, taste, odour. The clear bowl on Stage 2 shows discolouration as the cartridge ages.\n\nBoth cartridges 10\" × 2.5\" standard format. Each housing has its own clear bowl, so you can monitor each stage independently — sediment may need replacement on a different schedule than carbon depending on incoming water quality.\n\n## 1/2\" Brass Ports — What That Buys You\n\nMost compact whole-house filter housings use plastic threaded ports. They work fine on most installations but can deform under thermal cycling or aggressive plumbing tightening, eventually leaking.\n\n**1/2\" brass ports** are the upgrade: solid brass machine-threaded inlet and outlet that handles repeated installation cycles, thermal stress, and standard plumbing torque without deformation. For installations where the filter may be removed and reinstalled multiple times over its life (renovations, replacements, servicing), brass ports outlast plastic by years.\n\n## When This Tier Fits\n\n- **Visible installations** (garage wall, mechanical room) where cartridge monitoring matters\n- **Smaller homes, apartments, or units** where the 10\" × 2.5\" twin format fits the available space and the smaller 1/2\" plumbing connection matches the existing line\n- **Caravan, boat, and rainwater systems** where compact footprint, brass connections, and visual feedback all matter\n- **Replacement of an older 1/2\"-connected filter system** where matching the existing plumbing avoids re-piping\n\n## Build\n\n- **Housings:** twin clear bowls, polycarbonate\n- **Ports:** 1/2\" brass inlet and outlet\n- **Stage 1 cartridge:** sediment, 10\" × 2.5\"\n- **Stage 2 cartridge:** activated carbon block, 10\" × 2.5\"\n\n## Installation\n\nProfessional installation recommended. Connects to cold supply line at the point of entry. The 1/2\" brass ports match standard half-inch domestic plumbing without reducers.",
+    "features": [
+      "2-stage 10\" × 2.5\" whole-house filter with clear housings on both stages",
+      "Visual cartridge monitoring on both sediment and carbon stages",
+      "1/2\" solid brass inlet and outlet ports",
+      "Sediment + carbon combined treatment",
+      "Compact twin-housing footprint",
+      "Removes dirt, rust, sand, chlorine, taste, odour",
+      "Matches standard 1/2\" domestic plumbing connections"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Housing",
+        "value": "Clear bowls (both)"
+      },
+      {
+        "label": "Ports",
+        "value": "1/2\" brass"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "2-stage whole-house filter, twin clear bowls"
+      },
+      {
+        "label": "Stages",
+        "value": "2"
+      },
+      {
+        "label": "Stage 1",
+        "value": "Sediment cartridge (PP)"
+      },
+      {
+        "label": "Stage 2",
+        "value": "Carbon block cartridge"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "10\" × 2.5\""
+      },
+      {
+        "label": "Housings",
+        "value": "Twin clear polycarbonate bowls"
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1/2\" brass"
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months per stage, or when visually loaded"
+      }
+    ],
+    "recommendedFor": [
+      "Smaller homes, apartments, and units with 1/2\" plumbing supply",
+      "Visible filter installations where cartridge monitoring matters",
+      "Replacement of an older 1/2\"-connected filter without re-piping",
+      "Caravan, boat, and rainwater system installations"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Whole-house filter — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "whole-house-water-filter-clear-sediment-1-stage",
+        "whole-house-water-filter-clear-carbon-1-stage",
+        "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "2-Stage Clear-Housing Whole-House Filter — Sediment + Carbon, 1/2\" Brass | Enviro Aqua",
+      "description": "2-stage 10\" × 2.5\" whole-house filter with twin clear housings and 1/2\" brass ports. Visual cartridge monitoring. Sediment + carbon block. Compact format.",
+      "ogImage": null
     }
   },
   "3-way-kitchen-tap-for-ro-water-filters-mixer-in-shiny-gold": {
@@ -7058,9 +8951,104 @@
       "water-filters",
       "whole-house"
     ],
-    "shortDescription": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances…",
+    "tags": [
+      "whole-house",
+      "three-stage",
+      "big-blue",
+      "20x45",
+      "triple-housing",
+      "alternative-sku"
+    ],
+    "shortDescription": "Triple Big Blue 20\" × 4.5\" 3-stage whole-house water filter — alternative SKU to the [WaterMark-certified 3-stage system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) at $1,199.95. Same triple-housing format, value-tier pricing.",
+    "description": "An alternative-SKU listing for the triple Big Blue 20\" × 4.5\" 3-stage whole-house water filter — same physical format as the [primary WaterMark-certified 3-stage Big Blue system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/), supplied at a value-tier price point ($1,199.95 vs the premium WaterMark SKU).\n\n## Important: Compliance Status\n\nDespite the \"WM\" prefix carried through from the handle naming convention, **this SKU is recorded as not requiring WaterMark certification** in our system metafields. If your installation specifically requires WaterMark certification on the filter housings — for council compliance, insurance, or licensed plumber sign-off — order the primary [Big Blue WaterMark certified 3-stage system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) instead.\n\n**This SKU should be treated as the value alternative for installations where WaterMark certification is not required.** If you're unsure which version your installation needs, the licensed plumber on the job is the right person to confirm — compliance requirements vary by jurisdiction and installation type.\n\n## Build and Configuration\n\nTriple-housing 20\" × 4.5\" Big Blue 3-stage whole-house water filter system. The 3-stage configuration covers the standard whole-house treatment combinations (sediment + carbon + polish, configurable per cartridge selection). The Big Blue 20\" × 4.5\" format delivers full whole-house flow capacity at 1\" inlet/outlet connections.\n\n## When This SKU Fits\n\n- **Properties not requiring WaterMark certification** but wanting full triple-Big-Blue 3-stage filtration\n- **Renovation budgets** where the WaterMark-certified premium SKU isn't justified by compliance requirements\n- **Trade buyers** who want the triple Big Blue format at a lower price tier\n\nFor any installation where WaterMark certification matters, the primary certified SKU is the correct choice — this alternative SKU is documented as not certified.",
+    "features": [
+      "Triple Big Blue 20\" × 4.5\" 3-stage whole-house water filter",
+      "1\" inlet and outlet — Australian mains supply standard",
+      "3-stage configuration with cartridge selection per stage",
+      "Value-tier alternative SKU to the primary WaterMark-certified system",
+      "Suitable for installations not requiring WaterMark certification",
+      "Standard Big Blue cartridges — widely-stocked replacements"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Tier",
+        "value": "Alternative SKU"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "System type",
+        "value": "Triple Big Blue whole-house filter, 3-stage"
+      },
+      {
+        "label": "Stages",
+        "value": "3"
+      },
+      {
+        "label": "Cartridge format",
+        "value": "Big Blue 20\" × 4.5\""
+      },
+      {
+        "label": "Inlet/outlet",
+        "value": "1\""
+      },
+      {
+        "label": "Installation",
+        "value": "Wall-mount, point of entry"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "6–12 months"
+      },
+      {
+        "label": "Relationship to primary SKU",
+        "value": "Alternative pricing tier; not WaterMark certified per current records"
+      }
+    ],
+    "recommendedFor": [
+      "Whole-house installations not requiring WaterMark certification",
+      "Trade buyers wanting triple Big Blue format at lower price tier",
+      "Renovation budgets where the premium WaterMark SKU isn't justified",
+      "Owners explicitly informed by their plumber that non-WaterMark is acceptable"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Recorded as not requiring WaterMark certification per current SKU metafields, despite the \"WM\" prefix in the handle naming. For WaterMark-certified installation, order the primary [WaterMark 3-stage Big Blue system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) instead. Compliance status flagged for reviewer."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
+        "premium-three-stage-big-blue-whole-house-water-filter-system",
+        "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5"
+      ],
+      "moreInCategory": "auto"
+    },
     "seo": {
-      "description": "This whole-house water filter treats every drop of water entering your home — protecting plumbing, fixtures, appliances, and skin from sediment, chlorine,…"
+      "title": "Triple Big Blue 3-Stage Whole-House Filter (Alt SKU) — 20\" × 4.5\" | Enviro Aqua",
+      "description": "Triple Big Blue 20\" × 4.5\" 3-stage whole-house filter, alternative SKU at $1,199.95. Standard Big Blue format. For installations not requiring WaterMark certification.",
+      "ogImage": null
     }
   }
 }
