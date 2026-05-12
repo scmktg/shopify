@@ -1,0 +1,54 @@
+GSC audit 2026-05 — top-30 redirects that need a human pick
+============================================================
+
+Each of these has more than one plausible candidate on the new site, so
+the redirect kept its existing category destination (i.e. the soft-404
+behaviour is preserved but no worse) pending a manual choice.
+
+Once you pick, update the destination in next.config.js inside
+WORDPRESS_PRODUCT_REDIRECTS — the entry is already there in click-rank
+order with a `NEEDS REVIEW` comment.
+
+────────────────────────────────────────────────────────────
+#10 — 20 clicks
+Old: /product/hot-cold-water-cooler-direct-connect
+Current destination (kept): /bubblers-and-coolers/coolers-and-chillers
+
+Candidates (token-overlap descending):
+  1. /bubblers-and-coolers/coolers-and-chillers/filtered-hot-and-cold-water-cooler-direct-connect
+     — has filtration; old slug doesn't mention "filtered" but this is the closest plain hot/cold direct-connect cooler
+  2. /bubblers-and-coolers/coolers-and-chillers/bench-top-room-temperature-hot-and-cold-water-cooler-direct-connect
+     — bench-top + room temperature variant (3-tap)
+  3. /bubblers-and-coolers/coolers-and-chillers/direct-connect-water-cooler-dispenser-3stages-filter-hot-cold-and-room-temperatu
+     — 3-stage filter version
+
+Recommendation: option 1 (closest semantic match), unless the historical
+SKU was the non-filtered bench-top model in which case option 2.
+
+────────────────────────────────────────────────────────────
+#13 — 17 clicks
+Old: /product/diaphragm-booster-pump-ro-water-pump-24vdc-1100ml-min
+Current destination (kept): /pumps-and-tanks/pumps
+
+Candidates:
+  1. /pumps-and-tanks/pumps/ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump
+     — same family (24V DC diaphragm RO booster pump) but no 1100 ml/min flow rate in the slug. This is ALSO the
+       destination for rank #16, which is a different old URL pointing at what may be the same SKU.
+
+Recommendation: confirm whether the 1100 ml/min variant is the same Shopify product as #16 (likely yes — the
+flow rate may differ by spec sheet only). If yes, map #13 to the same destination as #16.
+
+────────────────────────────────────────────────────────────
+#27 — 11 clicks
+Old: /product/whole-house-water-filter-1-stage-20x4-5-inch-washable-reusable
+Current destination (kept): /water-filters/whole-house
+
+Candidates (best token overlap):
+  1. /water-filters/whole-house/whole-house-water-filter-2-stage-10-x-4-5-washable-reusable
+     — 2-stage, 10x4.5 (different stage count AND different housing size)
+  2. /water-filters/whole-house/whole-house-water-filter-1-stage-10-x-2-5-carbon (or -sediment)
+     — 1-stage but 10x2.5 housings, not 20x4.5
+
+Likely no exact match on the new site for "1-stage 20x4.5 washable reusable". Pick the closest substitute
+(my guess: option 1 — washable+reusable is the more important distinguisher than housing size for this query
+intent) or flag as discontinued.

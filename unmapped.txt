@@ -1,0 +1,41 @@
+GSC audit 2026-05 — top-30 redirects with no plausible new-site match
+======================================================================
+
+These products appear to be discontinued or not migrated. The redirect
+kept its existing category destination so the URL continues to resolve;
+update next.config.js once you decide whether to map manually or leave
+as category.
+
+────────────────────────────────────────────────────────────
+#11 — 18 clicks
+Old: /product/aquarium-fish-tank-carbon-activated-carbon-filter-500g-1kg-2kg-3kg-5kg-25kg
+Current destination (kept): /cartridges/carbon
+
+Note: this is bulk loose activated carbon (sold by weight: 500g / 1kg /
+2kg / 3kg / 5kg / 25kg) for aquarium use. The new site only sells carbon
+in cartridge form (GAC and CTO cartridges, 10x2.5 / 10x4.5 / 20x2.5 /
+20x4.5 housings). There is no bulk-carbon SKU on the new product list.
+
+Action options:
+  (a) Leave on /cartridges/carbon (current). Acceptable as a soft-pivot
+      since carbon cartridges may meet a fraction of the intent.
+  (b) Add a custom landing page (e.g. /help/replacing-aquarium-carbon)
+      that explains the cartridge alternatives — better SEO retention.
+  (c) Map to one specific GAC cartridge if you want to commit to a single
+      replacement (e.g. /cartridges/carbon/granular-activated-carbon-water-filter-gac-5-micron-10-x-2-5).
+
+────────────────────────────────────────────────────────────
+#19 — 13 clicks
+Old: /product/vessel-tank-12-5l-short-tank1-25mm-ports-suitable-for-twin-tanks
+Current destination (kept): /pumps-and-tanks/pressure-tanks
+
+Note: the old SKU is a 12.5L short-format pressure vessel with 25mm
+ports designed to pair (twin-tank install). The new pressure-tanks
+listings are all single-port consumer tanks (8L, 12L, 19L, 50L, 100L)
+or commercial vertical 100L tanks. Closest neighbour by capacity is the
+12L plastic RO holding tank, but it's RO-grade, not a pressure vessel.
+
+Action options:
+  (a) Leave on /pumps-and-tanks/pressure-tanks (current).
+  (b) Confirm the 12.5L twin-port variant is genuinely discontinued; if
+      so, no further action needed.
