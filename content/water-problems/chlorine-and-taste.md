@@ -1,6 +1,6 @@
 ---
 title: "Remove Chlorine, Taste & Odour from Water"
-description: "Carbon water filters for chlorine, chloramine, and bad taste. Wholesale prices, free shipping over $200."
+description: "Carbon water filters for chlorine, chloramine, and bad taste. Wholesale prices, tiered shipping Australia-wide from $9.95."
 tagFilter: "problem:chlorine-and-taste"
 productGridTitle: "Chlorine and taste filters"
 relatedLinks:

@@ -58,7 +58,7 @@ export async function generateMetadata({
   return {
     title: filteredTitle,
     description:
-      'Water pumps for caravans, RVs, RO systems, bore, and rainwater. Wholesale prices, free shipping over $200.',
+      'Water pumps for caravans, RVs, RO systems, bore, and rainwater. Wholesale prices, tiered shipping Australia-wide from $9.95.',
     alternates: {
       // Filter URLs canonical to the unfiltered page so search
       // engines don't index every type combination.
