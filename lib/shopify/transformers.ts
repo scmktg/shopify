@@ -4,6 +4,7 @@ import type {
   Product,
   ProductCardData,
   ProductMetafields,
+  ShippingTier,
   WatermarkStatus,
 } from '@/types/product';
 import type {
@@ -26,6 +27,15 @@ const INSTALLATION_TYPES: ReadonlyArray<InstallationType> = [
   'inline',
   'countertop',
   'commercial',
+];
+
+const SHIPPING_TIERS: ReadonlyArray<ShippingTier> = [
+  'T1',
+  'T2',
+  'T3',
+  'T4',
+  'T5',
+  'T6',
 ];
 
 const CARTRIDGE_TYPES: ReadonlyArray<CartridgeType> = [
@@ -138,6 +148,7 @@ function buildMetafields(
     key_benefits: asStringList(m.get('key_benefits')),
     country_of_origin: asString(m.get('country_of_origin')),
     warranty_months: asInt(m.get('warranty_months')),
+    shipping_tier: asEnum(m.get('shipping_tier'), SHIPPING_TIERS),
   };
 }
 
