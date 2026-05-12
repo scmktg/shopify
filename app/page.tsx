@@ -210,18 +210,18 @@ interface HeroProps {
 function Hero({ installHeroImage }: HeroProps) {
   return (
     <section className="bg-gray-50 border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center md:text-left">
-            <h1 className="text-5xl md:text-6xl font-bold text-black tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black tracking-tight leading-tight">
               Australia&apos;s water filtration specialist
             </h1>
-            <p className="mt-5 max-w-2xl mx-auto md:mx-0 text-lg md:text-xl text-black/70">
+            <p className="mt-4 sm:mt-5 max-w-2xl mx-auto md:mx-0 text-base sm:text-lg md:text-xl text-black/70">
               Wholesale prices on water filters, cartridges, and filtration
               systems. One price for everyone — no accounts, no quotes, just
               the best price upfront.
             </p>
-            <div className="mt-8 flex justify-center md:justify-start">
+            <div className="mt-6 sm:mt-8 flex justify-center md:justify-start">
               <Link
                 href="/water-filters/"
                 className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
@@ -230,7 +230,7 @@ function Hero({ installHeroImage }: HeroProps) {
               </Link>
             </div>
             <p
-              className="mt-5 text-sm text-black/60"
+              className="mt-4 sm:mt-5 text-sm text-black/60"
               aria-label="Trusted by tradies and homeowners across Australia"
             >
               <span aria-hidden="true" className="text-brand-blue mr-2">
@@ -298,7 +298,7 @@ function CategoryGrid() {
         </div>
         <ul
           role="list"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4"
         >
           {CATEGORIES.map((category) => {
             const Icon = CATEGORY_ICONS[category.slug] ?? Droplet;
@@ -306,21 +306,23 @@ function CategoryGrid() {
               <li key={category.slug}>
                 <Link
                   href={`/${category.slug}/`}
-                  className="flex flex-col items-center text-center h-full p-6 bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded transition-colors aspect-[4/3] sm:aspect-auto"
+                  className="flex flex-row sm:flex-col items-center sm:items-center text-left sm:text-center h-full gap-4 sm:gap-0 p-4 sm:p-6 bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded transition-colors"
                 >
                   <Icon
-                    size={48}
+                    size={36}
                     strokeWidth={1.5}
                     aria-hidden="true"
-                    className="text-brand-blue"
+                    className="flex-shrink-0 text-brand-blue sm:h-12 sm:w-12"
                   />
-                  <h3 className="mt-4 text-xl font-semibold text-black">
-                    {category.label}
-                  </h3>
-                  <p className="mt-2 text-sm text-black/70">
-                    {CATEGORY_BLURBS[category.slug] ??
-                      `${category.label} for every Australian home and trade.`}
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="sm:mt-4 text-lg sm:text-xl font-semibold text-black">
+                      {category.label}
+                    </h3>
+                    <p className="mt-1 sm:mt-2 text-sm text-black/70">
+                      {CATEGORY_BLURBS[category.slug] ??
+                        `${category.label} for every Australian home and trade.`}
+                    </p>
+                  </div>
                 </Link>
               </li>
             );
@@ -359,7 +361,7 @@ function TrustStrip() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
         <ul
           role="list"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 sm:gap-8"
         >
           {items.map((item) => (
             <li key={item.title} className="text-center">
@@ -431,13 +433,13 @@ function WhyDifferent() {
         <h2 className="text-2xl font-semibold text-black">
           Why we&apos;re different
         </h2>
-        <ul role="list" className="mt-8 grid grid-cols-1 md:grid-cols-3">
+        <ul role="list" className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-3">
           {points.map((point, index) => (
             <li
               key={point.title}
               className={clsx(
                 'py-6 md:py-2 md:px-8 first:md:pl-0 last:md:pr-0',
-                index > 0 && 'md:border-l md:border-gray-200',
+                index > 0 && 'border-t border-gray-200 md:border-t-0 md:border-l',
               )}
             >
               <point.icon
