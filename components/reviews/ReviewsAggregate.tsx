@@ -51,8 +51,7 @@ export function ReviewsAggregate({
       </p>
       <p className="mt-1 text-center text-sm text-black/60">
         {reviewStats.totalGoogle} Google reviews ·{' '}
-        {reviewStats.totalFacebook} Facebook recommendations ·{' '}
-        {Math.round(reviewStats.recommendRate * 100)}% positive
+        {reviewStats.totalFacebook} Facebook recommendations
       </p>
     </div>
   );
