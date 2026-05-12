@@ -22,6 +22,7 @@ import { ProductGrid } from '@/components/product/ProductGrid';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import { HomeReviewsSection } from '@/components/reviews/HomeReviewsSection';
 
 const INSTALL_PACKAGE_HANDLE =
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
@@ -123,6 +124,7 @@ export default async function HomePage() {
       <TrustStrip />
       <FeaturedProducts products={featured} />
       <WhyDifferent />
+      <HomeReviewsSection />
       <Faq />
     </>
   );

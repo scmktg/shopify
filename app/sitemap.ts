@@ -29,6 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/water-problems/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/locations/`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/showroom/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/reviews/`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${base}/whole-house-installation-package/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/watermark-certified/`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
   ];

@@ -3,6 +3,7 @@ import type { FaqItem } from '@/lib/content/markdown';
 import type { ProductContent } from '@/lib/products/schema';
 import { BUSINESS_INFO } from '@/content/business-info';
 import { findCategory } from '@/content/categories';
+import { reviewStats } from '@/data/reviews';
 import { absoluteUrl, getSiteUrl } from './siteUrl';
 
 export type JsonLd = Record<string, unknown>;
@@ -54,7 +55,28 @@ export function localBusinessSchema(): JsonLd {
       addressCountry: BUSINESS_INFO.address.country,
     },
     openingHours: BUSINESS_INFO.showroom.schemaHours,
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+        ],
+        opens: '09:00',
+        closes: '17:00',
+      },
+    ],
     priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: reviewStats.averageRating.toFixed(1),
+      reviewCount: String(reviewStats.total),
+      bestRating: '5',
+      worstRating: '1',
+    },
     sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
   };
 }

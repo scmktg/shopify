@@ -27,6 +27,7 @@ const LEARN_LINKS: ReadonlyArray<FooterLink> = [
 const ABOUT_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'About us', href: '/about/' },
   { label: 'Our pricing', href: '/about/our-pricing/' },
+  { label: 'Customer reviews', href: '/reviews/' },
   { label: 'Shipping', href: '/shipping/' },
   { label: 'Returns', href: '/returns/' },
 ];
