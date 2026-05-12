@@ -10,7 +10,7 @@ faq:
   - q: "How long does delivery take?"
     a: "Standard delivery is 2–5 business days to most Australian addresses. Express is 1–2 business days on tiers T1–T4 (parcel items). Sydney metro and the Central Coast are usually at the fast end of that range; remote WA, NT, and far-north QLD addresses are at the slow end. Whole-house systems and other freight items take 3–10 business days depending on state. The tracking link gives a per-leg ETA once the parcel ships."
   - q: "Do you ship Australia-wide?"
-    a: "Yes. Standard tiered shipping rates Australia-wide from $9.95. Whole-house Big Blue systems, UV systems, freestanding coolers, and other large items ship free Australia-wide on our free-freight tier. Commercial RO plants, 50L+ tanks, and bathroom bundles ship by pallet — we email a freight quote within one business day of order."
+    a: "Yes. Standard tiered shipping rates Australia-wide from $9.95. Whole-house Big Blue systems, UV systems, freestanding coolers, and other large items ship free Australia-wide on our free-freight tier. Commercial RO plants, 50L+ tanks, and bathroom bundles ship by pallet at three flat rates by destination: $99 to Sydney metro, Central Coast, Newcastle/Hunter and ACT; $179 to other capital city metro; $249 regional and remote."
   - q: "Do you ship internationally?"
     a: "We ship within Australia only. Orders to overseas addresses (including New Zealand) cannot be processed at this time."
   - q: "Can I pick up locally?"
@@ -30,7 +30,7 @@ Each product is assigned a tier based on its size, weight, and freight profile. 
 | T3 Large parcel | $19.95 | $29.95 | Aramex / CouriersPlease | Big Blue cartridges, 5/6-stage RO sets, under-sink systems, tall mixers |
 | T4 Bulky parcel | $29.95 | $41.95 | Aramex bulky | Under-sink RO with tank, bench-top coolers, single toilets |
 | T5 Free freight | FREE | n/a | Allied / Aramex bulky | Whole-house Big Blue (single/twin/triple), freestanding coolers, large UV, 19L+ pressure tanks, in-wall toilets |
-| T6 Freight quote | quote | n/a | Pallet freight | Commercial RO plants, 50L+ tanks, dosing tanks, bathroom bundles |
+| T6 Freight by zone | $99 / $179 / $249 by zone | n/a | Pallet freight | Commercial RO plants, 50L+ tanks, dosing tanks, bathroom bundles |
 
 Express is offered on T1–T4 only. Pallet freight has no overnight equivalent.
 
@@ -50,11 +50,15 @@ Pick up your order in person from our Wyong NSW showroom and skip the shipping f
 
 You will receive an order confirmation email when the order is placed, and a second email with the tracking link when the parcel is collected by the carrier.
 
-## Freight-quoted items (T6)
+## Pallet freight by zone (T6)
 
-Commercial RO plants, 50L+ pressure tanks, dosing tanks, and bathroom bundles ship by pallet. The product page lists the item as freight-quoted; checkout completes at $0 freight, and we email the exact freight cost (typically $150–$400 depending on your state) within one business day. You can cancel for a full refund if the quote doesn't work for you.
+Commercial RO plants, 50L+ pressure tanks, dosing tanks, and bathroom bundles ship by pallet. Three flat rates by destination postcode, shown at checkout once you enter yours:
 
-For an instant quote before ordering, call (02) 8772 8162 during business hours.
+- **$99** — Sydney metro, Central Coast, Newcastle/Hunter, ACT
+- **$179** — Other capital city metro (Melbourne, Brisbane, Adelaide, Perth, Hobart, Darwin)
+- **$249** — Regional and remote (everything else)
+
+Pallet freight typically takes 5–14 business days depending on destination.
 
 ## Damaged or missing parcels
 

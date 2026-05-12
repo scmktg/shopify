@@ -74,12 +74,13 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
     lead: (
       <>
         <strong className="font-semibold">
-          Freight quoted within one business day.
-        </strong>{' '}
-        This product ships by pallet &mdash; we&apos;ll email you the exact
-        freight cost (typically $150&ndash;$400 depending on your state) within
-        one business day of order. You can cancel for a full refund if the
-        freight quote doesn&apos;t work.
+          Ships for $99&ndash;$249 depending on your state.
+        </strong>
+        <br />
+        Sydney, Central Coast, Newcastle and ACT $99. Other capital cities
+        $179. Regional and remote $249.
+        <br />
+        Delivered by pallet freight, 5&ndash;14 business days.
       </>
     ),
     clickAndCollect: (
@@ -88,18 +89,7 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
         cost if you pick up.
       </>
     ),
-    trailing: (
-      <>
-        Or call{' '}
-        <a
-          href="tel:+61287728162"
-          className="font-semibold hover:text-brand-blue"
-        >
-          (02) 8772 8162
-        </a>{' '}
-        for an instant freight quote before ordering.
-      </>
-    ),
+    trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
   },
 };
 
