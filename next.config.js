@@ -11,37 +11,81 @@
 // Each tuple is [source, destination]. The helper below expands every
 // entry into /path and /path/ source variants so old crawls and external
 // links resolve regardless of trailing-slash formatting.
+//
+// GSC audit 2026-05: the first 30 entries below are the top click-drivers
+// from the legacy WordPress site (≈915 clicks / 147k impressions over
+// the prior 16 months — ~42% of all site clicks). Pre-audit, each of
+// these 308'd to a category PLP, which Google treats as a soft 404 and
+// drops link equity for. They now redirect to their specific product
+// page where one exists. Five entries kept their category destination —
+// see inline comments — pending manual resolution; those are tracked in
+// `redirect-map.json`, `needs-review.txt`, and `unmapped.txt` at the
+// repo root. Entries below the 30 are tail products; a follow-up audit
+// will reclassify them.
 const WORDPRESS_PRODUCT_REDIRECTS = [
-  ['/product/12v-self-priming-garden-caravan-electric-water-pump-faucet-tap-kit-5m-pipe', '/pumps-and-tanks/pumps'],
-  ['/product/100l-chemical-dosing-tank-water-tank-poly-tank-and-bund', '/pumps-and-tanks/dosing-tanks'],
-  ['/product/rimless-watermark-back-to-wall-toilet-soft-close-wels', '/plumbing/toilets'],
-  ['/product/typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd', '/pumps-and-tanks/pumps'],
-  ['/product/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc', '/water-filters/uv-sterilisation'],
-  ['/product/3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel', '/plumbing/ro-filter-taps'],
-  ['/product/shower-filter-15-stages-includes-extra-cartridge', '/water-filters/whole-house'],
-  ['/product/drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet', '/bubblers-and-coolers/bubblers'],
-  ['/product/1-inch-flexible-stainless-steel-hose-for-pressure-tank', '/pumps-and-tanks/pressure-tanks'],
+  // ── GSC top 30 — ordered by click rank, highest first ─────────────
+  // #1 (156 clicks)
+  ['/product/12v-self-priming-garden-caravan-electric-water-pump-faucet-tap-kit-5m-pipe', '/pumps-and-tanks/pumps/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe'],
+  // #2 (120 clicks)
+  ['/product/rimless-watermark-back-to-wall-toilet-soft-close-wels', '/plumbing/toilets/rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce'],
+  // #3 (112 clicks) — consolidated 50L/100L/200L listing per audit note
+  ['/product/100l-chemical-dosing-tank-water-tank-poly-tank-and-bund', '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l'],
+  // #4 (109 clicks)
+  ['/product/typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd', '/pumps-and-tanks/pumps/typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd'],
+  // #5 (43 clicks)
+  ['/product/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc', '/water-filters/uv-sterilisation/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc'],
+  // #6 (28 clicks)
+  ['/product/shower-filter-15-stages-includes-extra-cartridge', '/water-filters/parts/shower-filter-15-stages-includes-extra-cartridge'],
+  // #7 (26 clicks)
+  ['/product/3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel', '/plumbing/ro-filter-taps/3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel'],
+  // #8 (23 clicks)
+  ['/product/drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet', '/bubblers-and-coolers/parts/drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet'],
+  // #9 (22 clicks)
+  ['/product/1-inch-flexible-stainless-steel-hose-for-pressure-tank', '/pumps-and-tanks/pressure-tanks/1-inch-flexible-stainless-steel-hose-for-pressure-tank'],
+  // #10 (20 clicks) — NEEDS REVIEW: three plausible cooler candidates, kept on category
   ['/product/hot-cold-water-cooler-direct-connect', '/bubblers-and-coolers/coolers-and-chillers'],
+  // #11 (18 clicks) — UNMAPPED: bulk aquarium carbon, no equivalent SKU on new site
   ['/product/aquarium-fish-tank-carbon-activated-carbon-filter-500g-1kg-2kg-3kg-5kg-25kg', '/cartridges/carbon'],
-  ['/product/premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold', '/plumbing/ro-filter-taps'],
+  // #12 (18 clicks)
+  ['/product/premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold', '/plumbing/ro-filter-taps/premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold'],
+  // #13 (17 clicks) — NEEDS REVIEW: 1100ml/min flow-rate variant not on new site, kept on category
   ['/product/diaphragm-booster-pump-ro-water-pump-24vdc-1100ml-min', '/pumps-and-tanks/pumps'],
-  ['/product/inline-water-filter-t33-activated-post-carbon-5-micron-10x2', '/cartridges/specialty-cartridges'],
-  ['/product/commercial-stainless-steel-filtered-cold-water-bubbler-square', '/bubblers-and-coolers/bubblers'],
-  ['/product/ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump', '/pumps-and-tanks/pumps'],
-  ['/product/water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube', '/water-filters/parts'],
-  ['/product/twin-pair-of-water-filter-cartridges-carbon-cto-sediment-pp-10-x-2-5', '/cartridges/cartridge-sets'],
+  // #14 (15 clicks)
+  ['/product/inline-water-filter-t33-activated-post-carbon-5-micron-10x2', '/cartridges/specialty-cartridges/inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2'],
+  // #15 (14 clicks) — old slug ends in "-square", maps to the watermark-certified-square SKU
+  ['/product/commercial-stainless-steel-filtered-cold-water-bubbler-square', '/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des'],
+  // #16 (14 clicks)
+  ['/product/ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump', '/pumps-and-tanks/pumps/ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump'],
+  // #17 (13 clicks)
+  ['/product/water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube', '/water-filters/parts/water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube'],
+  // #18 (13 clicks)
+  ['/product/twin-pair-of-water-filter-cartridges-carbon-cto-sediment-pp-10-x-2-5', '/cartridges/sediment/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr'],
+  // #19 (13 clicks) — UNMAPPED: 12.5L/25mm twin-port short tank not on new site
   ['/product/vessel-tank-12-5l-short-tank1-25mm-ports-suitable-for-twin-tanks', '/pumps-and-tanks/pressure-tanks'],
-  ['/product/big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system', '/water-filters/uv-sterilisation'],
-  ['/product/under-sink-water-filter-6-stage-reverse-osmosis-system', '/water-filters/reverse-osmosis'],
-  ['/product/tap-thread-adaptor-suitable-for-countertop-systems-22mm-to-24mm', '/water-filters/bench-top'],
-  ['/product/inline-water-filter-fluoride-removal-10x2', '/cartridges/specialty-cartridges'],
-  ['/product/ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp', '/water-filters/uv-sterilisation'],
-  ['/product/ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins', '/water-filters/uv-sterilisation'],
-  ['/product/commercial-reverse-osmosis-ro-3000-lpd-800-gpd-with-pressure-tank', '/pumps-and-tanks/pressure-tanks'],
+  // #20 (12 clicks)
+  ['/product/under-sink-water-filter-6-stage-reverse-osmosis-system', '/water-filters/reverse-osmosis/under-sink-water-filter-6-stage-reverse-osmosis-system'],
+  // #21 (12 clicks)
+  ['/product/big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system', '/water-filters/whole-house/big-blue-whole-house-water-filter-and-uv-ultraviolet-sterilization-system'],
+  // #22 (12 clicks)
+  ['/product/tap-thread-adaptor-suitable-for-countertop-systems-22mm-to-24mm', '/water-filters/parts/tap-thread-adaptor-suitable-for-countertop-systems-22mm-to-24mm'],
+  // #23 (11 clicks)
+  ['/product/inline-water-filter-fluoride-removal-10x2', '/cartridges/specialty-cartridges/inline-water-filter-fluoride-removal-10-x-2'],
+  // #24 (11 clicks)
+  ['/product/ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp', '/water-filters/uv-sterilisation/ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp'],
+  // #25 (11 clicks)
+  ['/product/ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins', '/water-filters/uv-sterilisation/ultraviolet-water-sterilizer-stainless-steel-unit-40w-2700lph-full-set-4-pins'],
+  // #26 (11 clicks) — "with pressure tank" suffix matches the desalination-plant-with-pressu SKU
+  ['/product/commercial-reverse-osmosis-ro-3000-lpd-800-gpd-with-pressure-tank', '/water-filters/commercial/commercial-reverse-osmosis-ro-desalination-plant-ro-3000-lpd-800-gpd-with-pressu'],
+  // #27 (11 clicks) — NEEDS REVIEW: no 1-stage 20x4.5 washable on new site, kept on category
   ['/product/whole-house-water-filter-1-stage-20x4-5-inch-washable-reusable', '/water-filters/whole-house'],
-  ['/product/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v', '/water-filters/uv-sterilisation'],
+  // #28 (10 clicks)
+  ['/product/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v', '/water-filters/uv-sterilisation/uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v'],
+  // #29 (10 clicks) — old slug ends in "-circular"; new "-round-wm" SKU is the circular variant
+  ['/product/commercial-stainless-steel-filtered-cold-water-bubbler-circular', '/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm'],
+  // #30 (10 clicks)
+  ['/product/toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels', '/plumbing/toilets/toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels'],
+  // ── Tail products — pending category-to-product re-audit ──────────
   ['/product/spring-loaded-3-way-tap-kitchen-mixer-in-black-chrome-nickel', '/plumbing/ro-filter-taps'],
-  ['/product/commercial-stainless-steel-filtered-cold-water-bubbler-circular', '/bubblers-and-coolers/bubblers'],
   ['/product/reusable-100-micron-strainer-water-filter-washable-filter-sediment-10x2-5', '/cartridges/sediment'],
   ['/product/premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf', '/plumbing/ro-filter-taps'],
   ['/product/spring-loaded-tap-kitchen-mixer-in-brushed-nickel', '/plumbing/kitchen-taps'],
@@ -68,7 +112,6 @@ const WORDPRESS_PRODUCT_REDIRECTS = [
   ['/product/diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps', '/water-filters/bench-top'],
   ['/product/inline-uf-ultrafiltration-filter-cartridge', '/cartridges/specialty-cartridges'],
   ['/product/water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond', '/pumps-and-tanks/pressure-tanks'],
-  ['/product/toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels', '/plumbing/toilets'],
   ['/product/inline-water-filter-alkaline-ph-neutralising-10-x-2', '/cartridges/specialty-cartridges'],
   ['/product/id-8mm-5m-plastic-clear-pvc-hose-pipe-tube-air-water-food-home-washer', '/water-filters/parts'],
   ['/product/whole-house-water-filter-clear-sediment-1-stage', '/water-filters/whole-house'],
