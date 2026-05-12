@@ -2,10 +2,7 @@ import Link from 'next/link';
 import type { Money } from '@/types/product';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 import { PriceDisplay } from './PriceDisplay';
-import {
-  ORDER_CUTOFF_DISPLAY,
-  SHIPPING_FREE_THRESHOLD_AUD,
-} from '@/lib/site-config';
+import { ORDER_CUTOFF_DISPLAY } from '@/lib/site-config';
 
 interface BuyBannerProps {
   variantId: string;
@@ -44,14 +41,14 @@ export function BuyBanner({
           </h2>
           <p className="mt-2 text-sm text-black/70">
             Order before {ORDER_CUTOFF_DISPLAY} on a business day for
-            same-day dispatch from Wyong NSW. Free{' '}
+            same-day dispatch from Wyong NSW.{' '}
             <Link
               href="/shipping/"
               className="underline underline-offset-4 hover:text-brand-blue"
             >
-              shipping
-            </Link>{' '}
-            on Australian orders over ${SHIPPING_FREE_THRESHOLD_AUD}.
+              See shipping details
+            </Link>
+            .
           </p>
           <div className="mt-4 flex items-baseline gap-2 flex-wrap">
             <PriceDisplay

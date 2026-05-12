@@ -51,18 +51,6 @@ export const BUSINESS_INFO = {
    * Surfaced under the Add to cart "Questions?" line.
    */
   phoneSupportHours: 'Mon–Thu 9am–3pm',
-  /** Free-shipping order threshold (AUD). */
-  shippingFreeThresholdAud: 200,
-  /**
-   * Tiered shipping prices surfaced in the buy-box and trust strip.
-   * "from" prices — actual checkout cost depends on weight, zone,
-   * and Shopify shipping rules. The free-over threshold above
-   * dominates for orders that qualify.
-   */
-  shipping: {
-    standardFromAud: 10.95,
-    expressFromAud: 14.95,
-  },
   /** One-line returns summary used in the buy-box meta and footer. */
   returnsSummary: '14-day returns on damaged or faulty items',
   /**

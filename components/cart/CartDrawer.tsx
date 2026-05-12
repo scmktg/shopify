@@ -8,8 +8,6 @@ import { PriceDisplay } from '@/components/product/PriceDisplay';
 import { useCart } from './CartProvider';
 import { CartLineRow } from './CartLineRow';
 
-const FREE_SHIPPING_THRESHOLD = 200;
-
 export function CartDrawer() {
   const { cart, isOpen, closeDrawer, error } = useCart();
 
@@ -80,11 +78,7 @@ export function CartDrawer() {
         ) : (
           <>
             <div className="flex-1 overflow-y-auto px-4">
-              <FreeShippingProgress
-                subtotal={Number.parseFloat(cart.subtotalAmount.amount)}
-                currency={cart.subtotalAmount.currencyCode}
-              />
-              <ul className="-mt-2">
+              <ul className="mt-2">
                 {cart.lines.map((line) => (
                   <CartLineRow
                     key={line.id}
@@ -139,38 +133,3 @@ export function CartDrawer() {
   );
 }
 
-interface FreeShippingProgressProps {
-  subtotal: number;
-  currency: string;
-}
-
-function FreeShippingProgress({ subtotal, currency }: FreeShippingProgressProps) {
-  if (currency !== 'AUD') return null;
-  const remaining = FREE_SHIPPING_THRESHOLD - subtotal;
-  const pct = Math.min(
-    100,
-    Math.max(0, (subtotal / FREE_SHIPPING_THRESHOLD) * 100),
-  );
-  const message =
-    remaining <= 0
-      ? "You've unlocked free shipping."
-      : `Spend $${remaining.toFixed(2)} more to unlock free shipping over $${FREE_SHIPPING_THRESHOLD}.`;
-  return (
-    <div className="py-3">
-      <p className="text-xs text-black/70">{message}</p>
-      <div
-        className="mt-1.5 h-1.5 bg-gray-200 rounded overflow-hidden"
-        role="progressbar"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={Math.round(pct)}
-        aria-label="Free shipping progress"
-      >
-        <div
-          className="h-full bg-brand-blue transition-[width] duration-200"
-          style={{ width: `${pct}%` }}
-        />
-      </div>
-    </div>
-  );
-}

@@ -198,13 +198,11 @@ export function faqPageSchema(items: ReadonlyArray<FaqItem>): JsonLd {
   };
 }
 
-// Free-shipping threshold and 14-day damaged/faulty returns are
-// documented in /content/shipping.md and /content/returns.md. The
-// under-$200 standard-shipping rate is size-tiered ($10.95–$23.95) so
-// we deliberately omit per-product flat rates from JSON-LD — there's
-// no per-product size signal to drive an accurate value, and quoting
-// the cheapest tier would mislead shoppers on bulky items.
-const FREE_SHIPPING_THRESHOLD_AUD = 200;
+// The 14-day damaged/faulty return policy is documented in
+// /content/returns.md. Shipping is intentionally omitted from
+// JSON-LD because rates are tier-dependent per product
+// (T1 $9.95 → T5 free → T6 quote) and any flat value here would
+// misrepresent at least one tier.
 const RETURN_WINDOW_DAYS = 14;
 
 /**
@@ -217,41 +215,6 @@ function priceValidUntil(): string {
   const d = new Date();
   d.setFullYear(d.getFullYear() + 1);
   return d.toISOString().slice(0, 10);
-}
-
-function shippingDetails(): JsonLd {
-  return {
-    '@type': 'OfferShippingDetails',
-    shippingDestination: {
-      '@type': 'DefinedRegion',
-      addressCountry: 'AU',
-    },
-    shippingRate: {
-      '@type': 'MonetaryAmount',
-      value: '0',
-      currency: 'AUD',
-    },
-    eligibleTransactionVolume: {
-      '@type': 'PriceSpecification',
-      minPrice: FREE_SHIPPING_THRESHOLD_AUD,
-      priceCurrency: 'AUD',
-    },
-    deliveryTime: {
-      '@type': 'ShippingDeliveryTime',
-      handlingTime: {
-        '@type': 'QuantitativeValue',
-        minValue: 0,
-        maxValue: 1,
-        unitCode: 'DAY',
-      },
-      transitTime: {
-        '@type': 'QuantitativeValue',
-        minValue: 2,
-        maxValue: 5,
-        unitCode: 'DAY',
-      },
-    },
-  };
 }
 
 function returnPolicy(): JsonLd {
@@ -350,7 +313,6 @@ export function productSchema(
     availability: offerAvailability,
     itemCondition: 'https://schema.org/NewCondition',
     priceValidUntil: priceValidUntil(),
-    shippingDetails: shippingDetails(),
     hasMerchantReturnPolicy: returnPolicy(),
   };
 

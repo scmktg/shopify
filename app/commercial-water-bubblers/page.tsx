@@ -165,7 +165,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Do you ship Australia-wide?',
-    a: `Yes. Same-day dispatch from Wyong NSW on orders placed before ${BUSINESS_INFO.orderCutoff} on business days. Flat-rate freight, free over $${BUSINESS_INFO.shippingFreeThresholdAud}. Tracked Australia-wide.`,
+    a: `Yes. Same-day dispatch from Wyong NSW on orders placed before ${BUSINESS_INFO.orderCutoff} on business days. Standard tiered freight rates Australia-wide; commercial bubblers ship free as part of our whole-system freight tier. Tracked Australia-wide.`,
   },
   {
     q: 'Are filter cartridges proprietary?',
