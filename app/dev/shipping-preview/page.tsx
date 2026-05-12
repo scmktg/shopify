@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const TIERS: ReadonlyArray<ShippingTier> = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
+const TIERS: ReadonlyArray<ShippingTier> = ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
 
 export default function ShippingPreviewPage() {
   return (
@@ -17,7 +17,7 @@ export default function ShippingPreviewPage() {
           Dev preview
         </p>
         <h1 className="mt-1 text-2xl font-semibold text-black">
-          Shipping tier copy blocks (T1&ndash;T6)
+          Shipping tier copy blocks (T1&ndash;T7)
         </h1>
         <p className="mt-3 text-sm text-black/70">
           One block per tier, exactly as rendered on a PDP. This page is

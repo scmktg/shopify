@@ -23,7 +23,7 @@ export type CartridgeType =
   | 'pleated'
   | 'uf';
 
-export type ShippingTier = 'T1' | 'T2' | 'T3' | 'T4' | 'T5' | 'T6';
+export type ShippingTier = 'T1' | 'T2' | 'T3' | 'T4' | 'T5' | 'T6' | 'T7';
 
 export interface Money {
   amount: string;

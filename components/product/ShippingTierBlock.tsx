@@ -91,6 +91,37 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
     ),
     trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
   },
+  T7: {
+    lead: (
+      <>
+        <strong className="font-semibold">
+          Click &amp; Collect only from our Wyong NSW showroom.
+        </strong>
+        <br />
+        This product isn&apos;t available for shipping. Pick up free from 6/45
+        Amsterdam Cct, Wyong NSW 2259, Mon&ndash;Fri 9am&ndash;5pm AEST.
+      </>
+    ),
+    clickAndCollect: (
+      <>
+        Same-day pickup on orders before 12pm AEST &mdash; we&apos;ll email or
+        text you when it&apos;s ready.
+      </>
+    ),
+    trailing: (
+      <>
+        Need it shipped? Call{' '}
+        <a
+          href="tel:+61287728162"
+          className="font-semibold hover:text-brand-blue"
+        >
+          (02) 8772 8162
+        </a>{' '}
+        &mdash; we can sometimes arrange a courier for an additional fee, case
+        by case.
+      </>
+    ),
+  },
 };
 
 export function ShippingTierBlock({

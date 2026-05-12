@@ -36,6 +36,7 @@ const SHIPPING_TIERS: ReadonlyArray<ShippingTier> = [
   'T4',
   'T5',
   'T6',
+  'T7',
 ];
 
 const CARTRIDGE_TYPES: ReadonlyArray<CartridgeType> = [
