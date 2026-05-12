@@ -108,13 +108,7 @@ export function ShippingTierBlock({
   productHandle,
 }: ShippingTierBlockProps) {
   const resolvedTier: ShippingTier = tier ?? 'T2';
-  if (tier === null && typeof window !== 'undefined') {
-    console.warn(
-      `[ShippingTierBlock] Product "${productHandle}" has no shipping_tier metafield; defaulting to T2.`,
-    );
-  } else if (tier === null) {
-    // Server-side: log once per request so missing assignments are
-    // visible in the build/runtime logs without spamming the browser.
+  if (tier === null && process.env.NODE_ENV !== 'production') {
     console.warn(
       `[ShippingTierBlock] Product "${productHandle}" has no shipping_tier metafield; defaulting to T2.`,
     );
