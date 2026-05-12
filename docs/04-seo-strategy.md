@@ -102,11 +102,11 @@ Every page type gets the appropriate schema:
 
 ### Homepage
 - Title: `Enviro Aqua | Water Filters, Cartridges & Bubblers | Wholesale Prices`
-- Description: `Australia's specialist water filtration store. Wholesale prices for everyone — no accounts, no quotes. Free shipping over $200.`
+- Description: `Australia's specialist water filtration store. Wholesale prices for everyone — no accounts, no quotes. Tiered shipping Australia-wide from $9.95, free freight on whole-house systems.`
 
 ### Category page
 - Title: `[Category Name] | Wholesale Prices | Enviro Aqua`
-- Description: `Shop [category] at wholesale prices. [N] products with free shipping over $200. WaterMark certified options available.`
+- Description: `Shop [category] at wholesale prices. [N] products with tiered shipping Australia-wide from $9.95. WaterMark certified options available.`
 
 ### Sub-category page
 - Title: `[Sub-category] | [Category] | Enviro Aqua`

@@ -178,7 +178,7 @@ Minimal. Specifically:
 ## Trust signals (always visible somewhere)
 
 - Wholesale pricing message (top banner — sitewide)
-- Free shipping threshold (header strip or near add-to-cart)
+- Per-product shipping tier block on every PDP (T1–T6, near add-to-cart)
 - WaterMark certification badge on certified products (clear visual treatment)
 - Stock status near add-to-cart
 - Australian-owned messaging in footer

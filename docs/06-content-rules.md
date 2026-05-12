@@ -104,7 +104,7 @@ In this exact order:
 
 - Max 155 characters
 - Lead with value prop or product spec
-- Include a call-to-action ("Shop now," "Free shipping over $200")
+- Include a call-to-action ("Shop now," "Tiered shipping Australia-wide from $9.95")
 - Don't repeat the title verbatim
 
 ## Image alt text rules
@@ -130,5 +130,5 @@ Never appear in customer-facing copy:
 
 - WaterMark-certified products: badge + "WaterMark Certified" text + licence number visible
 - Non-certified plumbing products: clear "Not WaterMark certified — for off-mains use only" warning
-- Free shipping threshold: visible on every product page (currently: "Free shipping on orders over $200")
+- Shipping tier: every product page renders a tier-specific shipping block (T1–T6) sourced from the `enviroaqua.shipping_tier` metafield
 - Wholesale pricing: "Wholesale price — same for everyone, no account needed"
