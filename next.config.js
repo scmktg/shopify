@@ -389,6 +389,12 @@ const WORDPRESS_UTILITY_REDIRECTS = [
   ['/about-us', '/about'],
   ['/about', '/about'],
   ['/shop', '/water-filters'],
+  // /author/steve had 5 clicks at position 8.7 — likely searches for
+  // "Steve" looking for a person to talk to. 301 to /about (not /contact:
+  // the WP /contact rule above already redirects to /about, so going via
+  // /contact would be a chained hop). Without this rule, middleware.ts
+  // would 410 the URL — for 5 clicks of likely user intent, a 301 wins.
+  ['/author/steve', '/about'],
 ];
 
 // Pattern catch-alls. These run LAST, after every explicit rule above has
@@ -406,6 +412,12 @@ const WORDPRESS_FALLBACK_REDIRECTS = [
   { source: '/cart/:path*', destination: '/water-filters', permanent: true },
   { source: '/checkout', destination: '/water-filters', permanent: true },
   { source: '/checkout/:path*', destination: '/water-filters', permanent: true },
+  // WooCommerce colour attribute archive (/colour/<attr>/, plus paginated
+  // variants). 7 URLs, ~1 click total — not worth per-attribute precision.
+  // Without this rule, middleware.ts would 410 the URLs; the redirect runs
+  // first per Next's order so the colour entry in middleware is harmless
+  // but dead.
+  { source: '/colour/:slug*', destination: '/water-filters', permanent: true },
 ];
 
 // Expand [source, destination] tuples into a flat array of redirect

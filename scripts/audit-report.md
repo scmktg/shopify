@@ -1,16 +1,16 @@
 # WordPress redirect audit
 
 Source URLs analysed: 442
-Redirect rules evaluated: 814
+Redirect rules evaluated: 817
 
 ## Coverage by bucket
 
 | Bucket | URLs | Clicks | Impressions |
 |---|---:|---:|---:|
-| covered_explicit | 362 | 1529 | 319177 |
-| covered_fallback | 64 | 182 | 42284 |
+| covered_explicit | 363 | 1534 | 319246 |
+| covered_fallback | 71 | 183 | 44210 |
+| gone_410_middleware | 7 | 0 | 86 |
 | no_redirect_needed | 1 | 487 | 31439 |
-| not_covered | 15 | 6 | 2081 |
 
 ## Coverage by priority
 
@@ -18,8 +18,8 @@ Redirect rules evaluated: 814
 |---|---:|---:|---:|
 | critical | 361 | 361 | 0 |
 | high | 37 | 37 | 0 |
-| medium | 36 | 29 | 0 |
-| low | 8 | 0 | 6 |
+| medium | 36 | 36 | 0 |
+| low | 8 | 8 | 0 |
 
 ## Broken rule destinations
 
@@ -27,23 +27,7 @@ _None — every existing rule lands on a real route._
 
 ## Not-covered URLs (top 30 by clicks)
 
-| Path | Type | Priority | Clicks | Impressions | Suggested |
-|---|---|---|---:|---:|---|
-| `/author/steve/` | author archive | low | 5 | 69 | 301 → homepage or 410 Gone |
-| `/colour/brushed-gold/` | colour taxonomy (Woo attribute) | low | 1 | 1154 | 301 → /collections/ filtered by colour (or 410) |
-| `/2024/10/` | other | medium | 0 | 2 | Review manually |
-| `/brand/best-tank/` | other | medium | 0 | 47 | Review manually |
-| `/category/whole-house/` | other | medium | 0 | 17 | Review manually |
-| `/colour/brushed-nickel/` | colour taxonomy (Woo attribute) | low | 0 | 428 | 301 → /collections/ filtered by colour (or 410) |
-| `/colour/matte-black/` | colour taxonomy (Woo attribute) | low | 0 | 228 | 301 → /collections/ filtered by colour (or 410) |
-| `/colour/polished-chrome/` | colour taxonomy (Woo attribute) | low | 0 | 87 | 301 → /collections/ filtered by colour (or 410) |
-| `/colour/polished-chrome/page/1/` | colour taxonomy (Woo attribute) | low | 0 | 15 | 301 → /collections/ filtered by colour (or 410) |
-| `/colour/polished-chrome/page/2/` | colour taxonomy (Woo attribute) | low | 0 | 12 | 301 → /collections/ filtered by colour (or 410) |
-| `/colour/shiny-gold/` | colour taxonomy (Woo attribute) | low | 0 | 2 | 301 → /collections/ filtered by colour (or 410) |
-| `/wp-content/uploads/2020/07/s-l1600-1-54.jpg` | other | medium | 0 | 2 | Review manually |
-| `/wp-content/uploads/2021/03/12V-Pump_5.png` | other | medium | 0 | 13 | Review manually |
-| `/wp-content/uploads/2021/03/pump_kit-600x600.jpg` | other | medium | 0 | 2 | Review manually |
-| `/wp-content/uploads/2024/10/vanity_cabinet_1.png` | other | medium | 0 | 3 | Review manually |
+_All URLs are covered by an existing rule or already resolve._
 
 ## Covered-by-fallback URLs (top 20 by clicks)
 
@@ -64,11 +48,11 @@ These resolve via a wildcard rule (e.g. `/product/:slug*` -> `/water-filters`). 
 | `/product-category/installation-packages/` | 3 | `/product-category/installation-packages/:path*` -> `/whole-house-installation-package` |
 | `/product-category/bathroom-taps/` | 2 | `/product-category/bathroom-taps/:path*` -> `/plumbing/bathroom-taps` |
 | `/product-category/taps/` | 2 | `/product-category/taps/:path*` -> `/plumbing` |
+| `/colour/brushed-gold/` | 1 | `/colour/:slug*` -> `/water-filters` |
 | `/product-category/bundles/` | 1 | `/product-category/bundles/:path*` -> `/plumbing/bundles` |
 | `/product-category/fittings-parts/page/3/` | 1 | `/product-category/fittings-parts/:path*` -> `/water-filters/parts` |
 | `/shop/page/2/` | 1 | `/shop/:path*` -> `/water-filters` |
 | `/shop/page/9/` | 1 | `/shop/:path*` -> `/water-filters` |
 | `/bathroom/` | 0 | `/bathroom/:path*` -> `/plumbing` |
 | `/bathroom/elements/banner/` | 0 | `/bathroom/:path*` -> `/plumbing` |
-| `/bathroom/elements/images/` | 0 | `/bathroom/:path*` -> `/plumbing` |
 

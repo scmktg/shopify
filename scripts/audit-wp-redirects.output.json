@@ -1,7 +1,7 @@
 {
   "summary": {
     "csvRows": 442,
-    "redirectRulesEvaluated": 814,
+    "redirectRulesEvaluated": 817,
     "bucketCounts": {
       "no_redirect_needed": {
         "count": 1,
@@ -9,19 +9,19 @@
         "impressions": 31439
       },
       "covered_explicit": {
-        "count": 362,
-        "clicks": 1529,
-        "impressions": 319177
+        "count": 363,
+        "clicks": 1534,
+        "impressions": 319246
       },
       "covered_fallback": {
-        "count": 64,
-        "clicks": 182,
-        "impressions": 42284
+        "count": 71,
+        "clicks": 183,
+        "impressions": 44210
       },
-      "not_covered": {
-        "count": 15,
-        "clicks": 6,
-        "impressions": 2081
+      "gone_410_middleware": {
+        "count": 7,
+        "clicks": 0,
+        "impressions": 86
       }
     },
     "priorityCoverage": {
@@ -32,7 +32,7 @@
       },
       "medium": {
         "total": 36,
-        "covered": 29,
+        "covered": 36,
         "clicksAtRisk": 0
       },
       "high": {
@@ -42,8 +42,8 @@
       },
       "low": {
         "total": 8,
-        "covered": 0,
-        "clicksAtRisk": 6
+        "covered": 8,
+        "clicksAtRisk": 0
       }
     },
     "brokenRuleDestinations": []
@@ -1079,11 +1079,11 @@
       "type": "author archive",
       "priority": "low",
       "suggested": "301 → homepage or 410 Gone",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_explicit",
+      "matchedSource": "/author/steve/",
+      "matchedDestination": "/about",
+      "matchedVia": "/author/steve/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/chemical-dosing-tank-bore-water-treatment-australia/",
@@ -2367,11 +2367,11 @@
       "type": "colour taxonomy (Woo attribute)",
       "priority": "low",
       "suggested": "301 → /collections/ filtered by colour (or 410)",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_fallback",
+      "matchedSource": "/colour/:slug*",
+      "matchedDestination": "/water-filters",
+      "matchedVia": "/colour/brushed-gold/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/commercial-drinking-fountain-gym-office-australia-2026/",
@@ -3165,7 +3165,7 @@
       "type": "other",
       "priority": "medium",
       "suggested": "Review manually",
-      "bucket": "not_covered",
+      "bucket": "gone_410_middleware",
       "matchedSource": null,
       "matchedDestination": null,
       "matchedVia": null,
@@ -3837,7 +3837,7 @@
       "type": "other",
       "priority": "medium",
       "suggested": "Review manually",
-      "bucket": "not_covered",
+      "bucket": "gone_410_middleware",
       "matchedSource": null,
       "matchedDestination": null,
       "matchedVia": null,
@@ -3865,7 +3865,7 @@
       "type": "other",
       "priority": "medium",
       "suggested": "Review manually",
-      "bucket": "not_covered",
+      "bucket": "gone_410_middleware",
       "matchedSource": null,
       "matchedDestination": null,
       "matchedVia": null,
@@ -3893,11 +3893,11 @@
       "type": "colour taxonomy (Woo attribute)",
       "priority": "low",
       "suggested": "301 → /collections/ filtered by colour (or 410)",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_fallback",
+      "matchedSource": "/colour/:slug*",
+      "matchedDestination": "/water-filters",
+      "matchedVia": "/colour/brushed-nickel/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/colour/matte-black/",
@@ -3907,11 +3907,11 @@
       "type": "colour taxonomy (Woo attribute)",
       "priority": "low",
       "suggested": "301 → /collections/ filtered by colour (or 410)",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_fallback",
+      "matchedSource": "/colour/:slug*",
+      "matchedDestination": "/water-filters",
+      "matchedVia": "/colour/matte-black/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/colour/polished-chrome/",
@@ -3921,11 +3921,11 @@
       "type": "colour taxonomy (Woo attribute)",
       "priority": "low",
       "suggested": "301 → /collections/ filtered by colour (or 410)",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_fallback",
+      "matchedSource": "/colour/:slug*",
+      "matchedDestination": "/water-filters",
+      "matchedVia": "/colour/polished-chrome/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/colour/polished-chrome/page/1/",
@@ -3935,11 +3935,11 @@
       "type": "colour taxonomy (Woo attribute)",
       "priority": "low",
       "suggested": "301 → /collections/ filtered by colour (or 410)",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_fallback",
+      "matchedSource": "/colour/:slug*",
+      "matchedDestination": "/water-filters",
+      "matchedVia": "/colour/polished-chrome/page/1/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/colour/polished-chrome/page/2/",
@@ -3949,11 +3949,11 @@
       "type": "colour taxonomy (Woo attribute)",
       "priority": "low",
       "suggested": "301 → /collections/ filtered by colour (or 410)",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_fallback",
+      "matchedSource": "/colour/:slug*",
+      "matchedDestination": "/water-filters",
+      "matchedVia": "/colour/polished-chrome/page/2/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/colour/shiny-gold/",
@@ -3963,11 +3963,11 @@
       "type": "colour taxonomy (Woo attribute)",
       "priority": "low",
       "suggested": "301 → /collections/ filtered by colour (or 410)",
-      "bucket": "not_covered",
-      "matchedSource": null,
-      "matchedDestination": null,
-      "matchedVia": null,
-      "destinationResolves": false
+      "bucket": "covered_fallback",
+      "matchedSource": "/colour/:slug*",
+      "matchedDestination": "/water-filters",
+      "matchedVia": "/colour/shiny-gold/",
+      "destinationResolves": true
     },
     {
       "cleanUrl": "https://enviroaqua.com.au/commercial-water-bubblers-vs-water-coolers-australia/",
@@ -6189,7 +6189,7 @@
       "type": "other",
       "priority": "medium",
       "suggested": "Review manually",
-      "bucket": "not_covered",
+      "bucket": "gone_410_middleware",
       "matchedSource": null,
       "matchedDestination": null,
       "matchedVia": null,
@@ -6203,7 +6203,7 @@
       "type": "other",
       "priority": "medium",
       "suggested": "Review manually",
-      "bucket": "not_covered",
+      "bucket": "gone_410_middleware",
       "matchedSource": null,
       "matchedDestination": null,
       "matchedVia": null,
@@ -6217,7 +6217,7 @@
       "type": "other",
       "priority": "medium",
       "suggested": "Review manually",
-      "bucket": "not_covered",
+      "bucket": "gone_410_middleware",
       "matchedSource": null,
       "matchedDestination": null,
       "matchedVia": null,
@@ -6231,7 +6231,7 @@
       "type": "other",
       "priority": "medium",
       "suggested": "Review manually",
-      "bucket": "not_covered",
+      "bucket": "gone_410_middleware",
       "matchedSource": null,
       "matchedDestination": null,
       "matchedVia": null,
