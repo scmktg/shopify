@@ -1,4 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
+import { Resend } from 'resend';
+import { BUSINESS_INFO } from '@/content/business-info';
 
 export const runtime = 'nodejs';
 
@@ -33,10 +35,46 @@ function rateLimitOk(ip: string): boolean {
   return true;
 }
 
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 interface BackInStockBody {
   productId: unknown;
   sku: unknown;
   email: unknown;
+}
+
+interface Subscription {
+  productId: string;
+  sku: string | null;
+  email: string;
+}
+
+function buildEmailHtml(
+  sub: Subscription,
+  meta: { ip: string; userAgent: string; submittedAt: string },
+): string {
+  const rows: Array<[string, string]> = [
+    ['Customer email', sub.email],
+    ['Product ID', sub.productId],
+    ['SKU', sub.sku ?? '(none)'],
+    ['Submitted at', meta.submittedAt],
+    ['IP', meta.ip],
+    ['User-Agent', meta.userAgent],
+  ];
+  const body = rows
+    .map(
+      ([label, value]) =>
+        `<tr><td style="padding:6px 12px;border-bottom:1px solid #e5e5e5;font-weight:600;vertical-align:top">${escapeHtml(label)}</td><td style="padding:6px 12px;border-bottom:1px solid #e5e5e5;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`,
+    )
+    .join('');
+  return `<table style="font-family:system-ui,sans-serif;border-collapse:collapse;width:100%;max-width:640px">${body}</table>`;
 }
 
 export async function POST(request: NextRequest) {
@@ -76,12 +114,52 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // TODO: wire up the real back-in-stock subscriber. The likely
-  // integration is Shopify's "Notify me when available" via the
-  // Customer Privacy / Subscription APIs, or Klaviyo's back-in-stock
-  // list (server-side identify + add-to-list). For now we just
-  // accept the submission so the UI can be built and shipped.
-  console.info('[back-in-stock] subscribe', { productId, sku, email });
+  const apiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.RESEND_FROM_EMAIL;
+  if (!apiKey || !fromEmail) {
+    console.warn(
+      '[back-in-stock] RESEND_API_KEY or RESEND_FROM_EMAIL missing — submission accepted in form, but no email sent.',
+    );
+    return NextResponse.json(
+      {
+        ok: false,
+        error:
+          'Email delivery is not configured yet. Please email info@enviroaqua.com.au directly while we sort this out.',
+      },
+      { status: 503 },
+    );
+  }
+
+  const sub: Subscription = { productId, sku, email };
+  const meta = {
+    ip,
+    userAgent: request.headers.get('user-agent') ?? 'unknown',
+    submittedAt: new Date().toISOString(),
+  };
+
+  try {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: fromEmail,
+      to: BUSINESS_INFO.email,
+      replyTo: sub.email,
+      subject: `Back-in-stock request — ${sub.sku ?? sub.productId}`,
+      html: buildEmailHtml(sub, meta),
+    });
+    if (error) {
+      console.error('[back-in-stock] Resend error:', error);
+      return NextResponse.json(
+        { ok: false, error: 'Could not send your request. Please try again shortly.' },
+        { status: 502 },
+      );
+    }
+  } catch (caught) {
+    console.error('[back-in-stock] unexpected send failure:', caught);
+    return NextResponse.json(
+      { ok: false, error: 'Could not send your request. Please try again shortly.' },
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
