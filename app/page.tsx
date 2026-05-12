@@ -145,7 +145,7 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'Do you ship Australia-wide?',
-    a: 'Yes. Tracked delivery on every order, flat-rate shipping below $200 and free above. Orders placed before 1pm AEST ship the same business day from our Central Coast NSW warehouse.',
+    a: 'Yes. Tracked delivery on every order, with standard tiered rates Australia-wide from $9.95. Whole-house systems, UV systems, and freestanding coolers ship free Australia-wide. Commercial RO plants and large tanks are freight-quoted within one business day. Orders placed before 12pm AEST ship the same business day from our Central Coast NSW warehouse.',
   },
   {
     q: "What's your returns policy?",
