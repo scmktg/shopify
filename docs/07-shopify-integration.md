@@ -274,6 +274,24 @@ Carts are managed via Storefront API mutations:
 
 Cart ID stored in HTTP-only cookie. Cart context provider (`/components/cart/CartProvider.tsx`) wraps the app. Checkout URL redirects to Shopify-hosted checkout (compliance, security, fraud all handled by Shopify).
 
+### Custom checkout domain
+
+Checkout runs on `checkout.enviroaqua.com.au`, served by Shopify via a CNAME → `shops.myshopify.com`. The host is set as the **primary domain** in Shopify admin (Headless channel → Storefronts → Domain; if the store-level Settings → Domains also lists the host, set primary there too so both surfaces agree).
+
+**Why no code changes were needed.** `cart.checkoutUrl` is generated server-side by the Storefront API using whatever Shopify has flagged as primary. We never construct the URL ourselves — we just read it and `window.location.assign()` it. References:
+
+- `components/cart/CartProvider.tsx:131` — `window.location.assign(updated.checkoutUrl)`
+- `components/cart/CartDrawer.tsx:109` — `<a href={cart.checkoutUrl}>`
+- `components/cart/CartPageView.tsx:68` — `<a href={cart.checkoutUrl}>`
+
+**Do not change `SHOPIFY_STORE_DOMAIN`.** That env var is the Storefront *API* host (the `*.myshopify.com` value used by `@shopify/storefront-api-client`). It is unrelated to the customer-facing checkout host and must stay on the myshopify domain.
+
+**Cookies.** Storefront and checkout share the same eTLD+1 (`enviroaqua.com.au`), so cart/session cookies remain first-party — no CHIPS or partitioning concerns.
+
+**Rollback.** Unset the primary domain in Shopify admin. The Storefront API reverts to `*.myshopify.com` for `checkoutUrl` on the next request — no deploy required.
+
+**Cutover order (important).** Add the CNAME *before* flipping primary in Shopify admin, and wait for Shopify to provision the SSL cert (usually under an hour after DNS propagates). Flipping primary before SSL is live causes `checkoutUrl` to TLS-error for any customer mid-session.
+
 ```ts
 // /lib/shopify/cart.ts
 import { shopifyClient } from './client';
