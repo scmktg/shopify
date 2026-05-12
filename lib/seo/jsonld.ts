@@ -54,7 +54,27 @@ export function localBusinessSchema(): JsonLd {
       addressCountry: BUSINESS_INFO.address.country,
     },
     openingHours: BUSINESS_INFO.showroom.schemaHours,
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+        ],
+        opens: '09:00',
+        closes: '17:00',
+      },
+    ],
     priceRange: '$$',
+    // aggregateRating intentionally omitted: per Google's review
+    // snippet policy, this field is reserved for first-party reviews
+    // collected on our own surfaces. The visible "5.0 · 74 reviews"
+    // on /reviews is verifiable on-page content sourced from Google
+    // and Facebook profiles — that's a separate concern from
+    // structured-data claims, which would mislead Search.
     sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
   };
 }

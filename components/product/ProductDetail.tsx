@@ -15,6 +15,7 @@ import { BuyBanner } from './BuyBanner';
 import { BoughtTogether } from './BoughtTogether';
 import { MoreInCategory } from './MoreInCategory';
 import { BrandTrustStrip } from './BrandTrustStrip';
+import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 import { MobileStickyBuyBar } from '@/components/cart/MobileStickyBuyBar';
 import { ProductTrustBlock, type StockStatus } from './ProductTrustBlock';
@@ -206,6 +207,8 @@ export function ProductDetail({
         currentHandle={product.handle}
         subcategoryLabel={subcategoryLabel}
       />
+
+      <PdpReviewsSlot productHandle={product.handle} />
 
       <BrandTrustStrip />
 
