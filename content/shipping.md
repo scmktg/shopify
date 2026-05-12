@@ -10,7 +10,7 @@ faq:
   - q: "How long does delivery take?"
     a: "Standard delivery is 2–5 business days to most Australian addresses. Express is 1–2 business days on tiers T1–T4 (parcel items). Sydney metro and the Central Coast are usually at the fast end of that range; remote WA, NT, and far-north QLD addresses are at the slow end. Whole-house systems and other freight items take 3–10 business days depending on state. The tracking link gives a per-leg ETA once the parcel ships."
   - q: "Do you ship Australia-wide?"
-    a: "Yes, for most products. Standard tiered shipping rates Australia-wide from $9.95. Whole-house Big Blue systems, UV systems, freestanding coolers, and other large items ship free Australia-wide on our free-freight tier. Commercial RO plants, 50L+ tanks, and dosing tanks ship by pallet at three flat rates by destination: $99 to Sydney metro, Central Coast, Newcastle/Hunter and ACT; $179 to other capital city metro; $249 regional and remote. Toilets and complete bathroom packages are pickup-only from our Wyong NSW showroom — call us if you need a courier arranged."
+    a: "Yes, for most products. Standard tiered shipping rates Australia-wide from $9.95. Whole-house Big Blue systems, UV systems, freestanding coolers, and other large items ship free Australia-wide on our free-freight tier. Commercial RO plants, 50L+ tanks, and dosing tanks ship by pallet at three flat rates by destination state: $99 to NSW and ACT; $179 to Victoria, Queensland and South Australia; $249 to WA, Tasmania and NT. Pallet freight is 3–8 business days. Toilets and complete bathroom packages are pickup-only from our Wyong NSW showroom — call us if you need a courier arranged."
   - q: "Do you ship internationally?"
     a: "We ship within Australia only. Orders to overseas addresses (including New Zealand) cannot be processed at this time."
   - q: "Can I pick up locally?"
@@ -30,7 +30,7 @@ Each product is assigned a tier based on its size, weight, and freight profile. 
 | T3 Large parcel | $19.95 | $29.95 | Aramex / CouriersPlease | Big Blue cartridges, 5/6-stage RO sets, under-sink systems, tall mixers |
 | T4 Bulky parcel | $29.95 | $41.95 | Aramex bulky | Under-sink RO with tank, bench-top coolers, single toilets |
 | T5 Free freight | FREE | n/a | Allied / Aramex bulky | Whole-house Big Blue (single/twin/triple), freestanding coolers, large UV, 19L+ pressure tanks, in-wall toilets |
-| T6 Freight by zone | $99 / $179 / $249 by zone | n/a | Pallet freight | Commercial RO plants, 50L+ tanks, dosing tanks |
+| T6 Freight by zone | $99 / $179 / $249 by state | n/a | Pallet freight | Commercial RO plants, 50L+ tanks, dosing tanks |
 | T7 Click & Collect only | n/a | n/a | Wyong showroom pickup | Toilets, bathroom bundles |
 
 Express is offered on T1–T4 only. Pallet freight has no overnight equivalent.
@@ -53,13 +53,11 @@ You will receive an order confirmation email when the order is placed, and a sec
 
 ## Pallet freight by zone (T6)
 
-Commercial RO plants, 50L+ pressure tanks, and dosing tanks ship by pallet. Three flat rates by destination postcode, shown at checkout once you enter yours:
+Commercial RO plants, 50L+ pressure tanks, and dosing tanks ship by pallet. Three flat rates by destination state, shown at checkout once you enter your address:
 
-- **$99** — Sydney metro, Central Coast, Newcastle/Hunter, ACT
-- **$179** — Other capital city metro (Melbourne, Brisbane, Adelaide, Perth, Hobart, Darwin)
-- **$249** — Regional and remote (everything else)
-
-Pallet freight typically takes 5–14 business days depending on destination.
+- **$99** — NSW and ACT (3–5 business days)
+- **$179** — Victoria, Queensland, South Australia (5–8 business days)
+- **$249** — WA, Tasmania, NT (5–8 business days)
 
 ## Click & Collect only (T7)
 

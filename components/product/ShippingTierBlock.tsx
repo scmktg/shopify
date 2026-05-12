@@ -77,10 +77,10 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
           Ships for $99&ndash;$249 depending on your state.
         </strong>
         <br />
-        Sydney, Central Coast, Newcastle and ACT $99. Other capital cities
-        $179. Regional and remote $249.
+        NSW and ACT $99. Victoria, Queensland and South Australia $179. WA,
+        Tasmania and NT $249.
         <br />
-        Delivered by pallet freight, 5&ndash;14 business days.
+        Delivered by pallet freight, 3&ndash;8 business days.
       </>
     ),
     clickAndCollect: (
