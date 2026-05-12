@@ -3,7 +3,6 @@ import type { FaqItem } from '@/lib/content/markdown';
 import type { ProductContent } from '@/lib/products/schema';
 import { BUSINESS_INFO } from '@/content/business-info';
 import { findCategory } from '@/content/categories';
-import { reviewStats } from '@/data/reviews';
 import { absoluteUrl, getSiteUrl } from './siteUrl';
 
 export type JsonLd = Record<string, unknown>;
@@ -70,13 +69,12 @@ export function localBusinessSchema(): JsonLd {
       },
     ],
     priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: reviewStats.averageRating.toFixed(1),
-      reviewCount: String(reviewStats.total),
-      bestRating: '5',
-      worstRating: '1',
-    },
+    // aggregateRating intentionally omitted: per Google's review
+    // snippet policy, this field is reserved for first-party reviews
+    // collected on our own surfaces. The visible "5.0 · 74 reviews"
+    // on /reviews is verifiable on-page content sourced from Google
+    // and Facebook profiles — that's a separate concern from
+    // structured-data claims, which would mislead Search.
     sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
   };
 }

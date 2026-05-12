@@ -18,6 +18,11 @@ export interface Review {
    * not a quality signal, since all stored reviews are 5★.
    */
   featured: boolean;
+  /**
+   * Google-only signal. Reviewers flagged as "Local Guide" on the
+   * source platform get a small muted label next to their name.
+   */
+  isLocalGuide?: boolean;
 }
 
 export interface ReviewStats {
@@ -30,5 +35,5 @@ export interface ReviewStats {
   /** 0–1, recommend rate on Facebook (separate metric from the star average). */
   recommendRate: number;
   /** Count of reviews actually present in data/reviews.ts. */
-  reviewsShown: number;
+  reviewsShownLocally: number;
 }

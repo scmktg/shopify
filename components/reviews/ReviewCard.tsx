@@ -45,6 +45,12 @@ export function ReviewCard({ review, className = '' }: ReviewCardProps) {
       </blockquote>
       <footer className="mt-4 text-xs text-black/55">
         <span className="font-medium text-black/80">{review.authorName}</span>
+        {review.isLocalGuide && (
+          <>
+            <span aria-hidden="true"> · </span>
+            <span className="text-black/50">Local Guide</span>
+          </>
+        )}
         <span aria-hidden="true"> · </span>
         <time dateTime={review.date}>{formatDate(review.date)}</time>
       </footer>

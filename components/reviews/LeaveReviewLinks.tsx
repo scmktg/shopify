@@ -7,14 +7,14 @@ interface LeaveReviewLinksProps {
 
 /**
  * Two outbound CTAs — leave a Google review or a Facebook
- * recommendation. The Google URL is read from
- * `NEXT_PUBLIC_GOOGLE_REVIEW_URL` so it can be swapped without a
- * deploy; the Facebook URL comes from BUSINESS_INFO.
+ * recommendation. Both URLs are read from env vars
+ * (`NEXT_PUBLIC_GOOGLE_REVIEW_URL`, `NEXT_PUBLIC_FACEBOOK_REVIEW_URL`)
+ * so they can be swapped without a deploy.
  *
- * If the env var isn't set, the Google link points at a Google Maps
- * search seeded with the business name + address — Google handles
- * the click-through to the right profile. Not as clean as the
- * canonical write-a-review URL but it doesn't 404.
+ * Fallbacks:
+ *   - Google: Maps search seeded with business name + locality, which
+ *     Google resolves to the right profile.
+ *   - Facebook: the public reviews tab for the page.
  */
 export function LeaveReviewLinks({ className = '' }: LeaveReviewLinksProps) {
   const googleUrl =
@@ -22,6 +22,10 @@ export function LeaveReviewLinks({ className = '' }: LeaveReviewLinksProps) {
     `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
       `${BUSINESS_INFO.name} ${BUSINESS_INFO.address.locality} ${BUSINESS_INFO.address.region}`,
     )}`;
+
+  const facebookUrl =
+    process.env.NEXT_PUBLIC_FACEBOOK_REVIEW_URL ??
+    'https://facebook.com/EnviroAqua.com.au/reviews';
 
   const linkClasses =
     'inline-flex items-center gap-2 rounded-md border border-black/15 bg-white px-4 py-2 text-sm font-medium text-black hover:bg-black/[0.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue';
@@ -38,7 +42,7 @@ export function LeaveReviewLinks({ className = '' }: LeaveReviewLinksProps) {
         Leave a Google review
       </a>
       <a
-        href={BUSINESS_INFO.social.facebook}
+        href={facebookUrl}
         target="_blank"
         rel="noopener noreferrer"
         className={linkClasses}

@@ -35,10 +35,12 @@ export default function ReviewsPage() {
             Australian homeowners, tradies, and builders since 2018. Over
             the years our customers have left us{' '}
             <strong>
-              {reviewStats.total} five-star reviews on Google and Facebook
+              {reviewStats.total} five-star reviews across Google and
+              Facebook
             </strong>{' '}
-            — the most recent are shown below. We&apos;re proud of our
-            track record, and we&apos;d love yours too.
+            — a selection of them is below. We&apos;re proud of our track
+            record, and we&apos;d love yours too: leave a review on
+            Google or Facebook.
           </p>
           <LeaveReviewLinks className="mt-6" />
           <ReviewsAggregate variant="homepage" className="mt-8" />
@@ -56,26 +58,26 @@ export default function ReviewsPage() {
               </li>
             ))}
           </ul>
-          {reviewStats.reviewsShown < reviewStats.total && (
+          {reviewStats.reviewsShownLocally < reviewStats.total && (
             <p className="mt-8 text-center text-sm text-black/60">
-              Showing {reviewStats.reviewsShown} of {reviewStats.total}{' '}
-              total reviews. See the rest on{' '}
+              Showing {reviewStats.reviewsShownLocally} of{' '}
+              {reviewStats.total} reviews. See the full set on our{' '}
               <Link
                 href="https://www.google.com/maps/search/?api=1&query=Enviro+Aqua+Wyong+NSW"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-brand-blue hover:underline underline-offset-4"
               >
-                Google
+                Google Business Profile
               </Link>{' '}
-              or{' '}
+              and{' '}
               <Link
                 href="https://www.facebook.com/EnviroAqua.com.au/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-brand-blue hover:underline underline-offset-4"
               >
-                Facebook
+                Facebook page
               </Link>
               .
             </p>
