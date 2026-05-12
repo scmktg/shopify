@@ -402,8 +402,6 @@ const WORDPRESS_FALLBACK_REDIRECTS = [
   { source: '/shop/:path*', destination: '/water-filters', permanent: true },
   { source: '/my-account', destination: '/water-filters', permanent: true },
   { source: '/my-account/:path*', destination: '/water-filters', permanent: true },
-  { source: '/cart', destination: '/water-filters', permanent: true },
-  { source: '/cart/:path*', destination: '/water-filters', permanent: true },
   { source: '/checkout', destination: '/water-filters', permanent: true },
   { source: '/checkout/:path*', destination: '/water-filters', permanent: true },
 ];
