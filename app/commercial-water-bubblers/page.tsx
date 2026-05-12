@@ -476,7 +476,7 @@ function RangeSection({ products }: RangeSectionProps) {
         <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-              Pick your cabinet
+              Pick your model
             </h2>
             <p className="mt-2 text-base text-black/70 max-w-2xl">
               Cooling, filtration, and certification are identical across the
