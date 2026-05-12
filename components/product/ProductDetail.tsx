@@ -19,6 +19,7 @@ import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 import { MobileStickyBuyBar } from '@/components/cart/MobileStickyBuyBar';
 import { ProductTrustBlock, type StockStatus } from './ProductTrustBlock';
+import { ShippingTierBlock } from './ShippingTierBlock';
 import { DEFAULT_LOW_STOCK_THRESHOLD } from '@/lib/site-config';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
@@ -151,6 +152,11 @@ export function ProductDetail({
               />
             </div>
           )}
+
+          <ShippingTierBlock
+            tier={product.metafields.shipping_tier}
+            productHandle={product.handle}
+          />
 
           {firstVariant && (
             <ProductTrustBlock

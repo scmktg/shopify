@@ -1,23 +1,15 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import { Phone, RefreshCcw, Store, Truck } from 'lucide-react';
+import { Phone, RefreshCcw, Truck } from 'lucide-react';
 import {
-  CLICK_AND_COLLECT_PICKUP_WINDOW,
   PHONE_DISPLAY,
   PHONE_SUPPORT_HOURS,
   PHONE_TEL,
   RETURNS_SUMMARY,
-  SHIPPING_EXPRESS_FROM_AUD,
-  SHIPPING_FREE_THRESHOLD_AUD,
-  SHIPPING_STANDARD_FROM_AUD,
   SHOWROOM_LOCALITY,
 } from '@/lib/site-config';
 import { DispatchCountdown } from './DispatchCountdown';
 import { BackInStockNotify } from './BackInStockNotify';
-
-function formatAud(value: number): string {
-  return value % 1 === 0 ? `$${value}` : `$${value.toFixed(2)}`;
-}
 
 export type StockStatus = 'in_stock' | 'low_stock' | 'out_of_stock';
 
@@ -55,43 +47,6 @@ export function ProductTrustBlock({
           />
           <span>
             <DispatchCountdown />
-          </span>
-        </p>
-      )}
-
-      <p className="flex items-start gap-2">
-        <Truck
-          className="h-4 w-4 mt-0.5 flex-shrink-0 text-black/70"
-          aria-hidden="true"
-        />
-        <span>
-          Standard from {formatAud(SHIPPING_STANDARD_FROM_AUD)} · Express from{' '}
-          {formatAud(SHIPPING_EXPRESS_FROM_AUD)} · Free over $
-          {SHIPPING_FREE_THRESHOLD_AUD} —{' '}
-          <Link
-            href="/shipping/"
-            className="underline underline-offset-4 hover:text-brand-blue"
-          >
-            shipping details
-          </Link>
-        </span>
-      </p>
-
-      {inStock && (
-        <p className="flex items-start gap-2">
-          <Store
-            className="h-4 w-4 mt-0.5 flex-shrink-0 text-black/70"
-            aria-hidden="true"
-          />
-          <span>
-            Free Click &amp; Collect from our{' '}
-            <Link
-              href="/showroom/"
-              className="underline underline-offset-4 hover:text-brand-blue"
-            >
-              {SHOWROOM_LOCALITY.split(',')[0]} showroom
-            </Link>
-            {' '}— {CLICK_AND_COLLECT_PICKUP_WINDOW}
           </span>
         </p>
       )}
