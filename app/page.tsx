@@ -340,8 +340,8 @@ function TrustStrip() {
     },
     {
       icon: Truck,
-      title: 'Free shipping over $200',
-      body: 'Flat-rate Australia-wide delivery. No surprises at checkout.',
+      title: 'Free freight on systems',
+      body: 'Whole-house filters, UV systems, and freestanding coolers ship free Australia-wide.',
     },
     {
       icon: ShieldCheck,
