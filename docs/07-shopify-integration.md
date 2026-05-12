@@ -347,7 +347,7 @@ Before any product import:
 - [ ] Permissions configured (see Setup section above)
 - [ ] Private + public tokens generated and stored in Vercel env vars
 - [ ] GST (10%) configured: Settings → Taxes → Australia
-- [ ] Shipping zones: Australia (free over $200) + international optional
+- [ ] Shipping zones: Australia (six-tier framework per `shipping-strategy.md`) + international optional
 - [ ] Payment gateway: Shopify Payments (preferred) or fallback
 - [ ] Email notifications: Settings → Notifications (review templates)
 - [ ] Primary currency: AUD (Settings → Store details)
@@ -454,7 +454,7 @@ Before any code:
 - [ ] Enable headless via "Hydrogen" channel or Storefront API directly
 - [ ] Set up taxes (GST 10% for Australia)
 - [ ] Set up shipping zones (Australia + international optional)
-- [ ] Configure free shipping threshold ($200 AUD)
+- [ ] Configure six-tier shipping profiles (T1–T5 by weight band, T6 freight-quoted) per `shipping-strategy.md`
 - [ ] Connect payment gateway (Shopify Payments preferred)
 - [ ] Configure email notification templates
 - [ ] Set primary currency to AUD

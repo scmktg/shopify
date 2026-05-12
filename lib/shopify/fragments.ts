@@ -122,6 +122,7 @@ export const PRODUCT_FRAGMENT = /* GraphQL */ `
         { namespace: "enviroaqua", key: "key_benefits" }
         { namespace: "enviroaqua", key: "country_of_origin" }
         { namespace: "enviroaqua", key: "warranty_months" }
+        { namespace: "enviroaqua", key: "shipping_tier" }
       ]
     ) {
       key

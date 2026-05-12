@@ -150,7 +150,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Do you ship to gyms outside NSW?',
-    a: `Yes. Tracked Australia-wide dispatch from Wyong NSW. Orders placed before ${BUSINESS_INFO.orderCutoff} on a business day ship the same day. Flat-rate freight, free over $${BUSINESS_INFO.shippingFreeThresholdAud}. We have shipped to gyms in QLD, VIC, WA, SA, and TAS.`,
+    a: `Yes. Tracked Australia-wide dispatch from Wyong NSW. Orders placed before ${BUSINESS_INFO.orderCutoff} on a business day ship the same day. Commercial bubblers ship free Australia-wide on our whole-system freight tier — no cart-value threshold. We have shipped to gyms in QLD, VIC, WA, SA, and TAS.`,
   },
   {
     q: 'How much does the bubbler save us versus bottled water?',

@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!node) return {};
   return {
     title: `${node.subcategory.label} | ${node.category.label}`,
-    description: `${node.subcategory.label.toLowerCase()} in our ${node.category.label.toLowerCase()} range. Wholesale prices, free shipping over $200.`,
+    description: `${node.subcategory.label.toLowerCase()} in our ${node.category.label.toLowerCase()} range. Wholesale prices, tiered shipping Australia-wide from $9.95.`,
     alternates: {
       canonical: `/${category}/${subcategory}/`,
     },

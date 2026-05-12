@@ -23,6 +23,8 @@ export type CartridgeType =
   | 'pleated'
   | 'uf';
 
+export type ShippingTier = 'T1' | 'T2' | 'T3' | 'T4' | 'T5' | 'T6' | 'T7';
+
 export interface Money {
   amount: string;
   currencyCode: string;
@@ -80,6 +82,7 @@ export interface ProductMetafields {
   key_benefits: ReadonlyArray<string> | null;
   country_of_origin: string | null;
   warranty_months: number | null;
+  shipping_tier: ShippingTier | null;
 }
 
 export interface Product {
