@@ -1,6 +1,6 @@
 ---
 title: "Shipping & Delivery"
-description: "Tiered shipping rates Australia-wide, free Click & Collect from our Wyong NSW showroom. Same-day dispatch on orders before 12pm AEST."
+description: "Six-tier flat-rate shipping Australia-wide, plus free freight on whole-house systems and free Click & Collect from our Wyong NSW showroom. Same-day dispatch on orders before 12pm AEST."
 relatedLinks:
   - { label: "Returns & warranty", href: "/returns/" }
   - { label: "Contact us", href: "/contact/" }
@@ -8,42 +8,35 @@ faq:
   - q: "When will my order ship?"
     a: "Orders placed before 12pm AEST on a business day ship the same day. Orders placed after 12pm, on weekends, or on Australian public holidays ship the next business day. You will receive a tracking link by email when the parcel is collected."
   - q: "How long does delivery take?"
-    a: "Standard delivery is 2–5 business days to most Australian addresses. Express is 1–2 business days. Sydney metro and the Central Coast are usually at the fast end of that range; remote WA, NT, and far-north QLD addresses are at the slow end. The tracking link gives a per-leg ETA once the parcel ships."
+    a: "Standard delivery is 2–5 business days to most Australian addresses. Express is 1–2 business days on tiers T1–T4 (parcel items). Sydney metro and the Central Coast are usually at the fast end of that range; remote WA, NT, and far-north QLD addresses are at the slow end. Whole-house systems and other freight items take 3–10 business days depending on state. The tracking link gives a per-leg ETA once the parcel ships."
+  - q: "Do you ship Australia-wide?"
+    a: "Yes. Standard tiered shipping rates Australia-wide from $9.95. Whole-house Big Blue systems, UV systems, freestanding coolers, and other large items ship free Australia-wide on our free-freight tier. Commercial RO plants, 50L+ tanks, and bathroom bundles ship by pallet — we email a freight quote within one business day of order."
   - q: "Do you ship internationally?"
     a: "We ship within Australia only. Orders to overseas addresses (including New Zealand) cannot be processed at this time."
   - q: "Can I pick up locally?"
-    a: "Yes. Click & Collect from our Wyong NSW showroom (6/45 Amsterdam Cct) is free. Orders placed during business hours are usually ready within two hours; we will email or text you when yours is ready. Showroom hours are Mon–Fri 9am – 5pm AEST."
+    a: "Yes. Click & Collect from our Wyong NSW showroom (6/45 Amsterdam Cct) is free on every order, including freight-quoted items. Orders placed during business hours are usually ready within two hours; we will email or text you when yours is ready. Showroom hours are Mon–Fri 9am – 5pm AEST."
 ---
 
 We dispatch orders Monday to Friday from our Wyong NSW warehouse on the Central Coast. Tracked shipping on every order, with no signature required by default.
 
-## Standard delivery rates (2–5 business days)
+## Six shipping tiers
 
-| Item size | Rate |
-|---|---|
-| Small | $10.95 |
-| Medium | $14.95 |
-| Large | $18.95 |
-| Extra large | $23.95 |
+Each product is assigned a tier based on its size, weight, and freight profile. The tier is shown on every product page above the description.
 
-## Express delivery rates (1–2 business days)
+| Tier | Standard | Express | Service | What it carries |
+|---|---|---|---|---|
+| T1 Small parcel | $9.95 | $17.95 | AusPost small satchel | Inline cartridges, fittings, small parts |
+| T2 Standard parcel | $14.95 | $22.95 | AusPost medium satchel / Aramex | Single 10" cartridges, twin packs, RO membranes, basin mixers, bench-tops |
+| T3 Large parcel | $19.95 | $29.95 | Aramex / CouriersPlease | Big Blue cartridges, 5/6-stage RO sets, under-sink systems, tall mixers |
+| T4 Bulky parcel | $29.95 | $41.95 | Aramex bulky | Under-sink RO with tank, bench-top coolers, single toilets |
+| T5 Free freight | FREE | n/a | Allied / Aramex bulky | Whole-house Big Blue (single/twin/triple), freestanding coolers, large UV, 19L+ pressure tanks, in-wall toilets |
+| T6 Freight quote | quote | n/a | Pallet freight | Commercial RO plants, 50L+ tanks, dosing tanks, bathroom bundles |
 
-| Item size | Rate |
-|---|---|
-| Small | $14.95 |
-| Medium | $18.95 |
-| Large | $23.95 |
-| Extra large | $31.95 |
+Express is offered on T1–T4 only. Pallet freight has no overnight equivalent.
 
-The exact rate is calculated at checkout based on the dimensions and weight of what you have ordered. The figures above are the indicative tier — multi-item orders may shift up a tier when the combined parcel is larger.
+## Free Click & Collect from Wyong
 
-## Free shipping over $200
-
-Standard shipping is free Australia-wide on orders over $200. Express upgrades are still charged at the rates above.
-
-## Click & Collect — free from Wyong
-
-Pick up your order in person from our Wyong NSW showroom and skip the shipping fee.
+Pick up your order in person from our Wyong NSW showroom and skip the shipping fee on every tier — including freight-quoted items.
 
 - **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
 - **Hours:** Monday to Friday, 9am – 5pm AEST
@@ -56,6 +49,12 @@ Pick up your order in person from our Wyong NSW showroom and skip the shipping f
 - Orders placed **after 12pm AEST**, on weekends, or on Australian public holidays → ship the next business day.
 
 You will receive an order confirmation email when the order is placed, and a second email with the tracking link when the parcel is collected by the carrier.
+
+## Freight-quoted items (T6)
+
+Commercial RO plants, 50L+ pressure tanks, dosing tanks, and bathroom bundles ship by pallet. The product page lists the item as freight-quoted; checkout completes at $0 freight, and we email the exact freight cost (typically $150–$400 depending on your state) within one business day. You can cancel for a full refund if the quote doesn't work for you.
+
+For an instant quote before ordering, call (02) 8772 8162 during business hours.
 
 ## Damaged or missing parcels
 
