@@ -422,7 +422,7 @@ function WhyDifferent() {
     {
       icon: Zap,
       title: 'Fast Australian dispatch',
-      body: 'Orders placed before 1pm AEST ship the same business day from our Central Coast NSW warehouse. Tracked delivery on every order.',
+      body: 'Orders placed before 12pm AEST ship the same business day from our Central Coast NSW warehouse. Tracked delivery on every order.',
     },
   ];
   return (
