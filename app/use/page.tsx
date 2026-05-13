@@ -4,7 +4,7 @@ import { SectionHub } from '@/components/editorial/SectionHub';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
-const PATH = '/use/';
+const PATH = '/use';
 
 export const metadata: Metadata = {
   title: 'Water Filters by Use Case',

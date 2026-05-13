@@ -16,22 +16,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticEntries: MetadataRoute.Sitemap = [
     { url: `${base}/`, lastModified: now, changeFrequency: 'daily', priority: 1 },
-    { url: `${base}/about/`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/about/our-pricing/`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact/`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/shipping/`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/returns/`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/privacy/`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/terms/`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/help/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/help/which-filter/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/use/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/water-problems/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/locations/`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/showroom/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/reviews/`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${base}/whole-house-installation-package/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/watermark-certified/`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
+    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/about/our-pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/shipping`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/returns`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/help`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/help/which-filter`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/use`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/water-problems`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/locations`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/showroom`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/reviews`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${base}/whole-house-installation-package`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/watermark-certified`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
   ];
 
   const editorialSections: ReadonlyArray<{
@@ -49,7 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const slugs = await listMarkdownSlugs(section);
     for (const slug of slugs) {
       editorialEntries.push({
-        url: `${base}/${section}/${slug}/`,
+        url: `${base}/${section}/${slug}`,
         lastModified: now,
         changeFrequency: 'monthly',
         priority,
@@ -72,7 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         if (!file.endsWith('.md') || file === 'index.md') continue;
         const subslug = file.replace(/\.md$/, '');
         editorialEntries.push({
-          url: `${base}/${section}/${entry.name}/${subslug}/`,
+          url: `${base}/${section}/${entry.name}/${subslug}`,
           lastModified: now,
           changeFrequency: 'monthly',
           priority: priority - 0.1,
@@ -84,13 +84,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const categoryEntries: MetadataRoute.Sitemap = CATEGORIES.flatMap(
     (category) => [
       {
-        url: `${base}/${category.slug}/`,
+        url: `${base}/${category.slug}`,
         lastModified: now,
         changeFrequency: 'daily' as const,
         priority: 0.8,
       },
       ...category.subcategories.map((sub) => ({
-        url: `${base}/${category.slug}/${sub.slug}/`,
+        url: `${base}/${category.slug}/${sub.slug}`,
         lastModified: now,
         changeFrequency: 'daily' as const,
         priority: 0.7,
@@ -109,7 +109,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           const { category, subcategory } = getProductCategories(entry.handle);
           if (!category || !subcategory) return null;
           return {
-            url: `${base}/${category}/${subcategory}/${entry.handle}/`,
+            url: `${base}/${category}/${subcategory}/${entry.handle}`,
             lastModified: new Date(entry.updatedAt),
             changeFrequency: 'weekly' as const,
             priority: 0.6,

@@ -9,7 +9,7 @@ import {
   type JsonLd,
 } from '@/lib/seo/jsonld';
 
-const PATH = '/shipping/';
+const PATH = '/shipping';
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await loadMarkdownPage('shipping');

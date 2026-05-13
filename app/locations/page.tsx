@@ -4,7 +4,7 @@ import { SectionHub } from '@/components/editorial/SectionHub';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
-const PATH = '/locations/';
+const PATH = '/locations';
 
 export const metadata: Metadata = {
   title: 'Service Areas & Local Pickup',

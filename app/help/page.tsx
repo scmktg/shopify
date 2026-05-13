@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Help & Buying Guides',
   description:
     'How-to guides and buying advice for Australian water filtration. WaterMark certification, choosing a system, DIY install steps.',
-  alternates: { canonical: '/help/' },
+  alternates: { canonical: '/help' },
 };
 
 const INTRO =

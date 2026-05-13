@@ -27,7 +27,7 @@ import type { Product } from '@/types/product';
 
 export const revalidate = 3600;
 
-const PATH = '/commercial-water-bubblers/';
+const PATH = '/commercial-water-bubblers';
 
 type CabinetKey = 'round' | 'square' | 'hdpe';
 

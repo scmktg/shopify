@@ -62,7 +62,7 @@ export async function generateMetadata({
     alternates: {
       // Filter URLs canonical to the unfiltered page so search
       // engines don't index every type combination.
-      canonical: `/${CATEGORY}/${SUBCATEGORY}/`,
+      canonical: `/${CATEGORY}/${SUBCATEGORY}`,
     },
     robots: filterType ? { index: false, follow: true } : undefined,
   };
@@ -80,7 +80,7 @@ export default async function PumpsPage({ searchParams }: PumpsPageProps) {
     : baseQuery;
   const page = await getProducts({ query, first: PAGE_SIZE });
 
-  const pathname = `/${CATEGORY}/${SUBCATEGORY}/`;
+  const pathname = `/${CATEGORY}/${SUBCATEGORY}`;
   const title = `${node.subcategory.label} ${node.category.label}`;
   const intro = getCategoryIntro(`${CATEGORY}/${SUBCATEGORY}`);
 
@@ -91,7 +91,7 @@ export default async function PumpsPage({ searchParams }: PumpsPageProps) {
           collectionSchema(title, pathname, intro),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: node.category.label, path: `/${CATEGORY}/` },
+            { name: node.category.label, path: `/${CATEGORY}` },
             { name: node.subcategory.label, path: pathname },
           ]),
         ]}

@@ -7,6 +7,13 @@ import type { NextRequest } from 'next/server';
 // 410 Gone so search engines drop them from the index instead of
 // retrying. Redirects live in next.config.js; 410s belong here because
 // the redirects() API only supports 3xx responses.
+//
+// SEO audit 2026-05 (Fix 8): /product/* and /bathroom/* are also here.
+// Explicit slug mappings in next.config.js fire first (the redirects
+// engine matches before middleware), so this only catches /product/
+// and /bathroom/ URLs we never mapped — including the numeric
+// /product/4647-style URLs flagged as soft-404s in the audit. 410 is
+// the correct migration signal for a genuinely-removed product.
 
 const GONE_PREFIXES = [
   '/author',
@@ -23,8 +30,14 @@ const GONE_PREFIXES = [
   '/2024/',
   '/2025/',
   '/2026/',
-  '/bathroom/elements',
-  '/bathroom/featured_item_category',
+  // Unmapped legacy WordPress product/bathroom URLs fall through to
+  // 410 instead of soft-404ing on a category PLP. Explicit slug
+  // mappings in next.config.js fire before middleware, so this only
+  // catches genuinely-removed products. The previous narrower entries
+  // for `/bathroom/elements` and `/bathroom/featured_item_category`
+  // are subsumed by the broader `/bathroom` rule.
+  '/product',
+  '/bathroom',
 ];
 
 const GONE_EXACT = new Set(['/wp-login.php', '/xmlrpc.php']);

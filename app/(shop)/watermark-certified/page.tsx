@@ -12,7 +12,7 @@ import { breadcrumbSchema, collectionSchema } from '@/lib/seo/jsonld';
 // fallback for any products tagged with the plain form.
 const WATERMARK_QUERY = 'tag:watermark OR tag:"cert:watermark"';
 const PAGE_SIZE = 48;
-const PATH = '/watermark-certified/';
+const PATH = '/watermark-certified';
 const TITLE = 'WaterMark Certified Products';
 const INTRO =
   'Every product on this page carries a current WaterMark licence — the certification Australian state plumbing law requires for any product fitted to mains water supply. Look for the red WaterMark Certified badge on the buy box and the licence number listed under Specifications.';

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'How to Choose a Water Filter — Australian Buying Guide',
   description:
     "Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern. Town water, tank, bore — every situation. AU-stocked, same-day dispatch from Wyong NSW.",
-  alternates: { canonical: '/help/which-filter/' },
+  alternates: { canonical: '/help/which-filter' },
   openGraph: {
     title:
       'How to Choose a Water Filter — Australian Buying Guide',
@@ -59,10 +59,10 @@ export default function FilterFinderPage() {
         data={[
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'Help & guides', path: '/help/' },
+            { name: 'Help & guides', path: '/help' },
             {
               name: 'How to choose a water filter',
-              path: '/help/which-filter/',
+              path: '/help/which-filter',
             },
           ]),
           faqPageSchema(FAQS.map((f) => ({ q: f.q, a: f.a }))),

@@ -15,7 +15,7 @@ interface PageProps {
 
 const SECTION = 'help';
 const SECTION_LABEL = 'Help & guides';
-const SECTION_PATH = '/help/';
+const SECTION_PATH = '/help';
 
 export async function generateStaticParams() {
   const slugs = await listMarkdownSlugs(SECTION);
@@ -31,7 +31,7 @@ export async function generateMetadata({
   return {
     title: page.title,
     description: page.description,
-    alternates: { canonical: `/${SECTION}/${slug}/` },
+    alternates: { canonical: `/${SECTION}/${slug}` },
   };
 }
 

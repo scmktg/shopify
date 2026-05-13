@@ -1,0 +1,571 @@
+{
+  "summary": {
+    "totalProducts": 172,
+    "flagged": 51,
+    "wordThreshold": 200,
+    "generatedAt": "2026-05-13T17:07:45.697Z"
+  },
+  "flagged": [
+    {
+      "handle": "_seed-minimal-example",
+      "categories": [
+        "plumbing",
+        "kitchen-taps"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/_seed-minimal-example/",
+      "legacyUrl": "https://enviroaqua.com.au/product/_seed-minimal-example/"
+    },
+    {
+      "handle": "shower-filter-15-stages-includes-extra-cartridge",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/shower-filter-15-stages-includes-extra-cartridge/",
+      "legacyUrl": "https://enviroaqua.com.au/product/shower-filter-15-stages-includes-extra-cartridge/"
+    },
+    {
+      "handle": "12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe",
+      "categories": [
+        "pumps-and-tanks",
+        "pumps"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe/",
+      "legacyUrl": "https://enviroaqua.com.au/product/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe/"
+    },
+    {
+      "handle": "24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect",
+      "categories": [
+        "pumps-and-tanks",
+        "components"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect/",
+      "legacyUrl": "https://enviroaqua.com.au/product/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect/"
+    },
+    {
+      "handle": "24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect",
+      "categories": [
+        "pumps-and-tanks",
+        "components"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect/",
+      "legacyUrl": "https://enviroaqua.com.au/product/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect/"
+    },
+    {
+      "handle": "water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi",
+      "categories": [
+        "pumps-and-tanks",
+        "components"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi/",
+      "legacyUrl": "https://enviroaqua.com.au/product/water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi/"
+    },
+    {
+      "handle": "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v",
+      "categories": [
+        "pumps-and-tanks",
+        "pumps"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v/",
+      "legacyUrl": "https://enviroaqua.com.au/product/automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v/"
+    },
+    {
+      "handle": "dc12v-280w-submersible-solar-power-water-well-pump-garden-farm-ranch-23ft-lift",
+      "categories": [
+        "pumps-and-tanks",
+        "pumps"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/dc12v-280w-submersible-solar-power-water-well-pump-garden-farm-ranch-23ft-lift/",
+      "legacyUrl": "https://enviroaqua.com.au/product/dc12v-280w-submersible-solar-power-water-well-pump-garden-farm-ranch-23ft-lift/"
+    },
+    {
+      "handle": "single-phase-submersible-clean-water-pump-370w-lift-10m",
+      "categories": [
+        "pumps-and-tanks",
+        "pumps"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/single-phase-submersible-clean-water-pump-370w-lift-10m/",
+      "legacyUrl": "https://enviroaqua.com.au/product/single-phase-submersible-clean-water-pump-370w-lift-10m/"
+    },
+    {
+      "handle": "stainless-electric-solar-booster-pump-100w-home-water-booster-pump",
+      "categories": [
+        "pumps-and-tanks",
+        "pumps"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/stainless-electric-solar-booster-pump-100w-home-water-booster-pump/",
+      "legacyUrl": "https://enviroaqua.com.au/product/stainless-electric-solar-booster-pump-100w-home-water-booster-pump/"
+    },
+    {
+      "handle": "typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd",
+      "categories": [
+        "pumps-and-tanks",
+        "pumps"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd/",
+      "legacyUrl": "https://enviroaqua.com.au/product/typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd/"
+    },
+    {
+      "handle": "1-inch-flexible-stainless-steel-hose-for-pressure-tank",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/1-inch-flexible-stainless-steel-hose-for-pressure-tank/",
+      "legacyUrl": "https://enviroaqua.com.au/product/1-inch-flexible-stainless-steel-hose-for-pressure-tank/"
+    },
+    {
+      "handle": "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs/",
+      "legacyUrl": "https://enviroaqua.com.au/product/100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs/"
+    },
+    {
+      "handle": "12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free/",
+      "legacyUrl": "https://enviroaqua.com.au/product/12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free/"
+    },
+    {
+      "handle": "12l-vertical-solar-system-water-pressure-tank-expantion-tank-3-2-gallons",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/12l-vertical-solar-system-water-pressure-tank-expantion-tank-3-2-gallons/",
+      "legacyUrl": "https://enviroaqua.com.au/product/12l-vertical-solar-system-water-pressure-tank-expantion-tank-3-2-gallons/"
+    },
+    {
+      "handle": "19l-vertical-solar-system-water-pressure-tank-expantion-tank-5-06-gallons",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/19l-vertical-solar-system-water-pressure-tank-expantion-tank-5-06-gallons/",
+      "legacyUrl": "https://enviroaqua.com.au/product/19l-vertical-solar-system-water-pressure-tank-expantion-tank-5-06-gallons/"
+    },
+    {
+      "handle": "bladder-for-100l-pressure-water-tank-drinking-water-compatible-made-in-italy",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/bladder-for-100l-pressure-water-tank-drinking-water-compatible-made-in-italy/",
+      "legacyUrl": "https://enviroaqua.com.au/product/bladder-for-100l-pressure-water-tank-drinking-water-compatible-made-in-italy/"
+    },
+    {
+      "handle": "bladder-for-12l-pressure-water-tank-drinking-water-compatible-made-in-italy",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/bladder-for-12l-pressure-water-tank-drinking-water-compatible-made-in-italy/",
+      "legacyUrl": "https://enviroaqua.com.au/product/bladder-for-12l-pressure-water-tank-drinking-water-compatible-made-in-italy/"
+    },
+    {
+      "handle": "bladder-for-19l-pressure-water-tank-drinking-water-compatible-made-in-italy",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/bladder-for-19l-pressure-water-tank-drinking-water-compatible-made-in-italy/",
+      "legacyUrl": "https://enviroaqua.com.au/product/bladder-for-19l-pressure-water-tank-drinking-water-compatible-made-in-italy/"
+    },
+    {
+      "handle": "bladder-for-50l-pressure-water-tank-drinking-water-compatible-made-in-italy",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/bladder-for-50l-pressure-water-tank-drinking-water-compatible-made-in-italy/",
+      "legacyUrl": "https://enviroaqua.com.au/product/bladder-for-50l-pressure-water-tank-drinking-water-compatible-made-in-italy/"
+    },
+    {
+      "handle": "bladder-for-8l-pressure-water-tank-drinking-water-compatible-made-in-italy",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/bladder-for-8l-pressure-water-tank-drinking-water-compatible-made-in-italy/",
+      "legacyUrl": "https://enviroaqua.com.au/product/bladder-for-8l-pressure-water-tank-drinking-water-compatible-made-in-italy/"
+    },
+    {
+      "handle": "water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond",
+      "categories": [
+        "pumps-and-tanks",
+        "pressure-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond/",
+      "legacyUrl": "https://enviroaqua.com.au/product/water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond/"
+    },
+    {
+      "handle": "ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump",
+      "categories": [
+        "pumps-and-tanks",
+        "pumps"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump/",
+      "legacyUrl": "https://enviroaqua.com.au/product/ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump/"
+    },
+    {
+      "handle": "commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd",
+      "categories": [
+        "water-filters",
+        "commercial"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd/",
+      "legacyUrl": "https://enviroaqua.com.au/product/commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd/"
+    },
+    {
+      "handle": "commercial-reverse-osmosis-ro-desalination-plant-ro-3000-lpd-800-gpd-with-pressu",
+      "categories": [
+        "water-filters",
+        "commercial"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/commercial-reverse-osmosis-ro-desalination-plant-ro-3000-lpd-800-gpd-with-pressu/",
+      "legacyUrl": "https://enviroaqua.com.au/product/commercial-reverse-osmosis-ro-desalination-plant-ro-3000-lpd-800-gpd-with-pressu/"
+    },
+    {
+      "handle": "commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment",
+      "categories": [
+        "water-filters",
+        "commercial"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment/",
+      "legacyUrl": "https://enviroaqua.com.au/product/commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment/"
+    },
+    {
+      "handle": "1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge-ro",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge-ro/",
+      "legacyUrl": "https://enviroaqua.com.au/product/1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge-ro/"
+    },
+    {
+      "handle": "2-x-water-filter-fitting-tee-quick-connect-1-4-tee-6mm-fridge-enviro-aqua",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/2-x-water-filter-fitting-tee-quick-connect-1-4-tee-6mm-fridge-enviro-aqua/",
+      "legacyUrl": "https://enviroaqua.com.au/product/2-x-water-filter-fitting-tee-quick-connect-1-4-tee-6mm-fridge-enviro-aqua/"
+    },
+    {
+      "handle": "20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-sediment-steel-bracket",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-sediment-steel-bracket/",
+      "legacyUrl": "https://enviroaqua.com.au/product/20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-sediment-steel-bracket/"
+    },
+    {
+      "handle": "2x-home-plastic-3-way-water-purifier-filters-tube-quick-connect-fitting-white",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/2x-home-plastic-3-way-water-purifier-filters-tube-quick-connect-fitting-white/",
+      "legacyUrl": "https://enviroaqua.com.au/product/2x-home-plastic-3-way-water-purifier-filters-tube-quick-connect-fitting-white/"
+    },
+    {
+      "handle": "30-pics-1-4-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings-6mm",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/30-pics-1-4-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings-6mm/",
+      "legacyUrl": "https://enviroaqua.com.au/product/30-pics-1-4-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings-6mm/"
+    },
+    {
+      "handle": "30-pics-3-8-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/30-pics-3-8-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings/",
+      "legacyUrl": "https://enviroaqua.com.au/product/30-pics-3-8-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings/"
+    },
+    {
+      "handle": "5-x-1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/5-x-1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge/",
+      "legacyUrl": "https://enviroaqua.com.au/product/5-x-1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge/"
+    },
+    {
+      "handle": "5-x-fridge-water-filter-fitting-threaded-elbow-quick-connect-6mm-x-1-4-push-fit",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/5-x-fridge-water-filter-fitting-threaded-elbow-quick-connect-6mm-x-1-4-push-fit/",
+      "legacyUrl": "https://enviroaqua.com.au/product/5-x-fridge-water-filter-fitting-threaded-elbow-quick-connect-6mm-x-1-4-push-fit/"
+    },
+    {
+      "handle": "5-x-water-filter-fitting-joiner-quick-connect-1-4-6mm-fridge-enviro-aqua",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/5-x-water-filter-fitting-joiner-quick-connect-1-4-6mm-fridge-enviro-aqua/",
+      "legacyUrl": "https://enviroaqua.com.au/product/5-x-water-filter-fitting-joiner-quick-connect-1-4-6mm-fridge-enviro-aqua/"
+    },
+    {
+      "handle": "50psi-pressure-limiting-protection-dual-check-valve-quick-connect-water-filter-r",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/50psi-pressure-limiting-protection-dual-check-valve-quick-connect-water-filter-r/",
+      "legacyUrl": "https://enviroaqua.com.au/product/50psi-pressure-limiting-protection-dual-check-valve-quick-connect-water-filter-r/"
+    },
+    {
+      "handle": "inline-shutoff-ball-valve-push-fit-quick-connect-1-4",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/inline-shutoff-ball-valve-push-fit-quick-connect-1-4/",
+      "legacyUrl": "https://enviroaqua.com.au/product/inline-shutoff-ball-valve-push-fit-quick-connect-1-4/"
+    },
+    {
+      "handle": "plastic-opening-handle-spanner-wrench-for-10x2-5-water-filter-housing-universal",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/plastic-opening-handle-spanner-wrench-for-10x2-5-water-filter-housing-universal/",
+      "legacyUrl": "https://enviroaqua.com.au/product/plastic-opening-handle-spanner-wrench-for-10x2-5-water-filter-housing-universal/"
+    },
+    {
+      "handle": "ro-wrench-for-water-filter-wrenching-1812-housing-of-reverse-osmosis-membrane",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/ro-wrench-for-water-filter-wrenching-1812-housing-of-reverse-osmosis-membrane/",
+      "legacyUrl": "https://enviroaqua.com.au/product/ro-wrench-for-water-filter-wrenching-1812-housing-of-reverse-osmosis-membrane/"
+    },
+    {
+      "handle": "reverse-osmosis-ro-residential-1-4-drain-clamp",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/reverse-osmosis-ro-residential-1-4-drain-clamp/",
+      "legacyUrl": "https://enviroaqua.com.au/product/reverse-osmosis-ro-residential-1-4-drain-clamp/"
+    },
+    {
+      "handle": "standard-10-x-2-5-water-filter-standard-water-filter-housing-white-universal",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/standard-10-x-2-5-water-filter-standard-water-filter-housing-white-universal/",
+      "legacyUrl": "https://enviroaqua.com.au/product/standard-10-x-2-5-water-filter-standard-water-filter-housing-white-universal/"
+    },
+    {
+      "handle": "tank-ball-valve-push-fit-quick-connect-1-4",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/tank-ball-valve-push-fit-quick-connect-1-4/",
+      "legacyUrl": "https://enviroaqua.com.au/product/tank-ball-valve-push-fit-quick-connect-1-4/"
+    },
+    {
+      "handle": "tap-thread-adaptor-suitable-for-countertop-systems-22mm-to-24mm",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/tap-thread-adaptor-suitable-for-countertop-systems-22mm-to-24mm/",
+      "legacyUrl": "https://enviroaqua.com.au/product/tap-thread-adaptor-suitable-for-countertop-systems-22mm-to-24mm/"
+    },
+    {
+      "handle": "water-filter-fitting-joiner-quick-connect-3-8-enviro-aqua",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/water-filter-fitting-joiner-quick-connect-3-8-enviro-aqua/",
+      "legacyUrl": "https://enviroaqua.com.au/product/water-filter-fitting-joiner-quick-connect-3-8-enviro-aqua/"
+    },
+    {
+      "handle": "water-filter-fitting-tee-quick-connect-3-8-enviro-aqua",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/water-filter-fitting-tee-quick-connect-3-8-enviro-aqua/",
+      "legacyUrl": "https://enviroaqua.com.au/product/water-filter-fitting-tee-quick-connect-3-8-enviro-aqua/"
+    },
+    {
+      "handle": "water-filter-tube-high-pressure-nsf-pipe-1-4-6mm-lldpe",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/water-filter-tube-high-pressure-nsf-pipe-1-4-6mm-lldpe/",
+      "legacyUrl": "https://enviroaqua.com.au/product/water-filter-tube-high-pressure-nsf-pipe-1-4-6mm-lldpe/"
+    },
+    {
+      "handle": "water-filter-tube-high-pressure-nsf-pipe-3-8-lldpe",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/water-filter-tube-high-pressure-nsf-pipe-3-8-lldpe/",
+      "legacyUrl": "https://enviroaqua.com.au/product/water-filter-tube-high-pressure-nsf-pipe-3-8-lldpe/"
+    },
+    {
+      "handle": "water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube/",
+      "legacyUrl": "https://enviroaqua.com.au/product/water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube/"
+    },
+    {
+      "handle": "3-way-ro-system-water-shut-off-stop-valve-1-4-x-1-4-quick-connect-x-1-2",
+      "categories": [
+        "water-filters",
+        "parts"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/3-way-ro-system-water-shut-off-stop-valve-1-4-x-1-4-quick-connect-x-1-2/",
+      "legacyUrl": "https://enviroaqua.com.au/product/3-way-ro-system-water-shut-off-stop-valve-1-4-x-1-4-quick-connect-x-1-2/"
+    },
+    {
+      "handle": "chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l",
+      "categories": [
+        "pumps-and-tanks",
+        "dosing-tanks"
+      ],
+      "wordCount": 0,
+      "metaLeak": true,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l/",
+      "legacyUrl": "https://enviroaqua.com.au/product/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l/"
+    },
+    {
+      "handle": "commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd",
+      "categories": [
+        "water-filters",
+        "commercial"
+      ],
+      "wordCount": 0,
+      "metaLeak": false,
+      "waybackUrl": "https://web.archive.org/web/2024/https://enviroaqua.com.au/product/commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd/",
+      "legacyUrl": "https://enviroaqua.com.au/product/commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd/"
+    }
+  ]
+}
