@@ -30,6 +30,7 @@ const ABOUT_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'Customer reviews', href: '/reviews/' },
   { label: 'Shipping', href: '/shipping/' },
   { label: 'Returns', href: '/returns/' },
+  { label: 'Contact', href: '/contact/' },
 ];
 
 interface FooterColumnProps {
