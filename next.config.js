@@ -413,8 +413,7 @@ const WORDPRESS_CATEGORY_REDIRECTS = [
 ];
 
 const WORDPRESS_UTILITY_REDIRECTS = [
-  ['/our-contacts', '/about'],
-  ['/contact', '/about'],
+  ['/our-contacts', '/contact'],
   ['/delivery-return', '/shipping'],
   ['/showroom', '/showroom'],
   ['/privacy-policy', '/privacy'],
@@ -433,11 +432,10 @@ const WORDPRESS_UTILITY_REDIRECTS = [
   ['/about', '/about'],
   ['/shop', '/water-filters'],
   // /author/steve had 5 clicks at position 8.7 — likely searches for
-  // "Steve" looking for a person to talk to. 301 to /about (not /contact:
-  // the WP /contact rule above already redirects to /about, so going via
-  // /contact would be a chained hop). Without this rule, middleware.ts
-  // would 410 the URL — for 5 clicks of likely user intent, a 301 wins.
-  ['/author/steve', '/about'],
+  // "Steve" looking for a person to talk to. 301 to /contact. Without
+  // this rule, middleware.ts would 410 the URL — for 5 clicks of likely
+  // user intent, a 301 wins.
+  ['/author/steve', '/contact'],
 ];
 
 // Pattern catch-alls. These run LAST, after every explicit rule above has
