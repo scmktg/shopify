@@ -24,10 +24,6 @@ const LEARN_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'Help & guides', href: '/help/' },
 ];
 
-const ORDERS_LINKS: ReadonlyArray<FooterLink> = [
-  { label: 'Track your order', href: '/track-order/' },
-];
-
 const ABOUT_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'About us', href: '/about/' },
   { label: 'Our pricing', href: '/about/our-pricing/' },
@@ -74,10 +70,7 @@ export function Footer() {
         </Link>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <FooterColumn title="Shop" links={SHOP_LINKS} />
-          <div className="space-y-8">
-            <FooterColumn title="Learn" links={LEARN_LINKS} />
-            <FooterColumn title="Orders" links={ORDERS_LINKS} />
-          </div>
+          <FooterColumn title="Learn" links={LEARN_LINKS} />
           <FooterColumn title="About" links={ABOUT_LINKS} />
           <div>
             <h2 className="text-sm font-semibold tracking-wider uppercase">
