@@ -17,7 +17,7 @@ import { absoluteUrl, getSiteUrl } from '@/lib/seo/siteUrl';
 
 export const revalidate = 3600;
 
-const PATH = '/whole-house-installation-package/';
+const PATH = '/whole-house-installation-package';
 const PRODUCT_HANDLE =
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
 const PRODUCT_PATH = `/water-filters/whole-house/${PRODUCT_HANDLE}/`;

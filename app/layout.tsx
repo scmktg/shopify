@@ -10,6 +10,11 @@ import { localBusinessSchema, websiteSchema } from '@/lib/seo/jsonld';
 import './globals.css';
 
 export const metadata: Metadata = {
+  // Canonical host is www — apex redirects to www at the edge. Pin
+  // metadataBase here so every page's relative canonical resolves to
+  // the www host instead of the apex (and so Next.js stops emitting
+  // the missing-metadataBase warning at build time).
+  metadataBase: new URL('https://www.enviroaqua.com.au'),
   title: {
     default: "Enviro Aqua — Australia's water filtration specialist",
     template: '%s | Enviro Aqua',

@@ -7,7 +7,7 @@ import { getAllReviews, reviewStats } from '@/lib/reviews';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
-const PATH = '/reviews/';
+const PATH = '/reviews';
 
 export const metadata: Metadata = {
   title: 'Customer Reviews',

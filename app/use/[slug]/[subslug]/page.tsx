@@ -18,7 +18,7 @@ interface PageProps {
 
 const SECTION = 'use';
 const SECTION_LABEL = 'Use cases';
-const SECTION_PATH = '/use/';
+const SECTION_PATH = '/use';
 
 export async function generateStaticParams() {
   const params: Array<{ slug: string; subslug: string }> = [];
@@ -49,7 +49,7 @@ export async function generateMetadata({
   return {
     title: page.title,
     description: page.description,
-    alternates: { canonical: `/${SECTION}/${slug}/${subslug}/` },
+    alternates: { canonical: `/${SECTION}/${slug}/${subslug}` },
   };
 }
 

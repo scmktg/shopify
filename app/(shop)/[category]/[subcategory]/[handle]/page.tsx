@@ -63,7 +63,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `/${category}/${subcategory}/${handle}/`,
+      canonical: `/${category}/${subcategory}/${handle}`,
     },
     openGraph: {
       title,
@@ -103,7 +103,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   const node = findSubcategory(category, subcategory);
-  const pathname = `/${category}/${subcategory}/${handle}/`;
+  const pathname = `/${category}/${subcategory}/${handle}`;
   // Cap at 5000 chars: search engines truncate beyond this anyway,
   // and bounding the JSON-LD payload keeps the inline <script> tag
   // small. Long-form description content still renders in full on
@@ -120,10 +120,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
           productSchema(product, content, pathname, descriptionPlainText),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: node?.category.label ?? category, path: `/${category}/` },
+            { name: node?.category.label ?? category, path: `/${category}` },
             {
               name: node?.subcategory.label ?? subcategory,
-              path: `/${category}/${subcategory}/`,
+              path: `/${category}/${subcategory}`,
             },
             { name: product.title, path: pathname },
           ]),

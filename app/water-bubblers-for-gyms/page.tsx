@@ -40,7 +40,7 @@ import type { Product } from '@/types/product';
 
 export const revalidate = 3600;
 
-const PATH = '/water-bubblers-for-gyms/';
+const PATH = '/water-bubblers-for-gyms';
 
 // Two cabinets recommended for gyms — both have the side-mounted
 // bottle-fill tap, which round-cylindrical bubblers lack. Round

@@ -27,7 +27,7 @@ export async function generateMetadata({
     title: `${node.subcategory.label} | ${node.category.label}`,
     description: `${node.subcategory.label.toLowerCase()} in our ${node.category.label.toLowerCase()} range. Wholesale prices, tiered shipping Australia-wide from $9.95.`,
     alternates: {
-      canonical: `/${category}/${subcategory}/`,
+      canonical: `/${category}/${subcategory}`,
     },
   };
 }
@@ -42,7 +42,7 @@ export default async function SubcategoryPage({
   const query = `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
   const page = await getProducts({ query, first: PAGE_SIZE });
 
-  const pathname = `/${category}/${subcategory}/`;
+  const pathname = `/${category}/${subcategory}`;
   const title = `${node.subcategory.label} ${node.category.label}`;
   const intro = getCategoryIntro(`${category}/${subcategory}`);
 
@@ -53,7 +53,7 @@ export default async function SubcategoryPage({
           collectionSchema(title, pathname, intro),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: node.category.label, path: `/${category}/` },
+            { name: node.category.label, path: `/${category}` },
             { name: node.subcategory.label, path: pathname },
           ]),
         ]}

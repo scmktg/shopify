@@ -4,7 +4,7 @@ import { SectionHub } from '@/components/editorial/SectionHub';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
-const PATH = '/water-problems/';
+const PATH = '/water-problems';
 
 export const metadata: Metadata = {
   title: 'Water Problems & How to Fix Them',

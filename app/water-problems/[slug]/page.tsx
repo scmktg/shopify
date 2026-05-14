@@ -16,7 +16,7 @@ interface PageProps {
 
 const SECTION = 'water-problems';
 const SECTION_LABEL = 'Water problems';
-const SECTION_PATH = '/water-problems/';
+const SECTION_PATH = '/water-problems';
 
 export async function generateStaticParams() {
   const slugs = await listMarkdownSlugs(SECTION);
@@ -32,7 +32,7 @@ export async function generateMetadata({
   return {
     title: page.title,
     description: page.description,
-    alternates: { canonical: `/${SECTION}/${slug}/` },
+    alternates: { canonical: `/${SECTION}/${slug}` },
   };
 }
 

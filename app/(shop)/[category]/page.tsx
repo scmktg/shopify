@@ -27,7 +27,7 @@ export async function generateMetadata({
     title: `${node.label} | Wholesale Prices`,
     description: `Shop ${node.label.toLowerCase()} at wholesale prices. Tiered shipping Australia-wide from $9.95, free freight on whole-house systems. WaterMark certified options available.`,
     alternates: {
-      canonical: `/${node.slug}/`,
+      canonical: `/${node.slug}`,
     },
   };
 }
@@ -42,7 +42,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   const intro = getCategoryIntro(category);
 
-  const pathname = `/${node.slug}/`;
+  const pathname = `/${node.slug}`;
 
   return (
     <>

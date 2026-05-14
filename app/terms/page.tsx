@@ -5,7 +5,7 @@ import { StaticContentPage } from '@/components/editorial/StaticContentPage';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
-const PATH = '/terms/';
+const PATH = '/terms';
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await loadMarkdownPage('terms');

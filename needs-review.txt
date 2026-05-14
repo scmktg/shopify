@@ -52,3 +52,121 @@ Candidates (best token overlap):
 Likely no exact match on the new site for "1-stage 20x4.5 washable reusable". Pick the closest substitute
 (my guess: option 1 — washable+reusable is the more important distinguisher than housing size for this query
 intent) or flag as discontinued.
+
+============================================================
+GSC audit 2026-05 — items NOT fixed in code (need infra/content work)
+============================================================
+
+Fix 1 — apex enviroaqua.com.au still serves the old WordPress site
+------------------------------------------------------------------
+Code can't fix this; it's a DNS / edge config issue. The non-www apex
+(https://enviroaqua.com.au/) currently resolves to the legacy
+WordPress origin while www.enviroaqua.com.au resolves to this
+Next.js app. Every URL Google has indexed is on the apex, so a click
+on a Google result currently lands on the old site.
+
+Action items (whoever owns DNS / Vercel project):
+  1. Confirm where the new site is hosted (likely Vercel given the
+     Next.js setup) and which custom domains are attached to that
+     project.
+  2. Attach `enviroaqua.com.au` as a custom domain on the same
+     project. Configure the apex -> www redirect inside Vercel
+     (Project -> Settings -> Domains -> Redirect to www). Vercel
+     issues a 308 at the edge before anything touches the origin.
+  3. Update the apex A / ALIAS / CNAME records at the DNS provider
+     so they point at Vercel's anycast IPs (76.76.21.21 for A, or
+     `cname.vercel-dns.com.` for ALIAS/CNAME) instead of the old WP
+     host's IP.
+  4. After propagation, confirm the redirect is happening at the
+     edge with: `curl -sI -A "Mozilla/5.0" https://enviroaqua.com.au/`
+     should return `HTTP/2 308` with `location: https://www.enviroaqua.com.au/`.
+  5. Only after #4 verifies clean for every URL pattern listed in
+     the audit (homepage, /showroom/, /product/4647/, /bathroom/,
+     /promotions/, /author/steve/) — point the OLD WordPress host's
+     DNS away (or shut down its server) to avoid any future
+     accidental fall-through.
+
+Until #1-#4 are done, every other fix in this branch is invisible to
+the URLs Google has indexed (because they all resolve to the apex,
+which still hits the old origin).
+
+Fix 4 — empty product descriptions
+----------------------------------
+Run `node scripts/audit-empty-product-content.mjs` — it writes
+`data/audit-empty-product-content.json` with every product flagged
+under 200 words of body content or whose meta-description starts with
+the truncated WaterMark disclaimer.
+
+As of 2026-05-13 the script flags 51 / 172 products, including the
+top-traffic items called out in the audit (12V self-priming pump kit,
+chemical dosing tank, several UV sterilisers).
+
+Recovery path:
+  1. For each handle in the flagged list, scrape the legacy WP page
+     from the Wayback Machine. The URL is in the JSON output.
+  2. Reformat the copy into the products.json `description` field
+     (markdown), short paragraphs first. Keep `shortDescription` as
+     the one-line summary; the page falls back to it when `seo.
+     description` is missing.
+  3. Re-run the audit after each batch; the threshold is intentionally
+     conservative (200 words) so a single solid paragraph clears it.
+
+This is a content-team task, not code. The script is the auditable
+input.
+
+Fix 5 — 100L chemical dosing tank lands on the 50L variant
+----------------------------------------------------------
+The combined product page
+(/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l)
+currently renders only `product.variants[0]` (the 50L SKU). There is
+no variant selector UI and no `?variant=` query param handling on
+the page. Adding `?variant=100l` to the redirect would be cosmetic
+until that consumer exists.
+
+Two paths forward — pick one before re-indexing:
+
+  Option A — build a variant selector
+    Update ProductDetail (components/product/ProductDetail.tsx) to
+    read `?variant=<sku-suffix>` from useSearchParams, find the
+    matching variant in product.variants, and render its title /
+    price / sku / image. Then update the redirect in next.config.js
+    to append `?variant=100l` for the 100L old URL (and add
+    `?variant=200l` for any equivalent 200L old URL). Variant UI is
+    a bigger change than this branch should carry — recommend a
+    follow-up branch.
+
+  Option B — split back into three product pages
+    Re-import the 50L / 100L / 200L as three Shopify products with
+    distinct handles and remove the consolidated entry. Update the
+    redirect to point at the size-specific URL. Better long-term SEO
+    (three pages indexed) but requires Shopify product re-work.
+
+Either way: track the 200L equivalent (search redirect_map.csv for
+`200l-chemical-dosing-tank-water-tank-poly-tank-and-bund`) and
+mirror whatever choice we make.
+
+Fix 9 — internal cross-product links use root-level paths
+---------------------------------------------------------
+Audit flagged a few product pages whose "Where This Fits in the
+Range" cross-links are root-level URLs (e.g.
+https://www.enviroaqua.com.au/uv-water-filter-...-220v/) instead of
+the canonical category-prefixed URL
+(/water-filters/uv-sterilisation/uv-water-filter-...-220v).
+
+The cross-link copy lives in products.json under the `upsells` and
+related keys. To fix:
+  - Grep products.json for any `https://www.enviroaqua.com.au/[^/]+/`
+    URL pattern (root-level slug, no category prefix).
+  - For each match, look up the slug in products.json and rewrite
+    the URL using the same `/${cat}/${sub}/${slug}` template the
+    rest of the site uses.
+
+A small node script can do this in one pass — when you write it,
+also add a unit test to lib/products that fails the build if any
+products.json URL points outside the canonical pattern.
+
+Fix 10 — auto-resolves with Fix 1
+---------------------------------
+Once the apex -> www redirect lands, /showroom/ on the apex 308s
+into /showroom on www and Fix 10 is closed automatically. No code
+change needed in this repo.

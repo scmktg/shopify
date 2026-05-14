@@ -12,7 +12,7 @@ import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
-const PATH = '/contact/';
+const PATH = '/contact';
 
 export const metadata: Metadata = {
   title: 'Contact Enviro Aqua — Phone, Email, Wyong NSW Showroom',

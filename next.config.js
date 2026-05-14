@@ -8,6 +8,34 @@
 // the enviroaqua.com.au DNS cutover. Phase 1 (BLOG_MIGRATION_REDIRECTS,
 // below) was merged earlier and is untouched.
 
+// products.json provides the source-of-truth (category, subcategory)
+// tuple for every Shopify handle. We use it below to auto-upgrade any
+// /product/<slug>/ or /bathroom/product/<slug>/ redirect whose
+// destination is currently a category PLP — if the slug exists as a
+// real product, we rewrite the destination to the specific product
+// path, eliminating soft-404 behaviour for slug-matched URLs.
+//
+// SEO audit 2026-05 (Fix 3): the GSC audit reported 52 bathroom
+// product URLs and ~80 /product/<slug> URLs whose destinations were
+// the category landing page even though the slug existed on the new
+// site. Rather than hand-edit every entry, this helper recomputes the
+// correct destination at build time so the rule list stays in
+// click-rank order (and stays auditable).
+const PRODUCTS_DATA = require('./data/products.json');
+function productPathForSlug(slug) {
+  const entry = PRODUCTS_DATA[slug];
+  if (!entry || !Array.isArray(entry.categories)) return null;
+  const [cat, sub] = entry.categories;
+  if (!cat || !sub) return null;
+  return `/${cat}/${sub}/${slug}`;
+}
+function maybeUpgradeProductDestination(source, destination) {
+  const m = source.match(/^\/(?:bathroom\/)?product\/([^/]+)$/);
+  if (!m) return destination;
+  const upgraded = productPathForSlug(m[1]);
+  return upgraded ?? destination;
+}
+
 // Each tuple is [source, destination]. The helper below expands every
 // entry into /path and /path/ source variants so old crawls and external
 // links resolve regardless of trailing-slash formatting.
@@ -180,7 +208,10 @@ const WORDPRESS_PRODUCT_REDIRECTS = [
   ['/product/whole-house-water-filter-replacement-set-3-stage-5-micron-20x2-5', '/cartridges/cartridge-sets'],
   ['/product/inline-water-filter-replacement-set-3-stages-sediment-carbon-ro-membrane-10', '/cartridges/cartridge-sets'],
   ['/product/3-way-ro-system-water-shut-off-stop-valve-1-4x-1-4-quick-connect-x-1-2', '/water-filters/parts'],
-  ['/product/4647', '/water-filters'],
+  // /product/4647 and /product/4148 were WP numeric post IDs. Without a
+  // post-ID -> slug map from the old DB we can't redirect them to a
+  // specific product, so they fall through to middleware 410 rather
+  // than soft-404 on /water-filters. (Audit 2026-05 Fix 8.)
   ['/product/bladder-for-12l-pressure-water-tank-drinking-water-compatible-made-in-italy', '/pumps-and-tanks/pressure-tanks'],
   ['/product/5-x-fridge-water-filter-fitting-threaded-elbow-quick-connect-6mm-x-1-4-push-fit', '/water-filters/parts'],
   ['/product/bathroom-sink-pop-up-waste-overflow-basin-vanity-chrome-push-plug-drain-40mm', '/plumbing/bathroom-taps'],
@@ -319,7 +350,8 @@ const WORDPRESS_PRODUCT_REDIRECTS = [
   ['/product/2-pics-75gpd-reverse-osmosis-membrane-membrane-replacement-filter-280l-per-day', '/cartridges/reverse-osmosis-membranes'],
   ['/product/5-x-inline-uf-ultrafiltration-filter-cartridge', '/cartridges/specialty-cartridges'],
   ['/product/tall-29cm-round-basin-mixer-tap-matte-black-polished-chrome', '/plumbing/bathroom-taps'],
-  ['/product/4148', '/water-filters'],
+  // /product/4148 — see /product/4647 comment above. Numeric WP post IDs
+  // are 410'd by middleware so we don't soft-404 them to /water-filters.
   ['/product/water-filter-cartridges-0-5-mic-sediment-10x2-5-standard-pp', '/cartridges/sediment'],
   ['/product/complete-bathroom-package-4g-brushed-gold-watermark-certified-wels-rated', '/plumbing/bundles'],
   ['/product/rimless-wash-down-water-closet-commode-p-trap-wc-ceramic-2-piece-toilet-wels', '/plumbing/toilets'],
@@ -438,16 +470,33 @@ const WORDPRESS_UTILITY_REDIRECTS = [
   // /contact would be a chained hop). Without this rule, middleware.ts
   // would 410 the URL — for 5 clicks of likely user intent, a 301 wins.
   ['/author/steve', '/about'],
+  // /bathroom was the legacy section landing — map to the closest new
+  // section. /bathroom/<unknown-path> (other than the /bathroom/product
+  // slug mappings handled above) falls through to middleware 410, since
+  // a category-level catch-all there would soft-404 (Fix 8).
+  ['/bathroom', '/plumbing'],
 ];
 
-// Pattern catch-alls. These run LAST, after every explicit rule above has
-// failed to match, so an unmapped /product/foo falls through to the
-// category PLP instead of 404ing.
+// Pattern catch-alls. These run LAST, after every explicit rule above
+// has failed to match.
+//
+// SEO audit 2026-05 (Fix 8): we previously had `/product/:slug*` ->
+// `/water-filters` and `/bathroom/product/:slug*` -> `/plumbing` here
+// as a safety net. That makes every unmapped legacy URL resolve 200 on
+// the closest category landing — i.e. a classic soft-404. Google
+// treats soft-404s as duplicate signals on the destination PLP, which
+// dilutes that PLP's relevance and keeps the source URL in the index
+// indefinitely. We've removed those wildcards so unmapped legacy
+// /product/* and /bathroom/* URLs fall through to middleware.ts and
+// return a real 410 Gone, which is the correct migration signal.
+//
+// The /shop/:path*, /my-account, /checkout/* wildcards stay: shop and
+// account/checkout landing pages don't dilute a PLP because the
+// destination is the same /water-filters hub that every WordPress
+// shop entry-point pointed at. Numeric /product/<id>/ URLs (the
+// soft-404 example flagged in the audit, e.g. /product/4647) are
+// 410'd by middleware.ts via GONE_PREFIXES.
 const WORDPRESS_FALLBACK_REDIRECTS = [
-  { source: '/product/:slug*', destination: '/water-filters', permanent: true },
-  { source: '/bathroom/product/:slug*', destination: '/plumbing', permanent: true },
-  { source: '/bathroom', destination: '/plumbing', permanent: true },
-  { source: '/bathroom/:path*', destination: '/plumbing', permanent: true },
   { source: '/shop/:path*', destination: '/water-filters', permanent: true },
   { source: '/my-account', destination: '/water-filters', permanent: true },
   { source: '/my-account/:path*', destination: '/water-filters', permanent: true },
@@ -463,12 +512,13 @@ const WORDPRESS_FALLBACK_REDIRECTS = [
 
 // Expand [source, destination] tuples into a flat array of redirect
 // objects with /path and /path/ source variants, slashless destination.
+// For /product/<slug>/ and /bathroom/product/<slug>/ sources whose
+// destination is a category PLP, auto-upgrade to the specific product
+// path when the slug exists in products.json (Fix 3, 2026-05).
 function withSlashVariants(tuples) {
   const out = [];
-  for (const [source, destination] of tuples) {
-    // Skip the slashless variant when it would be a no-op (e.g.
-    // /about -> /about); keep the slashed variant so /about/ still
-    // normalises to /about.
+  for (const [source, rawDestination] of tuples) {
+    const destination = maybeUpgradeProductDestination(source, rawDestination);
     if (source !== destination) {
       out.push({ source, destination, permanent: true });
     }

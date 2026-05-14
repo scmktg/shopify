@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'Visit Our Wyong Showroom — Water Filters Central Coast NSW',
   description:
     'Walk-in water filter showroom in Wyong NSW Central Coast. Big Blue systems on display, cartridges in stock, free Click & Collect. Same-day dispatch on orders before 12pm. Mon–Fri 9–5.',
-  alternates: { canonical: '/showroom/' },
+  alternates: { canonical: '/showroom' },
   openGraph: {
     title:
       'Visit Our Wyong Showroom — Water Filters Central Coast NSW',
@@ -93,7 +93,7 @@ export default function ShowroomPage() {
           }),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'Showroom', path: '/showroom/' },
+            { name: 'Showroom', path: '/showroom' },
           ]),
           faqPageSchema(FAQS.map((f) => ({ q: f.q, a: f.a }))),
         ]}

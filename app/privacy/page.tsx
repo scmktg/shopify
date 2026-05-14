@@ -5,7 +5,7 @@ import { StaticContentPage } from '@/components/editorial/StaticContentPage';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema } from '@/lib/seo/jsonld';
 
-const PATH = '/privacy/';
+const PATH = '/privacy';
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await loadMarkdownPage('privacy');
