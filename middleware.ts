@@ -51,7 +51,24 @@ function isGone(pathname: string): boolean {
   return false;
 }
 
+// Apex -> www canonical host redirect. Vercel's dashboard-level redirect
+// fires as 307 (temporary), which leaks link equity during the SEO
+// migration — Google won't transfer ranking from enviroaqua.com.au to
+// www.enviroaqua.com.au unless the redirect is permanent. Emitting 301
+// here in middleware overrides the dashboard behaviour.
+const CANONICAL_HOST = 'www.enviroaqua.com.au';
+const APEX_HOST = 'enviroaqua.com.au';
+
 export function middleware(request: NextRequest) {
+  const host = request.headers.get('host')?.toLowerCase() ?? '';
+  if (host === APEX_HOST) {
+    const target = new URL(request.nextUrl);
+    target.host = CANONICAL_HOST;
+    target.protocol = 'https:';
+    target.port = '';
+    return NextResponse.redirect(target, 301);
+  }
+
   if (isGone(request.nextUrl.pathname)) {
     return new NextResponse(null, { status: 410 });
   }
