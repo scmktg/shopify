@@ -101,8 +101,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let productEntries: MetadataRoute.Sitemap = [];
   try {
     const handles = await getAllProductHandles();
+    // Shopify auto-suffixes accidental duplicate products with -dup2, -dup3,
+    // etc. Keep them out of the sitemap so Google never sees them.
+    const DUP_SUFFIX = /-dup\d+$/i;
+    const deduped = handles.filter((entry) => !DUP_SUFFIX.test(entry.handle));
     const resolved = await Promise.all(
-      handles.map(async (entry) => {
+      deduped.map(async (entry) => {
         try {
           const product = await getProductByHandle(entry.handle);
           if (!product) return null;
