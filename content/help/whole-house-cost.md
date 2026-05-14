@@ -5,7 +5,7 @@ relatedLinks:
   - { label: "Whole-home filtration", href: "/use/whole-home-filtration/" }
   - { label: "Whole-house water filters", href: "/water-filters/whole-house/" }
   - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained/" }
-  - { label: "Which water filter should I choose?", href: "/help/which-water-filter-to-choose/" }
+  - { label: "Which water filter should I choose?", href: "/help/which-filter/" }
 faq:
   - q: "Why does the install cost as much as the system?"
     a: "Because it has to. A whole-house system sits on the cold-water mains and must be plumbed by a licensed plumber to comply with state regulations and to keep the warranty intact. A standard install is two to four hours of labour plus brackets, isolation valves, and the bypass loop. $500–$1,500 is the realistic range. The system is the cheap part."
@@ -85,4 +85,4 @@ Every WaterMark-certified product on this site shows its licence number on the p
 
 Right-size the system. Do not pay for three stages if two will do the job. Match housing size to flow demand — a 10" × 2.5" housing will choke a four-bedroom home, and a 20" × 4.5" housing on a one-bedroom unit is overspend.
 
-Browse the [whole-house category](/water-filters/whole-house/) to compare current pricing. The [which water filter to choose](/help/which-water-filter-to-choose/) page walks through the sizing decision in detail.
+Browse the [whole-house category](/water-filters/whole-house/) to compare current pricing. The [how to choose a water filter](/help/which-filter/) page walks through the sizing decision in detail.

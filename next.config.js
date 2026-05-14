@@ -673,6 +673,14 @@ const nextConfig = {
       // Blog index — kill it. The wildcard catches paginated pages,
       // category/tag/author archives, and the RSS feed.
       ['/blog', '/water-problems'],
+
+      // 2026-05 cannibalisation fix: the markdown buying guide
+      // `/help/which-water-filter-to-choose/` was duplicating intent
+      // with the richer hard-coded `/help/which-filter/` page (FAQs,
+      // showroom CTA, deeper editorial). The markdown source has been
+      // deleted; this 301 keeps any external links and consolidates
+      // ranking signals onto the canonical URL.
+      ['/help/which-water-filter-to-choose', '/help/which-filter'],
     ];
 
     const rules = [];

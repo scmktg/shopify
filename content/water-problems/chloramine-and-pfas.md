@@ -4,7 +4,7 @@ description: "Chloramine and PFAS need specific filtration — standard carbon w
 relatedLinks:
   - { label: "Chlorine and taste", href: "/water-problems/chlorine-and-taste/" }
   - { label: "Whole-home filtration", href: "/use/whole-home-filtration/" }
-  - { label: "Which water filter should I choose?", href: "/help/which-water-filter-to-choose/" }
+  - { label: "Which water filter should I choose?", href: "/help/which-filter/" }
   - { label: "Whole house water filters", href: "/water-filters/whole-house/" }
 faq:
   - q: "Can a standard carbon filter remove chloramine?"

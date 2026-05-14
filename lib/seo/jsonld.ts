@@ -7,11 +7,21 @@ import { absoluteUrl, getSiteUrl } from './siteUrl';
 
 export type JsonLd = Record<string, unknown>;
 
+/**
+ * Stand-alone Organization schema emitted sitewide alongside the
+ * LocalBusiness graph. LocalBusiness extends Organization, so this is
+ * technically redundant — but several SEO auditing tools (and parts of
+ * Google's knowledge graph pipeline) look for a dedicated
+ * `@type: Organization` node, so the brand entity is easier to surface
+ * when both are present. A stable `@id` lets future schemas reference
+ * the same entity via `{ "@id": "..." }` rather than duplicating it.
+ */
 export function organisationSchema(): JsonLd {
   const url = getSiteUrl();
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${url}/#organization`,
     name: BUSINESS_INFO.name,
     url,
     logo: absoluteUrl('/logo.svg'),
@@ -25,6 +35,15 @@ export function organisationSchema(): JsonLd {
       postalCode: BUSINESS_INFO.address.postalCode,
       addressCountry: BUSINESS_INFO.address.country,
     },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: BUSINESS_INFO.phone.tel,
+      email: BUSINESS_INFO.email,
+      contactType: 'customer service',
+      areaServed: 'AU',
+      availableLanguage: ['en-AU'],
+    },
+    sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
   };
 }
 

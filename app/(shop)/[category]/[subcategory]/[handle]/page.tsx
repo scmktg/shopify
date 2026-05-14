@@ -24,6 +24,26 @@ export const revalidate = 300;
 const META_DESCRIPTION_MAX = 155;
 
 /**
+ * The root layout sets a title template of `%s | Enviro Aqua`, so the
+ * value returned here must NOT already carry that suffix. Some legacy
+ * products.json entries (imported from the previous WordPress build)
+ * include " | Enviro Aqua" inside `seo.title`, which compounded to
+ * "Foo | Enviro Aqua | Enviro Aqua" in the rendered <title>. Strip
+ * any trailing brand suffix as a defence-in-depth measure so a future
+ * re-import cannot reintroduce the duplicate.
+ */
+const BRAND_SUFFIX_RE = /\s*[\|—–-]\s*Enviro\s*Aqua\s*$/i;
+
+function stripBrandSuffix(title: string): string {
+  let out = title;
+  // Strip repeatedly in case the suffix was appended more than once.
+  while (BRAND_SUFFIX_RE.test(out)) {
+    out = out.replace(BRAND_SUFFIX_RE, '').trim();
+  }
+  return out;
+}
+
+/**
  * Resolve the meta description with the documented fallback chain:
  *   1. content.seo.description
  *   2. content.shortDescription
@@ -52,7 +72,7 @@ export async function generateMetadata({
   const content = getProductContent(handle);
   if (!content) return {};
 
-  const title = content.seo?.title ?? product.title;
+  const title = stripBrandSuffix(content.seo?.title ?? product.title);
   const description = await resolveMetaDescription(content);
   const ogImage =
     content.seo?.ogImage ??

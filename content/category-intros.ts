@@ -38,3 +38,85 @@ export const CATEGORY_INTROS: Readonly<Record<string, string>> = {
 export function getCategoryIntro(slug: string): string | null {
   return CATEGORY_INTROS[slug] ?? null;
 }
+
+/**
+ * Unique meta descriptions for every catalogue subcategory page.
+ *
+ * Keys use the composite '<category>/<subcategory>' form to match
+ * getCategoryIntro. Each string is hand-written, front-loads the
+ * primary keyword, stays under the ~155-character Google truncation
+ * window, and avoids the boilerplate template the page previously
+ * generated (which produced duplicate descriptions across the 24
+ * subcategory pages and tanked CTR on the same-shaped snippets).
+ *
+ * Australian English, no exclamation marks, no AI giveaways, per
+ * docs/06-content-rules.md.
+ */
+export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
+  // Water Filters
+  'water-filters/under-sink':
+    'Under-sink water filters for Australian kitchens. Single-stage carbon through to multi-stage RO, WaterMark certified options, replacement cartridges in stock.',
+  'water-filters/whole-house':
+    'Whole-house water filters that treat every tap at the point of entry. Big Blue 20" × 4.5" housings, WaterMark certified, sized for Australian mains.',
+  'water-filters/reverse-osmosis':
+    'Reverse osmosis water filter systems — 4, 5, and 6-stage RO for fluoride, PFAS, heavy metals, and dissolved solids. TFC membranes, 12L pressure tanks, AU stock.',
+  'water-filters/uv-sterilisation':
+    'UV sterilisation systems for tank water, bore water, and rural supplies. 254 nm UV-C disinfection paired with sediment and carbon pre-filtration. Australian voltage.',
+  'water-filters/bench-top':
+    'Bench-top water filters for renters and homeowners without plumbing access. Diverter-fitted, no drilling, 1- to 3-stage carbon and sediment configurations.',
+  'water-filters/commercial':
+    'Commercial water filtration for cafes, offices, schools, and hospitality. High-flow housings, WaterMark certified manifolds, scale-control and chlorine reduction.',
+  'water-filters/parts':
+    'Replacement parts for water filter systems — housings, brackets, pressure gauges, spanners, O-rings, and fittings. Sized for the Australian 10" and 20" standards.',
+
+  // Cartridges
+  'cartridges/sediment':
+    'Sediment filter cartridges in 1, 5, and 20 micron — PP spun and pleated. Fits standard Australian 10" × 2.5" and 20" × 4.5" Big Blue housings.',
+  'cartridges/carbon':
+    'Carbon filter cartridges for chlorine, taste, and odour reduction. Coconut carbon block (CTO) and GAC granular options in every standard Australian housing size.',
+  'cartridges/reverse-osmosis-membranes':
+    'Replacement reverse osmosis membranes — 50, 75, and 100 GPD TFC elements that fit standard 10" × 2.5" RO membrane housings used in Australian under-sink systems.',
+  'cartridges/specialty-cartridges':
+    'Specialty filter cartridges — alkaline mineral, fluoride removal, post-carbon T33, ultrafiltration, and pleated washable. Sized for Australian standard housings.',
+  'cartridges/cartridge-sets':
+    'Pre-built cartridge sets matched to 2, 3, 5, and 6-stage systems. One SKU covers the full service interval — sediment, carbon, and membrane where applicable.',
+
+  // Bubblers & Coolers
+  'bubblers-and-coolers/bubblers':
+    'Stainless steel drinking bubblers for schools, offices, gyms, and public venues. WaterMark certified, push-button activation, integrated filtration and cooling.',
+  'bubblers-and-coolers/coolers-and-chillers':
+    'Water coolers and chillers — hot, cold, and ambient direct-connect dispensers plus under-counter chillers paired with a feature tap. Australian mains compatible.',
+  'bubblers-and-coolers/parts':
+    'Replacement parts for bubblers and water coolers — bubbler heads, push-button valves, filter cartridges, taps, and service kits for every model we stock.',
+
+  // Pumps & Tanks
+  'pumps-and-tanks/pumps':
+    'Water pumps for caravans, RVs, bore, rainwater, and RO systems. 12V, RO booster, pressure, solar, and submersible options with full Australian voltage compliance.',
+  'pumps-and-tanks/pressure-tanks':
+    'Pressure tanks and replacement bladders for Australian pump systems — 12L through 100L vertical and horizontal models, drinking-water-safe bladders.',
+  'pumps-and-tanks/dosing-tanks':
+    'Chemical dosing tanks in 50L, 100L, and 200L. Bunded options for agricultural, industrial, and bore-water chemical handling. Australian compliance flagged.',
+  'pumps-and-tanks/components':
+    'Fittings, connectors, valves, and components for water pump, pressure tank, and RO installations. 1/4", 6mm, and BSP sizes in stock for fast dispatch.',
+
+  // Plumbing
+  'plumbing/kitchen-taps':
+    'Kitchen taps that pair with filtration systems — three-way mixers, pull-down sprays, and dedicated filtered outlets. WELS rated, WaterMark where mains-connected.',
+  'plumbing/bathroom-taps':
+    'Bathroom taps for filtered-water installs — basin mixers, shower mixers, and wall-mount sets in chrome, matte black, and brushed nickel. WaterMark and WELS rated.',
+  'plumbing/ro-filter-taps':
+    'Dedicated filtered-water taps for reverse osmosis and under-sink systems. Spring-loaded and tri-flow designs with 1/4" inlets to match standard RO tubing.',
+  'plumbing/toilets':
+    'Toilet suites and pans matched to Australian bathroom installs. WELS water-efficiency ratings shown on every product, WaterMark certified where mains-connected.',
+  'plumbing/bundles':
+    'Complete bathroom and kitchen plumbing bundles — taps, mixers, and accessories packaged for a single delivery. WELS rated, WaterMark certified, finish-matched.',
+};
+
+export function getSubcategoryMetaDescription(
+  categorySlug: string,
+  subcategorySlug: string,
+): string | null {
+  return (
+    SUBCATEGORY_META_DESCRIPTIONS[`${categorySlug}/${subcategorySlug}`] ?? null
+  );
+}
