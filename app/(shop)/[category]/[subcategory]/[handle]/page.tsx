@@ -3,7 +3,10 @@ import { notFound } from 'next/navigation';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { findSubcategory } from '@/content/categories';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
-import { getProductContent } from '@/lib/products/getProductContent';
+import {
+  getAllProductContent,
+  getProductContent,
+} from '@/lib/products/getProductContent';
 import { markdownToPlainText } from '@/lib/products/markdown';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema, productSchema } from '@/lib/seo/jsonld';
@@ -124,6 +127,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const node = findSubcategory(category, subcategory);
   const pathname = `/${category}/${subcategory}/${handle}`;
+  // Resolve sibling handles to their canonical paths (one segment per
+  // category/subcategory tuple) so the FamilySelector can navigate
+  // between variants without the products map crossing the client
+  // boundary. Returns null when the product has no `family` block —
+  // the component renders nothing in that case.
+  const familyPaths = content.family
+    ? resolveFamilyPaths(content.family.siblings.map((s) => s.handle))
+    : null;
   // Cap at 5000 chars: search engines truncate beyond this anyway,
   // and bounding the JSON-LD payload keeps the inline <script> tag
   // small. Long-form description content still renders in full on
@@ -154,7 +165,30 @@ export default async function ProductPage({ params }: ProductPageProps) {
         content={content}
         category={category}
         subcategory={subcategory}
+        familyPaths={familyPaths}
       />
     </>
   );
+}
+
+/**
+ * Returns a Map of `handle -> "/<category>/<subcategory>/<handle>/"`
+ * for every requested sibling that exists in products.json. Unknown
+ * handles are silently dropped — the FamilySelector renders any
+ * missing entry as a disabled chip, which is a graceful degradation
+ * if a family member has been archived in Shopify but not yet pruned
+ * from the family list.
+ */
+function resolveFamilyPaths(
+  handles: ReadonlyArray<string>,
+): ReadonlyMap<string, string> {
+  const all = getAllProductContent();
+  const map = new Map<string, string>();
+  for (const handle of handles) {
+    const entry = all[handle];
+    if (!entry) continue;
+    const [c, s] = entry.categories;
+    map.set(handle, `/${c}/${s}/${handle}/`);
+  }
+  return map;
 }

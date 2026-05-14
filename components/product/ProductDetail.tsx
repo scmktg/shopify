@@ -5,6 +5,7 @@ import type { ProductContent } from '@/lib/products/schema';
 import { ProductGallery } from './ProductGallery';
 import { PriceDisplay } from './PriceDisplay';
 import { CertificationSlot } from './CertificationSlot';
+import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
@@ -35,6 +36,12 @@ interface ProductDetailProps {
   content: ProductContent;
   category: string;
   subcategory: string;
+  /**
+   * Sibling-handle → canonical-path map for the optional family
+   * selector. Provided by the page so the products map stays on the
+   * server. Empty / null when `content.family` is absent.
+   */
+  familyPaths?: ReadonlyMap<string, string> | null;
 }
 
 export function ProductDetail({
@@ -42,6 +49,7 @@ export function ProductDetail({
   content,
   category,
   subcategory,
+  familyPaths,
 }: ProductDetailProps) {
   const firstVariant = product.variants[0];
   const inStock = firstVariant?.availableForSale ?? false;
@@ -141,6 +149,14 @@ export function ProductDetail({
           <div className="mt-4">
             <CertificationSlot content={content} />
           </div>
+
+          {content.family && familyPaths && (
+            <FamilySelector
+              family={content.family}
+              currentHandle={product.handle}
+              paths={familyPaths}
+            />
+          )}
 
           {firstVariant && (
             <div className="mt-6">
