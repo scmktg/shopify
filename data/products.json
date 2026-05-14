@@ -11968,7 +11968,7 @@
       "boughtTogether": [
         "commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd",
         "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs",
-        "chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l"
+        "chemical-dosing-tank-bunded-100l"
       ],
       "moreInCategory": "auto"
     },
@@ -12115,7 +12115,7 @@
       "boughtTogether": [
         "commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd",
         "typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd",
-        "chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l"
+        "chemical-dosing-tank-bunded-100l"
       ],
       "moreInCategory": "auto"
     },
@@ -12251,7 +12251,7 @@
     "upsells": {
       "boughtTogether": [
         "commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd",
-        "chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l",
+        "chemical-dosing-tank-bunded-100l",
         "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs"
       ],
       "moreInCategory": "auto"
@@ -20462,7 +20462,7 @@
       "ogImage": null
     }
   },
-  "chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l": {
+  "chemical-dosing-tank-bunded-50l": {
     "categories": [
       "pumps-and-tanks",
       "dosing-tanks"
@@ -20472,26 +20472,23 @@
       "polyethylene",
       "bunded",
       "chemical-storage",
-      "50l",
-      "100l",
-      "200l",
-      "spill-containment"
+      "spill-containment",
+      "50l"
     ],
-    "shortDescription": "Polyethylene chemical dosing tank with integrated bunding — available in 50L, 100L, and 200L capacities. For chemical dosing, water storage, and harsh-chemical applications. Spill-containment built in.",
-    "description": "A **polyethylene chemical dosing and water storage tank** with **integrated bunding** — the standard format for legally storing chemical concentrates near water treatment equipment in commercial and industrial settings. Available in three capacities so you can match the tank to your application rather than over-buying.\n\n## What Bunding Is and Why It Matters\n\nA \"bund\" is a secondary containment vessel around a primary tank, sized to hold the contents of the primary tank if it ruptures or leaks. For chemical dosing — chlorine, sodium hydroxide, citric acid, antiscalants, biocides — bunding is the difference between a contained problem and a Workplace Health and Safety incident.\n\nMost Australian states require bunding on chemical storage above certain thresholds under workplace and environmental regulations. Even where it isn't mandated, it's the obvious choice — a $1,000 secondary containment is far cheaper than soil remediation, drain contamination, or staff exposure incidents.\n\nThis tank's bunding is **integrated into a single moulded assembly** — no separate bund pan to position, no gap to misalign, no risk of installing the tank in the wrong place. Place the unit, plumb the connections, done.\n\n## Three Capacities\n\nMatched to typical residential, light commercial, and industrial chemical dosing rates:\n\n- **50L** — pool-and-spa dosing, small commercial RO antiscalant feed, water treatment polish dosing\n- **100L** — restaurant and commercial kitchen dosing, mid-scale RO antiscalant, small wastewater treatment\n- **200L** — industrial dosing, large commercial systems, multi-line antiscalant feed\n\n## Dimensions (100L Model — Reference)\n\nFrom source documentation for the 100L variant:\n- **Tank:** 460 mm × 800 mm\n- **Bund:** 800 mm × 250 mm\n\n## Build\n\n- **Material:** high-quality polyethylene throughout — chemically inert to most dosing chemicals\n- **Configuration:** primary storage tank + integrated bund pan in one assembly\n- **Use:** chemical dosing, fertiliser storage, pesticide storage, harsh chemicals, water storage\n\nPolyethylene is the universal chemical storage material for liquid chemicals at residential and light industrial scale — chemically resistant to acids, alkalis, hypochlorite solutions, and antiscalant blends; UV-stabilised for outdoor placement.\n\n## Use Cases\n\n- **RO system antiscalant dosing** — feed antiscalant into pre-treatment to extend membrane life\n- **Pool and spa chlorination** — store sodium hypochlorite or other chlorination chemical\n- **Water treatment dosing** — pH correction, oxidiser feed, coagulant\n- **General liquid storage** — water, low-hazard chemicals, fertiliser concentrate",
+    "shortDescription": "Polyethylene chemical dosing tank with integrated bunding — 50L capacity for pool, spa, and small commercial dosing. Spill-containment built in.",
+    "description": "A **50L polyethylene chemical dosing and water storage tank** with **integrated bunding** — the entry capacity in the range, sized for pool-and-spa dosing, small commercial RO antiscalant feed, and water-treatment polish dosing.\n\n## What Bunding Is and Why It Matters\n\nA \"bund\" is a secondary containment vessel around a primary tank, sized to hold the contents of the primary tank if it ruptures or leaks. For chemical dosing — chlorine, sodium hydroxide, citric acid, antiscalants, biocides — bunding is the difference between a contained problem and a Workplace Health and Safety incident.\n\nMost Australian states require bunding on chemical storage above certain thresholds under workplace and environmental regulations. Even where it isn't mandated, it's the obvious choice — secondary containment is far cheaper than soil remediation, drain contamination, or staff exposure incidents.\n\nThis tank's bunding is **integrated into a single moulded assembly** — no separate bund pan to position, no gap to misalign, no risk of installing the tank in the wrong place. Place the unit, plumb the connections, done.\n\n## Where 50L Fits\n\n- **Pool and spa chlorination** — store sodium hypochlorite or other chlorination chemical at the dose rate needed for a typical residential pool\n- **Small commercial RO antiscalant** — antiscalant dosing reservoir for under-counter and entry commercial RO systems\n- **Polish dosing** — pH correction or oxidiser feed where dosing rates are low\n- **General low-volume liquid storage**\n\n## Build\n\n- **Material:** high-quality polyethylene throughout — chemically inert to most dosing chemicals\n- **Configuration:** primary storage tank + integrated bund pan in one assembly\n- **Use:** chemical dosing, fertiliser storage, pesticide storage, harsh chemicals, water storage\n\nPolyethylene is the universal chemical storage material for liquid chemicals at residential and light industrial scale — chemically resistant to acids, alkalis, hypochlorite solutions, and antiscalant blends; UV-stabilised for outdoor placement.\n\n## Other Capacities\n\nAlso available: [100L](/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l/) · [200L](/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-200l/).",
     "features": [
       "Polyethylene chemical dosing tank with integrated bunding",
-      "Three capacity options: 50L, 100L, 200L",
       "Single-assembly primary tank + bund — no separate pan to position",
       "Chemically inert polyethylene — suits acids, alkalis, hypochlorite, antiscalants",
       "Spill containment built in",
       "Suits chemical dosing, fertilisers, pesticides, water storage",
-      "Reference 100L dimensions: tank 460 × 800 mm, bund 800 × 250 mm"
+      "Compact 50L capacity — entry point in the dosing-tank range"
     ],
     "headlineSpecs": [
       {
-        "label": "Capacities",
-        "value": "50L / 100L / 200L"
+        "label": "Capacity",
+        "value": "50L"
       },
       {
         "label": "Material",
@@ -20512,8 +20509,8 @@
         "value": "Polyethylene chemical dosing tank with integrated bunding"
       },
       {
-        "label": "Capacity options",
-        "value": "50L, 100L, 200L"
+        "label": "Capacity",
+        "value": "50L"
       },
       {
         "label": "Material",
@@ -20524,11 +20521,132 @@
         "value": "Integrated (single-assembly tank + bund pan)"
       },
       {
-        "label": "100L tank dimensions",
+        "label": "Chemical compatibility",
+        "value": "Acids, alkalis, hypochlorite, antiscalants, fertilisers, pesticides, water"
+      },
+      {
+        "label": "Installation",
+        "value": "Place on level surface, plumb dosing line"
+      }
+    ],
+    "recommendedFor": [
+      "Commercial RO installations needing antiscalant dosing storage",
+      "Pool, spa, and aquatic facility chemical storage",
+      "Industrial and light-industrial chemical dosing applications",
+      "Water treatment installations requiring bunded chemical containment",
+      "Sites requiring Workplace Health and Safety-compliant chemical storage"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "specificationNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Chemical storage vessel — not connected to potable water supply, not subject to WaterMark."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment",
+        "commercial-reverse-osmosis-ro-desalination-plant-ro-3000-lpd-800-gpd-with-pressu",
+        "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v"
+      ],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "Chemical Dosing Tank 50L — Bunded Polyethylene",
+      "description": "50L polyethylene chemical dosing tank with integrated bunding. Spill-containment built in. Suits pool-and-spa dosing, small commercial RO antiscalant, polish dosing.",
+      "ogImage": null
+    },
+    "family": {
+      "label": "Capacity",
+      "siblings": [
+        {
+          "handle": "chemical-dosing-tank-bunded-50l",
+          "label": "50L"
+        },
+        {
+          "handle": "chemical-dosing-tank-bunded-100l",
+          "label": "100L"
+        },
+        {
+          "handle": "chemical-dosing-tank-bunded-200l",
+          "label": "200L"
+        }
+      ]
+    }
+  },
+  "chemical-dosing-tank-bunded-100l": {
+    "categories": [
+      "pumps-and-tanks",
+      "dosing-tanks"
+    ],
+    "tags": [
+      "dosing-tank",
+      "polyethylene",
+      "bunded",
+      "chemical-storage",
+      "spill-containment",
+      "100l"
+    ],
+    "shortDescription": "Polyethylene chemical dosing tank with integrated bunding — 100L capacity for restaurant, commercial kitchen, and mid-scale RO antiscalant dosing.",
+    "description": "A **100L polyethylene chemical dosing and water storage tank** with **integrated bunding** — the mid-range capacity, sized for restaurant and commercial kitchen dosing, mid-scale RO antiscalant feed, and small-scale wastewater treatment dosing.\n\n## What Bunding Is and Why It Matters\n\nA \"bund\" is a secondary containment vessel around a primary tank, sized to hold the contents of the primary tank if it ruptures or leaks. For chemical dosing — chlorine, sodium hydroxide, citric acid, antiscalants, biocides — bunding is the difference between a contained problem and a Workplace Health and Safety incident.\n\nMost Australian states require bunding on chemical storage above certain thresholds under workplace and environmental regulations. Even where it isn't mandated, it's the obvious choice — secondary containment is far cheaper than soil remediation, drain contamination, or staff exposure incidents.\n\nThis tank's bunding is **integrated into a single moulded assembly** — no separate bund pan to position, no gap to misalign, no risk of installing the tank in the wrong place. Place the unit, plumb the connections, done.\n\n## Where 100L Fits\n\n- **Restaurant and commercial kitchen dosing** — bulk dosing reservoir for hospitality water-treatment installations\n- **Mid-scale RO antiscalant** — antiscalant feed for commercial RO systems up to 3000 LPD\n- **Small wastewater treatment dosing** — pH correction or coagulant feed in light-industrial settings\n- **General mid-volume liquid storage**\n\n## Dimensions\n\n- **Tank:** 460 mm × 800 mm\n- **Bund:** 800 mm × 250 mm\n\n## Build\n\n- **Material:** high-quality polyethylene throughout — chemically inert to most dosing chemicals\n- **Configuration:** primary storage tank + integrated bund pan in one assembly\n- **Use:** chemical dosing, fertiliser storage, pesticide storage, harsh chemicals, water storage\n\nPolyethylene is the universal chemical storage material for liquid chemicals at residential and light industrial scale — chemically resistant to acids, alkalis, hypochlorite solutions, and antiscalant blends; UV-stabilised for outdoor placement.\n\n## Other Capacities\n\nAlso available: [50L](/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-50l/) · [200L](/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-200l/).",
+    "features": [
+      "Polyethylene chemical dosing tank with integrated bunding",
+      "Single-assembly primary tank + bund — no separate pan to position",
+      "Chemically inert polyethylene — suits acids, alkalis, hypochlorite, antiscalants",
+      "Spill containment built in",
+      "Suits chemical dosing, fertilisers, pesticides, water storage",
+      "100L capacity — middle option in the dosing-tank range",
+      "100L dimensions: tank 460 × 800 mm, bund 800 × 250 mm"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Capacity",
+        "value": "100L"
+      },
+      {
+        "label": "Material",
+        "value": "Polyethylene"
+      },
+      {
+        "label": "Bunding",
+        "value": "Integrated"
+      },
+      {
+        "label": "Dimensions",
+        "value": "460 × 800 mm"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Polyethylene chemical dosing tank with integrated bunding"
+      },
+      {
+        "label": "Capacity",
+        "value": "100L"
+      },
+      {
+        "label": "Material",
+        "value": "High-quality polyethylene"
+      },
+      {
+        "label": "Bunding",
+        "value": "Integrated (single-assembly tank + bund pan)"
+      },
+      {
+        "label": "Tank dimensions",
         "value": "460 mm × 800 mm"
       },
       {
-        "label": "100L bund dimensions",
+        "label": "Bund dimensions",
         "value": "800 mm × 250 mm"
       },
       {
@@ -20571,9 +20689,146 @@
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "Chemical Dosing Tank — Bunded Polyethylene, 50L / 100L / 200L",
-      "description": "Polyethylene chemical dosing tank with integrated bunding. 50L, 100L, or 200L. Spill-containment built in. Suits acids, hypochlorite, antiscalants, fertilisers.",
+      "title": "Chemical Dosing Tank 100L — Bunded Polyethylene",
+      "description": "100L polyethylene chemical dosing tank with integrated bunding. Spill-containment built in. Suits restaurants, commercial kitchens, mid-scale RO antiscalant feed.",
       "ogImage": null
+    },
+    "family": {
+      "label": "Capacity",
+      "siblings": [
+        {
+          "handle": "chemical-dosing-tank-bunded-50l",
+          "label": "50L"
+        },
+        {
+          "handle": "chemical-dosing-tank-bunded-100l",
+          "label": "100L"
+        },
+        {
+          "handle": "chemical-dosing-tank-bunded-200l",
+          "label": "200L"
+        }
+      ]
+    }
+  },
+  "chemical-dosing-tank-bunded-200l": {
+    "categories": [
+      "pumps-and-tanks",
+      "dosing-tanks"
+    ],
+    "tags": [
+      "dosing-tank",
+      "polyethylene",
+      "bunded",
+      "chemical-storage",
+      "spill-containment",
+      "200l"
+    ],
+    "shortDescription": "Polyethylene chemical dosing tank with integrated bunding — 200L capacity for industrial dosing, large commercial systems, and multi-line antiscalant feed.",
+    "description": "A **200L polyethylene chemical dosing and water storage tank** with **integrated bunding** — the largest capacity in the range, sized for industrial dosing, large commercial systems, and multi-line antiscalant feed.\n\n## What Bunding Is and Why It Matters\n\nA \"bund\" is a secondary containment vessel around a primary tank, sized to hold the contents of the primary tank if it ruptures or leaks. For chemical dosing — chlorine, sodium hydroxide, citric acid, antiscalants, biocides — bunding is the difference between a contained problem and a Workplace Health and Safety incident.\n\nMost Australian states require bunding on chemical storage above certain thresholds under workplace and environmental regulations. Even where it isn't mandated, it's the obvious choice — secondary containment is far cheaper than soil remediation, drain contamination, or staff exposure incidents.\n\nThis tank's bunding is **integrated into a single moulded assembly** — no separate bund pan to position, no gap to misalign, no risk of installing the tank in the wrong place. Place the unit, plumb the connections, done.\n\n## Where 200L Fits\n\n- **Industrial dosing** — bulk reservoir for industrial water-treatment installations\n- **Large commercial RO antiscalant** — antiscalant feed for commercial RO systems above 3000 LPD\n- **Multi-line antiscalant feed** — single reservoir feeding multiple dosing pumps\n- **Bulk chemical storage** — where dosing rates exceed what a 100L tank can support between refills\n\n## Build\n\n- **Material:** high-quality polyethylene throughout — chemically inert to most dosing chemicals\n- **Configuration:** primary storage tank + integrated bund pan in one assembly\n- **Use:** chemical dosing, fertiliser storage, pesticide storage, harsh chemicals, water storage\n\nPolyethylene is the universal chemical storage material for liquid chemicals at residential and light industrial scale — chemically resistant to acids, alkalis, hypochlorite solutions, and antiscalant blends; UV-stabilised for outdoor placement.\n\n## Other Capacities\n\nAlso available: [50L](/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-50l/) · [100L](/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l/).",
+    "features": [
+      "Polyethylene chemical dosing tank with integrated bunding",
+      "Single-assembly primary tank + bund — no separate pan to position",
+      "Chemically inert polyethylene — suits acids, alkalis, hypochlorite, antiscalants",
+      "Spill containment built in",
+      "Suits chemical dosing, fertilisers, pesticides, water storage",
+      "200L capacity — top of the dosing-tank range"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Capacity",
+        "value": "200L"
+      },
+      {
+        "label": "Material",
+        "value": "Polyethylene"
+      },
+      {
+        "label": "Bunding",
+        "value": "Integrated"
+      },
+      {
+        "label": "Use",
+        "value": "Chemical / water"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Polyethylene chemical dosing tank with integrated bunding"
+      },
+      {
+        "label": "Capacity",
+        "value": "200L"
+      },
+      {
+        "label": "Material",
+        "value": "High-quality polyethylene"
+      },
+      {
+        "label": "Bunding",
+        "value": "Integrated (single-assembly tank + bund pan)"
+      },
+      {
+        "label": "Chemical compatibility",
+        "value": "Acids, alkalis, hypochlorite, antiscalants, fertilisers, pesticides, water"
+      },
+      {
+        "label": "Installation",
+        "value": "Place on level surface, plumb dosing line"
+      }
+    ],
+    "recommendedFor": [
+      "Commercial RO installations needing antiscalant dosing storage",
+      "Pool, spa, and aquatic facility chemical storage",
+      "Industrial and light-industrial chemical dosing applications",
+      "Water treatment installations requiring bunded chemical containment",
+      "Sites requiring Workplace Health and Safety-compliant chemical storage"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "specificationNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "Chemical storage vessel — not connected to potable water supply, not subject to WaterMark."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [
+        "commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment",
+        "commercial-reverse-osmosis-ro-desalination-plant-ro-3000-lpd-800-gpd-with-pressu",
+        "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v"
+      ],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "Chemical Dosing Tank 200L — Bunded Polyethylene",
+      "description": "200L polyethylene chemical dosing tank with integrated bunding. Spill-containment built in. Suits industrial dosing, large commercial RO antiscalant, multi-line feed.",
+      "ogImage": null
+    },
+    "family": {
+      "label": "Capacity",
+      "siblings": [
+        {
+          "handle": "chemical-dosing-tank-bunded-50l",
+          "label": "50L"
+        },
+        {
+          "handle": "chemical-dosing-tank-bunded-100l",
+          "label": "100L"
+        },
+        {
+          "handle": "chemical-dosing-tank-bunded-200l",
+          "label": "200L"
+        }
+      ]
     }
   },
   "commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd": {

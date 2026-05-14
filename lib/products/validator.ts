@@ -184,6 +184,44 @@ function validateEntry(
   if ('seo' in entry) {
     validateSeo(entry['seo'] as ProductSeoOverrides, push);
   }
+  if ('family' in entry) {
+    validateFamily(entry['family'], push);
+  }
+}
+
+function validateFamily(
+  value: unknown,
+  push: (path: string, message: string) => void,
+): void {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) {
+    push('family', 'Must be an object when present.');
+    return;
+  }
+  const family = value as Record<string, unknown>;
+  if (typeof family['label'] !== 'string' || !family['label'].trim()) {
+    push('family.label', 'Must be a non-empty string.');
+  }
+  const siblings = family['siblings'];
+  if (!Array.isArray(siblings) || siblings.length < 2) {
+    push(
+      'family.siblings',
+      'Must be an array of two or more {handle, label} entries — a family of one is just a standalone product.',
+    );
+    return;
+  }
+  siblings.forEach((sibling, index) => {
+    if (typeof sibling !== 'object' || sibling === null) {
+      push(`family.siblings[${index}]`, 'Must be an object.');
+      return;
+    }
+    const s = sibling as Record<string, unknown>;
+    if (typeof s['handle'] !== 'string' || !s['handle'].trim()) {
+      push(`family.siblings[${index}].handle`, 'Must be a non-empty handle string.');
+    }
+    if (typeof s['label'] !== 'string' || !s['label'].trim()) {
+      push(`family.siblings[${index}].label`, 'Must be a non-empty label string.');
+    }
+  });
 }
 
 function validateOptionalString(

@@ -56,8 +56,12 @@ const WORDPRESS_PRODUCT_REDIRECTS = [
   ['/product/12v-self-priming-garden-caravan-electric-water-pump-faucet-tap-kit-5m-pipe', '/pumps-and-tanks/pumps/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe'],
   // #2 (120 clicks)
   ['/product/rimless-watermark-back-to-wall-toilet-soft-close-wels', '/plumbing/toilets/rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce'],
-  // #3 (112 clicks) — consolidated 50L/100L/200L listing per audit note
-  ['/product/100l-chemical-dosing-tank-water-tank-poly-tank-and-bund', '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l'],
+  // #3 (112 clicks) — points at the 100L product (the variant the
+  // legacy URL was explicitly about). 2026-05: the consolidated
+  // 50L/100L/200L listing was split into three separate products
+  // (per-capacity SEO indexing); the 100L is the middle option and
+  // the original WP URL's named target.
+  ['/product/100l-chemical-dosing-tank-water-tank-poly-tank-and-bund', '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l'],
   // #4 (109 clicks)
   ['/product/typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd', '/pumps-and-tanks/pumps/typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd'],
   // #5 (43 clicks)
@@ -681,6 +685,17 @@ const nextConfig = {
       // deleted; this 301 keeps any external links and consolidates
       // ranking signals onto the canonical URL.
       ['/help/which-water-filter-to-choose', '/help/which-filter'],
+
+      // 2026-05 dosing-tank split: the previous single product
+      // `chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l`
+      // (a 50L/100L/200L bundle described as one listing) was split
+      // into three indexable products. The legacy composite URL 301s
+      // to the 100L (middle option, most-common dosing volume) so
+      // existing inbound links land on a real product page.
+      [
+        '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l',
+        '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l',
+      ],
     ];
 
     const rules = [];

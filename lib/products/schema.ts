@@ -93,6 +93,34 @@ export interface ProductSeoOverrides {
 }
 
 /**
+ * A single sibling within a product family (e.g. capacity variants of
+ * a dosing tank, where each capacity is its own indexed Shopify product
+ * rather than a Shopify variant). Rendered as a navigation pill on the
+ * PDP — selecting one routes to that sibling's URL.
+ */
+export interface ProductFamilySibling {
+  /** Shopify handle of the sibling product. */
+  handle: string;
+  /** Short label for the pill, e.g. "50L", "100L", "200L". */
+  label: string;
+}
+
+/**
+ * Optional product-family block. When set, the PDP renders a "Choose
+ * size" (or whatever the `label` field describes) pill row that links
+ * to each sibling. The current product's own handle is allowed in the
+ * list and is rendered as the active pill — keeping the data
+ * self-contained means siblings can be authored once and referenced
+ * verbatim on each family member.
+ */
+export interface ProductFamily {
+  /** Heading shown above the pill row, e.g. "Capacity". */
+  label: string;
+  /** Two or more siblings — singletons would just be noise on the page. */
+  siblings: readonly ProductFamilySibling[];
+}
+
+/**
  * Full content payload for a single product, keyed by Shopify handle
  * in `data/products.json`. All fields except `categories` are
  * optional; sections render conditionally on presence.
@@ -121,6 +149,13 @@ export interface ProductContent {
   ctas?: ProductCtas;
   upsells?: ProductUpsells;
   seo?: ProductSeoOverrides;
+  /**
+   * Sibling-product navigation for product families (e.g. capacity
+   * variants split across multiple Shopify products for SEO indexing).
+   * Renders as a pill row above the cart CTA. Absent on standalone
+   * products.
+   */
+  family?: ProductFamily;
 }
 
 export type ProductContentMap = Readonly<Record<string, ProductContent>>;
