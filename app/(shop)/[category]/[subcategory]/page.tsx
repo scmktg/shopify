@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { findSubcategory } from '@/content/categories';
-import { getCategoryIntro } from '@/content/category-intros';
+import {
+  getCategoryIntro,
+  getSubcategoryMetaDescription,
+} from '@/content/category-intros';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
@@ -23,9 +26,12 @@ export async function generateMetadata({
   const { category, subcategory } = await params;
   const node = findSubcategory(category, subcategory);
   if (!node) return {};
+  const description =
+    getSubcategoryMetaDescription(category, subcategory) ??
+    `${node.subcategory.label} in our ${node.category.label.toLowerCase()} range — wholesale prices, tiered shipping Australia-wide from $9.95.`;
   return {
     title: `${node.subcategory.label} | ${node.category.label}`,
-    description: `${node.subcategory.label.toLowerCase()} in our ${node.category.label.toLowerCase()} range. Wholesale prices, tiered shipping Australia-wide from $9.95.`,
+    description,
     alternates: {
       canonical: `/${category}/${subcategory}`,
     },

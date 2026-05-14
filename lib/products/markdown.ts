@@ -1,6 +1,7 @@
 import 'server-only';
 import { remark } from 'remark';
 import remarkHtml from 'remark-html';
+import { getAllProductContent } from './getProductContent';
 
 /**
  * Server-only markdown renderer for `description` and
@@ -45,7 +46,47 @@ export async function renderProductMarkdown(
     .use(remarkHtml, { sanitize: false })
     .process(source);
   const html = String(processed).trim();
-  return stripDisallowedTags(html);
+  return rewriteBareHandleLinks(stripDisallowedTags(html));
+}
+
+/**
+ * Map of product handle → canonical pathname, derived from
+ * products.json at module load. Used to repair authored markdown
+ * links of the form `/under-sink-water-filter-4-stage-reverse-osmosis-system/`
+ * — bare top-level paths that 404 because the real product URL is
+ * `/water-filters/reverse-osmosis/under-sink-water-filter-4-stage-reverse-osmosis-system/`.
+ *
+ * Built lazily on first call and memoised for the life of the
+ * process; safe because products.json is bundled at build time and
+ * the module never reloads.
+ */
+let bareHandlePathCache: Map<string, string> | null = null;
+
+function getBareHandlePathMap(): Map<string, string> {
+  if (bareHandlePathCache) return bareHandlePathCache;
+  const map = new Map<string, string>();
+  for (const [handle, content] of Object.entries(getAllProductContent())) {
+    const [category, subcategory] = content.categories;
+    if (!category || !subcategory) continue;
+    map.set(handle, `/${category}/${subcategory}/${handle}/`);
+  }
+  bareHandlePathCache = map;
+  return map;
+}
+
+/**
+ * Rewrites `href="/<handle>"` and `href="/<handle>/"` to the full
+ * canonical product URL when `<handle>` is a known product. Leaves
+ * any other path untouched (homepage `/`, category pages, editorial
+ * sections like `/help/`, etc.).
+ */
+function rewriteBareHandleLinks(html: string): string {
+  const handlePaths = getBareHandlePathMap();
+  return html.replace(/href="(\/[a-z0-9-]+)\/?"/g, (match, raw: string) => {
+    const handle = raw.slice(1); // strip leading "/"
+    const canonical = handlePaths.get(handle);
+    return canonical ? `href="${canonical}"` : match;
+  });
 }
 
 /**
