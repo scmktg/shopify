@@ -10,6 +10,23 @@ import { getSiteUrl } from '@/lib/seo/siteUrl';
 
 export const revalidate = 3600;
 
+// Per the SEO audit (2026-05): every sitemap URL is slashless and uses
+// the www host (getSiteUrl handles host); editorial pages report their
+// markdown file's mtime as <lastmod> so Google sees real update dates
+// instead of a uniform build timestamp.
+async function markdownMtime(
+  section: string,
+  ...rest: string[]
+): Promise<Date> {
+  const file = path.join(process.cwd(), 'content', section, ...rest);
+  try {
+    const stats = await fs.stat(file);
+    return stats.mtime;
+  } catch {
+    return new Date();
+  }
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteUrl();
   const now = new Date();
@@ -32,6 +49,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/reviews`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
     { url: `${base}/whole-house-installation-package`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/watermark-certified`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
+    { url: `${base}/commercial-water-bubblers`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/water-bubblers-for-gyms`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
   ];
 
   const editorialSections: ReadonlyArray<{
@@ -50,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const slug of slugs) {
       editorialEntries.push({
         url: `${base}/${section}/${slug}`,
-        lastModified: now,
+        lastModified: await markdownMtime(section, `${slug}.md`),
         changeFrequency: 'monthly',
         priority,
       });
@@ -73,7 +92,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const subslug = file.replace(/\.md$/, '');
         editorialEntries.push({
           url: `${base}/${section}/${entry.name}/${subslug}`,
-          lastModified: now,
+          lastModified: await markdownMtime(section, entry.name, file),
           changeFrequency: 'monthly',
           priority: priority - 0.1,
         });
@@ -123,13 +142,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       (entry): entry is NonNullable<typeof entry> => entry !== null,
     );
   } catch (caught) {
+    // The full sitemap is useless without products — log loudly so build
+    // logs flag the regression instead of silently shipping an empty
+    // product list.
     console.error('[sitemap] product fetch failed:', caught);
   }
 
-  return [
+  const all: MetadataRoute.Sitemap = [
     ...staticEntries,
     ...categoryEntries,
     ...editorialEntries,
     ...productEntries,
   ];
+
+  // De-dupe by URL (defensive — guards against an accidental duplicate
+  // entry across the static / category / editorial lists) and sort so
+  // diffs between deploys stay stable.
+  const seen = new Set<string>();
+  const unique: MetadataRoute.Sitemap = [];
+  for (const entry of all) {
+    if (seen.has(entry.url)) continue;
+    seen.add(entry.url);
+    unique.push(entry);
+  }
+  unique.sort((a, b) => a.url.localeCompare(b.url));
+  return unique;
 }
