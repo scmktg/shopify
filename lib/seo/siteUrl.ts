@@ -1,21 +1,18 @@
 /**
- * Returns the canonical site URL with no trailing slash.
+ * Canonical production hostname for this site.
  *
- * Resolution order:
- *  1. NEXT_PUBLIC_SITE_URL — set explicitly per environment in Vercel.
- *  2. VERCEL_URL — auto-injected on preview / production builds.
- *  3. enviroaqua.com.au — production hostname as a final fallback.
+ * Hardcoded — do NOT read from VERCEL_URL or NEXT_PUBLIC_SITE_URL. Every
+ * deployment (production, preview, local) must emit the same canonical
+ * hostname in sitemaps, robots.txt, JSON-LD, llms.txt and metadataBase, so
+ * that Google never indexes a *.vercel.app preview URL.
  */
+const CANONICAL_SITE_URL = 'https://www.enviroaqua.com.au';
+
 export function getSiteUrl(): string {
-  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
-  if (explicit) return explicit.replace(/\/+$/, '');
-  const vercel = process.env.VERCEL_URL;
-  if (vercel) return `https://${vercel.replace(/\/+$/, '')}`;
-  return 'https://enviroaqua.com.au';
+  return CANONICAL_SITE_URL;
 }
 
 export function absoluteUrl(path: string): string {
-  const base = getSiteUrl();
-  if (!path.startsWith('/')) return `${base}/${path}`;
-  return `${base}${path}`;
+  if (!path.startsWith('/')) return `${CANONICAL_SITE_URL}/${path}`;
+  return `${CANONICAL_SITE_URL}${path}`;
 }
