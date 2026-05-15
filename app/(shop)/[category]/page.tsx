@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { findCategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
+import { markdownToPlainText } from '@/lib/products/markdown';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
@@ -41,6 +42,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const page = await getProducts({ query, first: PAGE_SIZE });
 
   const intro = getCategoryIntro(category);
+  const schemaDescription = intro ? await markdownToPlainText(intro) : null;
 
   const pathname = `/${node.slug}`;
 
@@ -48,7 +50,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     <>
       <JsonLdScript
         data={[
-          collectionSchema(node.label, pathname, intro),
+          collectionSchema(node.label, pathname, schemaDescription),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
             { name: node.label, path: pathname },

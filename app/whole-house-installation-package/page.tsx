@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Droplet, ShieldCheck, Wrench } from 'lucide-react';
 import { BUSINESS_INFO } from '@/content/business-info';
+import { INSTALL_PACKAGE } from '@/content/install-package';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
@@ -14,20 +15,28 @@ import {
   type JsonLd,
 } from '@/lib/seo/jsonld';
 import { absoluteUrl, getSiteUrl } from '@/lib/seo/siteUrl';
+import { formatAud, formatAudFixed } from '@/lib/utils/formatPrice';
 
 export const revalidate = 3600;
 
-const PATH = '/whole-house-installation-package';
-const PRODUCT_HANDLE =
-  'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
-const PRODUCT_PATH = `/water-filters/whole-house/${PRODUCT_HANDLE}/`;
-const BUNDLED_PRICE = 2299;
-const PRODUCT_PRICE = 1199.95;
-const INSTALL_PRICE = 1099.05;
+// Canonical path without trailing slash — preserved from the
+// original constant so the existing canonical URL doesn't shift.
+// Everywhere else uses INSTALL_PACKAGE.path (with trailing slash)
+// for internal hrefs.
+const CANONICAL_PATH = INSTALL_PACKAGE.path.replace(/\/$/, '');
+const PRICE_DISPLAY = formatAud(INSTALL_PACKAGE.priceAud);
+const PRODUCT_PRICE_DISPLAY = formatAud(INSTALL_PACKAGE.productPriceAud);
+// Pricing dl shows arithmetic ($1,199.95 + $1,099.05 = $2,299.00) —
+// all three rows use fixed two-decimal formatting so the cents line
+// up vertically. Used only inside that <dl>; everywhere else gets
+// the trimmed `$2,299` form.
+const PRODUCT_PRICE_DL = formatAudFixed(INSTALL_PACKAGE.productPriceAud);
+const INSTALL_PRICE_DL = formatAudFixed(INSTALL_PACKAGE.installPriceAud);
+const PRICE_DL = formatAudFixed(INSTALL_PACKAGE.priceAud);
 
 const FAQ_ITEMS = [
   {
-    q: 'What is included in the $2,299 price?',
+    q: `What is included in the ${PRICE_DISPLAY} price?`,
     a: 'The WaterMark certified 3-stage Big Blue filter system, professional installation by a licensed plumber we coordinate, mounting and commissioning, and a 12-month product warranty. GST is included.',
   },
   {
@@ -52,21 +61,20 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Can I get just the product without install?',
-    a: 'Yes. The system is on its own product page at $1,199.95 with tracked Australia-wide shipping or free Click & Collect from our Wyong showroom. The install package is the bundled option for local customers who want it done by a known plumber for a fixed price.',
+    a: `Yes. The system is on its own product page at ${PRODUCT_PRICE_DISPLAY} with tracked Australia-wide shipping or free Click & Collect from our Wyong showroom. The install package is the bundled option for local customers who want it done by a known plumber for a fixed price.`,
   },
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Whole House Water Filter — Installed for $2,299 | Central Coast NSW',
-    description:
-      'WaterMark certified whole-house water filter installed by a local plumber. Fixed $2,299 for NSW Central Coast residents. Get a quote in 60 seconds.',
-    alternates: { canonical: PATH },
+    title: `Whole House Water Filter — Installed for ${PRICE_DISPLAY} | Central Coast NSW`,
+    description: `WaterMark certified whole-house water filter installed by a local plumber. Fixed ${PRICE_DISPLAY} for NSW Central Coast residents. Get a quote in 60 seconds.`,
+    alternates: { canonical: CANONICAL_PATH },
     openGraph: {
-      title: 'Whole House Water Filter — Installed for $2,299',
+      title: `Whole House Water Filter — Installed for ${PRICE_DISPLAY}`,
       description:
         'WaterMark certified system + local plumber install. Fixed price for NSW Central Coast residents.',
-      url: absoluteUrl(PATH),
+      url: absoluteUrl(CANONICAL_PATH),
     },
   };
 }
@@ -100,8 +108,8 @@ function serviceSchema(productImage: string | null): JsonLd {
     },
     offers: {
       '@type': 'Offer',
-      url: absoluteUrl(PATH),
-      price: BUNDLED_PRICE.toFixed(2),
+      url: absoluteUrl(CANONICAL_PATH),
+      price: INSTALL_PACKAGE.priceAud.toFixed(2),
       priceCurrency: 'AUD',
       availability: 'https://schema.org/InStock',
     },
@@ -124,20 +132,23 @@ const HOW_IT_WORKS = [
 ];
 
 const RELATED_LINKS: ReadonlyArray<{ label: string; href: string }> = [
-  { label: 'Buy the system on its own ($1,199.95)', href: PRODUCT_PATH },
+  {
+    label: `Buy the system on its own (${PRODUCT_PRICE_DISPLAY})`,
+    href: INSTALL_PACKAGE.productPath,
+  },
   { label: 'Whole-home filtration', href: '/use/whole-home-filtration/' },
   { label: 'Chlorine and taste removal', href: '/water-problems/chlorine-and-taste/' },
   { label: 'Sediment and rust filters', href: '/water-problems/sediment-and-rust/' },
 ];
 
 export default async function InstallPackagePage() {
-  const product = await getProductByHandle(PRODUCT_HANDLE);
+  const product = await getProductByHandle(INSTALL_PACKAGE.productHandle);
   const productImage = product?.featuredImage?.url ?? null;
   const productImageAlt = product?.title ?? 'Whole house water filter system';
 
   const breadcrumbs = [
     { name: 'Home', href: '/' },
-    { name: 'Whole House Install Package', href: PATH },
+    { name: 'Whole House Install Package', href: INSTALL_PACKAGE.path },
   ];
 
   return (
@@ -166,7 +177,7 @@ export default async function InstallPackagePage() {
                   Whole House Water Filter — Installed by a Local Plumber
                 </h1>
                 <p className="mt-4 text-lg md:text-xl text-black/70">
-                  WaterMark certified, NSW Central Coast — ${BUNDLED_PRICE.toLocaleString()} complete with professional install.
+                  WaterMark certified, NSW Central Coast — {PRICE_DISPLAY} complete with professional install.
                 </p>
                 <div className="mt-6">
                   <a
@@ -227,20 +238,20 @@ export default async function InstallPackagePage() {
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center">
             <h2 className="text-2xl font-semibold text-black">Bundled price</h2>
             <p className="mt-6 text-6xl md:text-7xl font-bold text-black tracking-tight">
-              ${BUNDLED_PRICE.toLocaleString()}
+              {PRICE_DISPLAY}
             </p>
             <dl className="mt-8 max-w-sm mx-auto text-sm text-black/80">
               <div className="flex justify-between border-b border-gray-200 py-2">
                 <dt>Product</dt>
-                <dd>${PRODUCT_PRICE.toFixed(2)}</dd>
+                <dd>{PRODUCT_PRICE_DL}</dd>
               </div>
               <div className="flex justify-between border-b border-gray-200 py-2">
                 <dt>Professional install</dt>
-                <dd>${INSTALL_PRICE.toFixed(2)}</dd>
+                <dd>{INSTALL_PRICE_DL}</dd>
               </div>
               <div className="flex justify-between py-2 font-semibold text-black">
                 <dt>Total</dt>
-                <dd>${BUNDLED_PRICE.toLocaleString()}.00</dd>
+                <dd>{PRICE_DL}</dd>
               </div>
             </dl>
             <p className="mt-6 text-sm text-black/70">
@@ -300,7 +311,7 @@ export default async function InstallPackagePage() {
               Takes about 60 seconds. We&apos;ll come back to you within 1–2
               business days.
             </p>
-            <InstallationLeadForm productUrl={PRODUCT_PATH} />
+            <InstallationLeadForm productUrl={INSTALL_PACKAGE.productPath} />
           </div>
         </section>
 

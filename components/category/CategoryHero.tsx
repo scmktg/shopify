@@ -1,9 +1,16 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import type { Subcategory } from '@/content/categories';
+import { renderMarkdown } from '@/lib/content/markdown';
 
 interface CategoryHeroProps {
   title: string;
+  /**
+   * Above-grid intro. Markdown allowed — inline links and emphasis
+   * render through the shared remark pipeline. Schema description
+   * for the page should be derived separately via
+   * `markdownToPlainText()` so the JSON-LD field is plain text.
+   */
   intro: string | null;
   categorySlug: string;
   subcategories: ReadonlyArray<Subcategory>;
@@ -17,13 +24,14 @@ interface CategoryHeroProps {
  * filter strip (size + sort + count), so the hero deliberately
  * keeps its real-estate use small to leave more room for the grid.
  */
-export function CategoryHero({
+export async function CategoryHero({
   title,
   intro,
   categorySlug,
   subcategories,
   activeSubSlug = null,
 }: CategoryHeroProps) {
+  const introHtml = intro ? await renderMarkdown(intro) : null;
   const pillBase =
     'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-colors';
   const pillActive = 'bg-black text-white border border-black';
@@ -36,10 +44,11 @@ export function CategoryHero({
         <h1 className="text-3xl md:text-4xl font-semibold text-black tracking-tight">
           {title}
         </h1>
-        {intro && (
-          <p className="mt-2 max-w-3xl text-sm md:text-base text-black/70 leading-snug">
-            {intro}
-          </p>
+        {introHtml && (
+          <div
+            className="mt-2 max-w-3xl text-sm md:text-base text-black/70 leading-snug [&_a]:text-brand-blue [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-brand-blue-hover"
+            dangerouslySetInnerHTML={{ __html: introHtml }}
+          />
         )}
 
         {subcategories.length > 0 && (
