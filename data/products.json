@@ -999,7 +999,6 @@
     "upsells": {
       "boughtTogether": [
         "under-sink-water-filter-5-stage-reverse-osmosis-system",
-        "under-sink-water-filter-4-stage-reverse-osmosis-system",
         "3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c"
       ],
       "moreInCategory": "auto"
@@ -1103,7 +1102,6 @@
     "upsells": {
       "boughtTogether": [
         "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet",
-        "filtered-hot-and-cold-water-cooler-direct-connect",
         "bench-top-room-temperature-hot-and-cold-water-cooler-direct-connect"
       ],
       "moreInCategory": "auto"
@@ -1454,129 +1452,6 @@
     "seo": {
       "title": "Freestanding Hot & Cold Water Cooler — 3-Stage Filter, Direct Connect",
       "description": "95 cm tower water cooler with hot (5 L/hr), cold (2–3 L/hr) and ambient. 550 W heating, 90 W cooling, 3-stage filter, child-safe hot lock. 220 V mains.",
-      "ogImage": null
-    }
-  },
-  "filtered-hot-and-cold-water-cooler-direct-connect": {
-    "categories": [
-      "bubblers-and-coolers",
-      "coolers-and-chillers"
-    ],
-    "tags": [
-      "residential",
-      "hot-cold-ambient",
-      "direct-connect",
-      "carbon-sediment-filter"
-    ],
-    "shortDescription": "Direct-connect hot, cold, and ambient water cooler with built-in PP sediment + activated carbon filtration. 550 W heating, 90 W cooling, 220 V mains, child-safe hot lock.",
-    "description": "A direct-connect filtered water cooler delivering hot, cold, and ambient water from a single cabinet — the practical alternative to a bottled-water dispenser for any home or small office that wants chilled and boiling water without the rolling cost of barrel deliveries.\n\nWhat differentiates this model from the unit above is that the WP product attributes call out the filtration media explicitly: **activated carbon plus PP sediment**. The carbon stage handles chlorine, taste, and odour from the mains supply; the PP sediment stage captures rust, sand, and particulate before it reaches the carbon, which extends carbon-cartridge life. It's a two-media combination that does the practical work of treating Australian town water for drinking and beverage-making.\n\n## Three Taps, One Mains Connection\n\nFrom a single 1/4\" cold-mains feed, the unit dispenses:\n\n- **Hot:** 5 L/hr output at ≥ 90 °C\n- **Cold:** 2–3 L/hr output at ≤ 10 °C\n- **Ambient:** room-temperature, filtered\n\nA **child-safe lock** on the hot tap prevents accidental dispense — necessary in any household with kids and standard practice in commercial deployments.\n\n## Power Draw\n\n**550 W heating** and **90 W cooling**, on **220 V at 50 Hz** mains. Designed to operate continuously between **10 °C and 32 °C ambient** — fine for an unconditioned laundry or garage in temperate climates, fine year-round indoors.\n\n## Weight and Footprint\n\nThe attribute sheet lists **16 kg** for this configuration. Confirm a sturdy bench or floor location at install — this is not a unit you want to move regularly. Direct mains plumbing should be done by a licensed plumber for warranty cover; the unit itself is point-of-use and downstream-of-meter, outside WaterMark certification scope.",
-    "features": [
-      "Hot, cold, and ambient water from one cabinet, one mains connection",
-      "Two-media filtration: PP sediment + activated carbon",
-      "550 W heating, 90 W cooling on 220 V / 50 Hz mains",
-      "Hot at 5 L/hr ≥ 90 °C; cold at 2–3 L/hr ≤ 10 °C",
-      "Child-safe hot-tap lock",
-      "Designed for 10–32 °C ambient operation",
-      "16 kg cabinet — stable, settled installation"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
-      },
-      {
-        "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
-      },
-      {
-        "label": "Filtration",
-        "value": "PP sediment + activated carbon"
-      },
-      {
-        "label": "Power",
-        "value": "220 V / 50 Hz"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Format",
-        "value": "Direct-connect water cooler"
-      },
-      {
-        "label": "Hot water supply",
-        "value": "5 L/hr at ≥90 °C"
-      },
-      {
-        "label": "Cold water supply",
-        "value": "2–3 L/hr at ≤10 °C"
-      },
-      {
-        "label": "Ambient water",
-        "value": "Yes, separate tap"
-      },
-      {
-        "label": "Filtration media",
-        "value": "PP sediment + activated carbon"
-      },
-      {
-        "label": "Heating power",
-        "value": "550 W"
-      },
-      {
-        "label": "Cooling power",
-        "value": "90 W"
-      },
-      {
-        "label": "Voltage",
-        "value": "220 V, 50 Hz"
-      },
-      {
-        "label": "Hot tap safety",
-        "value": "Child-safe lock"
-      },
-      {
-        "label": "Working ambient temperature",
-        "value": "10–32 °C"
-      },
-      {
-        "label": "Weight",
-        "value": "16 kg"
-      },
-      {
-        "label": "Connection",
-        "value": "Direct mains"
-      }
-    ],
-    "recommendedFor": [
-      "Households wanting to ditch bottled water deliveries",
-      "Small offices and reception areas",
-      "Cafés and food trucks needing hot and cold filtered water in one footprint",
-      "Co-working spaces and shared kitchens"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Point-of-use, downstream-of-meter product — not subject to WaterMark certification under Australian plumbing regulations."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "bubbler-filter-cto-plus-pp",
-        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "Hot & Cold Water Cooler — Direct Connect, PP + Carbon Filter",
-      "description": "Direct-connect filtered water cooler. Hot 5 L/hr, cold 2–3 L/hr, plus ambient. PP sediment + activated carbon filtration, 550 W / 90 W on 220 V mains.",
       "ogImage": null
     }
   },
@@ -3139,7 +3014,6 @@
     "upsells": {
       "boughtTogether": [
         "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
-        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
         "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5"
       ],
       "moreInCategory": "auto"
@@ -3808,7 +3682,6 @@
     "upsells": {
       "boughtTogether": [
         "under-sink-water-filter-5-stage-reverse-osmosis-system",
-        "5-stages-ro-system-stainless-steel-tap",
         "inline-water-filter-t33-activated-post-carbon-5-micron-10-x-2"
       ],
       "moreInCategory": "auto"
@@ -4598,7 +4471,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
         "premium-three-stage-big-blue-whole-house-water-filter-system",
         "whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5"
       ],
@@ -7972,8 +7844,7 @@
     "upsells": {
       "boughtTogether": [
         "bathroom-water-saving-round-shower-set-round-rainfall-head-shower-wels-watermark",
-        "premium-three-stage-big-blue-whole-house-water-filter-system",
-        "20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-sediment-steel-bracket"
+        "premium-three-stage-big-blue-whole-house-water-filter-system"
       ],
       "moreInCategory": "auto"
     },
@@ -8730,9 +8601,7 @@
     },
     "upsells": {
       "boughtTogether": [
-        "dc12v-280w-submersible-solar-power-water-well-pump-garden-farm-ranch-23ft-lift",
-        "stainless-electric-solar-booster-pump-100w-home-water-booster-pump",
-        "single-phase-submersible-clean-water-pump-370w-lift-10m"
+        "stainless-electric-solar-booster-pump-100w-home-water-booster-pump"
       ],
       "moreInCategory": "auto"
     },
@@ -9224,267 +9093,6 @@
       "ogImage": null
     }
   },
-  "dc12v-280w-submersible-solar-power-water-well-pump-garden-farm-ranch-23ft-lift": {
-    "categories": [
-      "pumps-and-tanks",
-      "pumps"
-    ],
-    "tags": [
-      "12v-pump",
-      "submersible",
-      "solar-powered",
-      "deep-well",
-      "280w",
-      "off-grid",
-      "1500lph",
-      "23ft-lift"
-    ],
-    "shortDescription": "12V DC submersible solar-powered well pump — 280W, 1500 L/hr flow rate, 7m (23ft) lift, 2.5 kg. Designed for off-grid wells, farm dams, and solar-powered rural water applications.",
-    "description": "A **12V DC submersible solar-powered well pump** for the rural and off-grid water applications where mains power isn't available — bore wells, farm dams, garden tanks, ranches, and remote irrigation. Drops into the water and pumps from below, rather than pulling from above like surface pumps.\n\n## Submersible vs Surface Pumps — Why It Matters Off-Grid\n\nSurface pumps are limited by atmospheric physics to about 8 metres of suction lift — beyond that, no matter how powerful the motor, the pump can't pull water up. Submersible pumps sidestep this entirely by going **into** the water and pushing it up rather than pulling.\n\nFor a typical Australian bore or well, the water level can sit 5–30 metres below the surface. A surface pump physically can't reach water at that depth; a submersible drops down on a tether, sits below the water level, and pumps up through a discharge hose.\n\nThis pump's submersible design also has practical benefits:\n\n- **Self-priming by definition** — submerged in water, no air to displace\n- **Quieter operation** — the water around the pump dampens motor noise\n- **No suction-line failure modes** — no risk of losing prime, no air leaks in long suction lines\n\n## Solar-Power Compatibility\n\nThe 12V DC supply runs directly off a **solar panel or battery bank** — no inverter required, no mains-power dependency. For remote farm dam pumping, ranch watering, or off-grid garden irrigation, this is the most practical pump format: panel feeds pump, pump feeds tank, water flows by gravity from there.\n\n## Performance\n\n- **Power:** 280W\n- **Voltage:** 12V DC\n- **Flow rate:** 1500 L/hr (~25 L/min)\n- **Maximum head lift:** 7m (23ft)\n- **Weight:** 2.5 kg\n- **Type:** deep well pump, submersible\n\nFlow rate of 1500 L/hr is moderate — well-matched to filling a garden tank from a dam over a few hours, watering livestock troughs continuously, or maintaining a small irrigation system with intermittent demand.\n\n## Build\n\n- **Dimensions:** 25 cm × 15 cm (H × W)\n- **Materials:** corrosion-resistant submersible-grade\n- **Manufacture:** China\n- **Warranty:** 3 months manufacturer\n\n## Where This Pump Fits\n\n- **Off-grid bore wells** within 7m water-table depth\n- **Farm dams and ponds** transferring water to tanks or troughs\n- **Solar-powered garden irrigation** with battery storage buffer\n- **Ranch and livestock watering** systems\n- **Remote-area water supply** where mains power isn't viable",
-    "features": [
-      "12V DC submersible deep-well pump",
-      "Solar-power compatible — runs direct from PV or battery",
-      "280W motor — moderate capacity for off-grid use",
-      "1500 L/hr (≈25 L/min) flow rate",
-      "7m (23ft) maximum head lift",
-      "2.5 kg — easy to deploy and retrieve",
-      "Suits rainwater and wastewater applications",
-      "Self-priming by design (submerged operation)"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Voltage",
-        "value": "12V DC"
-      },
-      {
-        "label": "Power",
-        "value": "280W"
-      },
-      {
-        "label": "Flow rate",
-        "value": "1500 L/hr"
-      },
-      {
-        "label": "Max lift",
-        "value": "7m (23ft)"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Type",
-        "value": "12V DC submersible solar-powered well pump"
-      },
-      {
-        "label": "Voltage",
-        "value": "12V DC"
-      },
-      {
-        "label": "Power",
-        "value": "280W"
-      },
-      {
-        "label": "Maximum flow rate",
-        "value": "1500 L/hr (~25 L/min)"
-      },
-      {
-        "label": "Maximum head lift",
-        "value": "7 m (23ft)"
-      },
-      {
-        "label": "Pump type",
-        "value": "Deep well, submersible"
-      },
-      {
-        "label": "Dimensions",
-        "value": "25 × 15 cm (H × W)"
-      },
-      {
-        "label": "Weight",
-        "value": "2.5 kg"
-      },
-      {
-        "label": "Power source",
-        "value": "Solar-compatible 12V DC (panel or battery)"
-      },
-      {
-        "label": "Suitable for",
-        "value": "Rainwater, wastewater"
-      },
-      {
-        "label": "Warranty",
-        "value": "3 months manufacturer"
-      }
-    ],
-    "recommendedFor": [
-      "Off-grid bore wells within 7m water-table depth",
-      "Farm dam and pond transfer to tanks or troughs",
-      "Solar-powered garden and field irrigation",
-      "Livestock watering and ranch water reticulation",
-      "Remote and off-grid water supply without mains power"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "specificationNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Submersible 12V DC pump — off-grid use, not connected to potable mains supply, not subject to WaterMark."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe",
-        "single-phase-submersible-clean-water-pump-370w-lift-10m",
-        "stainless-electric-solar-booster-pump-100w-home-water-booster-pump"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "12V Submersible Solar Well Pump — 280W, 1500 L/hr, 7m Lift",
-      "description": "12V DC submersible solar-powered well pump. 280W, 1500 L/hr, 7m (23ft) head. For off-grid bores, farm dams, ranch watering, solar irrigation.",
-      "ogImage": null
-    }
-  },
-  "single-phase-submersible-clean-water-pump-370w-lift-10m": {
-    "categories": [
-      "pumps-and-tanks",
-      "pumps"
-    ],
-    "tags": [
-      "submersible-pump",
-      "240v-ac",
-      "1hp",
-      "370w",
-      "10m-lift",
-      "clean-water",
-      "single-phase"
-    ],
-    "shortDescription": "240V single-phase submersible clean water pump — 370W (1 HP), 10m maximum head lift, 2 m³/hr flow rate. Universal installation, 5m max immersion depth. For clean-water transfer and water treatment applications.",
-    "description": "A **240V single-phase submersible clean water pump** built for the deeper installations and higher pressures that 12V solar pumps can't handle — bore wells beyond 7m depth, deeper tank installations, and mains-powered submersible applications where you have grid power available.\n\n## Why Step Up to 240V AC\n\n12V DC solar-compatible pumps are excellent for remote off-grid installations but limited in power. At a typical 280W with 7m head, they suit moderate-flow applications close to the water surface.\n\nA 370W 240V AC submersible (this pump) more than doubles the power available and pushes the head lift to **10 metres** — the difference between pumping from a shallow farm dam and pumping from a deeper bore or below-ground tank.\n\nThe trade-off is grid-power dependency. If your installation has mains power available, the 240V pump is the more practical choice for any deeper or higher-volume application.\n\n## Performance\n\n- **Power:** 370W (1 HP)\n- **Voltage:** 240V single-phase AC\n- **Maximum flow rate:** 2 m³/hr (~33 L/min, 2000 L/hr)\n- **Maximum head lift:** 10m\n- **Maximum immersion depth:** 5m (from impeller centre)\n- **Working temperature range:** 0–60°C\n- **Cable length:** 1m (extend as needed for deeper installations)\n\nAt 2 m³/hr, this pump handles steady-flow applications like tank-filling, dam-to-irrigation transfer, or water reticulation around a property.\n\n## Build\n\n- **Type:** submersible water pump\n- **Brand:** Enviro\n- **Dimensions:** 34 × 17 cm (H × W)\n- **Weight:** 4.95 kg\n- **Installation:** universal — vertical submersion in well, bore, tank, or sump\n- **Manufacture:** China\n- **Warranty:** 3 months manufacturer\n\n## Application\n\nDesigned for **clean water** and **water treatment** applications:\n\n- Clean rainwater from underground tanks\n- Bore water (within mineral and sediment limits — abrasive water needs different impeller materials)\n- Treatment plant influent transfer\n- Pool and aquaculture clean-water circulation\n\nNot suited to: sewage, wastewater with solid debris, abrasive groundwater, or chemically aggressive water (use a dedicated wastewater or chemical-rated pump for those).\n\n## Where This Pump Fits\n\n- **Deeper bore wells** (within 10m water-table depth and 5m immersion below impeller centre)\n- **Below-ground rainwater tanks** with reasonable depth\n- **Tank-to-tank water transfer** at flow rates higher than a 12V pump can deliver\n- **Treatment plant clean-water transfer** between processing stages",
-    "features": [
-      "240V single-phase submersible pump — mains-powered deep installations",
-      "370W (1 HP) motor — substantial capacity for the form factor",
-      "10m maximum head lift",
-      "2 m³/hr (≈33 L/min) flow rate",
-      "5m maximum immersion depth",
-      "Suits clean water, rainwater, treated water",
-      "Universal installation — vertical submersion",
-      "4.95 kg — moderate weight, manageable single-person deployment"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Power",
-        "value": "370W (1 HP)"
-      },
-      {
-        "label": "Voltage",
-        "value": "240V single-phase"
-      },
-      {
-        "label": "Max head",
-        "value": "10 m"
-      },
-      {
-        "label": "Flow rate",
-        "value": "2 m³/hr"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Type",
-        "value": "240V single-phase submersible clean water pump"
-      },
-      {
-        "label": "Voltage",
-        "value": "240V AC, single phase"
-      },
-      {
-        "label": "Power",
-        "value": "370W (1 HP)"
-      },
-      {
-        "label": "Maximum flow rate",
-        "value": "2 m³/hr (~33 L/min)"
-      },
-      {
-        "label": "Maximum head lift",
-        "value": "10 m"
-      },
-      {
-        "label": "Maximum immersion depth",
-        "value": "5 m from impeller centre"
-      },
-      {
-        "label": "Working temperature",
-        "value": "0–60°C"
-      },
-      {
-        "label": "Cable length",
-        "value": "1 m"
-      },
-      {
-        "label": "Dimensions",
-        "value": "34 × 17 cm (H × W)"
-      },
-      {
-        "label": "Weight",
-        "value": "4.95 kg"
-      },
-      {
-        "label": "Installation",
-        "value": "Universal — vertical submersion"
-      },
-      {
-        "label": "Suitable for",
-        "value": "Clean water, water treatment"
-      },
-      {
-        "label": "Warranty",
-        "value": "3 months manufacturer"
-      }
-    ],
-    "recommendedFor": [
-      "Deeper bore wells within 10m head and 5m immersion",
-      "Below-ground rainwater tanks",
-      "Tank-to-tank transfer at moderate flow rates",
-      "Water treatment plant clean-water inter-stage transfer",
-      "Mains-powered installations replacing a 12V solar pump for more capacity"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "specificationNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Submersible water pump — off-grid or tank installation, not connected to potable mains, not subject to WaterMark."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "dc12v-280w-submersible-solar-power-water-well-pump-garden-farm-ranch-23ft-lift",
-        "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v",
-        "stainless-electric-solar-booster-pump-100w-home-water-booster-pump"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "240V Submersible Clean Water Pump — 370W (1HP), 10m Head",
-      "description": "240V single-phase submersible clean water pump. 370W (1 HP), 10m head lift, 2 m³/hr flow, 5m max immersion. For bores, tanks, water treatment transfer.",
-      "ogImage": null
-    }
-  },
   "stainless-electric-solar-booster-pump-100w-home-water-booster-pump": {
     "categories": [
       "pumps-and-tanks",
@@ -9585,8 +9193,7 @@
     "upsells": {
       "boughtTogether": [
         "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v",
-        "12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe",
-        "single-phase-submersible-clean-water-pump-370w-lift-10m"
+        "12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe"
       ],
       "moreInCategory": "auto"
     },
@@ -12480,134 +12087,6 @@
       "ogImage": null
     }
   },
-  "20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-sediment-steel-bracket": {
-    "categories": [
-      "water-filters",
-      "parts"
-    ],
-    "tags": [
-      "whole-house-filter",
-      "rain-tank",
-      "20x4-5",
-      "big-blue",
-      "5-micron",
-      "sediment",
-      "1-inch-bsp",
-      "steel-bracket",
-      "pnsbb20"
-    ],
-    "shortDescription": "Whole-house rain tank water filter system — single-stage 20\" × 4.5\" Big Blue housing with 5-micron sediment cartridge. Includes heavy-duty steel bracket and plastic housing opener. 1\" BSP inlet/outlet. The single-stage standard for rural rainwater tank supplies.",
-    "description": "A **complete whole-house single-stage water filter system** — 20\" × 4.5\" Big Blue housing with a 5-micron sediment cartridge, sized for rural and semi-rural properties on rainwater tank supplies. Treats every drop of water entering the house from a single point at the tank or mains entry.\n\n## Why Rain Tank Properties Need Whole-House Filtration\n\nRainwater from tanks isn't dirty — but it's not free of sediment either:\n\n- **Roof-collected debris** — fine dust, pollen, sand, and grit that settles in the tank over time\n- **Pipe scale and rust** — older galvanised plumbing sheds particles into the supply\n- **Pump-stirred sediment** — every pump cycle disturbs the tank bottom and lifts some sediment into the supply\n- **Algae filaments** — small organic particles from any tank not religiously cleaned\n\nA **5-micron sediment cartridge** removes all of this before it reaches household plumbing, fixtures, and appliances. The result:\n\n- Cleaner water from every tap\n- Reduced wear on washing machine, dishwasher, and water-heater inlet valves\n- Less sediment buildup in hot water systems\n- Clearer water for drinking, cooking, and showering\n\n## Big Blue 20 × 4.5\" Format\n\nThe 20\" × 4.5\" \"Big Blue\" housing is the standard for whole-house filtration:\n\n- **Cartridge capacity** roughly 8× a standard 10\" × 2.5\" residential filter\n- **Flow rate** sufficient for whole-house demand without throttling\n- **1\" BSP inlet/outlet** — sized for whole-house supply pipes\n- **Service interval** typically 6-12 months on average residential rainwater supply\n\n## What's in the Kit\n\nA complete single-stage whole-house installation in one purchase:\n\n- **1 × 20\" × 4.5\" Big Blue filter housing** (blue, plastic body)\n- **1 × heavy-duty steel mounting bracket** — substantial, supports the full housing weight\n- **1 × plastic housing opener** — the wrench you need for cartridge changes (size-specific to this housing)\n- **1 × 5-micron spun 20\" × 4.5\" sediment cartridge** — high dirt-holding capacity, up to 12 months on rainwater\n\n## Specifications\n\n- **Type:** single-stage whole-house water filter (Big Blue format)\n- **Housing size:** 20\" × 4.5\"\n- **Cartridge:** 5-micron spun sediment\n- **Connections:** 1\" BSP inlet and outlet\n- **MPN:** PNSBB20\n- **Body colour:** blue\n- **Body material:** plastic\n- **Cartridge service life:** up to 12 months (varies with water quality)\n- **Filtration method:** sediment (mechanical)\n\n## Postage Note\n\n*Postage to main cities only.* For rural, remote, NT, and Tasmania deliveries, please contact us before ordering to confirm freight options and costs.",
-    "features": [
-      "Complete single-stage whole-house rain tank filter system",
-      "20\" × 4.5\" Big Blue housing format",
-      "Includes 5-micron sediment cartridge with 12-month service life",
-      "Heavy-duty steel mounting bracket included",
-      "Plastic housing opener wrench included",
-      "1\" BSP inlet and outlet",
-      "MPN PNSBB20",
-      "8× cartridge capacity vs standard 10\" × 2.5\" filters"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Housing size",
-        "value": "20\" × 4.5\""
-      },
-      {
-        "label": "Cartridge",
-        "value": "5 micron sediment"
-      },
-      {
-        "label": "Connections",
-        "value": "1\" BSP"
-      },
-      {
-        "label": "Cartridge life",
-        "value": "Up to 12 months"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Type",
-        "value": "Single-stage whole-house water filter (Big Blue)"
-      },
-      {
-        "label": "Housing size",
-        "value": "20\" × 4.5\""
-      },
-      {
-        "label": "Cartridge",
-        "value": "5-micron spun polypropylene sediment"
-      },
-      {
-        "label": "Connections",
-        "value": "1\" BSP inlet and outlet"
-      },
-      {
-        "label": "MPN",
-        "value": "PNSBB20"
-      },
-      {
-        "label": "Body colour",
-        "value": "Blue"
-      },
-      {
-        "label": "Body material",
-        "value": "Plastic"
-      },
-      {
-        "label": "Filtration method",
-        "value": "Sediment (mechanical)"
-      },
-      {
-        "label": "Cartridge service life",
-        "value": "Up to 12 months on typical rainwater supply"
-      },
-      {
-        "label": "Included",
-        "value": "Housing + cartridge + steel bracket + plastic opener"
-      },
-      {
-        "label": "Postage",
-        "value": "Main cities only — contact for rural / NT / Tasmania"
-      }
-    ],
-    "recommendedFor": [
-      "Rural and semi-rural properties on rainwater tank supply",
-      "Bore water properties needing sediment reduction",
-      "Hobby farms and lifestyle properties",
-      "Whole-house entry-point single-stage filtration",
-      "Sites with visible particulate or fine sediment in tank water"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "specificationNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Whole-house water filter system — installed downstream of meter or tank pump, not subject to WaterMark."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5",
-        "premium-three-stage-big-blue-whole-house-water-filter-system",
-        "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "Whole-House Rain Tank Filter — 20\" × 4.5\" Big Blue, 5 Micron | Enviro Aqua",
-      "description": "Whole-house single-stage rain tank water filter system. 20\" × 4.5\" Big Blue housing, 5-micron sediment cartridge, steel bracket, opener wrench. 1\" BSP. MPN PNSBB20.",
-      "ogImage": null
-    }
-  },
   "2x-home-plastic-3-way-water-purifier-filters-tube-quick-connect-fitting-white": {
     "categories": [
       "water-filters",
@@ -13904,8 +13383,7 @@
     "upsells": {
       "boughtTogether": [
         "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
-        "plastic-opening-handle-spanner-wrench-for-10x2-5-water-filter-housing-universal",
-        "under-sink-water-filter-4-stage-reverse-osmosis-system"
+        "plastic-opening-handle-spanner-wrench-for-10x2-5-water-filter-housing-universal"
       ],
       "moreInCategory": "auto"
     },
@@ -14783,265 +14261,6 @@
       "ogImage": null
     }
   },
-  "5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap": {
-    "categories": [
-      "water-filters",
-      "reverse-osmosis"
-    ],
-    "tags": [
-      "reverse-osmosis",
-      "five-stage",
-      "under-sink",
-      "three-way-tap",
-      "premium-bundle",
-      "no-extra-tap-hole"
-    ],
-    "shortDescription": "Premium 5-stage under-sink RO system bundled with a 3-way kitchen tap — hot, cold, and filtered water from a single fixture. No extra tap hole drilled. PP sediment, GAC, carbon block, TFC RO membrane, post-carbon.",
-    "description": "The premium-tier 5-stage under-sink reverse osmosis bundle — the [standard 5-stage RO system](/under-sink-water-filter-5-stage-reverse-osmosis-system/) paired with a **3-way kitchen mixer tap** that combines hot, cold, and RO-filtered water into one fixture. The reason it costs significantly more than the standalone 5-stage system isn't the filtration — those stages are identical — it's the tap.\n\n## Why a 3-Way Tap Matters for Renovations\n\nA standard RO installation requires drilling a **second tap hole** in the bench or sink for the dedicated drinking-water faucet. On stone benchtops, stainless splashbacks, or new builds with one factory hole, that's a non-trivial job: stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nA 3-way mixer tap solves this by routing three water sources through one body — the existing hot, the existing cold, and a third internal channel for the RO permeate. The tap installs in your existing single hole. No drilling, no extra fixture, no second handle on the bench.\n\nFor renovations, new kitchens, or owners who simply prefer a single-fixture bench, the 3-way bundle saves the cost (and risk) of stone drilling. The bundle pricing reflects the real cost of a quality 3-way tap added to the system.\n\n## Five-Stage Filtration\n\nIdentical to the standalone 5-stage RO:\n\n- **Stage 1 — PP spun sediment filter:** sand, dirt, rust\n- **Stage 2 — Granular activated carbon (GAC):** chlorine and organics; protects the RO membrane\n- **Stage 3 — Carbon block (CTO):** secondary chlorine and chemical polish\n- **Stage 4 — TFC RO membrane:** the purification stage; manufacturer specification reduces up to 99% of TDS, heavy metals, fluoride, arsenic, mercury, and over 1,000 contaminants\n- **Stage 5 — Post-carbon polish:** final taste polish on the permeate\n\nAll cartridges 10\" × 2.5\" standard format. Connections 1/4\" tubing throughout.\n\n## What's Included\n\n- 5-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- 3-way kitchen mixer tap (hot / cold / filtered)\n- Pressure storage tank\n- Mounting hardware and 1/4\" tubing\n- Installation manual\n\n## Service Interval and Compatibility\n\nReplace cartridges every 6–12 months; RO membrane every ~24 months. The [5-stage RO replacement set](/5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic/) covers a complete refresh in one SKU. Keep the carbon stages fresh — chlorine breakthrough through saturated carbon is what kills RO membranes early.",
-    "features": [
-      "5-stage RO under-sink system bundled with a premium 3-way kitchen tap",
-      "Single tap, three water sources — hot, cold, and RO-filtered water",
-      "No extra tap hole required — fits the existing single bench hole",
-      "TFC RO membrane reducing up to 99% of TDS per manufacturer spec",
-      "PP sediment, GAC, carbon block, RO membrane, post-carbon polish",
-      "Pressure storage tank for on-demand filtered water at the tap",
-      "All 10\" × 2.5\" standard cartridges — widely available replacements"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Stages",
-        "value": "5"
-      },
-      {
-        "label": "Tap",
-        "value": "3-way (hot / cold / filtered)"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Storage tank",
-        "value": "Included"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "System type",
-        "value": "Under-sink reverse osmosis with 3-way tap"
-      },
-      {
-        "label": "Stages",
-        "value": "5"
-      },
-      {
-        "label": "Stage 1",
-        "value": "PP spun sediment filter (5 micron)"
-      },
-      {
-        "label": "Stage 2",
-        "value": "Granular activated carbon (GAC)"
-      },
-      {
-        "label": "Stage 3",
-        "value": "Carbon block (CTO)"
-      },
-      {
-        "label": "Stage 4",
-        "value": "TFC RO membrane"
-      },
-      {
-        "label": "Stage 5",
-        "value": "Post-carbon polish"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Tap",
-        "value": "3-way kitchen mixer (hot / cold / RO-filtered)"
-      },
-      {
-        "label": "Storage tank",
-        "value": "Pressure tank included"
-      },
-      {
-        "label": "Connection size",
-        "value": "1/4\" tubing"
-      },
-      {
-        "label": "Cartridge change interval",
-        "value": "6–12 months"
-      },
-      {
-        "label": "Membrane change interval",
-        "value": "~24 months"
-      }
-    ],
-    "recommendedFor": [
-      "Renovations and new kitchens where a second tap hole is impractical",
-      "Stone benchtops where extra drilling carries fabrication risk",
-      "Owners wanting a clean single-fixture bench",
-      "Households after RO purity without the visual clutter of a separate filter tap"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic",
-        "under-sink-water-filter-6-stage-reverse-osmosis-system",
-        "12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "5-Stage RO Under-Sink System with 3-Way Tap — No Extra Hole",
-      "description": "Premium 5-stage RO bundle with 3-way kitchen mixer (hot / cold / filtered). PP sediment, GAC, carbon block, TFC RO membrane, post-carbon. 12 L pressure tank.",
-      "ogImage": null
-    }
-  },
-  "5-stages-ro-system-stainless-steel-tap": {
-    "categories": [
-      "water-filters",
-      "reverse-osmosis"
-    ],
-    "tags": [
-      "reverse-osmosis",
-      "five-stage",
-      "under-sink",
-      "stainless-steel-tap",
-      "ro-membrane"
-    ],
-    "shortDescription": "5-stage under-sink RO system with a stainless steel filter tap — PP sediment, GAC, carbon block, TFC RO membrane, post-carbon polish. Pressure storage tank included. Mid-tier 5-stage at $349.95.",
-    "description": "A complete 5-stage under-sink reverse osmosis system supplied with a **stainless steel filter tap** — the mid-priced 5-stage option, sitting between the no-tap [4-stage RO system](/under-sink-water-filter-4-stage-reverse-osmosis-system/) and the premium [5-stage with 3-way tap bundle](/5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap/).\n\n## What This Tier Buys You\n\nThe filtration is identical to the standalone 5-stage RO system. The difference between this SKU and the cheaper 5-stage equivalent is the **dedicated stainless steel filter tap included in the bundle** — a separate fixture that you (or your plumber) installs through a second hole in the bench or sink, dedicated to dispensing RO-filtered water.\n\n- The filter tap is solid stainless steel — won't pit, rust, or stain over the life of the system\n- Installs through a 12 mm bench hole (drilled if not already present)\n- Connects to the system via 1/4\" tubing\n\nIf your bench already has a knock-out for an extra tap hole, or you're happy with a separate fixture for filtered water, this is the right tier. If you can't drill a second hole — stone benchtop, single-hole sink — step up to the [3-way tap bundle](/5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap/) instead.\n\n## Five-Stage Filtration\n\n- **Stage 1 — PP spun sediment filter:** removes particles, dust, mud, sand, and rust from the feed\n- **Stage 2 — Granular activated carbon (GAC):** removes chlorine, organics, odour, turbidity — protects the RO membrane downstream\n- **Stage 3 — Carbon block (CTO):** secondary chlorine and chemical polish\n- **Stage 4 — TFC RO membrane:** the purification stage — 0.0001 micron precision, removes bacteria, heavy metals, salts, fluoride, and dissolved contaminants per manufacturer specification\n- **Stage 5 — Post-carbon polish:** final taste adjustment on the permeate water\n\nAll cartridges in standard 10\" × 2.5\" format — the most widely-stocked size in Australia, so replacements are easy to source.\n\n## What's Included\n\n- 5-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- Stainless steel filter tap\n- Pressure storage tank\n- Mounting hardware and 1/4\" tubing\n- Installation manual\n\n## Service Interval\n\nReplace cartridges every 6–12 months; RO membrane every ~24 months. The [5-stage RO replacement set](/5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic/) covers all five cartridges plus a fresh 75 GPD membrane in one SKU.",
-    "features": [
-      "Complete 5-stage under-sink RO with stainless steel filter tap",
-      "TFC RO membrane at 0.0001 micron precision per manufacturer spec",
-      "PP sediment, GAC, carbon block, RO membrane, post-carbon",
-      "Pressure storage tank for on-demand filtered water",
-      "Solid stainless steel tap — no pitting, rust, or stain over time",
-      "All 10\" × 2.5\" cartridges — widely-stocked Australian standard",
-      "1/4\" tubing connections throughout"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Stages",
-        "value": "5"
-      },
-      {
-        "label": "Tap",
-        "value": "Stainless steel filter tap"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Storage tank",
-        "value": "Included"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "System type",
-        "value": "Under-sink reverse osmosis"
-      },
-      {
-        "label": "Stages",
-        "value": "5"
-      },
-      {
-        "label": "Stage 1",
-        "value": "PP spun sediment filter"
-      },
-      {
-        "label": "Stage 2",
-        "value": "Granular activated carbon (GAC)"
-      },
-      {
-        "label": "Stage 3",
-        "value": "Carbon block (CTO)"
-      },
-      {
-        "label": "Stage 4",
-        "value": "TFC RO membrane"
-      },
-      {
-        "label": "Stage 5",
-        "value": "Post-carbon polish"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Tap",
-        "value": "Stainless steel filter tap (separate fixture)"
-      },
-      {
-        "label": "Storage tank",
-        "value": "Pressure tank included"
-      },
-      {
-        "label": "Connection size",
-        "value": "1/4\" tubing"
-      },
-      {
-        "label": "Cartridge change interval",
-        "value": "6–12 months"
-      },
-      {
-        "label": "Membrane change interval",
-        "value": "~24 months"
-      }
-    ],
-    "recommendedFor": [
-      "Households wanting full 5-stage RO at mid-range pricing",
-      "Owners with bench/sink space for a dedicated filter tap",
-      "Properties on chlorinated mains or rural tank water",
-      "Replacement of an aging 5-stage RO with a fresh complete system"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic",
-        "5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap",
-        "2-pics-75gpd-reverse-osmosis-membrane-membrane-replacement-filter-280l-per-day"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "5-Stage RO Under-Sink System with Stainless Steel Tap",
-      "description": "5-stage under-sink RO with stainless steel filter tap. PP sediment, GAC, carbon block, TFC RO membrane, post-carbon polish. 10\" × 2.5\" cartridges, pressure tank.",
-      "ogImage": null
-    }
-  },
   "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic": {
     "categories": [
       "cartridges",
@@ -15146,7 +14365,6 @@
     "upsells": {
       "boughtTogether": [
         "under-sink-water-filter-5-stage-reverse-osmosis-system",
-        "5-stages-ro-system-stainless-steel-tap",
         "5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf"
       ],
       "moreInCategory": "auto"
@@ -15154,140 +14372,6 @@
     "seo": {
       "title": "5-Stage RO Cartridge Replacement Set — 5 Micron, Includes Membrane",
       "description": "Complete 5-stage RO cartridge replacement: PP sediment, GAC, carbon block, RO membrane, post-carbon. 10\" format. Direct fit for standard 5-stage RO systems.",
-      "ogImage": null
-    }
-  },
-  "under-sink-water-filter-4-stage-reverse-osmosis-system": {
-    "categories": [
-      "water-filters",
-      "reverse-osmosis"
-    ],
-    "tags": [
-      "reverse-osmosis",
-      "four-stage",
-      "under-sink",
-      "ro-membrane",
-      "fluoride-removal",
-      "12l-tank"
-    ],
-    "shortDescription": "4-stage under-sink reverse osmosis system with 12 L pressure storage tank — PP sediment, carbon block, TFC RO membrane, T33 post-carbon polish. Reduces fluoride, chlorine, heavy metals, dissolved solids.",
-    "description": "A 4-stage under-sink reverse osmosis system — the entry point into proper RO filtration. Four cartridges and a 12 L pressure storage tank fitted under your kitchen sink, producing clean filtered water at a dedicated tap, on demand.\n\n## Why an RO System (and Why 4 Stages Is the Minimum)\n\nA standard 2- or 3-stage filter handles chlorine and sediment, but the cartridges in those systems can't reduce **fluoride, heavy metals, or dissolved solids**. Reverse osmosis is the only point-of-use technology that removes those contaminants — it forces water through a semi-permeable TFC membrane at 0.0001 micron precision, leaving dissolved contaminants behind on the reject side and producing high-purity permeate water on the other.\n\nFour stages is the minimum cartridge count for an effective RO build because the membrane needs protection. Without sediment pre-filtering, particulate clogs the membrane. Without carbon pre-filtering, residual chlorine in the feed water destroys the membrane within weeks. The post-carbon polish at the end keeps the storage-tank water tasting fresh.\n\n## Four-Stage Filtration\n\n- **Stage 1 — PP spun sediment filter (5 micron):** removes sand, dirt, mud, and particulate; protects the membrane and downstream stages\n- **Stage 2 — Carbon block (CTO):** removes chlorine and organics. **Critical for membrane protection** — chlorine destroys TFC membranes irreversibly within weeks if it reaches them\n- **Stage 3 — TFC RO membrane:** the purification stage; manufacturer specification reduces up to 99% of TDS, heavy metals, fluoride, arsenic, mercury, and over 1,000 contaminants\n- **Stage 4 — T33 post-carbon polish:** final taste polish on the permeate water before it reaches the tap; removes any residual taste from the storage tank\n\nAll cartridges in standard 10\" × 2.5\" format. Connection 1/4\" tubing throughout.\n\n## What's Included\n\n- 4-stage RO filter system (housings + starter cartridges)\n- TFC RO membrane\n- 12 L pressure storage tank\n- Stainless steel filter faucet\n- 1/2\" threaded inlet block and valve\n- 2 m of 1/4\" tubing\n- Mounting hardware\n- Pressure-reducing valve\n- Opening spanners (10\" housing + RO membrane)\n- Quick-connect hose fittings\n- Installation manual\n\n## How This Tier Compares\n\n- **4-stage (this product):** PP, carbon block, RO, T33 — the entry RO build\n- **[5-stage](/under-sink-water-filter-5-stage-reverse-osmosis-system/):** adds a granular activated carbon (GAC) stage between sediment and carbon block for longer chlorine-reduction life and better membrane protection\n- **[6-stage](/under-sink-water-filter-6-stage-reverse-osmosis-system/):** adds an alkaline mineral cartridge for re-mineralised, pH-balanced RO water\n\n## Install and Service\n\nDIY install in 1–2 hours, or licensed plumber. Tap hole drilling required if the bench doesn't already have one. Replace cartridges every 6–12 months; RO membrane every ~24 months. The [3-stage inline replacement set](/inline-water-filter-replacement-set-3-stages-sediment-carbon-ro-membrane-10/) covers the pre-filters and membrane in one SKU.",
-    "features": [
-      "4-stage RO: PP sediment, carbon block, TFC RO membrane, T33 post-carbon",
-      "TFC RO membrane at 0.0001 micron — reduces fluoride, heavy metals, TDS per manufacturer spec",
-      "12 L pressure storage tank — on-demand filtered water at the tap",
-      "Stainless steel filter faucet included",
-      "Complete DIY install kit including pressure-reducing valve and tubing",
-      "All cartridges 10\" × 2.5\" — widely-stocked Australian standard",
-      "Suitable for chlorinated municipal water and rural tank-fed homes"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Stages",
-        "value": "4"
-      },
-      {
-        "label": "Storage tank",
-        "value": "12 L"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Connection",
-        "value": "1/4\" tubing"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "System type",
-        "value": "Under-sink reverse osmosis"
-      },
-      {
-        "label": "Stages",
-        "value": "4"
-      },
-      {
-        "label": "Stage 1",
-        "value": "5 micron PP spun sediment filter"
-      },
-      {
-        "label": "Stage 2",
-        "value": "Carbon block (CTO)"
-      },
-      {
-        "label": "Stage 3",
-        "value": "TFC RO membrane (0.0001 micron)"
-      },
-      {
-        "label": "Stage 4",
-        "value": "T33 post-carbon polish"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Storage tank",
-        "value": "12 L pressure tank (included)"
-      },
-      {
-        "label": "Tap",
-        "value": "Stainless steel filter faucet (included)"
-      },
-      {
-        "label": "Connection size",
-        "value": "1/4\" tubing"
-      },
-      {
-        "label": "Suitable for",
-        "value": "Mains and tank water"
-      },
-      {
-        "label": "Cartridge change interval",
-        "value": "6–12 months"
-      },
-      {
-        "label": "Membrane change interval",
-        "value": "~24 months"
-      },
-      {
-        "label": "Install time",
-        "value": "1–2 hours DIY, or licensed plumber"
-      }
-    ],
-    "recommendedFor": [
-      "Households on fluoridated municipal water",
-      "Cost-conscious entry into RO filtration",
-      "Tank-fed rural properties wanting full-spectrum drinking water purification",
-      "Replacement of an aging RO with a fresh complete system"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Under-sink RO system — not subject to WaterMark certification under Australian plumbing regulations as a point-of-use, downstream-of-meter product."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "under-sink-water-filter-5-stage-reverse-osmosis-system",
-        "inline-water-filter-replacement-set-3-stages-sediment-carbon-ro-membrane-10",
-        "12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "4-Stage RO Under-Sink Water Filter System — 12 L Tank",
-      "description": "4-stage RO under-sink system. PP sediment, carbon block, TFC RO membrane (0.0001 micron), T33 post-carbon. 12 L pressure tank, stainless faucet. Reduces fluoride.",
       "ogImage": null
     }
   },
@@ -15419,8 +14503,7 @@
     "upsells": {
       "boughtTogether": [
         "5-stages-ro-cartridges-replacement-set-for-5-stages-ro-water-filter-system-5mic",
-        "under-sink-water-filter-6-stage-reverse-osmosis-system",
-        "5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap"
+        "under-sink-water-filter-6-stage-reverse-osmosis-system"
       ],
       "moreInCategory": "auto"
     },
@@ -17206,7 +16289,6 @@
     "upsells": {
       "boughtTogether": [
         "3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system",
-        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
         "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v"
       ],
       "moreInCategory": "auto"
@@ -17464,120 +16546,6 @@
     "seo": {
       "title": "Premium 3-Stage Big Blue Whole-House Filter — With Pressure Gauges",
       "description": "Premium 3-stage Big Blue 20\" × 4.5\" whole-house filter. White-coated metal frame, 1\" inlet/outlet, two pressure gauges. PP sediment, GAC, coconut carbon block.",
-      "ogImage": null
-    }
-  },
-  "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra": {
-    "categories": [
-      "water-filters",
-      "whole-house"
-    ],
-    "tags": [
-      "whole-house",
-      "two-stage",
-      "twin-housing",
-      "big-blue",
-      "20x45",
-      "starter-set"
-    ],
-    "shortDescription": "Twin Big Blue 20\" × 4.5\" whole-house filter system — 2-stage configuration with bracket and full cartridge set plus extra replacement cartridges. Mid-range Big Blue at $299.95.",
-    "description": "A twin-housing Big Blue 20\" × 4.5\" whole-house filter system in **2-stage configuration** — the value-priced way to get full Big Blue cartridge size on a whole-house install, supplied with the initial cartridge set plus an extra spare set so the first cartridge change is already in the cupboard.\n\n## What's in the Package\n\n- Twin Big Blue 20\" × 4.5\" filter housings\n- Mounting bracket\n- Starter cartridge set (sediment + carbon)\n- **Extra replacement cartridge set included** — covers the first service interval out of the box\n\n## Two-Stage Filtration\n\nThe 2-stage configuration handles the two contaminant categories that matter most for whole-house filtration: sediment (silt, dirt, sand, rust) and chlorine + chemical contaminants. Each cartridge is 20\" × 4.5\" Big Blue format — significantly larger surface area than the slimmer 20\" × 2.5\" format, meaning:\n\n- **Higher flow capacity** — handles peak demand events (multiple showers + dishwasher + washing machine running simultaneously) without pressure drop\n- **Longer cartridge life** between replacements — bigger media volume to load with sediment and adsorb chemicals\n\nFor most Australian family homes on municipal water, 2-stage Big Blue treatment covers everything that needs treating at the whole-house level.\n\n## When 2-Stage Big Blue Is the Right Choice\n\n- **Family homes on municipal water** wanting sediment and chlorine reduction at every tap, without the cost of 3-stage premium systems\n- **Owners who service their own filters** — the included spare cartridge set means the first service is already accounted for\n- **Properties needing more flow capacity** than 10\" × 4.5\" or 20\" × 2.5\" formats can deliver\n\n## Step Up When\n\nIf you need an additional carbon stage for heavier chlorine reduction, longer service intervals, or finer polishing, look at the [premium 3-stage Big Blue system](/premium-three-stage-big-blue-whole-house-water-filter-system/). If your installation requires WaterMark certification, the [Big Blue WaterMark 3-stage system](/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/) is the certified option.\n\n## Installation\n\nProfessional installation recommended. Connects to cold mains supply line at the point of entry. Big Blue housings carry the full whole-house flow without restriction.",
-    "features": [
-      "Twin Big Blue 20\" × 4.5\" filter housings with mounting bracket",
-      "2-stage filtration: sediment + carbon",
-      "Starter cartridge set plus an extra spare replacement set included",
-      "Big Blue 20\" × 4.5\" cartridge format — high flow, long cartridge life",
-      "Removes silt, dirt, sand, rust, chlorine, pesticides, and chemicals",
-      "Mid-range Big Blue at $299.95",
-      "Protects appliances, hot water heater, and washing machine from sediment"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Stages",
-        "value": "2"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "Big Blue 20\" × 4.5\""
-      },
-      {
-        "label": "Housings",
-        "value": "Twin"
-      },
-      {
-        "label": "Spare cartridges included",
-        "value": "Yes (extra set)"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "System type",
-        "value": "Twin Big Blue whole-house filter, 2-stage"
-      },
-      {
-        "label": "Stages",
-        "value": "2"
-      },
-      {
-        "label": "Stage 1",
-        "value": "Sediment filter"
-      },
-      {
-        "label": "Stage 2",
-        "value": "Carbon filter"
-      },
-      {
-        "label": "Cartridge format",
-        "value": "Big Blue 20\" × 4.5\""
-      },
-      {
-        "label": "Housings",
-        "value": "Twin Big Blue with mounting bracket"
-      },
-      {
-        "label": "Includes",
-        "value": "Bracket + starter cartridges + extra spare cartridge set"
-      },
-      {
-        "label": "Installation",
-        "value": "Wall-mount, point of entry"
-      },
-      {
-        "label": "Cartridge replacement interval",
-        "value": "6–12 months"
-      }
-    ],
-    "recommendedFor": [
-      "Family homes wanting Big Blue filtration at mid-range pricing",
-      "Owners who service their own filters and want the spare set included",
-      "Properties on chlorinated municipal water or moderate tank-water sediment",
-      "Replacement of an older or smaller-format whole-house system"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Whole-house filter system — not subject to WaterMark certification as a downstream-of-meter point-of-entry product."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "premium-three-stage-big-blue-whole-house-water-filter-system",
-        "polypropylene-sediment-water-filter-pp-5-micron-20-x-4-5",
-        "coconut-activated-carbon-water-filter-cto-5-micron-20-x-4-5"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "Twin Big Blue 20\" × 4.5\" Whole-House Filter — 2-Stage with Spare Cartridges | Enviro Aqua",
-      "description": "Twin Big Blue 20\" × 4.5\" 2-stage whole-house filter system. Sediment + carbon, bracket and extra replacement cartridge set included. Mid-range Big Blue.",
       "ogImage": null
     }
   },
@@ -18335,7 +17303,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "twin-20-x-4-5-big-blue-whole-house-water-filter-sys-bb-2-cartridges-set-plus-bra",
         "whole-house-water-filter-2-stage-10-x-4-5-washable-reusable",
         "polypropylene-sediment-water-filter-pp-5-micron-10-x-4-5"
       ],
@@ -19013,8 +17980,7 @@
     "upsells": {
       "boughtTogether": [
         "3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c",
-        "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel",
-        "5-stage-undersink-home-drinking-ro-water-filter-system-with-3-way-tap"
+        "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel"
       ],
       "moreInCategory": "auto"
     },
@@ -19157,117 +18123,6 @@
       "ogImage": null
     }
   },
-  "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome": {
-    "categories": [
-      "plumbing",
-      "ro-filter-taps"
-    ],
-    "tags": [
-      "ro-filter-tap",
-      "polished-chrome",
-      "nsf-certified",
-      "single-handle",
-      "compact",
-      "22cm"
-    ],
-    "shortDescription": "Deluxe RO filter tap in polished chrome — NSF-certified faucet for reverse osmosis systems. 22.5 cm height, standard 1/4\" tube connection. Compact dedicated drinking-water tap.",
-    "description": "A deluxe **dedicated RO drinking-water tap** in polished chrome — the simple single-output tap that sits next to your kitchen mixer and dispenses purified RO water through a separate spout. NSF-certified for water-contact material safety, finished in polished chrome to match standard kitchen mixers.\n\n## What a Dedicated RO Tap Does\n\nReverse osmosis systems can dispense their output two ways:\n\n- **Through a 3-way kitchen mixer** that combines RO with hot and cold (more expensive, single tap hole)\n- **Through a dedicated separate tap** like this one (cheaper, requires a second tap hole)\n\nFor most under-sink RO installations, a **dedicated tap is the standard arrangement** — it keeps the filtered water output completely independent of the kitchen mixer's mechanism, makes the install simpler, and costs significantly less than a 3-way replacement of the main kitchen tap.\n\nThe trade-off is one extra hole in the bench. On standard laminate or pre-drilled stainless sinks, that's a 5-minute job. On stone benchtops, factor in the cost of stone fabrication or look at the [3-way alternative](/3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c/).\n\n## Build\n\n- **Material:** brass body\n- **Finish:** polished chrome — matches standard kitchen mixer finishes\n- **Height:** 22.5 cm\n- **Operation:** single-handle ergonomic lever for filtered water dispensing\n- **Connection:** standard 1/4\" tube for direct connection to any RO system\n\nThe 22.5 cm height clears typical drinking glasses and small jugs cleanly without dominating the bench next to the main kitchen mixer.\n\n## Where This Tap Fits\n\n- Standard under-sink RO installations needing a separate dispensing tap\n- Replacement of an aged or failed RO filter tap\n- Budget-conscious RO setups where a 3-way kitchen mixer isn't justified\n- Laminate or pre-drilled benchtop installations where the second hole is straightforward",
-    "features": [
-      "Dedicated single-output RO drinking-water tap",
-      "Polished chrome finish — matches standard kitchen mixer finishes",
-      "22.5 cm height — clears glasses and small jugs cleanly",
-      "Single-handle ergonomic lever for smooth operation",
-      "Brass body construction",
-      "Standard 1/4\" tube connection — fits any RO system",
-      "NSF-certified water-contact materials"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Type",
-        "value": "Dedicated RO filter tap"
-      },
-      {
-        "label": "Finish",
-        "value": "Polished chrome"
-      },
-      {
-        "label": "Height",
-        "value": "22.5 cm"
-      },
-      {
-        "label": "Connection",
-        "value": "1/4\" tube"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Type",
-        "value": "Dedicated reverse osmosis dispensing tap"
-      },
-      {
-        "label": "Body material",
-        "value": "Brass"
-      },
-      {
-        "label": "Finish",
-        "value": "Polished chrome"
-      },
-      {
-        "label": "Overall height",
-        "value": "22.5 cm"
-      },
-      {
-        "label": "Operation",
-        "value": "Single-handle ergonomic lever"
-      },
-      {
-        "label": "Connection",
-        "value": "Standard 1/4\" tube"
-      },
-      {
-        "label": "Compatibility",
-        "value": "Any reverse osmosis water filter system"
-      },
-      {
-        "label": "Material certification",
-        "value": "NSF certified for water-contact materials"
-      }
-    ],
-    "recommendedFor": [
-      "Standard under-sink RO installations needing a dedicated dispensing tap",
-      "Replacement of an aged or failed RO filter tap",
-      "Budget-conscious RO setups where a 3-way mixer isn't justified",
-      "Polished chrome kitchen finish palettes"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "specificationNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Dedicated RO dispensing tap for under-sink filter systems. NSF certified for water-contact material safety per supplier specification."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "double-handle-reverse-osmosis-water-filter-tap-ro-kitchen-faucet-in-chrome",
-        "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf",
-        "under-sink-water-filter-5-stage-reverse-osmosis-system"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "Deluxe RO Filter Tap — Polished Chrome, NSF Certified, 22.5cm",
-      "description": "Dedicated RO drinking-water tap in polished chrome. 22.5 cm height, brass body, NSF certified materials, standard 1/4\" tube. For under-sink reverse osmosis systems.",
-      "ogImage": null
-    }
-  },
   "double-handle-reverse-osmosis-water-filter-tap-ro-kitchen-faucet-in-chrome": {
     "categories": [
       "plumbing",
@@ -19355,7 +18210,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome",
         "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf",
         "under-sink-water-filter-5-stage-reverse-osmosis-system"
       ],
@@ -19583,7 +18437,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome",
         "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf",
         "under-sink-water-filter-6-stage-reverse-osmosis-system"
       ],
@@ -19694,7 +18547,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "deluxe-ro-water-filter-tap-nsf-certified-faucet-in-polished-chrome",
         "premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold",
         "under-sink-water-filter-5-stage-reverse-osmosis-system"
       ],
