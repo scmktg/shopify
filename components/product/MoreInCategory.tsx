@@ -49,9 +49,18 @@ export async function MoreInCategory({
         // Universal Shopify boundary (clarification #2): commerce
         // primitives only. ProductCardData still carries legacy
         // fields (tags / productType / housingSize) for shape
-        // compatibility but rendering doesn't read them. We default
-        // them to safe values so a Shopify product without those
-        // metafields can't throw here.
+        // compatibility but rendering doesn't read them.
+        //
+        // The full product fragment doesn't fetch `card_key_spec`
+        // (it's a card-only metafield), so the rail intentionally
+        // skips the spec line. priceMax is derived from variants.
+        const variantPrices = product.variants
+          .map((v) => Number.parseFloat(v.price.amount))
+          .filter((n) => Number.isFinite(n));
+        const maxAmount =
+          variantPrices.length > 0
+            ? Math.max(...variantPrices).toFixed(2)
+            : product.priceRange.minVariantPrice.amount;
         const card: ProductCardData = {
           id: product.id,
           handle: product.handle,
@@ -60,7 +69,13 @@ export async function MoreInCategory({
           tags: product.tags,
           featuredImage: product.featuredImage,
           price: product.priceRange.minVariantPrice,
+          priceMax: {
+            amount: maxAmount,
+            currencyCode: product.priceRange.minVariantPrice.currencyCode,
+          },
           housingSize: null,
+          keySpec: null,
+          watermarkLicence: product.metafields.watermark_licence_number,
         };
         return card;
       } catch {
