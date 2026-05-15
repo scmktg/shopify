@@ -6,6 +6,21 @@ import { remark } from 'remark';
 import remarkGfm from 'remark-gfm';
 import remarkHtml from 'remark-html';
 
+/**
+ * Shared markdown → HTML pipeline. Used by `loadMarkdownPage()` for
+ * editorial pages under `/content` and by `<CategoryEditorial>` for
+ * the below-grid sections on subcategory pages. Keeping the plugin
+ * chain in one place so both surfaces accept the same markdown
+ * syntax (GFM tables, autolinks, lists) and stay in lockstep.
+ */
+export async function renderMarkdown(body: string): Promise<string> {
+  const processed = await remark()
+    .use(remarkGfm)
+    .use(remarkHtml, { sanitize: false })
+    .process(body);
+  return String(processed);
+}
+
 export interface FaqItem {
   q: string;
   a: string;
@@ -87,10 +102,7 @@ export async function loadMarkdownPage(
     return null;
   }
   const { data, content } = matter(raw);
-  const processed = await remark()
-    .use(remarkGfm)
-    .use(remarkHtml, { sanitize: false })
-    .process(content);
+  const bodyHtml = await renderMarkdown(content);
 
   const slug = path.basename(relativePath);
   return {
@@ -101,7 +113,7 @@ export async function loadMarkdownPage(
     productGridTitle: asString(data.productGridTitle),
     faq: asFaq(data.faq),
     relatedLinks: asRelatedLinks(data.relatedLinks),
-    bodyHtml: String(processed),
+    bodyHtml,
   };
 }
 
