@@ -51,11 +51,42 @@ function isGone(pathname: string): boolean {
   return false;
 }
 
+// Cookie name kept in sync with lib/admin/auth.ts. Middleware only
+// checks for the cookie's presence — full HMAC verification happens
+// in the page/server-action layer (middleware can't import Node crypto
+// in every runtime).
+const ADMIN_SESSION_COOKIE = 'ea_admin_session';
+
+function isAdminRoute(pathname: string): boolean {
+  return pathname === '/admin' || pathname.startsWith('/admin/');
+}
+
 export function middleware(request: NextRequest) {
-  if (isGone(request.nextUrl.pathname)) {
+  const { pathname } = request.nextUrl;
+
+  if (isGone(pathname)) {
     return new NextResponse(null, { status: 410 });
   }
-  return NextResponse.next();
+
+  // Gate admin pages: unauthenticated traffic gets bounced to /admin/login.
+  // The login page itself, and any auth-related sub-routes, stay reachable.
+  if (isAdminRoute(pathname) && pathname !== '/admin/login') {
+    const hasSession = Boolean(request.cookies.get(ADMIN_SESSION_COOKIE)?.value);
+    if (!hasSession) {
+      const loginUrl = request.nextUrl.clone();
+      loginUrl.pathname = '/admin/login';
+      loginUrl.search = '';
+      return NextResponse.redirect(loginUrl);
+    }
+  }
+
+  // Expose pathname to the root layout so it can suppress storefront
+  // chrome (header/footer/cart) on admin routes. Must be set on the
+  // forwarded request headers — server components read it via
+  // `headers()`, which mirrors request headers, not response headers.
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', pathname);
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
