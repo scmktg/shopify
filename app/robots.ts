@@ -39,6 +39,8 @@ const AI_USER_AGENTS = [
 ] as const;
 
 const DISALLOW = [
+  '/admin',
+  '/admin/',
   '/api/',
   '/cart',
   '/cart/',
