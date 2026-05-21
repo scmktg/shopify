@@ -22,6 +22,7 @@ import { ProductGrid } from '@/components/product/ProductGrid';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import { faqPageSchema } from '@/lib/seo/jsonld';
 import { HomeReviewsSection } from '@/components/reviews/HomeReviewsSection';
 
 const INSTALL_PACKAGE_HANDLE =
@@ -158,22 +159,9 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
 ];
 
 function Faq() {
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQ_ITEMS.map((item) => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.a,
-      },
-    })),
-  };
-
   return (
     <section>
-      <JsonLdScript data={faqSchema} />
+      <JsonLdScript data={faqPageSchema(FAQ_ITEMS)} />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <h2 className="text-2xl font-semibold text-black">
           Frequently asked questions

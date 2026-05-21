@@ -93,6 +93,11 @@ export const BUSINESS_INFO = {
   social: {
     facebook: 'https://www.facebook.com/EnviroAqua.com.au/',
     instagram: 'https://www.instagram.com/enviro_aqua/',
+    // Canonical Google Business Profile URL. Leave empty until the
+    // exact g.page / maps profile URL is confirmed — emitting a Maps
+    // search URL as sameAs is weaker than a true profile link and
+    // Google may ignore it. Filtered out of sameAs when empty.
+    googleBusiness: '',
   },
   /**
    * NSW Central Coast postcodes eligible for the Whole House

@@ -9,7 +9,9 @@ import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import {
   breadcrumbSchema,
   collectionSchema,
+  productListSchema,
 } from '@/lib/seo/jsonld';
+import { getProductUrl } from '@/lib/utils/productUrl';
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
@@ -53,6 +55,12 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             { name: 'Home', path: '/' },
             { name: node.label, path: pathname },
           ]),
+          productListSchema(
+            page.products.map((p) => ({
+              name: p.title,
+              path: getProductUrl(p.handle),
+            })),
+          ),
         ]}
       />
       <CategoryHero
