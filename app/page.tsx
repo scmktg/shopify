@@ -5,16 +5,11 @@ import {
   ChevronDown,
   ChevronRight,
   DollarSign,
-  Droplet,
-  Filter,
-  Gauge,
-  GlassWater,
   GraduationCap,
   Lightbulb,
   MapPin,
   ShieldCheck,
   Truck,
-  Wrench,
   Zap,
   type LucideIcon,
 } from 'lucide-react';
@@ -32,14 +27,6 @@ const INSTALL_PACKAGE_HANDLE =
 // Re-render the homepage at most once a minute so featured-product
 // curation in Shopify shows up promptly on the live site.
 export const revalidate = 60;
-
-const CATEGORY_ICONS: Record<string, LucideIcon> = {
-  'water-filters': Droplet,
-  cartridges: Filter,
-  'bubblers-and-coolers': GlassWater,
-  'pumps-and-tanks': Gauge,
-  plumbing: Wrench,
-};
 
 const CATEGORY_BLURBS: Record<string, string> = {
   'water-filters':
@@ -296,20 +283,13 @@ function CategoryGrid() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-gray-200 border border-gray-200 rounded overflow-hidden"
         >
           {CATEGORIES.map((category) => {
-            const Icon = CATEGORY_ICONS[category.slug] ?? Droplet;
             return (
               <li key={category.slug} className="bg-white">
                 <Link
                   href={`/${category.slug}/`}
                   className="group flex flex-col h-full p-6 md:p-7 hover:bg-gray-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand-blue"
                 >
-                  <Icon
-                    size={40}
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                    className="text-brand-blue"
-                  />
-                  <h3 className="mt-5 text-lg font-semibold text-black">
+                  <h3 className="text-lg font-semibold text-black">
                     {category.label}
                   </h3>
                   <p className="mt-2 text-sm text-black/70 flex-1">
