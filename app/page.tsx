@@ -3,6 +3,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import {
   ChevronDown,
+  ChevronRight,
   DollarSign,
   Droplet,
   Filter,
@@ -281,36 +282,48 @@ function CategoryGrid() {
   return (
     <section className="border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="flex items-end justify-between mb-8">
-          <h2 className="text-2xl font-semibold text-black">Shop by category</h2>
+        <div className="max-w-2xl mb-8 md:mb-10">
+          <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+            Shop by category
+          </h2>
+          <p className="mt-2 text-base text-black/70">
+            Every filtration product we sell, organised the way Australian
+            tradies and homeowners actually shop.
+          </p>
         </div>
         <ul
           role="list"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-gray-200 border border-gray-200 rounded overflow-hidden"
         >
           {CATEGORIES.map((category) => {
             const Icon = CATEGORY_ICONS[category.slug] ?? Droplet;
             return (
-              <li key={category.slug}>
+              <li key={category.slug} className="bg-white">
                 <Link
                   href={`/${category.slug}/`}
-                  className="flex flex-row sm:flex-col items-center sm:items-center text-left sm:text-center h-full gap-4 sm:gap-0 p-4 sm:p-6 bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded transition-colors"
+                  className="group flex flex-col h-full p-6 md:p-7 hover:bg-gray-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand-blue"
                 >
                   <Icon
-                    size={36}
+                    size={40}
                     strokeWidth={1.5}
                     aria-hidden="true"
-                    className="flex-shrink-0 text-brand-blue sm:h-12 sm:w-12"
+                    className="text-brand-blue"
                   />
-                  <div className="min-w-0">
-                    <h3 className="sm:mt-4 text-lg sm:text-xl font-semibold text-black">
-                      {category.label}
-                    </h3>
-                    <p className="mt-1 sm:mt-2 text-sm text-black/70">
-                      {CATEGORY_BLURBS[category.slug] ??
-                        `${category.label} for every Australian home and trade.`}
-                    </p>
-                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-black">
+                    {category.label}
+                  </h3>
+                  <p className="mt-2 text-sm text-black/70 flex-1">
+                    {CATEGORY_BLURBS[category.slug] ??
+                      `${category.label} for every Australian home and trade.`}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">
+                    Shop {category.label.toLowerCase()}
+                    <ChevronRight
+                      size={16}
+                      aria-hidden="true"
+                      className="transition-transform duration-150 group-hover:translate-x-0.5"
+                    />
+                  </span>
                 </Link>
               </li>
             );
@@ -346,23 +359,25 @@ function TrustStrip() {
   ];
   return (
     <section className="bg-white border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <ul
           role="list"
-          className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200 rounded overflow-hidden"
         >
           {items.map((item) => (
-            <li key={item.title} className="text-center">
+            <li key={item.title} className="bg-white flex gap-4 p-6">
               <item.icon
-                size={32}
+                size={28}
                 strokeWidth={1.75}
                 aria-hidden="true"
-                className="mx-auto text-brand-blue"
+                className="flex-shrink-0 text-brand-blue mt-0.5"
               />
-              <h3 className="mt-3 text-base font-semibold text-black">
-                {item.title}
-              </h3>
-              <p className="mt-1.5 text-sm text-black/70">{item.body}</p>
+              <div className="min-w-0">
+                <h3 className="text-base font-semibold text-black">
+                  {item.title}
+                </h3>
+                <p className="mt-1.5 text-sm text-black/70">{item.body}</p>
+              </div>
             </li>
           ))}
         </ul>
