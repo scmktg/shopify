@@ -15,11 +15,11 @@ import {
 } from 'lucide-react';
 import { CATEGORIES } from '@/content/categories';
 import { ProductGrid } from '@/components/product/ProductGrid';
-import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { faqPageSchema } from '@/lib/seo/jsonld';
 import { HomeReviewsSection } from '@/components/reviews/HomeReviewsSection';
+import type { Product, ProductCardData } from '@/types/product';
 
 const INSTALL_PACKAGE_HANDLE =
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
@@ -54,19 +54,32 @@ const FEATURED_HANDLES: ReadonlyArray<string> = [
   'premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic',
 ];
 
-async function loadFeatured() {
-  // Shopify's product search accepts an OR'd handle list and returns
-  // ProductCardData in arbitrary order; we sort by the curated list
-  // afterwards so the homepage layout matches FEATURED_HANDLES.
-  const query = FEATURED_HANDLES.map((h) => `handle:${h}`).join(' OR ');
-  const page = await getProducts({
-    query,
-    first: FEATURED_HANDLES.length,
-  });
-  const byHandle = new Map(page.products.map((p) => [p.handle, p]));
-  return FEATURED_HANDLES.map((h) => byHandle.get(h)).filter(
-    (p): p is NonNullable<typeof p> => Boolean(p),
+function toCardData(product: Product): ProductCardData {
+  return {
+    id: product.id,
+    handle: product.handle,
+    title: product.title,
+    productType: product.productType,
+    tags: product.tags,
+    featuredImage: product.featuredImage,
+    price: product.priceRange.minVariantPrice,
+    housingSize: product.metafields.housing_size,
+  };
+}
+
+async function loadFeatured(): Promise<ReadonlyArray<ProductCardData>> {
+  // Per-handle fetch (the established pattern for curated product
+  // rails in this codebase — see commercial-water-bubblers and
+  // water-bubblers-for-gyms). Shopify's product-search `query` field
+  // is unreliable for bare hyphenated handles, so we look up each
+  // handle individually and project to ProductCardData. Missing
+  // handles (archived / unpublished) are silently dropped.
+  const products = await Promise.all(
+    FEATURED_HANDLES.map((handle) => getProductByHandle(handle)),
   );
+  return products
+    .filter((p): p is Product => p !== null)
+    .map(toCardData);
 }
 
 async function loadInstallHeroImage(): Promise<{
