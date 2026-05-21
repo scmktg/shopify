@@ -8,6 +8,37 @@ import { absoluteUrl, getSiteUrl } from './siteUrl';
 export type JsonLd = Record<string, unknown>;
 
 /**
+ * Outbound profile URLs that identify Enviro Aqua across the web.
+ * Used for `sameAs` on Organization / LocalBusiness / Store nodes so
+ * Google can collapse the brand entity across surfaces. Empty values
+ * are filtered out — see business-info.ts for why `googleBusiness`
+ * may be empty until the canonical profile URL is confirmed.
+ */
+function sameAsLinks(): ReadonlyArray<string> {
+  const candidates: ReadonlyArray<string> = [
+    BUSINESS_INFO.social.facebook,
+    BUSINESS_INFO.social.instagram,
+    BUSINESS_INFO.social.googleBusiness,
+  ];
+  return candidates.filter((url) => url.length > 0);
+}
+
+/**
+ * ABN exposed as a Schema.org `identifier` PropertyValue so the
+ * legal-entity ID is machine-readable on Organization and
+ * LocalBusiness nodes. `propertyID: "ABN"` is the conventional
+ * shape used by Australian sites.
+ */
+function abnIdentifier(): JsonLd {
+  return {
+    '@type': 'PropertyValue',
+    propertyID: 'ABN',
+    name: 'Australian Business Number',
+    value: BUSINESS_INFO.abn,
+  };
+}
+
+/**
  * Stand-alone Organization schema emitted sitewide alongside the
  * LocalBusiness graph. LocalBusiness extends Organization, so this is
  * technically redundant — but several SEO auditing tools (and parts of
@@ -23,6 +54,7 @@ export function organisationSchema(): JsonLd {
     '@type': 'Organization',
     '@id': `${url}/#organization`,
     name: BUSINESS_INFO.name,
+    legalName: BUSINESS_INFO.legalName,
     url,
     logo: absoluteUrl('/logo.svg'),
     description:
@@ -43,7 +75,8 @@ export function organisationSchema(): JsonLd {
       areaServed: 'AU',
       availableLanguage: ['en-AU'],
     },
-    sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
+    identifier: abnIdentifier(),
+    sameAs: sameAsLinks(),
   };
 }
 
@@ -94,7 +127,8 @@ export function localBusinessSchema(): JsonLd {
     // on /reviews is verifiable on-page content sourced from Google
     // and Facebook profiles — that's a separate concern from
     // structured-data claims, which would mislead Search.
-    sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
+    identifier: abnIdentifier(),
+    sameAs: sameAsLinks(),
   };
 }
 
@@ -162,7 +196,8 @@ export function storeSchema(input: StoreSchemaInput): JsonLd {
       name,
     })),
     priceRange: '$',
-    sameAs: [BUSINESS_INFO.social.facebook, BUSINESS_INFO.social.instagram],
+    identifier: abnIdentifier(),
+    sameAs: sameAsLinks(),
   };
 }
 
@@ -397,5 +432,34 @@ export function collectionSchema(
     name,
     url: absoluteUrl(pathname),
     ...(description ? { description } : {}),
+  };
+}
+
+export interface ProductListItem {
+  /** Product title rendered on the listing tile. */
+  name: string;
+  /** Site-relative path to the canonical product page. */
+  path: string;
+}
+
+/**
+ * ItemList enumerating the products visible on a category or
+ * subcategory page. Each entry is a `name` + `url` ListItem — image
+ * and price are intentionally not duplicated here because they live
+ * on the Product schema emitted by the PDP itself, and Google
+ * dedupes via the URL.
+ */
+export function productListSchema(
+  items: ReadonlyArray<ProductListItem>,
+): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: absoluteUrl(item.path),
+      name: item.name,
+    })),
   };
 }

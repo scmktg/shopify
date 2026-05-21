@@ -12,7 +12,9 @@ import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import {
   breadcrumbSchema,
   collectionSchema,
+  productListSchema,
 } from '@/lib/seo/jsonld';
+import { getProductUrl } from '@/lib/utils/productUrl';
 
 interface SubcategoryPageProps {
   params: Promise<{ category: string; subcategory: string }>;
@@ -62,6 +64,12 @@ export default async function SubcategoryPage({
             { name: node.category.label, path: `/${category}` },
             { name: node.subcategory.label, path: pathname },
           ]),
+          productListSchema(
+            page.products.map((p) => ({
+              name: p.title,
+              path: getProductUrl(p.handle),
+            })),
+          ),
         ]}
       />
       <CategoryHero
