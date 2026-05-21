@@ -85,3 +85,14 @@ A task is done when:
 - Not a vanity / mirror / decor retailer
 
 Every product, every page, every word on this site reinforces "water filtration specialist." If you find yourself proposing work that doesn't reinforce that, stop.
+
+## Growth scripts (`/scripts/growth/`)
+
+This folder holds out-of-band marketing automation — Google Merchant Center feeds, Google Ads Editor CSVs, performance reporting. It is **not** part of the storefront runtime.
+
+Rules:
+
+- `/scripts/growth/` is the **only** place `SHOPIFY_ADMIN_API_TOKEN` may be used. The storefront itself uses the Storefront API per `docs/07`.
+- Never import anything from `/scripts/growth/` into `/app`, `/components`, `/lib`, or anywhere else under the Next.js build. The root `tsconfig.json` excludes this folder so Next never compiles it.
+- These scripts run locally or on a cron only. Never in the browser. Never as part of `next build` / a Vercel deploy.
+- All raw exports go to `/scripts/growth/data/raw/` (gitignored where appropriate). Generated feeds and CSVs go to `/scripts/growth/data/output/`.
