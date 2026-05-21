@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
 import type { Product } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
@@ -104,13 +105,15 @@ export function ProductDetail({
         <div className="md:sticky md:top-24">
           <Link
             href={`/${category}/${subcategory}/`}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-brand-blue bg-brand-blue/[0.07] hover:bg-brand-blue/[0.12] px-2.5 py-1 rounded-md transition-colors"
+            className="group inline-flex items-center gap-0.5 text-[11px] font-semibold tracking-tight uppercase text-black/60 hover:text-black bg-black/[0.04] hover:bg-black/[0.07] pl-3 pr-2 py-1 rounded-full transition-colors"
           >
-            <span
-              aria-hidden="true"
-              className="size-1.5 rounded-full bg-brand-blue/70"
-            />
             {subcategoryLabel}
+            <ChevronRight
+              size={12}
+              strokeWidth={2.5}
+              aria-hidden="true"
+              className="text-brand-blue transition-transform duration-150 group-hover:translate-x-0.5"
+            />
           </Link>
 
           <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-black tracking-tight">
