@@ -40,52 +40,33 @@ const CATEGORY_BLURBS: Record<string, string> = {
   plumbing: 'Filter-friendly taps, showers, toilets, and bundles.',
 };
 
-const FEATURED_TARGET = 8;
-
-function isValidFeatured(product: {
-  handle: string;
-  tags: ReadonlyArray<string>;
-  price: { amount: string };
-}): boolean {
-  // Cast via Number() so partial-numeric strings ('0.00 AUD' etc.)
-  // resolve to NaN rather than parseFloat's leading-digit fallback.
-  const price = Number(product.price.amount);
-  if (!Number.isFinite(price) || price <= 0) return false;
-  if (product.handle.includes('-dup')) return false;
-  if (product.tags.includes('cut') || product.tags.includes('draft')) {
-    return false;
-  }
-  return true;
-}
+// Curated featured grid. Order here is the order shown on the
+// homepage. Handles must exist in data/products.json and Shopify —
+// the loader silently drops any that are missing.
+const FEATURED_HANDLES: ReadonlyArray<string> = [
+  'deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy',
+  'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
+  'commercial-rust-free-filtered-cold-water-bubbler-wm',
+  'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
+  'under-sink-water-filter-3-stage-sediment-carbon-alkaline',
+  'pull-down-spray-tap-kitchen-mixer-in-brushed-nickel',
+  '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
+  'premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic',
+];
 
 async function loadFeatured() {
-  // Fetch more than needed so post-filter we still have headroom.
-  const featured = await getProducts({
-    query: 'tag:featured',
-    first: 24,
-    sortKey: 'BEST_SELLING',
+  // Shopify's product search accepts an OR'd handle list and returns
+  // ProductCardData in arbitrary order; we sort by the curated list
+  // afterwards so the homepage layout matches FEATURED_HANDLES.
+  const query = FEATURED_HANDLES.map((h) => `handle:${h}`).join(' OR ');
+  const page = await getProducts({
+    query,
+    first: FEATURED_HANDLES.length,
   });
-  const valid = featured.products.filter(isValidFeatured);
-  if (valid.length >= FEATURED_TARGET) {
-    return valid.slice(0, FEATURED_TARGET);
-  }
-
-  // Pad with newest valid products until we hit the target.
-  const padded: typeof valid = [...valid];
-  const seen = new Set(padded.map((p) => p.id));
-  const fallback = await getProducts({
-    first: 24,
-    sortKey: 'CREATED_AT',
-    reverse: true,
-  });
-  for (const product of fallback.products) {
-    if (padded.length >= FEATURED_TARGET) break;
-    if (seen.has(product.id)) continue;
-    if (!isValidFeatured(product)) continue;
-    padded.push(product);
-    seen.add(product.id);
-  }
-  return padded.slice(0, FEATURED_TARGET);
+  const byHandle = new Map(page.products.map((p) => [p.handle, p]));
+  return FEATURED_HANDLES.map((h) => byHandle.get(h)).filter(
+    (p): p is NonNullable<typeof p> => Boolean(p),
+  );
 }
 
 async function loadInstallHeroImage(): Promise<{
