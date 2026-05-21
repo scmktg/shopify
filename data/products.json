@@ -7959,14 +7959,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "in-wall-dual-flush-toilet-button-faceplate-rectangular-design-in-black-chrome-go": {
@@ -8074,14 +8074,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce": {
@@ -17863,14 +17863,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel": {
@@ -17886,11 +17886,10 @@
       "matte-black",
       "brushed-nickel",
       "polished-chrome",
-      "watermark-certified",
       "single-fixture"
     ],
-    "shortDescription": "3-way kitchen mixer with pull-down spray — hot, cold, and RO-filtered water through one fixture. 40 cm height, brass body, available in matte black, brushed nickel, or polished chrome. WaterMark certified.",
-    "description": "A 3-way kitchen mixer that combines **hot, cold, and RO-filtered water in a single fixture** — with the convenience of a pull-down spray head for cleaning and rinsing. The right tap for RO installations where you don't want to drill a second tap hole for the filter dispensing tap.\n\n## What 3-Way Means and Why It Matters\n\nStandard RO installations require a **second tap hole** in the bench or sink for the dedicated filter dispensing tap. On stone benchtops, single-hole sinks, or new builds where the splashback is sealed, drilling a second hole is a non-trivial job — stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nA 3-way mixer solves this by routing three water sources through one tap body:\n\n- **Hot** — from your standard hot supply line, regulated through the temperature lever\n- **Cold** — from your standard cold supply line\n- **Filtered** — fed separately from the RO permeate line, dispensed through an internal channel that doesn't contact the hot/cold pathway\n\nThe RO water has its own dedicated lever or button to keep it physically separated from the hot/cold pathway — this matters because RO permeate doesn't carry chlorine, so it shouldn't mix with the chlorinated mains supply inside the tap.\n\n## Build\n\n- **Material:** brass body — durable, corrosion-resistant\n- **Finish:** available in matte black, brushed nickel, or polished chrome\n- **Operation:** 3-way function — hot, cold, and filtered water\n- **Style:** pull-down spray head\n- **Dimensions:** 40 cm height, 17.5 cm handle width\n- **Compatibility:** works with reverse osmosis filtration systems via 1/4\" tubing\n\n## Where This Tap Fits\n\n- **Renovations on stone benchtops** where a second tap hole is impractical\n- **Single-hole sinks** that can't accept a separate filter tap\n- **New kitchens** wanting a clean single-fixture bench\n- **Existing RO installations** upgrading from a separate filter tap to a unified fixture\n\n## Compliance\n\n**WaterMark certified** for plumbed-in installation in Australia per supplier confirmation. Your licensed plumber can install this on a mains supply line and issue a certificate of compliance. Specific licence number to be confirmed against supplier documentation.",
+    "shortDescription": "3-way kitchen mixer with pull-down spray — hot, cold, and RO-filtered water through one fixture. 40 cm height, brass body, available in matte black, brushed nickel, or polished chrome.",
+    "description": "A 3-way kitchen mixer that combines **hot, cold, and RO-filtered water in a single fixture** — with the convenience of a pull-down spray head for cleaning and rinsing. The right tap for RO installations where you don't want to drill a second tap hole for the filter dispensing tap.\n\n## What 3-Way Means and Why It Matters\n\nStandard RO installations require a **second tap hole** in the bench or sink for the dedicated filter dispensing tap. On stone benchtops, single-hole sinks, or new builds where the splashback is sealed, drilling a second hole is a non-trivial job — stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nA 3-way mixer solves this by routing three water sources through one tap body:\n\n- **Hot** — from your standard hot supply line, regulated through the temperature lever\n- **Cold** — from your standard cold supply line\n- **Filtered** — fed separately from the RO permeate line, dispensed through an internal channel that doesn't contact the hot/cold pathway\n\nThe RO water has its own dedicated lever or button to keep it physically separated from the hot/cold pathway — this matters because RO permeate doesn't carry chlorine, so it shouldn't mix with the chlorinated mains supply inside the tap.\n\n## Build\n\n- **Material:** brass body — durable, corrosion-resistant\n- **Finish:** available in matte black, brushed nickel, or polished chrome\n- **Operation:** 3-way function — hot, cold, and filtered water\n- **Style:** pull-down spray head\n- **Dimensions:** 40 cm height, 17.5 cm handle width\n- **Compatibility:** works with reverse osmosis filtration systems via 1/4\" tubing\n\n## Where This Tap Fits\n\n- **Renovations on stone benchtops** where a second tap hole is impractical\n- **Single-hole sinks** that can't accept a separate filter tap\n- **New kitchens** wanting a clean single-fixture bench\n- **Existing RO installations** upgrading from a separate filter tap to a unified fixture",
     "features": [
       "3-way function — hot, cold, and RO-filtered water through a single fixture",
       "Pull-down spray head for cleaning and rinsing flexibility",
@@ -17964,14 +17963,14 @@
     ],
     "compliance": {
       "watermark": {
-        "status": "certified",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certified per supplier instruction. WP CSV attribute fields don't carry the certification details for this SKU — licence number and WELS rating to be confirmed against supplier documentation."
+      "note": null
     },
     "ctas": {
       "primary": "Add to cart",
@@ -18222,14 +18221,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel": {
@@ -18331,14 +18330,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold": {
@@ -18358,7 +18357,7 @@
       "nsf-approved"
     ],
     "shortDescription": "Premium RO filter tap in SUS304 stainless steel — swanneck design with 360° rotation, three finish options. 36 cm overall (28 cm above bench), 11 mm threaded, 1/4\" tube connection.",
-    "description": "A premium **SUS304 stainless steel** RO filter tap — the engineered-stainless alternative to standard brass filter taps. The chromium-nickel alloy is corrosion-proof, salt-air resistant, and won't pit at the base over years of water exposure. The right choice when you want a dedicated RO dispensing tap that holds its finish indefinitely.\n\n## Why SUS304 Over Brass\n\nMost dedicated RO filter taps are brass with a plated finish. That works fine on most installations. SUS304 stainless steel offers three meaningful upgrades:\n\n- **Material-level corrosion resistance** — the alloy itself doesn't corrode; there's no plating that can wear through\n- **No leaching risk** at the water-contact surfaces over decades of use\n- **Salt-air and coastal install tolerance** — for Australian coastal homes where brass taps eventually show pitting at the base, SUS304 holds its finish indefinitely\n\nFor a tap that handles drinking water specifically — the highest-value water in the household — the material upgrade matters more here than on a kitchen mixer where any taste change is masked by cooking.\n\n## Swanneck Design with 360° Rotation\n\nThe **swanneck profile** sweeps the spout outlet forward of the tap base — useful for filling vessels positioned at the front of the sink rather than directly under the tap. The **360° rotation** lets the spout swing fully around the base, including out of the way when not in use.\n\nFor double-bowl sinks or installations where the filter tap shares space with the main kitchen mixer, the rotation flexibility prevents the dispensing point from being awkward.\n\n## Three Finish Options\n\n- **Matte Black** — high-contrast modern accent\n- **Brushed Gold** — warm metallic, premium statement\n- **Brushed Nickel** — neutral warm-toned, works with most palettes\n\nAll three finishes are applied over the SUS304 substrate — they share the same corrosion-proof underlying material.\n\n## Specifications\n\n- **Material:** SUS304 stainless steel\n- **Style:** Modern swanneck design with 360° rotation\n- **Dimensions:** 36 cm × 12 cm overall — **28 cm above the bench**\n- **Thread:** 11 mm threaded base\n- **Connection:** Standard 1/4\" tube\n- **Approval:** NSF approved for water-contact materials\n\n## Where This Tap Fits\n\n- Coastal and high-humidity properties where brass taps eventually corrode\n- Premium RO installations choosing material-grade upgrades\n- Designer kitchens where swanneck profile and 360° rotation suit the visual language\n- Health-conscious installations prioritising NSF-approved materials at the drinking-water tap",
+    "description": "A premium **SUS304 stainless steel** RO filter tap — the engineered-stainless alternative to standard brass filter taps. The chromium-nickel alloy is corrosion-proof, salt-air resistant, and won't pit at the base over years of water exposure. The right choice when you want a dedicated RO dispensing tap that holds its finish indefinitely.\n\n## Why SUS304 Over Brass\n\nMost dedicated RO filter taps are brass with a plated finish. That works fine on most installations. SUS304 stainless steel offers three meaningful upgrades:\n\n- **Material-level corrosion resistance** — the alloy itself doesn't corrode; there's no plating that can wear through\n- **No leaching risk** at the water-contact surfaces over decades of use\n- **Salt-air and coastal install tolerance** — for Australian coastal homes where brass taps eventually show pitting at the base, SUS304 holds its finish indefinitely\n\nFor a tap that handles drinking water specifically — the highest-value water in the household — the material upgrade matters more here than on a kitchen mixer where any taste change is masked by cooking.\n\n## Swanneck Design with 360° Rotation\n\nThe **swanneck profile** sweeps the spout outlet forward of the tap base — useful for filling vessels positioned at the front of the sink rather than directly under the tap. The **360° rotation** lets the spout swing fully around the base, including out of the way when not in use.\n\nFor double-bowl sinks or installations where the filter tap shares space with the main kitchen mixer, the rotation flexibility prevents the dispensing point from being awkward.\n\n## Three Finish Options\n\n- **Matte Black** — high-contrast modern accent\n- **Brushed Gold** — warm metallic, premium statement\n- **Brushed Nickel** — neutral warm-toned, works with most palettes\n\nAll three finishes are applied over the SUS304 substrate — they share the same corrosion-proof underlying material.\n\n## Specifications\n\n- **Material:** SUS304 stainless steel\n- **Style:** Modern swanneck design with 360° rotation\n- **Dimensions:** 36 cm × 12 cm overall — **28 cm above the bench**\n- **Thread:** 11 mm threaded base\n- **Connection:** Standard 1/4\" tube\n\n## Where This Tap Fits\n\n- Coastal and high-humidity properties where brass taps eventually corrode\n- Premium RO installations choosing material-grade upgrades\n- Designer kitchens where swanneck profile and 360° rotation suit the visual language\n- Health-conscious installations choosing premium-grade materials at the drinking-water tap",
     "features": [
       "SUS304 stainless steel construction — material-grade corrosion resistance",
       "Modern swanneck design with 360° rotation",
@@ -18449,14 +18448,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "premium-water-filter-faucet-tap-reverse-osmosis-drinking-ro-nsf": {
@@ -18472,8 +18471,8 @@
       "ceramic-disc",
       "standard-tubing"
     ],
-    "shortDescription": "Premium NSF-approved water filter tap for RO drinking water — lead-free, ceramic disc cartridge, 6.5 cm long threaded base (suits most benchtops), 11 mm thread diameter, standard 1/4\" tubing.",
-    "description": "A premium NSF-approved water filter faucet specifically engineered for RO drinking-water dispensing — built around three quality fundamentals that distinguish a long-lasting filter tap from the cheap commodity alternatives: **lead-free materials, ceramic disc cartridge, and a threaded base long enough for real benchtops**.\n\n## What 'Premium' Actually Means Here\n\nThe RO filter tap market is full of cheap commodity options that look fine in product photos and fail within 12–24 months. Three failure modes account for most of them:\n\n- **Leaded brass** — older or unbranded brass alloys can leach trace lead into drinking water. Premium taps use certified lead-free brass.\n- **Rubber-washer cartridge** — the old-style washer mechanism that drips within a year as the washer compresses. Premium taps use ceramic discs that handle thousands of cycles drip-free.\n- **Short threaded base** — many cheap taps have a base too short to clamp through a real Australian benchtop (stone or thick laminate), forcing the installer to bodge an extension or refuse the job.\n\nThis tap addresses all three explicitly:\n\n- **NSF approved** for water-contact material safety — material certification by NSF International\n- **Lead-free** construction throughout the water pathway\n- **Quality ceramic disc** cartridge\n- **6.5 cm threaded base length** — long enough for most benchtops including standard stone thicknesses\n- **10.8 mm thread diameter** (~11 mm) — fits standard filter-tap holes\n\n## What FYI Section Says (Source-Verified)\n\nThe original product copy makes a few practical points worth surfacing:\n\n- **99% of water filter systems in the Australian market use 1/4\" (6 mm) tubing** — this tap fits any of them\n- **The longer threaded base** is the most common reason for premium-tap upcharges; cheap taps fail at install on thick benchtops\n- **Lead-free + ceramic disc** is the spec combination that determines real-world longevity\n\n## Build\n\n- **Approval:** NSF approved (material safety evaluated by NSF International)\n- **Cartridge:** quality ceramic disc\n- **Lead-free** materials throughout\n- **Connection:** 1/4\" (6 mm) tube — universal RO standard\n- **Thread:** 6.5 cm long, 10.8 mm diameter — fits most benchtops including stone\n\n## Where This Tap Fits\n\n- Long-term residential RO installations where build quality is the priority\n- Stone benchtop installations needing the longer threaded base\n- Health-conscious households specifically choosing NSF-approved, lead-free materials\n- Trade installs where cartridge longevity matters across multiple service calls",
+    "shortDescription": "Premium water filter tap for RO drinking water — lead-free, ceramic disc cartridge, 6.5 cm long threaded base (suits most benchtops), 11 mm thread diameter, standard 1/4\" tubing.",
+    "description": "A premium water filter faucet specifically engineered for RO drinking-water dispensing — built around three quality fundamentals that distinguish a long-lasting filter tap from the cheap commodity alternatives: **lead-free materials, ceramic disc cartridge, and a threaded base long enough for real benchtops**.\n\n## What 'Premium' Actually Means Here\n\nThe RO filter tap market is full of cheap commodity options that look fine in product photos and fail within 12–24 months. Three failure modes account for most of them:\n\n- **Leaded brass** — older or unbranded brass alloys can leach trace lead into drinking water. Premium taps use lead-free brass.\n- **Rubber-washer cartridge** — the old-style washer mechanism that drips within a year as the washer compresses. Premium taps use ceramic discs that handle thousands of cycles drip-free.\n- **Short threaded base** — many cheap taps have a base too short to clamp through a real Australian benchtop (stone or thick laminate), forcing the installer to bodge an extension or refuse the job.\n\nThis tap addresses all three explicitly:\n\n- **Lead-free** construction throughout the water pathway\n- **Quality ceramic disc** cartridge\n- **6.5 cm threaded base length** — long enough for most benchtops including standard stone thicknesses\n- **10.8 mm thread diameter** (~11 mm) — fits standard filter-tap holes\n\n## What FYI Section Says (Source-Verified)\n\nThe original product copy makes a few practical points worth surfacing:\n\n- **99% of water filter systems in the Australian market use 1/4\" (6 mm) tubing** — this tap fits any of them\n- **The longer threaded base** is the most common reason for premium-tap upcharges; cheap taps fail at install on thick benchtops\n- **Lead-free + ceramic disc** is the spec combination that determines real-world longevity\n\n## Build\n\n- **Cartridge:** quality ceramic disc\n- **Lead-free** materials throughout\n- **Connection:** 1/4\" (6 mm) tube — universal RO standard\n- **Thread:** 6.5 cm long, 10.8 mm diameter — fits most benchtops including stone\n\n## Where This Tap Fits\n\n- Long-term residential RO installations where build quality is the priority\n- Stone benchtop installations needing the longer threaded base\n- Health-conscious households choosing lead-free materials\n- Trade installs where cartridge longevity matters across multiple service calls",
     "features": [
       "NSF approved for water-contact material safety",
       "Lead-free construction throughout",
@@ -18559,14 +18558,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel": {
@@ -18676,14 +18675,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "pull-down-spray-tap-kitchen-mixer-in-brushed-nickel": {
@@ -18786,14 +18785,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "spring-loaded-3-way-ro-tap-kitchen-mixer-in-black-chrome-and-nickel": {
@@ -18909,14 +18908,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "tall-29cm-round-basin-mixer-tap-in-matte-black-or-polished-chrome": {
@@ -19021,14 +19020,14 @@
     },
     "compliance": {
       "watermark": {
-        "status": "pending",
+        "status": "not_certified",
         "licenceNumber": null,
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark / WELS certification pending supplier documentation confirmation (pre-launch audit item)."
+      "note": null
     }
   },
   "back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels": {
