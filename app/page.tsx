@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
@@ -23,6 +24,12 @@ import type { Product, ProductCardData } from '@/types/product';
 
 const INSTALL_PACKAGE_HANDLE =
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
+
+export const metadata: Metadata = {
+  verification: {
+    google: 'Uu1dcLCaDuZb3l3dynm2aRNtOacQjYyX1bToX93xCH4',
+  },
+};
 
 // Re-render the homepage at most once a minute so featured-product
 // curation in Shopify shows up promptly on the live site.
