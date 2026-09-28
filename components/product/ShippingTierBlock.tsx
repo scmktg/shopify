@@ -3,37 +3,138 @@ import { Truck } from 'lucide-react';
 import type { ShippingTier } from '@/types/product';
 
 interface ShippingTierBlockProps {
-  /**
-   * Legacy prop retained during the Shopify metafield migration.
-   * T1–T4 map to parcel, T5 to free, T6 to freight and T7 to pickup_only.
-   */
   tier: ShippingTier | null;
   productHandle: string;
 }
 
-type ResolvedShippingClass = 'parcel' | 'free' | 'freight' | 'pickup_only';
-
-function resolveShippingClass(
-  value: ShippingTier | null,
-): ResolvedShippingClass | null {
-  if (!value) return null;
-  if (value === 'T5') return 'free';
-  if (value === 'T6') return 'freight';
-  if (value === 'T7') return 'pickup_only';
-  return 'parcel';
+interface TierCopy {
+  lead: React.ReactNode;
+  clickAndCollect: React.ReactNode;
+  trailing: React.ReactNode;
 }
+
+const TIER_COPY: Record<ShippingTier, TierCopy> = {
+  T1: {
+    lead: (
+      <>
+        <strong className="font-semibold">Ships:</strong> Australia-wide for
+        $9.95 standard, or $17.95 express.
+      </>
+    ),
+    clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
+    trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
+  },
+  T2: {
+    lead: (
+      <>
+        <strong className="font-semibold">Ships:</strong> Australia-wide for
+        $14.95 standard, or $22.95 express.
+      </>
+    ),
+    clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
+    trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
+  },
+  T3: {
+    lead: (
+      <>
+        <strong className="font-semibold">Ships:</strong> Australia-wide for
+        $19.95 standard, or $29.95 express.
+      </>
+    ),
+    clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
+    trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
+  },
+  T4: {
+    lead: (
+      <>
+        <strong className="font-semibold">Ships:</strong> Australia-wide for
+        $29.95 standard, or $41.95 express.
+      </>
+    ),
+    clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
+    trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
+  },
+  T5: {
+    lead: (
+      <>
+        <strong className="font-semibold">Ships free Australia-wide.</strong>{' '}
+        Delivered by Allied Express or Aramex bulky freight, 3&ndash;10 business
+        days depending on state.
+      </>
+    ),
+    clickAndCollect: (
+      <>
+        Free Click &amp; Collect from our Wyong NSW showroom (in stock for
+        immediate pickup).
+      </>
+    ),
+    trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
+  },
+  T6: {
+    lead: (
+      <>
+        <strong className="font-semibold">
+          Ships for $99&ndash;$249 depending on your state.
+        </strong>
+        <br />
+        NSW and ACT $99. Victoria, Queensland and South Australia $179. WA,
+        Tasmania and NT $249.
+        <br />
+        Delivered by pallet freight, 3&ndash;8 business days.
+      </>
+    ),
+    clickAndCollect: (
+      <>
+        Free Click &amp; Collect from our Wyong NSW showroom &mdash; no freight
+        cost if you pick up.
+      </>
+    ),
+    trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
+  },
+  T7: {
+    lead: (
+      <>
+        <strong className="font-semibold">
+          Click &amp; Collect only from our Wyong NSW showroom.
+        </strong>
+        <br />
+        This product isn&apos;t available for shipping. Pick up free from 6/45
+        Amsterdam Cct, Wyong NSW 2259, Mon&ndash;Fri 9am&ndash;5pm AEST.
+      </>
+    ),
+    clickAndCollect: (
+      <>
+        Same-day pickup on orders before 12pm AEST &mdash; we&apos;ll email or
+        text you when it&apos;s ready.
+      </>
+    ),
+    trailing: (
+      <>
+        Need it shipped? Call{' '}
+        <a
+          href="tel:+61287728162"
+          className="font-semibold hover:text-brand-blue"
+        >
+          (02) 8772 8162
+        </a>{' '}
+        &mdash; we can sometimes arrange a courier for an additional fee, case
+        by case.
+      </>
+    ),
+  },
+};
 
 export function ShippingTierBlock({
   tier,
   productHandle,
 }: ShippingTierBlockProps) {
-  const shippingClass = resolveShippingClass(tier);
-
-  if (shippingClass === null) {
-    console.error(
-      `[ShippingTierBlock] Product "${productHandle}" has no shipping classification. Shopify checkout remains authoritative.`,
+  const resolvedTier: ShippingTier = tier ?? 'T2';
+  if (tier === null && process.env.NODE_ENV !== 'production') {
+    console.warn(
+      `[ShippingTierBlock] Product "${productHandle}" has no shipping_tier metafield; defaulting to T2.`,
     );
   }
+  const copy = TIER_COPY[resolvedTier];
 
   return (
     <section
@@ -46,68 +147,9 @@ export function ShippingTierBlock({
           aria-hidden="true"
         />
         <div className="flex flex-col gap-1.5">
-          {shippingClass === 'free' && (
-            <>
-              <p>
-                <strong className="font-semibold">Free delivery Australia-wide.</strong>
-              </p>
-              <p className="text-black/80">
-                Free Click &amp; Collect is also available from our Wyong NSW showroom.
-              </p>
-            </>
-          )}
-
-          {shippingClass === 'freight' && (
-            <>
-              <p>
-                <strong className="font-semibold">Bulky freight delivery.</strong>{' '}
-                The delivery charge is calculated by destination in Shopify checkout.
-              </p>
-              <p className="text-black/80">
-                Free Click &amp; Collect is available from our Wyong NSW showroom.
-              </p>
-            </>
-          )}
-
-          {shippingClass === 'pickup_only' && (
-            <>
-              <p>
-                <strong className="font-semibold">
-                  Click &amp; Collect only — Wyong NSW.
-                </strong>
-              </p>
-              <p className="text-black/80">
-                This product is not available for standard delivery because of its
-                size, fragility or handling requirements.
-              </p>
-            </>
-          )}
-
-          {shippingClass === 'parcel' && (
-            <>
-              <p>
-                <strong className="font-semibold">Australia-wide delivery.</strong>{' '}
-                Shipping is calculated at checkout from the packed size, weight and
-                delivery destination.
-              </p>
-              <p className="text-black/80">
-                Free Click &amp; Collect is available from our Wyong NSW showroom.
-              </p>
-            </>
-          )}
-
-          {shippingClass === null && (
-            <>
-              <p>
-                <strong className="font-semibold">Shipping calculated at checkout.</strong>
-              </p>
-              <p className="text-black/80">
-                Shopify checkout will show the available delivery or pickup options
-                for this product.
-              </p>
-            </>
-          )}
-
+          <p>{copy.lead}</p>
+          <p className="text-black/80">{copy.clickAndCollect}</p>
+          <p className="text-black/80">{copy.trailing}</p>
           <p className="mt-1 text-xs text-black/60">
             <Link
               href="/shipping/"
