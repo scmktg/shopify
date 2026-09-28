@@ -47,5 +47,5 @@ Kariong, Somersby, and the rural blocks heading toward the Old Pacific Highway o
 Orders placed before 12pm AEST ship the same business day from our Wyong warehouse. Gosford addresses typically receive tracked delivery the next business day. Or skip the wait - Click & Collect from 6/45 Amsterdam Cct, Wyong is free, the drive is about 25 minutes up the M1, and orders placed during business hours are usually ready for pickup within two hours.
 
 - **Wyong showroom address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am – 5pm AEST
+- **Hours:** Monday to Friday, 9am - 5pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
