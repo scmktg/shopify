@@ -9,13 +9,13 @@ import { BUSINESS_INFO } from '@/content/business-info';
 
 export const metadata: Metadata = {
   title:
-    'How to Choose a Water Filter — Australian Buying Guide',
+    'How to Choose a Water Filter - Australian Buying Guide',
   description:
-    "Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern. Town water, tank, bore — every situation. AU-stocked, same-day dispatch from Wyong NSW.",
+    "Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern. Town water, tank, bore - every situation. AU-stocked, same-day dispatch from Wyong NSW.",
   alternates: { canonical: '/help/which-filter' },
   openGraph: {
     title:
-      'How to Choose a Water Filter — Australian Buying Guide',
+      'How to Choose a Water Filter - Australian Buying Guide',
     description:
       'Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern.',
     url: '/help/which-filter/',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title:
-      'How to Choose a Water Filter — Australian Buying Guide',
+      'How to Choose a Water Filter - Australian Buying Guide',
     description:
       'Three decisions in order: where the water comes from, where you want it filtered, and which technology matches your concern.',
   },
@@ -32,23 +32,23 @@ export const metadata: Metadata = {
 const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   {
     q: 'Do I need WaterMark certification?',
-    a: 'Yes, if the system is plumbed permanently into a mains water line. Under Australian plumbing law any device connected to mains supply must carry WaterMark certification — that includes whole-house systems and most under-sink units. Bench-top and shower filters are not plumbed in and do not require WaterMark.',
+    a: 'Yes, if the system is plumbed permanently into a mains water line. Under Australian plumbing law any device connected to mains supply must carry WaterMark certification - that includes whole-house systems and most under-sink units. Bench-top and shower filters are not plumbed in and do not require WaterMark.',
   },
   {
-    q: "Carbon block vs GAC carbon — what's the difference?",
-    a: 'GAC (granular activated carbon) is loose carbon granules — water flows through the gaps between particles, which gives it high flow but less contact time. Carbon block compresses carbon into a dense matrix — slower but with finer filtration and more uniform contact. For chloramine (used by Sydney, Melbourne, Brisbane, Adelaide, Canberra mains), specify catalytic carbon. For chlorine alone, either works.',
+    q: "Carbon block vs GAC carbon - what's the difference?",
+    a: 'GAC (granular activated carbon) is loose carbon granules - water flows through the gaps between particles, which gives it high flow but less contact time. Carbon block compresses carbon into a dense matrix - slower but with finer filtration and more uniform contact. For chloramine (used by Sydney, Melbourne, Brisbane, Adelaide, Canberra mains), specify catalytic carbon. For chlorine alone, either works.',
   },
   {
     q: 'Is reverse osmosis worth it?',
-    a: 'Yes if your concern is fluoride, PFAS / forever chemicals, or dissolved heavy metals — RO is the only domestic technology that meaningfully reduces them. No if your concern is chlorine, taste, or sediment — RO is over-spec, slower, and wastes a few litres of brine for every litre of filtered water. Match the technology to the contaminant.',
+    a: 'Yes if your concern is fluoride, PFAS / forever chemicals, or dissolved heavy metals - RO is the only domestic technology that meaningfully reduces them. No if your concern is chlorine, taste, or sediment - RO is over-spec, slower, and wastes a few litres of brine for every litre of filtered water. Match the technology to the contaminant.',
   },
   {
     q: 'How often do I need to change cartridges?',
-    a: "Every 6–12 months for most systems, depending on water quality and household usage. Big Blue 20-inch cartridges last toward the longer end of that range because of their larger media volume; standard 10-inch cartridges land closer to 6 months. The pressure gauges on the Big Blue system tell you objectively when the differential rises — no guessing.",
+    a: "Every 6–12 months for most systems, depending on water quality and household usage. Big Blue 20-inch cartridges last toward the longer end of that range because of their larger media volume; standard 10-inch cartridges land closer to 6 months. The pressure gauges on the Big Blue system tell you objectively when the differential rises - no guessing.",
   },
   {
     q: 'Can I install this myself?',
-    a: 'Bench-top filters and shower filters yes — they connect to existing taps with no plumbing. Under-sink and whole-house systems should be installed by a licensed plumber, both for warranty / insurance reasons and because Australian plumbing law requires it on mains-connected installations.',
+    a: 'Bench-top filters and shower filters yes - they connect to existing taps with no plumbing. Under-sink and whole-house systems should be installed by a licensed plumber, both for warranty / insurance reasons and because Australian plumbing law requires it on mains-connected installations.',
   },
 ];
 
@@ -82,7 +82,7 @@ export default function FilterFinderPage() {
             Three decisions in order. Start with the source, then
             decide where you want the filtration, then pick the
             technology that matches your contaminants of concern.
-            No upsell, no marketing — just the architecture.
+            No upsell, no marketing - just the architecture.
           </p>
         </header>
 
@@ -103,14 +103,14 @@ export default function FilterFinderPage() {
             roof and never disinfected. It carries leaf debris,
             dust, bird droppings, and live bacterial load including
             E. coli and Giardia. Tank water needs both physical
-            filtration (sediment + carbon) and UV sterilisation —
+            filtration (sediment + carbon) and UV sterilisation -
             UV alone leaves sediment, filtration alone leaves
             bacteria.
           </p>
           <p>
             <strong>Bore or spring water</strong> varies by location
             and depth. Without a recent water test, specifying the
-            right system is guesswork. Get a test first — your local
+            right system is guesswork. Get a test first - your local
             council usually offers low-cost residential tests, or
             we can recommend a private testing service.
           </p>
@@ -123,13 +123,13 @@ export default function FilterFinderPage() {
             licensed plumber to install (Australian plumbing law),
             they need WaterMark certification (same reason), and
             they make sense when you own the property and care
-            about more than just drinking water — chlorinated
+            about more than just drinking water - chlorinated
             showers irritate skin, sediment-laden water shortens
             the life of dishwashers and washing machines.
           </p>
           <p>
             <strong>Point-of-use</strong> systems filter one
-            outlet — typically a kitchen tap with a dedicated
+            outlet - typically a kitchen tap with a dedicated
             filtered-water faucet. Cheaper, simpler, often the
             right answer if you only care about drinking water.
             Under-sink models are tidier; bench-top models pack up
@@ -151,7 +151,7 @@ export default function FilterFinderPage() {
             </li>
             <li>
               <strong>UV sterilisation:</strong> bacteria, viruses,
-              protozoa. Doesn&apos;t filter — it inactivates
+              protozoa. Doesn&apos;t filter - it inactivates
               pathogens with 254 nm UV-C light. Always paired with
               sediment + carbon upstream.
             </li>
@@ -173,7 +173,7 @@ export default function FilterFinderPage() {
         {/* FAQ */}
         <section className="mt-16 border-t border-gray-100 pt-12">
           <h2 className="text-3xl md:text-4xl font-semibold text-black tracking-tight">
-            FAQs — water filter selection
+            FAQs - water filter selection
           </h2>
           <dl className="mt-8 space-y-6">
             {FAQS.map((faq) => (
@@ -198,7 +198,7 @@ export default function FilterFinderPage() {
             <p className="mt-3 text-base text-black/80 leading-snug max-w-2xl">
               Bore water, mixed sources, very high TDS readings, or
               a multi-property setup all need a conversation, not a
-              guide. Bring a recent water test if you have one — call
+              guide. Bring a recent water test if you have one - call
               us or visit the Wyong showroom and we&apos;ll spec the
               right system.
             </p>
