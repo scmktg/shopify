@@ -91,7 +91,7 @@ export function InstallationLeadForm({ productUrl }: InstallationLeadFormProps) 
           Thanks - we&apos;ve got your details.
         </h3>
         <p className="mt-3 text-base text-black/80">
-          We&apos;ll be in touch within 1–2 business days to confirm a time with
+          We&apos;ll be in touch within 1-2 business days to confirm a time with
           the plumber. If anything is urgent, call{' '}
           <a
             href="tel:+61287728162"
