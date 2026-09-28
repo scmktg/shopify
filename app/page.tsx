@@ -131,7 +131,7 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'What is WaterMark certification and why does it matter?',
-    a: 'WaterMark is the Australian certification scheme for plumbing products that connect to mains water. Every certified product on this site shows its licence number; non-certified products are clearly labelled as off-mains use only. Council inspectors require certified products on every mains-pressure install.',
+    a: 'WaterMark is the Australian certification scheme for plumbing products that connect to mains water. Certified products are clearly identified on this site, and licence details are shown where they are held in our current product records. Check the product compliance section and the official WaterMark database before installation where verification is required.',
   },
   {
     q: 'How do I know which water filter is right for my home?',
@@ -143,7 +143,7 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: "What's your returns policy?",
-    a: 'Thirty-day returns on unopened products with no restocking fee. Faulty products are covered separately under Australian Consumer Law. Full details are on the Returns page.',
+    a: 'Our store returns process covers damaged or faulty items reported within 14 days of delivery. Manufacturer warranty and Australian Consumer Law rights continue to apply separately. Full details are on the Returns page.',
   },
   {
     q: 'Can I install these myself, or do I need a plumber?',
@@ -334,7 +334,7 @@ function TrustStrip() {
     {
       icon: ShieldCheck,
       title: 'WaterMark certified options',
-      body: 'Every certified product shows its licence number on the page.',
+      body: 'Certified products are clearly identified, with licence details shown where held in our current records.',
     },
     {
       icon: MapPin,
