@@ -494,24 +494,16 @@ const WORDPRESS_UTILITY_REDIRECTS = [
 // /product/* and /bathroom/* URLs fall through to middleware.ts and
 // return a real 410 Gone, which is the correct migration signal.
 //
-// The /shop/:path*, /my-account, /checkout/* wildcards stay: shop and
-// account/checkout landing pages don't dilute a PLP because the
-// destination is the same /water-filters hub that every WordPress
-// shop entry-point pointed at. Numeric /product/<id>/ URLs (the
-// soft-404 example flagged in the audit, e.g. /product/4647) are
-// 410'd by middleware.ts via GONE_PREFIXES.
+// Old paginated shop archives and colour taxonomies are deliberately not
+// redirected to broad PLPs: middleware returns 410 for those retired archive
+// surfaces. Account/checkout utility URLs retain a convenience redirect.
+// Numeric /product/<id>/ URLs (for example /product/4647) are also 410'd
+// by middleware.ts via GONE_PREFIXES.
 const WORDPRESS_FALLBACK_REDIRECTS = [
-  { source: '/shop/:path*', destination: '/water-filters', permanent: true },
   { source: '/my-account', destination: '/water-filters', permanent: true },
   { source: '/my-account/:path*', destination: '/water-filters', permanent: true },
   { source: '/checkout', destination: '/water-filters', permanent: true },
   { source: '/checkout/:path*', destination: '/water-filters', permanent: true },
-  // WooCommerce colour attribute archive (/colour/<attr>/, plus paginated
-  // variants). 7 URLs, ~1 click total — not worth per-attribute precision.
-  // Without this rule, middleware.ts would 410 the URLs; the redirect runs
-  // first per Next's order so the colour entry in middleware is harmless
-  // but dead.
-  { source: '/colour/:slug*', destination: '/water-filters', permanent: true },
 ];
 
 // Expand [source, destination] tuples into a flat array of redirect
