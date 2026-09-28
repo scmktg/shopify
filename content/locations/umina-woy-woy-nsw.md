@@ -17,7 +17,7 @@ faq:
   - q: "I'm in a beachside Umina fibro home - what setup makes sense?"
     a: "Older fibros often have a mix of original galvanised plumbing and patches of newer copper or PEX. A two-stage under-sink (sediment + carbon) handles the kitchen for around $200 and is the right call if you only want the drinking tap filtered. If you want softer showers and chlorine off the rest of the outlets, step up to a whole-house system. Beachside outdoor fittings should be 316 stainless because of the salt air."
   - q: "Do you install systems?"
-    a: "We sell the systems and the parts. Mains-pressure installs in NSW require a licensed plumber by law, and we focus on the supply side. We can recommend Peninsula plumbers who install our systems regularly - contact us with your suburb and the system you are buying for a referral. Under-sink filters with push-fit fittings are usually a DIY job."
+    a: "Our fixed-price Whole House Installation Package is available in eligible Central Coast postcodes and includes a licensed local plumber we coordinate. Other mains-pressure systems are supply-only, and we can recommend Peninsula plumbers where needed. Some under-sink filters use straightforward push-fit connections, but mains plumbing work should be completed by a licensed plumber where required."
 ---
 
 The Peninsula sits south of the Brisbane Water entrance. Older town centres, beachside fibros, and quiet bayside streets. We deliver filters and full systems to Peninsula homes every week, and the drive to our Wyong showroom is about 40 minutes via the M1 and Brisbane Water Drive.
@@ -52,5 +52,5 @@ Umina, Ocean Beach, Ettalong, and Pearl Beach get serious salt aerosol. The wate
 Tracked delivery to Peninsula addresses is usually next business day on orders placed before 12pm AEST. Click & Collect from our Wyong showroom is free - the drive is about 40 minutes via the M1 and Brisbane Water Drive, and orders placed during business hours are usually ready for pickup within two hours.
 
 - **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am - 5pm AEST
+- **Hours:** Monday to Friday, 9am - 3pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
