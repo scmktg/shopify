@@ -8,7 +8,7 @@ relatedLinks:
   - { label: "Water bubblers for offices", href: "/use/commercial-and-cafe/offices/" }
 faq:
   - q: "What chilling capacity do I need for a gym?"
-    a: "Look for at least 20–30 litres per hour of chilled output for a standard suburban gym. High-traffic 24-hour or strength-focused facilities should go higher - 40+ L/h. The chilling rating is the maximum sustained delivery; a unit rated below this will run out of cold water during peak periods (typically 5–7am and 5–8pm) and serve room-temperature water until it catches up."
+    a: "Look for at least 20-30 litres per hour of chilled output for a standard suburban gym. High-traffic 24-hour or strength-focused facilities should go higher - 40+ L/h. The chilling rating is the maximum sustained delivery; a unit rated below this will run out of cold water during peak periods (typically 5-7am and 5-8pm) and serve room-temperature water until it catches up."
   - q: "Do I need both a bubbler and a bottle-fill tap?"
     a: "Yes - most gym users carry a bottle, but the bubbler is needed for casual top-ups, kids' classes, and anyone who forgot their bottle. The standard combination unit has a sensor-activated bottle-fill spout above and a push-button bubbler below. Sensor activation on the bottle-fill is important - it is hands-free, more hygienic, and faster during peak periods."
   - q: "Where should the units be placed?"
@@ -25,10 +25,10 @@ This page covers what to specify and where to put it.
 
 ## Chilling capacity - the number that matters
 
-The single most important spec for a gym bubbler is sustained chilled-water output, measured in litres per hour. Most general bubblers chill at 10–15 L/h. That is fine for an office of 20 people; it is not enough for a gym.
+The single most important spec for a gym bubbler is sustained chilled-water output, measured in litres per hour. Most general bubblers chill at 10-15 L/h. That is fine for an office of 20 people; it is not enough for a gym.
 
-- **Standard suburban gym (under 200 daily visits):** 20–30 L/h chilled output.
-- **Mid-size gym, group fitness, F45-style facility (200–500 daily visits):** 30–40 L/h.
+- **Standard suburban gym (under 200 daily visits):** 20-30 L/h chilled output.
+- **Mid-size gym, group fitness, F45-style facility (200-500 daily visits):** 30-40 L/h.
 - **24-hour gym, strength-focused facility, big-box gym (500+ daily visits):** 40+ L/h, ideally split across two units.
 
 Underspecifying the chiller is the single most common gym-fitout mistake. A unit rated at 15 L/h serving a 5pm cardio class with 25 people refilling 750ml bottles will exhaust its cold tank in 10 minutes and serve room-temperature water until it recovers.
@@ -47,7 +47,7 @@ Some units add an LED counter on the bottle-fill spout showing total bottles fil
 For a standard gym layout:
 
 - **Entrance.** Members fill bottles on the way in, refill on the way out. The entrance unit gets the most traffic.
-- **Cardio area.** Peak hydration demand happens during cardio. A unit within 10–15 metres of treadmills and bikes is essential.
+- **Cardio area.** Peak hydration demand happens during cardio. A unit within 10-15 metres of treadmills and bikes is essential.
 - **Strength / weights area.** Lower visit frequency but heavier individual users. One unit serving the whole strength zone is typically enough.
 
 Add additional units for:
@@ -64,7 +64,7 @@ Gyms are wet, sweaty, and disinfected often. Stainless grade matters:
 - **SUS304** - minimum for indoor use. The standard for the bowl, panels, and exposed metalwork.
 - **SUS316** - required for outdoor units, poolside, or coastal locations. Resists chloride corrosion better than 304.
 
-Powder-coated mild steel is not acceptable for any wet area in a gym - it pits and rusts within 12–24 months.
+Powder-coated mild steel is not acceptable for any wet area in a gym - it pits and rusts within 12-24 months.
 
 ## Filtration
 
