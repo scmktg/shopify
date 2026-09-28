@@ -549,6 +549,9 @@ const nextConfig = {
     // slash so old crawl paths and external links resolve regardless
     // of how they are formatted.
     const PRODUCT_MERGE_REDIRECTS = [
+      ['/pumps-and-tanks/components/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect', '/plumbing/parts/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect'],
+      ['/pumps-and-tanks/components/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect', '/plumbing/parts/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect'],
+      ['/pumps-and-tanks/components/water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi', '/plumbing/parts/water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi'],
       ['/water-filters/whole-house/deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy', '/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system'],
       [
         '/plumbing/ro-filter-taps/3-way-kitchen-tap-for-ro-water-filters-mixer-in-shiny-gold',
@@ -563,6 +566,7 @@ const nextConfig = {
     ];
 
     const SUBCAT_REDIRECTS = [
+      ['/pumps-and-tanks/components', '/plumbing/parts'],
       ['/water-filters/parts', '/plumbing/parts'],
       ['/cartridges/post-carbon-t33', '/cartridges/specialty-cartridges'],
       ['/cartridges/alkaline', '/cartridges/specialty-cartridges'],
