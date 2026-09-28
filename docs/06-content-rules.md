@@ -104,7 +104,7 @@ In this exact order:
 
 - Max 155 characters
 - Lead with value prop or product spec
-- Include a call-to-action ("Shop now," "Tiered shipping Australia-wide from $9.95")
+- Include a useful call-to-action where appropriate ("Shop now," "View shipping details," or "Free Click & Collect from Wyong NSW"). Do not hard-code retired shipping tiers or parcel prices into editorial copy.
 - Don't repeat the title verbatim
 
 ## Image alt text rules
@@ -130,5 +130,5 @@ Never appear in customer-facing copy:
 
 - WaterMark-certified products: badge + "WaterMark Certified" text + licence number visible
 - Non-certified plumbing products: clear "Not WaterMark certified — for off-mains use only" warning
-- Shipping tier: every product page renders a tier-specific shipping block (T1–T6) sourced from the `enviroaqua.shipping_tier` metafield
+- Shipping class: every product page renders a shipping block aligned to the current four-class model (`parcel`, `free`, `freight`, `pickup_only`). Shopify checkout is authoritative for final delivery eligibility and rates.
 - Wholesale pricing: "Wholesale price — same for everyone, no account needed"
