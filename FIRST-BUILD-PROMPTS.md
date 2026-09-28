@@ -78,7 +78,7 @@ Build a clean homepage at app/page.tsx. Sections, top to bottom:
 
 1. Hero section — H1 with the brand positioning, single CTA button to /water-filters/, brief value prop
 2. Five category tiles in a grid — links to each top-level category
-3. A trust strip — wholesale pricing message, free shipping over $200, AU-owned
+3. A trust strip — wholesale pricing message, clear Australia-wide shipping / Click & Collect message, AU-owned
 4. A simple "How to choose" section pointing to a few water-problem pages (placeholder links for now since pages don't exist yet)
 
 Keep copy minimal and direct per /docs/06-content-rules.md. No fluff.
