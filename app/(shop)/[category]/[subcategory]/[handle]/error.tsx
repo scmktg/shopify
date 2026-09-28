@@ -36,7 +36,7 @@ export default function ProductErrorPage({
       </h1>
       <p className="mt-4 text-base text-black/70">
         Our server hit an unexpected error rendering this product. Try
-        refreshing — most of the time that&apos;s enough.
+        refreshing, most of the time that&apos;s enough.
       </p>
       {error.digest && (
         <p className="mt-2 text-xs text-black/50">
