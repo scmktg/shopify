@@ -8,11 +8,11 @@ relatedLinks:
   - { label: "Whole house water filter cost", href: "/help/whole-house-cost/" }
 faq:
   - q: "Which is cheaper to run long-term?"
-    a: "A plumbed-in bubbler, by a wide margin. Once it is installed, the only ongoing cost is a cartridge change every six to twelve months - typically $50–$120 per year. A bottled cooler costs $400–$1,200 per year in 15L bottle deliveries depending on usage. Payback on a bubbler is usually under 18 months in a workplace of 10+ people."
+    a: "A plumbed-in bubbler, by a wide margin. Once it is installed, the only ongoing cost is a cartridge change every six to twelve months - typically $50-$120 per year. A bottled cooler costs $400-$1,200 per year in 15L bottle deliveries depending on usage. Payback on a bubbler is usually under 18 months in a workplace of 10+ people."
   - q: "Is WaterMark required for both?"
     a: "WaterMark applies to anything plumbed into mains pressure - that means every plumbed-in bubbler, drinking fountain, and under-sink chiller. Bottled water coolers do not connect to the mains, so WaterMark is not required for the cooler itself. The bottles still need to meet food-safety standards but that is a different scheme."
   - q: "Can I install a bubbler myself?"
-    a: "No - mains-pressure installs in Australia require a licensed plumber. Plan for plumber labour ($300–$600 for a straightforward install) on top of the bubbler cost. Bottled coolers are plug-and-play with no install needed, which is part of why they sell despite costing more long-term."
+    a: "No - mains-pressure installs in Australia require a licensed plumber. Plan for plumber labour ($300-$600 for a straightforward install) on top of the bubbler cost. Bottled coolers are plug-and-play with no install needed, which is part of why they sell despite costing more long-term."
   - q: "What if there's no plumbed water access where we want it?"
     a: "That is the one scenario where a bottled cooler genuinely makes sense - temporary sites, remote workshops, market stalls, anywhere mains water is not within reach. For any permanent location with mains access, the bubbler will pay for itself."
   - q: "How much waste does a bottled cooler actually produce?"
@@ -32,9 +32,9 @@ That covers 90 percent of decisions. The detail below is what to weigh in the bo
 
 | | Plumbed bubbler | Bottled cooler |
 |---|---|---|
-| Unit cost | $400–$1,500 | $200–$600 |
-| Install | $300–$600 (licensed plumber) | $0 (plug in) |
-| Total day-one | **$700–$2,100** | **$200–$600** |
+| Unit cost | $400-$1,500 | $200-$600 |
+| Install | $300-$600 (licensed plumber) | $0 (plug in) |
+| Total day-one | **$700-$2,100** | **$200-$600** |
 
 Bottled coolers win on day one. They lose every other year.
 
@@ -44,12 +44,12 @@ For a site of 10 to 30 daily users:
 
 | | Plumbed bubbler | Bottled cooler |
 |---|---|---|
-| Filter cartridges | $50–$120/year | n/a |
-| Bottle deliveries | n/a | $400–$1,200/year |
+| Filter cartridges | $50-$120/year | n/a |
+| Bottle deliveries | n/a | $400-$1,200/year |
 | Power | similar | similar |
-| **Annual** | **$50–$120** | **$400–$1,200** |
+| **Annual** | **$50-$120** | **$400-$1,200** |
 
-Over five years, a plumbed bubbler runs you about $300 in cartridges; a bottled cooler runs you $2,000–$6,000 in bottle deliveries. The bubbler pays back in 12–18 months even on the higher install scenario.
+Over five years, a plumbed bubbler runs you about $300 in cartridges; a bottled cooler runs you $2,000-$6,000 in bottle deliveries. The bubbler pays back in 12-18 months even on the higher install scenario.
 
 ## Compliance - WaterMark
 
