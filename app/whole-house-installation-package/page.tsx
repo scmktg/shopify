@@ -32,7 +32,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Why is this only available on the Central Coast?',
-    a: 'The fixed price covers a local plumber we work with regularly — they install our systems most weeks. Outside the Central Coast we cannot guarantee the same install quality at a fixed price, so we sell the system on its own and you arrange your own plumber.',
+    a: 'The fixed price covers a local plumber we work with regularly - they install our systems most weeks. Outside the Central Coast we cannot guarantee the same install quality at a fixed price, so we sell the system on its own and you arrange your own plumber.',
   },
   {
     q: 'How long does installation take?',
@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What if my installation has unusual requirements?',
-    a: 'Standard scope covers a single-storey installation on the cold-water mains within reasonable reach of an external wall or garage. Multi-storey runs, isolated mains, or extensive new pipework can quote higher. We let you know before booking — no surprise costs after the fact.',
+    a: 'Standard scope covers a single-storey installation on the cold-water mains within reasonable reach of an external wall or garage. Multi-storey runs, isolated mains, or extensive new pipework can quote higher. We let you know before booking - no surprise costs after the fact.',
   },
   {
     q: 'Do I pay upfront?',
@@ -48,7 +48,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What is the warranty on the product and the install?',
-    a: '12-month manufacturer warranty on the product (longer if specifically noted). The plumber warrants their own workmanship under normal industry terms. Faulty product issues go through us; install issues go through the plumber — we coordinate either way.',
+    a: '12-month manufacturer warranty on the product (longer if specifically noted). The plumber warrants their own workmanship under normal industry terms. Faulty product issues go through us; install issues go through the plumber - we coordinate either way.',
   },
   {
     q: 'Can I get just the product without install?',
@@ -58,12 +58,12 @@ const FAQ_ITEMS = [
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Whole House Water Filter — Installed for $2,299 | Central Coast NSW',
+    title: 'Whole House Water Filter - Installed for $2,299 | Central Coast NSW',
     description:
       'WaterMark certified whole-house water filter installed by a local plumber. Fixed $2,299 for NSW Central Coast residents. Get a quote in 60 seconds.',
     alternates: { canonical: PATH },
     openGraph: {
-      title: 'Whole House Water Filter — Installed for $2,299',
+      title: 'Whole House Water Filter - Installed for $2,299',
       description:
         'WaterMark certified system + local plumber install. Fixed price for NSW Central Coast residents.',
       url: absoluteUrl(PATH),
@@ -117,7 +117,7 @@ const PROPERTY_FIT = [
 ];
 
 const HOW_IT_WORKS = [
-  'Submit your details below — takes 60 seconds.',
+  'Submit your details below - takes 60 seconds.',
   'We arrange a time with our local plumber and email you within 1–2 business days.',
   'You confirm the time. We send an invoice.',
   'Once paid, your install is locked in. The plumber turns up, fits it, you have filtered water at every tap.',
@@ -160,13 +160,13 @@ export default async function InstallPackagePage() {
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
               <div>
                 <span className="inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
-                  Local offer — Central Coast NSW
+                  Local offer - Central Coast NSW
                 </span>
                 <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-                  Whole House Water Filter — Installed by a Local Plumber
+                  Whole House Water Filter - Installed by a Local Plumber
                 </h1>
                 <p className="mt-4 text-lg md:text-xl text-black/70">
-                  WaterMark certified, NSW Central Coast — ${BUNDLED_PRICE.toLocaleString()} complete with professional install.
+                  WaterMark certified, NSW Central Coast - ${BUNDLED_PRICE.toLocaleString()} complete with professional install.
                 </p>
                 <div className="mt-6">
                   <a
@@ -245,7 +245,7 @@ export default async function InstallPackagePage() {
             </dl>
             <p className="mt-6 text-sm text-black/70">
               GST included. Price valid for NSW Central Coast residents within
-              standard installation scope. Complex installs may quote higher —
+              standard installation scope. Complex installs may quote higher -
               we&apos;ll let you know before booking.
             </p>
           </div>
