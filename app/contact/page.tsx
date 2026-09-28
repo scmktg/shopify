@@ -163,7 +163,7 @@ export default function ContactPage() {
                     Hours
                   </dt>
                   <dd className="mt-1 text-base text-black">
-                    Monday to Friday, 9am - 5pm AEST
+                    Monday to Friday, 9am - 3pm AEST
                     <br />
                     <span className="text-black/70">
                       Closed weekends and NSW public holidays
