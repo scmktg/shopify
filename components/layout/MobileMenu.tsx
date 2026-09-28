@@ -165,7 +165,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
         <div className="sticky top-0 z-10 flex items-center justify-between h-16 px-4 bg-black border-b border-white/10">
           <Link
             href="/"
-            aria-label="Enviro Aqua — home"
+            aria-label="Enviro Aqua - home"
             onClick={close}
             className="inline-flex items-center"
           >
