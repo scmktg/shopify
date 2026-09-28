@@ -29,9 +29,7 @@ export function VariantSelectionProvider({
   variants,
   children,
 }: VariantSelectionProviderProps) {
-  const initial = variants[0];
-  if (!initial) return <>{children}</>;
-
+  const initial = variants[0]!;
   const [selectedVariantId, setSelectedVariantId] = useState(initial.id);
   const selectedVariant =
     variants.find((variant) => variant.id === selectedVariantId) ?? initial;
