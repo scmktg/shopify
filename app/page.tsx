@@ -54,11 +54,11 @@ const CATEGORY_BLURBS: Record<string, string> = {
 // homepage. Handles must exist in data/products.json and Shopify -
 // the loader silently drops any that are missing.
 const FEATURED_HANDLES: ReadonlyArray<string> = [
-  'deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy',
+  'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
   'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
   'commercial-rust-free-filtered-cold-water-bubbler-wm',
   'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
-  'under-sink-water-filter-3-stage-sediment-carbon-alkaline',
+  'premium-three-stage-big-blue-whole-house-water-filter-system',
   'pull-down-spray-tap-kitchen-mixer-in-brushed-nickel',
   '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
   'premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic',
