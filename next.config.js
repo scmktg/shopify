@@ -566,6 +566,7 @@ const nextConfig = {
       ['/water-filters/bench-top/diverter-valve-tap-connector-for-1-4-tube-benchtop-water-filters', '/plumbing/parts/diverter-valve-tap-connector-for-1-4-tube-benchtop-water-filters'],
       ['/water-filters/whole-house/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5', '/cartridges/cartridge-sets/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5'],
       ['/water-filters/whole-house/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5', '/cartridges/cartridge-sets/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5'],
+      ['/water-filters/whole-house/20-x-2-5-whole-house-water-filter-replacement-sediment-carbon-gac-cartridges', '/cartridges/cartridge-sets/20-x-2-5-whole-house-water-filter-replacement-sediment-carbon-gac-cartridges'],
 
     ];
 
