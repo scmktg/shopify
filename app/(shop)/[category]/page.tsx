@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { findCategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
@@ -94,8 +95,18 @@ export default async function CategoryPage({
         query={query}
         pageSize={PAGE_SIZE}
         enableSizeFilter={category === 'cartridges'}
-        paginationPath={pathname}
       />
+      {page.pageInfo.hasNextPage && page.pageInfo.endCursor && (
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 text-center">
+          <Link
+            href={`${pathname}?after=${encodeURIComponent(page.pageInfo.endCursor)}`}
+            rel="next"
+            className="text-sm font-medium text-brand-blue hover:underline underline-offset-4"
+          >
+            Next catalogue page
+          </Link>
+        </div>
+      )}
     </>
   );
 }
