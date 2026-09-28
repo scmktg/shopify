@@ -1,12 +1,8 @@
 import Link from 'next/link';
 import { Check, Droplets, Flame, GlassWater, Wrench } from 'lucide-react';
-import { getProductUrl } from '@/lib/utils/productUrl';
 
-const RO_SYSTEM_HANDLE = 'under-sink-water-filter-5-stage-reverse-osmosis-system';
 
 export function ThreeWayTapSalesSections() {
-  const roSystemUrl = getProductUrl(RO_SYSTEM_HANDLE);
-
   return (
     <>
       <section className="mt-12 rounded-xl border border-gray-200 bg-gray-50 px-5 py-8 sm:px-8">
@@ -90,36 +86,49 @@ export function ThreeWayTapSalesSections() {
             </p>
           </div>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-black">
-            Built for standard RO and under-sink filter installations
+            Compatible with standard 1/4&quot; filtered-water systems
           </h2>
+          <p className="mt-3 text-sm leading-6 text-black/70">
+            The filtered-water inlet uses the same 1/4&quot; tubing format used
+            across Enviro Aqua&apos;s residential under-sink and reverse osmosis
+            systems. That means the tap is not tied to one specific filter.
+          </p>
           <ul className="mt-5 grid gap-3 text-sm text-black/75">
-            <Benefit>Standard 1/4&quot; filtered-water connection</Benefit>
-            <Benefit>Hot, cold and filtered channels in one fixture</Benefit>
-            <Benefit>WaterMark certified to AS/NZS 3718</Benefit>
-            <Benefit>WELS 4 Star rated at 7.5 L/min</Benefit>
+            <Benefit>5-stage reverse osmosis systems</Benefit>
+            <Benefit>6-stage reverse osmosis systems</Benefit>
+            <Benefit>2-stage under-sink sediment + carbon systems</Benefit>
+            <Benefit>3-stage under-sink sediment + carbon + alkaline systems</Benefit>
             <Benefit>
-              Best installed by a licensed plumber where required
+              Other compatible systems using a standard 1/4&quot; filtered-water outlet
             </Benefit>
           </ul>
         </div>
 
         <div className="rounded-lg bg-black p-5 text-white sm:p-6">
           <p className="text-sm font-semibold text-white/70">
-            Need the filter system too?
+            Need a filter system too?
           </p>
           <h3 className="mt-2 text-xl font-semibold">
-            Pair it with a 5-stage reverse osmosis system
+            Choose the filtration level that suits your water
           </h3>
           <p className="mt-3 text-sm leading-6 text-white/75">
-            Build a complete filtered-water setup and keep the drinking-water
-            outlet integrated into the kitchen mixer.
+            Use this tap with a compatible under-sink filter or reverse osmosis
+            system that has a standard 1/4&quot; filtered-water outlet.
           </p>
-          <Link
-            href={roSystemUrl}
-            className="mt-5 inline-flex min-h-11 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/90"
-          >
-            View compatible RO system
-          </Link>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Link
+              href="/water-filters/reverse-osmosis/"
+              className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/90"
+            >
+              View reverse osmosis systems
+            </Link>
+            <Link
+              href="/water-filters/under-sink/"
+              className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/30 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10"
+            >
+              View under-sink filters
+            </Link>
+          </div>
         </div>
       </section>
     </>
