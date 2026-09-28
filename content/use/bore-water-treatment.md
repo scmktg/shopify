@@ -8,7 +8,7 @@ relatedLinks:
   - { label: "Pumps and tanks", href: "/pumps-and-tanks/" }
 faq:
   - q: "Should I get my bore water tested first?"
-    a: "Yes, before specifying any treatment. A NATA-accredited lab will test for pH, hardness, iron, manganese, total dissolved solids, nitrates, microbiological contaminants, and any locally-relevant concerns (PFAS, arsenic, fluoride). The test typically costs $150–$400 and removes the guesswork. Treatment that does not match the actual water chemistry is wasted money."
+    a: "Yes, before specifying any treatment. A NATA-accredited lab will test for pH, hardness, iron, manganese, total dissolved solids, nitrates, microbiological contaminants, and any locally-relevant concerns (PFAS, arsenic, fluoride). The test typically costs $150-$400 and removes the guesswork. Treatment that does not match the actual water chemistry is wasted money."
   - q: "Can I drink bore water with just a standard whole-house filter?"
     a: "Almost never, even if the water looks clean. Standard sediment + carbon filtration handles taste and grit but does not remove dissolved metals (iron, manganese), correct pH, or kill bacteria. A complete bore-water treatment train is sediment, then chemical dosing if needed (chlorine, soda ash, or aeration), then carbon, then UV. Skipping stages risks long-term health and short-term appliance damage."
   - q: "What size dosing tank do I need?"
@@ -34,7 +34,7 @@ Bore water draws from groundwater aquifers, which means it has been in contact w
 - **Bacteria and protozoa** - surface contamination of the bore casing or a shallow water table can introduce *E. coli*, *Giardia*, *Cryptosporidium*. Less common in deep bores, more common in shallow ones near agriculture or septic.
 - **Salinity** - total dissolved solids from saline groundwater. A regional problem in parts of WA, SA, and inland NSW/Vic.
 
-Get a water test before specifying any treatment. A NATA-accredited lab gives you the actual numbers - pH, hardness, iron, manganese, microbiological - for $150–$400. Without the test you are guessing.
+Get a water test before specifying any treatment. A NATA-accredited lab gives you the actual numbers - pH, hardness, iron, manganese, microbiological - for $150-$400. Without the test you are guessing.
 
 ## The standard bore-water treatment train
 
@@ -52,9 +52,9 @@ Not every bore needs every stage. A clean deep-aquifer bore with neutral pH and 
 
 The two most common dosing applications:
 
-**Chlorine dosing** for disinfection. A peristaltic pump meters sodium hypochlorite (typically 12.5% chlorine solution) into the water line at a controlled rate to maintain a free-chlorine residual of around 0.5–1 mg/L. The chlorine then has contact time in the line or in a downstream contact tank, after which a carbon stage removes the residual taste before the water reaches the tap.
+**Chlorine dosing** for disinfection. A peristaltic pump meters sodium hypochlorite (typically 12.5% chlorine solution) into the water line at a controlled rate to maintain a free-chlorine residual of around 0.5-1 mg/L. The chlorine then has contact time in the line or in a downstream contact tank, after which a carbon stage removes the residual taste before the water reaches the tap.
 
-**pH correction** for acidic bore water. Soda ash (sodium carbonate) solution is dosed to lift pH from acidic (often 5.0–6.0) to neutral (6.5–7.5), preventing copper-pipe corrosion. The dose rate depends on the starting pH and the alkalinity of the water - a NATA test gives the right starting point, and a test pH meter at the tap confirms the dose is working.
+**pH correction** for acidic bore water. Soda ash (sodium carbonate) solution is dosed to lift pH from acidic (often 5.0-6.0) to neutral (6.5-7.5), preventing copper-pipe corrosion. The dose rate depends on the starting pH and the alkalinity of the water - a NATA test gives the right starting point, and a test pH meter at the tap confirms the dose is working.
 
 Both setups use the same equipment - peristaltic dosing pump, day tank for the chemical, injection point on the water line.
 
