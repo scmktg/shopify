@@ -557,6 +557,13 @@ const nextConfig = {
     // mapping. Each rule is duplicated with and without a trailing
     // slash so old crawl paths and external links resolve regardless
     // of how they are formatted.
+    const PRODUCT_MERGE_REDIRECTS = [
+      [
+        '/plumbing/ro-filter-taps/3-way-kitchen-tap-for-ro-water-filters-mixer-in-shiny-gold',
+        '/plumbing/ro-filter-taps/3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
+      ],
+    ];
+
     const SUBCAT_REDIRECTS = [
       ['/cartridges/post-carbon-t33', '/cartridges/specialty-cartridges'],
       ['/cartridges/alkaline', '/cartridges/specialty-cartridges'],
@@ -780,6 +787,7 @@ const nextConfig = {
     // product slugs first, then category PLPs (with paginated wildcards),
     // then utility pages, then the catch-all fallback wildcards last so
     // an unmapped /product/foo lands on /water-filters instead of 404.
+    rules.push(...withSlashVariants(PRODUCT_MERGE_REDIRECTS));
     rules.push(...withSlashVariants(WORDPRESS_PRODUCT_REDIRECTS));
     rules.push(...expandCategoryRules(WORDPRESS_CATEGORY_REDIRECTS));
     rules.push(...withSlashVariants(WORDPRESS_UTILITY_REDIRECTS));
