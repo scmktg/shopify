@@ -7115,7 +7115,7 @@
       "Four finishes at the same price: Matte Black, Brushed Gold, Stainless Steel and Polished Chrome",
       "WaterMark certified to AS/NZS 3718",
       "WELS 4 Star rated at 7.5 L/min - registration T40393",
-      "Compatible with standard reverse osmosis systems via 1/4\" tubing"
+      "Compatible with RO and under-sink filtration systems using a standard 1/4\" filtered-water connection"
     ],
     "headlineSpecs": [
       {
@@ -7150,7 +7150,7 @@
       },
       {
         "label": "RO compatibility",
-        "value": "Standard 1/4\" tubing"
+        "value": "Standard 1/4\" filtered-water connection; suits compatible RO and under-sink filtration systems"
       },
       {
         "label": "WaterMark certified",
@@ -14277,7 +14277,8 @@
       "12 L pressure storage tank - on-demand filtered water at the tap",
       "Stainless steel filter faucet included",
       "Complete DIY install kit including pressure-reducing valve and 2 m of tubing",
-      "Suits municipal mains and rural tank water"
+      "Suits municipal mains and rural tank water",
+      "Standard 1/4\" filtered-water connection - compatible with suitable 3-way filtered kitchen mixer taps"
     ],
     "headlineSpecs": [
       {
@@ -14357,6 +14358,10 @@
       {
         "label": "Install time",
         "value": "1-2 hours DIY, or licensed plumber"
+      },
+      {
+        "label": "3-way mixer compatibility",
+        "value": "Compatible with filtered-water mixer taps using a standard 1/4\" filtered-water connection"
       }
     ],
     "recommendedFor": [
@@ -14416,7 +14421,8 @@
       "Reduces fluoride, chlorine, heavy metals, arsenic, mercury, dissolved solids",
       "12 L pressure storage tank - on-demand filtered water",
       "Stainless steel filter faucet included",
-      "All cartridges 10\" × 2.5\" - widely-stocked Australian standard"
+      "All cartridges 10\" × 2.5\" - widely-stocked Australian standard",
+      "Standard 1/4\" filtered-water connection - compatible with suitable 3-way filtered kitchen mixer taps"
     ],
     "headlineSpecs": [
       {
@@ -14500,6 +14506,10 @@
       {
         "label": "Install time",
         "value": "1-2 hours DIY, or licensed plumber"
+      },
+      {
+        "label": "3-way mixer compatibility",
+        "value": "Compatible with filtered-water mixer taps using a standard 1/4\" filtered-water connection"
       }
     ],
     "recommendedFor": [
@@ -14558,7 +14568,8 @@
       "Pressure-reducing valve included - protects housings on high-pressure mains",
       "10\" × 2.5\" cartridges - widely-stocked Australian standard",
       "1/4\" tubing connections - standard residential filter format",
-      "Suits both mains-supply and tank water"
+      "Suits both mains-supply and tank water",
+      "Standard 1/4\" filtered-water connection - compatible with suitable 3-way filtered kitchen mixer taps"
     ],
     "headlineSpecs": [
       {
@@ -14630,6 +14641,10 @@
       {
         "label": "Install time",
         "value": "1-2 hours DIY, or licensed plumber"
+      },
+      {
+        "label": "3-way mixer compatibility",
+        "value": "Compatible with filtered-water mixer taps using a standard 1/4\" filtered-water connection"
       }
     ],
     "recommendedFor": [
@@ -14689,7 +14704,8 @@
       "Complete DIY kit - stainless steel faucet and all fittings included",
       "Pressure-reducing valve protects housings on high-pressure mains",
       "10\" × 2.5\" cartridges - widely-stocked Australian standard",
-      "Suits both mains and tank water supply"
+      "Suits both mains and tank water supply",
+      "Standard 1/4\" filtered-water connection - compatible with suitable 3-way filtered kitchen mixer taps"
     ],
     "headlineSpecs": [
       {
@@ -14765,6 +14781,10 @@
       {
         "label": "Install time",
         "value": "1-2 hours DIY, or licensed plumber"
+      },
+      {
+        "label": "3-way mixer compatibility",
+        "value": "Compatible with filtered-water mixer taps using a standard 1/4\" filtered-water connection"
       }
     ],
     "recommendedFor": [
