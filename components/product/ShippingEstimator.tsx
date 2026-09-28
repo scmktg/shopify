@@ -135,7 +135,7 @@ export function ShippingEstimator({
             <strong className="font-semibold">
               Delivery to {resultPostcode}: {formatMoney(cheapest)}
             </strong>
-            {provinceCode ? ` — ${provinceCode}` : ''}
+            {provinceCode ? ` - ${provinceCode}` : ''}
           </p>
           {cheapest.title && (
             <p className="mt-0.5 text-xs text-black/60">{cheapest.title}</p>
