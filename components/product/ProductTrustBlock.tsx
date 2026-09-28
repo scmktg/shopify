@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import { Phone, RefreshCcw, Truck } from 'lucide-react';
+import { Phone, RefreshCcw } from 'lucide-react';
 import {
   PHONE_DISPLAY,
   PHONE_SUPPORT_HOURS,
@@ -8,7 +8,6 @@ import {
   RETURNS_SUMMARY,
   SHOWROOM_LOCALITY,
 } from '@/lib/site-config';
-import { DispatchCountdown } from './DispatchCountdown';
 import { BackInStockNotify } from './BackInStockNotify';
 
 export type StockStatus = 'in_stock' | 'low_stock' | 'out_of_stock';
@@ -39,18 +38,6 @@ export function ProductTrustBlock({
 
       {!inStock && (
         <BackInStockNotify productId={productId} sku={sku} />
-      )}
-
-      {inStock && (
-        <p className="flex items-start gap-2">
-          <Truck
-            className="h-4 w-4 mt-0.5 flex-shrink-0 text-black/70"
-            aria-hidden="true"
-          />
-          <span>
-            <DispatchCountdown />
-          </span>
-        </p>
       )}
 
       <p className="flex items-start gap-2">
