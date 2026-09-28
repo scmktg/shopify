@@ -4736,11 +4736,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-1c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-1g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-2b-matte-black-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -4898,11 +4894,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-1b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-1g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-2c-polished-chrome-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -5060,11 +5052,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-1b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-1c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-2g-brushed-gold-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -5226,11 +5214,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-2c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-2g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-3b-matte-black-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -5392,11 +5376,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-2b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-2g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-3c-polished-chrome-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -5558,11 +5538,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-2b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-2c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-3g-brushed-gold-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -5725,11 +5701,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-3c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-3g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-4b-matte-black-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -5892,11 +5864,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-3b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-3g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-4c-polished-chrome-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -6059,11 +6027,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-3b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-3c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-4g-brushed-gold-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -6226,11 +6190,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-4c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-4g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-3b-matte-black-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -6393,11 +6353,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-4b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-4g-brushed-gold-watermark-certified-wels-rated",
-        "complete-bathroom-package-3c-polished-chrome-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -6560,11 +6516,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "complete-bathroom-package-4b-matte-black-watermark-certified-wels-rated",
-        "complete-bathroom-package-4c-polished-chrome-watermark-certified-wels-rated",
-        "complete-bathroom-package-3g-brushed-gold-watermark-certified-wels-rated"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -6684,11 +6636,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "16cm-bathroom-mixer-tap-in-polished-chrome",
-        "12cm-bathroom-mixer-tap-in-polished-chrome-extended-sprout",
-        "bathroom-wall-basin-sink-shower-mixer-tap-faucet-round-chrome-bath-spout-wels"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -6820,8 +6768,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "12cm-bathroom-mixer-tap-in-polished-chrome",
-        "16cm-bathroom-mixer-tap-in-polished-chrome",
         "gooseneck-kitchen-mixer-tap-in-polished-chrome"
       ],
       "moreInCategory": "auto"
@@ -6953,11 +6899,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "12cm-bathroom-mixer-tap-in-polished-chrome",
-        "12cm-bathroom-mixer-tap-in-polished-chrome-extended-sprout",
-        "tall-29cm-round-basin-mixer-tap-in-matte-black-or-polished-chrome"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -7089,7 +7031,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel",
         "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel",
         "under-sink-water-filter-5-stage-reverse-osmosis-system"
       ],
@@ -7212,11 +7153,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "spring-loaded-tap-kitchen-mixer-in-brushed-nickel",
-        "tall-spring-loaded-kitchen-mixer-with-pull-out-spray-in-polished-chrome",
-        "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -7336,11 +7273,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "tall-spring-loaded-kitchen-mixer-with-pull-out-spray-in-polished-chrome",
-        "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel",
-        "gooseneck-kitchen-mixer-tap-in-polished-chrome"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -7475,11 +7408,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "spring-loaded-tap-kitchen-mixer-in-brushed-nickel",
-        "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel",
-        "gooseneck-kitchen-mixer-tap-in-polished-chrome"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -7609,10 +7538,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "bathroom-wall-basin-sink-shower-mixer-tap-faucet-round-chrome-bath-spout-wels",
-        "12cm-bathroom-mixer-tap-in-polished-chrome"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -8367,9 +8293,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "stainless-electric-solar-booster-pump-100w-home-water-booster-pump"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -8849,8 +8773,7 @@
     "upsells": {
       "boughtTogether": [
         "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs",
-        "water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond",
-        "stainless-electric-solar-booster-pump-100w-home-water-booster-pump"
+        "water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond"
       ],
       "moreInCategory": "auto"
     },
@@ -8958,10 +8881,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "automatic-self-priming-hot-cold-water-pressure-pump-with-flow-control-380w-220v",
-        "12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -11340,7 +11260,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd",
         "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs",
         "chemical-dosing-tank-bunded-100l"
       ],
@@ -11487,7 +11406,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd",
         "typ-4000-bypass-pressure-adjustable-diaphragm-booster-pump-24-vdc-400gpd",
         "chemical-dosing-tank-bunded-100l"
       ],
@@ -11624,7 +11542,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "commercial-reverse-osmosis-ro-desalination-plantl-ro-3000-lpd-800-gpd",
         "chemical-dosing-tank-bunded-100l",
         "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs"
       ],
@@ -17434,11 +17351,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "12cm-bathroom-mixer-tap-in-polished-chrome",
-        "16cm-bathroom-mixer-tap-in-polished-chrome",
-        "bathroom-water-saving-round-shower-set-round-rainfall-head-shower-wels-watermark"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -17643,7 +17556,6 @@
     "upsells": {
       "boughtTogether": [
         "3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c",
-        "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel",
         "under-sink-water-filter-5-stage-reverse-osmosis-system"
       ],
       "moreInCategory": "auto"
@@ -17986,11 +17898,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "pull-down-spray-tap-kitchen-mixer-in-brushed-nickel",
-        "spring-loaded-tap-kitchen-mixer-in-brushed-nickel",
-        "gooseneck-kitchen-mixer-tap-in-polished-chrome"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -18096,11 +18004,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "pull-down-modern-kitchen-tap-mixer-in-brushed-nickel",
-        "spring-loaded-tap-kitchen-mixer-in-brushed-nickel",
-        "gooseneck-kitchen-mixer-tap-in-polished-chrome"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -18220,7 +18124,6 @@
     },
     "upsells": {
       "boughtTogether": [
-        "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel",
         "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel",
         "tall-spring-loaded-kitchen-mixer-with-pull-out-spray-in-polished-chrome"
       ],
@@ -18331,11 +18234,7 @@
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "16cm-bathroom-mixer-tap-in-polished-chrome",
-        "12cm-bathroom-mixer-tap-in-polished-chrome",
-        "12cm-bathroom-mixer-tap-in-polished-chrome-extended-sprout"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
@@ -19144,8 +19043,7 @@
     "upsells": {
       "boughtTogether": [
         "100l-vertical-solar-system-water-pressure-tank-expansion-tank-with-legs",
-        "water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond",
-        "commercial-reverse-osmosis-ro-desalination-plant-ro-1500-lpd-400gpd"
+        "water-pressure-tank-vessel-50l-steel-drinking-water-compatible-bladder-almond"
       ],
       "moreInCategory": "auto"
     },
