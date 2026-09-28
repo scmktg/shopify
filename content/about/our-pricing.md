@@ -23,7 +23,7 @@ If you order regularly and want streamlined invoicing, contact us - we can set u
 
 ## What it means for homeowners
 
-You are not paying a retail markup that subsidises trade discounts. The price you see is the price the plumbing-supply store would charge a regular customer, minus the regular retailer's margin. For most products this is 30–50% below mainstream retail.
+You are not paying a retail markup that subsidises trade discounts. The price you see is the price the plumbing-supply store would charge a regular customer, minus the regular retailer's margin. For most products this is 30-50% below mainstream retail.
 
 You also do not need to lie about being a tradie to get the trade price. You do not need to know an installer who will buy on your behalf. The price is the price.
 
