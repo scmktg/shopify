@@ -4260,115 +4260,6 @@
       "ogImage": null
     }
   },
-  "premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic": {
-    "categories": [
-      "cartridges",
-      "sediment"
-    ],
-    "tags": [
-      "twin-pack",
-      "sediment-and-carbon",
-      "10x25",
-      "five-micron",
-      "premium",
-      "under-sink"
-    ],
-    "shortDescription": "Premium 10\" × 2.5\" twin pack - polypropylene spun sediment + coconut carbon block. Replaces both stages of a 2-stage under-sink filter in one purchase.",
-    "description": "The premium twin pack - a polypropylene spun sediment cartridge paired with a coconut activated carbon block, both in the standard 10\" × 2.5\" format. This is the replacement set for any 2-stage under-sink filter, sized to refresh both cartridges in a single order.\n\n## What's in the Pack\n\n**Cartridge 1 - Polypropylene Spun Sediment, 5 micron.** The \"HPF\" (High Performance Filtration) construction uses polypropylene fibres that are spun and melted simultaneously, forming a single continuous structure with no internal centre core. The benefit of no centre core is that water uses the full radial cross-section of the cartridge rather than being constrained by an internal sleeve - which means higher flow at lower pressure drop, longer service life, and no plastic core to leach into the supply.\n\n**Cartridge 2 - Coconut Activated Carbon Block (CTO).** Coconut-shell carbon is the higher-grade carbon source - the activated structure has more surface area per gram than coal-based carbons, with no detectable heavy-metal residuals from the source material. The CTO designation (\"Chlorine, Taste, Odour\") describes what the carbon block is engineered to remove: chlorine, chloramines, taste compounds, and odour from the supply. Block construction (vs granular) gives longer water-to-carbon contact time at the same flow rate, which is what makes it effective.\n\n## Why Premium Over Standard\n\nThe sediment cartridge in this pack is specifically the spun-melt no-centre-core construction, and the carbon is coconut-shell rather than coal-derived. Both upgrades extend cartridge life and improve filtration performance - most noticeable on chlorinated mains supplies where the carbon stage does the heavy lifting. The [standard CTO + sediment 10\" × 2.5\" twin pack](/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr/) is fine for budget replacements; this one is for the customer who wants the cartridge that will last longer and treat the water more thoroughly.\n\n## Where It Fits\n\nFor any 10\" × 2.5\" 2-stage under-sink filter, including the [under-sink 2-stage sediment + carbon](/under-sink-water-filter-2-stage-sediment-carbon/) system. Also suits the first two stages of multi-stage RO systems that use the 10\" × 2.5\" pre-filter format.\n\nReplace as a pair every 6-12 months. The sediment cartridge typically reaches end-of-life first on Australian town water; replacing them together keeps the service interval predictable.",
-    "features": [
-      "2-cartridge pack covers both stages of a 2-stage under-sink filter",
-      "Spun-melt polypropylene sediment with no centre core",
-      "Coconut-shell activated carbon block (CTO) - premium grade vs coal-derived",
-      "Both cartridges 5 micron, 10\" × 2.5\" standard fit",
-      "Removes sediment, chlorine, taste, and odour in one set",
-      "6-12 month replacement interval on typical town water"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Pack contents",
-        "value": "1 × PP sediment + 1 × coconut CTO carbon"
-      },
-      {
-        "label": "Cartridge size",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Micron rating",
-        "value": "5 micron (both)"
-      },
-      {
-        "label": "Lifespan",
-        "value": "6-12 months"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Pack contents",
-        "value": "1 × PP sediment + 1 × coconut CTO carbon block"
-      },
-      {
-        "label": "Cartridge size",
-        "value": "10\" × 2.5\""
-      },
-      {
-        "label": "Sediment construction",
-        "value": "Polypropylene spun-melt, no centre core"
-      },
-      {
-        "label": "Carbon source",
-        "value": "Coconut-shell activated carbon"
-      },
-      {
-        "label": "Carbon format",
-        "value": "Block (CTO)"
-      },
-      {
-        "label": "Micron rating",
-        "value": "5 micron (both stages)"
-      },
-      {
-        "label": "Lifespan",
-        "value": "6-12 months"
-      },
-      {
-        "label": "Application",
-        "value": "2-stage under-sink filters and RO pre-filtration"
-      }
-    ],
-    "recommendedFor": [
-      "Replacement pack for 2-stage under-sink filters",
-      "Pre-filter stages 1 + 2 of multi-stage RO systems",
-      "Households on chlorinated mains wanting premium carbon over standard",
-      "Annual or six-monthly cartridge service for 10\" × 2.5\" systems"
-    ],
-    "compliance": {
-      "watermark": {
-        "status": "not_required",
-        "licenceNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": "Replacement cartridge pack - not subject to WaterMark certification."
-    },
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "under-sink-water-filter-2-stage-sediment-carbon",
-        "polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5",
-        "coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "Premium 10\" × 2.5\" Twin Pack - Coconut Carbon + PP Sediment | Enviro Aqua",
-      "description": "Premium 2-cartridge pack: spun-melt PP sediment + coconut CTO carbon block. Both 10\" × 2.5\", 5 micron. Replaces both stages of a 2-stage under-sink filter.",
-      "ogImage": null
-    }
-  },
   "twin-pair-water-filter-cartridges-carbon-sediment-5-micron-20-x-4-5": {
     "categories": [
       "cartridges",
@@ -10910,7 +10801,7 @@
       "coconut-carbon"
     ],
     "shortDescription": "2-stage bench-top water filter - 5 micron PP sediment + 5 micron coconut-shell carbon block. No plumbing, diverter valve to existing kitchen tap. Best-value bench-top configuration at $69.95.",
-    "description": "A 2-stage bench-top water filter that combines **sediment and carbon treatment** in a compact bench-top housing - no plumbing required, connects to your existing kitchen tap with a diverter valve. The two-stage build handles the contaminant categories that matter most for drinking water (chlorine, sediment) without modifying the property.\n\n## Two-Stage Filtration\n\n- **Stage 1 - 5 micron PP sediment cartridge:** captures dirt, rust, sand, and visible particulate. Protects the carbon stage from clogging on sediment, keeping it focused on chemical adsorption work.\n- **Stage 2 - 5 micron coconut-shell carbon block:** removes chlorine, taste, odour, and a range of organic chemical contaminants. Coconut-shell carbon has higher surface area per gram than coal-based carbon, giving better adsorption capacity at the same cartridge size.\n\nBoth cartridges are standard **10\" × 2.5\" format** - compatible with widely-available replacements, not proprietary to this housing.\n\n## Why This Tier Is the Best-Value Bench-Top\n\nThe 1-stage [carbon-only](/bench-top-water-filter-carbon-1-stage/) and [sediment-only](/bench-top-water-filter-sediment-1-stage/) bench-tops handle one contaminant category each. This 2-stage build handles both - and at $69.95, costs the same as the 1-stage sediment unit and only $20 more than the 1-stage carbon. For most Australian households on chlorinated municipal water, the 2-stage covers everything that matters at a drinking-water tap.\n\n## What's Included\n\n- 2-stage bench-top filtration system with compact housing\n- 5 micron PP sediment cartridge (starter)\n- 5 micron coconut-shell carbon block cartridge (starter)\n- Faucet connection kit with quick diversion valve\n- Instruction manual\n\n## Cartridge Service\n\nReplace each cartridge every 6-12 months. Replacements available as a [twin pair](/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr/), [premium twin pair](/premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic/), or as separate [PP sediment](/polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5/) and [coconut carbon block](/coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5/) singles.\n\n## How a Bench-Top Filter Connects\n\nThe diverter valve fits the kitchen tap spout. Flip the diverter when you want filtered water - tap flow redirects through the bench-top housing and out the filter's own dispensing tap. Flip it back for plain tap flow (filling pots, washing up). When you move out, you take the filter with you - no permanent install.",
+    "description": "A 2-stage bench-top water filter that combines **sediment and carbon treatment** in a compact bench-top housing - no plumbing required, connects to your existing kitchen tap with a diverter valve. The two-stage build handles the contaminant categories that matter most for drinking water (chlorine, sediment) without modifying the property.\n\n## Two-Stage Filtration\n\n- **Stage 1 - 5 micron PP sediment cartridge:** captures dirt, rust, sand, and visible particulate. Protects the carbon stage from clogging on sediment, keeping it focused on chemical adsorption work.\n- **Stage 2 - 5 micron coconut-shell carbon block:** removes chlorine, taste, odour, and a range of organic chemical contaminants. Coconut-shell carbon has higher surface area per gram than coal-based carbon, giving better adsorption capacity at the same cartridge size.\n\nBoth cartridges are standard **10\" × 2.5\" format** - compatible with widely-available replacements, not proprietary to this housing.\n\n## Why This Tier Is the Best-Value Bench-Top\n\nThe 1-stage [carbon-only](/bench-top-water-filter-carbon-1-stage/) and [sediment-only](/bench-top-water-filter-sediment-1-stage/) bench-tops handle one contaminant category each. This 2-stage build handles both - and at $69.95, costs the same as the 1-stage sediment unit and only $20 more than the 1-stage carbon. For most Australian households on chlorinated municipal water, the 2-stage covers everything that matters at a drinking-water tap.\n\n## What's Included\n\n- 2-stage bench-top filtration system with compact housing\n- 5 micron PP sediment cartridge (starter)\n- 5 micron coconut-shell carbon block cartridge (starter)\n- Faucet connection kit with quick diversion valve\n- Instruction manual\n\n## Cartridge Service\n\nReplace each cartridge every 6-12 months. Replacements available as a [twin pair](/twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr/), [premium twin pair](/twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2/), or as separate [PP sediment](/polypropylene-sediment-water-filter-pp-5-micron-10-x-2-5/) and [coconut carbon block](/coconut-activated-carbon-water-filter-cto-5-micron-10-x-2-5/) singles.\n\n## How a Bench-Top Filter Connects\n\nThe diverter valve fits the kitchen tap spout. Flip the diverter when you want filtered water - tap flow redirects through the bench-top housing and out the filter's own dispensing tap. Flip it back for plain tap flow (filling pots, washing up). When you move out, you take the filter with you - no permanent install.",
     "features": [
       "2-stage bench-top filter - sediment + carbon, no plumbing required",
       "5 micron PP sediment cartridge + 5 micron coconut carbon block",
@@ -11003,7 +10894,7 @@
     "upsells": {
       "boughtTogether": [
         "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr",
-        "premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic",
+        "twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2",
         "diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters"
       ],
       "moreInCategory": "auto"
@@ -14675,7 +14566,7 @@
       "boughtTogether": [
         "under-sink-water-filter-3-stage-sediment-carbon-alkaline",
         "twin-pair-of-water-filter-cartridges-carbon-cto-plus-sediment-pp-10-x-2-5-5-micr",
-        "premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic"
+        "twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2"
       ],
       "moreInCategory": "auto"
     },
