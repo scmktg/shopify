@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { CartProvider } from '@/components/cart/CartProvider';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
 import {
   localBusinessSchema,
   organisationSchema,
@@ -52,6 +53,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           children
         ) : (
           <>
+            <GoogleAnalytics />
             <JsonLdScript
               data={[
                 organisationSchema(),
