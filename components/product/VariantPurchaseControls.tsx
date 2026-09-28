@@ -4,6 +4,8 @@ import type { Money } from '@/types/product';
 import { AddToCartButton } from '@/components/cart/AddToCartButton';
 import { PriceDisplay } from './PriceDisplay';
 import { useVariantSelection } from './VariantSelectionProvider';
+import { ColourSwatch } from './ColourSwatch';
+import { isColourOptionName } from '@/lib/products/colourSwatches';
 
 interface VariantPurchaseControlsProps {
   fallbackPrice: Money;
@@ -94,21 +96,37 @@ export function VariantPurchaseControls({
                       (variant) => variant.availableForSale,
                     );
 
+                    const colourOption = isColourOptionName(name);
+
                     return (
                       <button
                         key={value}
                         type="button"
                         onClick={() => selectOption(name, value)}
                         aria-pressed={selected}
+                        aria-label={`${normaliseOptionName(name)}: ${value}`}
                         className={
-                          selected
-                            ? 'min-h-11 rounded-md border-2 border-black bg-black px-4 py-2 text-sm font-semibold text-white cursor-pointer'
-                            : available
-                              ? 'min-h-11 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-black hover:border-black cursor-pointer transition-colors'
-                              : 'min-h-11 rounded-md border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-medium text-black/45 line-through cursor-pointer'
+                          colourOption
+                            ? selected
+                              ? 'inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-black bg-white px-3 py-2 text-sm font-semibold text-black cursor-pointer'
+                              : 'inline-flex min-h-11 items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-black hover:border-black cursor-pointer transition-colors'
+                            : selected
+                              ? 'min-h-11 rounded-md border-2 border-black bg-black px-4 py-2 text-sm font-semibold text-white cursor-pointer'
+                              : available
+                                ? 'min-h-11 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-black hover:border-black cursor-pointer transition-colors'
+                                : 'min-h-11 rounded-md border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-medium text-black/45 line-through cursor-pointer'
                         }
                       >
-                        {value}
+                        {colourOption && (
+                          <ColourSwatch
+                            value={value}
+                            selected={selected}
+                            unavailable={!available}
+                          />
+                        )}
+                        <span className={!available && !colourOption ? 'line-through' : ''}>
+                          {value}
+                        </span>
                       </button>
                     );
                   })}
