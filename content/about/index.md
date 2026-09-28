@@ -32,7 +32,7 @@ For everyone else in Australia: orders placed before 12pm AEST on a business day
 ## What you can expect from us
 
 - Real Australian dispatch from the Central Coast NSW - tracked delivery on every order, same-day ship before 12pm AEST.
-- WaterMark certification flagged clearly on every product. Licence numbers visible on the page so a council inspector can verify them on the certifier's register.
+- WaterMark certification is flagged clearly on products recorded as certified. Licence details are shown where they are held in our current records, and customers can use the official WaterMark Product Database for independent verification.
 - Real product information - flow rates, micron ratings, install requirements, cartridge replacement cost. Spec sheets and data, not marketing copy.
 - Replacement cartridges stocked for every system we sell. We do not sell systems we cannot service.
 - A phone number that reaches a real person during business hours: [(02) 8772 8162](tel:+61287728162).
