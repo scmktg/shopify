@@ -65,7 +65,7 @@ interface CategoryViewProps {
   initialProducts: ReadonlyArray<ProductCardData>;
   initialPageInfo: ShopifyPageInfo;
   query: string;
-  categorySlug: string;
+  categorySlug?: string | null;
   activeSubcategory?: string | null;
   initialFilters?: CatalogFilterState;
   pageSize?: number;
@@ -76,14 +76,17 @@ export function CategoryView({
   initialProducts,
   initialPageInfo,
   query,
-  categorySlug,
+  categorySlug = null,
   activeSubcategory = null,
   initialFilters = {},
   pageSize = 24,
   enableSizeFilter = false,
 }: CategoryViewProps) {
   const groups = useMemo(
-    () => getCatalogFilterGroups(categorySlug, activeSubcategory),
+    () =>
+      categorySlug
+        ? getCatalogFilterGroups(categorySlug, activeSubcategory)
+        : [],
     [categorySlug, activeSubcategory],
   );
   const [products, setProducts] = useState<ReadonlyArray<ProductCardData>>(
