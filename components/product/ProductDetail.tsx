@@ -33,7 +33,7 @@ function offersInstallPackage(content: ProductContent): boolean {
 interface ProductDetailProps {
   /** Shopify-sourced commerce primitives (title, price, stock, images, variants, sku, handle). */
   product: Product;
-  /** Content from data/products.json[handle] — every non-commerce field. */
+  /** Content from data/products.json[handle] - every non-commerce field. */
   content: ProductContent;
   category: string;
   subcategory: string;
@@ -190,7 +190,7 @@ export function ProductDetail({
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
               Live on the Central Coast NSW? Get this installed by a local
-              plumber for $2,299 —{' '}
+              plumber for $2,299 -{' '}
               <Link
                 href="/whole-house-installation-package/"
                 className="text-brand-blue font-semibold hover:underline underline-offset-4"
