@@ -1,5 +1,5 @@
 ---
-title: "Our Pricing — Wholesale for Everyone"
+title: "Our Pricing - Wholesale for Everyone"
 description: "One wholesale price for every customer. No trade login, no quotes, no negotiation. The price on the page is the price you pay."
 relatedLinks:
   - { label: "About Enviro Aqua", href: "/about/" }
@@ -7,7 +7,7 @@ relatedLinks:
   - { label: "Shipping & delivery", href: "/shipping/" }
 ---
 
-Most water filter retail in Australia hides the real price behind quotes, trade logins, and "call for pricing" pages. We do not. The price on every product page is the price every customer pays — homeowner, tradie, commercial buyer, or repeat installer. One price for everyone, up front, no negotiation.
+Most water filter retail in Australia hides the real price behind quotes, trade logins, and "call for pricing" pages. We do not. The price on every product page is the price every customer pays - homeowner, tradie, commercial buyer, or repeat installer. One price for everyone, up front, no negotiation.
 
 ## Why we do it this way
 
@@ -19,7 +19,7 @@ We skip all of that. Every customer gets the wholesale price. We make our margin
 
 You do not need an account to get trade pricing. You do not need to apply, send your ABN, prove your trade volume, or wait for approval. You see the price, you order, you get the same wholesale rate as everyone else. No paperwork.
 
-If you order regularly and want streamlined invoicing, contact us — we can set up an account for net-30 terms or bulk-order tracking. The pricing does not change. The account is a convenience, not a price tier.
+If you order regularly and want streamlined invoicing, contact us - we can set up an account for net-30 terms or bulk-order tracking. The pricing does not change. The account is a convenience, not a price tier.
 
 ## What it means for homeowners
 
@@ -29,7 +29,7 @@ You also do not need to lie about being a tradie to get the trade price. You do 
 
 ## No quotes
 
-We do not provide custom quotes. The price on the page is the only price we offer. If you need a system specification we do not list, [contact us](/contact/) and we will tell you which products fit your requirements — at the prices on the page.
+We do not provide custom quotes. The price on the page is the only price we offer. If you need a system specification we do not list, [contact us](/contact/) and we will tell you which products fit your requirements - at the prices on the page.
 
 ## No price-matching
 
