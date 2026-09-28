@@ -138,6 +138,36 @@ export function ShippingTierBlock({
         trailing: <>Shopify checkout will show the available delivery options.</>,
       };
 
+  // Free-delivery products do not need a postcode quote. Show the
+  // benefit immediately instead of making customers open an estimator.
+  if (resolvedTier === 'T5') {
+    return (
+      <div className="mt-4 overflow-hidden rounded border border-gray-200 bg-gray-50 text-sm text-black">
+        <div className="flex min-h-11 items-center gap-2 px-4 py-2.5 font-semibold">
+          <Truck
+            className="h-4 w-4 flex-shrink-0 text-black/70"
+            aria-hidden="true"
+          />
+          <span>Free Delivery Australia Wide</span>
+        </div>
+        <div className="border-t border-gray-200 px-4 py-3">
+          <div className="flex flex-col gap-1.5">
+            <p>{copy.clickAndCollect}</p>
+            <p className="text-black/80">{copy.trailing}</p>
+            <p className="mt-1 text-xs text-black/60">
+              <Link
+                href="/shipping/"
+                className="underline underline-offset-4 hover:text-brand-blue"
+              >
+                See full shipping details
+              </Link>
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <details
       className="group mt-4 overflow-hidden rounded border border-gray-200 bg-gray-50 text-sm text-black"
