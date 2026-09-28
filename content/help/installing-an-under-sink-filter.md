@@ -11,7 +11,7 @@ faq:
   - q: "Will it void my sink warranty if I drill a hole for the filtered tap?"
     a: "Drilling a stainless-steel sink for a dedicated filtered tap is standard practice and does not void typical sink warranties. Drilling a stone benchtop is more involved and may require a stonemason. Many filtered taps mount through an existing pre-cut hole (sink-side soap dispenser hole, for example) so check what you have before assuming you need to drill."
   - q: "How long does an install actually take?"
-    a: "Single-stage carbon filter, existing pre-cut hole for the dedicated tap: 30–45 minutes. Multi-stage system or any drilling required: 1–2 hours. Reverse osmosis with drain saddle and storage tank: 2–3 hours, or hire a plumber. Allow extra time on the first install - every kitchen has its own quirks."
+    a: "Single-stage carbon filter, existing pre-cut hole for the dedicated tap: 30-45 minutes. Multi-stage system or any drilling required: 1-2 hours. Reverse osmosis with drain saddle and storage tank: 2-3 hours, or hire a plumber. Allow extra time on the first install - every kitchen has its own quirks."
   - q: "What do I do if I notice a leak after install?"
     a: "Turn off the cold-water isolation valve under the sink straight away. Most leaks come from push-fit fittings that are not seated fully - disconnect, check the o-ring is intact, push back in until you feel the click. If the leak is at the threaded connection on the cartridge housing, check the o-ring and re-tighten by hand (do not over-tighten). If you cannot find the leak after a quick check, call a plumber."
 ---
