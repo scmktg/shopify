@@ -7,9 +7,15 @@ import clsx from 'clsx';
 import { PriceDisplay } from '@/components/product/PriceDisplay';
 import { useCart } from './CartProvider';
 import { CartLineRow } from './CartLineRow';
+import { trackViewCart } from '@/lib/analytics/client';
 
 export function CartDrawer() {
   const { cart, isOpen, closeDrawer, error } = useCart();
+
+  useEffect(() => {
+    if (!isOpen || !cart || cart.lines.length === 0) return;
+    trackViewCart(cart);
+  }, [isOpen, cart]);
 
   useEffect(() => {
     if (!isOpen) return;
