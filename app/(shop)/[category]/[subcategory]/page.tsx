@@ -30,7 +30,7 @@ export async function generateMetadata({
   if (!node) return {};
   const description =
     getSubcategoryMetaDescription(category, subcategory) ??
-    `${node.subcategory.label} in our ${node.category.label.toLowerCase()} range — wholesale prices, Australia-wide delivery, and free Click & Collect from Wyong NSW.`;
+    `${node.subcategory.label} in our ${node.category.label.toLowerCase()} range - wholesale prices, Australia-wide delivery, and free Click & Collect from Wyong NSW.`;
   return {
     title: `${node.subcategory.label} | ${node.category.label}`,
     description,
