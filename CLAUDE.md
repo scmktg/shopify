@@ -1,3 +1,5 @@
+> **Start here:** Read `ARCHITECTURE-AND-OPERATIONS.md` before changing Shopify integration, product data, shipping, checkout, or deployment behavior. It is the primary operational source of truth.
+
 # Instructions for Claude
 
 You are working on a from-scratch rebuild of an Australian water filtration ecommerce store. This file orients you. **Read it fully before taking any action.**
