@@ -207,7 +207,7 @@ export function ProductDetail({
 
       <PdpReviewsSlot productHandle={product.handle} />
 
-      <BrandTrustStrip />
+      <BrandTrustStrip category={category} subcategory={subcategory} />
 
       <VariantMobileStickyBuyBar
         fallbackPrice={product.priceRange.minVariantPrice}
