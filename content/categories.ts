@@ -34,7 +34,6 @@ export const CATEGORIES: ReadonlyArray<Category> = [
       { slug: 'uv-sterilisation', label: 'UV Sterilisation' },
       { slug: 'bench-top', label: 'Bench Top' },
       { slug: 'commercial', label: 'Commercial' },
-      { slug: 'parts', label: 'Parts' },
     ],
   },
   {
@@ -76,6 +75,7 @@ export const CATEGORIES: ReadonlyArray<Category> = [
       { slug: 'ro-filter-taps', label: 'RO Filter Taps' },
       { slug: 'toilets', label: 'Toilets' },
       { slug: 'bundles', label: 'Bundles' },
+      { slug: 'parts', label: 'Parts' },
     ],
   },
 ];
