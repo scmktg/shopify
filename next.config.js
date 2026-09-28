@@ -436,7 +436,7 @@ const WORDPRESS_CATEGORY_REDIRECTS = [
   ['/product-category/bathroom-taps', '/plumbing/bathroom-taps'],
   ['/product-category/toilets', '/plumbing/toilets'],
   ['/product-category/bundles', '/plumbing/bundles'],
-  ['/product-category/fittings-parts', '/water-filters/parts'],
+  ['/product-category/fittings-parts', '/plumbing/parts'],
   ['/product-category/installation-packages', '/whole-house-installation-package'],
   ['/product-category/taps', '/plumbing'],
   ['/product-category/basins', '/plumbing/bathroom-taps'],
@@ -444,8 +444,8 @@ const WORDPRESS_CATEGORY_REDIRECTS = [
   ['/product-category/cabinets', '/plumbing'],
   ['/product-category/mirrors', '/plumbing'],
   ['/product-category/showers', '/plumbing/bathroom-taps'],
-  ['/product-category/plumbing-parts', '/water-filters/parts'],
-  ['/product-category/accessories', '/water-filters/parts'],
+  ['/product-category/plumbing-parts', '/plumbing/parts'],
+  ['/product-category/accessories', '/plumbing/parts'],
 ];
 
 const WORDPRESS_UTILITY_REDIRECTS = [
@@ -565,6 +565,7 @@ const nextConfig = {
     ];
 
     const SUBCAT_REDIRECTS = [
+      ['/water-filters/parts', '/plumbing/parts'],
       ['/cartridges/post-carbon-t33', '/cartridges/specialty-cartridges'],
       ['/cartridges/alkaline', '/cartridges/specialty-cartridges'],
       ['/cartridges/fluoride-removal', '/cartridges/specialty-cartridges'],
