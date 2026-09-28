@@ -36,7 +36,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How long does installation take?',
-    a: 'Most standard whole-house installs take 2–3 hours on site. The plumber confirms a time window with you in advance. If the plumbing access turns out to be unusual on the day, the plumber will discuss options before doing extra work.',
+    a: 'Most standard whole-house installs take 2-3 hours on site. The plumber confirms a time window with you in advance. If the plumbing access turns out to be unusual on the day, the plumber will discuss options before doing extra work.',
   },
   {
     q: 'What if my installation has unusual requirements?',
@@ -44,7 +44,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Do I pay upfront?',
-    a: 'No. Submit the form, we email you within 1–2 business days with confirmed install time options. Once you accept the time, we send a Shopify invoice. Once that is paid, the install is locked in and the plumber turns up on the agreed date.',
+    a: 'No. Submit the form, we email you within 1-2 business days with confirmed install time options. Once you accept the time, we send a Shopify invoice. Once that is paid, the install is locked in and the plumber turns up on the agreed date.',
   },
   {
     q: 'What is the warranty on the product and the install?',
@@ -118,7 +118,7 @@ const PROPERTY_FIT = [
 
 const HOW_IT_WORKS = [
   'Submit your details below - takes 60 seconds.',
-  'We arrange a time with our local plumber and email you within 1–2 business days.',
+  'We arrange a time with our local plumber and email you within 1-2 business days.',
   'You confirm the time. We send an invoice.',
   'Once paid, your install is locked in. The plumber turns up, fits it, you have filtered water at every tap.',
 ];
@@ -297,7 +297,7 @@ export default async function InstallPackagePage() {
               Get a quote
             </h2>
             <p className="mt-2 text-sm text-black/70">
-              Takes about 60 seconds. We&apos;ll come back to you within 1–2
+              Takes about 60 seconds. We&apos;ll come back to you within 1-2
               business days.
             </p>
             <InstallationLeadForm productUrl={PRODUCT_PATH} />
