@@ -1,28 +1,22 @@
 import Link from 'next/link';
 import { Truck } from 'lucide-react';
-import type { ShippingClass, ShippingTier } from '@/types/product';
+import type { ShippingTier } from '@/types/product';
 
 interface ShippingTierBlockProps {
   /**
    * Legacy prop retained during the Shopify metafield migration.
    * T1–T4 map to parcel, T5 to free, T6 to freight and T7 to pickup_only.
    */
-  tier: ShippingTier | ShippingClass | null;
+  tier: ShippingTier | null;
   productHandle: string;
 }
 
+type ResolvedShippingClass = 'parcel' | 'free' | 'freight' | 'pickup_only';
+
 function resolveShippingClass(
-  value: ShippingTier | ShippingClass | null,
-): ShippingClass | null {
+  value: ShippingTier | null,
+): ResolvedShippingClass | null {
   if (!value) return null;
-  if (
-    value === 'parcel' ||
-    value === 'free' ||
-    value === 'freight' ||
-    value === 'pickup_only'
-  ) {
-    return value;
-  }
   if (value === 'T5') return 'free';
   if (value === 'T6') return 'freight';
   if (value === 'T7') return 'pickup_only';
