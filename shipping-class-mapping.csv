@@ -1,0 +1,8 @@
+shipping_class,category,sub_category,rule_of_thumb,notes
+parcel,Cartridges,Most cartridges and cartridge sets,Normal shippable items up to 22kg,Final rate comes from packed weight and destination
+parcel,Plumbing,Taps and small fittings,Normal parcel items,Use packed weight rather than a tier proxy
+parcel,Pumps & Tanks,Small pumps and components,Normal parcel items,Review anything over 22kg or awkward
+parcel,Water Filters,Under-sink and other parcel-sized systems,Normal parcel items,Checkout rate varies by packed weight and destination
+free,Selected products,Product-specific free delivery,Only use when deliberately assigned in Shopify,Do not infer from category or weight
+freight,Large or heavy products,Bulky commercial equipment tanks and selected coolers,Use state-based bulky freight profile,NT requires quote
+pickup_only,Fragile bathroom products,Toilets and selected bathroom packages,No standard delivery,Free local pickup from Wyong
