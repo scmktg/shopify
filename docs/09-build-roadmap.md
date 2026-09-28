@@ -67,8 +67,7 @@ This roadmap sequences the build into milestones. Each milestone has a clear "do
 
 - [x] CartProvider with localStorage persistence and single-flight
   cart creation
-- [x] Cart drawer with line items, quantity stepper, free-shipping
-  progress bar, subtotal, checkout link
+- [x] Cart drawer with line items, quantity stepper, subtotal, and checkout link
 - [x] Empty state in drawer + on `/cart`
 - [x] Full-page `/cart` route
 - [x] Cart token rehydration on mount; expired tokens silently cleared
@@ -168,9 +167,7 @@ These need attention before launch:
   /locations/central-coast-nsw/ all render the real values.
 - Returns policy corrected to 14 days from delivery, damaged or
   faulty only (was incorrectly listed as 30-day change-of-mind).
-- Shipping rates updated from a single placeholder to the real
-  tiered Standard / Express structure plus free Click & Collect
-  from the Wyong showroom.
+- Shipping model updated to the live four-class structure: Parcel, Free Delivery, Bulky Freight, and Pickup Only, with Shopify checkout authoritative for final rates and free Click & Collect from Wyong.
 - Same-day dispatch cutoff corrected from 1pm AEST → 12pm AEST.
 - LocalBusiness JSON-LD now emitted sitewide from `app/layout.tsx`
   with the real address, phone, openingHours, and social sameAs
