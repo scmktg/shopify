@@ -24,6 +24,7 @@ import { VariantBuyBanner } from './VariantBuyBanner';
 import { VariantMobileStickyBuyBar } from './VariantMobileStickyBuyBar';
 import { ThreeWayTapHeroBenefits } from './ThreeWayTapHeroBenefits';
 import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
+import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const THREE_WAY_TAP_HANDLE =
@@ -68,6 +69,14 @@ export function ProductDetail({
       variants={product.variants}
       initialVariantId={initialVariantId}
     >
+      <ProductViewTracker
+        itemId={product.handle}
+        itemName={product.title}
+        price={Number.parseFloat(product.priceRange.minVariantPrice.amount)}
+        currency={product.priceRange.minVariantPrice.currencyCode}
+        category={subcategoryLabel}
+        brand={product.vendor || 'Enviro Aqua'}
+      />
       <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
       <nav
         aria-label="Breadcrumb"
