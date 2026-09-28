@@ -21,14 +21,14 @@ interface WatermarkBadgeProps extends BadgeProps {
  * Twin compliance badges shown together in the buy box.
  *
  * Both are the same red rectangular pill, same height, same
- * typography — so when rendered side by side they read as a paired
+ * typography - so when rendered side by side they read as a paired
  * trust set. Red comes from the scoped `--color-wmk-red` token,
  * which is the single permitted exception to the blue-only accent
  * rule (see `docs/05-design-system.md`).
  *
  * `WatermarkBadge` renders when the product is WaterMark certified.
  * `LeadFreeBadge` renders independently when the product's specs
- * declare it lead-free — see `isLeadFree`. They can appear together
+ * declare it lead-free - see `isLeadFree`. They can appear together
  * or alone; nothing assumes one implies the other.
  *
  * The official WMK mark is served from `/public/watermark.png`.
@@ -56,7 +56,7 @@ export function WatermarkBadge({ className, href }: WatermarkBadgeProps) {
     return (
       <Link
         href={href}
-        aria-label="WaterMark certified — see all WaterMark certified products"
+        aria-label="WaterMark certified - see all WaterMark certified products"
         className={clsx(
           BADGE_BASE_CLASSES,
           'transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-wmk-red',
