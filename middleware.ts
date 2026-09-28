@@ -24,6 +24,7 @@ const GONE_PREFIXES = [
   '/wp-admin',
   '/wp-json',
   '/colour/',
+  '/shop/page',
   '/brand/',
   '/category/',
   '/tag/',
