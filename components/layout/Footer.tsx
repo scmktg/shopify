@@ -58,14 +58,14 @@ export function Footer() {
   return (
     <footer className="bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <Link href="/" aria-label="Enviro Aqua - home" className="inline-block mb-8">
+        <Link href="/" aria-label="Enviro Aqua - home" className="relative z-10 inline-block shrink-0 mb-8 cursor-pointer">
           <Image
             src="/logo.webp"
             alt="Enviro Aqua"
             width={160}
             height={40}
             loading="lazy"
-            className="h-10 w-auto"
+            className="pointer-events-none select-none h-10 w-auto"
           />
         </Link>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
