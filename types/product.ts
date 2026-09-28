@@ -50,6 +50,7 @@ export interface ProductVariant {
   quantityAvailable: number | null;
   price: Money;
   compareAtPrice: Money | null;
+  image: ProductImage | null;
   selectedOptions: ReadonlyArray<SelectedOption>;
 }
 
