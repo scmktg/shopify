@@ -43,6 +43,45 @@ const GONE_PREFIXES = [
 
 const GONE_EXACT = new Set(['/wp-login.php', '/xmlrpc.php']);
 
+// WooCommerce query parameters from the retired WordPress storefront.
+// Next.js preserves incoming query strings across redirects, so a legacy
+// URL such as /product-category/water-filters/?filter_filter=carbon can
+// otherwise become /water-filters?filter_filter=carbon on the new site.
+// Strip only these known legacy keys; current parameters such as ?after=
+// for catalogue pagination and marketing UTMs are intentionally preserved.
+const LEGACY_WOOCOMMERCE_QUERY_KEYS = new Set([
+  'orderby',
+  'shop_view',
+  'per_page',
+  'per_row',
+  'add-to-cart',
+  'min_price',
+  'max_price',
+  'rating_filter',
+]);
+
+function isLegacyWooCommerceQueryKey(key: string): boolean {
+  return (
+    LEGACY_WOOCOMMERCE_QUERY_KEYS.has(key) ||
+    key.startsWith('filter_') ||
+    key.startsWith('query_type_')
+  );
+}
+
+function stripLegacyWooCommerceQuery(request: NextRequest): NextResponse | null {
+  const cleanUrl = request.nextUrl.clone();
+  let removed = false;
+
+  for (const key of Array.from(cleanUrl.searchParams.keys())) {
+    if (!isLegacyWooCommerceQueryKey(key)) continue;
+    cleanUrl.searchParams.delete(key);
+    removed = true;
+  }
+
+  if (!removed) return null;
+  return NextResponse.redirect(cleanUrl, 308);
+}
+
 function isGone(pathname: string): boolean {
   if (GONE_EXACT.has(pathname)) return true;
   for (const prefix of GONE_PREFIXES) {
@@ -68,6 +107,9 @@ export function middleware(request: NextRequest) {
   if (isGone(pathname)) {
     return new NextResponse(null, { status: 410 });
   }
+
+  const legacyQueryRedirect = stripLegacyWooCommerceQuery(request);
+  if (legacyQueryRedirect) return legacyQueryRedirect;
 
   // Gate admin pages: unauthenticated traffic gets bounced to /admin/login.
   // The login page itself, and any auth-related sub-routes, stay reachable.
