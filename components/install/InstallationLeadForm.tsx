@@ -88,7 +88,7 @@ export function InstallationLeadForm({ productUrl }: InstallationLeadFormProps) 
         className="mt-6 p-6 border border-gray-200 rounded bg-gray-50"
       >
         <h3 className="text-lg font-semibold text-black">
-          Thanks — we&apos;ve got your details.
+          Thanks - we&apos;ve got your details.
         </h3>
         <p className="mt-3 text-base text-black/80">
           We&apos;ll be in touch within 1–2 business days to confirm a time with
@@ -109,7 +109,7 @@ export function InstallationLeadForm({ productUrl }: InstallationLeadFormProps) 
 
   return (
     <form onSubmit={onSubmit} noValidate className="mt-6 space-y-4">
-      {/* Honeypot — hidden from real users, visible to naive bots. */}
+      {/* Honeypot - hidden from real users, visible to naive bots. */}
       <div
         aria-hidden="true"
         className="hidden"
@@ -249,7 +249,7 @@ export function InstallationLeadForm({ productUrl }: InstallationLeadFormProps) 
           className="p-4 border border-gray-200 rounded bg-gray-50 text-sm text-black"
         >
           The Whole House Install Package is currently NSW Central Coast only.
-          You can still buy the filter on its own at $1,199.95 —{' '}
+          You can still buy the filter on its own at $1,199.95 -{' '}
           <Link
             href={productUrl}
             className="text-brand-blue hover:underline underline-offset-4"
