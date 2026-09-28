@@ -61,7 +61,7 @@ const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'What are your opening hours?',
-    a: 'The Wyong showroom is open Monday to Friday, 9am to 5pm AEST. We are closed on weekends and public holidays.',
+    a: 'The Wyong showroom is open Monday to Friday, 9am to 3pm AEST. We are closed on weekends and public holidays.',
   },
   {
     q: 'Do you offer Click & Collect?',
@@ -148,7 +148,7 @@ export default function ShowroomPage() {
                   Hours
                 </dt>
                 <dd className="mt-1 text-base text-black">
-                  Mon-Fri 9am-5pm AEST · Closed weekends
+                  Mon-Fri 9am-3pm AEST · Closed weekends
                 </dd>
               </div>
             </dl>
