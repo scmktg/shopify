@@ -8,6 +8,7 @@ import {
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
+import { WaterFilterStageGuide } from '@/components/category/WaterFilterStageGuide';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import {
   breadcrumbSchema,
@@ -79,6 +80,10 @@ export default async function SubcategoryPage({
         subcategories={node.category.subcategories}
         activeSubSlug={node.subcategory.slug}
       />
+      {category === 'water-filters' &&
+        (subcategory === 'under-sink' || subcategory === 'reverse-osmosis') && (
+          <WaterFilterStageGuide subcategory={subcategory} />
+        )}
       <CategoryView
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
