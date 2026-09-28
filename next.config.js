@@ -561,7 +561,12 @@ const nextConfig = {
       [
         '/plumbing/ro-filter-taps/3-way-kitchen-tap-for-ro-water-filters-mixer-in-shiny-gold',
         '/plumbing/ro-filter-taps/3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
-      ],
+      ],      ['/water-filters/bench-top/diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps', '/plumbing/parts/diverter-valve-tap-rubber-connector-adapter-to-fit-benchtop-to-old-taps'],
+      ['/water-filters/bench-top/diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters', '/plumbing/parts/diverter-valve-tap-connector-for-1-4-tube-benchtop-countertop-water-filters'],
+      ['/water-filters/bench-top/diverter-valve-tap-connector-for-1-4-tube-benchtop-water-filters', '/plumbing/parts/diverter-valve-tap-connector-for-1-4-tube-benchtop-water-filters'],
+      ['/water-filters/whole-house/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5', '/cartridges/cartridge-sets/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-2-5'],
+      ['/water-filters/whole-house/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5', '/cartridges/cartridge-sets/whole-house-water-filter-replacement-set-3-stage-5-micron-20-x-4-5'],
+
     ];
 
     const SUBCAT_REDIRECTS = [
