@@ -9,15 +9,15 @@ relatedLinks:
   - { label: "Chlorine and taste removal", href: "/water-problems/chlorine-and-taste/" }
 faq:
   - q: "How close is the Wyong showroom?"
-    a: "We are in Wyong itself — 6/45 Amsterdam Cct, Wyong, NSW 2259. Tuggerah is about 5 minutes north on the Pacific Highway. Click & Collect is free, no waiting on delivery, and orders placed during business hours are usually ready for pickup within two hours."
+    a: "We are in Wyong itself - 6/45 Amsterdam Cct, Wyong, NSW 2259. Tuggerah is about 5 minutes north on the Pacific Highway. Click & Collect is free, no waiting on delivery, and orders placed during business hours are usually ready for pickup within two hours."
   - q: "What is the mains water like in Tuggerah and Wyong?"
     a: "The same Central Coast Council supply as the rest of the Coast. Source water comes from Mangrove Creek Dam in the hinterland, fed by the Wyong River and Ourimbah Creek. Chlorinated for disinfection, not chloramine. The most common complaint is chlorine taste, which a basic carbon filter removes."
-  - q: "I'm in a new Tuggerah Lakes estate — do I need anything more than a basic filter?"
+  - q: "I'm in a new Tuggerah Lakes estate - do I need anything more than a basic filter?"
     a: "Probably not. New estate plumbing is clean PEX or copper and the water arriving at your tap is the same as elsewhere on the Coast. A single-stage carbon under-sink filter handles chlorine for the kitchen. If you want filtered shower water as well, step up to a whole-house system; otherwise the under-sink filter is enough."
-  - q: "I'm on a rural block out toward Yarramalong or Wyong Creek — what setup?"
+  - q: "I'm on a rural block out toward Yarramalong or Wyong Creek - what setup?"
     a: "Most properties out there are on rainwater tanks. The standard NSW Health treatment train for tank water is sediment removal, carbon filtration, and UV sterilisation. We sell each stage individually or as packaged three-stage systems. See the rural tank water page for the full configuration."
   - q: "Do you offer trade pricing for local plumbers?"
-    a: "There is only one price and it is the same for everyone — retail, trade, commercial. Local installers ordering regularly can set up an account for streamlined ordering, but the price does not change."
+    a: "There is only one price and it is the same for everyone - retail, trade, commercial. Local installers ordering regularly can set up an account for streamlined ordering, but the price does not change."
 ---
 
 Wyong is where our warehouse and showroom are. Tuggerah is about 5 minutes up the Pacific Highway. Together they cover the northern half of the Central Coast service area, plus the rural blocks heading west into the hinterland.
@@ -30,11 +30,11 @@ Wyong, Tuggerah, Tuggerawong, Berkeley Vale, Killarney Vale, Long Jetty, The Ent
 
 Mains water comes from Central Coast Council. The Wyong River and Ourimbah Creek feed Mangrove Creek Dam, which supplies most of the LGA. Water is treated, chlorinated to meet the Australian Drinking Water Guidelines, and delivered at standard mains pressure.
 
-For most local households the only complaint is the chlorine taste. A two-stage carbon under-sink filter handles it for the kitchen drinking tap. A whole-house system handles it for every outlet — kitchen, shower, washing machine, outside hose.
+For most local households the only complaint is the chlorine taste. A two-stage carbon under-sink filter handles it for the kitchen drinking tap. A whole-house system handles it for every outlet - kitchen, shower, washing machine, outside hose.
 
 ## Rural blocks heading west
 
-A lot of Central Coast properties west of the M1 are on rainwater tanks rather than mains. That covers a wide area — Jilliby, Yarramalong, Wyong Creek, Kulnura, Mangrove Mountain. Tank water needs a different setup:
+A lot of Central Coast properties west of the M1 are on rainwater tanks rather than mains. That covers a wide area - Jilliby, Yarramalong, Wyong Creek, Kulnura, Mangrove Mountain. Tank water needs a different setup:
 
 - **Sediment cartridge** to catch grit, organic matter, and the occasional leaf bit that makes it through the tank inlet screen.
 - **Carbon cartridge** for taste and to polish out any pump or pipe odours.
