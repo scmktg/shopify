@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const INTRO =
-  'Pick the problem you are trying to solve. Each page explains what causes it, the methods that actually work, and the products we stock for it. Be specific about your water — different problems need different products.';
+  'Pick the problem you are trying to solve. Each page explains what causes it, the methods that actually work, and the products we stock for it. Be specific about your water - different problems need different products.';
 
 export default async function WaterProblemsHub() {
   const items = await listSectionPages('water-problems');
