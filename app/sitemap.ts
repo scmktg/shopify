@@ -12,26 +12,24 @@ export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteUrl();
-  const now = new Date();
-
   const staticEntries: MetadataRoute.Sitemap = [
-    { url: `${base}/`, lastModified: now, changeFrequency: 'daily', priority: 1 },
-    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/about/our-pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/shipping`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/returns`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/help`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/help/which-filter`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/use`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/water-problems`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/locations`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/showroom`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/reviews`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
-    { url: `${base}/whole-house-installation-package`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/watermark-certified`, lastModified: now, changeFrequency: 'daily', priority: 0.7 },
+    { url: `${base}/`, changeFrequency: 'daily', priority: 1 },
+    { url: `${base}/about`, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/about/our-pricing`, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/contact`, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/shipping`, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/returns`, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/privacy`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/help`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/help/which-filter`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/use`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/water-problems`, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/locations`, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/showroom`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/reviews`, changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${base}/whole-house-installation-package`, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/watermark-certified`, changeFrequency: 'daily', priority: 0.7 },
   ];
 
   const editorialSections: ReadonlyArray<{
@@ -50,7 +48,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const slug of slugs) {
       editorialEntries.push({
         url: `${base}/${section}/${slug}`,
-        lastModified: now,
         changeFrequency: 'monthly',
         priority,
       });
@@ -73,8 +70,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const subslug = file.replace(/\.md$/, '');
         editorialEntries.push({
           url: `${base}/${section}/${entry.name}/${subslug}`,
-          lastModified: now,
-          changeFrequency: 'monthly',
+            changeFrequency: 'monthly',
           priority: priority - 0.1,
         });
       }
@@ -85,13 +81,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     (category) => [
       {
         url: `${base}/${category.slug}`,
-        lastModified: now,
         changeFrequency: 'daily' as const,
         priority: 0.8,
       },
       ...category.subcategories.map((sub) => ({
         url: `${base}/${category.slug}/${sub.slug}`,
-        lastModified: now,
         changeFrequency: 'daily' as const,
         priority: 0.7,
       })),
