@@ -139,15 +139,26 @@ export function ShippingTierBlock({
       };
 
   return (
-    <section
-      aria-label="Shipping for this product"
-      className="mt-6 p-4 border border-gray-200 rounded bg-gray-50 text-sm text-black"
+    <details
+      className="group mt-4 overflow-hidden rounded border border-gray-200 bg-gray-50 text-sm text-black"
     >
-      <div className="flex items-start gap-3">
-        <Truck
-          className="h-4 w-4 mt-1 flex-shrink-0 text-black/70"
+      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2.5 font-semibold hover:bg-gray-100 [&::-webkit-details-marker]:hidden">
+        <span className="flex items-center gap-2">
+          <Truck
+            className="h-4 w-4 flex-shrink-0 text-black/70"
+            aria-hidden="true"
+          />
+          {resolvedTier === 'T7' ? 'Pickup information' : 'Check shipping price'}
+        </span>
+        <span
           aria-hidden="true"
-        />
+          className="text-lg font-normal leading-none text-black/50 transition-transform group-open:rotate-45"
+        >
+          +
+        </span>
+      </summary>
+
+      <div className="border-t border-gray-200 px-4 py-3">
         <div className="flex flex-col gap-1.5">
           <p>{copy.lead}</p>
           <p className="text-black/80">{copy.clickAndCollect}</p>
@@ -165,6 +176,5 @@ export function ShippingTierBlock({
           </p>
         </div>
       </div>
-    </section>
+    </details>
   );
-}
