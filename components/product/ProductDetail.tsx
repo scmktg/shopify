@@ -3,8 +3,6 @@ import { ChevronRight } from 'lucide-react';
 import type { Product } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
-import { ProductGallery } from './ProductGallery';
-import { PriceDisplay } from './PriceDisplay';
 import { CertificationSlot } from './CertificationSlot';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
@@ -13,16 +11,17 @@ import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
 import { FullSpecs } from './FullSpecs';
 import { ComplianceSection } from './ComplianceSection';
-import { BuyBanner } from './BuyBanner';
 import { BoughtTogether } from './BoughtTogether';
 import { MoreInCategory } from './MoreInCategory';
 import { BrandTrustStrip } from './BrandTrustStrip';
 import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
-import { AddToCartButton } from '@/components/cart/AddToCartButton';
-import { MobileStickyBuyBar } from '@/components/cart/MobileStickyBuyBar';
-import { ProductTrustBlock, type StockStatus } from './ProductTrustBlock';
 import { ShippingTierBlock } from './ShippingTierBlock';
-import { DEFAULT_LOW_STOCK_THRESHOLD } from '@/lib/site-config';
+import { VariantSelectionProvider } from './VariantSelectionProvider';
+import { VariantProductGallery } from './VariantProductGallery';
+import { VariantPurchaseControls } from './VariantPurchaseControls';
+import { VariantProductTrustBlock } from './VariantProductTrustBlock';
+import { VariantBuyBanner } from './VariantBuyBanner';
+import { VariantMobileStickyBuyBar } from './VariantMobileStickyBuyBar';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 
@@ -52,20 +51,6 @@ export function ProductDetail({
   subcategory,
   familyPaths,
 }: ProductDetailProps) {
-  const firstVariant = product.variants[0];
-  const inStock = firstVariant?.availableForSale ?? false;
-  const compareAt = firstVariant?.compareAtPrice ?? null;
-  const savings = computeSavings(
-    product.priceRange.minVariantPrice,
-    compareAt,
-  );
-  const stockStatus: StockStatus = !inStock
-    ? 'out_of_stock'
-    : firstVariant?.quantityAvailable !== null &&
-        firstVariant?.quantityAvailable !== undefined &&
-        firstVariant.quantityAvailable <= DEFAULT_LOW_STOCK_THRESHOLD
-      ? 'low_stock'
-      : 'in_stock';
   const subcategoryNode = findSubcategory(category, subcategory);
   const subcategoryLabel =
     subcategoryNode?.subcategory.label ?? humaniseSlug(subcategory);
@@ -73,7 +58,8 @@ export function ProductDetail({
   const moreSource = content.upsells?.moreInCategory ?? 'auto';
 
   return (
-    <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
+    <VariantSelectionProvider variants={product.variants}>
+      <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
       <nav
         aria-label="Breadcrumb"
         className="text-sm text-black/70 mb-6 flex items-center gap-2 flex-wrap"
@@ -99,7 +85,7 @@ export function ProductDetail({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div>
-          <ProductGallery images={product.images} title={product.title} />
+          <VariantProductGallery images={product.images} title={product.title} />
         </div>
 
         <div className="md:sticky md:top-24">
@@ -120,34 +106,10 @@ export function ProductDetail({
             {product.title}
           </h1>
 
-          {firstVariant?.sku && (
-            <p className="mt-2 text-sm text-black/60">
-              SKU: <span className="font-mono">{firstVariant.sku}</span>
-            </p>
-          )}
-
-          <div className="mt-4 flex items-baseline justify-between gap-4 flex-wrap">
-            <div className="flex items-baseline gap-2 flex-wrap">
-              <PriceDisplay
-                money={product.priceRange.minVariantPrice}
-                className="text-3xl md:text-4xl font-bold text-black tracking-tight"
-              />
-              <span className="text-sm text-black/50">inc GST</span>
-              {compareAt && (
-                <s className="ml-2 text-base text-black/60">
-                  <PriceDisplay money={compareAt} />
-                </s>
-              )}
-              {savings && (
-                <span className="text-sm font-semibold text-brand-blue">
-                  Save {savings.amount} ({savings.percent}%)
-                </span>
-              )}
-            </div>
-            <span className="text-sm text-black/50">
-              Same price retail or trade
-            </span>
-          </div>
+          <VariantPurchaseControls
+            fallbackPrice={product.priceRange.minVariantPrice}
+            ctaLabel={content.ctas?.primary ?? undefined}
+          />
 
           <div className="mt-4">
             <CertificationSlot content={content} />
@@ -161,31 +123,12 @@ export function ProductDetail({
             />
           )}
 
-          {firstVariant && (
-            <div className="mt-6">
-              <AddToCartButton
-                variantId={firstVariant.id}
-                available={inStock}
-                label={content.ctas?.primary ?? undefined}
-                enableBuyNow
-              />
-            </div>
-          )}
-
           <ShippingTierBlock
             tier={product.metafields.shipping_tier}
             productHandle={product.handle}
-            variantId={firstVariant?.id ?? null}
           />
 
-          {firstVariant && (
-            <ProductTrustBlock
-              productId={product.id}
-              sku={firstVariant.sku}
-              stockStatus={stockStatus}
-              stockCount={firstVariant.quantityAvailable ?? undefined}
-            />
-          )}
+          <VariantProductTrustBlock productId={product.id} />
 
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
@@ -213,14 +156,10 @@ export function ProductDetail({
       <RecommendedFor items={content.recommendedFor} />
       <ComplianceSection compliance={content.compliance} />
 
-      {firstVariant && (
-        <BuyBanner
-          variantId={firstVariant.id}
-          available={inStock}
-          price={product.priceRange.minVariantPrice}
-          ctaLabel={content.ctas?.primary ?? undefined}
-        />
-      )}
+      <VariantBuyBanner
+        fallbackPrice={product.priceRange.minVariantPrice}
+        ctaLabel={content.ctas?.primary ?? undefined}
+      />
 
       {boughtTogether.length > 0 && (
         <BoughtTogether handles={boughtTogether} />
@@ -238,38 +177,14 @@ export function ProductDetail({
 
       <BrandTrustStrip />
 
-      {firstVariant && (
-        <MobileStickyBuyBar
-          variantId={firstVariant.id}
-          available={inStock}
-          price={product.priceRange.minVariantPrice}
-          title={product.title}
-          thumbnail={product.featuredImage ?? product.images[0] ?? null}
-        />
-      )}
-    </article>
+      <VariantMobileStickyBuyBar
+        fallbackPrice={product.priceRange.minVariantPrice}
+        title={product.title}
+        fallbackThumbnail={product.featuredImage ?? product.images[0] ?? null}
+      />
+      </article>
+    </VariantSelectionProvider>
   );
-}
-
-function computeSavings(
-  current: { amount: string; currencyCode: string },
-  compareAt: { amount: string; currencyCode: string } | null,
-): { amount: string; percent: number } | null {
-  if (!compareAt) return null;
-  if (compareAt.currencyCode !== current.currencyCode) return null;
-  const currentValue = Number.parseFloat(current.amount);
-  const compareValue = Number.parseFloat(compareAt.amount);
-  if (!Number.isFinite(currentValue) || !Number.isFinite(compareValue)) {
-    return null;
-  }
-  const diff = compareValue - currentValue;
-  if (diff <= 0) return null;
-  const formatted = new Intl.NumberFormat('en-AU', {
-    style: 'currency',
-    currency: current.currencyCode,
-  }).format(diff);
-  const percent = Math.round((diff / compareValue) * 100);
-  return { amount: formatted, percent };
 }
 
 function humaniseSlug(slug: string): string {
