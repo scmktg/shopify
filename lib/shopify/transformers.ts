@@ -4,6 +4,7 @@ import type {
   Product,
   ProductCardData,
   ProductMetafields,
+  ShippingClass,
   ShippingTier,
   WatermarkStatus,
 } from '@/types/product';
@@ -27,6 +28,13 @@ const INSTALLATION_TYPES: ReadonlyArray<InstallationType> = [
   'inline',
   'countertop',
   'commercial',
+];
+
+const SHIPPING_CLASSES: ReadonlyArray<ShippingClass> = [
+  'parcel',
+  'free',
+  'freight',
+  'pickup_only',
 ];
 
 const SHIPPING_TIERS: ReadonlyArray<ShippingTier> = [
@@ -123,6 +131,14 @@ function asEnum<T extends string>(
   return isOneOf(mf.value, allowed) ? mf.value : null;
 }
 
+function legacyTierToClass(tier: ShippingTier | null): ShippingClass | null {
+  if (!tier) return null;
+  if (tier === 'T5') return 'free';
+  if (tier === 'T6') return 'freight';
+  if (tier === 'T7') return 'pickup_only';
+  return 'parcel';
+}
+
 function buildMetafields(
   raw: ReadonlyArray<ShopifyMetafield | null>,
 ): ProductMetafields {
@@ -149,6 +165,9 @@ function buildMetafields(
     key_benefits: asStringList(m.get('key_benefits')),
     country_of_origin: asString(m.get('country_of_origin')),
     warranty_months: asInt(m.get('warranty_months')),
+    shipping_class:
+      asEnum(m.get('shipping_class'), SHIPPING_CLASSES) ??
+      legacyTierToClass(asEnum(m.get('shipping_tier'), SHIPPING_TIERS)),
     shipping_tier: asEnum(m.get('shipping_tier'), SHIPPING_TIERS),
   };
 }
