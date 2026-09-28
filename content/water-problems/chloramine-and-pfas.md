@@ -12,7 +12,7 @@ faq:
   - q: "Does boiling remove chloramine or PFAS?"
     a: "No, neither. Chloramine is stable when boiled. PFAS are stable at any temperature you would reach in a kitchen."
   - q: "How much does a chloramine-rated whole-house system cost?"
-    a: "Around $500–$900 for a three-stage Big Blue system with catalytic carbon cartridges, plus installation by a licensed plumber. See [whole house cost](/help/whole-house-cost/) for the full breakdown."
+    a: "Around $500-$900 for a three-stage Big Blue system with catalytic carbon cartridges, plus installation by a licensed plumber. See [whole house cost](/help/whole-house-cost/) for the full breakdown."
   - q: "Will a drinking-water filter alone protect me from chloramine?"
     a: "It protects your drinking water, not your shower. If shower exposure is your main concern, you need a whole-house system."
 ---
