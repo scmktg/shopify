@@ -34,7 +34,7 @@ Day to day, an under-sink filter changes a few specific things:
 
 - **The kettle stops growing scale rings** - at least the chlorine-driven part of the discoloration. Hard-water scale still forms unless you also have a scale-control stage.
 - **Tap water actually gets drunk** - kids, visitors, anyone who finds chlorinated tap water off-putting tend to drink more of it once it stops tasting like a swimming pool.
-- **The bottled-water habit dies quietly** - most households cancel their delivery or stop buying 24-packs within a few weeks. Bottled water is $2–$5 per litre; filtered tap water is roughly 5 cents per litre including cartridges.
+- **The bottled-water habit dies quietly** - most households cancel their delivery or stop buying 24-packs within a few weeks. Bottled water is $2-$5 per litre; filtered tap water is roughly 5 cents per litre including cartridges.
 - **Coffee and tea taste cleaner** - filtered water makes a real, blind-test-able difference on lighter teas and pour-over coffee. Espresso less so, but still measurable.
 - **The fridge water dispenser stops being the only "clean" tap** - and you stop replacing the fridge filter on whatever subscription the manufacturer set up.
 
