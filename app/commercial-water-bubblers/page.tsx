@@ -45,7 +45,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     key: 'round',
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
     shortName: 'Round Stainless',
-    tagline: 'Cylindrical SUS304 cabinet — foyers and plazas.',
+    tagline: 'Cylindrical SUS304 cabinet - foyers and plazas.',
     badge: 'Entry model',
     highlights: ['20 L/hr · 8–12 °C', 'SUS304 cylindrical', 'Push-button'],
   },
@@ -55,7 +55,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
       'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
     shortName: 'Square Stainless',
     tagline:
-      'Flush-fit square cabinet — corridors, kitchens, against-wall installs.',
+      'Flush-fit square cabinet - corridors, kitchens, against-wall installs.',
     badge: 'Most popular',
     highlights: ['99 × 30 × 30 cm', 'R290 · 200 W', 'Spout + side tap'],
   },
@@ -63,7 +63,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
     shortName: 'HDPE Granite',
-    tagline: 'Rust-free HDPE cabinet with granite finish — full outdoor.',
+    tagline: 'Rust-free HDPE cabinet with granite finish - full outdoor.',
     badge: 'Outdoor',
     highlights: ['122 × 41 × 41 cm', 'Rust-free HDPE', 'UV stable'],
   },
@@ -122,7 +122,7 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   },
   {
     label: 'Side tap (bottle fill)',
-    values: { round: '—', square: 'Yes', hdpe: 'Yes' },
+    values: { round: '-', square: 'Yes', hdpe: 'Yes' },
     yes: { square: true, hdpe: true },
   },
   {
@@ -157,11 +157,11 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
 const FAQ_ITEMS = [
   {
     q: 'Can my regular plumber install this?',
-    a: 'Yes. All three units are WaterMark certified under WMTS-105:2016, licence 23484 — any licensed Australian plumber can install on a mains supply line and issue a Certificate of Compliance.',
+    a: 'Yes. All three units are WaterMark certified under WMTS-105:2016, licence 23484 - any licensed Australian plumber can install on a mains supply line and issue a Certificate of Compliance.',
   },
   {
     q: 'What does "lead-free" actually mean here?',
-    a: 'Every wetted material that contacts the drinking water — internal fittings, valves, the bubbler nozzle, the side tap — is certified to Australian drinking-water lead limits. This matters most for schools, childcare, and healthcare installations.',
+    a: 'Every wetted material that contacts the drinking water - internal fittings, valves, the bubbler nozzle, the side tap - is certified to Australian drinking-water lead limits. This matters most for schools, childcare, and healthcare installations.',
   },
   {
     q: 'Do you ship Australia-wide?',
@@ -173,7 +173,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What about outdoor installations?',
-    a: 'The stainless units are fine in sheltered locations (covered courtyards, foyers). For full outdoor exposure — schoolyards, parks, pool decks — choose the HDPE granite model. The cabinet does not rust, does not weld-pit, and the granite finish is moulded through the material rather than painted on.',
+    a: 'The stainless units are fine in sheltered locations (covered courtyards, foyers). For full outdoor exposure - schoolyards, parks, pool decks - choose the HDPE granite model. The cabinet does not rust, does not weld-pit, and the granite finish is moulded through the material rather than painted on.',
   },
   {
     q: 'Is the price really the same retail or trade?',
@@ -195,7 +195,7 @@ const USE_CASES = [
   {
     icon: Building2,
     title: 'Offices & co-working',
-    body: 'Square cabinet sits flush against walls in corridors and kitchens. Replaces bottled coolers — direct mains, no refills, no delivery slots.',
+    body: 'Square cabinet sits flush against walls in corridors and kitchens. Replaces bottled coolers - direct mains, no refills, no delivery slots.',
     points: [
       '99 cm square footprint fits foyers',
       'Side tap for jugs and bottles',
@@ -218,7 +218,7 @@ const CERT_POINTS = [
   {
     n: '01',
     title: 'Your plumber can install it',
-    body: 'Licensed plumbers will sign off and issue a Certificate of Compliance — required for facility audits, school approvals, and commercial fit-outs.',
+    body: 'Licensed plumbers will sign off and issue a Certificate of Compliance - required for facility audits, school approvals, and commercial fit-outs.',
   },
   {
     n: '02',
@@ -228,12 +228,12 @@ const CERT_POINTS = [
   {
     n: '03',
     title: 'Lead-free is independently verified',
-    body: 'Wetted parts — fittings, valves, nozzle, tap — are certified against Australian drinking-water lead limits. Matters most for schools and childcare.',
+    body: 'Wetted parts - fittings, valves, nozzle, tap - are certified against Australian drinking-water lead limits. Matters most for schools and childcare.',
   },
 ];
 
 export const metadata: Metadata = {
-  title: 'Commercial Water Bubblers — WaterMark Certified | Schools, Offices & Gyms',
+  title: 'Commercial Water Bubblers - WaterMark Certified | Schools, Offices & Gyms',
   description:
     'WaterMark certified, lead-free commercial water bubblers for Australian schools, offices and gyms. Three cabinets, one spec. Same price retail or trade. Same-day dispatch from Wyong NSW.',
   alternates: { canonical: PATH },
@@ -294,11 +294,11 @@ function Hero({ products, breadcrumbs }: HeroProps) {
               The Commercial Range
             </span>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-              Commercial water bubblers — WaterMark certified, lead-free,
+              Commercial water bubblers - WaterMark certified, lead-free,
               ready for the plumber.
             </h1>
             <p className="mt-4 text-lg md:text-xl text-black/70">
-              Three cabinets, one spec. Stainless or HDPE granite — all
+              Three cabinets, one spec. Stainless or HDPE granite - all
               WaterMark certified (WMTS-105:2016, licence 23484) and built for
               Australian schools, offices, and gyms.
             </p>
@@ -632,7 +632,7 @@ function CompareSection() {
                   {CABINETS.map((c) => {
                     const value = row.values[c.key];
                     const isYes = row.yes?.[c.key];
-                    const isDash = value === '—';
+                    const isDash = value === '-';
                     return (
                       <td
                         key={c.key}
@@ -723,7 +723,7 @@ function BulkContactSection() {
               Talk to a human today.
             </h2>
             <p className="mt-3 text-base text-black/80">
-              Prices are public — you don&apos;t need a quote. But for bulk
+              Prices are public - you don&apos;t need a quote. But for bulk
               orders we&apos;ll coordinate scheduled delivery, plumber-ready
               documentation, and a single point of contact. Architects,
               facilities managers, and project plumbers welcome.
@@ -731,7 +731,7 @@ function BulkContactSection() {
             <ul className="mt-5 space-y-2 text-sm text-black/80">
               {[
                 'Plumber-ready spec sheets on request',
-                `Same-day dispatch on stocked SKUs — order before ${BUSINESS_INFO.orderCutoff}`,
+                `Same-day dispatch on stocked SKUs - order before ${BUSINESS_INFO.orderCutoff}`,
                 `Proper tax invoice · ABN ${BUSINESS_INFO.abn}`,
                 'Australian-stocked · no proprietary cartridges',
               ].map((p) => (
