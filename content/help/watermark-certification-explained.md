@@ -7,7 +7,7 @@ relatedLinks:
   - { label: "Whole-home filtration", href: "/use/whole-home-filtration/" }
 faq:
   - q: "Where do I find the WaterMark licence number for a product?"
-    a: "On the product page under Specifications, every WaterMark-certified product on this site shows its licence number (typically in the format WMK-XXXXX). Non-certified products are flagged 'Not WaterMark certified - for off-mains use only'. If you cannot see a licence number on a mains-pressure product page, the product is not certified."
+    a: "Check the product page under Specifications and Compliance. Where a WaterMark licence number is held in our current product records, we display it there. If a licence number is not shown, do not infer certification status from that omission alone - contact us or verify the product in the official WaterMark Product Database before installation."
   - q: "Is WaterMark the same thing as WELS?"
     a: "No. WaterMark is the certification scheme for plumbing products that physically connect to mains water supply - it confirms the product is safe and meets relevant standards. WELS is the Water Efficiency Labelling Scheme - it rates flow rate and water-saving performance (the star rating you see on taps and showers). A tap can be both WaterMark certified and WELS rated; they cover different things."
   - q: "What happens if I install a non-certified product on mains water?"
@@ -51,6 +51,6 @@ Non-certified products on this site are clearly labelled "Not WaterMark certifie
 
 ## Verifying a licence
 
-Every certified product on this site lists its WaterMark licence number on the product page under Specifications. The licence number lets you (or a council inspector) verify the certification is current via the certifier's online register. We update licence numbers when certificates renew.
+Where a WaterMark licence number is held in our current product records, we list it on the product page under Specifications or Compliance. You can use that number to verify the certification in the official WaterMark Product Database.
 
-If a product is plumbed into mains supply and you cannot find a licence number on the product page or the physical product, treat it as non-certified - and do not install it on a mains line.
+If a product is intended for mains installation and the licence details are not shown on the page, verify the exact product in the official WaterMark Product Database or contact us before installation.
