@@ -15,14 +15,17 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
+  searchParams?: Promise<{ after?: string }>;
 }
 
 const PAGE_SIZE = 24;
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: CategoryPageProps): Promise<Metadata> {
   const { category } = await params;
+  const after = (await searchParams)?.after;
   const node = findCategory(category);
   if (!node) return {};
   return {
@@ -31,16 +34,32 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${node.slug}`,
     },
+    ...(after
+      ? {
+          robots: {
+            index: false,
+            follow: true,
+          },
+        }
+      : {}),
   };
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: CategoryPageProps) {
   const { category } = await params;
+  const afterParam = (await searchParams)?.after;
+  const after =
+    typeof afterParam === 'string' && afterParam.length <= 500
+      ? afterParam
+      : null;
   const node = findCategory(category);
   if (!node) notFound();
 
   const query = `tag:'primary-cat:${category}'`;
-  const page = await getProducts({ query, first: PAGE_SIZE });
+  const page = await getProducts({ query, first: PAGE_SIZE, after });
 
   const intro = getCategoryIntro(category);
 
@@ -75,6 +94,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         query={query}
         pageSize={PAGE_SIZE}
         enableSizeFilter={category === 'cartridges'}
+        paginationPath={pathname}
       />
     </>
   );
