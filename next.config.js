@@ -716,12 +716,12 @@ const nextConfig = {
     for (const [oldPath, newPath] of SUBCAT_REDIRECTS) {
       rules.push({
         source: oldPath,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
       rules.push({
         source: `${oldPath}/`,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
     }
@@ -731,12 +731,12 @@ const nextConfig = {
     for (const [oldPath, newPath] of BUBBLER_PRODUCT_OVERRIDES) {
       rules.push({
         source: oldPath,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
       rules.push({
         source: `${oldPath}/`,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
     }
@@ -744,22 +744,22 @@ const nextConfig = {
     for (const [oldPath, newPath] of BUBBLER_PATH_REDIRECTS) {
       rules.push({
         source: oldPath,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
       rules.push({
         source: `${oldPath}/`,
-        destination: `${newPath}/`,
+        destination: newPath,
         permanent: true,
       });
       rules.push({
         source: `${oldPath}/:handle`,
-        destination: `${newPath}/:handle/`,
+        destination: `${newPath}/:handle`,
         permanent: true,
       });
       rules.push({
         source: `${oldPath}/:handle/`,
-        destination: `${newPath}/:handle/`,
+        destination: `${newPath}/:handle`,
         permanent: true,
       });
     }
