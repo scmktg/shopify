@@ -15,7 +15,7 @@ const PAGE_SIZE = 48;
 const PATH = '/watermark-certified';
 const TITLE = 'WaterMark Certified Products';
 const INTRO =
-  'Every product on this page carries a current WaterMark licence — the certification Australian state plumbing law requires for any product fitted to mains water supply. Look for the red WaterMark Certified badge on the buy box and the licence number listed under Specifications.';
+  'Every product on this page carries a current WaterMark licence - the certification Australian state plumbing law requires for any product fitted to mains water supply. Look for the red WaterMark Certified badge on the buy box and the licence number listed under Specifications.';
 
 export const metadata: Metadata = {
   title: `${TITLE} | Australian Mains-Connected Water Filtration`,
