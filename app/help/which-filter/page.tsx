@@ -44,7 +44,7 @@ const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'How often do I need to change cartridges?',
-    a: "Every 6–12 months for most systems, depending on water quality and household usage. Big Blue 20-inch cartridges last toward the longer end of that range because of their larger media volume; standard 10-inch cartridges land closer to 6 months. The pressure gauges on the Big Blue system tell you objectively when the differential rises - no guessing.",
+    a: "Every 6-12 months for most systems, depending on water quality and household usage. Big Blue 20-inch cartridges last toward the longer end of that range because of their larger media volume; standard 10-inch cartridges land closer to 6 months. The pressure gauges on the Big Blue system tell you objectively when the differential rises - no guessing.",
   },
   {
     q: 'Can I install this myself?',
