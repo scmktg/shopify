@@ -62,9 +62,9 @@ Not all carbon is the same. Three types matter:
 
 Match the system to peak demand, not average use. The rule of thumb for Australian homes:
 
-- **One- or two-bedroom unit, single bathroom:** 10–15 L/min peak. A 10" Big Blue two-stage handles it.
-- **Three-bedroom family home, two bathrooms:** 20–30 L/min peak. A 20" Big Blue two- or three-stage is the right size.
-- **Four-bedroom-plus, two-plus bathrooms, washing machine and shower running at the same time:** 30–40 L/min peak. 20" Big Blue minimum, three stages preferred. Twin-housing setups (two cartridges per stage in parallel) are an option for very high-flow homes.
+- **One- or two-bedroom unit, single bathroom:** 10-15 L/min peak. A 10" Big Blue two-stage handles it.
+- **Three-bedroom family home, two bathrooms:** 20-30 L/min peak. A 20" Big Blue two- or three-stage is the right size.
+- **Four-bedroom-plus, two-plus bathrooms, washing machine and shower running at the same time:** 30-40 L/min peak. 20" Big Blue minimum, three stages preferred. Twin-housing setups (two cartridges per stage in parallel) are an option for very high-flow homes.
 
 Undersizing is the most common mistake. A 10" × 2.5" two-stage system on a four-bedroom home will choke on flow during peak periods and burn through cartridges in months instead of a year.
 
