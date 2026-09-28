@@ -53,5 +53,5 @@ The internal filter housings themselves sit inside the house and are not affecte
 Click & Collect from our Wyong showroom is free; the drive from Terrigal is about 25 minutes up the Pacific Highway. Local tracked deliveries to the strip are usually next business day on orders placed before 12pm AEST.
 
 - **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am - 5pm AEST
+- **Hours:** Monday to Friday, 9am - 3pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
