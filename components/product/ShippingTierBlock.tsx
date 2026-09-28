@@ -17,8 +17,8 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
   T1: {
     lead: (
       <>
-        <strong className="font-semibold">Ships:</strong> Australia-wide for
-        $9.95 standard, or $17.95 express.
+        <strong className="font-semibold">Australia-wide delivery.</strong>{' '}
+        Shipping is calculated at checkout based on the packed weight and delivery destination.
       </>
     ),
     clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
@@ -27,8 +27,8 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
   T2: {
     lead: (
       <>
-        <strong className="font-semibold">Ships:</strong> Australia-wide for
-        $14.95 standard, or $22.95 express.
+        <strong className="font-semibold">Australia-wide delivery.</strong>{' '}
+        Shipping is calculated at checkout based on the packed weight and delivery destination.
       </>
     ),
     clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
@@ -37,8 +37,8 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
   T3: {
     lead: (
       <>
-        <strong className="font-semibold">Ships:</strong> Australia-wide for
-        $19.95 standard, or $29.95 express.
+        <strong className="font-semibold">Australia-wide delivery.</strong>{' '}
+        Shipping is calculated at checkout based on the packed weight and delivery destination.
       </>
     ),
     clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
@@ -47,8 +47,8 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
   T4: {
     lead: (
       <>
-        <strong className="font-semibold">Ships:</strong> Australia-wide for
-        $29.95 standard, or $41.95 express.
+        <strong className="font-semibold">Australia-wide delivery.</strong>{' '}
+        Shipping is calculated at checkout based on the packed weight and delivery destination.
       </>
     ),
     clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
@@ -57,30 +57,21 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
   T5: {
     lead: (
       <>
-        <strong className="font-semibold">Ships free Australia-wide.</strong>{' '}
-        Delivered by Allied Express or Aramex bulky freight, 3&ndash;10 business
-        days depending on state.
+        <strong className="font-semibold">Free delivery Australia-wide.</strong>
       </>
     ),
     clickAndCollect: (
-      <>
-        Free Click &amp; Collect from our Wyong NSW showroom (in stock for
-        immediate pickup).
-      </>
+      <>Free Click &amp; Collect from our Wyong NSW showroom.</>
     ),
     trailing: <>Same-day dispatch on orders before 12pm AEST.</>,
   },
   T6: {
     lead: (
       <>
-        <strong className="font-semibold">
-          Ships for $99&ndash;$249 depending on your state.
-        </strong>
+        <strong className="font-semibold">Bulky freight delivery.</strong>
         <br />
-        NSW and ACT $99. Victoria, Queensland and South Australia $179. WA,
-        Tasmania and NT $249.
-        <br />
-        Delivered by pallet freight, 3&ndash;8 business days.
+        NSW and ACT $99. Victoria and Queensland $159. South Australia $179.
+        WA and Tasmania $249. Northern Territory requires a freight quote.
       </>
     ),
     clickAndCollect: (
@@ -128,13 +119,23 @@ export function ShippingTierBlock({
   tier,
   productHandle,
 }: ShippingTierBlockProps) {
-  const resolvedTier: ShippingTier = tier ?? 'T2';
-  if (tier === null && process.env.NODE_ENV !== 'production') {
-    console.warn(
-      `[ShippingTierBlock] Product "${productHandle}" has no shipping_tier metafield; defaulting to T2.`,
+  const resolvedTier: ShippingTier | null = tier;
+  if (resolvedTier === null) {
+    console.error(
+      `[ShippingTierBlock] Product "${productHandle}" has no shipping_tier metafield.`,
     );
   }
-  const copy = TIER_COPY[resolvedTier];
+  const copy = resolvedTier
+    ? TIER_COPY[resolvedTier]
+    : {
+        lead: (
+          <>
+            <strong className="font-semibold">Shipping calculated at checkout.</strong>
+          </>
+        ),
+        clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
+        trailing: <>Shopify checkout will show the available delivery options.</>,
+      };
 
   return (
     <section
