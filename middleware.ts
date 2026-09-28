@@ -28,6 +28,8 @@ const GONE_PREFIXES = [
   '/brand/',
   '/category/',
   '/tag/',
+  '/project-cat/',
+  '/portfolio',
   '/2024/',
   '/2025/',
   '/2026/',
@@ -58,6 +60,9 @@ const LEGACY_WOOCOMMERCE_QUERY_KEYS = new Set([
   'min_price',
   'max_price',
   'rating_filter',
+  'remove_item',
+  'undo_item',
+  '_wpnonce',
 ]);
 
 function isLegacyWooCommerceQueryKey(key: string): boolean {
@@ -84,6 +89,7 @@ function stripLegacyWooCommerceQuery(request: NextRequest): NextResponse | null 
 
 function isGone(pathname: string): boolean {
   if (GONE_EXACT.has(pathname)) return true;
+  if (/\/feed\/?$/.test(pathname)) return true;
   for (const prefix of GONE_PREFIXES) {
     const bare = prefix.endsWith('/') ? prefix.slice(0, -1) : prefix;
     if (pathname === bare || pathname.startsWith(`${bare}/`)) return true;
