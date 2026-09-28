@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import { Truck } from 'lucide-react';
 import type { ShippingTier } from '@/types/product';
-import { ShippingEstimator } from './ShippingEstimator';
+import { VariantShippingEstimator } from './VariantShippingEstimator';
 
 interface ShippingTierBlockProps {
   tier: ShippingTier | null;
   productHandle: string;
-  variantId: string | null;
 }
 
 interface TierCopy {
@@ -92,12 +91,12 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
         </strong>
         <br />
         This product isn&apos;t available for shipping. Pick up free from 6/45
-        Amsterdam Cct, Wyong NSW 2259, Mon&ndash;Fri 9am&ndash;5pm AEST.
+        Amsterdam Cct, Wyong NSW 2259, Mon-Fri 9am-3pm AEST.
       </>
     ),
     clickAndCollect: (
       <>
-        Same-day pickup on orders before 12pm AEST &mdash; we&apos;ll email or
+        Same-day pickup on orders before 12pm AEST - we&apos;ll email or
         text you when it&apos;s ready.
       </>
     ),
@@ -110,7 +109,7 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
         >
           (02) 8772 8162
         </a>{' '}
-        &mdash; we can sometimes arrange a courier for an additional fee, case
+        - we can sometimes arrange a courier for an additional fee, case
         by case.
       </>
     ),
@@ -120,7 +119,6 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
 export function ShippingTierBlock({
   tier,
   productHandle,
-  variantId,
 }: ShippingTierBlockProps) {
   const resolvedTier: ShippingTier | null = tier;
   if (resolvedTier === null) {
@@ -154,8 +152,8 @@ export function ShippingTierBlock({
           <p>{copy.lead}</p>
           <p className="text-black/80">{copy.clickAndCollect}</p>
           <p className="text-black/80">{copy.trailing}</p>
-          {resolvedTier && resolvedTier !== 'T7' && variantId && (
-            <ShippingEstimator variantId={variantId} tier={resolvedTier} />
+          {resolvedTier && resolvedTier !== 'T7' && (
+            <VariantShippingEstimator tier={resolvedTier} />
           )}
           <p className="mt-1 text-xs text-black/60">
             <Link
