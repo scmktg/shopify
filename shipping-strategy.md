@@ -1,140 +1,153 @@
 # Enviro Aqua — shipping strategy
 
-A per-product shipping framework for the ~150-SKU catalogue, designed for Shopify Basic with a headless storefront. Built from the ground up rather than retrofitting the existing four-tier published page.
+This document describes the **current live shipping model** for the headless Next.js + Shopify storefront.
 
-## The six tiers
+Shopify checkout is authoritative for delivery eligibility and final shipping charges. The storefront should explain the shipping class clearly, but it must not duplicate or calculate final checkout rates independently.
 
-| Tier | Standard | Express | Service | What it carries |
-|---|---|---|---|---|
-| **T1 Small parcel** | $9.95 | $17.95 | AusPost small satchel | Inline cartridges, fittings, small parts |
-| **T2 Standard parcel** | $14.95 | $22.95 | AusPost medium satchel / Aramex | Single 10" cartridges, twin packs, RO membranes, basin mixers, bench-tops |
-| **T3 Large parcel** | $19.95 | $29.95 | Aramex / CouriersPlease | Big Blue cartridges, 5/6-stage RO sets, under-sink systems, tall mixers |
-| **T4 Bulky parcel** | $29.95 | $41.95 | Aramex bulky | Under-sink RO with tank, bench-top coolers, single toilets |
-| **T5 Free freight** | FREE | n/a | Allied / Aramex bulky | Whole-house Big Blue (single/twin/triple), freestanding coolers, large UV, 19L+ tanks, in-wall toilets |
-| **T6 Freight quote** | quote | n/a | Pallet freight | Commercial RO plants, 50L+ tanks, dosing tanks, bathroom bundles |
+## Shipping classes
 
-**Express is offered on T1–T4 only.** Pallet freight has no overnight equivalent — promising "express" on T5/T6 would break the no-surprises rule.
+Every product is assigned one of four values in the Shopify product metafield:
 
-**Free Click & Collect from Wyong applies to every tier including T6.** Already published, keep it front and centre — it is your single best differentiator for Central Coast and northern Sydney buyers.
+`enviroaqua.shipping_class`
 
-## Why the tiers look this way
+Allowed values:
 
-- **No "free over $X" threshold.** Removed as you instructed. The free-shipping benefit is built into T5 directly — applied to the products where it actually matters, not gated behind cart value. This is more honest and easier to communicate.
-- **Whole-house systems ship free.** Every Australian competitor I checked (Filter Systems Australia, PureWater4Life, Shield, Healthy Habitats, AquaSafe, WestOz, Clarence, Purestream) ships Big Blue systems free. The real freight cost is roughly $30–45 via Aramex/Allied; at $500–$1500 sell price that's a 4–6% margin hit. Charging $79–$149 on these would lose you sales to seven competitors who don't.
-- **T6 keeps you honest.** Commercial RO plants and 200L tanks are genuine pallet jobs — $150–$300 freight to Perth is realistic. "Freight quoted within one business day" is the trade norm and matches the buyer's expectation. Don't fake a flat rate here; you will lose money or surprise the buyer.
-- **T1 starts at $9.95 instead of $10.95.** Below the psychological $10 threshold matters for the inline cartridge category where buyers are price-shopping individual $25–$60 items. Saving $1 here meaningfully shifts conversion.
+- `parcel`
+- `free`
+- `freight`
+- `pickup_only`
 
-## Shopify configuration (Basic plan)
+Current catalogue distribution:
 
-You can't do carrier-calculated rates on Basic — that's Advanced+. The configuration uses **flat rates per shipping profile**, which is the same approach every competitor on Basic uses.
+| Shipping class | Products | Purpose |
+|---|---:|---|
+| Parcel | 117 | Normal shippable products priced by packed weight and destination |
+| Free delivery | 21 | Products with a $0 delivery option Australia-wide |
+| Bulky freight | 8 | Large/heavy items with state-based freight rates |
+| Pickup only | 17 | Fragile or difficult-to-transport products collected from Wyong |
 
-### Set up two profiles
+The old T1–T7 tier model is retired and must not be used for new products, customer-facing copy, SEO metadata, or shipping configuration.
 
-**Profile A — General products (covers T1–T5)**
+## Parcel rates
 
-In *Settings → Shipping and delivery → Shipping*, create a profile called "Standard parcel" with these rate bands by weight:
+Parcel products use packed shipping weight and destination.
 
-| Condition | Rate name | Rate |
-|---|---|---|
-| 0–0.7 kg | Small parcel | $9.95 |
-| 0.7–3 kg | Standard parcel | $14.95 |
-| 3–8 kg | Large parcel | $19.95 |
-| 8–15 kg | Bulky parcel | $29.95 |
-| Over 15 kg | Free shipping | $0.00 |
+| Packed weight | NSW / ACT | VIC / QLD | SA | WA / TAS | NT |
+|---|---:|---:|---:|---:|---:|
+| Up to 0.5 kg | $12.95 | $12.95 | $12.95 | $12.95 | $12.95 |
+| Over 0.5 kg to 1 kg | $17.95 | $17.95 | $17.95 | $17.95 | $17.95 |
+| Over 1 kg to 3 kg | $22.95 | $22.95 | $22.95 | $22.95 | $22.95 |
+| Over 3 kg to 5 kg | $27.95 | $27.95 | $27.95 | $27.95 | $27.95 |
+| Over 5 kg to 10 kg | $34.95 | $44.95 | $49.95 | $69.95 | $99.95 |
+| Over 10 kg to 22 kg | $39.95 | $49.95 | $54.95 | $79.95 | $129.95 |
 
-Add a parallel express band for each except the over-15kg bucket (express is +$8 on T1–T3, +$12 on T4).
+There is no separate express-rate table in the current model.
 
-The over-15kg "free" band captures whole-house systems automatically by weight (a Big Blue triple with cabinet is ~22kg). For UV systems and freestanding coolers that fall under 15kg but should still be free, override at the product level by assigning them to a "Free shipping" profile instead.
+## Free delivery
 
-**Profile B — Freight items (T6)**
+Products assigned to `free` receive a $0 Australia-wide delivery option at Shopify checkout.
 
-Create a second profile called "Freight quoted" with a single rate:
+This class is deliberate and product-specific. Do not infer free delivery from weight, price, or category.
 
-| Condition | Rate name | Rate |
-|---|---|---|
-| Any | Freight quoted within 1 business day | $0.00 (with note) |
+## Bulky freight
 
-Assign the T6 SKUs to this profile. The $0 rate gets the order through checkout; you reach out within one business day with the actual freight cost via a draft order or quote email. This is unusual for Shopify but normal for plumbing trade — buyers expect it on items at this price point.
+Products assigned to `freight` use these destination rates:
 
-**Click & Collect.** Add as a local pickup option in both profiles. Available to all NSW postcodes, free, ~2 hour ready time during business hours.
+| Destination | Rate |
+|---|---:|
+| NSW / ACT | $99 |
+| VIC / QLD | $159 |
+| South Australia | $179 |
+| WA / Tasmania | $249 |
+| Northern Territory | Quote required |
 
-### Per-product overrides
+Northern Territory bulky-freight orders intentionally have no automatic checkout delivery rate.
 
-For products where weight doesn't map cleanly to the right tier (a UV chamber that weighs 6kg but is fragile and bulky), use Shopify's per-product shipping profile assignment to manually slot the product into the right tier. The tier-mapping.csv shipped with this document gives you the category-level rules; eyeball each product against them.
+## Pickup only
 
-### Sydney + Central Coast metro override (optional, recommended)
+Products assigned to `pickup_only` have no standard delivery method.
 
-Roughly half your audience based on the Wyong base will be Sydney metro or Central Coast. For these postcodes (2250–2263, 2000–2249), you can layer a discounted express option — $14.95 instead of $22.95 — because next-day to Sydney is genuinely cheap from Wyong. Add this as a postcode-restricted rate in Profile A.
+They are collected from:
 
-## Product-page copy templates
+**Enviro Aqua**  
+6/45 Amsterdam Cct  
+Wyong NSW 2259
 
-The actual lever against checkout abandonment is showing the shipping expectation **on the product page, before checkout**. Buyers who learn shipping cost at checkout abandon at 2–3x the rate of buyers who knew it going in. Add a small shipping block to every PDP via a metafield.
+Local pickup is free.
 
-Each product gets one of six metafield values matching its tier. Your headless storefront renders the matching copy.
+## Product-page messaging
 
-### T1 — Small parcel ($9.95)
+The product page must describe the class without inventing a different shipping calculation.
 
-> **Ships:** Australia-wide for $9.95 standard, or $17.95 express.
-> Free Click & Collect from our Wyong NSW showroom.
-> Same-day dispatch on orders before 12pm AEST.
+### Parcel
 
-### T2 — Standard parcel ($14.95)
+> **Australia-wide delivery.** Shipping is calculated at checkout based on the packed weight and delivery destination.  
+> Free Click & Collect from Wyong NSW.
 
-> **Ships:** Australia-wide for $14.95 standard, or $22.95 express.
-> Free Click & Collect from our Wyong NSW showroom.
-> Same-day dispatch on orders before 12pm AEST.
+### Free delivery
 
-### T3 — Large parcel ($19.95)
+> **Free delivery Australia-wide.**  
+> Free Click & Collect from Wyong NSW.
 
-> **Ships:** Australia-wide for $19.95 standard, or $29.95 express.
-> Free Click & Collect from our Wyong NSW showroom.
-> Same-day dispatch on orders before 12pm AEST.
+### Bulky freight
 
-### T4 — Bulky parcel ($29.95)
+> **Bulky freight delivery.** NSW/ACT $99, VIC/QLD $159, SA $179, WA/TAS $249. Northern Territory requires a freight quote.  
+> Free Click & Collect from Wyong NSW.
 
-> **Ships:** Australia-wide for $29.95 standard, or $41.95 express.
-> Free Click & Collect from our Wyong NSW showroom.
-> Same-day dispatch on orders before 12pm AEST.
+### Pickup only
 
-### T5 — Free freight
+> **Click & Collect only from Wyong NSW.**  
+> This product is not available for standard delivery because of size, fragility, or handling requirements.
 
-> **Ships free Australia-wide.** Delivered by Allied Express or Aramex bulky freight, 3–10 business days depending on state.
-> Free Click & Collect from our Wyong NSW showroom (in stock for immediate pickup).
-> Same-day dispatch on orders before 12pm AEST.
+## Shopify configuration
 
-### T6 — Freight quote
+The active delivery profiles are:
 
-> **Freight quoted within one business day.** This product ships by pallet — we'll email you the exact freight cost (typically $150–$400 depending on your state) within one business day of order. You can cancel for a full refund if the freight quote doesn't work.
-> Free Click & Collect from our Wyong NSW showroom — no freight cost if you pick up.
-> Or call (02) 8772 8162 for an instant freight quote before ordering.
+- **Standard Parcel** — parcel products and weight/destination rate bands
+- **Free Delivery** — selected $0-delivery products
+- **Bulky Freight** — state-based freight rates
+- **Pickup Only** — no delivery rates; local pickup only
+- **General profile** — retained as the default Shopify safety bucket and should contain no active catalogue products
 
-The T6 copy is the longest because it has to be. A buyer spending $1,180 on a 3000 LPD RO plant deserves to know exactly how the freight works before they hit "Buy now". This copy also opens the door for the showroom pickup path, which is the highest-margin path for you.
+New products should never be left unintentionally in the General profile.
 
-## "No surprises at checkout" rule checks
+## Packed weights
 
-The no-surprises promise on your shipping page applies to every tier. These are the edge cases I'd flag:
+Parcel eligibility depends on realistic packed weights.
 
-1. **Multi-item carts mixing T1 and T5.** A buyer who adds a $25 cartridge to their cart sees $9.95 shipping. If they then add a whole-house system, the cart should *drop* the shipping to $0 (the highest-priority free rate wins). Test this in Shopify before going live — depending on profile configuration, Shopify sometimes sums profiles instead of taking max. If it sums, you'll need to put the cartridges into the "Free shipping" profile when the cart contains a T5 product. Easiest fix: build a Shopify Function or use an app like Advanced Shipping Rules.
+Use packed shipping weight rather than a synthetic tier proxy. If a product cannot be confidently weighed or estimated, flag it for physical measurement rather than assigning an arbitrary tier weight.
 
-2. **Cart with mixed T6 and parcel items.** A buyer adds a $240 dosing tank (T6) plus a $19 cartridge (T2). Checkout shows $0 + $14.95 = $14.95. You then email a freight quote for the tank. The order total has changed mid-flow — this *is* a surprise. Fix: T6 products should display a banner at checkout: "This order includes a freight-quoted item. Final freight will be confirmed within one business day."
+Parcel products should not exceed 22 kg under the current rate table. Larger or awkward items should be reviewed for `freight` or `pickup_only`.
 
-3. **Express on T5/T6.** Currently set to not offer. Make sure your storefront doesn't display an "Express" option on T5/T6 product pages — easy to miss if your headless code displays express universally.
+## Source of truth
 
-4. **Remote postcode surcharges.** Aramex and Allied surcharge for remote WA, NT, far-north QLD. On T5 (you absorb it) this is fine. On T1–T4 you'd typically eat the difference — keep doing that to honour "no surprises", and budget ~2% of T1–T4 shipping revenue for remote-zone subsidy.
+For shipping:
 
-5. **Bundle pricing.** Bundles like 4G/4B/4C (T6) include taps (T2) and cabinet (T6). The bundle ships as one freight job; the taps don't get a separate $14.95. Make sure the bundle SKU itself is assigned to T6, not its components.
+- **Shopify owns:** product shipping class, packed weights, delivery profiles, destination zones, rates, local pickup, checkout eligibility.
+- **Next.js owns:** explanatory shipping copy shown before checkout.
+- **Shopify checkout remains authoritative** if frontend copy and checkout ever disagree.
 
-## Rollout sequence
+## Testing
 
-1. **Stand up the new shipping page** with the six tiers shown clearly. Drop the "Free shipping over $200" headline from the homepage and footer.
-2. **Configure Profile A + Profile B** in Shopify admin per above.
-3. **Tag every product** with a `shipping_tier` metafield (T1–T6). The tier-mapping CSV gives you the category rule; your headless storefront reads the metafield to render the right PDP copy block.
-4. **Test five representative carts**: single T1, single T5, T1+T5 mixed, single T6, T6+T2 mixed. Verify rates display as expected at every step.
-5. **Soft launch for 2 weeks**, monitor checkout abandonment and post-purchase support tickets mentioning shipping.
-6. **Tune T6 freight quoting**: build a quick internal sheet of typical freight costs by state for each T6 SKU, so you can respond with a quote in minutes rather than hours.
+For any shipping change, test at least:
 
-## What you'll need that I couldn't produce here
+- one parcel product in each weight band
+- NSW, VIC, WA, and NT destinations
+- one free-delivery product
+- one bulky-freight product
+- one pickup-only product
+- mixed carts involving parcel + free
+- parcel + freight
+- parcel + pickup-only
+- multiple parcel items that cross a weight boundary
 
-The `products.json` you uploaded in the prior session isn't accessible to me in this resumed conversation — only the category structure and live site survived. If you re-upload it, I can produce a per-SKU CSV with each product assigned its tier, weight, and metafield value, ready to import.
+Use Shopify's calculated delivery options rather than inferring results from configuration.
 
-In the meantime the `tier-mapping.csv` shipped alongside this document gives you the category-level rules, which a quick pass through the catalogue can apply manually in an afternoon.
+## Maintenance rules
+
+1. Do not add new T1–T7 logic.
+2. Do not hard-code parcel prices into product descriptions or SEO metadata.
+3. Do not promise express delivery unless a live Shopify rate exists.
+4. Do not assume a whole category is free delivery; check the product's `shipping_class`.
+5. Keep the public `/shipping/` page aligned with live Shopify rates.
+6. Audit the General profile whenever new products are created.
