@@ -65,6 +65,12 @@ export interface ShopifyProductCardRaw {
   tags: ReadonlyArray<string>;
   featuredImage: ProductImage | null;
   priceRange: { minVariantPrice: Money };
+  variants: ShopifyConnection<{
+    id: string;
+    availableForSale: boolean;
+    image: ProductImage | null;
+    selectedOptions: ReadonlyArray<SelectedOption>;
+  }>;
   /**
    * `metafields(identifiers: [...])` — same nullable-element semantics
    * as the full product fragment. Only `housing_size` is fetched on
