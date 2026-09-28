@@ -86,20 +86,34 @@ export function ThreeWayTapSalesSections() {
             </p>
           </div>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-black">
-            Compatible with standard 1/4&quot; filtered-water systems
+            Works with standard filtered-water systems - not just ours
           </h2>
           <p className="mt-3 text-sm leading-6 text-black/70">
-            The filtered-water inlet uses the same 1/4&quot; tubing format used
-            across Enviro Aqua&apos;s residential under-sink and reverse osmosis
-            systems. That means the tap is not tied to one specific filter.
+            The dedicated filtered-water inlet uses a standard 1/4&quot;
+            filtered-water connection, so you do not need an Enviro Aqua
+            filtration system to use this tap. It is designed to connect to
+            compatible under-sink and reverse osmosis systems using the same
+            standard outlet format.
           </p>
+          <div className="mt-5 rounded-lg border border-brand-blue/20 bg-brand-blue-light/50 p-4">
+            <p className="font-semibold text-black">
+              Installation fittings included
+            </p>
+            <p className="mt-1 text-sm leading-6 text-black/70">
+              The tap is supplied with the connection fittings required for a
+              standard installation, helping make the changeover straightforward
+              and quick. A licensed plumber should complete mains plumbing work
+              where required by local regulations.
+            </p>
+          </div>
           <ul className="mt-5 grid gap-3 text-sm text-black/75">
             <Benefit>5-stage reverse osmosis systems</Benefit>
             <Benefit>6-stage reverse osmosis systems</Benefit>
             <Benefit>2-stage under-sink sediment + carbon systems</Benefit>
             <Benefit>3-stage under-sink sediment + carbon + alkaline systems</Benefit>
             <Benefit>
-              Other compatible systems using a standard 1/4&quot; filtered-water outlet
+              Other brands and compatible systems using a standard 1/4&quot;
+              filtered-water outlet
             </Benefit>
           </ul>
         </div>
@@ -112,8 +126,9 @@ export function ThreeWayTapSalesSections() {
             Choose the filtration level that suits your water
           </h3>
           <p className="mt-3 text-sm leading-6 text-white/75">
-            Use this tap with a compatible under-sink filter or reverse osmosis
-            system that has a standard 1/4&quot; filtered-water outlet.
+            Use this tap with any compatible under-sink filter or reverse
+            osmosis system that has a standard 1/4&quot; filtered-water outlet.
+            It is not locked to Enviro Aqua filtration systems.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             <Link
