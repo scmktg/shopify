@@ -160,7 +160,7 @@ export async function getProducts(
   const cached = unstable_cache(
     () => fetchProducts(options),
     ['products', cacheKey],
-    { revalidate: 300, tags: ['products', 'collections'] },
+    { revalidate: 60, tags: ['products', 'collections'] },
   );
   return cached();
 }
