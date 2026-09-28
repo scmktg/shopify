@@ -6,10 +6,12 @@ import { useVariantSelection } from './VariantSelectionProvider';
 
 interface VariantProductTrustBlockProps {
   productId: string;
+  className?: string;
 }
 
 export function VariantProductTrustBlock({
   productId,
+  className,
 }: VariantProductTrustBlockProps) {
   const { selectedVariant } = useVariantSelection();
   const inStock = selectedVariant.availableForSale;
@@ -27,6 +29,7 @@ export function VariantProductTrustBlock({
       sku={selectedVariant.sku}
       stockStatus={stockStatus}
       stockCount={quantity ?? undefined}
+      className={className}
     />
   );
 }
