@@ -26,6 +26,9 @@ const INSTALL_PACKAGE_HANDLE =
   'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
   verification: {
     google: 'Uu1dcLCaDuZb3l3dynm2aRNtOacQjYyX1bToX93xCH4',
   },
