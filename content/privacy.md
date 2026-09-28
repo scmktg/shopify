@@ -12,10 +12,10 @@ This Privacy Policy explains how Enviro Aqua ("we", "us") collects, uses, and pr
 
 When you use this site or place an order, we may collect:
 
-- **Contact information** — name, email address, phone number, billing address, shipping address.
-- **Order information** — products purchased, payment method (handled by Shopify, see below), order history.
-- **Device and usage information** — browser type, IP address, pages visited, time on site, referring URL. Collected automatically by analytics tools.
-- **Communications** — messages you send through our contact form or by email.
+- **Contact information** - name, email address, phone number, billing address, shipping address.
+- **Order information** - products purchased, payment method (handled by Shopify, see below), order history.
+- **Device and usage information** - browser type, IP address, pages visited, time on site, referring URL. Collected automatically by analytics tools.
+- **Communications** - messages you send through our contact form or by email.
 
 We do not knowingly collect information from children under 16.
 
@@ -34,10 +34,10 @@ We do not sell your personal information.
 
 To run the business we share information with the following service providers, each of whom processes the information on our behalf and under their own privacy commitments:
 
-- **Shopify** — handles payments, checkout, order processing, and customer accounts. Shopify is the system of record for orders. See Shopify's privacy policy for their handling of payment information.
-- **Vercel** — hosts the website. May log IP addresses and request metadata for performance and abuse prevention.
-- **Google Analytics 4** — collects anonymised usage statistics. We use Google Analytics with IP anonymisation enabled. <!-- TODO: confirm GA4 measurement ID is configured before launch -->
-- **Carriers** (Australia Post and others) — receive shipping information so they can deliver your order.
+- **Shopify** - handles payments, checkout, order processing, and customer accounts. Shopify is the system of record for orders. See Shopify's privacy policy for their handling of payment information.
+- **Vercel** - hosts the website. May log IP addresses and request metadata for performance and abuse prevention.
+- **Google Analytics 4** - collects anonymised usage statistics. We use Google Analytics with IP anonymisation enabled. <!-- TODO: confirm GA4 measurement ID is configured before launch -->
+- **Carriers** (Australia Post and others) - receive shipping information so they can deliver your order.
 
 We may also share information when required by law (court order, regulator request, fraud investigation).
 
