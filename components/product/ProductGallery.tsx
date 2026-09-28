@@ -13,7 +13,7 @@ interface ProductGalleryProps {
 /**
  * Shopify auto-generates placeholder alt text like "image 2" when a
  * merchant doesn't set one. We don't want that surfacing to the page
- * — it's worse than no alt at all because it carries no information.
+ * - it's worse than no alt at all because it carries no information.
  * Treat empty, whitespace-only, or "image N"-style alts as missing
  * and fall back to a generated label that names the product.
  */
@@ -38,7 +38,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
   const showArrows = images.length > 1;
   const selected = images[selectedIndex] ?? images[0]!;
   const heroAlt = isPlaceholderAlt(selected.altText)
-    ? `${title} — image ${selectedIndex + 1} of ${images.length}`
+    ? `${title} - image ${selectedIndex + 1} of ${images.length}`
     : selected.altText!;
 
   const goPrev = () =>
