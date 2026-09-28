@@ -42,6 +42,7 @@ interface ProductDetailProps {
    * server. Empty / null when `content.family` is absent.
    */
   familyPaths?: ReadonlyMap<string, string> | null;
+  initialVariantId?: string | null;
 }
 
 export function ProductDetail({
@@ -50,6 +51,7 @@ export function ProductDetail({
   category,
   subcategory,
   familyPaths,
+  initialVariantId = null,
 }: ProductDetailProps) {
   const subcategoryNode = findSubcategory(category, subcategory);
   const subcategoryLabel =
@@ -58,7 +60,10 @@ export function ProductDetail({
   const moreSource = content.upsells?.moreInCategory ?? 'auto';
 
   return (
-    <VariantSelectionProvider variants={product.variants}>
+    <VariantSelectionProvider
+      variants={product.variants}
+      initialVariantId={initialVariantId}
+    >
       <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
       <nav
         aria-label="Breadcrumb"
