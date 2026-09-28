@@ -29,8 +29,8 @@ export const CATEGORIES: ReadonlyArray<Category> = [
     label: 'Water Filters',
     subcategories: [
       { slug: 'under-sink', label: 'Under Sink' },
-      { slug: 'whole-house', label: 'Whole House' },
       { slug: 'reverse-osmosis', label: 'Reverse Osmosis' },
+      { slug: 'whole-house', label: 'Whole House' },
       { slug: 'uv-sterilisation', label: 'UV Sterilisation' },
       { slug: 'bench-top', label: 'Bench Top' },
       { slug: 'commercial', label: 'Commercial' },
