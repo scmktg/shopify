@@ -92,6 +92,12 @@ export const PRODUCT_FRAGMENT = /* GraphQL */ `
             amount
             currencyCode
           }
+          image {
+            url
+            altText
+            width
+            height
+          }
           selectedOptions {
             name
             value
