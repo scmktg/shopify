@@ -23,7 +23,6 @@ export type CartridgeType =
   | 'pleated'
   | 'uf';
 
-/** @deprecated Legacy migration field. Prefer ShippingClass. */
 export type ShippingTier = 'T1' | 'T2' | 'T3' | 'T4' | 'T5' | 'T6' | 'T7';
 
 export interface Money {
@@ -83,7 +82,6 @@ export interface ProductMetafields {
   key_benefits: ReadonlyArray<string> | null;
   country_of_origin: string | null;
   warranty_months: number | null;
-  /** @deprecated Legacy migration field. */
   shipping_tier: ShippingTier | null;
 }
 
