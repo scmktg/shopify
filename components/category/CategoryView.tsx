@@ -15,6 +15,15 @@ import {
   getProductCartridgeSize,
   type CartridgeSize,
 } from '@/lib/utils/cartridgeSize';
+import {
+  ActiveFilterChips,
+  CatalogFilters,
+} from './CatalogFilters';
+import {
+  buildCatalogQuery,
+  getCatalogFilterGroups,
+  type CatalogFilterState,
+} from '@/lib/catalog/filters';
 
 type SortValue =
   | 'default'
@@ -57,14 +66,10 @@ interface CategoryViewProps {
   initialProducts: ReadonlyArray<ProductCardData>;
   initialPageInfo: ShopifyPageInfo;
   query: string;
+  categorySlug: string;
+  activeSubcategory?: string | null;
+  initialFilters?: CatalogFilterState;
   pageSize?: number;
-  /**
-   * When the visitor is browsing the cartridges category, surface
-   * a size-pill filter (10"/20" length × 2.5"/4.5" diameter). The
-   * filter is in-memory and reflects only what's currently loaded
-   * — paired with a generous pageSize on cartridge routes, all
-   * sizes are visible without further fetches.
-   */
   enableSizeFilter?: boolean;
 }
 
@@ -72,28 +77,62 @@ export function CategoryView({
   initialProducts,
   initialPageInfo,
   query,
+  categorySlug,
+  activeSubcategory = null,
+  initialFilters = {},
   pageSize = 24,
   enableSizeFilter = false,
 }: CategoryViewProps) {
+  const groups = useMemo(
+    () => getCatalogFilterGroups(categorySlug, activeSubcategory),
+    [categorySlug, activeSubcategory],
+  );
   const [products, setProducts] = useState<ReadonlyArray<ProductCardData>>(
     initialProducts,
   );
   const [pageInfo, setPageInfo] = useState<ShopifyPageInfo>(initialPageInfo);
+  const [filters, setFilters] = useState<CatalogFilterState>(initialFilters);
   const [sort, setSort] = useState<SortValue>('default');
   const [size, setSize] = useState<CartridgeSize | null>(null);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
-  const handleSortChange = (value: SortValue) => {
-    setSort(value);
-    setError(null);
-    const opt = SORT_OPTIONS.find((o) => o.value === value);
+  const currentQuery = useMemo(
+    () => buildCatalogQuery(query, groups, filters),
+    [query, groups, filters],
+  );
+
+  const syncFilterUrl = (next: CatalogFilterState) => {
+    if (typeof window === 'undefined') return;
+    const url = new URL(window.location.href);
+    url.searchParams.delete('after');
+
+    for (const group of groups) {
+      const selected = next[group.id] ?? [];
+      if (selected.length > 0) {
+        url.searchParams.set(group.param, selected.join(','));
+      } else {
+        url.searchParams.delete(group.param);
+      }
+    }
+
+    window.history.replaceState(null, '', url.toString());
+  };
+
+  const fetchFirstPage = (
+    nextFilters: CatalogFilterState,
+    nextSort: SortValue = sort,
+  ) => {
+    const opt = SORT_OPTIONS.find((option) => option.value === nextSort);
     if (!opt) return;
+
+    setError(null);
     startTransition(() => {
       void (async () => {
         try {
+          const filteredQuery = buildCatalogQuery(query, groups, nextFilters);
           const page = await getProducts({
-            query,
+            query: filteredQuery,
             first: pageSize,
             sortKey: opt.sortKey ?? undefined,
             reverse: opt.reverse,
@@ -107,22 +146,35 @@ export function CategoryView({
     });
   };
 
+  const handleFiltersChange = (next: CatalogFilterState) => {
+    setFilters(next);
+    setSize(null);
+    syncFilterUrl(next);
+    fetchFirstPage(next);
+  };
+
+  const handleSortChange = (value: SortValue) => {
+    setSort(value);
+    fetchFirstPage(filters, value);
+  };
+
   const handleLoadMore = () => {
     if (!pageInfo.hasNextPage || !pageInfo.endCursor) return;
-    setError(null);
-    const opt = SORT_OPTIONS.find((o) => o.value === sort);
+    const opt = SORT_OPTIONS.find((option) => option.value === sort);
     if (!opt) return;
+
+    setError(null);
     startTransition(() => {
       void (async () => {
         try {
           const page = await getProducts({
-            query,
+            query: currentQuery,
             first: pageSize,
             after: pageInfo.endCursor,
             sortKey: opt.sortKey ?? undefined,
             reverse: opt.reverse,
           });
-          setProducts((prev) => [...prev, ...page.products]);
+          setProducts((previous) => [...previous, ...page.products]);
           setPageInfo(page.pageInfo);
         } catch {
           setError('Could not load more products. Please try again.');
@@ -131,9 +183,6 @@ export function CategoryView({
     });
   };
 
-  // Derive size-bucket counts from the currently-loaded products
-  // so the filter shows realistic numbers, and dim sizes that have
-  // zero matches in the current set.
   const sizeCounts = useMemo(() => {
     if (!enableSizeFilter) return undefined;
     const counts: Record<CartridgeSize, number> = {
@@ -159,13 +208,6 @@ export function CategoryView({
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-      {/*
-        Single compact filter strip. On sm+ everything sits on one
-        row: size pills (cartridges only) on the left, count + sort
-        on the right. Mobile stacks naturally via flex-wrap.
-        Result: only ~40px of vertical space above the grid instead
-        of three separate ~40px rows.
-      */}
       <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 mb-4 md:mb-6">
         {enableSizeFilter ? (
           <SizeFilter
@@ -174,17 +216,16 @@ export function CategoryView({
             counts={sizeCounts}
           />
         ) : (
-          // Spacer keeps the count + sort pinned to the right when
-          // the size filter isn't rendered (water-filters, plumbing,
-          // pumps, bubblers).
           <span />
         )}
 
         <div className="flex items-center gap-3 ml-auto">
-          <p className="text-xs text-black/60 tabular-nums whitespace-nowrap">
-            {visibleProducts.length}{' '}
-            {visibleProducts.length === 1 ? 'product' : 'products'}
-            {enableSizeFilter && size && ' · filtered'}
+          <p className="hidden text-xs text-black/60 tabular-nums whitespace-nowrap lg:block">
+            {visibleProducts.length}
+            {pageInfo.hasNextPage ? '+' : ''}{' '}
+            {visibleProducts.length === 1 && !pageInfo.hasNextPage
+              ? 'product'
+              : 'products'}
           </p>
           <SortDropdown
             value={sort}
@@ -194,40 +235,60 @@ export function CategoryView({
         </div>
       </div>
 
-      <ProductGrid products={visibleProducts} />
+      <ActiveFilterChips
+        groups={groups}
+        value={filters}
+        onChange={handleFiltersChange}
+        disabled={isPending}
+      />
 
-      {visibleProducts.length === 0 && size !== null && (
-        <p className="mt-8 text-center text-sm text-black/70">
-          No products in this size on the current page.{' '}
-          <button
-            type="button"
-            onClick={() => setSize(null)}
-            className="text-brand-blue underline underline-offset-4 hover:text-brand-blue-hover"
-          >
-            Clear filter
-          </button>
-          .
-        </p>
-      )}
+      <div className="lg:flex lg:items-start lg:gap-8">
+        <CatalogFilters
+          groups={groups}
+          value={filters}
+          onChange={handleFiltersChange}
+          resultCount={visibleProducts.length}
+          hasMore={pageInfo.hasNextPage}
+          disabled={isPending}
+        />
 
-      {error && (
-        <p role="alert" className="mt-6 text-sm text-red-600">
-          {error}
-        </p>
-      )}
+        <div className="min-w-0 flex-1">
+          <ProductGrid products={visibleProducts} />
 
-      {pageInfo.hasNextPage && (
-        <div className="mt-10 text-center">
-          <button
-            type="button"
-            onClick={handleLoadMore}
-            disabled={isPending}
-            className="inline-flex items-center justify-center bg-white border border-black text-black font-semibold px-6 py-3 rounded hover:bg-gray-50 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
-          >
-            {isPending ? 'Loading…' : 'Load more'}
-          </button>
+          {visibleProducts.length === 0 && size !== null && (
+            <p className="mt-8 text-center text-sm text-black/70">
+              No products in this size on the current page.{' '}
+              <button
+                type="button"
+                onClick={() => setSize(null)}
+                className="text-brand-blue underline underline-offset-4 hover:text-brand-blue-hover"
+              >
+                Clear size filter
+              </button>
+              .
+            </p>
+          )}
+
+          {error && (
+            <p role="alert" className="mt-6 text-sm text-red-600">
+              {error}
+            </p>
+          )}
+
+          {pageInfo.hasNextPage && (
+            <div className="mt-10 text-center">
+              <button
+                type="button"
+                onClick={handleLoadMore}
+                disabled={isPending}
+                className="inline-flex items-center justify-center bg-white border border-black text-black font-semibold px-6 py-3 rounded hover:bg-gray-50 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+              >
+                {isPending ? 'Loading…' : 'Load more'}
+              </button>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -238,14 +299,6 @@ interface SortDropdownProps {
   disabled: boolean;
 }
 
-/**
- * Modern sort dropdown — styled native <select>.
- *
- * Uses `appearance-none` to strip native chrome, layered behind a
- * Lucide ChevronDown for the affordance. Keeps the real <select>
- * underneath so we get keyboard nav, screen-reader labelling, and
- * the native iOS/Android picker on mobile for free.
- */
 function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
   return (
     <div className="relative inline-flex items-center">
@@ -257,14 +310,14 @@ function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
       </span>
       <select
         value={value}
-        onChange={(e) => onChange(e.target.value as SortValue)}
+        onChange={(event) => onChange(event.target.value as SortValue)}
         disabled={disabled}
         aria-labelledby="sort-by-label"
         className="appearance-none bg-white border border-gray-300 hover:border-black focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 rounded-full pl-12 pr-8 py-1 text-xs font-medium text-black cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
       >
-        {SORT_OPTIONS.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
+        {SORT_OPTIONS.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
           </option>
         ))}
       </select>
