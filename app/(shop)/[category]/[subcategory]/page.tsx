@@ -81,10 +81,25 @@ export default async function SubcategoryPage({
   const node = findSubcategory(category, subcategory);
   if (!node) notFound();
 
+  const cartridgeFacetBySubcategory: Record<string, string> = {
+    sediment: 'facet:cartridge-sediment',
+    carbon: 'facet:cartridge-carbon',
+    'reverse-osmosis-membranes': 'facet:cartridge-ro-membrane',
+    'specialty-cartridges': 'facet:cartridge-specialty',
+    'cartridge-sets': 'facet:cartridge-set',
+  };
+
+  const cartridgeFacet =
+    category === 'cartridges'
+      ? cartridgeFacetBySubcategory[subcategory]
+      : undefined;
+
   const baseQuery =
     category === 'plumbing' && subcategory === 'kitchen-taps'
       ? "tag:'primary-cat:plumbing' AND (tag:'sub-cat:kitchen-taps' OR tag:'sub-cat:ro-filter-taps')"
-      : `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
+      : cartridgeFacet
+        ? `tag:'primary-cat:cartridges' AND tag:'${cartridgeFacet}'`
+        : `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
   const filterGroups = getCatalogFilterGroups(category, subcategory);
   const initialFilters = parseCatalogFilterState(paramsValue, filterGroups);
   const query = buildCatalogQuery(baseQuery, filterGroups, initialFilters);
