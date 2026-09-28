@@ -27,7 +27,7 @@ This is not a gimmick. It is the reason the business exists. The traditional mod
 
 We have a real showroom and warehouse at 6/45 Amsterdam Cct, Wyong NSW 2259. Local customers are welcome to visit during business hours (Mon-Fri 9am-3pm AEST; closed weekends), or use Click & Collect - orders are usually ready within two hours during business hours.
 
-For everyone else in Australia: orders placed before 12pm AEST on a business day ship the same day from Wyong, with tracked delivery on every parcel. Standard tiered shipping rates Australia-wide; whole-house systems, UV systems, and freestanding coolers ship free freight.
+For everyone else in Australia: orders placed before 12pm AEST on a business day normally ship the same day from Wyong, with tracked delivery on parcels. Delivery is based on each product's shipping class, packed weight, and destination; selected products include free delivery, while bulky items use destination-based freight rates.
 
 ## What you can expect from us
 
