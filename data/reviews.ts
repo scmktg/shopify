@@ -15,7 +15,7 @@ import type { Review, ReviewStats } from '@/types/review';
  * dates, or text. If the source data is incomplete, leave the entry
  * out rather than guess.
  *
- * IMPORTANT — these totals (`reviewStats.total` etc) drive the
+ * IMPORTANT - these totals (`reviewStats.total` etc) drive the
  * visible on-page numbers ONLY. They are deliberately NOT plumbed
  * into JSON-LD `aggregateRating` because Google's review snippet
  * policy reserves that field for first-party reviews collected on
@@ -68,7 +68,7 @@ export const reviews: ReadonlyArray<Review> = [
     source: 'google',
     authorName: 'Tarwk N.',
     rating: 5,
-    text: 'I had a great experience with Enviro Aqua — what you see is truly what you get, and most of all not misleading like other shops I have experienced. These guys are honest and humble.',
+    text: 'I had a great experience with Enviro Aqua - what you see is truly what you get, and most of all not misleading like other shops I have experienced. These guys are honest and humble.',
     date: '2026-02-10',
     featured: true,
     isLocalGuide: true,
@@ -165,7 +165,7 @@ export const reviews: ReadonlyArray<Review> = [
     source: 'facebook',
     authorName: 'AJ A.',
     rating: 5,
-    text: 'Brilliant — everything supplied including pressure limiting valve. Very easy to fit. Best water ever. Best service and communication with the supplier.',
+    text: 'Brilliant - everything supplied including pressure limiting valve. Very easy to fit. Best water ever. Best service and communication with the supplier.',
     date: '2020-07-15',
     featured: true,
   },
@@ -201,7 +201,7 @@ export const reviews: ReadonlyArray<Review> = [
 export const reviewStats: ReviewStats = {
   // Real platform totals: 64 public Google reviews + 10 public
   // Facebook recommendations = 74. Used for visible on-page numbers
-  // only — see the file header for why these are NOT fed into
+  // only - see the file header for why these are NOT fed into
   // structured-data aggregateRating.
   total: 74,
   totalGoogle: 64,
