@@ -3,7 +3,6 @@
 import {
   createContext,
   useContext,
-  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -23,28 +22,27 @@ const VariantSelectionContext =
 
 interface VariantSelectionProviderProps {
   variants: ReadonlyArray<ProductVariant>;
+  initialVariantId?: string | null;
   children: ReactNode;
 }
 
 export function VariantSelectionProvider({
   variants,
+  initialVariantId = null,
   children,
 }: VariantSelectionProviderProps) {
-  const initial = variants[0]!;
+  const initial =
+    variants.find((variant) => variant.id === initialVariantId) ?? variants[0]!;
   const [selectedVariantId, setSelectedVariantId] = useState(initial.id);
   const selectedVariant =
     variants.find((variant) => variant.id === selectedVariantId) ?? initial;
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const requestedVariantId = params.get('variant');
-    if (
-      requestedVariantId &&
-      variants.some((variant) => variant.id === requestedVariantId)
-    ) {
-      setSelectedVariantId(requestedVariantId);
-    }
-  }, [variants]);
+  const setVariant = (variant: ProductVariant) => {
+    setSelectedVariantId(variant.id);
+    const url = new URL(window.location.href);
+    url.searchParams.set('variant', variant.id);
+    window.history.replaceState(null, '', url);
+  };
 
   const optionNames = useMemo(() => {
     const seen = new Set<string>();
@@ -86,7 +84,7 @@ export function VariantSelectionProvider({
     );
 
     if (exact) {
-      setSelectedVariantId(exact.id);
+      setVariant(exact);
       return;
     }
 
@@ -95,7 +93,7 @@ export function VariantSelectionProvider({
         (option) => option.name === name && option.value === value,
       ),
     );
-    if (fallback) setSelectedVariantId(fallback.id);
+    if (fallback) setVariant(fallback);
   };
 
   return (
