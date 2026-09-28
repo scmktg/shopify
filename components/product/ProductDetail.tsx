@@ -22,8 +22,12 @@ import { VariantPurchaseControls } from './VariantPurchaseControls';
 import { VariantProductTrustBlock } from './VariantProductTrustBlock';
 import { VariantBuyBanner } from './VariantBuyBanner';
 import { VariantMobileStickyBuyBar } from './VariantMobileStickyBuyBar';
+import { ThreeWayTapHeroBenefits } from './ThreeWayTapHeroBenefits';
+import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
+const THREE_WAY_TAP_HANDLE =
+  '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c';
 
 function offersInstallPackage(content: ProductContent): boolean {
   return (content.tags ?? []).includes(INSTALL_PACKAGE_TAG);
@@ -111,6 +115,10 @@ export function ProductDetail({
             {product.title}
           </h1>
 
+          {product.handle === THREE_WAY_TAP_HANDLE && (
+            <ThreeWayTapHeroBenefits />
+          )}
+
           <VariantPurchaseControls
             fallbackPrice={product.priceRange.minVariantPrice}
             ctaLabel={content.ctas?.primary ?? undefined}
@@ -152,6 +160,9 @@ export function ProductDetail({
       </div>
 
       <HeadlineSpecs specs={content.headlineSpecs} />
+      {product.handle === THREE_WAY_TAP_HANDLE && (
+        <ThreeWayTapSalesSections />
+      )}
       <FullSpecs specs={content.fullSpecs} />
       <ProductOverview
         description={content.description}
