@@ -11,7 +11,6 @@ import type { ShopifyPageInfo } from '@/types/shopify';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { SizeFilter } from './SizeFilter';
 import {
-  CARTRIDGE_SIZE_OPTIONS,
   getProductCartridgeSize,
   type CartridgeSize,
 } from '@/lib/utils/cartridgeSize';
