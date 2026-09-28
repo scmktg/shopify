@@ -4,6 +4,7 @@ import { unstable_cache } from 'next/cache';
 import {
   shopifyClient,
   type ShopifyClientResponse,
+  type ShopifyResponseErrors,
 } from '../client';
 import { PRODUCT_CARD_FRAGMENT } from '../fragments';
 import { transformShopifyProductCard } from '../transformers';
@@ -74,6 +75,18 @@ const EMPTY_PAGE: ProductsPage = {
   pageInfo: { hasNextPage: false, endCursor: null },
 };
 
+const MAX_FETCH_ATTEMPTS = 3;
+const RETRY_DELAYS_MS = [250, 750];
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function isRetryableShopifyError(errors: ShopifyResponseErrors): boolean {
+  const status = errors.networkStatusCode;
+  return status === undefined || status === 408 || status === 429 || status >= 500;
+}
+
 async function fetchProducts(options: GetProductsOptions): Promise<ProductsPage> {
   const first = Math.min(Math.max(options.first ?? 24, 1), 100);
   const variables = {
@@ -84,32 +97,54 @@ async function fetchProducts(options: GetProductsOptions): Promise<ProductsPage>
     reverse: options.reverse ?? false,
   };
 
-  const result: ShopifyClientResponse<RawResponse> =
-    await shopifyClient.request<RawResponse>(QUERY, { variables });
-  const { data, errors } = result;
+  for (let attempt = 1; attempt <= MAX_FETCH_ATTEMPTS; attempt += 1) {
+    try {
+      const result: ShopifyClientResponse<RawResponse> =
+        await shopifyClient.request<RawResponse>(QUERY, { variables });
+      const { data, errors } = result;
 
-  if (errors) {
-    console.error(
-      '[shopify] getProducts GraphQL errors:',
-      JSON.stringify(errors, null, 2),
-    );
-    const firstMessage =
-      errors.graphQLErrors?.[0]?.message ??
-      errors.message ??
-      'Unknown Shopify error';
-    throw new Error(`Failed to fetch products: ${firstMessage}`, {
-      cause: errors,
-    });
+      if (errors) {
+        const firstMessage =
+          errors.graphQLErrors?.[0]?.message ??
+          errors.message ??
+          'Unknown Shopify error';
+        const retryable = isRetryableShopifyError(errors);
+
+        console.error(
+          `[shopify] getProducts attempt ${attempt}/${MAX_FETCH_ATTEMPTS} failed:`,
+          JSON.stringify(errors, null, 2),
+        );
+
+        if (retryable && attempt < MAX_FETCH_ATTEMPTS) {
+          await sleep(RETRY_DELAYS_MS[attempt - 1] ?? 750);
+          continue;
+        }
+
+        throw new Error(`Failed to fetch products: ${firstMessage}`, {
+          cause: errors,
+        });
+      }
+
+      if (!data?.products) return EMPTY_PAGE;
+
+      return {
+        products: data.products.edges.map((edge) =>
+          transformShopifyProductCard(edge.node),
+        ),
+        pageInfo: data.products.pageInfo,
+      };
+    } catch (error) {
+      if (attempt >= MAX_FETCH_ATTEMPTS) throw error;
+
+      console.warn(
+        `[shopify] getProducts network attempt ${attempt}/${MAX_FETCH_ATTEMPTS} failed; retrying`,
+        error,
+      );
+      await sleep(RETRY_DELAYS_MS[attempt - 1] ?? 750);
+    }
   }
 
-  if (!data?.products) return EMPTY_PAGE;
-
-  return {
-    products: data.products.edges.map((edge) =>
-      transformShopifyProductCard(edge.node),
-    ),
-    pageInfo: data.products.pageInfo,
-  };
+  return EMPTY_PAGE;
 }
 
 export async function getProducts(
