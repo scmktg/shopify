@@ -41,7 +41,7 @@ const CATEGORY_BLURBS: Record<string, string> = {
 };
 
 // Curated featured grid. Order here is the order shown on the
-// homepage. Handles must exist in data/products.json and Shopify —
+// homepage. Handles must exist in data/products.json and Shopify -
 // the loader silently drops any that are missing.
 const FEATURED_HANDLES: ReadonlyArray<string> = [
   'deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy',
@@ -69,7 +69,7 @@ function toCardData(product: Product): ProductCardData {
 
 async function loadFeatured(): Promise<ReadonlyArray<ProductCardData>> {
   // Per-handle fetch (the established pattern for curated product
-  // rails in this codebase — see commercial-water-bubblers and
+  // rails in this codebase - see commercial-water-bubblers and
   // water-bubblers-for-gyms). Shopify's product-search `query` field
   // is unreliable for bare hyphenated handles, so we look up each
   // handle individually and project to ProductCardData. Missing
@@ -116,7 +116,7 @@ export default async function HomePage() {
 const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   {
     q: 'Do you sell to trade/wholesale customers?',
-    a: 'Yes — and at the same price as everyone else. There is no separate trade portal, no account application, and no minimum order. Tradies and homeowners pay the same wholesale price up front.',
+    a: 'Yes - and at the same price as everyone else. There is no separate trade portal, no account application, and no minimum order. Tradies and homeowners pay the same wholesale price up front.',
   },
   {
     q: 'What is WaterMark certification and why does it matter?',
@@ -124,7 +124,7 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'How do I know which water filter is right for my home?',
-    a: 'Start with what you want to filter. Chlorine and taste — a carbon under-sink filter does the job. Sediment from rainwater — a whole-house pre-filter. Fluoride — reverse osmosis. Each product page lists what the system reduces; the help guides break it down by water source if you are not sure.',
+    a: 'Start with what you want to filter. Chlorine and taste - a carbon under-sink filter does the job. Sediment from rainwater - a whole-house pre-filter. Fluoride - reverse osmosis. Each product page lists what the system reduces; the help guides break it down by water source if you are not sure.',
   },
   {
     q: 'Do you ship Australia-wide?',
@@ -136,7 +136,7 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'Can I install these myself, or do I need a plumber?',
-    a: 'Under-sink and bench-top filters are usually DIY — they tap into the existing cold-water line with the included push-fit fittings. Whole-house systems and anything cutting into mains plumbing must be installed by a licensed plumber. Each product page lists the install requirements.',
+    a: 'Under-sink and bench-top filters are usually DIY - they tap into the existing cold-water line with the included push-fit fittings. Whole-house systems and anything cutting into mains plumbing must be installed by a licensed plumber. Each product page lists the install requirements.',
   },
 ];
 
@@ -188,7 +188,7 @@ function Hero({ installHeroImage }: HeroProps) {
             </h1>
             <p className="mt-4 sm:mt-5 max-w-2xl mx-auto md:mx-0 text-base sm:text-lg md:text-xl text-black/70">
               Wholesale prices on water filters, cartridges, and filtration
-              systems. One price for everyone — no accounts, no quotes, just
+              systems. One price for everyone - no accounts, no quotes, just
               the best price upfront.
             </p>
             <div className="mt-6 sm:mt-8 flex justify-center md:justify-start">
@@ -225,7 +225,7 @@ function InstallHeroCard({ image }: InstallHeroCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded p-5 md:p-6 flex flex-col gap-4">
       <span className="self-start inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
-        Local offer — Central Coast NSW
+        Local offer - Central Coast NSW
       </span>
       <div className="flex gap-4 items-start">
         <div className="relative flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 bg-white border border-gray-200 rounded overflow-hidden">
@@ -241,7 +241,7 @@ function InstallHeroCard({ image }: InstallHeroCardProps) {
         </div>
         <div className="flex-1 min-w-0">
           <h3 className="text-lg md:text-xl font-semibold text-black leading-snug">
-            Whole House Water Filter — Installed for $2,299
+            Whole House Water Filter - Installed for $2,299
           </h3>
           <p className="mt-2 text-sm text-black/70">
             WaterMark certified system + local plumber. Filtered water at every
@@ -313,7 +313,7 @@ function TrustStrip() {
     {
       icon: DollarSign,
       title: 'Wholesale pricing',
-      body: 'Same price for everyone — homeowners, tradies, commercial.',
+      body: 'Same price for everyone - homeowners, tradies, commercial.',
     },
     {
       icon: Truck,
@@ -396,7 +396,7 @@ function WhyDifferent() {
     {
       icon: GraduationCap,
       title: 'Specialist knowledge',
-      body: "We sell water filtration — that's it. Spec sheets, installation notes, and compatibility info on every product so you order the right thing first time.",
+      body: "We sell water filtration - that's it. Spec sheets, installation notes, and compatibility info on every product so you order the right thing first time.",
     },
     {
       icon: Zap,
