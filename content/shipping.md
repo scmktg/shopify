@@ -1,77 +1,68 @@
 ---
 title: "Shipping & Delivery"
-description: "Australia-wide parcel delivery, selected free delivery, bulky freight and free Click & Collect from our Wyong NSW showroom."
+description: "Seven-tier shipping Australia-wide, free freight on whole-house systems, and free Click & Collect from our Wyong NSW showroom. Same-day dispatch on orders before 12pm AEST."
 relatedLinks:
   - { label: "Returns & warranty", href: "/returns/" }
   - { label: "Contact us", href: "/contact/" }
 faq:
   - q: "When will my order ship?"
-    a: "Orders placed before 12pm AEST on a business day are normally dispatched the same day. Orders placed after 12pm, on weekends, or on Australian public holidays are normally dispatched the next business day. Tracking is sent when the carrier collects the order."
-  - q: "How much is delivery?"
-    a: "Delivery depends on the product, its packed size and weight, and the delivery address. Standard parcel products are calculated at checkout. Selected products include free delivery. Large products use bulky-freight rates by destination. Shopify checkout is the source of truth for the final delivery charge."
+    a: "Orders placed before 12pm AEST on a business day ship the same day. Orders placed after 12pm, on weekends, or on Australian public holidays ship the next business day. You will receive a tracking link by email when the parcel is collected."
+  - q: "How long does delivery take?"
+    a: "Standard delivery is 2–5 business days to most Australian addresses. Express is 1–2 business days on tiers T1–T4 (parcel items). Sydney metro and the Central Coast are usually at the fast end of that range; remote WA, NT, and far-north QLD addresses are at the slow end. Whole-house systems and other freight items take 3–10 business days depending on state. The tracking link gives a per-leg ETA once the parcel ships."
   - q: "Do you ship Australia-wide?"
-    a: "Yes, for most products. Some fragile or unusually bulky bathroom products are Click & Collect only from our Wyong NSW showroom."
+    a: "Yes, for most products. Standard tiered shipping rates Australia-wide from $9.95. Whole-house Big Blue systems, UV systems, freestanding coolers, and other large items ship free Australia-wide on our free-freight tier. Commercial RO plants, 50L+ tanks, and dosing tanks ship by pallet at three flat rates by destination state: $99 to NSW and ACT; $179 to Victoria, Queensland and South Australia; $249 to WA, Tasmania and NT. Pallet freight is 3–8 business days. Toilets and complete bathroom packages are pickup-only from our Wyong NSW showroom — call us if you need a courier arranged."
   - q: "Do you ship internationally?"
-    a: "We currently ship within Australia only."
+    a: "We ship within Australia only. Orders to overseas addresses (including New Zealand) cannot be processed at this time."
   - q: "Can I pick up locally?"
-    a: "Yes. Free Click & Collect is available from our Wyong NSW showroom at 6/45 Amsterdam Cct, Wyong NSW 2259 where the product is eligible for local pickup. We will email or text you when the order is ready."
+    a: "Yes. Click & Collect from our Wyong NSW showroom (6/45 Amsterdam Cct) is free on every order, including freight-quoted items. Orders placed during business hours are usually ready within two hours; we will email or text you when yours is ready. Showroom hours are Mon–Fri 9am – 5pm AEST."
 ---
 
-We dispatch Monday to Friday from Wyong NSW on the Central Coast.
+We dispatch orders Monday to Friday from our Wyong NSW warehouse on the Central Coast. Tracked shipping on every order, with no signature required by default.
 
-Shopify checkout is the source of truth for the delivery methods and final shipping charge available to your order.
+## Seven shipping tiers
 
-## Our four shipping classes
+Each product is assigned a tier based on its size, weight, and freight profile. The tier is shown on every product page above the description.
 
-### Standard parcel
+| Tier | Standard | Express | Service | What it carries |
+|---|---|---|---|---|
+| T1 Small parcel | $9.95 | $17.95 | AusPost small satchel | Inline cartridges, fittings, small parts |
+| T2 Standard parcel | $14.95 | $22.95 | AusPost medium satchel / Aramex | Single 10" cartridges, twin packs, RO membranes, basin mixers, bench-tops |
+| T3 Large parcel | $19.95 | $29.95 | Aramex / CouriersPlease | Big Blue cartridges, 5/6-stage RO sets, under-sink systems, tall mixers |
+| T4 Bulky parcel | $29.95 | $41.95 | Aramex bulky | Under-sink RO with tank, bench-top coolers, single toilets |
+| T5 Free freight | FREE | n/a | Allied / Aramex bulky | Whole-house Big Blue (single/twin/triple), freestanding coolers, large UV, 19L+ pressure tanks, in-wall toilets |
+| T6 Freight by zone | $99 / $179 / $249 by state | n/a | Pallet freight | Commercial RO plants, 50L+ tanks, dosing tanks |
+| T7 Click & Collect only | n/a | n/a | Wyong showroom pickup | Toilets, bathroom bundles |
 
-Most cartridges, taps, fittings, pumps and smaller water-filtration systems travel as standard parcels.
+Express is offered on T1–T4 only. Pallet freight has no overnight equivalent.
 
-The checkout rate is based on the product's **packed shipping weight and size** together with the delivery destination. This avoids forcing very different products into artificial shipping tiers.
+## Free Click & Collect from Wyong
 
-Free Click & Collect from Wyong is also available where local pickup is enabled.
+Pick up your order in person from our Wyong NSW showroom and skip the shipping fee on every tier — including freight-quoted items.
 
-### Free delivery
-
-Selected higher-value products include delivery at no additional charge.
-
-Products marked **Free delivery** will show a $0 delivery option at Shopify checkout for eligible Australian addresses.
-
-Free Click & Collect is also available where local pickup is enabled.
-
-### Bulky freight
-
-Large, heavy or awkward products such as commercial treatment equipment, large tanks and some whole-house systems travel by bulky or pallet freight.
-
-Freight is calculated by delivery region in Shopify checkout. Very large or unusual consignments may require a manual freight quote.
-
-Free Click & Collect is available where local pickup is enabled.
-
-### Click & Collect only
-
-Fragile or difficult-to-transport products such as selected toilets and bathroom packages are not offered through standard delivery.
-
-These products can be collected free from:
-
-- **Enviro Aqua**
-- **6/45 Amsterdam Cct, Wyong NSW 2259**
-- **Monday to Friday, 9am–5pm AEST**
-
-We will email or text you when your order is ready.
+- **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
+- **Hours:** Monday to Friday, 9am – 5pm AEST
+- **Ready in ~2 hours** during business hours. We email or text you when the order is ready for collection.
+- **No appointment needed** — just come in during open hours.
 
 ## Dispatch times
 
-- Orders placed **before 12pm AEST** on a business day are normally dispatched the same business day.
-- Orders placed **after 12pm AEST**, on weekends, or on Australian public holidays are normally dispatched the next business day.
+- Orders placed **before 12pm AEST** on a business day → ship the same business day.
+- Orders placed **after 12pm AEST**, on weekends, or on Australian public holidays → ship the next business day.
 
-## Delivery estimates
+You will receive an order confirmation email when the order is placed, and a second email with the tracking link when the parcel is collected by the carrier.
 
-Transit times vary by carrier, destination and product type. Metro parcel deliveries are generally faster than regional or remote deliveries, while bulky freight normally takes longer.
+## Pallet freight by zone (T6)
 
-The tracking information supplied after dispatch is the best source for the carrier's current ETA.
+Commercial RO plants, 50L+ pressure tanks, and dosing tanks ship by pallet. Three flat rates by destination state, shown at checkout once you enter your address:
+
+- **$99** — NSW and ACT (3–5 business days)
+- **$179** — Victoria, Queensland, South Australia (5–8 business days)
+- **$249** — WA, Tasmania, NT (5–8 business days)
+
+## Click & Collect only (T7)
+
+Toilets and complete bathroom packages are available only for Click & Collect from our Wyong NSW showroom. These items don't ship because of fragility, size, and the complexity of bathroom-set logistics. Call (02) 8772 8162 if you need one of these items and can't pick up — we can sometimes arrange a courier on a case-by-case basis.
 
 ## Damaged or missing parcels
 
-If a parcel arrives damaged, photograph the packaging and contents before unpacking further and contact us within 14 days.
-
-If tracking shows a parcel as delivered but you cannot locate it, check with neighbours and authorised receivers first. If it is still missing, contact us with your order number so we can lodge a trace with the carrier.
+If a parcel arrives damaged, photograph the packaging and contents before unpacking further and contact us within 14 days. If a parcel is marked delivered but you cannot locate it, check with neighbours and authorised receivers first; if you still cannot find it, contact us with your order number and we will lodge a trace with the carrier. Most "missing" parcels turn up within a few days.
