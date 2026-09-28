@@ -47,7 +47,7 @@ The standard packaged version is a three-stage 20" Big Blue system with sediment
 This is our home patch. If you are local, Click & Collect from 6/45 Amsterdam Cct is the fastest way to get a system. Orders placed during business hours are usually ready within two hours; we email or text confirmation when ready. No appointment needed during open hours.
 
 - **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am - 5pm AEST
+- **Hours:** Monday to Friday, 9am - 3pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
 
 Local Tuggerah and Wyong deliveries also go out same-day on orders placed before 12pm AEST.
