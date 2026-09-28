@@ -64,6 +64,7 @@ function toCardData(product: Product): ProductCardData {
     featuredImage: product.featuredImage,
     price: product.priceRange.minVariantPrice,
     housingSize: product.metafields.housing_size,
+    variants: product.variants,
   };
 }
 
