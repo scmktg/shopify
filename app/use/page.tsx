@@ -9,7 +9,7 @@ const PATH = '/use';
 export const metadata: Metadata = {
   title: 'Water Filters by Use Case',
   description:
-    'Curated water filtration setups by use case — home drinking water, rural tank water, whole-home, commercial and cafe, rental-friendly.',
+    'Curated water filtration setups by use case - home drinking water, rural tank water, whole-home, commercial and cafe, rental-friendly.',
   alternates: { canonical: PATH },
 };
 
