@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const INTRO =
-  'Practical guides for choosing, installing, and maintaining water filtration systems in Australia. We add new guides regularly — if there is something specific you need to know, get in touch.';
+  'Practical guides for choosing, installing, and maintaining water filtration systems in Australia. We add new guides regularly - if there is something specific you need to know, get in touch.';
 
 export default async function HelpHub() {
   const items = await listSectionPages('help');
