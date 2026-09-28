@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { Truck } from 'lucide-react';
 import type { ShippingTier } from '@/types/product';
+import { ShippingEstimator } from './ShippingEstimator';
 
 interface ShippingTierBlockProps {
   tier: ShippingTier | null;
   productHandle: string;
+  variantId: string | null;
 }
 
 interface TierCopy {
@@ -118,6 +120,7 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
 export function ShippingTierBlock({
   tier,
   productHandle,
+  variantId,
 }: ShippingTierBlockProps) {
   const resolvedTier: ShippingTier | null = tier;
   if (resolvedTier === null) {
@@ -151,6 +154,9 @@ export function ShippingTierBlock({
           <p>{copy.lead}</p>
           <p className="text-black/80">{copy.clickAndCollect}</p>
           <p className="text-black/80">{copy.trailing}</p>
+          {resolvedTier && resolvedTier !== 'T7' && variantId && (
+            <ShippingEstimator variantId={variantId} tier={resolvedTier} />
+          )}
           <p className="mt-1 text-xs text-black/60">
             <Link
               href="/shipping/"
