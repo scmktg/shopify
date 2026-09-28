@@ -15,12 +15,12 @@ import { breadcrumbSchema } from '@/lib/seo/jsonld';
 const PATH = '/contact';
 
 export const metadata: Metadata = {
-  title: 'Contact Enviro Aqua — Phone, Email, Wyong NSW Showroom',
+  title: 'Contact Enviro Aqua - Phone, Email, Wyong NSW Showroom',
   description:
     'Talk to a real person about water filtration. Phone (02) 8772 8162, email info@enviroaqua.com.au, or visit our Wyong NSW Central Coast showroom. One business day response.',
   alternates: { canonical: PATH },
   openGraph: {
-    title: 'Contact Enviro Aqua — Phone, Email, Wyong NSW Showroom',
+    title: 'Contact Enviro Aqua - Phone, Email, Wyong NSW Showroom',
     description:
       'Talk to a real person about water filtration. Phone, email, and walk-in showroom on the NSW Central Coast.',
     url: PATH,
@@ -32,7 +32,7 @@ const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encod
 const GOOGLE_MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(fullAddress())}&z=15&output=embed`;
 
 const HELP_WITH: ReadonlyArray<string> = [
-  'Product compatibility — "which cartridge fits my system?"',
+  'Product compatibility - "which cartridge fits my system?"',
   'Sizing advice for whole-house and rural setups',
   'Order status, tracking, and delivery questions',
   'Returns, warranty claims, and faulty-product reports',
@@ -61,7 +61,7 @@ export default function ContactPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-black/80 leading-snug">
             Phone, email, or walk in. We answer every enquiry within
-            one business day — usually within an hour during showroom
+            one business day - usually within an hour during showroom
             hours. No call centres, no scripts.
           </p>
         </section>
@@ -133,7 +133,7 @@ export default function ContactPage() {
             Visit in person
           </p>
           <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-black tracking-tight">
-            Wyong showroom — Central Coast NSW
+            Wyong showroom - Central Coast NSW
           </h2>
           <p className="mt-3 max-w-2xl text-base text-black/80 leading-snug">
             Walk in any time during business hours. No appointment
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   </dt>
                   <dd className="mt-1 text-base text-black leading-snug">
                     Free pickup on every order, no minimum. Most orders
-                    ready within two hours during business hours — we
+                    ready within two hours during business hours - we
                     email or text when yours is ready.
                   </dd>
                 </div>
@@ -248,7 +248,7 @@ export default function ContactPage() {
             >
               whole-house installation package
             </Link>{' '}
-            — elsewhere, get in touch with the system you are
+            - elsewhere, get in touch with the system you are
             installing and we can recommend installers we work with.
           </p>
         </section>
