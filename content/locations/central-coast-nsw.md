@@ -9,9 +9,9 @@ relatedLinks:
   - { label: "Help & buying guides", href: "/help/" }
 faq:
   - q: "Where is your warehouse and showroom?"
-    a: "6/45 Amsterdam Cct, Wyong, NSW 2259 - open Monday to Friday, 9am to 5pm AEST. Local Central Coast customers are welcome to come in during business hours, and Click & Collect orders are usually ready within two hours."
+    a: "6/45 Amsterdam Cct, Wyong, NSW 2259 - open Monday to Friday, 9am to 3pm AEST. Local Central Coast customers are welcome to come in during business hours, and Click & Collect orders are usually ready within two hours."
   - q: "Do you do installation?"
-    a: "We sell the systems and the parts. Whole-house and mains-pressure installs require a licensed plumber by law in NSW - we do not currently offer installation, but we can recommend licensed plumbers on the Central Coast who install our systems regularly. Contact us with your suburb and the system you are installing for a referral."
+    a: "Yes, for our fixed-price Whole House Installation Package in eligible Central Coast postcodes. It includes the WaterMark-certified 3-stage system and installation by a licensed local plumber we coordinate. Other systems are supply-only, and we can recommend local plumbers where needed."
   - q: "What is the water like on the Central Coast?"
     a: "Mains water on the Central Coast is supplied by Central Coast Council and meets the Australian Drinking Water Guidelines. Like most NSW supplies it is dosed with chlorine for disinfection, which is the most common reason locals install carbon filters. Many properties on rural blocks (around Mangrove Mountain, Yarramalong, Wyong Creek) use rainwater tanks, which need a different setup - sediment, carbon, and UV."
   - q: "Can I pick up an order locally?"
@@ -27,7 +27,7 @@ Enviro Aqua is based in Wyong on the NSW Central Coast. We supply water filters,
 We have a real showroom and warehouse. Come in during business hours.
 
 - **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am - 5pm AEST
+- **Hours:** Monday to Friday, 9am - 3pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
 - **Click & Collect:** free pickup from the showroom, orders usually ready within two hours during business hours. Email or text confirmation when ready.
 
@@ -50,8 +50,8 @@ Everything you need for residential, rural, and commercial water filtration:
 - **Rural tank-water systems** - sediment, carbon, and UV combinations for rainwater and bore-water properties.
 - **Cartridges** - replacement cartridges in every size and type, including hard-to-find specialty filters.
 - **Pumps and tanks** - 12V and pressure pumps for caravans, RVs, and rural water systems.
-- **Plumbing fixtures** - kitchen taps, bathroom taps, and complete bundles, all WaterMark certified for mains-pressure installs.
+- **Plumbing fixtures** - kitchen taps, bathroom taps, and complete bundles, with WaterMark-certified options clearly identified for mains-pressure installs.
 
 ## Local delivery
 
-Most orders placed before 12pm AEST ship the same business day. Local Central Coast addresses typically receive tracked delivery the next business day; greater Sydney and Newcastle are usually within two business days. Free standard shipping over $200 anywhere in Australia. Or skip the wait and use Click & Collect from the Wyong showroom.
+Most orders placed before 12pm AEST ship the same business day. Local Central Coast addresses typically receive tracked delivery the next business day; greater Sydney and Newcastle are usually within two business days. Delivery depends on the product's shipping class, packed weight, and destination, with selected products including free delivery. Or skip the wait and use free Click & Collect from the Wyong showroom.
