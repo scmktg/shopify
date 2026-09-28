@@ -17,7 +17,7 @@ export function Header() {
         <Link
           href="/"
           aria-label="Enviro Aqua - home"
-          className="inline-flex items-center"
+          className="relative z-10 inline-flex shrink-0 items-center cursor-pointer"
         >
           <Image
             src="/logo.webp"
@@ -26,7 +26,7 @@ export function Header() {
             height={40}
             priority
             fetchPriority="high"
-            className="h-9 w-auto"
+            className="pointer-events-none select-none h-9 w-auto"
           />
         </Link>
 
