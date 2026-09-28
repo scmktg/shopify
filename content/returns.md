@@ -7,16 +7,16 @@ relatedLinks:
   - { label: "Terms & conditions", href: "/terms/" }
 faq:
   - q: "Do you accept change-of-mind returns?"
-    a: "No. Our returns policy covers damaged or faulty items only — we do not accept returns for change of mind, ordering the wrong product, or not needing the item anymore. If you are not sure which product is right, contact us before ordering and we will recommend the right system. Phone (02) 8772 8162 or email info@enviroaqua.com.au."
+    a: "No. Our returns policy covers damaged or faulty items only - we do not accept returns for change of mind, ordering the wrong product, or not needing the item anymore. If you are not sure which product is right, contact us before ordering and we will recommend the right system. Phone (02) 8772 8162 or email info@enviroaqua.com.au."
   - q: "How long do I have to report a damaged item?"
     a: "14 days from the date you receive the item. Email info@enviroaqua.com.au with your order number, a description of the damage or fault, and clear photos. After 14 days the standard manufacturer warranty still applies (12 months default), but the damaged-on-arrival process closes."
   - q: "Who pays for return shipping on a faulty item?"
     a: "We do. Once a damaged or faulty return is approved, we send return shipping instructions and cover the return shipping cost. Once the item arrives back at the Wyong warehouse and is inspected, we issue a refund or replacement (your preference, subject to availability)."
   - q: "What about warranty claims after 14 days?"
-    a: "Most products carry a 12-month manufacturer warranty by default; longer warranties are noted on the product page. Contact us with your order number, a description of the fault, and photos. Faulty products are also covered separately under the Australian Consumer Law — your statutory rights apply regardless of our policy."
+    a: "Most products carry a 12-month manufacturer warranty by default; longer warranties are noted on the product page. Contact us with your order number, a description of the fault, and photos. Faulty products are also covered separately under the Australian Consumer Law - your statutory rights apply regardless of our policy."
 ---
 
-We accept returns on damaged or faulty items only. We do not accept change-of-mind returns. If you are unsure which product is right for your install, contact us before ordering — we are happy to recommend.
+We accept returns on damaged or faulty items only. We do not accept change-of-mind returns. If you are unsure which product is right for your install, contact us before ordering - we are happy to recommend.
 
 ## Returns scope
 
@@ -29,7 +29,7 @@ For a return to be approved, all of the following must be true:
 
 - The item is in **original packaging** with all accessories, manuals, and documentation intact.
 - You can provide **proof of purchase** from the Enviro Aqua online store or showroom (order number is sufficient).
-- You provide **clear evidence of damage or fault** at the time of the request — photos showing the issue, and a description of when and how it was discovered.
+- You provide **clear evidence of damage or fault** at the time of the request - photos showing the issue, and a description of when and how it was discovered.
 
 ## Returns process
 
@@ -41,7 +41,7 @@ Refunds typically appear in your account within 2–5 business days of the inspe
 
 ## Warranty
 
-Most products carry a **12-month manufacturer warranty** by default. Some products have longer warranties — the period is shown on the product page where it differs from the default.
+Most products carry a **12-month manufacturer warranty** by default. Some products have longer warranties - the period is shown on the product page where it differs from the default.
 
 Warranty covers manufacturing defects and component failure under normal use. It does not cover:
 
