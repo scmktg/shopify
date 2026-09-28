@@ -61,7 +61,7 @@ const FEATURED_HANDLES: ReadonlyArray<string> = [
   'premium-three-stage-big-blue-whole-house-water-filter-system',
   'pull-down-spray-tap-kitchen-mixer-in-brushed-nickel',
   '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
-  'premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic',
+  'twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2',
 ];
 
 function toCardData(product: Product): ProductCardData {
