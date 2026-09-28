@@ -156,11 +156,6 @@ const CATEGORY_SYSTEM_OPTIONS: Record<string, ReadonlyArray<CatalogFilterOption>
       label: 'Dosing tanks',
       query: "tag:'sub-cat:dosing-tanks'",
     },
-    {
-      value: 'components',
-      label: 'Components',
-      query: "tag:'sub-cat:components'",
-    },
   ],
   plumbing: [
     {
