@@ -4,6 +4,7 @@ import { loadMarkdownPage, listMarkdownSlugs } from '@/lib/content/markdown';
 import { EditorialPage } from '@/components/editorial/EditorialPage';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import { absoluteUrl } from '@/lib/seo/siteUrl';
 import {
   breadcrumbSchema,
   faqPageSchema,
@@ -40,7 +41,7 @@ function localBusinessSchema(slug: string, name: string): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': `https://enviroaqua.com.au/${SECTION}/${slug}/`,
+    '@id': `${absoluteUrl(`/${SECTION}/${slug}`)}#local-business`,
     name: 'Enviro Aqua',
     description: name,
     address: {
