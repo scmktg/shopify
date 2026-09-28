@@ -45,7 +45,7 @@ export function BackInStockNotify({ productId, sku }: BackInStockNotifyProps) {
     } catch {
       setStatus('error');
       setErrorMessage(
-        'Something went wrong — please try again in a moment.',
+        'Something went wrong - please try again in a moment.',
       );
     }
   };
