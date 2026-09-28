@@ -117,22 +117,30 @@ const WATER_FILTER_SYSTEMS: ReadonlyArray<CatalogFilterOption> = [
 const CATEGORY_SYSTEM_OPTIONS: Record<string, ReadonlyArray<CatalogFilterOption>> = {
   'water-filters': WATER_FILTER_SYSTEMS,
   cartridges: [
-    { value: 'sediment', label: 'Sediment', query: "tag:'sub-cat:sediment'" },
-    { value: 'carbon', label: 'Carbon', query: "tag:'sub-cat:carbon'" },
+    {
+      value: 'sediment',
+      label: 'Sediment',
+      query: "tag:'facet:cartridge-sediment'",
+    },
+    {
+      value: 'carbon',
+      label: 'Carbon',
+      query: "tag:'facet:cartridge-carbon'",
+    },
     {
       value: 'reverse-osmosis-membranes',
       label: 'RO membranes',
-      query: "tag:'sub-cat:reverse-osmosis-membranes'",
+      query: "tag:'facet:cartridge-ro-membrane'",
     },
     {
       value: 'specialty-cartridges',
       label: 'Specialty',
-      query: "tag:'sub-cat:specialty-cartridges'",
+      query: "tag:'facet:cartridge-specialty'",
     },
     {
       value: 'cartridge-sets',
       label: 'Cartridge sets',
-      query: "tag:'sub-cat:cartridge-sets'",
+      query: "tag:'facet:cartridge-set'",
     },
   ],
   'bubblers-and-coolers': [
@@ -189,7 +197,12 @@ export function getCatalogFilterGroups(
     groups.push({
       id: 'system',
       param: 'system',
-      label: category === 'plumbing' ? 'Product type' : 'System type',
+      label:
+        category === 'plumbing'
+          ? 'Product type'
+          : category === 'cartridges'
+            ? 'Cartridge type'
+            : 'System type',
       multiple: true,
       options: CATEGORY_SYSTEM_OPTIONS[category],
     });
