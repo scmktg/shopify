@@ -549,6 +549,7 @@ const nextConfig = {
     // slash so old crawl paths and external links resolve regardless
     // of how they are formatted.
     const PRODUCT_MERGE_REDIRECTS = [
+      ['/cartridges/sediment/premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic', '/cartridges/sediment/twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2'],
       ['/pumps-and-tanks/components/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect', '/plumbing/parts/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect'],
       ['/pumps-and-tanks/components/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect', '/plumbing/parts/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect'],
       ['/pumps-and-tanks/components/water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi', '/plumbing/parts/water-and-air-pressure-oil-gauge-new-1-4-brass-bspt-thread-60-150-300-psi'],
