@@ -16,7 +16,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
-          aria-label="Enviro Aqua — home"
+          aria-label="Enviro Aqua - home"
           className="inline-flex items-center"
         >
           <Image
