@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!node) return {};
   return {
     title: `${node.label} | Wholesale Prices`,
-    description: `Shop ${node.label.toLowerCase()} at wholesale prices. Tiered shipping Australia-wide from $9.95, free freight on whole-house systems. WaterMark certified options available.`,
+    description: `Shop ${node.label.toLowerCase()} at wholesale prices. Australia-wide delivery, free delivery on selected products, and free Click & Collect from Wyong NSW. WaterMark certified options available.`,
     alternates: {
       canonical: `/${node.slug}`,
     },
