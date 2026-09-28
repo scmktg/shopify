@@ -17,7 +17,7 @@ faq:
   - q: "I'm on a rural block near Kariong or Somersby - do I need something different?"
     a: "Yes. Rural properties west of the M1 are often on tank water rather than mains. Rainwater needs the full sediment + carbon + UV setup - not because the water is dirty, but because tanks are open to airborne contamination and the standard NSW Health recommendation is a multi-barrier treatment train for any non-mains drinking supply."
   - q: "Do you install systems, or just sell them?"
-    a: "We sell the systems and parts. Mains-pressure installs in NSW must be done by a licensed plumber by law, so we focus on getting the right system to you and can refer a Central Coast plumber who installs our systems regularly. Under-sink filters with push-fit fittings are usually a DIY job."
+    a: "Our fixed-price Whole House Installation Package is available in eligible Central Coast postcodes and includes a licensed local plumber we coordinate. Other mains-pressure systems are supply-only, and we can refer a local plumber where needed. Some under-sink filters use straightforward push-fit connections, but mains plumbing work should be completed by a licensed plumber where required."
 ---
 
 Gosford is the regional CBD of the Central Coast. We deliver filters and full filtration systems to homes and businesses across Gosford and the surrounding suburbs every week, and our Wyong showroom is about 25 minutes north up the M1.
@@ -47,5 +47,5 @@ Kariong, Somersby, and the rural blocks heading toward the Old Pacific Highway o
 Orders placed before 12pm AEST ship the same business day from our Wyong warehouse. Gosford addresses typically receive tracked delivery the next business day. Or skip the wait - Click & Collect from 6/45 Amsterdam Cct, Wyong is free, the drive is about 25 minutes up the M1, and orders placed during business hours are usually ready for pickup within two hours.
 
 - **Wyong showroom address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am - 5pm AEST
+- **Hours:** Monday to Friday, 9am - 3pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
