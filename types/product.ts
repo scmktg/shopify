@@ -113,6 +113,13 @@ export interface Product {
  * pages. Null when the product is not housing-sized (most non-
  * filter products).
  */
+export interface ProductCardVariant {
+  id: string;
+  availableForSale: boolean;
+  image: ProductImage | null;
+  selectedOptions: ReadonlyArray<SelectedOption>;
+}
+
 export interface ProductCardData {
   id: string;
   handle: string;
@@ -122,4 +129,5 @@ export interface ProductCardData {
   featuredImage: ProductImage | null;
   price: Money;
   housingSize: string | null;
+  variants: ReadonlyArray<ProductCardVariant>;
 }
