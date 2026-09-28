@@ -18,6 +18,11 @@ import {
   updateCartLine,
 } from '@/lib/shopify/cart';
 import type { Cart } from '@/types/cart';
+import {
+  trackAddToCart,
+  trackBeginCheckout,
+  trackRemoveFromCart,
+} from '@/lib/analytics/client';
 
 const STORAGE_KEY = 'enviroaqua:cart-id';
 
@@ -107,6 +112,7 @@ export function CartProvider({ children }: CartProviderProps) {
         const current = await ensureCart();
         const updated = await addToCart(current.id, variantId, quantity);
         setCart(updated);
+        trackAddToCart(updated, variantId, quantity);
         setIsOpen(true);
       } catch (caught) {
         setError(extractMessage(caught, 'Could not add to cart.'));
@@ -125,6 +131,8 @@ export function CartProvider({ children }: CartProviderProps) {
         const current = await ensureCart();
         const updated = await addToCart(current.id, variantId, quantity);
         setCart(updated);
+        trackAddToCart(updated, variantId, quantity);
+        trackBeginCheckout(updated);
         // Hard nav off the storefront; client-side router is irrelevant
         // for an external Shopify checkout URL.
         if (typeof window !== 'undefined') {
@@ -146,8 +154,15 @@ export function CartProvider({ children }: CartProviderProps) {
       setError(null);
       setIsMutating(true);
       try {
+        const previous = cart.lines.find((line) => line.id === lineId);
+        const previousQuantity = previous?.quantity ?? quantity;
         const updated = await updateCartLine(cart.id, lineId, quantity);
         setCart(updated);
+        if (previous && quantity < previousQuantity) {
+          trackRemoveFromCart(previous, previousQuantity - quantity);
+        } else if (previous && quantity > previousQuantity) {
+          trackAddToCart(updated, previous.merchandise.id, quantity - previousQuantity);
+        }
       } catch (caught) {
         setError(extractMessage(caught, 'Could not update cart.'));
       } finally {
@@ -163,8 +178,10 @@ export function CartProvider({ children }: CartProviderProps) {
       setError(null);
       setIsMutating(true);
       try {
+        const removed = cart.lines.find((line) => line.id === lineId);
         const updated = await removeCartLine(cart.id, lineId);
         setCart(updated);
+        if (removed) trackRemoveFromCart(removed, removed.quantity);
       } catch (caught) {
         setError(extractMessage(caught, 'Could not remove item.'));
       } finally {
