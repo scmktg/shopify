@@ -75,6 +75,8 @@ SHOPIFY_STORE_DOMAIN=
 SHOPIFY_STOREFRONT_ACCESS_TOKEN=
 SHOPIFY_API_VERSION=2024-10
 NEXT_PUBLIC_SITE_URL=https://staging.enviroaqua.com.au
+NEXT_PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXXX
 # Forces cart `checkoutUrl` onto the Shopify-served checkout subdomain.
 # Required because the storefront primary domain is the headless apex
 # (served by Vercel), so Shopify's returned URL would 404 on our side.
