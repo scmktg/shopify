@@ -14,7 +14,7 @@ faq:
   - q: "Is WaterMark mandatory for school water bubblers?"
     a: "Yes. Every plumbed-in drinking fountain or bubbler that connects to mains pressure must carry a WaterMark licence under the WaterMark Certification Scheme. School facility tenders almost always list WaterMark as a non-negotiable requirement. Every certified bubbler on this site shows its licence number on the page."
   - q: "Should we install bubblers with bottle-fill taps?"
-    a: "Yes, where the budget allows. Bottle-fill taps are now standard at most new school installations because they reduce single-use plastic and let students refill durable bottles between classes. Combination bubbler-plus-bottle-fill units are usually 20–30% more than a plain bubbler and pay back through reduced waste and tuckshop bottle sales."
+    a: "Yes, where the budget allows. Bottle-fill taps are now standard at most new school installations because they reduce single-use plastic and let students refill durable bottles between classes. Combination bubbler-plus-bottle-fill units are usually 20-30% more than a plain bubbler and pay back through reduced waste and tuckshop bottle sales."
   - q: "What about lead-free certification?"
     a: "Mandatory. Since the 2020 NCC amendment, all new plumbing products in contact with drinking water must comply with the lead-free standard (less than 0.25% lead by weighted average across wetted surfaces). Bubblers should be specified with lead-free brass or stainless-steel waterways. Every product on this site lists lead-free status on the page."
 ---
