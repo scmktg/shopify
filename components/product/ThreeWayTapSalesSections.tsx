@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Check, Droplets, Flame, GlassWater, Wrench } from 'lucide-react';
 
 
@@ -77,74 +76,21 @@ export function ThreeWayTapSalesSections() {
         </div>
       </section>
 
-      <section className="mt-12 grid gap-6 rounded-xl border border-gray-200 p-5 sm:p-8 lg:grid-cols-[1.15fr_0.85fr]">
-        <div>
-          <div className="flex items-center gap-2 text-brand-blue">
-            <Wrench size={22} aria-hidden="true" />
-            <p className="text-xs font-semibold uppercase tracking-wide">
-              Compatibility & installation
-            </p>
-          </div>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-black">
-            Works with standard filtered-water systems - not just ours
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-black/70">
-            The dedicated filtered-water inlet uses a standard 1/4&quot;
-            filtered-water connection, so you do not need an Enviro Aqua
-            filtration system to use this tap. It is designed to connect to
-            compatible under-sink and reverse osmosis systems using the same
-            standard outlet format.
+      <section className="mt-12 rounded-xl border border-gray-200 p-5 sm:p-8">
+        <div className="flex items-center gap-2 text-brand-blue">
+          <Wrench size={22} aria-hidden="true" />
+          <p className="text-xs font-semibold uppercase tracking-wide">
+            Compatibility & installation
           </p>
-          <div className="mt-5 rounded-lg border border-brand-blue/20 bg-brand-blue-light/50 p-4">
-            <p className="font-semibold text-black">
-              Installation fittings included
-            </p>
-            <p className="mt-1 text-sm leading-6 text-black/70">
-              The tap is supplied with the connection fittings required for a
-              standard installation, helping make the changeover straightforward
-              and quick. A licensed plumber should complete mains plumbing work
-              where required by local regulations.
-            </p>
-          </div>
-          <ul className="mt-5 grid gap-3 text-sm text-black/75">
-            <Benefit>5-stage reverse osmosis systems</Benefit>
-            <Benefit>6-stage reverse osmosis systems</Benefit>
-            <Benefit>2-stage under-sink sediment + carbon systems</Benefit>
-            <Benefit>3-stage under-sink sediment + carbon + alkaline systems</Benefit>
-            <Benefit>
-              Other brands and compatible systems using a standard 1/4&quot;
-              filtered-water outlet
-            </Benefit>
-          </ul>
         </div>
-
-        <div className="rounded-lg bg-black p-5 text-white sm:p-6">
-          <p className="text-sm font-semibold text-white/70">
-            Need a filter system too?
-          </p>
-          <h3 className="mt-2 text-xl font-semibold">
-            Choose the filtration level that suits your water
-          </h3>
-          <p className="mt-3 text-sm leading-6 text-white/75">
-            Use this tap with any compatible under-sink filter or reverse
-            osmosis system that has a standard 1/4&quot; filtered-water outlet.
-            It is not locked to Enviro Aqua filtration systems.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            <Link
-              href="/water-filters/reverse-osmosis/"
-              className="inline-flex min-h-11 items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-white/90"
-            >
-              View reverse osmosis systems
-            </Link>
-            <Link
-              href="/water-filters/under-sink/"
-              className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/30 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10"
-            >
-              View under-sink filters
-            </Link>
-          </div>
-        </div>
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight text-black">
+          Simple to connect
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-black/70">
+          Includes the connection fittings required for a standard installation
+          and works with compatible systems using a standard 1/4&quot;
+          filtered-water outlet. No Enviro Aqua filter system is required.
+        </p>
       </section>
     </>
   );
