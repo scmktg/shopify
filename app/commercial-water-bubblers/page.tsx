@@ -47,7 +47,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     shortName: 'Round Stainless',
     tagline: 'Cylindrical SUS304 cabinet - foyers and plazas.',
     badge: 'Entry model',
-    highlights: ['20 L/hr · 8–12 °C', 'SUS304 cylindrical', 'Push-button'],
+    highlights: ['20 L/hr · 8-12 °C', 'SUS304 cylindrical', 'Push-button'],
   },
   {
     key: 'square',
@@ -106,7 +106,7 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   },
   {
     label: 'Water temperature',
-    values: { round: '8–12 °C', square: '8–12 °C', hdpe: '8–12 °C' },
+    values: { round: '8-12 °C', square: '8-12 °C', hdpe: '8-12 °C' },
   },
   {
     label: 'Refrigerant',
