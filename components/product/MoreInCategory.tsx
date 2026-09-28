@@ -61,6 +61,7 @@ export async function MoreInCategory({
           featuredImage: product.featuredImage,
           price: product.priceRange.minVariantPrice,
           housingSize: null,
+          variants: product.variants,
         };
         return card;
       } catch {
