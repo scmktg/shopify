@@ -11,13 +11,13 @@ import {
 
 export const metadata: Metadata = {
   title:
-    'Visit Our Wyong Showroom — Water Filters Central Coast NSW',
+    'Visit Our Wyong Showroom - Water Filters Central Coast NSW',
   description:
     'Walk-in water filter showroom in Wyong NSW Central Coast. Big Blue systems on display, cartridges in stock, free Click & Collect. Same-day dispatch on orders before 12pm. Mon–Fri 9–5.',
   alternates: { canonical: '/showroom' },
   openGraph: {
     title:
-      'Visit Our Wyong Showroom — Water Filters Central Coast NSW',
+      'Visit Our Wyong Showroom - Water Filters Central Coast NSW',
     description:
       'Walk-in water filter showroom in Wyong NSW Central Coast. Big Blue systems on display, cartridges in stock, free Click & Collect.',
     url: '/showroom/',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title:
-      'Visit Our Wyong Showroom — Water Filters Central Coast NSW',
+      'Visit Our Wyong Showroom - Water Filters Central Coast NSW',
     description:
       'Walk-in water filter showroom in Wyong NSW Central Coast. Big Blue systems on display, cartridges in stock, free Click & Collect.',
   },
@@ -65,15 +65,15 @@ const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'Do you offer Click & Collect?',
-    a: 'Yes — Click & Collect is free with no minimum order. Order online before 12pm and most orders are ready within an hour. You will get an email confirmation when it is ready to collect.',
+    a: 'Yes - Click & Collect is free with no minimum order. Order online before 12pm and most orders are ready within an hour. You will get an email confirmation when it is ready to collect.',
   },
   {
     q: 'Can I bring my old cartridge in for a replacement match?',
-    a: 'Yes. Bring your old cartridge into the showroom and we will identify it on the spot — every standard 10-inch and 20-inch cartridge size is on the wall, and we can match by housing diameter, length, or thread type in 30 seconds.',
+    a: 'Yes. Bring your old cartridge into the showroom and we will identify it on the spot - every standard 10-inch and 20-inch cartridge size is on the wall, and we can match by housing diameter, length, or thread type in 30 seconds.',
   },
   {
     q: 'Do you offer trade pricing?',
-    a: 'No — and that is the point. Same wholesale price for everyone, retail or trade, with no accounts and no minimum orders. The price you see online is the price every customer pays.',
+    a: 'No - and that is the point. Same wholesale price for everyone, retail or trade, with no accounts and no minimum orders. The price you see online is the price every customer pays.',
   },
 ];
 
@@ -107,7 +107,7 @@ export default function ShowroomPage() {
               Showroom
             </p>
             <h1 className="mt-2 text-4xl md:text-5xl font-semibold text-black tracking-tight">
-              Visit our Wyong showroom — Central Coast NSW
+              Visit our Wyong showroom - Central Coast NSW
             </h1>
             <p className="mt-4 text-lg text-black/80 leading-snug">
               Walk in, see the systems running, talk to a real
@@ -196,7 +196,7 @@ export default function ShowroomPage() {
               </h3>
               <p className="mt-3 text-base text-black/80 leading-snug">
                 The Three-Stage Big Blue Whole House system fully
-                assembled and running on the showroom wall — see the
+                assembled and running on the showroom wall - see the
                 housings, the stainless enclosure, the brass
                 connections, the pressure gauges in action.
                 Customers regularly ask &quot;is this what it
@@ -211,7 +211,7 @@ export default function ShowroomPage() {
               <p className="mt-3 text-base text-black/80 leading-snug">
                 Cut-away filter housings showing the carbon block,
                 sediment, and RO membrane media. Useful when
-                comparing systems — visual confirmation of what is
+                comparing systems - visual confirmation of what is
                 inside the cartridge changes the conversation.
               </p>
             </div>
@@ -222,7 +222,7 @@ export default function ShowroomPage() {
               <p className="mt-3 text-base text-black/80 leading-snug">
                 Every standard 10-inch and 20-inch cartridge in
                 stock, plus housings, fittings, taps, and pressure
-                tanks. Bring your old cartridge in for a match —
+                tanks. Bring your old cartridge in for a match -
                 we&apos;ll tell you what it is in 30 seconds.
               </p>
             </div>
@@ -264,7 +264,7 @@ export default function ShowroomPage() {
               </h3>
               <p className="mt-2 text-base text-black/80 leading-snug">
                 Wyong railway station is approximately 1.5km from
-                the showroom — about a 20-minute walk via Watanobbi
+                the showroom - about a 20-minute walk via Watanobbi
                 Road, or a short taxi ride from the rank out the
                 front of the station.
               </p>
@@ -275,7 +275,7 @@ export default function ShowroomPage() {
               </h3>
               <p className="mt-2 text-base text-black/80 leading-snug">
                 Free off-street parking at the front of the unit.
-                Trade vehicles welcome — there is room to pull a ute
+                Trade vehicles welcome - there is room to pull a ute
                 or van right up to the roller door for loading.
               </p>
             </div>
@@ -294,7 +294,7 @@ export default function ShowroomPage() {
               </p>
               <p className="mt-1 text-base text-black/80 leading-snug">
                 Order online before 12pm. Choose &quot;Click &amp;
-                Collect&quot; at checkout — free, no minimum order.
+                Collect&quot; at checkout - free, no minimum order.
               </p>
             </li>
             <li>
@@ -357,7 +357,7 @@ export default function ShowroomPage() {
           </div>
           <p className="mt-6 text-sm text-black/70">
             Outside the Central Coast? We ship Australia-wide via
-            tracked freight — see{' '}
+            tracked freight - see{' '}
             <Link
               href="/shipping/"
               className="text-brand-blue underline underline-offset-4 hover:text-brand-blue-hover"
@@ -378,7 +378,7 @@ export default function ShowroomPage() {
               We offer professional whole-house water filter
               installation by licensed local plumbers. WaterMark-
               certified Big Blue system, installation, and 12 months
-              of replacement cartridges — all-inclusive for{' '}
+              of replacement cartridges - all-inclusive for{' '}
               <span className="tabular-nums font-semibold">$2,299</span>.
             </p>
             <Link
@@ -402,7 +402,7 @@ export default function ShowroomPage() {
             </li>
             <li>
               Bring your old cartridge if you&apos;re unsure what
-              fits — we stock matches for every standard 10-inch and
+              fits - we stock matches for every standard 10-inch and
               20-inch housing.
             </li>
             <li>
