@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { findCategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
@@ -15,14 +16,17 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
+  searchParams?: Promise<{ after?: string }>;
 }
 
 const PAGE_SIZE = 24;
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: CategoryPageProps): Promise<Metadata> {
   const { category } = await params;
+  const after = (await searchParams)?.after;
   const node = findCategory(category);
   if (!node) return {};
   return {
@@ -31,16 +35,32 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${node.slug}`,
     },
+    ...(after
+      ? {
+          robots: {
+            index: false,
+            follow: true,
+          },
+        }
+      : {}),
   };
 }
 
-export default async function CategoryPage({ params }: CategoryPageProps) {
+export default async function CategoryPage({
+  params,
+  searchParams,
+}: CategoryPageProps) {
   const { category } = await params;
+  const afterParam = (await searchParams)?.after;
+  const after =
+    typeof afterParam === 'string' && afterParam.length <= 500
+      ? afterParam
+      : null;
   const node = findCategory(category);
   if (!node) notFound();
 
   const query = `tag:'primary-cat:${category}'`;
-  const page = await getProducts({ query, first: PAGE_SIZE });
+  const page = await getProducts({ query, first: PAGE_SIZE, after });
 
   const intro = getCategoryIntro(category);
 
@@ -76,6 +96,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         pageSize={PAGE_SIZE}
         enableSizeFilter={category === 'cartridges'}
       />
+      {page.pageInfo.hasNextPage && page.pageInfo.endCursor && (
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 text-center">
+          <Link
+            href={`${pathname}?after=${encodeURIComponent(page.pageInfo.endCursor)}`}
+            rel="next"
+            className="text-sm font-medium text-brand-blue hover:underline underline-offset-4"
+          >
+            Next catalogue page
+          </Link>
+        </div>
+      )}
     </>
   );
 }

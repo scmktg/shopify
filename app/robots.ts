@@ -47,7 +47,6 @@ const DISALLOW = [
   '/checkout/',
   '/account/',
   '/search',
-  '/*?*',
 ];
 
 export default function robots(): MetadataRoute.Robots {
