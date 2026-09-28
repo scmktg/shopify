@@ -6,6 +6,7 @@ import { PriceDisplay } from './PriceDisplay';
 import { useVariantSelection } from './VariantSelectionProvider';
 import { ColourSwatch } from './ColourSwatch';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
+import { DispatchCountdown } from './DispatchCountdown';
 
 interface VariantPurchaseControlsProps {
   fallbackPrice: Money;
@@ -144,6 +145,7 @@ export function VariantPurchaseControls({
           label={ctaLabel}
           enableBuyNow
         />
+        {selectedVariant.availableForSale && <DispatchCountdown />}
       </div>
     </>
   );
