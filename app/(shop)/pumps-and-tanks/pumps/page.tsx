@@ -114,6 +114,8 @@ export default async function PumpsPage({ searchParams }: PumpsPageProps) {
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
         query={query}
+        categorySlug={CATEGORY}
+        activeSubcategory={SUBCATEGORY}
         pageSize={PAGE_SIZE}
       />
     </>
