@@ -95,6 +95,10 @@ export function ProductDetail({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div>
           <VariantProductGallery images={product.images} title={product.title} />
+          <VariantProductTrustBlock
+            productId={product.id}
+            className="hidden md:flex"
+          />
         </div>
 
         <div className="md:sticky md:top-24">
@@ -141,7 +145,10 @@ export function ProductDetail({
             productHandle={product.handle}
           />
 
-          <VariantProductTrustBlock productId={product.id} />
+          <VariantProductTrustBlock
+            productId={product.id}
+            className="md:hidden"
+          />
 
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
