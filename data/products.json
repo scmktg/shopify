@@ -7100,17 +7100,17 @@
       "four-finishes",
       "matte-black",
       "brushed-gold",
-      "brushed-nickel",
       "polished-chrome",
       "watermark-certified",
       "wels-4-star",
-      "t40393"
+      "t40393",
+      "stainless-steel"
     ],
-    "shortDescription": "Sophisticated 3-way filtered kitchen tap - hot, cold, and RO-filtered water from a single fixture. Available in matte black, brushed gold, brushed nickel, or polished chrome. WaterMark certified, WELS 4★ at 7.5 L/min (T40393).",
-    "description": "A 3-way filtered kitchen tap that delivers hot, cold, and RO-filtered water through a single sleek fixture - available in four luxurious finishes to match any contemporary kitchen palette. The premium choice for RO installations where you don't want to drill a second tap hole.\n\n## Four Finish Options\n\n- **Matte Black** - high-contrast contemporary look, pairs with timber and stone benchtops\n- **Brushed Gold** - warm metallic accent, suits premium and statement-piece kitchens\n- **Brushed Nickel** - warm-toned, forgiving of fingerprints, neutral with most palettes\n- **Polished Chrome** - bright timeless finish, works with both warm and cool colour palettes\n\nAll four finishes share the same internal mechanism, the same dimensions, and the same WaterMark + WELS certification - the choice is purely visual.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels:\n\n- **Hot** from the standard hot supply line\n- **Cold** from the standard cold supply line\n- **Filtered** from a separate RO permeate line through its own internal channel\n\nThe filtered-water channel is **physically separated** from the hot/cold pathway inside the tap - RO permeate doesn't carry chlorine, so it can't mix back with chlorinated mains water through the standard mixer cartridge. A dedicated lever or button on the tap activates the filtered output.\n\n## Why This Solves the Second-Tap-Hole Problem\n\nStandard RO installations require **two tap holes in the bench** - one for the kitchen mixer, one for the dedicated filter dispensing tap. On stone benchtops, single-hole sinks, or new builds with sealed splashbacks, drilling that second hole is a non-trivial job: stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nThis 3-way tap routes all three water sources through one tap body - install in your existing single bench hole, route the RO permeate to the dedicated channel, done. No drilling, no extra fixture, no second handle on the bench.\n\n## Australian Compliance\n\n**WaterMark certified** to **AS/NZS 3718** (Plumbing fittings - General requirements). Your licensed plumber can install this on a mains supply line and issue a certificate of compliance.\n\n**WELS 4-star rated at 7.5 L/min** under AS/NZS 6400:2016 - the standard water-efficient rating. WELS registration number **T40393**.\n\n## Where This Tap Fits\n\n- Stone benchtop renovations where a second tap hole isn't practical\n- Single-hole sink installations needing both standard and RO-filtered water\n- New kitchen builds wanting a clean single-fixture bench\n- RO system upgrades replacing separate filter taps with a unified fixture\n- Premium kitchens choosing one of the four finishes as a design accent",
+    "shortDescription": "Sophisticated 3-way filtered kitchen tap - hot, cold, and RO-filtered water from a single fixture. Available in Matte Black, Brushed Gold, Stainless Steel, or Polished Chrome. WaterMark certified, WELS 4★ at 7.5 L/min (T40393).",
+    "description": "A 3-way filtered kitchen tap that delivers hot, cold, and RO-filtered water through a single sleek fixture - available in four luxurious finishes to match any contemporary kitchen palette. The premium choice for RO installations where you don't want to drill a second tap hole.\n\n## Four Finish Options\n\n- **Matte Black** - high-contrast contemporary look, pairs with timber and stone benchtops\n- **Brushed Gold** - warm metallic accent, suits premium and statement-piece kitchens\n- **Stainless Steel** - clean brushed-metal finish, durable and easy to coordinate with modern appliances\n- **Polished Chrome** - bright timeless finish, works with both warm and cool colour palettes\n\nAll four finishes share the same internal mechanism, the same dimensions, and the same WaterMark + WELS certification - the choice is purely visual.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels:\n\n- **Hot** from the standard hot supply line\n- **Cold** from the standard cold supply line\n- **Filtered** from a separate RO permeate line through its own internal channel\n\nThe filtered-water channel is **physically separated** from the hot/cold pathway inside the tap - RO permeate doesn't carry chlorine, so it can't mix back with chlorinated mains water through the standard mixer cartridge. A dedicated lever or button on the tap activates the filtered output.\n\n## Why This Solves the Second-Tap-Hole Problem\n\nStandard RO installations require **two tap holes in the bench** - one for the kitchen mixer, one for the dedicated filter dispensing tap. On stone benchtops, single-hole sinks, or new builds with sealed splashbacks, drilling that second hole is a non-trivial job: stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nThis 3-way tap routes all three water sources through one tap body - install in your existing single bench hole, route the RO permeate to the dedicated channel, done. No drilling, no extra fixture, no second handle on the bench.\n\n## Australian Compliance\n\n**WaterMark certified** to **AS/NZS 3718** (Plumbing fittings - General requirements). Your licensed plumber can install this on a mains supply line and issue a certificate of compliance.\n\n**WELS 4-star rated at 7.5 L/min** under AS/NZS 6400:2016 - the standard water-efficient rating. WELS registration number **T40393**.\n\n## Where This Tap Fits\n\n- Stone benchtop renovations where a second tap hole isn't practical\n- Single-hole sink installations needing both standard and RO-filtered water\n- New kitchen builds wanting a clean single-fixture bench\n- RO system upgrades replacing separate filter taps with a unified fixture\n- Premium kitchens choosing one of the four finishes as a design accent",
     "features": [
       "3-way function - hot, cold, and RO-filtered water through one tap",
-      "Four finish options: matte black, brushed gold, brushed nickel, polished chrome",
+      "Four finish options: matte black, brushed gold, stainless steel, polished chrome",
       "Eliminates the need for a second tap hole in the bench",
       "Filtered-water channel physically separated from hot/cold pathway",
       "WaterMark certified to AS/NZS 3718",
@@ -7124,7 +7124,7 @@
       },
       {
         "label": "Finishes",
-        "value": "Black / gold / nickel / chrome"
+        "value": "Matte Black / Brushed Gold / Stainless Steel / Polished Chrome"
       },
       {
         "label": "WELS rating",
@@ -7146,7 +7146,7 @@
       },
       {
         "label": "Available finishes",
-        "value": "Matte Black, Brushed Gold, Brushed Nickel, Polished Chrome"
+        "value": "Matte Black, Brushed Gold, Stainless Steel, Polished Chrome"
       },
       {
         "label": "RO compatibility",
@@ -7208,7 +7208,7 @@
     },
     "seo": {
       "title": "3-Way Filtered Kitchen Tap - 4 Finishes, WaterMark, WELS 4★ T40393",
-      "description": "3-way kitchen mixer with hot, cold, and RO-filtered water. Matte black, brushed gold, brushed nickel, or polished chrome. WaterMark certified, WELS 4★ 7.5 L/min (T40393).",
+      "description": "3-way kitchen mixer with hot, cold, and RO-filtered water. Matte Black, Brushed Gold, Stainless Steel, or Polished Chrome. WaterMark certified, WELS 4★ 7.5 L/min (T40393).",
       "ogImage": null
     }
   },
@@ -17408,107 +17408,6 @@
       "title": "2-Stage Clear-Housing Whole-House Filter - Sediment + Carbon, 1/2\" Brass | Enviro Aqua",
       "description": "2-stage 10\" × 2.5\" whole-house filter with twin clear housings and 1/2\" brass ports. Visual cartridge monitoring. Sediment + carbon block. Compact format.",
       "ogImage": null
-    }
-  },
-  "3-way-kitchen-tap-for-ro-water-filters-mixer-in-shiny-gold": {
-    "categories": [
-      "plumbing",
-      "ro-filter-taps"
-    ],
-    "tags": [
-      "3-way-tap",
-      "ro-filter-tap",
-      "kitchen-mixer",
-      "shiny-gold",
-      "premium-finish"
-    ],
-    "shortDescription": "Sophisticated 3-way kitchen mixer in shiny gold - hot, cold, and filtered water from one fixture. Eliminates the need for a second tap hole. RO-compatible.",
-    "description": "A 3-way kitchen mixer in a luxurious **shiny gold finish** - the same single-fixture hot/cold/filtered function as the standard 3-way range, in a brighter, higher-impact gold tone than the brushed gold variant.\n\n## Shiny Gold vs Brushed Gold - What's the Difference\n\nGold finishes split into two distinct families:\n\n- **Shiny gold (this tap):** polished, mirror-like surface. Higher visual impact, brighter reflection, reads as a feature-piece in the kitchen. Shows fingerprints and water spots more readily than brushed.\n- **Brushed gold:** textured matte-warm finish. More forgiving day-to-day, reads as a deliberate design choice rather than a statement piece.\n\nBoth are equally valid choices - the decision is about how visible you want the tap to be as a kitchen feature. For statement-piece installs (feature kitchens, hospitality, design-led builds), shiny gold lands. For more restrained palettes, brushed gold sits back into the design.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels - hot, cold, and RO-filtered. The filtered-water channel is **physically separated** from the hot/cold pathway, so chlorine-free RO permeate stays separated from the chlorinated mains supply.\n\nThe practical benefit: **one tap hole serves both your standard kitchen mixing and your RO drinking water**. No second hole in the bench, no extra fixture, no second handle.\n\n## Build\n\n- **Material:** brass body\n- **Finish:** shiny gold (polished)\n- **Operation:** 3-way function (hot, cold, filtered)\n- **Compatibility:** any reverse osmosis filtration system via standard 1/4\" tubing\n\n## Where This Tap Fits\n\n- Feature-piece kitchens where the tap is intended to draw the eye\n- Premium and statement bathrooms wanting a higher-impact gold finish\n- Renovations on stone benchtops avoiding the second-tap-hole problem\n- RO installations where the standalone filter tap doesn't suit the visual palette",
-    "features": [
-      "3-way function - hot, cold, and RO-filtered water through one tap",
-      "Shiny gold finish - polished, higher visual impact than brushed gold",
-      "Eliminates the need for a second tap hole",
-      "Filtered-water channel physically separated from hot/cold pathway",
-      "Compatible with any standard RO system via 1/4\" tubing",
-      "Brass body construction"
-    ],
-    "headlineSpecs": [
-      {
-        "label": "Function",
-        "value": "3-way (hot / cold / filtered)"
-      },
-      {
-        "label": "Finish",
-        "value": "Shiny gold"
-      },
-      {
-        "label": "Body",
-        "value": "Brass"
-      },
-      {
-        "label": "RO compatibility",
-        "value": "1/4\" tubing"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Type",
-        "value": "3-way kitchen mixer tap"
-      },
-      {
-        "label": "Operation",
-        "value": "3-way function (hot, cold, filtered)"
-      },
-      {
-        "label": "Finish",
-        "value": "Shiny gold"
-      },
-      {
-        "label": "Body material",
-        "value": "Brass"
-      },
-      {
-        "label": "RO compatibility",
-        "value": "Standard 1/4\" tubing"
-      },
-      {
-        "label": "Style",
-        "value": "Modern, single-fixture"
-      }
-    ],
-    "recommendedFor": [
-      "Feature kitchens choosing the tap as a visual centrepiece",
-      "Premium and statement bathroom/kitchen builds",
-      "Stone benchtop renovations avoiding the second-tap-hole problem",
-      "RO installations where finish coordination matters"
-    ],
-    "ctas": {
-      "primary": "Add to cart",
-      "secondary": null
-    },
-    "upsells": {
-      "boughtTogether": [
-        "3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c",
-        "luxurious-3-way-tap-for-ro-water-filters-kitchen-mixer-in-black-or-nickel",
-        "under-sink-water-filter-5-stage-reverse-osmosis-system"
-      ],
-      "moreInCategory": "auto"
-    },
-    "seo": {
-      "title": "3-Way Kitchen Tap RO Mixer - Shiny Gold",
-      "description": "3-way kitchen mixer in shiny gold polished finish. Hot, cold, and RO-filtered water through one tap. Brass body, standard 1/4\" tubing RO compatibility.",
-      "ogImage": null
-    },
-    "compliance": {
-      "watermark": {
-        "status": "not_certified",
-        "licenceNumber": null,
-        "specificationNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
-      "wels": null,
-      "note": null
     }
   },
   "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel": {
