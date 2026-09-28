@@ -363,3 +363,207 @@ export async function removeCartLine(
   }
   return transformCart(data.cartLinesRemove.cart);
 }
+
+
+export interface ShippingEstimateOption {
+  title: string | null;
+  deliveryMethodType: string;
+  estimatedCost: Money;
+}
+
+export interface ShippingEstimateResult {
+  ok: boolean;
+  postcode: string;
+  provinceCode: string | null;
+  options: ReadonlyArray<ShippingEstimateOption>;
+  error: string | null;
+}
+
+const SHIPPING_ESTIMATE_MUTATION = /* GraphQL */ `
+  mutation ShippingEstimate($input: CartInput!) {
+    cartCreate(input: $input) {
+      cart {
+        deliveryGroups(first: 10) {
+          nodes {
+            deliveryOptions {
+              title
+              deliveryMethodType
+              estimatedCost {
+                amount
+                currencyCode
+              }
+            }
+          }
+        }
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`;
+
+interface RawShippingEstimateCart {
+  deliveryGroups: {
+    nodes: ReadonlyArray<{
+      deliveryOptions: ReadonlyArray<ShippingEstimateOption>;
+    }>;
+  };
+}
+
+function provinceForAustralianPostcode(postcode: string): string | null {
+  const numeric = Number.parseInt(postcode, 10);
+  if (!/^\d{4}$/.test(postcode) || !Number.isFinite(numeric)) return null;
+
+  if ((numeric >= 200 && numeric <= 299) || (numeric >= 2600 && numeric <= 2618) || (numeric >= 2900 && numeric <= 2920)) {
+    return 'ACT';
+  }
+  if (
+    (numeric >= 1000 && numeric <= 2599) ||
+    (numeric >= 2619 && numeric <= 2899) ||
+    (numeric >= 2921 && numeric <= 2999)
+  ) {
+    return 'NSW';
+  }
+  if ((numeric >= 3000 && numeric <= 3999) || (numeric >= 8000 && numeric <= 8999)) {
+    return 'VIC';
+  }
+  if ((numeric >= 4000 && numeric <= 4999) || (numeric >= 9000 && numeric <= 9999)) {
+    return 'QLD';
+  }
+  if (numeric >= 5000 && numeric <= 5999) return 'SA';
+  if (numeric >= 6000 && numeric <= 6999) return 'WA';
+  if (numeric >= 7000 && numeric <= 7999) return 'TAS';
+  if ((numeric >= 800 && numeric <= 899) || (numeric >= 900 && numeric <= 999)) {
+    return 'NT';
+  }
+  return null;
+}
+
+/**
+ * Returns Shopify's actual delivery options for one product and postcode.
+ * Uses a short-lived one-item cart so checking a rate never changes the
+ * customer's real cart.
+ */
+export async function estimateProductShipping(
+  variantId: string,
+  postcodeInput: string,
+): Promise<ShippingEstimateResult> {
+  const postcode = postcodeInput.trim();
+  const provinceCode = provinceForAustralianPostcode(postcode);
+
+  if (!provinceCode) {
+    return {
+      ok: false,
+      postcode,
+      provinceCode: null,
+      options: [],
+      error: 'Enter a valid 4-digit Australian postcode.',
+    };
+  }
+
+  if (!variantId.startsWith('gid://shopify/ProductVariant/')) {
+    return {
+      ok: false,
+      postcode,
+      provinceCode,
+      options: [],
+      error: 'This product cannot be quoted right now.',
+    };
+  }
+
+  type ShippingEstimateData = {
+    cartCreate: {
+      cart: RawShippingEstimateCart | null;
+      userErrors: ReadonlyArray<UserError>;
+    };
+  };
+
+  try {
+    const result: ShopifyClientResponse<ShippingEstimateData> =
+      await shopifyClient.request<ShippingEstimateData>(
+        SHIPPING_ESTIMATE_MUTATION,
+        {
+          variables: {
+            input: {
+              lines: [{ merchandiseId: variantId, quantity: 1 }],
+              buyerIdentity: { countryCode: 'AU' },
+              delivery: {
+                addresses: [
+                  {
+                    selected: true,
+                    oneTimeUse: true,
+                    validationStrategy: 'COUNTRY_CODE_ONLY',
+                    address: {
+                      deliveryAddress: {
+                        countryCode: 'AU',
+                        provinceCode,
+                        zip: postcode,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+        },
+      );
+
+    const { data, errors } = result;
+    if (errors) {
+      logShopifyErrors('estimateProductShipping errors', errors);
+      return {
+        ok: false,
+        postcode,
+        provinceCode,
+        options: [],
+        error: 'Could not calculate delivery right now.',
+      };
+    }
+
+    const userErrors = data?.cartCreate.userErrors ?? [];
+    if (userErrors.length > 0) {
+      logShopifyErrors('estimateProductShipping userErrors', userErrors);
+      return {
+        ok: false,
+        postcode,
+        provinceCode,
+        options: [],
+        error: userErrors.map((e) => e.message).join('; '),
+      };
+    }
+
+    const cart = data?.cartCreate.cart;
+    if (!cart) {
+      return {
+        ok: false,
+        postcode,
+        provinceCode,
+        options: [],
+        error: 'Could not calculate delivery right now.',
+      };
+    }
+
+    const options = cart.deliveryGroups.nodes
+      .flatMap((group) => group.deliveryOptions)
+      .filter((option) => option.deliveryMethodType === 'SHIPPING');
+
+    return {
+      ok: true,
+      postcode,
+      provinceCode,
+      options,
+      error: null,
+    };
+  } catch (caught) {
+    console.error('[shopify] estimateProductShipping failed:', caught);
+    return {
+      ok: false,
+      postcode,
+      provinceCode,
+      options: [],
+      error: 'Could not calculate delivery right now.',
+    };
+  }
+}
