@@ -128,7 +128,7 @@ const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'Do you ship Australia-wide?',
-    a: 'Yes. Tracked delivery on every order, with standard tiered rates Australia-wide from $9.95. Whole-house systems, UV systems, and freestanding coolers ship free Australia-wide. Commercial RO plants and large tanks are freight-quoted within one business day. Orders placed before 12pm AEST ship the same business day from our Central Coast NSW warehouse.',
+    a: 'Yes. Most products ship Australia-wide. Parcel delivery is calculated at checkout from packed weight and destination, selected products include free delivery, bulky items use destination-based freight rates, and selected fragile bathroom products are Click & Collect only. Orders placed before 12pm AEST normally dispatch the same business day from our Central Coast NSW warehouse.',
   },
   {
     q: "What's your returns policy?",
@@ -317,8 +317,8 @@ function TrustStrip() {
     },
     {
       icon: Truck,
-      title: 'Free freight on systems',
-      body: 'Whole-house filters, UV systems, and freestanding coolers ship free Australia-wide.',
+      title: 'Clear shipping at checkout',
+      body: 'Parcel, free-delivery, bulky-freight and pickup-only products are clearly identified before checkout.',
     },
     {
       icon: ShieldCheck,
