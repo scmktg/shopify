@@ -38,7 +38,7 @@ export default function ReviewsPage() {
               {reviewStats.total} five-star reviews across Google and
               Facebook
             </strong>{' '}
-            — a selection of them is below. We&apos;re proud of our track
+            - a selection of them is below. We&apos;re proud of our track
             record, and we&apos;d love yours too: leave a review on
             Google or Facebook.
           </p>
