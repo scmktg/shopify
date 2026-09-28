@@ -63,7 +63,6 @@ export const CATEGORIES: ReadonlyArray<Category> = [
       { slug: 'pumps', label: 'Pumps' },
       { slug: 'pressure-tanks', label: 'Pressure Tanks' },
       { slug: 'dosing-tanks', label: 'Dosing Tanks' },
-      { slug: 'components', label: 'Components' },
     ],
   },
   {
