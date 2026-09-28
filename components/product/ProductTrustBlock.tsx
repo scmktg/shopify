@@ -18,6 +18,7 @@ interface ProductTrustBlockProps {
   sku: string | null;
   stockStatus: StockStatus;
   stockCount?: number;
+  className?: string;
 }
 
 export function ProductTrustBlock({
@@ -25,13 +26,14 @@ export function ProductTrustBlock({
   sku,
   stockStatus,
   stockCount,
+  className = '',
 }: ProductTrustBlockProps) {
   const inStock = stockStatus !== 'out_of_stock';
 
   return (
     <section
       aria-label="Availability and shipping"
-      className="mt-6 flex flex-col gap-2.5 text-sm text-black font-medium"
+      className={`mt-6 flex flex-col gap-2.5 text-sm text-black font-medium ${className}`}
     >
       <StockLine stockStatus={stockStatus} stockCount={stockCount} />
 
