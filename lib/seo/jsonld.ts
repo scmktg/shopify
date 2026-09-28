@@ -322,15 +322,9 @@ export function productSchema(
 ): JsonLd {
   const firstVariant = product.variants[0];
   const images = product.images.map((image) => image.url);
-  const anyInStock = product.variants.some((v) => v.availableForSale);
-  const offerAvailability = anyInStock
-    ? 'https://schema.org/InStock'
-    : 'https://schema.org/OutOfStock';
   const url = absoluteUrl(pathname);
   const currencyCode = product.priceRange.minVariantPrice.currencyCode;
 
-  // Spec rows under additionalProperty: pull from products.json
-  // fullSpecs verbatim — JSON-LD just wants name + value pairs.
   const additionalProperty: JsonLd[] = (content.fullSpecs ?? []).map(
     (row) => ({
       '@type': 'PropertyValue',
@@ -339,10 +333,6 @@ export function productSchema(
     }),
   );
 
-  // Category string (Schema.org expects a single value, slash-
-  // delimited for multi-level). Resolve to human labels via the
-  // category tree so search engines see "Water Filters / Whole
-  // House" not "water-filters/whole-house".
   const [catSlug, subSlug] = content.categories;
   const category = findCategory(catSlug);
   const subcategoryLabel =
@@ -351,54 +341,117 @@ export function productSchema(
     ? `${category.label} / ${subcategoryLabel}`
     : `${catSlug}/${subSlug}`;
 
-  // Single-vendor catalogue: defer to Shopify's vendor field when
-  // populated, fall back to the store brand otherwise. Don't invent
-  // a manufacturer.
   const brandName = product.vendor?.trim() || 'Enviro Aqua';
+  const brand: JsonLd = {
+    '@type': 'Brand',
+    name: brandName,
+  };
 
-  const spread = spreadVariantPrices(
-    product.variants,
-    product.priceRange.minVariantPrice,
-  );
+  const commonProductFields: JsonLd = {
+    description: descriptionPlainText,
+    category: categoryString,
+    brand,
+  };
 
-  const sharedOfferFields: JsonLd = {
-    url,
-    priceCurrency: currencyCode,
-    availability: offerAvailability,
+  const variantColour = (variant: Product['variants'][number]): string | null =>
+    variant.selectedOptions.find((option) =>
+      ['color', 'colour', 'finish'].includes(option.name.toLowerCase()),
+    )?.value ?? null;
+
+  const hasColourVariants =
+    product.variants.length > 1 &&
+    product.variants.every((variant) => variantColour(variant));
+
+  const offerForVariant = (
+    variant: Product['variants'][number],
+  ): JsonLd => ({
+    '@type': 'Offer',
+    url: `${url}?variant=${encodeURIComponent(variant.id)}`,
+    price: variant.price.amount,
+    priceCurrency: variant.price.currencyCode,
+    availability: variant.availableForSale
+      ? 'https://schema.org/InStock'
+      : 'https://schema.org/OutOfStock',
     itemCondition: 'https://schema.org/NewCondition',
     priceValidUntil: priceValidUntil(),
     hasMerchantReturnPolicy: returnPolicy(),
-  };
+  });
 
-  const offers: JsonLd =
-    product.variants.length > 1 && spread.uniformPrice === null
-      ? {
-          '@type': 'AggregateOffer',
-          ...sharedOfferFields,
-          lowPrice: spread.lowPrice,
-          highPrice: spread.highPrice,
-          offerCount: product.variants.length,
-        }
-      : {
-          '@type': 'Offer',
-          ...sharedOfferFields,
-          price: spread.uniformPrice ?? spread.lowPrice,
+  let schema: JsonLd;
+
+  if (hasColourVariants) {
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'ProductGroup',
+      '@id': `${url}#product-group`,
+      name: product.title,
+      url,
+      productGroupID: product.handle,
+      variesBy: ['https://schema.org/color'],
+      image: images.length > 0 ? images : undefined,
+      ...commonProductFields,
+      hasVariant: product.variants.map((variant) => {
+        const colour = variantColour(variant)!;
+        return {
+          '@type': 'Product',
+          '@id': `${url}#variant-${encodeURIComponent(variant.id)}`,
+          name: `${product.title} - ${colour}`,
+          sku: variant.sku ?? undefined,
+          color: colour,
+          image: variant.image?.url ?? product.featuredImage?.url ?? undefined,
+          ...commonProductFields,
+          isVariantOf: {
+            '@id': `${url}#product-group`,
+          },
+          offers: offerForVariant(variant),
         };
+      }),
+    };
+  } else {
+    const anyInStock = product.variants.some((v) => v.availableForSale);
+    const offerAvailability = anyInStock
+      ? 'https://schema.org/InStock'
+      : 'https://schema.org/OutOfStock';
 
-  const schema: JsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: product.title,
-    description: descriptionPlainText,
-    image: images.length > 0 ? images : undefined,
-    sku: firstVariant?.sku ?? undefined,
-    category: categoryString,
-    brand: {
-      '@type': 'Brand',
-      name: brandName,
-    },
-    offers,
-  };
+    const spread = spreadVariantPrices(
+      product.variants,
+      product.priceRange.minVariantPrice,
+    );
+
+    const sharedOfferFields: JsonLd = {
+      url,
+      priceCurrency: currencyCode,
+      availability: offerAvailability,
+      itemCondition: 'https://schema.org/NewCondition',
+      priceValidUntil: priceValidUntil(),
+      hasMerchantReturnPolicy: returnPolicy(),
+    };
+
+    const offers: JsonLd =
+      product.variants.length > 1 && spread.uniformPrice === null
+        ? {
+            '@type': 'AggregateOffer',
+            ...sharedOfferFields,
+            lowPrice: spread.lowPrice,
+            highPrice: spread.highPrice,
+            offerCount: product.variants.length,
+          }
+        : {
+            '@type': 'Offer',
+            ...sharedOfferFields,
+            price: spread.uniformPrice ?? spread.lowPrice,
+          };
+
+    schema = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.title,
+      ...commonProductFields,
+      image: images.length > 0 ? images : undefined,
+      sku: firstVariant?.sku ?? undefined,
+      offers,
+    };
+  }
 
   if (additionalProperty.length > 0) {
     schema.additionalProperty = additionalProperty;
