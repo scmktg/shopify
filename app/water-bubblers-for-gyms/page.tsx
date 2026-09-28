@@ -70,7 +70,7 @@ const PICKS: ReadonlyArray<GymPick> = [
       'SUS304 stainless - survives sweat, towels, daily wipe-downs',
       'Spout + side tap for bottle fill - ends the queue at break',
       '99 cm tall, 30 × 30 cm footprint - fits beside lockers and walls',
-      '20 L/hr cooling at 8–12 °C - keeps up with peak class throughput',
+      '20 L/hr cooling at 8-12 °C - keeps up with peak class throughput',
     ],
   },
   {
@@ -154,7 +154,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How much does the bubbler save us versus bottled water?',
-    a: 'Depends on your current spend. As a rough benchmark - if you currently buy two cases of 600 ml bottles a week for staff and members (typical small gym), that is around $1,500–$2,000 a year at retail vending prices. A single unit pays for itself inside the first year, then you are running on mains-water cost (well under a cent per fill) for the next decade.',
+    a: 'Depends on your current spend. As a rough benchmark - if you currently buy two cases of 600 ml bottles a week for staff and members (typical small gym), that is around $1,500-$2,000 a year at retail vending prices. A single unit pays for itself inside the first year, then you are running on mains-water cost (well under a cent per fill) for the next decade.',
   },
   {
     q: 'Is the side tap good enough for water bottles?',
@@ -176,7 +176,7 @@ const FAQ_ITEMS = [
 
 const QUICK_SPECS: ReadonlyArray<{ label: string; value: string }> = [
   { label: 'Cooling capacity', value: '20 L/hr' },
-  { label: 'Water temperature', value: '8–12 °C' },
+  { label: 'Water temperature', value: '8-12 °C' },
   { label: 'Refrigerant', value: 'R290 · low GWP' },
   { label: 'Filtration', value: 'PP + Carbon · 10″ AU housings' },
   { label: 'Lead-free standard', value: 'AS/NZS 4020' },
