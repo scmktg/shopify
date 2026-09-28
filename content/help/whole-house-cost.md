@@ -8,7 +8,7 @@ relatedLinks:
   - { label: "Which water filter should I choose?", href: "/help/which-filter/" }
 faq:
   - q: "Why does the install cost as much as the system?"
-    a: "Because it has to. A whole-house system sits on the cold-water mains and must be plumbed by a licensed plumber to comply with state regulations and to keep the warranty intact. A standard install is two to four hours of labour plus brackets, isolation valves, and the bypass loop. $500–$1,500 is the realistic range. The system is the cheap part."
+    a: "Because it has to. A whole-house system sits on the cold-water mains and must be plumbed by a licensed plumber to comply with state regulations and to keep the warranty intact. A standard install is two to four hours of labour plus brackets, isolation valves, and the bypass loop. $500-$1,500 is the realistic range. The system is the cheap part."
   - q: "Can I install it myself?"
     a: "Not legally on the mains in any Australian state. Mains-pressure plumbing changes require a licensed plumber by law. Under-sink filters with push-fit fittings on a single tap are usually fine to DIY. Anything that touches the cold-water mains is a plumber job."
   - q: "What happens if I install a non-WaterMark system on the mains?"
@@ -25,9 +25,9 @@ What a whole-house water filtration system actually costs in Australia, with no 
 
 WaterMark-certified whole-house systems for a typical Australian home land in three brackets:
 
-- **Two-stage 10" × 4.5" Big Blue** - sediment + carbon. Around $300–$450. Suits smaller homes, holiday properties, or anywhere flow demand is modest.
-- **Two-stage 20" × 4.5" Big Blue** - same configuration, larger housings. Around $450–$700. The right call for a four-bedroom family home - bigger cartridges last longer and don't drop flow when multiple outlets are running.
-- **Three-stage 20" × 4.5" Big Blue** - sediment + carbon + a third stage (KDF, catalytic carbon, or UV). Around $700–$1,100 depending on the third stage. UV adds the most because of the lamp and ballast.
+- **Two-stage 10" × 4.5" Big Blue** - sediment + carbon. Around $300-$450. Suits smaller homes, holiday properties, or anywhere flow demand is modest.
+- **Two-stage 20" × 4.5" Big Blue** - same configuration, larger housings. Around $450-$700. The right call for a four-bedroom family home - bigger cartridges last longer and don't drop flow when multiple outlets are running.
+- **Three-stage 20" × 4.5" Big Blue** - sediment + carbon + a third stage (KDF, catalytic carbon, or UV). Around $700-$1,100 depending on the third stage. UV adds the most because of the lamp and ballast.
 
 These are real numbers for certified systems with brand-name Australian housings. Anything significantly cheaper online is usually non-certified, which means a plumber will not install it on the mains.
 
@@ -35,8 +35,8 @@ These are real numbers for certified systems with brand-name Australian housings
 
 A licensed plumber installs whole-house systems on the cold-water mains, after the meter and before the line splits to internal taps. Expect:
 
-- **$500–$800** for a straightforward install - exposed pipework, easy access, no relocations.
-- **$800–$1,500** for a harder install - buried pipework needing excavation, indoor mounting through a stud wall, bypass loop on a meter pit, or council water-meter relocations.
+- **$500-$800** for a straightforward install - exposed pipework, easy access, no relocations.
+- **$800-$1,500** for a harder install - buried pipework needing excavation, indoor mounting through a stud wall, bypass loop on a meter pit, or council water-meter relocations.
 
 The price covers labour, the bracket and isolation valves, the bypass loop (so you can change cartridges without losing whole-house water), and any pipe/fittings to bridge the system into the existing run.
 
@@ -44,16 +44,16 @@ The price covers labour, the bracket and isolation valves, the bypass loop (so y
 
 This is where the honest numbers matter. A typical four-bedroom family home on town water:
 
-- **Sediment cartridge (5 micron pleated polypropylene):** $25–$40, replace every six to twelve months.
-- **Carbon block cartridge:** $35–$55, replace every six to twelve months.
-- **KDF or catalytic carbon (third stage if fitted):** $55–$90, replace annually.
-- **UV lamp (third stage if fitted):** $90–$130, replace annually.
+- **Sediment cartridge (5 micron pleated polypropylene):** $25-$40, replace every six to twelve months.
+- **Carbon block cartridge:** $35-$55, replace every six to twelve months.
+- **KDF or catalytic carbon (third stage if fitted):** $55-$90, replace annually.
+- **UV lamp (third stage if fitted):** $90-$130, replace annually.
 
-Two-stage system: about **$70–$130 per year** in cartridges.
+Two-stage system: about **$70-$130 per year** in cartridges.
 
-Three-stage with KDF: about **$130–$200 per year**.
+Three-stage with KDF: about **$130-$200 per year**.
 
-Three-stage with UV: about **$200–$300 per year** (lamp dominates).
+Three-stage with UV: about **$200-$300 per year** (lamp dominates).
 
 Rural tank water doubles the sediment-cartridge frequency, so add roughly $40 per year for tank properties.
 
@@ -66,10 +66,10 @@ For a typical four-bedroom Central Coast family home on town water, two-stage 20
 | System | $550 |
 | Install (licensed plumber) | $700 |
 | Cartridges, year 1 | $100 |
-| Cartridges, years 2–5 | $400 |
+| Cartridges, years 2-5 | $400 |
 | **Five-year total** | **$1,750** |
 
-That works out to about **$350 a year**, or **$30 a month**. Compare to bottled-water deliveries at $15–$25 a bottle.
+That works out to about **$350 a year**, or **$30 a month**. Compare to bottled-water deliveries at $15-$25 a bottle.
 
 ## The WaterMark angle on cost
 
