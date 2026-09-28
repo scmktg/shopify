@@ -17,10 +17,18 @@ import {
   productListSchema,
 } from '@/lib/seo/jsonld';
 import { getProductUrl } from '@/lib/utils/productUrl';
+import {
+  buildCatalogQuery,
+  getCatalogFilterGroups,
+  hasCatalogFilters,
+  parseCatalogFilterState,
+} from '@/lib/catalog/filters';
+
+type CategorySearchParams = Record<string, string | string[] | undefined>;
 
 interface SubcategoryPageProps {
   params: Promise<{ category: string; subcategory: string }>;
-  searchParams?: Promise<{ after?: string }>;
+  searchParams?: Promise<CategorySearchParams>;
 }
 
 const PAGE_SIZE = 24;
@@ -30,19 +38,25 @@ export async function generateMetadata({
   searchParams,
 }: SubcategoryPageProps): Promise<Metadata> {
   const { category, subcategory } = await params;
-  const after = (await searchParams)?.after;
+  const paramsValue = (await searchParams) ?? {};
+  const after = paramsValue.after;
   const node = findSubcategory(category, subcategory);
   if (!node) return {};
+
+  const groups = getCatalogFilterGroups(category, subcategory);
+  const filters = parseCatalogFilterState(paramsValue, groups);
   const description =
     getSubcategoryMetaDescription(category, subcategory) ??
     `${node.subcategory.label} in our ${node.category.label.toLowerCase()} range - wholesale prices, Australia-wide delivery, and free Click & Collect from Wyong NSW.`;
+  const shouldNoIndex = Boolean(after) || hasCatalogFilters(filters);
+
   return {
     title: `${node.subcategory.label} | ${node.category.label}`,
     description,
     alternates: {
       canonical: `/${category}/${subcategory}`,
     },
-    ...(after
+    ...(shouldNoIndex
       ? {
           robots: {
             index: false,
@@ -58,7 +72,8 @@ export default async function SubcategoryPage({
   searchParams,
 }: SubcategoryPageProps) {
   const { category, subcategory } = await params;
-  const afterParam = (await searchParams)?.after;
+  const paramsValue = (await searchParams) ?? {};
+  const afterParam = paramsValue.after;
   const after =
     typeof afterParam === 'string' && afterParam.length <= 500
       ? afterParam
@@ -66,7 +81,11 @@ export default async function SubcategoryPage({
   const node = findSubcategory(category, subcategory);
   if (!node) notFound();
 
-  const query = `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
+  const baseQuery = `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
+  const filterGroups = getCatalogFilterGroups(category, subcategory);
+  const initialFilters = parseCatalogFilterState(paramsValue, filterGroups);
+  const query = buildCatalogQuery(baseQuery, filterGroups, initialFilters);
+
   let loadFailed = false;
   let page: ProductsPage;
   try {
@@ -99,9 +118,9 @@ export default async function SubcategoryPage({
             { name: node.subcategory.label, path: pathname },
           ]),
           productListSchema(
-            page.products.map((p) => ({
-              name: p.title,
-              path: getProductUrl(p.handle),
+            page.products.map((product) => ({
+              name: product.title,
+              path: getProductUrl(product.handle),
             })),
           ),
         ]}
@@ -128,21 +147,26 @@ export default async function SubcategoryPage({
       <CategoryView
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
-        query={query}
+        query={baseQuery}
+        categorySlug={category}
+        activeSubcategory={subcategory}
+        initialFilters={initialFilters}
         pageSize={PAGE_SIZE}
         enableSizeFilter={category === 'cartridges'}
       />
-      {page.pageInfo.hasNextPage && page.pageInfo.endCursor && (
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 text-center">
-          <Link
-            href={`${pathname}?after=${encodeURIComponent(page.pageInfo.endCursor)}`}
-            rel="next"
-            className="text-sm font-medium text-brand-blue hover:underline underline-offset-4"
-          >
-            Next catalogue page
-          </Link>
-        </div>
-      )}
+      {page.pageInfo.hasNextPage &&
+        page.pageInfo.endCursor &&
+        !hasCatalogFilters(initialFilters) && (
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 text-center">
+            <Link
+              href={`${pathname}?after=${encodeURIComponent(page.pageInfo.endCursor)}`}
+              rel="next"
+              className="text-sm font-medium text-brand-blue hover:underline underline-offset-4"
+            >
+              Next catalogue page
+            </Link>
+          </div>
+        )}
     </>
   );
 }
