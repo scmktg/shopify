@@ -173,7 +173,7 @@ export function ProductDetail({
           )}
 
           <ShippingTierBlock
-            tier={product.metafields.shipping_class}
+            tier={product.metafields.shipping_class ?? null}
             productHandle={product.handle}
           />
 
