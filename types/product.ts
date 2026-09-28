@@ -85,7 +85,7 @@ export interface ProductMetafields {
   key_benefits: ReadonlyArray<string> | null;
   country_of_origin: string | null;
   warranty_months: number | null;
-  shipping_class: ShippingClass | null;
+  shipping_class?: ShippingClass | null;
   /** @deprecated Legacy migration field. */
   shipping_tier: ShippingTier | null;
 }
