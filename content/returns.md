@@ -37,7 +37,7 @@ For a return to be approved, all of the following must be true:
 2. We respond within one business day with an assessment. If the return is approved, we send **return shipping instructions** and cover the **return shipping costs** for the damaged or faulty item.
 3. Once the item arrives at our Wyong warehouse and has been inspected, we issue a **refund** to the original payment method, or a **replacement** at your preference subject to stock availability.
 
-Refunds typically appear in your account within 2–5 business days of the inspection, depending on your bank.
+Refunds typically appear in your account within 2-5 business days of the inspection, depending on your bank.
 
 ## Warranty
 
