@@ -10,7 +10,7 @@ faq:
   - q: "What's the ROI on switching from bottled coolers to plumbed?"
     a: "Typical office of 15–30 staff: bottled-cooler running cost is $600–$1,200 per year in 15L bottle deliveries. A plumbed-in chiller costs $1,000–$2,000 installed and around $80–$150 per year in cartridges. Payback is usually 12–18 months, sometimes faster for offices that get through more than one bottle per day."
   - q: "Do I need hot water as well as cold?"
-    a: "Depends on the office. For client-facing reception areas, no — most offices keep tea and coffee in the kitchen on a separate boiler tap or kettle. For staff kitchens where you want a single appliance for tea, coffee, and chilled drinking water, yes — hot+cold combination units are now standard. Look for a separate child-safe lock on the hot tap (mandatory for compliance in some jurisdictions)."
+    a: "Depends on the office. For client-facing reception areas, no - most offices keep tea and coffee in the kitchen on a separate boiler tap or kettle. For staff kitchens where you want a single appliance for tea, coffee, and chilled drinking water, yes - hot+cold combination units are now standard. Look for a separate child-safe lock on the hot tap (mandatory for compliance in some jurisdictions)."
   - q: "What about sparkling water?"
     a: "Hot, cold, and sparkling combination units are the high end of the office segment. They cost $3,000–$6,000 plus install (you need a CO₂ cylinder swap arrangement) and run around $200–$400 per year in cylinders plus cartridges. Typically only worth it for offices specifically marketing premium amenity, or where staff have explicitly asked for it."
   - q: "Is the unit visible to clients?"
@@ -32,7 +32,7 @@ Plumbed pays back in 12–18 months and saves $2,000–$4,000 over five years. T
 
 The one scenario where bottled still makes sense for offices is short-term tenancies (under 12 months) or sites where mains plumbing access is impossible.
 
-## Hot, cold, sparkling — what to specify
+## Hot, cold, sparkling - what to specify
 
 Three configurations dominate the office segment:
 
@@ -42,11 +42,11 @@ Three configurations dominate the office segment:
 
 For most offices the right answer is hot + cold. Cold-only is fine for reception areas. Sparkling is rarely worth the cost and complexity unless there's a specific reason.
 
-## Aesthetics — when it matters
+## Aesthetics - when it matters
 
 Two zones, two answers:
 
-- **Client-facing kitchen or coffee station.** Aesthetics matter. Specify an under-counter chiller plumbed to a dedicated tap on the bench — the unit itself hides under the cabinetry, the tap is brushed stainless or chrome, the install reads as part of the kitchen rather than as an appliance. This is the standard for any office that wants the kitchen to look intentional.
+- **Client-facing kitchen or coffee station.** Aesthetics matter. Specify an under-counter chiller plumbed to a dedicated tap on the bench - the unit itself hides under the cabinetry, the tap is brushed stainless or chrome, the install reads as part of the kitchen rather than as an appliance. This is the standard for any office that wants the kitchen to look intentional.
 - **Back-of-house staff kitchen.** Free-standing combination units (cold + hot + bubbler) are fine, take less install effort, and cost less. The visual matters less because clients don't see it.
 
 Stainless-steel finishes age better than white-painted plastic. Specify SUS304 or higher for any visible cabinetry.
@@ -55,12 +55,12 @@ Stainless-steel finishes age better than white-painted plastic. Specify SUS304 o
 
 Office chillers need at least carbon filtration. The right setup is:
 
-- **Sediment pre-filter** (5 micron) — catches grit and rust from older office-block plumbing.
-- **Carbon block** — removes chlorine taste, the main complaint about Sydney/Melbourne mains water.
+- **Sediment pre-filter** (5 micron) - catches grit and rust from older office-block plumbing.
+- **Carbon block** - removes chlorine taste, the main complaint about Sydney/Melbourne mains water.
 
 Replace cartridges annually. Most office maintenance contracts can include cartridge changes for around $100–$150 per year all-in.
 
-For offices on chloraminated water (Sydney, Melbourne, Brisbane, Adelaide, Canberra), specify catalytic carbon for the second stage rather than standard carbon — see [chloramine and PFAS](/water-problems/chloramine-and-pfas/) for why this matters.
+For offices on chloraminated water (Sydney, Melbourne, Brisbane, Adelaide, Canberra), specify catalytic carbon for the second stage rather than standard carbon - see [chloramine and PFAS](/water-problems/chloramine-and-pfas/) for why this matters.
 
 ## Placement
 
