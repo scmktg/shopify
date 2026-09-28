@@ -52,5 +52,5 @@ Umina, Ocean Beach, Ettalong, and Pearl Beach get serious salt aerosol. The wate
 Tracked delivery to Peninsula addresses is usually next business day on orders placed before 12pm AEST. Click & Collect from our Wyong showroom is free - the drive is about 40 minutes via the M1 and Brisbane Water Drive, and orders placed during business hours are usually ready for pickup within two hours.
 
 - **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am – 5pm AEST
+- **Hours:** Monday to Friday, 9am - 5pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
