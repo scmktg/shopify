@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState, useTransition } from 'react';
 import { ChevronDown } from 'lucide-react';
 import {
@@ -66,6 +67,12 @@ interface CategoryViewProps {
    * sizes are visible without further fetches.
    */
   enableSizeFilter?: boolean;
+  /**
+   * Canonical category/subcategory path. Used to expose a real href
+   * for the next Shopify cursor page so crawlers can discover products
+   * beyond the first server-rendered batch.
+   */
+  paginationPath: string;
 }
 
 export function CategoryView({
@@ -74,6 +81,7 @@ export function CategoryView({
   query,
   pageSize = 24,
   enableSizeFilter = false,
+  paginationPath,
 }: CategoryViewProps) {
   const [products, setProducts] = useState<ReadonlyArray<ProductCardData>>(
     initialProducts,
@@ -216,8 +224,8 @@ export function CategoryView({
         </p>
       )}
 
-      {pageInfo.hasNextPage && (
-        <div className="mt-10 text-center">
+      {pageInfo.hasNextPage && pageInfo.endCursor && (
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <button
             type="button"
             onClick={handleLoadMore}
@@ -226,6 +234,15 @@ export function CategoryView({
           >
             {isPending ? 'Loading…' : 'Load more'}
           </button>
+          {sort === 'default' && (
+            <Link
+              href={`${paginationPath}?after=${encodeURIComponent(pageInfo.endCursor)}`}
+              rel="next"
+              className="inline-flex items-center justify-center text-sm font-medium text-brand-blue hover:underline underline-offset-4 px-3 py-3"
+            >
+              Next catalogue page
+            </Link>
+          )}
         </div>
       )}
     </div>
