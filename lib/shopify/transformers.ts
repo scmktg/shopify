@@ -139,10 +139,31 @@ function legacyTierToClass(tier: ShippingTier | null): ShippingClass | null {
   return 'parcel';
 }
 
+function shippingClassToLegacyTier(
+  shippingClass: ShippingClass | null,
+  legacyTier: ShippingTier | null,
+): ShippingTier | null {
+  if (!shippingClass) return legacyTier;
+  if (shippingClass === 'free') return 'T5';
+  if (shippingClass === 'freight') return 'T6';
+  if (shippingClass === 'pickup_only') return 'T7';
+  // Preserve an existing parcel tier where available; otherwise use T2
+  // only as an in-memory compatibility value. Checkout pricing no longer
+  // depends on this tier.
+  return legacyTier && ['T1', 'T2', 'T3', 'T4'].includes(legacyTier)
+    ? legacyTier
+    : 'T2';
+}
+
 function buildMetafields(
   raw: ReadonlyArray<ShopifyMetafield | null>,
 ): ProductMetafields {
   const m = indexMetafields(raw);
+  const legacyShippingTier = asEnum(m.get('shipping_tier'), SHIPPING_TIERS);
+  const shippingClass =
+    asEnum(m.get('shipping_class'), SHIPPING_CLASSES) ??
+    legacyTierToClass(legacyShippingTier);
+
   return {
     watermark_status: asEnum(m.get('watermark_status'), WATERMARK_STATUSES),
     watermark_licence_number: asString(m.get('watermark_licence_number')),
@@ -165,10 +186,11 @@ function buildMetafields(
     key_benefits: asStringList(m.get('key_benefits')),
     country_of_origin: asString(m.get('country_of_origin')),
     warranty_months: asInt(m.get('warranty_months')),
-    shipping_class:
-      asEnum(m.get('shipping_class'), SHIPPING_CLASSES) ??
-      legacyTierToClass(asEnum(m.get('shipping_tier'), SHIPPING_TIERS)),
-    shipping_tier: asEnum(m.get('shipping_tier'), SHIPPING_TIERS),
+    shipping_class: shippingClass,
+    shipping_tier: shippingClassToLegacyTier(
+      shippingClass,
+      legacyShippingTier,
+    ),
   };
 }
 
