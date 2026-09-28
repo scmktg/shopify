@@ -57,7 +57,7 @@ export function ProductTrustBlock({
           aria-hidden="true"
         />
         <span>
-          {RETURNS_SUMMARY} —{' '}
+          {RETURNS_SUMMARY} -{' '}
           <Link
             href="/returns/"
             className="underline underline-offset-4 hover:text-brand-blue"
