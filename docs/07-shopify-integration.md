@@ -454,7 +454,7 @@ Before any code:
 - [ ] Enable headless via "Hydrogen" channel or Storefront API directly
 - [ ] Set up taxes (GST 10% for Australia)
 - [ ] Set up shipping zones (Australia + international optional)
-- [ ] Configure six-tier shipping profiles (T1–T5 by weight band, T6 freight-quoted) per `shipping-strategy.md`
+- [ ] Configure the four shipping classes and delivery profiles (`parcel`, `free`, `freight`, `pickup_only`) per `shipping-strategy.md`
 - [ ] Connect payment gateway (Shopify Payments preferred)
 - [ ] Configure email notification templates
 - [ ] Set primary currency to AUD
