@@ -42,6 +42,24 @@ const NEED_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
   },
 ];
 
+const WATER_TREATMENT_USE_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
+  {
+    value: 'drinking-water-only',
+    label: 'Drinking Water Only',
+    query: "tag:'use:drinking-water-only'",
+  },
+  {
+    value: 'whole-home-systems',
+    label: 'Whole Home Systems',
+    query: "tag:'use:whole-home-systems'",
+  },
+  {
+    value: 'commercial-systems',
+    label: 'Commercial Systems',
+    query: "tag:'use:commercial-systems'",
+  },
+];
+
 const USE_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
   {
     value: 'home-drinking-water',
@@ -218,8 +236,15 @@ export function getCatalogFilterGroups(
     });
   }
 
-  if (
-    category === 'water-filters' ||
+  if (category === 'water-filters' || category === 'cartridges') {
+    groups.push({
+      id: 'use',
+      param: 'use',
+      label: 'Where will you use it?',
+      multiple: true,
+      options: WATER_TREATMENT_USE_OPTIONS,
+    });
+  } else if (
     category === 'bubblers-and-coolers' ||
     category === 'pumps-and-tanks'
   ) {
