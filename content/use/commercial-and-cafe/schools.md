@@ -8,7 +8,7 @@ relatedLinks:
   - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained/" }
 faq:
   - q: "How many drinking fountains does my school need?"
-    a: "The National Construction Code references AS/NZS 3500 and the National Plumbing Code's drinking-water provisions, which historically work to a ratio of approximately one drinking-water outlet per 50 occupants for educational facilities. Local jurisdictions and individual school education department policies sometimes set tighter requirements — check your state education department's facilities standard for the current minimum."
+    a: "The National Construction Code references AS/NZS 3500 and the National Plumbing Code's drinking-water provisions, which historically work to a ratio of approximately one drinking-water outlet per 50 occupants for educational facilities. Local jurisdictions and individual school education department policies sometimes set tighter requirements - check your state education department's facilities standard for the current minimum."
   - q: "Does every bubbler need to be wheelchair accessible?"
     a: "Not every unit, but at least one accessible drinking-water outlet must be provided per group of fountains in line with AS 1428.1 (Design for access and mobility). The accessible outlet must meet the spout-height range and clear floor space requirements in the standard. Combination units with both standard and lowered spouts are common for new installations."
   - q: "Is WaterMark mandatory for school water bubblers?"
@@ -19,7 +19,7 @@ faq:
     a: "Mandatory. Since the 2020 NCC amendment, all new plumbing products in contact with drinking water must comply with the lead-free standard (less than 0.25% lead by weighted average across wetted surfaces). Bubblers should be specified with lead-free brass or stainless-steel waterways. Every product on this site lists lead-free status on the page."
 ---
 
-Australian schools have specific requirements for drinking-water provision — drinking-point ratios, accessibility under AS 1428, plumbing compliance under the National Construction Code, and the WaterMark certification baseline. This page summarises what to specify and what to avoid.
+Australian schools have specific requirements for drinking-water provision - drinking-point ratios, accessibility under AS 1428, plumbing compliance under the National Construction Code, and the WaterMark certification baseline. This page summarises what to specify and what to avoid.
 
 ## Compliance baseline
 
@@ -35,19 +35,19 @@ A bubbler that fails any of these will fail the inspection and have to come out.
 
 The standard ratio referenced through the NCC for educational facilities works out to approximately **one drinking-water outlet per 50 occupants**. For a 600-student primary school that means 12 outlets at minimum, distributed across the campus.
 
-State education departments typically have their own facility design standards layered on top — some require tighter ratios for early-learning settings, others specify minimum numbers per playground area or per building wing. Always check the current standard from the relevant state department of education before finalising the layout.
+State education departments typically have their own facility design standards layered on top - some require tighter ratios for early-learning settings, others specify minimum numbers per playground area or per building wing. Always check the current standard from the relevant state department of education before finalising the layout.
 
 ## Placement guidance
 
 The right number of outlets in the wrong places is wasted spend. Standard placement covers:
 
-- **At least one accessible bubbler per playground area.** Maximum walking distance from any play area should be reasonable — most education-department standards target under 50 metres.
+- **At least one accessible bubbler per playground area.** Maximum walking distance from any play area should be reasonable - most education-department standards target under 50 metres.
 - **Near every classroom block exit.** Students filling bottles between classes should not have to detour across the school.
 - **Outside the canteen / tuckshop.** Reduces tuckshop drink sales and visible single-use plastic on campus.
 - **In sports halls and PE areas.** During physical activity, hydration access should be immediate. Multi-spout units suit high-traffic locations.
-- **Adjacent to staff rooms.** Often forgotten — staff need accessible drinking water too.
+- **Adjacent to staff rooms.** Often forgotten - staff need accessible drinking water too.
 
-## Accessibility — getting AS 1428.1 right
+## Accessibility - getting AS 1428.1 right
 
 For any group of two or more drinking fountains, at least one must be accessible. The key requirements:
 
@@ -71,9 +71,9 @@ Specify a unit with a sensor-activated bottle-fill spout (touchless) plus a push
 
 ## Stainless-steel grade
 
-For school environments — high traffic, frequent cleaning with chlorine-based disinfectants, occasional vandalism — SUS304 stainless steel is the minimum. SUS316 is preferable for outdoor or coastal locations because of saltwater aerosol corrosion.
+For school environments - high traffic, frequent cleaning with chlorine-based disinfectants, occasional vandalism - SUS304 stainless steel is the minimum. SUS316 is preferable for outdoor or coastal locations because of saltwater aerosol corrosion.
 
-Avoid cheaper steel grades and powder-coated mild steel — both will pit and corrode within a few years in school conditions.
+Avoid cheaper steel grades and powder-coated mild steel - both will pit and corrode within a few years in school conditions.
 
 ## Filtration
 
