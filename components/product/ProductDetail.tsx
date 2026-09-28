@@ -175,6 +175,7 @@ export function ProductDetail({
           <ShippingTierBlock
             tier={product.metafields.shipping_tier}
             productHandle={product.handle}
+            variantId={firstVariant?.id ?? null}
           />
 
           {firstVariant && (
