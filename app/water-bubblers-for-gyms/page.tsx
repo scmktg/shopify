@@ -42,7 +42,7 @@ export const revalidate = 3600;
 
 const PATH = '/water-bubblers-for-gyms';
 
-// Two cabinets recommended for gyms — both have the side-mounted
+// Two cabinets recommended for gyms - both have the side-mounted
 // bottle-fill tap, which round-cylindrical bubblers lack. Round
 // model is still linked from the parent landing for sites that
 // don't need bottle fill.
@@ -65,12 +65,12 @@ const PICKS: ReadonlyArray<GymPick> = [
     shortName: 'Square Stainless',
     fit: 'Best for indoor gym floors',
     tagline:
-      'Flush-fit SUS304 cabinet — sits against any wall or pillar, lines up cleanly in corridors.',
+      'Flush-fit SUS304 cabinet - sits against any wall or pillar, lines up cleanly in corridors.',
     bullets: [
-      'SUS304 stainless — survives sweat, towels, daily wipe-downs',
-      'Spout + side tap for bottle fill — ends the queue at break',
-      '99 cm tall, 30 × 30 cm footprint — fits beside lockers and walls',
-      '20 L/hr cooling at 8–12 °C — keeps up with peak class throughput',
+      'SUS304 stainless - survives sweat, towels, daily wipe-downs',
+      'Spout + side tap for bottle fill - ends the queue at break',
+      '99 cm tall, 30 × 30 cm footprint - fits beside lockers and walls',
+      '20 L/hr cooling at 8–12 °C - keeps up with peak class throughput',
     ],
   },
   {
@@ -79,11 +79,11 @@ const PICKS: ReadonlyArray<GymPick> = [
     shortName: 'HDPE Granite',
     fit: 'Best for outdoor & poolside',
     tagline:
-      'Rust-free HDPE cabinet with granite finish — built for outdoor zones, F45-style covered areas, and pool decks.',
+      'Rust-free HDPE cabinet with granite finish - built for outdoor zones, F45-style covered areas, and pool decks.',
     bullets: [
-      'HDPE polymer — does not rust, does not pit at welds (there are no welds)',
+      'HDPE polymer - does not rust, does not pit at welds (there are no welds)',
       'UV-stable granite finish moulded through the cabinet, not painted',
-      '122 cm tall on a 41 × 41 cm pad — freestanding, anchor-bolt ready',
+      '122 cm tall on a 41 × 41 cm pad - freestanding, anchor-bolt ready',
       'Same 20 L/hr cooling and lead-free WMTS-105:2016 certification',
     ],
   },
@@ -116,14 +116,14 @@ const GYM_TYPES = [
   {
     icon: Timer,
     title: 'F45, HIIT & CrossFit',
-    body: '45-minute class formats produce a hard demand spike at the bell. The 20 L/hr cooling block and side tap clear a queue of bottle-fillers in minutes — not the 10+ minutes a single bubbler spout would take.',
-    proof: 'Recommended: Square Stainless or HDPE Granite — both have bottle fill.',
+    body: '45-minute class formats produce a hard demand spike at the bell. The 20 L/hr cooling block and side tap clear a queue of bottle-fillers in minutes - not the 10+ minutes a single bubbler spout would take.',
+    proof: 'Recommended: Square Stainless or HDPE Granite - both have bottle fill.',
   },
   {
     icon: Clock3,
     title: '24-hour & big-box gyms',
     body: 'Continuous-duty cooling rated for unattended overnight operation. SUS304 panels wipe clean in seconds, push-button activation is rated for thousands of cycles without service intervals.',
-    proof: 'Recommended: Square Stainless — flush wall fit beside cardio rows.',
+    proof: 'Recommended: Square Stainless - flush wall fit beside cardio rows.',
   },
   {
     icon: Sparkles,
@@ -142,35 +142,35 @@ const GYM_TYPES = [
 const FAQ_ITEMS = [
   {
     q: 'What size bubbler do I need for my gym?',
-    a: 'For most gyms — F45, HIIT, big-box, council — a single 20 L/hr unit covers up to about 100 bottle refills per hour. If your peak class size is over 40 and they all hit the bubbler at once, run two units. Call us and tell us your class size and we will recommend the right number.',
+    a: 'For most gyms - F45, HIIT, big-box, council - a single 20 L/hr unit covers up to about 100 bottle refills per hour. If your peak class size is over 40 and they all hit the bubbler at once, run two units. Call us and tell us your class size and we will recommend the right number.',
   },
   {
     q: 'Can a regular plumber install this in my gym?',
-    a: 'Yes. All our commercial bubblers are WaterMark certified under WMTS-105:2016 (licence 23484), which is the Australian standard for plumbed-in drinking fountains. Any licensed Australian plumber can install on a mains supply line and issue a Certificate of Compliance — that document is what councils and gym-chain franchise inspectors typically ask to see.',
+    a: 'Yes. All our commercial bubblers are WaterMark certified under WMTS-105:2016 (licence 23484), which is the Australian standard for plumbed-in drinking fountains. Any licensed Australian plumber can install on a mains supply line and issue a Certificate of Compliance - that document is what councils and gym-chain franchise inspectors typically ask to see.',
   },
   {
     q: 'Do you ship to gyms outside NSW?',
-    a: `Yes. Tracked Australia-wide dispatch from Wyong NSW. Orders placed before ${BUSINESS_INFO.orderCutoff} on a business day ship the same day. Commercial bubblers ship free Australia-wide on our whole-system freight tier — no cart-value threshold. We have shipped to gyms in QLD, VIC, WA, SA, and TAS.`,
+    a: `Yes. Tracked Australia-wide dispatch from Wyong NSW. Orders placed before ${BUSINESS_INFO.orderCutoff} on a business day ship the same day. Commercial bubblers ship free Australia-wide on our whole-system freight tier - no cart-value threshold. We have shipped to gyms in QLD, VIC, WA, SA, and TAS.`,
   },
   {
     q: 'How much does the bubbler save us versus bottled water?',
-    a: 'Depends on your current spend. As a rough benchmark — if you currently buy two cases of 600 ml bottles a week for staff and members (typical small gym), that is around $1,500–$2,000 a year at retail vending prices. A single unit pays for itself inside the first year, then you are running on mains-water cost (well under a cent per fill) for the next decade.',
+    a: 'Depends on your current spend. As a rough benchmark - if you currently buy two cases of 600 ml bottles a week for staff and members (typical small gym), that is around $1,500–$2,000 a year at retail vending prices. A single unit pays for itself inside the first year, then you are running on mains-water cost (well under a cent per fill) for the next decade.',
   },
   {
     q: 'Is the side tap good enough for water bottles?',
-    a: 'Yes — the Square Stainless and HDPE Granite both have a side-mounted dispensing tap at about 25 cm above the cabinet top, which clears the bottom of a standard 600 ml or 1 L bottle without tipping. The Round model has the spout only — choose Square or HDPE if bottle fill matters to you.',
+    a: 'Yes - the Square Stainless and HDPE Granite both have a side-mounted dispensing tap at about 25 cm above the cabinet top, which clears the bottom of a standard 600 ml or 1 L bottle without tipping. The Round model has the spout only - choose Square or HDPE if bottle fill matters to you.',
   },
   {
     q: 'What about hygiene? Touchless options?',
-    a: 'All three models use push-button activation rated for high-traffic public use. Push-button is hygienic when paired with the integrated drip-tray drainage (no standing water around the spout). We do not currently stock touchless sensor units in the certified range — push-button remains the most reliable mechanism for sustained gym throughput, in our experience.',
+    a: 'All three models use push-button activation rated for high-traffic public use. Push-button is hygienic when paired with the integrated drip-tray drainage (no standing water around the spout). We do not currently stock touchless sensor units in the certified range - push-button remains the most reliable mechanism for sustained gym throughput, in our experience.',
   },
   {
-    q: 'What about filter changes — who does that?',
-    a: 'Standard 10″ Australian housings, internal access via the cabinet. Most gyms do this in-house (5 minutes, no tools required for cartridge swap), or a sparkie/handyman during a normal site visit. Cartridges are not proprietary — Carbon CTO + Sediment sets are available from us or any AU water-filter supplier.',
+    q: 'What about filter changes - who does that?',
+    a: 'Standard 10″ Australian housings, internal access via the cabinet. Most gyms do this in-house (5 minutes, no tools required for cartridge swap), or a sparkie/handyman during a normal site visit. Cartridges are not proprietary - Carbon CTO + Sediment sets are available from us or any AU water-filter supplier.',
   },
   {
     q: 'Is the price the same retail or trade?',
-    a: 'Yes — that is the brand promise. Same wholesale price whether you are a single PT studio buying one or a national chain rolling out 40 units. No accounts, no minimums, no quote process. The price you see on the product page is the price you pay.',
+    a: 'Yes - that is the brand promise. Same wholesale price whether you are a single PT studio buying one or a national chain rolling out 40 units. No accounts, no minimums, no quote process. The price you see on the product page is the price you pay.',
   },
 ];
 
@@ -185,12 +185,12 @@ const QUICK_SPECS: ReadonlyArray<{ label: string; value: string }> = [
 
 export const metadata: Metadata = {
   title:
-    'Water Bubblers for Gyms — Commercial, WaterMark Certified | Bottle-Fill',
+    'Water Bubblers for Gyms - Commercial, WaterMark Certified | Bottle-Fill',
   description:
-    'Commercial water bubblers for Australian gyms — WaterMark certified, lead-free, with bottle-fill side tap. 20 L/hr cooling, plumber-ready. Same-day dispatch from Wyong NSW.',
+    'Commercial water bubblers for Australian gyms - WaterMark certified, lead-free, with bottle-fill side tap. 20 L/hr cooling, plumber-ready. Same-day dispatch from Wyong NSW.',
   alternates: { canonical: PATH },
   openGraph: {
-    title: 'Water Bubblers for Gyms — Commercial, WaterMark Certified',
+    title: 'Water Bubblers for Gyms - Commercial, WaterMark Certified',
     description:
       'Commercial bubblers built for F45, HIIT, 24-hour gyms, and council leisure centres. Bottle-fill side tap, lead-free, plumber-ready.',
     url: PATH,
@@ -228,7 +228,7 @@ export default async function GymBubblersPage() {
           collectionSchema(
             'Water Bubblers for Gyms',
             PATH,
-            'Commercial water bubblers for Australian gyms — WaterMark certified, lead-free, with bottle-fill side tap. Recommended models for F45, 24-hour gyms, boutique studios, and council leisure centres.',
+            'Commercial water bubblers for Australian gyms - WaterMark certified, lead-free, with bottle-fill side tap. Recommended models for F45, 24-hour gyms, boutique studios, and council leisure centres.',
           ),
         ]}
       />
@@ -271,13 +271,13 @@ function Hero({ products, breadcrumbs }: HeroProps) {
               Built for Australian gyms
             </span>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-              Water bubblers for gyms — bottle-fill, WaterMark certified, ready
+              Water bubblers for gyms - bottle-fill, WaterMark certified, ready
               for the plumber.
             </h1>
             <p className="mt-4 text-lg md:text-xl text-black/70">
               Stop buying bottled water. End the queue at break. 20 L/hr
               cooling, lead-free wetted parts, and a side-mounted bottle-fill
-              tap — built for F45, HIIT, 24-hour gyms, boutique studios, and
+              tap - built for F45, HIIT, 24-hour gyms, boutique studios, and
               council leisure centres.
             </p>
             {minPrice && (
@@ -407,7 +407,7 @@ function PicksSection({ products }: PicksSectionProps) {
         </h2>
         <p className="mt-2 text-base text-black/70 max-w-2xl">
           Both have the side-mounted bottle-fill tap that the round model
-          lacks. Pick the cabinet that suits the site —
+          lacks. Pick the cabinet that suits the site -
           {' '}
           <Link
             href="/commercial-water-bubblers/"
@@ -600,7 +600,7 @@ function CertSection() {
               Every model on this page is WaterMark certified under{' '}
               <span className="font-semibold text-black">WMTS-105:2016</span>{' '}
               (licence{' '}
-              <span className="font-mono text-black">23484</span>) — the
+              <span className="font-mono text-black">23484</span>) - the
               Australian standard for plumbed-in drinking fountains. Lead-free
               wetted parts are independently verified against{' '}
               <span className="font-mono text-black">AS/NZS 4020</span>.
@@ -608,7 +608,7 @@ function CertSection() {
             <p className="mt-3 text-base text-black/80">
               For gym chains and council leisure centres, that means a
               compliance pack your procurement panel can sign off in one pass
-              — no follow-up questions about lead content, no surprises at
+              - no follow-up questions about lead content, no surprises at
               install.
             </p>
             <p className="mt-4">
