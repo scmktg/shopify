@@ -187,5 +187,6 @@ export function transformShopifyProductCard(
     featuredImage: raw.featuredImage,
     price: raw.priceRange.minVariantPrice,
     housingSize: housingMf?.value ?? null,
+    variants: raw.variants.edges.map((edge) => edge.node),
   };
 }
