@@ -4270,8 +4270,7 @@
       "20x45",
       "big-blue",
       "whole-house",
-      "five-micron",
-      "giardia-reduction"
+      "five-micron"
     ],
     "shortDescription": "20\" × 4.5\" Big Blue twin pack - \"HPF\" spun-melt PP sediment + activated carbon CTO. Replaces the sediment and carbon stages of a 2-stage whole-house filter.",
     "description": "This 20\" × 4.5\" Big Blue twin pack combines a spun-melt polypropylene sediment cartridge with an activated carbon block (CTO). It is designed to replace the two core stages in a two-stage whole-house system, or the sediment + carbon stages within a larger multi-stage system.\n\n## Stage 1 - Sediment\n\nThe polypropylene cartridge captures sand, silt, rust, dirt and other suspended particulate and protects the downstream carbon stage from premature fouling.\n\n## Stage 2 - Carbon Block\n\nThe carbon block reduces chlorine and improves taste and odour across the whole-house supply. Activated carbon may also adsorb a range of organic compounds depending on the water chemistry, flow and contact time.\n\nReplace according to water quality, pressure drop and usage rather than relying on a fixed calendar alone.\n\n## What This Cartridge Set Targets\n\nThis set combines **mechanical sediment filtration** with **activated carbon treatment**. The sediment stage captures sand, silt, rust and other suspended particles; the carbon stage reduces chlorine and improves taste and odour and may adsorb a range of organic contaminants depending on media, flow and contact time.\n\nThis combination is **not a water softener and is not a microbiological purifier**. A 5-micron sediment stage should not be relied on for bacteria, virus or parasite safety without an absolute pore rating or certified cyst-reduction claim. Fluoride and dissolved hardness minerals require specialty media or membrane treatment.",
@@ -4335,10 +4334,9 @@
       }
     ],
     "recommendedFor": [
-      "Annual or six-monthly service of any 2-stage Big Blue whole-house system",
-      "Stages 1 and 2 replacement for 3-stage Big Blue installations",
-      "Properties wanting giardia reduction at the whole-house level",
-      "Tank-fed and mixed-supply homes needing both sediment and carbon stages"
+      "Whole-house 2-stage Big Blue filter servicing",
+      "Replacement of sediment + carbon stages in 3-stage systems",
+      "Properties wanting sediment plus chlorine/taste/odour treatment"
     ],
     "compliance": {
       "watermark": {
@@ -4363,7 +4361,7 @@
     },
     "seo": {
       "title": "20\" × 4.5\" Big Blue Twin Pack - HPF Sediment + Carbon CTO | Enviro Aqua",
-      "description": "Whole-house Big Blue twin pack: HPF spun-melt PP sediment + activated carbon CTO. Both 20\" × 4.5\", 5 micron. Reduces giardia, chlorine, sediment, odour.",
+      "description": "Whole-house Big Blue twin pack: HPF spun-melt PP sediment + activated carbon CTO. Both 20\" × 4.5\", 5 micron. Targets sediment, chlorine, taste and odour.",
       "ogImage": null
     }
   },
@@ -4494,8 +4492,7 @@
       "sediment-and-carbon",
       "10x25",
       "five-micron",
-      "premium",
-      "giardia-reduction"
+      "premium"
     ],
     "shortDescription": "Premium 10\" × 2.5\" twin pack - \"HPF\" spun-melt PP sediment + coconut CTO carbon. Combines particulate capture with chlorine, taste and odour treatment in one replacement set.",
     "description": "The premium 10\" × 2.5\" twin pack pairs an \"HPF\" spun-melt polypropylene sediment cartridge with a coconut-shell CTO carbon block. It refreshes both stages of a standard two-stage under-sink filter in one purchase.\n\n## Stage 1 - Sediment\n\nThe polypropylene stage captures suspended particulate such as sand, silt, rust and dirt before it reaches the carbon block. The spun-melt construction provides a high dirt-holding area without a centre core.\n\n## Stage 2 - Coconut Carbon Block\n\nThe CTO carbon stage is designed for chlorine, taste and odour treatment and can adsorb a range of organic compounds depending on flow rate, contact time and contaminant loading.\n\n## Where It Fits\n\nDirect replacement for standard 10\" × 2.5\" two-stage under-sink housings and suitable as the sediment + carbon pre-filter pair in compatible multi-stage RO systems.\n\n## What This Cartridge Set Targets\n\nThis set combines **mechanical sediment filtration** with **activated carbon treatment**. The sediment stage captures sand, silt, rust and other suspended particles; the carbon stage reduces chlorine and improves taste and odour and may adsorb a range of organic contaminants depending on media, flow and contact time.\n\nThis combination is **not a water softener and is not a microbiological purifier**. A 5-micron sediment stage should not be relied on for bacteria, virus or parasite safety without an absolute pore rating or certified cyst-reduction claim. Fluoride and dissolved hardness minerals require specialty media or membrane treatment.",
@@ -4558,10 +4555,9 @@
       }
     ],
     "recommendedFor": [
-      "Households wanting giardia-cyst reduction in addition to chlorine and sediment",
       "Premium-grade replacement for 2-stage under-sink filters",
-      "RO pre-filter stages where carbon longevity matters",
-      "Properties on rural town water with variable particulate load"
+      "RO pre-filter stages where sediment and carbon treatment are required",
+      "Households wanting sediment plus chlorine/taste/odour treatment"
     ],
     "compliance": {
       "watermark": {
@@ -4587,7 +4583,7 @@
     },
     "seo": {
       "title": "Premium 10\" × 2.5\" Twin Pack - HPF Sediment + Coconut CTO Carbon | Enviro Aqua",
-      "description": "Premium pack: HPF spun-melt PP sediment + coconut CTO carbon block. Both 10\" × 2.5\", 5 micron. 5-micron sediment stage reduces giardia cysts.",
+      "description": "Premium pack: HPF spun-melt PP sediment + coconut CTO carbon block. Both 10\" × 2.5\", 5 micron. Targets sediment, chlorine, taste and odour.",
       "ogImage": null
     }
   },
