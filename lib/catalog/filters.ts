@@ -244,10 +244,7 @@ export function getCatalogFilterGroups(
       multiple: true,
       options: WATER_TREATMENT_USE_OPTIONS,
     });
-  } else if (
-    category === 'bubblers-and-coolers' ||
-    category === 'pumps-and-tanks'
-  ) {
+  } else if (category === 'pumps-and-tanks') {
     groups.push({
       id: 'use',
       param: 'use',
