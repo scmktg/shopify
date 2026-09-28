@@ -72,7 +72,7 @@ These products can be collected free from:
 
 - **Enviro Aqua**
 - **6/45 Amsterdam Cct, Wyong NSW 2259**
-- **Monday to Friday, 9am-5pm AEST**
+- **Monday to Friday, 9am-3pm AEST**
 
 We will email or text you when your order is ready.
 
