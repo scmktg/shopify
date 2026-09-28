@@ -4,7 +4,6 @@ import type {
   Product,
   ProductCardData,
   ProductMetafields,
-  ShippingClass,
   ShippingTier,
   WatermarkStatus,
 } from '@/types/product';
@@ -28,13 +27,6 @@ const INSTALLATION_TYPES: ReadonlyArray<InstallationType> = [
   'inline',
   'countertop',
   'commercial',
-];
-
-const SHIPPING_CLASSES: ReadonlyArray<ShippingClass> = [
-  'parcel',
-  'free',
-  'freight',
-  'pickup_only',
 ];
 
 const SHIPPING_TIERS: ReadonlyArray<ShippingTier> = [
@@ -131,28 +123,19 @@ function asEnum<T extends string>(
   return isOneOf(mf.value, allowed) ? mf.value : null;
 }
 
-function legacyTierToClass(tier: ShippingTier | null): ShippingClass | null {
-  if (!tier) return null;
-  if (tier === 'T5') return 'free';
-  if (tier === 'T6') return 'freight';
-  if (tier === 'T7') return 'pickup_only';
-  return 'parcel';
-}
-
-function shippingClassToLegacyTier(
-  shippingClass: ShippingClass | null,
+function shippingClassToTier(
+  shippingClass: string | null,
   legacyTier: ShippingTier | null,
 ): ShippingTier | null {
-  if (!shippingClass) return legacyTier;
   if (shippingClass === 'free') return 'T5';
   if (shippingClass === 'freight') return 'T6';
   if (shippingClass === 'pickup_only') return 'T7';
-  // Preserve an existing parcel tier where available; otherwise use T2
-  // only as an in-memory compatibility value. Checkout pricing no longer
-  // depends on this tier.
-  return legacyTier && ['T1', 'T2', 'T3', 'T4'].includes(legacyTier)
-    ? legacyTier
-    : 'T2';
+  if (shippingClass === 'parcel') {
+    return legacyTier && ['T1', 'T2', 'T3', 'T4'].includes(legacyTier)
+      ? legacyTier
+      : 'T2';
+  }
+  return legacyTier;
 }
 
 function buildMetafields(
@@ -160,9 +143,7 @@ function buildMetafields(
 ): ProductMetafields {
   const m = indexMetafields(raw);
   const legacyShippingTier = asEnum(m.get('shipping_tier'), SHIPPING_TIERS);
-  const shippingClass =
-    asEnum(m.get('shipping_class'), SHIPPING_CLASSES) ??
-    legacyTierToClass(legacyShippingTier);
+  const shippingClass = asString(m.get('shipping_class'));
 
   return {
     watermark_status: asEnum(m.get('watermark_status'), WATERMARK_STATUSES),
@@ -186,11 +167,7 @@ function buildMetafields(
     key_benefits: asStringList(m.get('key_benefits')),
     country_of_origin: asString(m.get('country_of_origin')),
     warranty_months: asInt(m.get('warranty_months')),
-    shipping_class: shippingClass,
-    shipping_tier: shippingClassToLegacyTier(
-      shippingClass,
-      legacyShippingTier,
-    ),
+    shipping_tier: shippingClassToTier(shippingClass, legacyShippingTier),
   };
 }
 
