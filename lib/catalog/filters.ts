@@ -166,7 +166,7 @@ const CATEGORY_SYSTEM_OPTIONS: Record<string, ReadonlyArray<CatalogFilterOption>
     {
       value: 'kitchen-taps',
       label: 'Kitchen taps',
-      query: "tag:'sub-cat:kitchen-taps'",
+      query: "(tag:'sub-cat:kitchen-taps' OR tag:'sub-cat:ro-filter-taps')",
     },
     {
       value: 'bathroom-taps',
