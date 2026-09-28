@@ -167,14 +167,14 @@ export function MobileMenu({ items }: MobileMenuProps) {
             href="/"
             aria-label="Enviro Aqua - home"
             onClick={close}
-            className="inline-flex items-center"
+            className="relative z-10 inline-flex shrink-0 items-center cursor-pointer"
           >
             <Image
               src="/logo.webp"
               alt="Enviro Aqua"
               width={160}
               height={40}
-              className="h-9 w-auto"
+              className="pointer-events-none select-none h-9 w-auto"
             />
           </Link>
           <button
