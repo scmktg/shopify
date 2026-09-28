@@ -8,6 +8,7 @@ import type { ProductImage } from '@/types/product';
 interface ProductGalleryProps {
   images: ReadonlyArray<ProductImage>;
   title: string;
+  preferredImage?: ProductImage | null;
 }
 
 /**
@@ -24,10 +25,26 @@ function isPlaceholderAlt(alt: string | null | undefined): boolean {
   return /^image[\s_-]*\d*$/i.test(trimmed);
 }
 
-export function ProductGallery({ images, title }: ProductGalleryProps) {
+export function ProductGallery({
+  images,
+  title,
+  preferredImage = null,
+}: ProductGalleryProps) {
+  const galleryImages =
+    preferredImage && !images.some((image) => image.url === preferredImage.url)
+      ? [preferredImage, ...images]
+      : images;
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  if (images.length === 0) {
+  useEffect(() => {
+    if (!preferredImage) return;
+    const index = galleryImages.findIndex(
+      (image) => image.url === preferredImage.url,
+    );
+    if (index >= 0) setSelectedIndex(index);
+  }, [preferredImage?.url]);
+
+  if (galleryImages.length === 0) {
     return (
       <div className="aspect-square flex items-center justify-center bg-gray-100 rounded">
         <span className="text-sm text-gray-500">No image available</span>
@@ -35,16 +52,16 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
     );
   }
 
-  const showArrows = images.length > 1;
-  const selected = images[selectedIndex] ?? images[0]!;
+  const showArrows = galleryImages.length > 1;
+  const selected = galleryImages[selectedIndex] ?? galleryImages[0]!;
   const heroAlt = isPlaceholderAlt(selected.altText)
-    ? `${title} - image ${selectedIndex + 1} of ${images.length}`
+    ? `${title} - image ${selectedIndex + 1} of ${galleryImages.length}`
     : selected.altText!;
 
   const goPrev = () =>
-    setSelectedIndex((i) => (i - 1 + images.length) % images.length);
+    setSelectedIndex((i) => (i - 1 + galleryImages.length) % galleryImages.length);
   const goNext = () =>
-    setSelectedIndex((i) => (i + 1) % images.length);
+    setSelectedIndex((i) => (i + 1) % galleryImages.length);
 
   // Keyboard navigation when the gallery wrapper has focus.
   useEffect(() => {
@@ -55,7 +72,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [showArrows, images.length]);
+  }, [showArrows, galleryImages.length]);
 
   return (
     <div
@@ -98,7 +115,7 @@ export function ProductGallery({ images, title }: ProductGalleryProps) {
             aria-atomic="true"
             className="sr-only"
           >
-            Image {selectedIndex + 1} of {images.length}
+            Image {selectedIndex + 1} of {galleryImages.length}
           </div>
         </>
       )}
