@@ -81,7 +81,10 @@ export default async function SubcategoryPage({
   const node = findSubcategory(category, subcategory);
   if (!node) notFound();
 
-  const baseQuery = `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
+  const baseQuery =
+    category === 'plumbing' && subcategory === 'kitchen-taps'
+      ? "tag:'primary-cat:plumbing' AND (tag:'sub-cat:kitchen-taps' OR tag:'sub-cat:ro-filter-taps')"
+      : `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
   const filterGroups = getCatalogFilterGroups(category, subcategory);
   const initialFilters = parseCatalogFilterState(paramsValue, filterGroups);
   const query = buildCatalogQuery(baseQuery, filterGroups, initialFilters);
