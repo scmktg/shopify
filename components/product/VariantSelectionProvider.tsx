@@ -3,6 +3,7 @@
 import {
   createContext,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -33,6 +34,17 @@ export function VariantSelectionProvider({
   const [selectedVariantId, setSelectedVariantId] = useState(initial.id);
   const selectedVariant =
     variants.find((variant) => variant.id === selectedVariantId) ?? initial;
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedVariantId = params.get('variant');
+    if (
+      requestedVariantId &&
+      variants.some((variant) => variant.id === requestedVariantId)
+    ) {
+      setSelectedVariantId(requestedVariantId);
+    }
+  }, [variants]);
 
   const optionNames = useMemo(() => {
     const seen = new Set<string>();
