@@ -172,7 +172,7 @@ const WORDPRESS_PRODUCT_REDIRECTS = [
   ['/product/inline-shutoff-ball-valve-push-fit-quick-connect-1-4-inch', '/water-filters/parts'],
   ['/product/12v-self-priming-water-pump-kit-with-tap-pipe-and-12l-tank', '/pumps-and-tanks/pumps'],
   ['/product/3-way-kitchen-tap-ro-water-filters-mixer-shiny-gold', '/plumbing/ro-filter-taps'],
-  ['/product/premium-three-stage-big-blue-whole-house-water-filter-system-stainless', '/water-filters/whole-house'],
+  ['/product/premium-three-stage-big-blue-whole-house-water-filter-system-stainless', '/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system'],
   ['/product/whole-house-water-filter-2-stage-10x4-5-inch-sediment-carbon', '/water-filters/whole-house'],
   ['/product/granular-activated-carbon-water-filter-gac-5-micron-20x4-5', '/cartridges/carbon'],
   ['/product/smart-led-bathroom-mirror-oval', '/plumbing'],
@@ -549,6 +549,7 @@ const nextConfig = {
     // slash so old crawl paths and external links resolve regardless
     // of how they are formatted.
     const PRODUCT_MERGE_REDIRECTS = [
+      ['/water-filters/whole-house/deluxe-stainless-steel-lockable-three-stage-big-blue-whole-house-water-filter-sy', '/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system'],
       [
         '/plumbing/ro-filter-taps/3-way-kitchen-tap-for-ro-water-filters-mixer-in-shiny-gold',
         '/plumbing/ro-filter-taps/3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
