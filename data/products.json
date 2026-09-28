@@ -7106,33 +7106,33 @@
       "t40393",
       "stainless-steel"
     ],
-    "shortDescription": "Sophisticated 3-way filtered kitchen tap - hot, cold, and RO-filtered water from a single fixture. Available in Matte Black, Brushed Gold, Stainless Steel, or Polished Chrome. WaterMark certified, WELS 4★ at 7.5 L/min (T40393).",
+    "shortDescription": "Hot, cold and filtered water from one kitchen mixer - no separate drinking-water tap or second bench hole. WaterMark certified, WELS 4 Star, and available in Matte Black, Brushed Gold, Stainless Steel and Polished Chrome.",
     "description": "A 3-way filtered kitchen tap that delivers hot, cold, and RO-filtered water through a single sleek fixture - available in four luxurious finishes to match any contemporary kitchen palette. The premium choice for RO installations where you don't want to drill a second tap hole.\n\n## Four Finish Options\n\n- **Matte Black** - high-contrast contemporary look, pairs with timber and stone benchtops\n- **Brushed Gold** - warm metallic accent, suits premium and statement-piece kitchens\n- **Stainless Steel** - clean brushed-metal finish, durable and easy to coordinate with modern appliances\n- **Polished Chrome** - bright timeless finish, works with both warm and cool colour palettes\n\nAll four finishes share the same internal mechanism, the same dimensions, and the same WaterMark + WELS certification - the choice is purely visual.\n\n## How 3-Way Works\n\nA single tap body routes three water sources through internal channels:\n\n- **Hot** from the standard hot supply line\n- **Cold** from the standard cold supply line\n- **Filtered** from a separate RO permeate line through its own internal channel\n\nThe filtered-water channel is **physically separated** from the hot/cold pathway inside the tap - RO permeate doesn't carry chlorine, so it can't mix back with chlorinated mains water through the standard mixer cartridge. A dedicated lever or button on the tap activates the filtered output.\n\n## Why This Solves the Second-Tap-Hole Problem\n\nStandard RO installations require **two tap holes in the bench** - one for the kitchen mixer, one for the dedicated filter dispensing tap. On stone benchtops, single-hole sinks, or new builds with sealed splashbacks, drilling that second hole is a non-trivial job: stone fabrication, potential warranty implications, and a permanent extra fixture in the visual line.\n\nThis 3-way tap routes all three water sources through one tap body - install in your existing single bench hole, route the RO permeate to the dedicated channel, done. No drilling, no extra fixture, no second handle on the bench.\n\n## Australian Compliance\n\n**WaterMark certified** to **AS/NZS 3718** (Plumbing fittings - General requirements). Your licensed plumber can install this on a mains supply line and issue a certificate of compliance.\n\n**WELS 4-star rated at 7.5 L/min** under AS/NZS 6400:2016 - the standard water-efficient rating. WELS registration number **T40393**.\n\n## Where This Tap Fits\n\n- Stone benchtop renovations where a second tap hole isn't practical\n- Single-hole sink installations needing both standard and RO-filtered water\n- New kitchen builds wanting a clean single-fixture bench\n- RO system upgrades replacing separate filter taps with a unified fixture\n- Premium kitchens choosing one of the four finishes as a design accent",
     "features": [
-      "3-way function - hot, cold, and RO-filtered water through one tap",
-      "Four finish options: matte black, brushed gold, stainless steel, polished chrome",
-      "Eliminates the need for a second tap hole in the bench",
-      "Filtered-water channel physically separated from hot/cold pathway",
+      "Hot, cold and RO-filtered water through one kitchen mixer",
+      "No separate drinking-water tap or second bench hole required",
+      "Dedicated filtered-water pathway separated from the hot/cold mixer supply",
+      "Four finishes at the same price: Matte Black, Brushed Gold, Stainless Steel and Polished Chrome",
       "WaterMark certified to AS/NZS 3718",
-      "WELS 4-star rated at 7.5 L/min - registration T40393",
-      "Works with any standard reverse osmosis system via 1/4\" tubing"
+      "WELS 4 Star rated at 7.5 L/min - registration T40393",
+      "Compatible with standard reverse osmosis systems via 1/4\" tubing"
     ],
     "headlineSpecs": [
       {
         "label": "Function",
-        "value": "3-way (hot / cold / filtered)"
+        "value": "Hot / cold / filtered"
       },
       {
-        "label": "Finishes",
-        "value": "Matte Black / Brushed Gold / Stainless Steel / Polished Chrome"
+        "label": "Bench holes",
+        "value": "1"
       },
       {
         "label": "WELS rating",
-        "value": "4★ at 7.5 L/min"
+        "value": "4★ · 7.5 L/min"
       },
       {
-        "label": "Certification",
-        "value": "WaterMark certified"
+        "label": "Finishes",
+        "value": "4 options"
       }
     ],
     "fullSpecs": [
@@ -7178,10 +7178,11 @@
       }
     ],
     "recommendedFor": [
-      "Stone benchtop renovations where a second tap hole is impractical",
-      "Premium kitchens choosing a deliberate finish across multiple options",
-      "New builds wanting a single-fixture clean bench with RO compatibility",
-      "RO upgrades replacing separate filter taps with one unified fixture"
+      "Kitchen renovations where you want filtered water without drilling a second tap hole",
+      "Stone benchtops and single-hole sinks where an extra drinking-water tap is impractical",
+      "Reverse osmosis installations wanting hot, cold and filtered water in one fixture",
+      "Design-led kitchens choosing Matte Black, Brushed Gold, Stainless Steel or Polished Chrome",
+      "Upgrades from a separate filter tap to a cleaner single-fixture sink setup"
     ],
     "compliance": {
       "watermark": {
@@ -7195,7 +7196,7 @@
       "note": "WaterMark certified to AS/NZS 3718 (Plumbing fittings - General requirements). WELS rated 4 stars at 7.5 L/min under AS/NZS 6400:2016 - WELS registration T40393. Specific WaterMark licence number to be confirmed against supplier documentation."
     },
     "ctas": {
-      "primary": "Add to cart",
+      "primary": "Add selected finish to cart",
       "secondary": null
     },
     "upsells": {
