@@ -25,6 +25,11 @@ export const CATEGORY_INTROS: Readonly<Record<string, string>> = {
   plumbing:
     'Plumbing fixtures that pair with our water filtration systems - kitchen taps with three-way and dedicated filtered outlets, bathroom taps, dedicated RO filter taps, toilets, and complete bundles. WELS ratings and WaterMark certification are shown wherever they apply. Off-mains and rainwater installations are flagged separately from mains-pressure products so you order the correct fitting first time.',
 
+  'water-filters/under-sink':
+    'Under-sink drinking-water filters for Australian kitchens. The current Enviro Aqua non-RO range is 2-stage sediment + carbon and 3-stage sediment + carbon + alkaline. Both use standard 1/4" filtered-water tubing and can pair with suitable dedicated filter taps or 3-way kitchen mixers. For reverse osmosis purification, choose the separate 5-stage or 6-stage Reverse Osmosis range.',
+  'water-filters/reverse-osmosis':
+    'Residential reverse osmosis water filters in the two verified Enviro Aqua household configurations: 5-stage RO and 6-stage alkaline RO. The 5-stage system uses sediment, GAC carbon, carbon block, TFC RO membrane, and post-carbon polishing; the 6-stage adds alkaline remineralisation. Both use 12 L pressure tanks and standard 1/4" filtered-water tubing.',
+
   'cartridges/specialty-cartridges':
     'Specialty filter cartridges that handle the contaminants standard sediment and carbon stages cannot - alkaline mineralisation, fluoride removal, post-carbon T33 polishing, ultrafiltration membranes, and pleated washable elements that can be cleaned and reused. Each cartridge here is sized for the Australian standard 10" × 2.5" or 20" × 4.5" housings unless noted, with micron ratings, flow rates, and rated lifespan listed on every product. Use this section when you are building a custom multi-stage system or replacing a single problem stage in an existing setup. Most products ship the same business day from our Central Coast NSW warehouse.',
   'pumps-and-tanks/pumps':
@@ -55,11 +60,11 @@ export function getCategoryIntro(slug: string): string | null {
 export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
   // Water Filters
   'water-filters/under-sink':
-    'Under-sink water filters for Australian kitchens. Single-stage carbon through to multi-stage RO, WaterMark certified options, replacement cartridges in stock.',
+    'Under-sink water filters in verified 2-stage and 3-stage configurations. Sediment + carbon, or add alkaline mineralisation. Standard 1/4" tubing; RO is a separate category.',
   'water-filters/whole-house':
     'Whole-house water filters that treat every tap at the point of entry. Big Blue 20" × 4.5" housings, WaterMark certified, sized for Australian mains.',
   'water-filters/reverse-osmosis':
-    'Reverse osmosis water filter systems - 4, 5, and 6-stage RO for fluoride, PFAS, heavy metals, and dissolved solids. TFC membranes, 12L pressure tanks, AU stock.',
+    'Residential reverse osmosis systems in verified 5-stage and 6-stage configurations. TFC RO membrane, 12 L tank, standard 1/4" tubing; 6-stage adds alkaline remineralisation.',
   'water-filters/uv-sterilisation':
     'UV sterilisation systems for tank water, bore water, and rural supplies. 254 nm UV-C disinfection paired with sediment and carbon pre-filtration. Australian voltage.',
   'water-filters/bench-top':
