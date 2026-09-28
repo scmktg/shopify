@@ -549,6 +549,8 @@ const nextConfig = {
     // slash so old crawl paths and external links resolve regardless
     // of how they are formatted.
     const PRODUCT_MERGE_REDIRECTS = [
+      ['/cartridges/specialty-cartridges/6-stage-reverse-osmosis-water-filters-set-with-75gpd-ro-membrane-and-alkaline-ca', '/cartridges/cartridge-sets/6-stage-reverse-osmosis-water-filters-set-with-75gpd-ro-membrane-and-alkaline-ca'],
+      ['/cartridges/reverse-osmosis-membranes/5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf', '/cartridges/cartridge-sets/5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf'],
       ['/cartridges/sediment/premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic', '/cartridges/sediment/twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2'],
       ['/pumps-and-tanks/components/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect', '/plumbing/parts/24v-high-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect'],
       ['/pumps-and-tanks/components/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect', '/plumbing/parts/24v-low-pressure-switch-for-pump-ro-water-fitlers-with-quick-connect'],
