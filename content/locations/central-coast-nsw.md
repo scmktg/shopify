@@ -27,7 +27,7 @@ Enviro Aqua is based in Wyong on the NSW Central Coast. We supply water filters,
 We have a real showroom and warehouse. Come in during business hours.
 
 - **Address:** 6/45 Amsterdam Cct, Wyong, NSW 2259
-- **Hours:** Monday to Friday, 9am – 5pm AEST
+- **Hours:** Monday to Friday, 9am - 5pm AEST
 - **Phone:** [(02) 8772 8162](tel:+61287728162)
 - **Click & Collect:** free pickup from the showroom, orders usually ready within two hours during business hours. Email or text confirmation when ready.
 
