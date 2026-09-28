@@ -12,6 +12,7 @@ interface CatalogFiltersProps {
   value: CatalogFilterState;
   onChange: (next: CatalogFilterState) => void;
   resultCount: number;
+  hasMore?: boolean;
   disabled?: boolean;
 }
 
@@ -96,6 +97,7 @@ export function CatalogFilters({
   value,
   onChange,
   resultCount,
+  hasMore = false,
   disabled = false,
 }: CatalogFiltersProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -122,7 +124,7 @@ export function CatalogFilters({
           )}
         </button>
         <span className="text-xs tabular-nums text-black/60">
-          {resultCount} {resultCount === 1 ? 'product' : 'products'}
+          {resultCount}{hasMore ? '+' : ''} {resultCount === 1 && !hasMore ? 'product' : 'products'}
         </span>
       </div>
 
@@ -132,7 +134,7 @@ export function CatalogFilters({
             <div>
               <h2 className="text-base font-semibold text-black">Filter</h2>
               <p className="mt-0.5 text-xs text-black/55">
-                {resultCount} {resultCount === 1 ? 'product' : 'products'}
+                {resultCount}{hasMore ? '+' : ''} {resultCount === 1 && !hasMore ? 'product' : 'products'}
               </p>
             </div>
             {activeCount > 0 && (
@@ -173,7 +175,7 @@ export function CatalogFilters({
               <div>
                 <h2 className="text-base font-semibold text-black">Filters</h2>
                 <p className="text-xs text-black/55">
-                  {resultCount} {resultCount === 1 ? 'product' : 'products'}
+                  {resultCount}{hasMore ? '+' : ''} {resultCount === 1 && !hasMore ? 'product' : 'products'}
                 </p>
               </div>
               <button
@@ -210,7 +212,7 @@ export function CatalogFilters({
                   onClick={() => setMobileOpen(false)}
                   className="rounded bg-brand-blue px-4 py-3 text-sm font-semibold text-white hover:bg-brand-blue-hover"
                 >
-                  Show {resultCount}
+                  Show {resultCount}{hasMore ? '+' : ''}
                 </button>
               </div>
             </footer>
