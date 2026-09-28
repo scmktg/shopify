@@ -6,7 +6,7 @@ import {
   getCategoryIntro,
   getSubcategoryMetaDescription,
 } from '@/content/category-intros';
-import { getProducts } from '@/lib/shopify/queries/getProducts';
+import { getProducts, type ProductsPage } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
 import { WaterFilterStageGuide } from '@/components/category/WaterFilterStageGuide';
@@ -67,7 +67,22 @@ export default async function SubcategoryPage({
   if (!node) notFound();
 
   const query = `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
-  const page = await getProducts({ query, first: PAGE_SIZE, after });
+  let loadFailed = false;
+  let page: ProductsPage;
+  try {
+    page = await getProducts({ query, first: PAGE_SIZE, after });
+  } catch (error) {
+    loadFailed = true;
+    console.error('[category] Failed to load subcategory products', {
+      category,
+      subcategory,
+      error,
+    });
+    page = {
+      products: [],
+      pageInfo: { hasNextPage: false, endCursor: null },
+    };
+  }
 
   const pathname = `/${category}/${subcategory}`;
   const title = `${node.subcategory.label} ${node.category.label}`;
@@ -102,6 +117,14 @@ export default async function SubcategoryPage({
         (subcategory === 'under-sink' || subcategory === 'reverse-osmosis') && (
           <WaterFilterStageGuide subcategory={subcategory} />
         )}
+      {loadFailed && (
+        <div
+          role="status"
+          className="mx-auto mt-6 max-w-7xl rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-black"
+        >
+          Products are temporarily unavailable. Please refresh the page to try again.
+        </div>
+      )}
       <CategoryView
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}

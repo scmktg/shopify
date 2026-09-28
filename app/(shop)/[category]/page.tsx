@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { findCategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
-import { getProducts } from '@/lib/shopify/queries/getProducts';
+import { getProducts, type ProductsPage } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
@@ -60,7 +60,21 @@ export default async function CategoryPage({
   if (!node) notFound();
 
   const query = `tag:'primary-cat:${category}'`;
-  const page = await getProducts({ query, first: PAGE_SIZE, after });
+  let loadFailed = false;
+  let page: ProductsPage;
+  try {
+    page = await getProducts({ query, first: PAGE_SIZE, after });
+  } catch (error) {
+    loadFailed = true;
+    console.error('[category] Failed to load category products', {
+      category,
+      error,
+    });
+    page = {
+      products: [],
+      pageInfo: { hasNextPage: false, endCursor: null },
+    };
+  }
 
   const intro = getCategoryIntro(category);
 
@@ -89,6 +103,14 @@ export default async function CategoryPage({
         categorySlug={node.slug}
         subcategories={node.subcategories}
       />
+      {loadFailed && (
+        <div
+          role="status"
+          className="mx-auto mt-6 max-w-7xl rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-black"
+        >
+          Products are temporarily unavailable. Please refresh the page to try again.
+        </div>
+      )}
       <CategoryView
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
