@@ -8,6 +8,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
 import { PriceDisplay } from './PriceDisplay';
 import { ColourSwatch } from './ColourSwatch';
+import { trackSelectItem } from '@/lib/analytics/client';
 
 interface ProductCardProps {
   product: ProductCardData;
@@ -51,10 +52,23 @@ export function ProductCard({ product }: ProductCardProps) {
     ? `${baseHref}?variant=${encodeURIComponent(selectedVariant.id)}`
     : baseHref;
 
+  const trackSelection = () => {
+    const price = Number.parseFloat(product.price.amount);
+    trackSelectItem({
+      item_id: product.handle,
+      item_name: product.title,
+      price: Number.isFinite(price) ? price : 0,
+      quantity: 1,
+      item_category: product.productType,
+      item_brand: 'Enviro Aqua',
+    });
+  };
+
   return (
     <article className="group">
       <Link
         href={href}
+        onClick={trackSelection}
         className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded"
       >
         <div className="relative aspect-square overflow-hidden rounded border border-gray-200 bg-white">
@@ -79,6 +93,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="mt-3">
         <Link
           href={href}
+          onClick={trackSelection}
           className="block rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
         >
           <h3 className="text-sm font-medium text-black line-clamp-2 group-hover:underline underline-offset-4">
