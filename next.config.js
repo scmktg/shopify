@@ -73,7 +73,7 @@ const WORDPRESS_PRODUCT_REDIRECTS = [
   // #8 (23 clicks)
   ['/product/drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet', '/bubblers-and-coolers/parts/drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet'],
   // #9 (22 clicks)
-  ['/product/1-inch-flexible-stainless-steel-hose-for-pressure-tank', '/pumps-and-tanks/pressure-tanks/1-inch-flexible-stainless-steel-hose-for-pressure-tank'],
+  ['/product/1-inch-flexible-stainless-steel-hose-for-pressure-tank', '/plumbing/parts/1-inch-flexible-stainless-steel-hose-for-pressure-tank'],
   // #10 (20 clicks) — NEEDS REVIEW: three plausible cooler candidates, kept on category
   ['/product/hot-cold-water-cooler-direct-connect', '/bubblers-and-coolers/coolers-and-chillers'],
   // #11 (18 clicks) — UNMAPPED: bulk aquarium carbon, no equivalent SKU on new site
