@@ -55,7 +55,7 @@ function FilterGroups({
   value,
   onChange,
   disabled,
-}: Omit<CatalogFiltersProps, 'resultCount'>) {
+}: Pick<CatalogFiltersProps, 'groups' | 'value' | 'onChange' | 'disabled'>) {
   return (
     <div className="divide-y divide-gray-200">
       {groups.map((group) => (
