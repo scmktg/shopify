@@ -123,28 +123,10 @@ function asEnum<T extends string>(
   return isOneOf(mf.value, allowed) ? mf.value : null;
 }
 
-function shippingClassToTier(
-  shippingClass: string | null,
-  legacyTier: ShippingTier | null,
-): ShippingTier | null {
-  if (shippingClass === 'free') return 'T5';
-  if (shippingClass === 'freight') return 'T6';
-  if (shippingClass === 'pickup_only') return 'T7';
-  if (shippingClass === 'parcel') {
-    return legacyTier && ['T1', 'T2', 'T3', 'T4'].includes(legacyTier)
-      ? legacyTier
-      : 'T2';
-  }
-  return legacyTier;
-}
-
 function buildMetafields(
   raw: ReadonlyArray<ShopifyMetafield | null>,
 ): ProductMetafields {
   const m = indexMetafields(raw);
-  const legacyShippingTier = asEnum(m.get('shipping_tier'), SHIPPING_TIERS);
-  const shippingClass = asString(m.get('shipping_class'));
-
   return {
     watermark_status: asEnum(m.get('watermark_status'), WATERMARK_STATUSES),
     watermark_licence_number: asString(m.get('watermark_licence_number')),
@@ -167,7 +149,7 @@ function buildMetafields(
     key_benefits: asStringList(m.get('key_benefits')),
     country_of_origin: asString(m.get('country_of_origin')),
     warranty_months: asInt(m.get('warranty_months')),
-    shipping_tier: shippingClassToTier(shippingClass, legacyShippingTier),
+    shipping_tier: asEnum(m.get('shipping_tier'), SHIPPING_TIERS),
   };
 }
 
