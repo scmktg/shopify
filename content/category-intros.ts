@@ -23,7 +23,7 @@ export const CATEGORY_INTROS: Readonly<Record<string, string>> = {
   'pumps-and-tanks':
     'Water pumps for caravans, RVs, RO systems, bore, and rainwater. Pressure tanks and replacement bladders for the common Australian brands. Dosing tanks in 50L, 100L, and 200L sizes with bunded options for chemical handling. Components and fittings to round out a build. Voltage, flow rate, and connection size are listed on every product so you can match to your install without guessing.',
   plumbing:
-    'Plumbing fixtures that pair with our water filtration systems - kitchen taps with three-way and dedicated filtered outlets, bathroom taps, dedicated RO filter taps, toilets, and complete bundles. WELS ratings and WaterMark certification are shown wherever they apply. Off-mains and rainwater installations are flagged separately from mains-pressure products so you order the correct fitting first time.',
+    'Plumbing fixtures and installation parts that pair with our water filtration systems - kitchen taps with three-way and dedicated filtered outlets, bathroom taps, dedicated RO filter taps, toilets, complete bundles, fittings, valves, tubing, housings, and service tools. WELS ratings and WaterMark certification are shown wherever they apply. Off-mains and rainwater installations are flagged separately from mains-pressure products so you order the correct fitting first time.',
 
   'water-filters/under-sink':
     'Under-sink drinking-water filters for Australian kitchens. The current Enviro Aqua non-RO range is 2-stage sediment + carbon and 3-stage sediment + carbon + alkaline. Both use standard 1/4" filtered-water tubing and can pair with suitable dedicated filter taps or 3-way kitchen mixers. For reverse osmosis purification, choose the separate 5-stage or 6-stage Reverse Osmosis range.',
@@ -71,8 +71,6 @@ export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
     'Bench-top water filters for renters and homeowners without plumbing access. Diverter-fitted, no drilling, 1- to 3-stage carbon and sediment configurations.',
   'water-filters/commercial':
     'Commercial water filtration for cafes, offices, schools, and hospitality. High-flow housings, WaterMark certified manifolds, scale-control and chlorine reduction.',
-  'water-filters/parts':
-    'Replacement parts for water filter systems - housings, brackets, pressure gauges, spanners, O-rings, and fittings. Sized for the Australian 10" and 20" standards.',
 
   // Cartridges
   'cartridges/sediment':
@@ -115,6 +113,8 @@ export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
     'Toilet suites and pans matched to Australian bathroom installs. WELS water-efficiency ratings shown on every product, WaterMark certified where mains-connected.',
   'plumbing/bundles':
     'Complete bathroom and kitchen plumbing bundles - taps, mixers, and accessories packaged for a single delivery. WELS rated, WaterMark certified, finish-matched.',
+  'plumbing/parts':
+    'Water filter and RO installation parts - quick-connect fittings, valves, tubing, housings, drain clamps, adaptors and service tools in common 1/4", 3/8" and standard housing sizes.',
 };
 
 export function getSubcategoryMetaDescription(
