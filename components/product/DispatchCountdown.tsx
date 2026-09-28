@@ -1,6 +1,6 @@
 'use client';
 
-import { Clock3, Truck } from 'lucide-react';
+import { Gauge, Truck } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { ORDER_CUTOFF, ORDER_CUTOFF_DISPLAY } from '@/lib/site-config';
 
@@ -22,7 +22,7 @@ export function DispatchCountdown() {
   useEffect(() => {
     const tick = () => setState(buildDispatchState(new Date()));
     tick();
-    const id = window.setInterval(tick, 60 * 1000);
+    const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
   }, []);
 
@@ -40,7 +40,6 @@ export function DispatchCountdown() {
           ? 'mt-3 rounded-lg border border-brand-blue/30 bg-brand-blue-light px-4 py-3'
           : 'mt-3 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3'
       }
-      aria-live="polite"
     >
       <div className="flex items-start gap-3">
         <div
@@ -51,14 +50,14 @@ export function DispatchCountdown() {
           }
         >
           {current.urgent ? (
-            <Clock3 className="h-4 w-4" aria-hidden="true" />
+            <Gauge className="h-4 w-4" aria-hidden="true" />
           ) : (
             <Truck className="h-4 w-4" aria-hidden="true" />
           )}
         </div>
 
         <div className="min-w-0">
-          <p className="text-sm font-bold text-black">
+          <p className="text-sm font-bold text-black tabular-nums">
             {current.headline}
           </p>
           <p className="mt-0.5 text-xs text-black/65">{current.detail}</p>
@@ -87,9 +86,11 @@ function buildDispatchState(now: Date): DispatchState {
     };
   }
 
-  const beforeCutoff =
-    sydney.hour < ORDER_CUTOFF.hour ||
-    (sydney.hour === ORDER_CUTOFF.hour && sydney.minute < ORDER_CUTOFF.minute);
+  const nowSecondsFromMidnight =
+    sydney.hour * 60 * 60 + sydney.minute * 60 + sydney.second;
+  const cutoffSecondsFromMidnight =
+    ORDER_CUTOFF.hour * 60 * 60 + ORDER_CUTOFF.minute * 60;
+  const beforeCutoff = nowSecondsFromMidnight < cutoffSecondsFromMidnight;
 
   if (!beforeCutoff) {
     return {
@@ -99,14 +100,16 @@ function buildDispatchState(now: Date): DispatchState {
     };
   }
 
-  const cutoffMinutesFromMidnight =
-    ORDER_CUTOFF.hour * 60 + ORDER_CUTOFF.minute;
-  const nowMinutesFromMidnight = sydney.hour * 60 + sydney.minute;
-  const totalMinutes = cutoffMinutesFromMidnight - nowMinutesFromMidnight;
-  const hours = Math.floor(totalMinutes / 60);
-  const minutes = totalMinutes % 60;
+  const totalSeconds = cutoffSecondsFromMidnight - nowSecondsFromMidnight;
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
   const remaining =
-    hours > 0 ? `${hours}h ${minutes}m` : `${Math.max(minutes, 1)}m`;
+    hours > 0
+      ? `${hours}h ${minutes}m ${seconds}s`
+      : minutes > 0
+        ? `${minutes}m ${seconds}s`
+        : `${Math.max(seconds, 1)}s`;
 
   return {
     headline: `Order within ${remaining}`,
@@ -119,6 +122,7 @@ interface SydneyParts {
   weekday: number;
   hour: number;
   minute: number;
+  second: number;
 }
 
 function sydneyParts(now: Date): SydneyParts {
@@ -127,17 +131,20 @@ function sydneyParts(now: Date): SydneyParts {
     weekday: 'short',
     hour: '2-digit',
     minute: '2-digit',
+    second: '2-digit',
     hour12: false,
   });
   const parts = formatter.formatToParts(now);
   const weekdayShort = parts.find((part) => part.type === 'weekday')?.value ?? 'Mon';
   const hourValue = parts.find((part) => part.type === 'hour')?.value ?? '00';
   const minuteValue = parts.find((part) => part.type === 'minute')?.value ?? '00';
+  const secondValue = parts.find((part) => part.type === 'second')?.value ?? '00';
 
   return {
     weekday: WEEKDAY_INDEX[weekdayShort] ?? 1,
     hour: Number.parseInt(hourValue, 10) % 24,
     minute: Number.parseInt(minuteValue, 10),
+    second: Number.parseInt(secondValue, 10),
   };
 }
 
