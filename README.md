@@ -1,3 +1,5 @@
+> **Start here:** Read `ARCHITECTURE-AND-OPERATIONS.md` before changing Shopify integration, product data, shipping, checkout, or deployment behavior. It is the primary operational source of truth.
+
 # Enviro Aqua Web
 
 Custom Next.js + Shopify rebuild of [enviroaqua.com.au](https://enviroaqua.com.au) — Australia's specialist water filtration retailer.
