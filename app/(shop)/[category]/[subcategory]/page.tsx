@@ -19,14 +19,17 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 
 interface SubcategoryPageProps {
   params: Promise<{ category: string; subcategory: string }>;
+  searchParams?: Promise<{ after?: string }>;
 }
 
 const PAGE_SIZE = 24;
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: SubcategoryPageProps): Promise<Metadata> {
   const { category, subcategory } = await params;
+  const after = (await searchParams)?.after;
   const node = findSubcategory(category, subcategory);
   if (!node) return {};
   const description =
@@ -38,18 +41,32 @@ export async function generateMetadata({
     alternates: {
       canonical: `/${category}/${subcategory}`,
     },
+    ...(after
+      ? {
+          robots: {
+            index: false,
+            follow: true,
+          },
+        }
+      : {}),
   };
 }
 
 export default async function SubcategoryPage({
   params,
+  searchParams,
 }: SubcategoryPageProps) {
   const { category, subcategory } = await params;
+  const afterParam = (await searchParams)?.after;
+  const after =
+    typeof afterParam === 'string' && afterParam.length <= 500
+      ? afterParam
+      : null;
   const node = findSubcategory(category, subcategory);
   if (!node) notFound();
 
   const query = `tag:'primary-cat:${category}' AND tag:'sub-cat:${subcategory}'`;
-  const page = await getProducts({ query, first: PAGE_SIZE });
+  const page = await getProducts({ query, first: PAGE_SIZE, after });
 
   const pathname = `/${category}/${subcategory}`;
   const title = `${node.subcategory.label} ${node.category.label}`;
@@ -90,6 +107,7 @@ export default async function SubcategoryPage({
         query={query}
         pageSize={PAGE_SIZE}
         enableSizeFilter={category === 'cartridges'}
+        paginationPath={pathname}
       />
     </>
   );
