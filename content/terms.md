@@ -15,7 +15,7 @@ These Terms govern your relationship with Enviro Aqua (the trading name under AB
 
 ## 2. Orders and acceptance
 
-Placing an order on the site is an offer to purchase. We accept the offer when we dispatch the goods and send a shipping confirmation email. Until that point we may decline the order — for example, if the product is out of stock, the price was listed incorrectly due to a system error, or we cannot verify the payment.
+Placing an order on the site is an offer to purchase. We accept the offer when we dispatch the goods and send a shipping confirmation email. Until that point we may decline the order - for example, if the product is out of stock, the price was listed incorrectly due to a system error, or we cannot verify the payment.
 
 If we cannot fulfil an accepted order for any reason, we will refund the order in full and contact you to explain.
 
@@ -29,7 +29,7 @@ Prices may change without notice. The price you pay is the price displayed at th
 
 ## 4. Payment
 
-Payments are processed by Shopify Payments and the supported third-party payment providers (credit card, Apple Pay, Google Pay, Shop Pay). We do not store payment card details on our systems — Shopify handles payment processing in compliance with PCI DSS.
+Payments are processed by Shopify Payments and the supported third-party payment providers (credit card, Apple Pay, Google Pay, Shop Pay). We do not store payment card details on our systems - Shopify handles payment processing in compliance with PCI DSS.
 
 ## 5. Shipping
 
@@ -56,7 +56,7 @@ We may terminate access for users who breach these Terms.
 
 ## 8. Intellectual property
 
-All content on the site — text, images, product photography, layout, code — is owned by Enviro Aqua or our suppliers. You may not reproduce, distribute, or create derivative works without our written consent. You may share links to product pages and editorial content freely.
+All content on the site - text, images, product photography, layout, code - is owned by Enviro Aqua or our suppliers. You may not reproduce, distribute, or create derivative works without our written consent. You may share links to product pages and editorial content freely.
 
 Product images supplied by manufacturers remain the property of the respective manufacturers and are used with permission.
 
