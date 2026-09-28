@@ -17,6 +17,9 @@ interface ProductPageProps {
     subcategory: string;
     handle: string;
   }>;
+  searchParams?: Promise<{
+    variant?: string;
+  }>;
 }
 
 // ISR — page is statically rendered and refreshed every 5 minutes.
@@ -101,8 +104,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({
+  params,
+  searchParams,
+}: ProductPageProps) {
   const { category, subcategory, handle } = await params;
+  const requestedVariantId = (await searchParams)?.variant ?? null;
 
   if (!findSubcategory(category, subcategory)) notFound();
 
@@ -166,6 +173,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         category={category}
         subcategory={subcategory}
         familyPaths={familyPaths}
+        initialVariantId={requestedVariantId}
       />
     </>
   );
