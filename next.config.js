@@ -549,6 +549,22 @@ const nextConfig = {
     // slash so old crawl paths and external links resolve regardless
     // of how they are formatted.
     const PRODUCT_MERGE_REDIRECTS = [
+    // 2026-09 Merchant Center cleanup: Google still had the pre-taxonomy
+    // product URLs below after parts moved to /plumbing/parts. Keep
+    // one-hop product-to-product redirects so automatic product discovery
+    // transfers to each canonical PDP instead of archiving the offer.
+      ['/water-filters/parts/water-filter-fitting-joiner-quick-connect-3-8-enviro-aqua', '/plumbing/parts/water-filter-fitting-joiner-quick-connect-3-8-enviro-aqua'],
+      ['/water-filters/parts/water-filter-fitting-tee-quick-connect-3-8-enviro-aqua', '/plumbing/parts/water-filter-fitting-tee-quick-connect-3-8-enviro-aqua'],
+      ['/water-filters/parts/30-pics-1-4-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings-6mm', '/plumbing/parts/30-pics-1-4-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings-6mm'],
+      ['/water-filters/parts/5-x-fridge-water-filter-fitting-threaded-elbow-quick-connect-6mm-x-1-4-push-fit', '/plumbing/parts/5-x-fridge-water-filter-fitting-threaded-elbow-quick-connect-6mm-x-1-4-push-fit'],
+      ['/water-filters/parts/30-pics-3-8-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings', '/plumbing/parts/30-pics-3-8-locking-clips-clamps-for-reverse-osmosis-water-filter-fittings'],
+      ['/water-filters/parts/tank-ball-valve-push-fit-quick-connect-1-4', '/plumbing/parts/tank-ball-valve-push-fit-quick-connect-1-4'],
+      ['/water-filters/parts/standard-10-x-2-5-water-filter-standard-water-filter-housing-white-universal', '/plumbing/parts/standard-10-x-2-5-water-filter-standard-water-filter-housing-white-universal'],
+      ['/water-filters/parts/water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube', '/plumbing/parts/water-pressure-reducing-valve-with-quick-connect-fitting-1-4-6mm-tube'],
+      ['/water-filters/parts/ro-wrench-for-water-filter-wrenching-1812-housing-of-reverse-osmosis-membrane', '/plumbing/parts/ro-wrench-for-water-filter-wrenching-1812-housing-of-reverse-osmosis-membrane'],
+      ['/water-filters/parts/2-x-water-filter-fitting-tee-quick-connect-1-4-tee-6mm-fridge-enviro-aqua', '/plumbing/parts/2-x-water-filter-fitting-tee-quick-connect-1-4-tee-6mm-fridge-enviro-aqua'],
+      ['/water-filters/parts/1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge-ro', '/plumbing/parts/1-4-push-fit-pipe-fitting-elbow-tube-connector-joiner-water-filter-fridge-ro'],
+      ['/water-filters/parts/water-filter-tube-high-pressure-nsf-pipe-3-8-lldpe', '/plumbing/parts/water-filter-tube-high-pressure-nsf-pipe-3-8-lldpe'],
       ['/cartridges/specialty-cartridges/6-stage-reverse-osmosis-water-filters-set-with-75gpd-ro-membrane-and-alkaline-ca', '/cartridges/cartridge-sets/6-stage-reverse-osmosis-water-filters-set-with-75gpd-ro-membrane-and-alkaline-ca'],
       ['/cartridges/reverse-osmosis-membranes/5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf', '/cartridges/cartridge-sets/5-stage-reverse-osmosis-ro-full-replacement-set-with-75-gpd-membrane-nsf'],
       ['/cartridges/sediment/premium-pair-of-water-filter-cartridges-carbon-and-sediment-10-x-2-5-5-mic', '/cartridges/sediment/twin-pair-of-water-filter-cartridges-premium-carbon-cto-plus-sediment-pp-10-x-2'],
