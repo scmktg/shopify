@@ -86,7 +86,7 @@ export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
 
   // Bubblers & Coolers
   'bubblers-and-coolers/bubblers':
-    'Stainless steel drinking bubblers for schools, offices, gyms, and public venues. WaterMark certified, push-button activation, integrated filtration and cooling.',
+    'Commercial water bubblers and drinking fountains in stainless steel. WaterMark-certified filtered and chilled models for schools, offices, gyms, warehouses and public venues.',
   'bubblers-and-coolers/coolers-and-chillers':
     'Water coolers and chillers - hot, cold, and ambient direct-connect dispensers plus under-counter chillers paired with a feature tap. Australian mains compatible.',
   'bubblers-and-coolers/parts':
