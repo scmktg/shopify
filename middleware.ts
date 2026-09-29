@@ -43,7 +43,17 @@ const GONE_PREFIXES = [
   '/bathroom',
 ];
 
-const GONE_EXACT = new Set(['/wp-login.php', '/xmlrpc.php']);
+const GONE_EXACT = new Set([
+  '/wp-login.php',
+  '/xmlrpc.php',
+  // 2026-09 Merchant cleanup: retired current-site product URLs that
+  // remained cached in Google's automatic Merchant source after the
+  // Shopify catalogue was consolidated. Explicit 410s tell Google these
+  // offers are intentionally gone rather than temporarily missing.
+  '/water-filters/parts/shower-filter-15-stages-includes-extra-cartridge',
+  '/water-filters/whole-house/whole-house-water-filter-2-stage-10-x-4-5-sediment-carbon',
+  '/water-filters/whole-house/whole-house-water-filter-2-stage-10-x-4-5-washable-reusable',
+]);
 
 // WooCommerce query parameters from the retired WordPress storefront.
 // Next.js preserves incoming query strings across redirects, so a legacy
