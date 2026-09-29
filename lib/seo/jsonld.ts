@@ -259,6 +259,10 @@ export function faqPageSchema(items: ReadonlyArray<FaqItem>): JsonLd {
 // misrepresent at least one tier.
 const RETURN_WINDOW_DAYS = 14;
 
+const THREE_WAY_FILTERED_TAP_HANDLE =
+  '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c';
+const THREE_WAY_FILTERED_TAP_GROUP_ID = 'EA-PLB-KIT-3WAY-4FINISH';
+
 /**
  * Build-time-derived price validity window. Google Merchant guidance
  * recommends a near-term date so stale prices are flagged. Twelve
@@ -342,6 +346,10 @@ export function productSchema(
     : `${catSlug}/${subSlug}`;
 
   const brandName = product.vendor?.trim() || 'Enviro Aqua';
+  const merchantGroupId =
+    product.handle === THREE_WAY_FILTERED_TAP_HANDLE
+      ? THREE_WAY_FILTERED_TAP_GROUP_ID
+      : product.handle;
   const brand: JsonLd = {
     '@type': 'Brand',
     name: brandName,
@@ -386,7 +394,7 @@ export function productSchema(
       '@id': `${url}#product-group`,
       name: product.title,
       url,
-      productGroupID: product.handle,
+      productGroupID: merchantGroupId,
       variesBy: ['https://schema.org/color'],
       image: images.length > 0 ? images : undefined,
       ...commonProductFields,
@@ -395,8 +403,15 @@ export function productSchema(
         return {
           '@type': 'Product',
           '@id': `${url}#variant-${encodeURIComponent(variant.id)}`,
-          name: `${product.title} - ${colour}`,
+          name:
+            product.handle === THREE_WAY_FILTERED_TAP_HANDLE
+              ? `3-Way Filtered Kitchen Mixer Tap - ${colour} | WaterMark + WELS`
+              : `${product.title} - ${colour}`,
           sku: variant.sku ?? undefined,
+          mpn:
+            product.handle === THREE_WAY_FILTERED_TAP_HANDLE
+              ? variant.sku ?? undefined
+              : undefined,
           color: colour,
           image: variant.image?.url ?? product.featuredImage?.url ?? undefined,
           ...commonProductFields,
