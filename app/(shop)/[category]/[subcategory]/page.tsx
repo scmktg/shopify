@@ -50,8 +50,13 @@ export async function generateMetadata({
     `${node.subcategory.label} in our ${node.category.label.toLowerCase()} range - wholesale prices, Australia-wide delivery, and free Click & Collect from Wyong NSW.`;
   const shouldNoIndex = Boolean(after) || hasCatalogFilters(filters);
 
+  const seoTitle =
+    category === 'bubblers-and-coolers' && subcategory === 'bubblers'
+      ? 'Commercial Water Bubblers & Drinking Fountains'
+      : `${node.subcategory.label} | ${node.category.label}`;
+
   return {
-    title: `${node.subcategory.label} | ${node.category.label}`,
+    title: seoTitle,
     description,
     alternates: {
       canonical: `/${category}/${subcategory}`,
@@ -122,7 +127,10 @@ export default async function SubcategoryPage({
   }
 
   const pathname = `/${category}/${subcategory}`;
-  const title = `${node.subcategory.label} ${node.category.label}`;
+  const title =
+    category === 'bubblers-and-coolers' && subcategory === 'bubblers'
+      ? 'Commercial Water Bubblers & Drinking Fountains'
+      : `${node.subcategory.label} ${node.category.label}`;
   const intro = getCategoryIntro(`${category}/${subcategory}`);
 
   return (
