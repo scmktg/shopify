@@ -1,5 +1,6 @@
 import productData from '@/data/products.json';
 import productOverrides from '@/data/product-overrides.json';
+import productAdditions from '@/data/product-additions.json';
 import type { ProductContent, ProductContentMap } from './schema';
 
 function isFileMetaKey(key: string): boolean {
@@ -7,18 +8,20 @@ function isFileMetaKey(key: string): boolean {
 }
 
 /**
- * In-memory accessors over the main product-content map plus a small
- * explicit override layer used while catalogue families are being
- * restructured. `data/product-overrides.json` wins on handle collision
- * and can also define content for newly-created Shopify products before
- * they are folded back into the main products.json file.
+ * In-memory accessors over the main product-content map plus small
+ * explicit staging layers used while catalogue families are being
+ * restructured. Overrides win on handle collision; additions provide
+ * content for newly-created Shopify products before they are folded
+ * back into the main products.json file.
  */
 const baseMap = productData as unknown as Record<string, ProductContent>;
 const overrideMap = productOverrides as unknown as Record<string, ProductContent>;
+const additionMap = productAdditions as unknown as Record<string, ProductContent>;
 
 const rawMap: Record<string, ProductContent> = {
   ...baseMap,
   ...overrideMap,
+  ...additionMap,
 };
 
 // Strip top-level metadata keys (e.g. `__placeholders`) so loader callers
