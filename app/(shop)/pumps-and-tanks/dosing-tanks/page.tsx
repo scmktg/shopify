@@ -33,6 +33,19 @@ const INTRO =
   'Chemical dosing tanks and secondary-containment bunds for water treatment, chlorine, antiscalant, pH correction and industrial dosing. Choose from square 40L and 60L tanks or round polyethylene tanks from 50L to 500L. Tanks and chemical bunds are sold separately so you can select the right combination for your installation.';
 const META_DESCRIPTION =
   'Chemical dosing tanks and bunds from 40L to 500L. Polyethylene tanks and secondary-containment bunds for water-treatment dosing.';
+const DEFAULT_PRODUCT_ORDER = [
+  '40l-chemical-dosing-tank',
+  'chemical-dosing-tank-bunded-50l',
+  '60l-chemical-dosing-tank',
+  'chemical-dosing-tank-bunded-100l',
+  'chemical-dosing-tank-bunded-200l',
+  'chemical-dosing-tank-300l',
+  'chemical-dosing-tank-500l',
+  'chemical-bund-50l',
+  'chemical-bund-100l',
+  'chemical-bund-200l',
+  'chemical-bund-400l',
+] as const;
 
 const pumpsAndTanks = CATEGORIES.find((category) => category.slug === CATEGORY);
 
@@ -132,6 +145,7 @@ export default async function DosingCategoryPage({
         activeSubcategory={SUBCATEGORY}
         initialFilters={initialFilters}
         pageSize={PAGE_SIZE}
+        defaultProductOrder={DEFAULT_PRODUCT_ORDER}
       />
 
       {page.pageInfo.hasNextPage &&
