@@ -178,7 +178,7 @@ export default function ContactPage() {
                   </dt>
                   <dd className="mt-1 text-base text-black leading-snug">
                     Free pickup on every order, no minimum. Most orders
-                    ready within two hours during business hours - we
+                    are usually ready within one hour during business hours - we
                     email or text when yours is ready.
                   </dd>
                 </div>
