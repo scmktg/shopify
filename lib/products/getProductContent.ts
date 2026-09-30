@@ -1,74 +1,18 @@
-import productData from '@/data/products.json';
-import productOverrides from '@/data/product-overrides.json';
-import productAdditions from '@/data/product-additions.json';
-import squareTankAdditions from '@/data/product-square-tanks.json';
-import dosingPackageAdditions from '@/data/product-dosing-packages.json';
-import bundSeoOverrides from '@/data/product-bund-seo-overrides.json';
 import type { ProductContent, ProductContentMap } from './schema';
 
-function isFileMetaKey(key: string): boolean {
-  return key.startsWith('__');
-}
-
-const LEGACY_TO_CANONICAL_PRODUCT_HANDLES: Readonly<Record<string, string>> = {
-  'chemical-dosing-tank-bunded-50l': 'chemical-dosing-tank-50l',
-  'chemical-dosing-tank-bunded-100l': 'chemical-dosing-tank-100l',
-  'chemical-dosing-tank-bunded-200l': 'chemical-dosing-tank-200l',
+const catalogData = require('./catalog-data.cjs') as {
+  canonicalProductHandle: (handle: string) => string;
+  productCatalog: Record<string, ProductContent>;
 };
 
-export function canonicalProductHandle(handle: string): string {
-  return LEGACY_TO_CANONICAL_PRODUCT_HANDLES[handle] ?? handle;
-}
-
-/**
- * In-memory accessors over the main product-content map plus small
- * explicit staging layers used while catalogue families are being
- * restructured. Overrides win on handle collision; additions provide
- * content for newly-created Shopify products before they are folded
- * back into the main products.json file.
- */
-const baseMap = productData as unknown as Record<string, ProductContent>;
-const overrideMap = productOverrides as unknown as Record<string, ProductContent>;
-const additionMap = productAdditions as unknown as Record<string, ProductContent>;
-const squareTankMap = squareTankAdditions as unknown as Record<string, ProductContent>;
-const dosingPackageMap = dosingPackageAdditions as unknown as Record<string, ProductContent>;
-const bundSeoMap = bundSeoOverrides as unknown as Record<string, ProductContent>;
-
-const rawMap: Record<string, ProductContent> = {
-  ...baseMap,
-  ...overrideMap,
-  ...additionMap,
-  ...squareTankMap,
-  ...dosingPackageMap,
-  ...bundSeoMap,
-};
-
-// The 50L/100L/200L dosing tanks were originally created with `bunded-*`
-// handles even though the bunds are now separate products. Keep the content
-// source keyed as-is, but expose only the clean Shopify handles to storefront
-// callers so canonicals, related-product links and sitemap generation do not
-// perpetuate the legacy naming.
-const canonicalRawMap: Record<string, ProductContent> = { ...rawMap };
-for (const [legacyHandle, canonicalHandle] of Object.entries(
-  LEGACY_TO_CANONICAL_PRODUCT_HANDLES,
-)) {
-  const legacyContent = canonicalRawMap[legacyHandle];
-  if (!legacyContent) continue;
-  canonicalRawMap[canonicalHandle] = legacyContent;
-  delete canonicalRawMap[legacyHandle];
-}
-
-// Strip top-level metadata keys (e.g. `__placeholders`) so loader callers
-// never see them as products.
-const map: ProductContentMap = Object.fromEntries(
-  Object.entries(canonicalRawMap).filter(([key]) => !isFileMetaKey(key)),
-) as ProductContentMap;
+export const canonicalProductHandle = catalogData.canonicalProductHandle;
+const map = catalogData.productCatalog as ProductContentMap;
 
 /**
  * Returns the content entry for `handle`, or `null` when none exists.
  */
 export function getProductContent(handle: string): ProductContent | null {
-  if (isFileMetaKey(handle)) return null;
+  if (handle.startsWith('__')) return null;
   return map[canonicalProductHandle(handle)] ?? null;
 }
 
