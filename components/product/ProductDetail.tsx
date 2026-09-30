@@ -201,14 +201,12 @@ export function ProductDetail({
 
               {packageUpgrade.componentLink && (
                 <p className="mt-3 text-xs leading-5 text-black/60">
-                  Already have one component?{' '}
                   <Link
                     href={packageUpgrade.componentLink.href}
                     className="font-medium text-brand-blue hover:underline underline-offset-4"
                   >
-                    View {packageUpgrade.componentLink.title}
+                    View {packageUpgrade.componentLink.title} separately
                   </Link>
-                  .
                 </p>
               )}
             </div>
