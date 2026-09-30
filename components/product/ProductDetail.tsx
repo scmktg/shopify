@@ -25,6 +25,7 @@ import { VariantMobileStickyBuyBar } from './VariantMobileStickyBuyBar';
 import { ThreeWayTapHeroBenefits } from './ThreeWayTapHeroBenefits';
 import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
+import { DosingTankComparison } from '@/components/category/DosingTankComparison';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const THREE_WAY_TAP_HANDLE =
@@ -35,17 +36,10 @@ function offersInstallPackage(content: ProductContent): boolean {
 }
 
 interface ProductDetailProps {
-  /** Shopify-sourced commerce primitives (title, price, stock, images, variants, sku, handle). */
   product: Product;
-  /** Content from data/products.json[handle] - every non-commerce field. */
   content: ProductContent;
   category: string;
   subcategory: string;
-  /**
-   * Sibling-handle → canonical-path map for the optional family
-   * selector. Provided by the page so the products map stays on the
-   * server. Empty / null when `content.family` is absent.
-   */
   familyPaths?: ReadonlyMap<string, string> | null;
   initialVariantId?: string | null;
 }
@@ -169,6 +163,7 @@ export function ProductDetail({
       </div>
 
       <HeadlineSpecs specs={content.headlineSpecs} />
+      {subcategory === 'dosing-tanks' && <DosingTankComparison />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
         <ThreeWayTapSalesSections />
       )}
