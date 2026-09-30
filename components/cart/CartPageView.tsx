@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { PriceDisplay } from '@/components/product/PriceDisplay';
+import { ZipMessaging } from '@/components/payments/ZipMessaging';
 import { useCart } from './CartProvider';
 import { CartLineRow } from './CartLineRow';
 
@@ -56,7 +57,8 @@ export function CartPageView() {
               className="font-semibold text-black"
             />
           </div>
-          <p className="mt-1 text-xs text-black/60">
+          <ZipMessaging compact className="mt-3" />
+          <p className="mt-2 text-xs text-black/60">
             Shipping and taxes calculated at checkout.
           </p>
           {error && (
