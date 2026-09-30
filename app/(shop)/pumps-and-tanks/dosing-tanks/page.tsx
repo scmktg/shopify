@@ -35,14 +35,14 @@ const META_DESCRIPTION =
   'Chemical dosing tanks, polyethylene chemical storage tanks, bunds and complete tank-and-bund packages from 40L to 500L for water-treatment and industrial dosing.';
 const DEFAULT_PRODUCT_ORDER = [
   '40l-chemical-dosing-tank',
-  'chemical-dosing-tank-bunded-50l',
+  'chemical-dosing-tank-50l',
   'chemical-bund-50l',
   'chemical-dosing-tank-and-bund-50l',
   '60l-chemical-dosing-tank',
-  'chemical-dosing-tank-bunded-100l',
+  'chemical-dosing-tank-100l',
   'chemical-bund-100l',
   'chemical-dosing-tank-and-bund-100l',
-  'chemical-dosing-tank-bunded-200l',
+  'chemical-dosing-tank-200l',
   'chemical-bund-200l',
   'chemical-dosing-tank-and-bund-200l',
   'chemical-dosing-tank-300l',
