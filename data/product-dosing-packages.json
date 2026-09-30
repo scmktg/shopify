@@ -1,0 +1,62 @@
+{
+  "chemical-dosing-tank-and-bund-50l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["dosing-tank", "chemical-bund", "secondary-containment", "package", "50l"],
+    "shortDescription": "Complete 50L chemical dosing tank and matching bund package for water-treatment dosing and secondary containment.",
+    "description": "A complete **50L chemical dosing tank + bund package** for installations that need both chemical storage and secondary containment. Buying the matched pair together keeps selection simple and saves $19 compared with purchasing the two products separately.\n\n- 50L polyethylene chemical dosing tank\n- Matching 50L polyethylene bund\n- Tank fits inside the supplied bund\n- Suitable for compatible water-treatment chemical dosing applications\n- Package price saves $19",
+    "features": ["Complete tank + bund package", "Matching 50L tank and 50L bund", "Secondary-containment setup in one purchase", "Polyethylene construction", "Save $19 versus buying separately"],
+    "headlineSpecs": [{"label":"Tank capacity","value":"50L"},{"label":"Bund size","value":"50L"},{"label":"Tank size","value":"390 mm dia × 460 mm H"},{"label":"Package saving","value":"$19"}],
+    "fullSpecs": [{"label":"Package includes","value":"50L Chemical Dosing Tank + 50L Chemical Bund"},{"label":"Tank material","value":"Polyethylene"},{"label":"Tank dimensions","value":"Approx. 390 mm diameter × 460 mm high"},{"label":"Bund dimensions","value":"Approx. 480 mm top OD × 360 mm bottom OD × 425 mm high"},{"label":"Package saving","value":"$19 compared with separate purchase"}],
+    "recommendedFor": ["Water-treatment chemical dosing installations", "Commercial dosing systems", "Installations requiring secondary containment"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Confirm chemical compatibility and site-specific secondary-containment requirements for the stored chemical, volume, installation and jurisdiction."},
+    "ctas": {"primary":"Add package to cart","secondary":null},
+    "upsells": {"boughtTogether":[],"moreInCategory":"auto"},
+    "seo": {"title":"50L Chemical Dosing Tank + Bund Package | Enviro Aqua","description":"50L chemical dosing tank with matching bund for secondary containment. Complete dosing package with $19 saving versus buying separately.","ogImage":null},
+    "family": {"label":"Package size","siblings":[{"handle":"chemical-dosing-tank-and-bund-50l","label":"50L"},{"handle":"chemical-dosing-tank-and-bund-100l","label":"100L"},{"handle":"chemical-dosing-tank-and-bund-200l","label":"200L"},{"handle":"chemical-dosing-tank-and-bund-300l","label":"300L"}]}
+  },
+  "chemical-dosing-tank-and-bund-100l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["dosing-tank", "chemical-bund", "secondary-containment", "package", "100l"],
+    "shortDescription": "Complete 100L chemical dosing tank and matching bund package for water-treatment dosing and secondary containment.",
+    "description": "A complete **100L chemical dosing tank + bund package** for installations that need both chemical storage and secondary containment. The matched tank and bund are supplied together, saving $29 compared with purchasing them separately.\n\n- 100L polyethylene chemical dosing tank\n- Matching 100L polyethylene bund\n- Tank fits inside the supplied bund\n- Suitable for compatible water-treatment chemical dosing applications\n- Package price saves $29",
+    "features": ["Complete tank + bund package", "Matching 100L tank and 100L bund", "Secondary-containment setup in one purchase", "Polyethylene construction", "Save $29 versus buying separately"],
+    "headlineSpecs": [{"label":"Tank capacity","value":"100L"},{"label":"Bund size","value":"100L"},{"label":"Tank size","value":"460 mm dia × 820 mm H"},{"label":"Package saving","value":"$29"}],
+    "fullSpecs": [{"label":"Package includes","value":"100L Chemical Dosing Tank + 100L Chemical Bund"},{"label":"Tank material","value":"Polyethylene"},{"label":"Tank dimensions","value":"Approx. 460 mm diameter × 820 mm high"},{"label":"Bund dimensions","value":"Approx. 625 mm top OD × 515 mm bottom OD × 440 mm high"},{"label":"Package saving","value":"$29 compared with separate purchase"}],
+    "recommendedFor": ["Water-treatment chemical dosing installations", "Commercial and industrial dosing systems", "Installations requiring secondary containment"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Confirm chemical compatibility and site-specific secondary-containment requirements for the stored chemical, volume, installation and jurisdiction."},
+    "ctas": {"primary":"Add package to cart","secondary":null},
+    "upsells": {"boughtTogether":[],"moreInCategory":"auto"},
+    "seo": {"title":"100L Chemical Dosing Tank + Bund Package | Enviro Aqua","description":"100L chemical dosing tank with matching bund for secondary containment. Complete dosing package with $29 saving versus buying separately.","ogImage":null},
+    "family": {"label":"Package size","siblings":[{"handle":"chemical-dosing-tank-and-bund-50l","label":"50L"},{"handle":"chemical-dosing-tank-and-bund-100l","label":"100L"},{"handle":"chemical-dosing-tank-and-bund-200l","label":"200L"},{"handle":"chemical-dosing-tank-and-bund-300l","label":"300L"}]}
+  },
+  "chemical-dosing-tank-and-bund-200l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["dosing-tank", "chemical-bund", "secondary-containment", "package", "200l"],
+    "shortDescription": "Complete 200L chemical dosing tank and matching bund package for water-treatment dosing and secondary containment.",
+    "description": "A complete **200L chemical dosing tank + bund package** for installations that need both chemical storage and secondary containment. The matched tank and bund are supplied together, saving $39 compared with purchasing them separately.\n\n- 200L polyethylene chemical dosing tank\n- Matching 200L polyethylene bund\n- Tank fits inside the supplied bund\n- Suitable for compatible water-treatment chemical dosing applications\n- Package price saves $39",
+    "features": ["Complete tank + bund package", "Matching 200L tank and 200L bund", "Secondary-containment setup in one purchase", "Polyethylene construction", "Save $39 versus buying separately"],
+    "headlineSpecs": [{"label":"Tank capacity","value":"200L"},{"label":"Bund size","value":"200L"},{"label":"Tank size","value":"560 mm dia × 950 mm H"},{"label":"Package saving","value":"$39"}],
+    "fullSpecs": [{"label":"Package includes","value":"200L Chemical Dosing Tank + 200L Chemical Bund"},{"label":"Tank material","value":"Polyethylene"},{"label":"Tank dimensions","value":"Approx. 560 mm diameter × 950 mm high"},{"label":"Bund dimensions","value":"Approx. 725 mm top OD × 580 mm bottom OD × 732 mm high"},{"label":"Package saving","value":"$39 compared with separate purchase"}],
+    "recommendedFor": ["Water-treatment chemical dosing installations", "Commercial and industrial dosing systems", "Installations requiring secondary containment"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Confirm chemical compatibility and site-specific secondary-containment requirements for the stored chemical, volume, installation and jurisdiction."},
+    "ctas": {"primary":"Add package to cart","secondary":null},
+    "upsells": {"boughtTogether":[],"moreInCategory":"auto"},
+    "seo": {"title":"200L Chemical Dosing Tank + Bund Package | Enviro Aqua","description":"200L chemical dosing tank with matching bund for secondary containment. Complete dosing package with $39 saving versus buying separately.","ogImage":null},
+    "family": {"label":"Package size","siblings":[{"handle":"chemical-dosing-tank-and-bund-50l","label":"50L"},{"handle":"chemical-dosing-tank-and-bund-100l","label":"100L"},{"handle":"chemical-dosing-tank-and-bund-200l","label":"200L"},{"handle":"chemical-dosing-tank-and-bund-300l","label":"300L"}]}
+  },
+  "chemical-dosing-tank-and-bund-300l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["dosing-tank", "chemical-bund", "secondary-containment", "package", "300l"],
+    "shortDescription": "Complete 300L chemical dosing tank with the larger 400L bund used as its matched secondary-containment package.",
+    "description": "A complete **300L chemical dosing tank + 400L bund package** for installations that need both chemical storage and secondary containment. Enviro Aqua does not stock a 300L bund, so the larger 400L bund is the matched containment option for this tank. Buying the pair together saves $49 compared with purchasing them separately.\n\n- 300L polyethylene chemical dosing tank\n- 400L polyethylene chemical bund\n- 400L bund is the matched option for the 300L tank\n- Suitable for compatible water-treatment chemical dosing applications\n- Package price saves $49",
+    "features": ["Complete tank + bund package", "300L tank paired with 400L bund", "Secondary-containment setup in one purchase", "Polyethylene construction", "Save $49 versus buying separately"],
+    "headlineSpecs": [{"label":"Tank capacity","value":"300L"},{"label":"Bund size","value":"400L"},{"label":"Tank size","value":"710 mm dia × 960 mm H"},{"label":"Package saving","value":"$49"}],
+    "fullSpecs": [{"label":"Package includes","value":"300L Chemical Dosing Tank + 400L Chemical Bund"},{"label":"Tank material","value":"Polyethylene"},{"label":"Tank dimensions","value":"Approx. 710 mm diameter × 960 mm high"},{"label":"Bund dimensions","value":"Approx. 945 mm top OD × 790 mm bottom OD × 743 mm high"},{"label":"Package saving","value":"$49 compared with separate purchase"}],
+    "recommendedFor": ["Water-treatment chemical dosing installations", "Commercial and industrial dosing systems", "Installations requiring secondary containment"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Confirm chemical compatibility and site-specific secondary-containment requirements for the stored chemical, volume, installation and jurisdiction."},
+    "ctas": {"primary":"Add package to cart","secondary":null},
+    "upsells": {"boughtTogether":[],"moreInCategory":"auto"},
+    "seo": {"title":"300L Chemical Dosing Tank + 400L Bund | Enviro Aqua","description":"300L chemical dosing tank with 400L bund for secondary containment. Complete package with $49 saving versus buying separately.","ogImage":null},
+    "family": {"label":"Package size","siblings":[{"handle":"chemical-dosing-tank-and-bund-50l","label":"50L"},{"handle":"chemical-dosing-tank-and-bund-100l","label":"100L"},{"handle":"chemical-dosing-tank-and-bund-200l","label":"200L"},{"handle":"chemical-dosing-tank-and-bund-300l","label":"300L"}]}
+  }
+}
