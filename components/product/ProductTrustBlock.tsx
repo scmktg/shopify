@@ -89,20 +89,9 @@ function StockLine({ stockStatus, stockCount }: StockLineProps) {
     stockStatus === 'out_of_stock' && 'bg-gray-400',
   );
 
-  const srLabel =
-    stockStatus === 'in_stock'
-      ? 'In stock'
-      : stockStatus === 'low_stock'
-        ? 'Low stock'
-        : 'Out of stock';
-
   let body: React.ReactNode;
   if (stockStatus === 'in_stock') {
-    body = (
-      <>
-        In stock · ships from {SHOWROOM_LOCALITY}
-      </>
-    );
+    body = <>In stock · ships from {SHOWROOM_LOCALITY}</>;
   } else if (stockStatus === 'low_stock') {
     const n = stockCount ?? 0;
     body = <>Only {n} left in stock</>;
@@ -113,7 +102,6 @@ function StockLine({ stockStatus, stockCount }: StockLineProps) {
   return (
     <p className="flex items-start gap-2">
       <span className={dotClass} aria-hidden="true" />
-      <span className="sr-only">{srLabel}.</span>
       <span>{body}</span>
     </p>
   );
