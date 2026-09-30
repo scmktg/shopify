@@ -36,19 +36,19 @@ const META_DESCRIPTION =
 const DEFAULT_PRODUCT_ORDER = [
   '40l-chemical-dosing-tank',
   'chemical-dosing-tank-bunded-50l',
+  'chemical-bund-50l',
   'chemical-dosing-tank-and-bund-50l',
   '60l-chemical-dosing-tank',
   'chemical-dosing-tank-bunded-100l',
+  'chemical-bund-100l',
   'chemical-dosing-tank-and-bund-100l',
   'chemical-dosing-tank-bunded-200l',
+  'chemical-bund-200l',
   'chemical-dosing-tank-and-bund-200l',
   'chemical-dosing-tank-300l',
+  'chemical-bund-400l',
   'chemical-dosing-tank-and-bund-300l',
   'chemical-dosing-tank-500l',
-  'chemical-bund-50l',
-  'chemical-bund-100l',
-  'chemical-bund-200l',
-  'chemical-bund-400l',
 ] as const;
 
 const pumpsAndTanks = CATEGORIES.find((category) => category.slug === CATEGORY);
