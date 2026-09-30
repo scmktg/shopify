@@ -57,7 +57,7 @@ async function main(): Promise<void> {
 
   console.log(`[validate] canonical product content: ${handleCount} entries`);
   if (production) {
-    console.log(`${GREEN}✓${RESET} production build: strict Shopify handle validation enforced`);
+    console.log(`${GREEN}✓${RESET} production build: strict Shopify catalogue validation enforced`);
   }
 
   const result = validateProducts(catalogData);
@@ -151,36 +151,38 @@ async function main(): Promise<void> {
     for (const handle of missingInProducts) stream(`    - ${handle}`);
   }
 
-  // During the one-time P1 catalogue cleanup this is deliberately reporting
-  // rather than blocking. The temporary integrity endpoint exposes the exact
-  // mismatch list so Shopify can be corrected; the gate is switched back to
-  // blocking immediately after that cleanup.
   if (categoryMismatches.length > 0) {
-    console.warn('');
-    console.warn(
-      `${YELLOW}! Shopify category-tag mismatches to clean up (${categoryMismatches.length}):${RESET}`,
+    console.error('');
+    console.error(
+      `${RED}✖ Shopify category tags disagree with canonical storefront categories (${categoryMismatches.length}):${RESET}`,
     );
     for (const mismatch of categoryMismatches) {
-      console.warn(`    - ${mismatch.handle}`);
-      console.warn(
+      console.error(`    - ${mismatch.handle}`);
+      console.error(
         `      expected: primary-cat:${mismatch.expectedPrimary}, sub-cat:${mismatch.expectedSubcategory}`,
       );
-      console.warn(
+      console.error(
         `      actual primary: ${mismatch.primaryTags.length > 0 ? mismatch.primaryTags.join(', ') : '(none)'}`,
       );
-      console.warn(
+      console.error(
         `      actual subcategories: ${mismatch.subcategoryTags.length > 0 ? mismatch.subcategoryTags.join(', ') : '(none)'}`,
       );
+      for (const issue of mismatch.issues) {
+        console.error(`      ${RED}✖${RESET} ${issue}`);
+      }
     }
+    console.error('');
+    console.error(
+      `  ${DIM}Shopify PLP tags and canonical PDP categories must agree before shipping.${RESET}`,
+    );
   }
 
   if (missingInShopify.length > 0) process.exit(1);
   if (missingInProducts.length > 0 && strict) process.exit(1);
+  if (categoryMismatches.length > 0) process.exit(1);
 
   console.log(
-    categoryMismatches.length === 0
-      ? `${GREEN}✓${RESET} Shopify handles and category tags match the canonical storefront catalogue`
-      : `${YELLOW}!${RESET} handle integrity passed; category mismatches are temporarily non-blocking for P1 cleanup`,
+    `${GREEN}✓${RESET} Shopify handles and category tags match the canonical storefront catalogue`,
   );
   process.exit(0);
 }
