@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { clsx } from 'clsx';
+import { canonicalProductHandle } from '@/lib/products/getProductContent';
 import type { ProductFamily } from '@/lib/products/schema';
 
 interface FamilySelectorProps {
@@ -28,7 +29,8 @@ export function FamilySelector({
       </legend>
       <div className="mt-2 flex flex-wrap gap-2">
         {family.siblings.map((sibling) => {
-          const isActive = sibling.handle === currentHandle;
+          const isActive =
+            canonicalProductHandle(sibling.handle) === currentHandle;
           const href = paths.get(sibling.handle);
           if (isActive || !href) {
             return (
