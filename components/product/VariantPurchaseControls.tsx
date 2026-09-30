@@ -6,6 +6,7 @@ import {
   AddToCartButton,
   type CompanionPurchaseItem,
 } from '@/components/cart/AddToCartButton';
+import { ZipMessaging } from '@/components/payments/ZipMessaging';
 import { PriceDisplay } from './PriceDisplay';
 import { useVariantSelection } from './VariantSelectionProvider';
 import { ColourSwatch } from './ColourSwatch';
@@ -66,6 +67,8 @@ export function VariantPurchaseControls({
           Same price retail or trade
         </span>
       </div>
+
+      <ZipMessaging className="mt-2" />
 
       {variants.length > 1 && optionNames.length > 0 && (
         <div className="mt-6 space-y-4" aria-label="Product options">
