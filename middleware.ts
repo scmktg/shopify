@@ -55,6 +55,17 @@ const GONE_EXACT = new Set([
   '/water-filters/whole-house/whole-house-water-filter-2-stage-10-x-4-5-washable-reusable',
 ]);
 
+// Legacy WordPress products that still have a valid replacement but are
+// not represented in next.config.js. These must be checked before the
+// broad /product 410 rule below so valuable historical URLs do not get
+// treated as removed products.
+const LEGACY_PRODUCT_REDIRECTS = new Map<string, string>([
+  [
+    '/product/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l',
+    '/pumps-and-tanks/dosing-tanks',
+  ],
+]);
+
 // WooCommerce query parameters from the retired WordPress storefront.
 // Next.js preserves incoming query strings across redirects, so a legacy
 // URL such as /product-category/water-filters/?filter_filter=carbon can
@@ -97,6 +108,29 @@ function stripLegacyWooCommerceQuery(request: NextRequest): NextResponse | null 
   return NextResponse.redirect(cleanUrl, 308);
 }
 
+function redirectLegacyProduct(request: NextRequest): NextResponse | null {
+  const { pathname } = request.nextUrl;
+  const normalizedPath =
+    pathname.length > 1 && pathname.endsWith('/')
+      ? pathname.slice(0, -1)
+      : pathname;
+  const destination = LEGACY_PRODUCT_REDIRECTS.get(normalizedPath);
+  if (!destination) return null;
+
+  const redirectUrl = request.nextUrl.clone();
+  redirectUrl.pathname = destination;
+
+  // Do not carry retired WooCommerce filter/cart parameters onto the
+  // replacement URL. Keep normal marketing parameters such as UTMs.
+  for (const key of Array.from(redirectUrl.searchParams.keys())) {
+    if (isLegacyWooCommerceQueryKey(key)) {
+      redirectUrl.searchParams.delete(key);
+    }
+  }
+
+  return NextResponse.redirect(redirectUrl, 308);
+}
+
 function isGone(pathname: string): boolean {
   if (GONE_EXACT.has(pathname)) return true;
   if (/\/feed\/?$/.test(pathname)) return true;
@@ -119,6 +153,9 @@ function isAdminRoute(pathname: string): boolean {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  const legacyProductRedirect = redirectLegacyProduct(request);
+  if (legacyProductRedirect) return legacyProductRedirect;
 
   if (isGone(pathname)) {
     return new NextResponse(null, { status: 410 });
