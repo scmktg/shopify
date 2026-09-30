@@ -22,9 +22,6 @@ interface ProductPageProps {
   }>;
 }
 
-// ISR — page is statically rendered and refreshed every 5 minutes.
-// The two underlying fetches (Shopify product, products.json content)
-// are themselves cached, so revalidation is cheap.
 export const revalidate = 300;
 
 const META_DESCRIPTION_MAX = 155;
@@ -34,7 +31,6 @@ interface DosingCompanionConfig {
   discountAmount: string;
 }
 
-/** Matching standalone tank/bund products and their automatic pair saving. */
 const DOSING_COMPANIONS: Readonly<Record<string, DosingCompanionConfig>> = {
   'chemical-dosing-tank-bunded-50l': {
     handle: 'chemical-bund-50l',
@@ -70,37 +66,16 @@ const DOSING_COMPANIONS: Readonly<Record<string, DosingCompanionConfig>> = {
   },
 };
 
-/**
- * The root layout sets a title template of `%s | Enviro Aqua`, so the
- * value returned here must NOT already carry that suffix. Some legacy
- * products.json entries (imported from the previous WordPress build)
- * include " | Enviro Aqua" inside `seo.title`, which compounded to
- * "Foo | Enviro Aqua | Enviro Aqua" in the rendered <title>. Strip
- * any trailing brand suffix as a defence-in-depth measure so a future
- * re-import cannot reintroduce the duplicate.
- */
 const BRAND_SUFFIX_RE = /\s*[\|—–-]\s*Enviro\s*Aqua\s*$/i;
 
 function stripBrandSuffix(title: string): string {
   let out = title;
-  // Strip repeatedly in case the suffix was appended more than once.
   while (BRAND_SUFFIX_RE.test(out)) {
     out = out.replace(BRAND_SUFFIX_RE, '').trim();
   }
   return out;
 }
 
-/**
- * Resolve the meta description with the documented fallback chain:
- *   1. content.seo.description
- *   2. content.shortDescription
- *   3. first ~155 chars of plain-text content.description (markdown
- *      stripped via the same renderer pipeline used for the page).
- *
- * Never reads from Shopify's `description` / `seo` fields — those
- * carry WordPress-import debris and would re-introduce the meta-tag
- * leak the brief calls out.
- */
 async function resolveMetaDescription(
   content: ReturnType<typeof getProductContent>,
 ): Promise<string> {
@@ -157,15 +132,9 @@ export default async function ProductPage({
   const product = await getProductByHandle(handle);
   if (!product) notFound();
 
-  // Per the URL contract: every Shopify handle must have a
-  // products.json entry, enforced at build time. notFound() guards
-  // against the dev/edge case where the validator hasn't run.
   const content = getProductContent(handle);
   if (!content) notFound();
 
-  // The route's [category]/[subcategory] must match the entry's
-  // categories tuple. Source of truth is products.json — we no
-  // longer derive routing from Shopify tags.
   if (
     content.categories[0] !== category ||
     content.categories[1] !== subcategory
@@ -189,23 +158,15 @@ export default async function ProductPage({
             currencyCode: companionVariant.price.currencyCode,
           },
           available: companionVariant.availableForSale,
+          quantityAvailable: companionVariant.quantityAvailable,
         }
       : null;
 
   const node = findSubcategory(category, subcategory);
   const pathname = `/${category}/${subcategory}/${handle}`;
-  // Resolve sibling handles to their canonical paths (one segment per
-  // category/subcategory tuple) so the FamilySelector can navigate
-  // between variants without the products map crossing the client
-  // boundary. Returns null when the product has no `family` block —
-  // the component renders nothing in that case.
   const familyPaths = content.family
     ? resolveFamilyPaths(content.family.siblings.map((s) => s.handle))
     : null;
-  // Cap at 5000 chars: search engines truncate beyond this anyway,
-  // and bounding the JSON-LD payload keeps the inline <script> tag
-  // small. Long-form description content still renders in full on
-  // the page itself via ProductOverview.
   const descriptionPlainText = await markdownToPlainText(
     content.description,
     5000,
@@ -240,14 +201,6 @@ export default async function ProductPage({
   );
 }
 
-/**
- * Returns a Map of `handle -> "/<category>/<subcategory>/<handle>/"`
- * for every requested sibling that exists in products.json. Unknown
- * handles are silently dropped — the FamilySelector renders any
- * missing entry as a disabled chip, which is a graceful degradation
- * if a family member has been archived in Shopify but not yet pruned
- * from the family list.
- */
 function resolveFamilyPaths(
   handles: ReadonlyArray<string>,
 ): ReadonlyMap<string, string> {
