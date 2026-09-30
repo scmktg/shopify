@@ -51,6 +51,9 @@ export function ProductCard({ product }: ProductCardProps) {
   const href = selectedVariant
     ? `${baseHref}?variant=${encodeURIComponent(selectedVariant.id)}`
     : baseHref;
+  const imageAlt = selectedChoice
+    ? `${product.title} - ${selectedChoice.value}`
+    : product.title;
 
   const trackSelection = () => {
     const price = Number.parseFloat(product.price.amount);
@@ -76,7 +79,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <Image
               key={image.url}
               src={image.url}
-              alt=""
+              alt={imageAlt}
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
               className="object-contain p-2 transition-opacity group-hover:opacity-90"
