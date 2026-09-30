@@ -114,13 +114,18 @@ const PRICE_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
 const DOSING_TYPE_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
   {
     value: 'tank',
-    label: 'Dosing tanks',
+    label: 'Dosing tanks only',
     query: "tag:'facet:dosing-tank'",
   },
   {
     value: 'bund',
-    label: 'Chemical bunds',
+    label: 'Chemical bunds only',
     query: "tag:'facet:chemical-bund'",
+  },
+  {
+    value: 'package',
+    label: 'Dosing Tanks & Bunds',
+    query: "tag:'facet:package'",
   },
 ];
 
@@ -248,13 +253,6 @@ export function getCatalogFilterGroups(
         label: 'Capacity',
         multiple: true,
         options: DOSING_CAPACITY_OPTIONS,
-      },
-      {
-        id: 'price',
-        param: 'price',
-        label: 'Price',
-        multiple: false,
-        options: PRICE_OPTIONS,
       },
     ];
   }
