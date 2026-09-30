@@ -14,7 +14,7 @@ faq:
   - q: "Do you ship internationally?"
     a: "We currently ship within Australia only."
   - q: "Can I pick up locally?"
-    a: "Yes. Free Click & Collect is available from our Wyong NSW showroom at 6/45 Amsterdam Cct, Wyong NSW 2259 where the product is eligible for local pickup. We will email or text you when the order is ready."
+    a: "Yes. Free Click & Collect is available from our Wyong NSW showroom at 6/45 Amsterdam Cct, Wyong NSW 2259 where the product is eligible for local pickup. Orders are usually ready within one hour during business hours. We will email or text you when the order is ready."
 ---
 
 We dispatch Monday to Friday from our Wyong NSW warehouse on the Central Coast.
@@ -72,9 +72,10 @@ These products can be collected free from:
 
 - **Enviro Aqua**
 - **6/45 Amsterdam Cct, Wyong NSW 2259**
-- **Monday to Friday, 9am-3pm AEST**
+- **Monday to Thursday, 9am-3pm AEST**
+- **Friday, 9am-1pm AEST**
 
-We will email or text you when your order is ready.
+Orders are usually ready within one hour during business hours. We will email or text you when your order is ready.
 
 ## Dispatch times
 
