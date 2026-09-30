@@ -4,6 +4,7 @@ import { ProductDetail } from '@/components/product/ProductDetail';
 import { findSubcategory } from '@/content/categories';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import {
+  canonicalProductHandle,
   getAllProductContent,
   getProductContent,
 } from '@/lib/products/getProductContent';
@@ -32,28 +33,28 @@ interface DosingCompanionConfig {
 }
 
 const DOSING_COMPANIONS: Readonly<Record<string, DosingCompanionConfig>> = {
-  'chemical-dosing-tank-bunded-50l': {
+  'chemical-dosing-tank-50l': {
     handle: 'chemical-bund-50l',
     discountAmount: '19.00',
   },
   'chemical-bund-50l': {
-    handle: 'chemical-dosing-tank-bunded-50l',
+    handle: 'chemical-dosing-tank-50l',
     discountAmount: '19.00',
   },
-  'chemical-dosing-tank-bunded-100l': {
+  'chemical-dosing-tank-100l': {
     handle: 'chemical-bund-100l',
     discountAmount: '29.00',
   },
   'chemical-bund-100l': {
-    handle: 'chemical-dosing-tank-bunded-100l',
+    handle: 'chemical-dosing-tank-100l',
     discountAmount: '29.00',
   },
-  'chemical-dosing-tank-bunded-200l': {
+  'chemical-dosing-tank-200l': {
     handle: 'chemical-bund-200l',
     discountAmount: '39.00',
   },
   'chemical-bund-200l': {
-    handle: 'chemical-dosing-tank-bunded-200l',
+    handle: 'chemical-dosing-tank-200l',
     discountAmount: '39.00',
   },
   'chemical-dosing-tank-300l': {
@@ -207,10 +208,11 @@ function resolveFamilyPaths(
   const all = getAllProductContent();
   const map = new Map<string, string>();
   for (const handle of handles) {
-    const entry = all[handle];
+    const canonicalHandle = canonicalProductHandle(handle);
+    const entry = all[canonicalHandle];
     if (!entry) continue;
     const [c, s] = entry.categories;
-    map.set(handle, `/${c}/${s}/${handle}/`);
+    map.set(handle, `/${c}/${s}/${canonicalHandle}/`);
   }
   return map;
 }
