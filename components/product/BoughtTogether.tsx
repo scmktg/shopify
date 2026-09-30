@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
+import { canonicalProductHandle } from '@/lib/products/getProductContent';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { PriceDisplay } from './PriceDisplay';
 import { SimpleAddToCart } from '@/components/cart/SimpleAddToCart';
@@ -23,6 +24,9 @@ interface BoughtTogetherCard {
  * builder, distinct from the "More in this category" rail (which
  * is link-only).
  *
+ * Legacy aliases are normalized before Shopify is queried so old content
+ * references cannot make a valid canonical product disappear from the rail.
+ *
  * Hides the rail entirely when `handles` is empty (an empty
  * cross-sell is worse than no cross-sell). Cards for handles that
  * don't resolve in Shopify are silently skipped in production with
@@ -32,15 +36,14 @@ interface BoughtTogetherCard {
 export async function BoughtTogether({ handles }: BoughtTogetherProps) {
   if (handles.length === 0) return null;
 
-  // Guard the whole fetch path — a single Shopify-side hiccup
-  // shouldn't take down the entire product page. Per-handle
-  // try/catch already catches individual fetch failures; this
-  // outer guard is defensive against anything else (network
-  // teardown, GraphQL deserialisation, Promise.all rejection).
+  const canonicalHandles = Array.from(
+    new Set(handles.map((handle) => canonicalProductHandle(handle))),
+  );
+
   let cards: ReadonlyArray<BoughtTogetherCard> = [];
   try {
     const products = await Promise.all(
-      handles.map(async (handle) => {
+      canonicalHandles.map(async (handle) => {
         try {
           return await getProductByHandle(handle);
         } catch {
@@ -52,7 +55,7 @@ export async function BoughtTogether({ handles }: BoughtTogetherProps) {
     const collected: BoughtTogetherCard[] = [];
     products.forEach((product, index) => {
       if (!product) return;
-      const handle = handles[index];
+      const handle = canonicalHandles[index];
       if (!handle) return;
       collected.push({ product, handle });
     });
@@ -66,7 +69,7 @@ export async function BoughtTogether({ handles }: BoughtTogetherProps) {
   if (cards.length === 0) {
     if (process.env.NODE_ENV !== 'production') {
       console.warn(
-        `[BoughtTogether] None of [${handles.join(', ')}] resolved in Shopify. Hiding rail.`,
+        `[BoughtTogether] None of [${canonicalHandles.join(', ')}] resolved in Shopify. Hiding rail.`,
       );
     }
     return null;
