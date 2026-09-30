@@ -29,10 +29,16 @@ export const revalidate = 300;
 
 const META_DESCRIPTION_MAX = 155;
 
-/** Matching standalone tank/bund products. Add future verified pairs here. */
+/** Matching standalone tank/bund products. Only verified pairings belong here. */
 const DOSING_COMPANION_HANDLES: Readonly<Record<string, string>> = {
   'chemical-dosing-tank-bunded-50l': 'chemical-bund-50l',
   'chemical-bund-50l': 'chemical-dosing-tank-bunded-50l',
+  'chemical-dosing-tank-bunded-100l': 'chemical-bund-100l',
+  'chemical-bund-100l': 'chemical-dosing-tank-bunded-100l',
+  'chemical-dosing-tank-bunded-200l': 'chemical-bund-200l',
+  'chemical-bund-200l': 'chemical-dosing-tank-bunded-200l',
+  'chemical-dosing-tank-300l': 'chemical-bund-400l',
+  'chemical-bund-400l': 'chemical-dosing-tank-300l',
 };
 
 /**
