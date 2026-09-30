@@ -1,12 +1,24 @@
 'use client';
 
-import { useState } from 'react';
-import { Minus, Plus } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { Check, Minus, Plus } from 'lucide-react';
+import type { Money } from '@/types/product';
 import { useCart } from './CartProvider';
+
+export interface CompanionPurchaseItem {
+  title: string;
+  variantId: string;
+  price: Money;
+  available: boolean;
+}
 
 interface AddToCartButtonProps {
   variantId: string;
   available: boolean;
+  /** Current selected-variant price. Used to show the live combined total. */
+  unitPrice?: Money;
+  /** Optional matching tank/bund sold as a separate Shopify line item. */
+  companion?: CompanionPurchaseItem | null;
   /**
    * Label override from `products.json[handle].ctas.primary`. Falls
    * back to "Add to cart" when undefined. The "Out of stock" /
@@ -27,13 +39,16 @@ const MAX_QTY = 99;
 export function AddToCartButton({
   variantId,
   available,
+  unitPrice,
+  companion = null,
   label: labelOverride,
   enableBuyNow = false,
 }: AddToCartButtonProps) {
-  const { addItem, buyNow, isMutating } = useCart();
+  const { addItem, addItems, buyNow, buyNowItems, isMutating } = useCart();
   const [busy, setBusy] = useState(false);
   const [buyingNow, setBuyingNow] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [includeCompanion, setIncludeCompanion] = useState(false);
 
   const clamp = (n: number) => Math.min(MAX_QTY, Math.max(1, n));
   const dec = () => setQuantity((q) => clamp(q - 1));
@@ -47,11 +62,37 @@ export function AddToCartButton({
     if (Number.isFinite(n)) setQuantity(clamp(n));
   };
 
+  const pairSelected = Boolean(
+    includeCompanion && companion?.available && companion.variantId,
+  );
+
+  const displayedTotal = useMemo(() => {
+    if (!unitPrice) return null;
+    const primary = Number.parseFloat(unitPrice.amount);
+    if (!Number.isFinite(primary)) return null;
+    let perSet = primary;
+    if (pairSelected && companion) {
+      const extra = Number.parseFloat(companion.price.amount);
+      if (Number.isFinite(extra)) perSet += extra;
+    }
+    return new Intl.NumberFormat('en-AU', {
+      style: 'currency',
+      currency: unitPrice.currencyCode,
+    }).format(perSet * quantity);
+  }, [unitPrice, pairSelected, companion, quantity]);
+
   const onAdd = async () => {
     if (busy || buyingNow || isMutating) return;
     setBusy(true);
     try {
-      await addItem(variantId, quantity);
+      if (pairSelected && companion) {
+        await addItems([
+          { variantId, quantity },
+          { variantId: companion.variantId, quantity },
+        ]);
+      } else {
+        await addItem(variantId, quantity);
+      }
     } finally {
       setBusy(false);
     }
@@ -61,10 +102,16 @@ export function AddToCartButton({
     if (busy || buyingNow || isMutating) return;
     setBuyingNow(true);
     try {
-      await buyNow(variantId, quantity);
-      // Successful buyNow navigates away; leave buyingNow=true so
-      // the buttons stay disabled until the page unloads. The
-      // catch block resets state on failure.
+      if (pairSelected && companion) {
+        await buyNowItems([
+          { variantId, quantity },
+          { variantId: companion.variantId, quantity },
+        ]);
+      } else {
+        await buyNow(variantId, quantity);
+      }
+      // Successful buy-now navigates away. Keep the button disabled
+      // until the page unloads; catch resets state on failure.
     } catch {
       setBuyingNow(false);
     }
@@ -74,27 +121,71 @@ export function AddToCartButton({
     ? 'Out of stock'
     : busy
       ? 'Adding…'
-      : (labelOverride ?? 'Add to cart');
+      : pairSelected
+        ? 'Add both to cart'
+        : (labelOverride ?? 'Add to cart');
 
   const buyNowLabel = !available
     ? 'Out of stock'
     : buyingNow
       ? 'Redirecting…'
-      : 'Buy now';
+      : pairSelected
+        ? 'Buy both now'
+        : 'Buy now';
 
   const anyBusy = busy || buyingNow || isMutating;
 
   return (
     <div className="flex flex-col gap-3">
+      {companion && (
+        <label
+          className={`flex cursor-pointer items-start gap-3 rounded-lg border p-4 transition-colors ${
+            includeCompanion
+              ? 'border-brand-blue bg-brand-blue-light/60'
+              : 'border-gray-300 bg-white hover:border-black/40'
+          } ${!companion.available ? 'cursor-not-allowed opacity-60' : ''}`}
+        >
+          <span
+            className={`mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded border ${
+              includeCompanion
+                ? 'border-brand-blue bg-brand-blue text-white'
+                : 'border-gray-400 bg-white'
+            }`}
+            aria-hidden="true"
+          >
+            {includeCompanion && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
+          </span>
+          <input
+            type="checkbox"
+            checked={includeCompanion}
+            onChange={(event) => setIncludeCompanion(event.target.checked)}
+            disabled={!companion.available || anyBusy}
+            className="sr-only"
+          />
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-semibold text-black">
+              Add matching {companion.title}
+            </span>
+            <span className="mt-0.5 block text-sm text-black/65">
+              Sold separately. Add it to this order in one click.
+            </span>
+          </span>
+          <span className="flex-none text-sm font-semibold text-black">
+            +{formatMoney(companion.price)}
+          </span>
+        </label>
+      )}
+
+      {displayedTotal && (
+        <div className="flex items-baseline justify-between gap-3 rounded-md bg-black/[0.04] px-4 py-3">
+          <span className="text-sm font-medium text-black/70">
+            {pairSelected ? 'Tank + bund total' : quantity > 1 ? 'Order total' : 'Current total'}
+          </span>
+          <span className="text-xl font-bold text-black">{displayedTotal}</span>
+        </div>
+      )}
+
       <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
-        {/*
-          Mobile: stepper spans the full row, −/+ buttons grow to
-          fill the gutters either side of the centered qty input,
-          so the row visually balances with the Add-to-cart button
-          below it.
-          Desktop (sm+): stepper collapses to intrinsic width and
-          sits next to the Add-to-cart button on a single row.
-        */}
         <div
           className="flex sm:inline-flex w-full sm:w-auto items-stretch h-12 border border-gray-300 rounded-md bg-white overflow-hidden"
           aria-label="Quantity"
@@ -151,4 +242,13 @@ export function AddToCartButton({
       )}
     </div>
   );
+}
+
+function formatMoney(money: Money): string {
+  const amount = Number.parseFloat(money.amount);
+  if (!Number.isFinite(amount)) return `${money.amount} ${money.currencyCode}`;
+  return new Intl.NumberFormat('en-AU', {
+    style: 'currency',
+    currency: money.currencyCode,
+  }).format(amount);
 }
