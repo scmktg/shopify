@@ -57,7 +57,7 @@ export function CartPageView() {
               className="font-semibold text-black"
             />
           </div>
-          <ZipMessaging compact className="mt-3" />
+          <ZipMessaging money={cart.subtotalAmount} className="mt-3" />
           <p className="mt-2 text-xs text-black/60">
             Shipping and taxes calculated at checkout.
           </p>
