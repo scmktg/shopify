@@ -17,7 +17,8 @@ export const CLICK_AND_COLLECT_PICKUP_WINDOW =
 export const TRUST_STRIP = BUSINESS_INFO.trustStrip;
 export const DEFAULT_LOW_STOCK_THRESHOLD =
   BUSINESS_INFO.defaultLowStockThreshold;
-export const PHONE_SUPPORT_HOURS = BUSINESS_INFO.phoneSupportHours;
+// Keep the PDP contact line exactly aligned with the hours shown in the footer.
+export const PHONE_SUPPORT_HOURS = BUSINESS_INFO.showroom.hours;
 export const PHONE_DISPLAY = BUSINESS_INFO.phone.display;
 export const PHONE_TEL = BUSINESS_INFO.phone.tel;
 export const SHOWROOM_LOCALITY = BUSINESS_INFO.showroom.locality;
