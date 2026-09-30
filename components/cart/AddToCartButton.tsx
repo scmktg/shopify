@@ -34,8 +34,8 @@ interface AddToCartButtonProps {
    */
   label?: string;
   /**
-   * When true, renders a secondary "Buy now" button below the
-   * primary Add-to-cart row. Buy-now adds the variant to the cart
+   * When true, renders a secondary "Buy now" button alongside the
+   * primary Add-to-cart action. Buy-now adds the variant to the cart
    * (respecting the current quantity) and redirects to the Shopify
    * checkout URL - no drawer popup.
    */
@@ -280,6 +280,7 @@ export function AddToCartButton({
 
   const anyBusy = busy || buyingNow || isMutating;
   const awaitingStockChoice = pendingRequestedQuantity !== null;
+  const actionsUnavailable = !available || awaitingStockChoice;
   const primaryStockMessage = getStockMessage(inventoryQuantity, available);
   const companionStockMessage = companion
     ? getStockMessage(companion.quantityAvailable ?? null, companion.available)
@@ -495,9 +496,9 @@ export function AddToCartButton({
         </div>
       )}
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+      <div className="grid grid-cols-[7.5rem_minmax(0,1fr)_minmax(0,1fr)] items-stretch gap-2 sm:gap-3">
         <div
-          className="flex sm:inline-flex w-full sm:w-auto items-stretch h-12 border border-gray-300 rounded-md bg-white overflow-hidden"
+          className="flex h-12 w-[7.5rem] items-stretch overflow-hidden rounded-md border border-gray-300 bg-white"
           aria-label="Quantity"
         >
           <button
@@ -505,7 +506,7 @@ export function AddToCartButton({
             onClick={dec}
             disabled={quantity <= 1 || !available || anyBusy}
             aria-label="Decrease quantity"
-            className="flex-1 sm:flex-none sm:w-11 inline-flex items-center justify-center text-black/70 hover:text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex w-10 flex-none items-center justify-center text-black/70 transition-colors hover:bg-gray-50 hover:text-black disabled:cursor-not-allowed disabled:text-gray-300"
           >
             <Minus
               className="h-4 w-4"
@@ -521,14 +522,14 @@ export function AddToCartButton({
             value={quantity}
             onChange={(e) => onTyped(e.target.value)}
             aria-label="Quantity"
-            className="w-14 flex-shrink-0 text-center text-black font-medium bg-transparent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-blue [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+            className="w-10 flex-shrink-0 bg-transparent text-center font-medium text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-blue [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
           />
           <button
             type="button"
             onClick={inc}
             disabled={quantity >= MAX_QTY || !available || anyBusy}
             aria-label="Increase quantity"
-            className="flex-1 sm:flex-none sm:w-11 inline-flex items-center justify-center text-black/70 hover:text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex w-10 flex-none items-center justify-center text-black/70 transition-colors hover:bg-gray-50 hover:text-black disabled:cursor-not-allowed disabled:text-gray-300"
           >
             <Plus
               className="h-4 w-4"
@@ -541,23 +542,37 @@ export function AddToCartButton({
         <button
           type="button"
           onClick={onAdd}
-          disabled={!available || anyBusy || awaitingStockChoice}
-          className="flex-1 bg-brand-blue hover:bg-brand-blue-hover disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
+          disabled={actionsUnavailable || anyBusy}
+          aria-busy={busy}
+          className={`${enableBuyNow ? '' : 'col-span-2'} h-12 min-w-0 rounded px-3 text-sm font-semibold text-white transition-colors sm:px-6 sm:text-base ${
+            actionsUnavailable
+              ? 'cursor-not-allowed bg-gray-400'
+              : busy
+                ? 'cursor-wait bg-brand-blue-hover'
+                : 'bg-brand-blue hover:bg-brand-blue-hover disabled:cursor-wait disabled:bg-brand-blue'
+          }`}
         >
           {addLabel}
         </button>
-      </div>
 
-      {enableBuyNow && (
-        <button
-          type="button"
-          onClick={onBuyNow}
-          disabled={!available || anyBusy || awaitingStockChoice}
-          className="w-full bg-black hover:bg-black/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
-        >
-          {buyNowLabel}
-        </button>
-      )}
+        {enableBuyNow && (
+          <button
+            type="button"
+            onClick={onBuyNow}
+            disabled={actionsUnavailable || anyBusy}
+            aria-busy={buyingNow}
+            className={`h-12 min-w-0 rounded px-3 text-sm font-semibold text-white transition-colors sm:px-6 sm:text-base ${
+              actionsUnavailable
+                ? 'cursor-not-allowed bg-gray-400'
+                : buyingNow
+                  ? 'cursor-wait bg-black/80'
+                  : 'bg-black hover:bg-black/90 disabled:cursor-wait disabled:bg-black'
+            }`}
+          >
+            {buyNowLabel}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
