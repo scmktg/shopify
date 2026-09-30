@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/product/100l-chemical-dosing-tank-water-tank-poly-tank-and-bund",
+      "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l",
+      "statusCode": 301
+    }
+  ]
+}
