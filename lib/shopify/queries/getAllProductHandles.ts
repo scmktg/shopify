@@ -6,6 +6,7 @@ import {
 export interface ProductHandleEntry {
   handle: string;
   updatedAt: string;
+  tags: ReadonlyArray<string>;
 }
 
 const QUERY = /* GraphQL */ `
@@ -15,6 +16,7 @@ const QUERY = /* GraphQL */ `
         node {
           handle
           updatedAt
+          tags
         }
       }
       pageInfo {
