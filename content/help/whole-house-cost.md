@@ -1,11 +1,11 @@
 ---
-title: "Whole House Water Filter Cost - Australia"
-description: "Honest pricing on whole-house water filtration. System cost, plumber install cost, cartridge running cost, and the five-year total for a typical Australian home."
+title: "Whole House Water Filter Installation Cost - Australia"
+description: "Whole-house water filtration installation costs in Australia: system price, licensed plumber install cost, cartridge running cost, and five-year ownership cost."
 relatedLinks:
-  - { label: "Whole-home filtration", href: "/use/whole-home-filtration/" }
-  - { label: "Whole-house water filters", href: "/water-filters/whole-house/" }
-  - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained/" }
-  - { label: "Which water filter should I choose?", href: "/help/which-filter/" }
+  - { label: "Whole-house installation package - Central Coast", href: "/whole-house-installation-package" }
+  - { label: "Whole-home filtration", href: "/use/whole-home-filtration" }
+  - { label: "Whole-house water filters", href: "/water-filters/whole-house" }
+  - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained" }
 faq:
   - q: "Why does the install cost as much as the system?"
     a: "Because it has to. A whole-house system sits on the cold-water mains and must be plumbed by a licensed plumber to comply with state regulations and to keep the warranty intact. A standard install is two to four hours of labour plus brackets, isolation valves, and the bypass loop. $500-$1,500 is the realistic range. The system is the cheap part."
@@ -19,7 +19,7 @@ faq:
     a: "Two stages (sediment + carbon) handles most town-water installs. Step up to three stages if you need a specific extra - KDF for hard-water scale, catalytic carbon for chloramine, or UV for tank water. Do not buy more stages than you need; every additional stage is more cartridges to buy and more pressure drop."
 ---
 
-What a whole-house water filtration system actually costs in Australia, with no hidden running-cost surprises. Three line items: the system, the install, and the cartridges over time.
+What a **whole-house water filtration installation** actually costs in Australia, with no hidden running-cost surprises. There are three main line items: the filter system, the licensed plumber installation, and replacement cartridges over time.
 
 ## The system
 
@@ -31,7 +31,7 @@ WaterMark-certified whole-house systems for a typical Australian home land in th
 
 These are real numbers for certified systems with brand-name Australian housings. Anything significantly cheaper online is usually non-certified, which means a plumber will not install it on the mains.
 
-## The install
+## Whole-house water filter installation cost
 
 A licensed plumber installs whole-house systems on the cold-water mains, after the meter and before the line splits to internal taps. Expect:
 
@@ -39,6 +39,8 @@ A licensed plumber installs whole-house systems on the cold-water mains, after t
 - **$800-$1,500** for a harder install - buried pipework needing excavation, indoor mounting through a stud wall, bypass loop on a meter pit, or council water-meter relocations.
 
 The price covers labour, the bracket and isolation valves, the bypass loop (so you can change cartridges without losing whole-house water), and any pipe/fittings to bridge the system into the existing run.
+
+If you are on the NSW Central Coast, see the [Whole House Installation Package](/whole-house-installation-package) for the current packaged system-and-installation option in eligible postcodes. For supply-only purchases, compare the current [whole-house water filter systems](/water-filters/whole-house).
 
 ## Cartridge running cost
 
@@ -79,10 +81,10 @@ WaterMark certification is not a marketing badge. It is the legally required cer
 - Likely void your home and contents insurance for any water-damage claim caused by the unit.
 - Be refused for installation by a licensed plumber acting properly under their licence.
 
-Every WaterMark-certified product on this site shows its licence number on the page. See [WaterMark certification explained](/help/watermark-certification-explained/) for the full rundown of what the scheme actually covers and why it matters.
+Every WaterMark-certified product on this site shows its licence number on the page. See [WaterMark certification explained](/help/watermark-certification-explained) for the full rundown of what the scheme actually covers and why it matters.
 
 ## Where the savings actually are
 
 Right-size the system. Do not pay for three stages if two will do the job. Match housing size to flow demand - a 10" × 2.5" housing will choke a four-bedroom home, and a 20" × 4.5" housing on a one-bedroom unit is overspend.
 
-Browse the [whole-house category](/water-filters/whole-house/) to compare current pricing. The [how to choose a water filter](/help/which-filter/) page walks through the sizing decision in detail.
+Browse the [whole-house category](/water-filters/whole-house) to compare current pricing, or read the [whole-home filtration guide](/use/whole-home-filtration) for help matching a system to your water source and treatment goal.
