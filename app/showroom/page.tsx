@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title:
     'Visit Our Wyong Showroom - Water Filters Central Coast NSW',
   description:
-    'Walk-in water filter showroom in Wyong NSW Central Coast. Big Blue systems on display, cartridges in stock, free Click & Collect. Same-day dispatch on orders before 12pm. Mon-Fri 9-5.',
+    'Walk-in water filter showroom in Wyong NSW Central Coast. Big Blue systems on display, cartridges in stock, free Click & Collect. Same-day dispatch on orders before 12pm. Mon-Thu 9am-3pm, Fri 9am-1pm.',
   alternates: { canonical: '/showroom' },
   openGraph: {
     title:
@@ -61,7 +61,7 @@ const FAQS: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'What are your opening hours?',
-    a: 'The Wyong showroom is open Monday to Friday, 9am to 3pm AEST. We are closed on weekends and public holidays.',
+    a: 'The Wyong showroom is open Monday to Thursday, 9am to 3pm AEST, and Friday, 9am to 1pm AEST. We are closed on weekends and public holidays.',
   },
   {
     q: 'Do you offer Click & Collect?',
@@ -148,7 +148,7 @@ export default function ShowroomPage() {
                   Hours
                 </dt>
                 <dd className="mt-1 text-base text-black">
-                  Mon-Fri 9am-3pm AEST · Closed weekends
+                  Mon-Thu 9am-3pm · Fri 9am-1pm AEST · Closed weekends
                 </dd>
               </div>
             </dl>
