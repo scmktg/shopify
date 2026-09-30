@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { CATEGORIES } from '@/content/categories';
 import { CartButton } from '@/components/cart/CartButton';
 import { SearchBar } from '@/components/search/SearchBar';
+import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import { MobileMenu } from './MobileMenu';
 
 export function Header() {
@@ -79,6 +80,10 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1">
+          <ZipPaymentBadge
+            location="header"
+            className="hidden sm:inline-flex mr-1"
+          />
           <SearchBar triggerClassName="inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
           <CartButton className="relative inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
           <MobileMenu items={navItems} />
