@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
-import { DosingTankComparison } from '@/components/category/DosingTankComparison';
 import { CATEGORIES } from '@/content/categories';
 import {
   buildCatalogQuery,
@@ -31,9 +30,9 @@ const PATHNAME = '/pumps-and-tanks/dosing-tanks';
 const PAGE_SIZE = 24;
 const TITLE = 'Chemical Dosing Tanks & Bunds';
 const INTRO =
-  'Chemical dosing tanks and secondary-containment bunds for water treatment, chlorine, antiscalant, pH correction and industrial dosing. Choose from square 40L and 60L tanks or round polyethylene tanks from 50L to 500L. Tanks and bunds are sold separately so you can buy only the containment you need, with compatible bund sizing shown below.';
+  'Chemical dosing tanks and secondary-containment bunds for water treatment, chlorine, antiscalant, pH correction and industrial dosing. Choose from square 40L and 60L tanks or round polyethylene tanks from 50L to 500L. Tanks and chemical bunds are sold separately so you can select the right combination for your installation.';
 const META_DESCRIPTION =
-  'Chemical dosing tanks and bunds from 40L to 500L. Polyethylene tanks and matched secondary-containment bunds for water-treatment dosing.';
+  'Chemical dosing tanks and bunds from 40L to 500L. Polyethylene tanks and secondary-containment bunds for water-treatment dosing.';
 
 const pumpsAndTanks = CATEGORIES.find((category) => category.slug === CATEGORY);
 
@@ -115,8 +114,6 @@ export default async function DosingCategoryPage({
         subcategories={pumpsAndTanks?.subcategories ?? []}
         activeSubSlug={SUBCATEGORY}
       />
-
-      <DosingTankComparison />
 
       {loadFailed && (
         <div
