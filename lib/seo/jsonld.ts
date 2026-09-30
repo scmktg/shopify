@@ -114,10 +114,15 @@ export function localBusinessSchema(): JsonLd {
           'Tuesday',
           'Wednesday',
           'Thursday',
-          'Friday',
         ],
         opens: '09:00',
         closes: '15:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Friday'],
+        opens: '09:00',
+        closes: '13:00',
       },
     ],
     priceRange: '$$',
@@ -135,7 +140,7 @@ export function localBusinessSchema(): JsonLd {
 /**
  * Store-scoped LocalBusiness schema for the /showroom landing page.
  * Augments the sitewide LocalBusiness with geo coordinates, a
- * full openingHoursSpecification (Mon-Fri 09:00-15:00), an
+ * full openingHoursSpecification (Mon-Thu 09:00-15:00; Fri 09:00-13:00), an
  * areaServed list (Central Coast suburbs), and a hasMap link to
  * Google Maps. Use this on the showroom page only — the layout
  * already emits the sitewide LocalBusiness on every page.
@@ -184,10 +189,15 @@ export function storeSchema(input: StoreSchemaInput): JsonLd {
           'Tuesday',
           'Wednesday',
           'Thursday',
-          'Friday',
         ],
         opens: '09:00',
         closes: '15:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Friday'],
+        opens: '09:00',
+        closes: '13:00',
       },
     ],
     hasMap: input.mapUrl,
