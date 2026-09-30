@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import type { Product, Money } from '@/types/product';
+import type { Product, Money, ProductImage } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
 import { CertificationSlot } from './CertificationSlot';
@@ -35,12 +35,19 @@ function offersInstallPackage(content: ProductContent): boolean {
   return (content.tags ?? []).includes(INSTALL_PACKAGE_TAG);
 }
 
+interface PackageComponentPreview {
+  title: string;
+  image: ProductImage | null;
+}
+
 interface PackageUpgrade {
   title: string;
   href: string;
   price: Money;
   savings: Money;
   available: boolean;
+  tank: PackageComponentPreview | null;
+  bund: PackageComponentPreview | null;
   componentLink: {
     title: string;
     href: string;
@@ -146,7 +153,18 @@ export function ProductDetail({
               <p className="text-sm font-semibold text-black">
                 Need the complete setup?
               </p>
-              <p className="mt-1 text-sm font-medium text-black">
+
+              {packageUpgrade.tank && packageUpgrade.bund && (
+                <div className="mt-3 flex items-center gap-3" aria-label="Tank and bund package contents">
+                  <PackageComponentThumbnail component={packageUpgrade.tank} />
+                  <span className="text-xl font-semibold text-black/45" aria-hidden="true">
+                    +
+                  </span>
+                  <PackageComponentThumbnail component={packageUpgrade.bund} />
+                </div>
+              )}
+
+              <p className="mt-3 text-sm font-medium text-black">
                 {packageUpgrade.title}
               </p>
               <p className="mt-1 text-sm leading-6 text-black/75">
@@ -260,6 +278,31 @@ export function ProductDetail({
       />
       </article>
     </VariantSelectionProvider>
+  );
+}
+
+function PackageComponentThumbnail({
+  component,
+}: {
+  component: PackageComponentPreview;
+}) {
+  return (
+    <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-md border border-black/10 bg-white p-1.5">
+      {component.image ? (
+        <img
+          src={component.image.url}
+          alt={component.image.altText ?? component.title}
+          width={80}
+          height={80}
+          loading="lazy"
+          className="h-full w-full object-contain"
+        />
+      ) : (
+        <span className="px-1 text-center text-[10px] leading-tight text-black/55">
+          {component.title}
+        </span>
+      )}
+    </div>
   );
 }
 
