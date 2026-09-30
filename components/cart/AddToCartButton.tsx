@@ -21,8 +21,6 @@ interface AddToCartButtonProps {
   available: boolean;
   /** Live Shopify quantity for low-stock/backorder messaging. */
   inventoryQuantity?: number | null;
-  /** Current selected-variant price. Used to show the live combined total. */
-  unitPrice?: Money;
   /** Optional matching tank/bund sold as a separate Shopify line item. */
   companion?: CompanionPurchaseItem | null;
   /** Notifies the PDP when the current selection contains backordered units. */
@@ -49,7 +47,6 @@ export function AddToCartButton({
   variantId,
   available,
   inventoryQuantity = null,
-  unitPrice,
   companion = null,
   onBackorderChange,
   label: labelOverride,
@@ -210,21 +207,6 @@ export function AddToCartButton({
     if (!Number.isFinite(value)) return null;
     return Math.max(0, value - bundleDiscount);
   }, [companion, bundleDiscount]);
-
-  const displayedTotal = useMemo(() => {
-    if (!unitPrice) return null;
-    const primary = Number.parseFloat(unitPrice.amount);
-    if (!Number.isFinite(primary)) return null;
-    let perSet = primary;
-    if (pairSelected && companion) {
-      const extra = Number.parseFloat(companion.price.amount);
-      if (Number.isFinite(extra)) perSet += extra - bundleDiscount;
-    }
-    return new Intl.NumberFormat('en-AU', {
-      style: 'currency',
-      currency: unitPrice.currencyCode,
-    }).format(perSet * quantity);
-  }, [unitPrice, pairSelected, companion, bundleDiscount, quantity]);
 
   const onAdd = async () => {
     if (busy || buyingNow || isMutating || pendingRequestedQuantity !== null)
@@ -478,21 +460,6 @@ export function AddToCartButton({
               {inStockLimit === 1 ? 'unit' : 'units'}
             </button>
           )}
-        </div>
-      )}
-
-      {displayedTotal && (
-        <div className="flex items-baseline justify-between gap-3 rounded-md bg-black/[0.04] px-4 py-3">
-          <span className="text-sm font-medium text-black/70">
-            {pairSelected
-              ? 'Bundle total'
-              : quantity > 1
-                ? 'Order total'
-                : 'Current total'}
-          </span>
-          <span className="text-xl font-bold text-black">
-            {displayedTotal}
-          </span>
         </div>
       )}
 
