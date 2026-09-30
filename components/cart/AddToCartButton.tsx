@@ -9,6 +9,8 @@ export interface CompanionPurchaseItem {
   title: string;
   variantId: string;
   price: Money;
+  /** Automatic Shopify saving applied when this matching item is bought with the primary item. */
+  bundleDiscount?: Money | null;
   available: boolean;
 }
 
@@ -66,6 +68,20 @@ export function AddToCartButton({
     includeCompanion && companion?.available && companion.variantId,
   );
 
+  const bundleDiscount = useMemo(() => {
+    if (!companion?.bundleDiscount) return 0;
+    if (companion.bundleDiscount.currencyCode !== companion.price.currencyCode) return 0;
+    const value = Number.parseFloat(companion.bundleDiscount.amount);
+    return Number.isFinite(value) && value > 0 ? value : 0;
+  }, [companion]);
+
+  const companionEffectivePrice = useMemo(() => {
+    if (!companion) return null;
+    const value = Number.parseFloat(companion.price.amount);
+    if (!Number.isFinite(value)) return null;
+    return Math.max(0, value - bundleDiscount);
+  }, [companion, bundleDiscount]);
+
   const displayedTotal = useMemo(() => {
     if (!unitPrice) return null;
     const primary = Number.parseFloat(unitPrice.amount);
@@ -73,13 +89,13 @@ export function AddToCartButton({
     let perSet = primary;
     if (pairSelected && companion) {
       const extra = Number.parseFloat(companion.price.amount);
-      if (Number.isFinite(extra)) perSet += extra;
+      if (Number.isFinite(extra)) perSet += extra - bundleDiscount;
     }
     return new Intl.NumberFormat('en-AU', {
       style: 'currency',
       currency: unitPrice.currencyCode,
     }).format(perSet * quantity);
-  }, [unitPrice, pairSelected, companion, quantity]);
+  }, [unitPrice, pairSelected, companion, bundleDiscount, quantity]);
 
   const onAdd = async () => {
     if (busy || buyingNow || isMutating) return;
@@ -122,7 +138,7 @@ export function AddToCartButton({
     : busy
       ? 'Adding…'
       : pairSelected
-        ? 'Add both to cart'
+        ? 'Add bundle to cart'
         : (labelOverride ?? 'Add to cart');
 
   const buyNowLabel = !available
@@ -130,7 +146,7 @@ export function AddToCartButton({
     : buyingNow
       ? 'Redirecting…'
       : pairSelected
-        ? 'Buy both now'
+        ? 'Buy bundle now'
         : 'Buy now';
 
   const anyBusy = busy || buyingNow || isMutating;
@@ -166,12 +182,29 @@ export function AddToCartButton({
             <span className="block text-sm font-semibold text-black">
               Add matching {companion.title}
             </span>
-            <span className="mt-0.5 block text-sm text-black/65">
-              Sold separately. Add it to this order in one click.
-            </span>
+            {bundleDiscount > 0 ? (
+              <span className="mt-0.5 block text-sm font-medium text-brand-blue">
+                Save {formatMoneyValue(bundleDiscount, companion.price.currencyCode)} when purchased together
+              </span>
+            ) : (
+              <span className="mt-0.5 block text-sm text-black/65">
+                Sold separately. Add it to this order in one click.
+              </span>
+            )}
           </span>
-          <span className="flex-none text-sm font-semibold text-black">
-            +{formatMoney(companion.price)}
+          <span className="flex-none text-right text-sm text-black">
+            {bundleDiscount > 0 && companionEffectivePrice !== null ? (
+              <>
+                <span className="block text-xs text-black/50 line-through">
+                  +{formatMoney(companion.price)}
+                </span>
+                <span className="block font-semibold">
+                  +{formatMoneyValue(companionEffectivePrice, companion.price.currencyCode)}
+                </span>
+              </>
+            ) : (
+              <span className="font-semibold">+{formatMoney(companion.price)}</span>
+            )}
           </span>
         </label>
       )}
@@ -179,7 +212,7 @@ export function AddToCartButton({
       {displayedTotal && (
         <div className="flex items-baseline justify-between gap-3 rounded-md bg-black/[0.04] px-4 py-3">
           <span className="text-sm font-medium text-black/70">
-            {pairSelected ? 'Tank + bund total' : quantity > 1 ? 'Order total' : 'Current total'}
+            {pairSelected ? 'Bundle total' : quantity > 1 ? 'Order total' : 'Current total'}
           </span>
           <span className="text-xl font-bold text-black">{displayedTotal}</span>
         </div>
@@ -247,8 +280,12 @@ export function AddToCartButton({
 function formatMoney(money: Money): string {
   const amount = Number.parseFloat(money.amount);
   if (!Number.isFinite(amount)) return `${money.amount} ${money.currencyCode}`;
+  return formatMoneyValue(amount, money.currencyCode);
+}
+
+function formatMoneyValue(amount: number, currencyCode: string): string {
   return new Intl.NumberFormat('en-AU', {
     style: 'currency',
-    currency: money.currencyCode,
+    currency: currencyCode,
   }).format(amount);
 }
