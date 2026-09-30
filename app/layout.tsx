@@ -56,7 +56,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           <>
             <Script
               src="https://static.zip.co/lib/js/zm-widget-js/dist/zip-widget.min.js"
-              strategy="afterInteractive"
+              strategy="beforeInteractive"
             />
             <GoogleAnalytics />
             <JsonLdScript
