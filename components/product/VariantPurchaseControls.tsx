@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import type { Money } from '@/types/product';
 import {
   AddToCartButton,
@@ -29,6 +30,7 @@ export function VariantPurchaseControls({
     selectedOptions,
     selectOption,
   } = useVariantSelection();
+  const [hasBackorder, setHasBackorder] = useState(false);
 
   const price = selectedVariant.price ?? fallbackPrice;
   const compareAt = selectedVariant.compareAtPrice;
@@ -130,7 +132,11 @@ export function VariantPurchaseControls({
                             unavailable={!available}
                           />
                         )}
-                        <span className={!available && !colourOption ? 'line-through' : ''}>
+                        <span
+                          className={
+                            !available && !colourOption ? 'line-through' : ''
+                          }
+                        >
                           {value}
                         </span>
                       </button>
@@ -150,11 +156,13 @@ export function VariantPurchaseControls({
           inventoryQuantity={selectedVariant.quantityAvailable}
           unitPrice={price}
           companion={companion}
+          onBackorderChange={setHasBackorder}
           label={ctaLabel}
           enableBuyNow
         />
         {selectedVariant.availableForSale &&
-          selectedVariant.quantityAvailable !== 0 && <DispatchCountdown />}
+          selectedVariant.quantityAvailable !== 0 &&
+          !hasBackorder && <DispatchCountdown />}
       </div>
     </>
   );
