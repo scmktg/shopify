@@ -154,38 +154,51 @@ export function ProductDetail({
                 Need the complete setup?
               </p>
 
-              {packageUpgrade.tank && packageUpgrade.bund && (
-                <div className="mt-3 flex items-center gap-3" aria-label="Tank and bund package contents">
-                  <PackageComponentThumbnail component={packageUpgrade.tank} />
-                  <span className="text-xl font-semibold text-black/45" aria-hidden="true">
-                    +
-                  </span>
-                  <PackageComponentThumbnail component={packageUpgrade.bund} />
+              <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-center">
+                {packageUpgrade.tank && packageUpgrade.bund && (
+                  <div
+                    className="flex shrink-0 items-center gap-2"
+                    aria-label="Tank and bund package contents"
+                  >
+                    <PackageComponentThumbnail component={packageUpgrade.tank} />
+                    <span
+                      className="text-lg font-semibold text-black/40"
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                    <PackageComponentThumbnail component={packageUpgrade.bund} />
+                  </div>
+                )}
+
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium leading-5 text-black">
+                    {packageUpgrade.title}
+                  </p>
+                  <p className="mt-1 text-sm leading-6 text-black/75">
+                    <span className="font-semibold text-black">
+                      {formatMoney(packageUpgrade.price)}
+                    </span>{' '}
+                    · Save {formatMoney(packageUpgrade.savings)}
+                  </p>
                 </div>
+
+                <div className="shrink-0 sm:ml-auto">
+                  <Link
+                    href={packageUpgrade.href}
+                    className="inline-flex min-h-10 w-full items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-black/85 sm:w-auto"
+                  >
+                    View package
+                  </Link>
+                </div>
+              </div>
+
+              {!packageUpgrade.available && (
+                <p className="mt-2 text-xs font-medium text-black/55">
+                  Package currently unavailable
+                </p>
               )}
 
-              <p className="mt-3 text-sm font-medium text-black">
-                {packageUpgrade.title}
-              </p>
-              <p className="mt-1 text-sm leading-6 text-black/75">
-                <span className="font-semibold text-black">
-                  {formatMoney(packageUpgrade.price)}
-                </span>{' '}
-                · Save {formatMoney(packageUpgrade.savings)}
-              </p>
-              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
-                <Link
-                  href={packageUpgrade.href}
-                  className="inline-flex min-h-10 items-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-black/85 transition-colors"
-                >
-                  View package
-                </Link>
-                {!packageUpgrade.available && (
-                  <span className="text-xs font-medium text-black/55">
-                    Package currently unavailable
-                  </span>
-                )}
-              </div>
               {packageUpgrade.componentLink && (
                 <p className="mt-3 text-xs leading-5 text-black/60">
                   Already have one component?{' '}
@@ -287,18 +300,18 @@ function PackageComponentThumbnail({
   component: PackageComponentPreview;
 }) {
   return (
-    <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-md border border-black/10 bg-white p-1.5">
+    <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-md border border-black/10 bg-white p-1 sm:h-14 sm:w-14">
       {component.image ? (
         <img
           src={component.image.url}
           alt={component.image.altText ?? component.title}
-          width={80}
-          height={80}
+          width={64}
+          height={64}
           loading="lazy"
           className="h-full w-full object-contain"
         />
       ) : (
-        <span className="px-1 text-center text-[10px] leading-tight text-black/55">
+        <span className="px-1 text-center text-[9px] leading-tight text-black/55">
           {component.title}
         </span>
       )}
