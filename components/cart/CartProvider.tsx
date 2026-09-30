@@ -17,6 +17,10 @@ import {
   removeCartLine,
   updateCartLine,
 } from '@/lib/shopify/cart';
+import {
+  addMultipleToCart,
+  type CartItemInput,
+} from '@/lib/shopify/addMultipleToCart';
 import type { Cart } from '@/types/cart';
 import {
   trackAddToCart,
@@ -33,6 +37,7 @@ interface CartContextValue {
   error: string | null;
   isOpen: boolean;
   addItem: (variantId: string, quantity?: number) => Promise<void>;
+  addItems: (items: ReadonlyArray<CartItemInput>) => Promise<void>;
   /**
    * Add a variant to the cart and redirect to the Shopify checkout
    * URL. Does not open the drawer — the user is leaving the
@@ -40,6 +45,7 @@ interface CartContextValue {
    * real navigation rather than a client-side route push.
    */
   buyNow: (variantId: string, quantity?: number) => Promise<void>;
+  buyNowItems: (items: ReadonlyArray<CartItemInput>) => Promise<void>;
   updateItem: (lineId: string, quantity: number) => Promise<void>;
   removeItem: (lineId: string) => Promise<void>;
   openDrawer: () => void;
@@ -123,6 +129,28 @@ export function CartProvider({ children }: CartProviderProps) {
     [ensureCart],
   );
 
+  const addItems = useCallback(
+    async (items: ReadonlyArray<CartItemInput>) => {
+      if (items.length === 0) return;
+      setError(null);
+      setIsMutating(true);
+      try {
+        const current = await ensureCart();
+        const updated = await addMultipleToCart(current.id, items);
+        setCart(updated);
+        for (const item of items) {
+          trackAddToCart(updated, item.variantId, item.quantity);
+        }
+        setIsOpen(true);
+      } catch (caught) {
+        setError(extractMessage(caught, 'Could not add items to cart.'));
+      } finally {
+        setIsMutating(false);
+      }
+    },
+    [ensureCart],
+  );
+
   const buyNow = useCallback(
     async (variantId: string, quantity = 1) => {
       setError(null);
@@ -144,6 +172,30 @@ export function CartProvider({ children }: CartProviderProps) {
       }
       // Note: no finally — on success we're navigating away, so we leave
       // isMutating=true to keep buttons disabled until the page unloads.
+    },
+    [ensureCart],
+  );
+
+  const buyNowItems = useCallback(
+    async (items: ReadonlyArray<CartItemInput>) => {
+      if (items.length === 0) return;
+      setError(null);
+      setIsMutating(true);
+      try {
+        const current = await ensureCart();
+        const updated = await addMultipleToCart(current.id, items);
+        setCart(updated);
+        for (const item of items) {
+          trackAddToCart(updated, item.variantId, item.quantity);
+        }
+        trackBeginCheckout(updated);
+        if (typeof window !== 'undefined') {
+          window.location.assign(updated.checkoutUrl);
+        }
+      } catch (caught) {
+        setError(extractMessage(caught, 'Could not start checkout.'));
+        setIsMutating(false);
+      }
     },
     [ensureCart],
   );
@@ -203,7 +255,9 @@ export function CartProvider({ children }: CartProviderProps) {
       error,
       isOpen,
       addItem,
+      addItems,
       buyNow,
+      buyNowItems,
       updateItem,
       removeItem,
       openDrawer,
@@ -217,7 +271,9 @@ export function CartProvider({ children }: CartProviderProps) {
       error,
       isOpen,
       addItem,
+      addItems,
       buyNow,
+      buyNowItems,
       updateItem,
       removeItem,
       openDrawer,
