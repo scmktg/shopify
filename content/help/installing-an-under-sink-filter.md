@@ -1,63 +1,75 @@
 ---
-title: "Installing an Under-Sink Water Filter"
-description: "Step-by-step DIY guide to installing an under-sink water filter in an Australian kitchen. Tools, fittings, and when to call a plumber."
+title: "Under-Sink Water Filter Installation Guide | Australia"
+description: "Step-by-step guide to under-sink water filter installation in Australia, including reverse osmosis systems, fittings, tools and when to call a plumber."
 relatedLinks:
-  - { label: "Under-sink water filters", href: "/water-filters/under-sink/" }
-  - { label: "Cartridge sets", href: "/cartridges/cartridge-sets/" }
-  - { label: "RO filter taps", href: "/plumbing/ro-filter-taps/" }
+  - { label: "5-stage reverse osmosis system", href: "/water-filters/reverse-osmosis/under-sink-water-filter-5-stage-reverse-osmosis-system" }
+  - { label: "Reverse osmosis systems", href: "/water-filters/reverse-osmosis" }
+  - { label: "Under-sink water filters", href: "/water-filters/under-sink" }
+  - { label: "RO filter taps", href: "/plumbing/ro-filter-taps" }
 faq:
   - q: "Do I need a plumber to install an under-sink filter?"
-    a: "For most single-stage and multi-stage filters that tap into the cold-water line under the sink with the included push-fit fittings, no - it is a DIY job for anyone comfortable with basic tools. Reverse osmosis systems with a drain saddle, anything plumbed into the hot line, and any whole-house system require a licensed plumber by law in NSW and most other Australian states."
-  - q: "Will it void my sink warranty if I drill a hole for the filtered tap?"
-    a: "Drilling a stainless-steel sink for a dedicated filtered tap is standard practice and does not void typical sink warranties. Drilling a stone benchtop is more involved and may require a stonemason. Many filtered taps mount through an existing pre-cut hole (sink-side soap dispenser hole, for example) so check what you have before assuming you need to drill."
-  - q: "How long does an install actually take?"
-    a: "Single-stage carbon filter, existing pre-cut hole for the dedicated tap: 30-45 minutes. Multi-stage system or any drilling required: 1-2 hours. Reverse osmosis with drain saddle and storage tank: 2-3 hours, or hire a plumber. Allow extra time on the first install - every kitchen has its own quirks."
+    a: "For a simple removable or point-of-use filter using the supplied fittings, installation may be straightforward for a competent DIY user. Reverse osmosis systems, drain connections and any work that alters regulated plumbing should be checked against local requirements and completed by a licensed plumber where required."
+  - q: "How long does an under-sink filter installation take?"
+    a: "A simple cartridge system can often be installed in under two hours. Reverse osmosis systems take longer because they add a storage tank, membrane stages and usually a drain connection. Allow extra time for drilling or tight cabinet access."
+  - q: "What is different about reverse osmosis installation?"
+    a: "A reverse osmosis system typically adds multiple pre-filter stages, an RO membrane, a storage tank, a dedicated drinking-water tap and a drain connection. The extra components make layout, tubing and leak-checking more important than on a basic two-stage under-sink filter."
   - q: "What do I do if I notice a leak after install?"
-    a: "Turn off the cold-water isolation valve under the sink straight away. Most leaks come from push-fit fittings that are not seated fully - disconnect, check the o-ring is intact, push back in until you feel the click. If the leak is at the threaded connection on the cartridge housing, check the o-ring and re-tighten by hand (do not over-tighten). If you cannot find the leak after a quick check, call a plumber."
+    a: "Turn off the cold-water isolation valve immediately. Check that push-fit tubing is cut square and fully seated, inspect the fitting and o-ring, and confirm threaded connections are correctly assembled. If the source is unclear or the connection forms part of regulated plumbing, call a licensed plumber."
 ---
 
-Most single-stage and multi-stage under-sink water filters are designed for DIY installation. The core skill is being comfortable turning off a water isolation valve and connecting a push-fit fitting. If that is fine, the install takes 30 to 90 minutes.
+An **under-sink water filter installation** is usually much simpler than a whole-house installation because all of the equipment sits inside the kitchen cabinet and treats water for one drinking point. The exact process depends on whether you are installing a simple cartridge filter or a multi-stage reverse osmosis system.
 
-This guide covers the standard install. Reverse osmosis systems with drain saddles and storage tanks are more involved - for RO, follow the manufacturer's specific instructions or hire a plumber.
+For customers comparing RO options, the [5-stage reverse osmosis water filter system](/water-filters/reverse-osmosis/under-sink-water-filter-5-stage-reverse-osmosis-system) is the standard residential configuration, while the full [reverse osmosis range](/water-filters/reverse-osmosis) covers other stage counts and treatment options.
 
 ## What you need
 
-Tools:
+Typical tools:
 
-- Adjustable spanner (shifter)
+- Adjustable spanner
 - Phillips-head screwdriver
 - Bucket and old towel
-- Drill with hole saw (only if drilling for the filtered tap - many sinks have a pre-cut hole)
-- Spirit level (for mounting the filter housing if needed)
+- Drill and suitable hole saw if a new filtered-water tap hole is required
+- Spirit level for mounting brackets where needed
+- Tube cutter or sharp blade for clean, square tubing cuts
 
-Fittings (most kits include these):
+Typical fittings supplied with an under-sink system may include:
 
-- T-piece adapter for the cold-water line, sized to your existing fitting (typically 1/2" BSP or 15mm push-fit)
-- Push-fit tubing, usually 1/4" or 3/8"
-- Dedicated filtered-water tap (separate from the kitchen mixer)
-- Mounting bracket for the cartridge housing
+- Cold-water feed adaptor
+- Push-fit tubing, commonly 1/4" or 3/8"
+- Dedicated filtered-water tap
+- Mounting bracket
+- Shut-off or isolation fittings appropriate to the system
 
-Check the fittings before you start. Australian cold-water lines under sinks are usually 1/2" BSP threaded or 15mm push-fit; some kits ship with 3/8" or 22mm fittings, which need an adapter.
+Check every fitting before starting. The exact connection depends on the plumbing already under the sink, so do not assume every kitchen uses the same thread or tube size.
 
-## Step-by-step
+## Standard under-sink filter installation
 
-1. **Turn off the cold-water isolation valve** under the sink. Open the kitchen tap to release pressure. Place the bucket and towel under the join you are about to break.
-2. **Disconnect the cold-water line** from the kitchen mixer. Catch any water that comes out.
-3. **Fit the T-piece adapter**. The T-piece sits between the isolation valve and the kitchen mixer's cold inlet. Tighten by hand, then a quarter-turn with the spanner. Do not over-tighten.
-4. **Reconnect the kitchen mixer** to the new T-piece outlet. Cold supply to the mixer is now restored.
-5. **Mount the filter housing** somewhere accessible inside the cabinet. The cartridge needs to be replaceable without disassembling the install - leave clearance below the housing. Use the included bracket or screw the housing directly to the cabinet wall.
-6. **Run the push-fit tubing** from the T-piece tap to the housing inlet. Cut the tubing square with a sharp blade, push the end into the fitting until you feel the click, then tug gently to confirm it is seated.
-7. **Run the outlet tubing** from the housing to where the dedicated filtered tap will sit. Same push-fit technique on the housing end.
-8. **Mount the filtered tap**. If a pre-cut hole exists, feed the tap through and tighten the retaining nut underneath. If you need to drill, use a hole saw sized to the tap shank (typically 12mm or 16mm).
-9. **Connect the outlet tubing to the filtered tap inlet** with the push-fit fitting on the bottom of the tap.
-10. **Open the cold-water isolation valve slowly**. Run the kitchen mixer first to check there are no leaks at the T-piece. Then open the dedicated filtered tap and run the first three to five litres through to flush the cartridge - output will be cloudy initially as the carbon dust clears.
+1. **Turn off the cold-water isolation valve** and open the kitchen tap briefly to release pressure.
+2. **Place a bucket and towel under the connection** before disconnecting any hose or fitting.
+3. **Install the cold-water feed adaptor** supplied with the filter, following the product instructions.
+4. **Mount the filter housing or bracket** somewhere accessible for future cartridge changes.
+5. **Cut push-fit tubing square** and push it fully into each fitting. Tug gently to confirm it is locked in place.
+6. **Install the dedicated filtered-water tap** through an existing hole or a correctly sized new opening where appropriate.
+7. **Connect the filter outlet to the drinking-water tap** and check that tubing is not kinked or sharply bent.
+8. **Open the water supply slowly** and inspect every connection for leaks.
+9. **Flush the cartridges** for the volume specified by the product instructions before drinking the water.
+
+## Installing a reverse osmosis system
+
+Reverse osmosis installation follows the same basic feed-water principle but adds several components. A typical [5-stage under-sink RO system](/water-filters/reverse-osmosis/under-sink-water-filter-5-stage-reverse-osmosis-system) includes sediment and carbon pre-filtration, the RO membrane, post-carbon polishing and a pressure storage tank.
+
+Plan cabinet space before starting. The filter manifold and storage tank both need room, and future cartridge changes should not require removing the entire installation.
+
+RO systems may also require a drain connection for reject water. Because drain and plumbing requirements vary by installation and jurisdiction, use the manufacturer's instructions and engage a licensed plumber where the work falls within regulated plumbing.
+
+## Choosing between a standard filter and RO
+
+A standard [under-sink water filter](/water-filters/under-sink) is usually the simpler choice when the goal is chlorine, taste, odour and sediment reduction at the kitchen tap.
+
+A [reverse osmosis system](/water-filters/reverse-osmosis) adds membrane filtration for much broader dissolved-contaminant reduction. The [5-stage RO system](/water-filters/reverse-osmosis/under-sink-water-filter-5-stage-reverse-osmosis-system) is a useful middle point for households wanting dedicated pre-treatment, the RO membrane and post-carbon polishing without adding an additional remineralisation stage.
 
 ## When to call a plumber
 
-- Anything cutting into mains-pressure pipework rather than the existing isolation-valve setup.
-- Drilling a stone or composite benchtop.
-- RO systems with drain saddles (a saddle clamp on the sink waste line - NSW Health considers some drain-saddle installs to need a licensed plumber).
-- Any whole-house system. Whole-house must be installed by a licensed plumber in NSW and most other Australian states.
-- If you find rotten plywood, copper pinhole leaks, or anything else suggesting an existing issue under the sink - fix the existing problem first.
+Use a licensed plumber where the installation requires regulated plumbing work, where a drain connection needs professional installation, where existing plumbing is damaged or non-standard, or whenever you are not confident that the connection can be completed safely and compliantly.
 
-A leaky push-fit fitting is the most common DIY mistake. If you spot a drip in the first 24 hours after install, turn the water off, disconnect the fitting, check the o-ring is intact and the tubing is cut square, push back in until it clicks. If it still leaks, the fitting is damaged - replace it rather than trying to live with it.
+If a fitting drips during testing, shut the water off before investigating. Push-fit leaks are commonly caused by tubing that is not fully inserted, is cut at an angle, or has a damaged end. Re-cut the tubing square where appropriate and replace damaged fittings rather than trying to compensate by over-tightening them.
