@@ -6,7 +6,7 @@ interface ZipPaymentBadgeProps {
 }
 
 const ZIP_PAYMENT_BADGE_URL =
-  'https://static.zip.co/developers/assets/default/footer-tile/footer-tile-new.png';
+  'https://static.zip.co/assets/default/footer-tile/footer-tile-new.png';
 
 export function ZipPaymentBadge({
   className = '',
