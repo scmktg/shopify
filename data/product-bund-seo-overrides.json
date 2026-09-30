@@ -1,0 +1,58 @@
+{
+  "chemical-bund-50l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "secondary-containment", "spill-containment", "50l"],
+    "shortDescription": "50L polyethylene chemical bund for secondary containment beneath the matching 50L Chemical Dosing Tank.",
+    "description": "A **50L chemical bund** designed as a secondary-containment tray for the matching 50L Chemical Dosing Tank. This is the **bund-only** product for buyers looking for a compact **chemical spill containment bund** rather than a complete tank-and-bund package.\n\nThe polyethylene bund provides a dedicated containment area beneath the dosing tank and is sold separately so it can be added to an existing compatible tank installation.\n\n- 50L chemical bund\n- Secondary containment for the matching 50L dosing tank\n- Polyethylene construction\n- Approx. 480 mm top OD × 360 mm bottom OD × 425 mm high\n- Bund only - tank sold separately\n- Suitable for compatible chemical dosing installations",
+    "features": ["50L chemical bund for secondary containment", "Fits the matching 50L Chemical Dosing Tank", "Polyethylene spill-containment construction", "480 mm top OD", "360 mm bottom OD", "425 mm high"],
+    "headlineSpecs": [{"label":"Bund size","value":"50L"},{"label":"Top OD","value":"480 mm"},{"label":"Bottom OD","value":"360 mm"},{"label":"Height","value":"425 mm"}],
+    "fullSpecs": [{"label":"Product type","value":"Chemical bund - bund only"},{"label":"Bund size","value":"50L"},{"label":"Material","value":"Polyethylene"},{"label":"Top outside diameter","value":"480 mm"},{"label":"Bottom outside diameter","value":"360 mm"},{"label":"Height","value":"425 mm"},{"label":"Rim width","value":"35 mm"},{"label":"Matching tank","value":"50L Chemical Dosing Tank"}],
+    "recommendedFor": ["Secondary containment beneath a 50L chemical dosing tank", "Water-treatment chemical dosing installations", "Existing compatible 50L dosing tank setups"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Secondary-containment accessory. Confirm chemical compatibility and site-specific containment requirements for the stored chemical, quantity, installation and jurisdiction."},
+    "ctas": {"primary":"Add bund to cart","secondary":null},
+    "upsells": {"boughtTogether":["chemical-dosing-tank-bunded-50l"],"moreInCategory":"auto"},
+    "seo": {"title":"50L Chemical Bund | Secondary Spill Containment","description":"50L polyethylene chemical bund for secondary spill containment beneath the matching 50L dosing tank. Bund only; tank sold separately.","ogImage":null}
+  },
+  "chemical-bund-100l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "secondary-containment", "spill-containment", "100l"],
+    "shortDescription": "100L polyethylene chemical bund for secondary containment beneath the matching 100L Chemical Dosing Tank.",
+    "description": "A **100L chemical bund** for secondary containment beneath the matching 100L Chemical Dosing Tank. This is the **bund-only** product and is intentionally focused on buyers searching for a **100L chemical bund**, **secondary containment bund** or **chemical spill containment bund** rather than a complete package.\n\nThe polyethylene bund can be added to an existing compatible dosing-tank installation where separate secondary containment is required.\n\n- 100L chemical bund\n- Secondary containment for the matching 100L dosing tank\n- Polyethylene construction\n- Approx. 625 mm top OD × 515 mm bottom OD × 440 mm high\n- Bund only - tank sold separately",
+    "features": ["100L chemical bund for secondary containment", "Fits the matching 100L Chemical Dosing Tank", "Polyethylene spill-containment construction", "625 mm top OD", "515 mm bottom OD", "440 mm high"],
+    "headlineSpecs": [{"label":"Bund size","value":"100L"},{"label":"Top OD","value":"625 mm"},{"label":"Bottom OD","value":"515 mm"},{"label":"Height","value":"440 mm"}],
+    "fullSpecs": [{"label":"Product type","value":"Chemical bund - bund only"},{"label":"Bund size","value":"100L"},{"label":"Material","value":"Polyethylene"},{"label":"Top outside diameter","value":"625 mm"},{"label":"Bottom outside diameter","value":"515 mm"},{"label":"Height","value":"440 mm"},{"label":"Rim width","value":"40 mm"},{"label":"Matching tank","value":"100L Chemical Dosing Tank"}],
+    "recommendedFor": ["Secondary containment beneath a 100L chemical dosing tank", "Commercial water-treatment dosing installations", "Existing compatible 100L dosing tank setups"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Secondary-containment accessory. Confirm chemical compatibility and site-specific containment requirements for the stored chemical, quantity, installation and jurisdiction."},
+    "ctas": {"primary":"Add bund to cart","secondary":null},
+    "upsells": {"boughtTogether":["chemical-dosing-tank-bunded-100l"],"moreInCategory":"auto"},
+    "seo": {"title":"100L Chemical Bund | Secondary Spill Containment","description":"100L polyethylene chemical bund for secondary spill containment beneath the matching 100L dosing tank. Bund only; tank sold separately.","ogImage":null}
+  },
+  "chemical-bund-200l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "secondary-containment", "spill-containment", "200l"],
+    "shortDescription": "200L polyethylene chemical bund for secondary containment beneath the matching 200L Chemical Dosing Tank.",
+    "description": "A **200L chemical bund** for secondary containment beneath the matching 200L Chemical Dosing Tank. This page targets the **bund-only** requirement: buyers who already have a compatible tank or specifically need a **200L chemical bund**, **secondary containment bund** or **spill containment bund**.\n\nThe polyethylene bund is sized to accept the matching 200L dosing tank and provides a separate containment component for commercial and industrial dosing installations.\n\n- 200L chemical bund\n- Secondary containment for the matching 200L dosing tank\n- Polyethylene construction\n- Approx. 725 mm top OD × 580 mm bottom OD × 732 mm high\n- Bund only - tank sold separately",
+    "features": ["200L chemical bund for secondary containment", "Fits the matching 200L Chemical Dosing Tank", "Polyethylene spill-containment construction", "725 mm top OD", "580 mm bottom OD", "732 mm high"],
+    "headlineSpecs": [{"label":"Bund size","value":"200L"},{"label":"Top OD","value":"725 mm"},{"label":"Bottom OD","value":"580 mm"},{"label":"Height","value":"732 mm"}],
+    "fullSpecs": [{"label":"Product type","value":"Chemical bund - bund only"},{"label":"Bund size","value":"200L"},{"label":"Material","value":"Polyethylene"},{"label":"Top outside diameter","value":"725 mm"},{"label":"Bottom outside diameter","value":"580 mm"},{"label":"Height","value":"732 mm"},{"label":"Rim width","value":"35 mm"},{"label":"Matching tank","value":"200L Chemical Dosing Tank"}],
+    "recommendedFor": ["Secondary containment beneath a 200L chemical dosing tank", "Commercial and industrial chemical dosing installations", "Existing compatible 200L dosing tank setups"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Secondary-containment accessory. Confirm chemical compatibility and site-specific containment requirements for the stored chemical, quantity, installation and jurisdiction."},
+    "ctas": {"primary":"Add bund to cart","secondary":null},
+    "upsells": {"boughtTogether":["chemical-dosing-tank-bunded-200l"],"moreInCategory":"auto"},
+    "seo": {"title":"200L Chemical Bund | Secondary Spill Containment","description":"200L polyethylene chemical bund for secondary spill containment beneath the matching 200L dosing tank. Bund only; tank sold separately.","ogImage":null}
+  },
+  "chemical-bund-400l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "secondary-containment", "spill-containment", "400l"],
+    "shortDescription": "400L polyethylene chemical bund used as the matched secondary-containment bund for the 300L Chemical Dosing Tank.",
+    "description": "A **400L chemical bund** used as the matched secondary-containment option for the 300L Chemical Dosing Tank. Enviro Aqua does not stock a separate 300L bund, so this larger 400L bund is the compatible bund option for that tank.\n\nThis is the **bund-only** product for buyers who already have the 300L tank or need a standalone **chemical spill containment bund**.\n\n- 400L chemical bund\n- Matched secondary-containment option for the 300L dosing tank\n- Polyethylene construction\n- Approx. 945 mm top OD × 790 mm bottom OD × 743 mm high\n- Bund only - tank sold separately",
+    "features": ["400L chemical bund for secondary containment", "Matched bund for the 300L Chemical Dosing Tank", "Polyethylene spill-containment construction", "945 mm top OD", "790 mm bottom OD", "743 mm high"],
+    "headlineSpecs": [{"label":"Bund size","value":"400L"},{"label":"Top OD","value":"945 mm"},{"label":"Bottom OD","value":"790 mm"},{"label":"Height","value":"743 mm"}],
+    "fullSpecs": [{"label":"Product type","value":"Chemical bund - bund only"},{"label":"Bund size","value":"400L"},{"label":"Material","value":"Polyethylene"},{"label":"Top outside diameter","value":"945 mm"},{"label":"Bottom outside diameter","value":"790 mm"},{"label":"Height","value":"743 mm"},{"label":"Rim width","value":"40 mm"},{"label":"Matching tank","value":"300L Chemical Dosing Tank"}],
+    "recommendedFor": ["Secondary containment beneath the 300L chemical dosing tank", "Commercial and industrial chemical dosing installations", "Existing compatible 300L dosing tank setups"],
+    "compliance": {"watermark":{"status":"not_required","licenceNumber":null,"certifier":null,"validUntil":null},"wels":null,"note":"Secondary-containment accessory. Confirm chemical compatibility and site-specific containment requirements for the stored chemical, quantity, installation and jurisdiction."},
+    "ctas": {"primary":"Add bund to cart","secondary":null},
+    "upsells": {"boughtTogether":["chemical-dosing-tank-300l"],"moreInCategory":"auto"},
+    "seo": {"title":"400L Chemical Bund | Secondary Spill Containment","description":"400L polyethylene chemical bund for secondary containment with the 300L dosing tank. Bund only; tank sold separately.","ogImage":null}
+  }
+}
