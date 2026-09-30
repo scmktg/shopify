@@ -302,7 +302,7 @@ export default function ShowroomPage() {
                 Step 2
               </p>
               <p className="mt-1 text-base text-black/80 leading-snug">
-                We pack and confirm by email within 2 hours.
+                We usually pack and confirm by email within one hour.
                 You&apos;ll get a &quot;ready for collection&quot;
                 notification.
               </p>
@@ -319,7 +319,7 @@ export default function ShowroomPage() {
             </li>
           </ol>
           <p className="mt-6 text-sm text-black/70">
-            No appointment needed. Most orders are ready within an
+            No appointment needed. Most orders are usually ready within one
             hour.
           </p>
         </section>
