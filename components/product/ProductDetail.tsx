@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import type { Product } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
+import type { CompanionPurchaseItem } from '@/components/cart/AddToCartButton';
 import { CertificationSlot } from './CertificationSlot';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
@@ -42,6 +43,7 @@ interface ProductDetailProps {
   subcategory: string;
   familyPaths?: ReadonlyMap<string, string> | null;
   initialVariantId?: string | null;
+  companion?: CompanionPurchaseItem | null;
 }
 
 export function ProductDetail({
@@ -51,6 +53,7 @@ export function ProductDetail({
   subcategory,
   familyPaths,
   initialVariantId = null,
+  companion = null,
 }: ProductDetailProps) {
   const subcategoryNode = findSubcategory(category, subcategory);
   const subcategoryLabel =
@@ -125,6 +128,7 @@ export function ProductDetail({
           <VariantPurchaseControls
             fallbackPrice={product.priceRange.minVariantPrice}
             ctaLabel={content.ctas?.primary ?? undefined}
+            companion={companion}
           />
 
           <div className="mt-4">
@@ -163,7 +167,6 @@ export function ProductDetail({
       </div>
 
       <HeadlineSpecs specs={content.headlineSpecs} />
-      {subcategory === 'dosing-tanks' && <DosingTankComparison />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
         <ThreeWayTapSalesSections />
       )}
@@ -175,6 +178,7 @@ export function ProductDetail({
       <ProductFeatures features={content.features} />
       <RecommendedFor items={content.recommendedFor} />
       <ComplianceSection compliance={content.compliance} />
+      {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
       <VariantBuyBanner
         fallbackPrice={product.priceRange.minVariantPrice}
