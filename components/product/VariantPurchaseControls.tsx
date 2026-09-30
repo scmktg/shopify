@@ -1,7 +1,10 @@
 'use client';
 
 import type { Money } from '@/types/product';
-import { AddToCartButton } from '@/components/cart/AddToCartButton';
+import {
+  AddToCartButton,
+  type CompanionPurchaseItem,
+} from '@/components/cart/AddToCartButton';
 import { PriceDisplay } from './PriceDisplay';
 import { useVariantSelection } from './VariantSelectionProvider';
 import { ColourSwatch } from './ColourSwatch';
@@ -11,11 +14,13 @@ import { DispatchCountdown } from './DispatchCountdown';
 interface VariantPurchaseControlsProps {
   fallbackPrice: Money;
   ctaLabel?: string;
+  companion?: CompanionPurchaseItem | null;
 }
 
 export function VariantPurchaseControls({
   fallbackPrice,
   ctaLabel,
+  companion = null,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -142,6 +147,8 @@ export function VariantPurchaseControls({
         <AddToCartButton
           variantId={selectedVariant.id}
           available={selectedVariant.availableForSale}
+          unitPrice={price}
+          companion={companion}
           label={ctaLabel}
           enableBuyNow
         />
