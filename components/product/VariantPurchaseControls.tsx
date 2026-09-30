@@ -68,7 +68,7 @@ export function VariantPurchaseControls({
         </span>
       </div>
 
-      <ZipMessaging className="mt-2" />
+      <ZipMessaging money={price} className="mt-2" />
 
       {variants.length > 1 && optionNames.length > 0 && (
         <div className="mt-6 space-y-4" aria-label="Product options">
