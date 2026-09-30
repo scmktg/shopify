@@ -5,6 +5,7 @@ import {
 } from '../client';
 import { PRODUCT_FRAGMENT } from '../fragments';
 import { transformShopifyProduct } from '../transformers';
+import { canonicalProductHandle } from '@/lib/products/getProductContent';
 import type { Product } from '@/types/product';
 import type { ShopifyProductByHandleResponse } from '@/types/shopify';
 
@@ -34,10 +35,11 @@ const GET_PRODUCT_BY_HANDLE = /* GraphQL */ `
 export async function fetchProductByHandle(
   handle: string,
 ): Promise<Product | null> {
+  const canonicalHandle = canonicalProductHandle(handle);
   const result: ShopifyClientResponse<ShopifyProductByHandleResponse> =
     await shopifyClient.request<ShopifyProductByHandleResponse>(
       GET_PRODUCT_BY_HANDLE,
-      { variables: { handle } },
+      { variables: { handle: canonicalHandle } },
     );
   const { data, errors } = result;
 
@@ -51,7 +53,7 @@ export async function fetchProductByHandle(
       errors.message ??
       'Unknown Shopify error';
     throw new Error(
-      `Failed to fetch product "${handle}": ${firstMessage}`,
+      `Failed to fetch product "${canonicalHandle}": ${firstMessage}`,
       { cause: errors },
     );
   }
@@ -61,10 +63,11 @@ export async function fetchProductByHandle(
 }
 
 export function getProductByHandle(handle: string): Promise<Product | null> {
+  const canonicalHandle = canonicalProductHandle(handle);
   const cached = unstable_cache(
-    () => fetchProductByHandle(handle),
-    ['product-by-handle', handle],
-    { revalidate: 60, tags: ['products', `product:${handle}`] },
+    () => fetchProductByHandle(canonicalHandle),
+    ['product-by-handle', canonicalHandle],
+    { revalidate: 60, tags: ['products', `product:${canonicalHandle}`] },
   );
   return cached();
 }
