@@ -57,8 +57,9 @@ const GONE_EXACT = new Set([
 
 // Known legacy product URLs that still have valid replacements. Keep these
 // ahead of the broad /product 410 handling and the dynamic product route.
-// The dosing-tank handle aliases also protect backlinks and indexed URLs
-// created before the bunds were split into separate products.
+// Historic "bunded" dosing-tank handles represented tank + bund packages,
+// so preserve their search/backlink equity by consolidating directly onto
+// the new fixed-package PDPs rather than the standalone tank pages.
 const LEGACY_PRODUCT_REDIRECTS = new Map<string, string>([
   [
     '/product/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l',
@@ -66,15 +67,15 @@ const LEGACY_PRODUCT_REDIRECTS = new Map<string, string>([
   ],
   [
     '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-50l',
-    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-50l',
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-50l',
   ],
   [
     '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l',
-    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-100l',
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l',
   ],
   [
     '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-200l',
-    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-200l',
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-200l',
   ],
 ]);
 
