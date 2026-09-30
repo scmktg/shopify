@@ -147,12 +147,14 @@ export function VariantPurchaseControls({
         <AddToCartButton
           variantId={selectedVariant.id}
           available={selectedVariant.availableForSale}
+          inventoryQuantity={selectedVariant.quantityAvailable}
           unitPrice={price}
           companion={companion}
           label={ctaLabel}
           enableBuyNow
         />
-        {selectedVariant.availableForSale && <DispatchCountdown />}
+        {selectedVariant.availableForSale &&
+          selectedVariant.quantityAvailable !== 0 && <DispatchCountdown />}
       </div>
     </>
   );
