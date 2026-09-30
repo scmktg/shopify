@@ -160,6 +160,17 @@ export default async function ProductPage({
       ])
     : [null, null];
   const packageVariant = packageProduct?.variants[0] ?? null;
+  const currentIsTank = handle.startsWith('chemical-dosing-tank-');
+  const tankProduct = packageConfig
+    ? currentIsTank
+      ? product
+      : componentProduct
+    : null;
+  const bundProduct = packageConfig
+    ? currentIsTank
+      ? componentProduct
+      : product
+    : null;
   const packageUpgrade =
     packageConfig && packageProduct && packageVariant
       ? {
@@ -171,6 +182,18 @@ export default async function ProductPage({
             currencyCode: packageVariant.price.currencyCode,
           },
           available: packageVariant.availableForSale,
+          tank: tankProduct
+            ? {
+                title: tankProduct.title,
+                image: tankProduct.featuredImage ?? tankProduct.images[0] ?? null,
+              }
+            : null,
+          bund: bundProduct
+            ? {
+                title: bundProduct.title,
+                image: bundProduct.featuredImage ?? bundProduct.images[0] ?? null,
+              }
+            : null,
           componentLink: componentProduct
             ? {
                 title: componentProduct.title,
