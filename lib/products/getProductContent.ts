@@ -1,4 +1,5 @@
 import productData from '@/data/products.json';
+import productOverrides from '@/data/product-overrides.json';
 import type { ProductContent, ProductContentMap } from './schema';
 
 function isFileMetaKey(key: string): boolean {
@@ -6,35 +7,28 @@ function isFileMetaKey(key: string): boolean {
 }
 
 /**
- * In-memory accessors over `data/products.json`.
- *
- * The JSON is bundled into the module graph at build time via the
- * static import above — there is no runtime fs read, no async work,
- * and no cache to invalidate. If the file changes you ship a new
- * build (which is the same workflow as updating any other file in
- * the repo). Build-time validation lives in `lib/products/validator.ts`
- * and is wired to `npm run validate:products` + `prebuild`.
- *
- * Usage rule: this is the only sanctioned entry point for product
- * content (description, categories, specs, compliance, upsells,
- * SEO). The Shopify GraphQL fragment still ships content fields
- * for legacy reasons, but the storefront does not read them — see
- * the boundary documented in `lib/products/schema.ts`.
+ * In-memory accessors over the main product-content map plus a small
+ * explicit override layer used while catalogue families are being
+ * restructured. `data/product-overrides.json` wins on handle collision
+ * and can also define content for newly-created Shopify products before
+ * they are folded back into the main products.json file.
  */
+const baseMap = productData as unknown as Record<string, ProductContent>;
+const overrideMap = productOverrides as unknown as Record<string, ProductContent>;
 
-const rawMap = productData as unknown as Record<string, ProductContent>;
-// Strip top-level metadata keys (e.g. `__placeholders`) so loader
-// callers never see them as products. The validator already skips
-// them; this keeps the runtime shape consistent.
+const rawMap: Record<string, ProductContent> = {
+  ...baseMap,
+  ...overrideMap,
+};
+
+// Strip top-level metadata keys (e.g. `__placeholders`) so loader callers
+// never see them as products.
 const map: ProductContentMap = Object.fromEntries(
   Object.entries(rawMap).filter(([key]) => !isFileMetaKey(key)),
 ) as ProductContentMap;
 
 /**
- * Returns the content entry for `handle`, or `null` when none
- * exists. Pages should call `notFound()` when the entry is missing
- * — a Shopify product without a corresponding products.json entry
- * is a build-failure case, not a render-with-blanks case.
+ * Returns the content entry for `handle`, or `null` when none exists.
  */
 export function getProductContent(handle: string): ProductContent | null {
   if (isFileMetaKey(handle)) return null;
@@ -53,9 +47,7 @@ export function getAllProductContent(): ProductContentMap {
  *
  * Excludes `excludeHandle` exactly AND any handle that starts with
  * `${excludeHandle}-` — this catches Shopify-side legacy duplicates
- * like `<handle>-dup2` / `<handle>-old` that share the canonical
- * stem. The data fix is to archive those duplicates in Shopify; this
- * code-side guard keeps them out of the rail in the meantime.
+ * like `<handle>-dup2` / `<handle>-old` that share the canonical stem.
  *
  * Returns at most `limit` handles.
  */
