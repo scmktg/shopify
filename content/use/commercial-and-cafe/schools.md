@@ -1,82 +1,76 @@
 ---
-title: "Water Bubblers for Australian Schools"
-description: "WaterMark-certified water bubblers for primary and secondary schools. NCC and AS/NZS 3497 requirements, accessibility under AS 1428, drinking-point ratios, and placement."
+title: "School Water Bubblers & Drinking Fountains Australia"
+description: "WaterMark-certified school water bubblers and drinking fountains for Australian primary and secondary schools, with stainless-steel and outdoor options."
 relatedLinks:
-  - { label: "Commercial and cafe", href: "/use/commercial-and-cafe/" }
-  - { label: "Bubblers and coolers", href: "/bubblers-and-coolers/" }
-  - { label: "Bubblers vs coolers", href: "/help/bubblers-vs-coolers/" }
-  - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained/" }
+  - { label: "Commercial water bubblers", href: "/commercial-water-bubblers" }
+  - { label: "Round stainless commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm" }
+  - { label: "Square stainless commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des" }
+  - { label: "Bubblers vs coolers", href: "/help/bubblers-vs-coolers" }
+  - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained" }
 faq:
   - q: "How many drinking fountains does my school need?"
-    a: "The National Construction Code references AS/NZS 3500 and the National Plumbing Code's drinking-water provisions, which historically work to a ratio of approximately one drinking-water outlet per 50 occupants for educational facilities. Local jurisdictions and individual school education department policies sometimes set tighter requirements - check your state education department's facilities standard for the current minimum."
+    a: "The National Construction Code and relevant state education-facility requirements determine drinking-water provision. Requirements can vary by jurisdiction and project, so confirm the current minimum with the relevant authority or project consultant before finalising the layout."
   - q: "Does every bubbler need to be wheelchair accessible?"
-    a: "Not every unit, but at least one accessible drinking-water outlet must be provided per group of fountains in line with AS 1428.1 (Design for access and mobility). The accessible outlet must meet the spout-height range and clear floor space requirements in the standard. Combination units with both standard and lowered spouts are common for new installations."
-  - q: "Is WaterMark mandatory for school water bubblers?"
-    a: "Yes. Every plumbed-in drinking fountain or bubbler that connects to mains pressure must carry a WaterMark licence under the WaterMark Certification Scheme. School facility tenders almost always list WaterMark as a non-negotiable requirement. Every certified bubbler on this site shows its licence number on the page."
+    a: "Accessible drinking-water provision needs to be considered as part of the project's accessibility design. Check the current NCC, AS 1428 requirements and project-specific documentation for the required number, clearances and outlet heights."
+  - q: "Is WaterMark important for school water bubblers?"
+    a: "Yes. A plumbed drinking fountain or bubbler intended for a regulated mains-water installation should be selected with the appropriate WaterMark certification for its application. Certified products on this site show their WaterMark details on the product page."
   - q: "Should we install bubblers with bottle-fill taps?"
-    a: "Yes, where the budget allows. Bottle-fill taps are now standard at most new school installations because they reduce single-use plastic and let students refill durable bottles between classes. Combination bubbler-plus-bottle-fill units are usually 20-30% more than a plain bubbler and pay back through reduced waste and tuckshop bottle sales."
-  - q: "What about lead-free certification?"
-    a: "Mandatory. Since the 2020 NCC amendment, all new plumbing products in contact with drinking water must comply with the lead-free standard (less than 0.25% lead by weighted average across wetted surfaces). Bubblers should be specified with lead-free brass or stainless-steel waterways. Every product on this site lists lead-free status on the page."
+    a: "Bottle-fill capability is useful where students routinely carry reusable bottles. A combination bubbler and bottle-fill outlet can reduce queues and make the same drinking station suitable for both direct drinking and bottle refills."
+  - q: "What material is best for a school bubbler?"
+    a: "Stainless steel is a common choice for high-traffic indoor and sheltered installations. For exposed outdoor schoolyards, a rust-resistant outdoor cabinet can be a better fit depending on the site and cleaning environment."
 ---
 
-Australian schools have specific requirements for drinking-water provision - drinking-point ratios, accessibility under AS 1428, plumbing compliance under the National Construction Code, and the WaterMark certification baseline. This page summarises what to specify and what to avoid.
+Australian schools searching for **school water bubblers**, **school drinking fountains** and **filtered water fountains for schools** generally need the same things: reliable high-traffic hardware, appropriate plumbing certification, straightforward servicing and a cabinet suited to where the unit will be installed.
 
-## Compliance baseline
+Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes filtered plumbed units for schools, offices, gyms and public facilities. For sheltered school corridors and indoor areas, compare the [round stainless commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) and [square stainless commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des). For exposed outdoor areas, see the [rust-free HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm).
 
-Three things every school bubbler installation has to satisfy:
+## What to look for in a school water bubbler
 
-- **NCC / AS/NZS 3500 plumbing code.** Drinking-water provision for educational facilities, plus general plumbing-code compliance for any mains-pressure connection. Local councils inspect this.
-- **AS 1428.1 (accessibility).** At least one accessible drinking-water outlet per group, with the specified spout height and clear floor space.
-- **WaterMark Certification Scheme.** Mandatory for any product connecting to mains pressure. The licence number must be visible on the product or its documentation.
+For a school or education facility, prioritise:
 
-A bubbler that fails any of these will fail the inspection and have to come out. Specifying compliant equipment up front avoids that.
+- **WaterMark status appropriate to the installation** so the plumber and project team can verify compliance.
+- **Durable cabinet construction** suited to repeated daily use and cleaning.
+- **Simple push-button operation** that students can use quickly.
+- **Filtered chilled water** where taste and temperature are important.
+- **Standard serviceable filters and fittings** rather than proprietary consumables.
+- **Bottle-fill capability** where reusable bottles are common.
+- **Outdoor suitability** where the unit is exposed to weather rather than installed under cover.
 
-## Drinking-point ratio
+## Stainless-steel school bubblers
 
-The standard ratio referenced through the NCC for educational facilities works out to approximately **one drinking-water outlet per 50 occupants**. For a 600-student primary school that means 12 outlets at minimum, distributed across the campus.
+Stainless-steel water bubblers are well suited to indoor and sheltered school locations because they are easy to clean, visually simple and durable under repeated use. The [round stainless model](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) is the simplest commercial format, while the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) adds a flat-sided cabinet that sits neatly against walls and includes a side outlet for bottle filling.
 
-State education departments typically have their own facility design standards layered on top - some require tighter ratios for early-learning settings, others specify minimum numbers per playground area or per building wing. Always check the current standard from the relevant state department of education before finalising the layout.
+## Outdoor school drinking fountains
 
-## Placement guidance
+For exposed schoolyards, pool areas or outdoor sports zones, cabinet material matters more. The [rust-free HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm) is designed for outdoor exposure where a polymer cabinet can avoid the corrosion issues associated with lower-grade painted steel.
 
-The right number of outlets in the wrong places is wasted spend. Standard placement covers:
+## Drinking-point planning
 
-- **At least one accessible bubbler per playground area.** Maximum walking distance from any play area should be reasonable - most education-department standards target under 50 metres.
-- **Near every classroom block exit.** Students filling bottles between classes should not have to detour across the school.
-- **Outside the canteen / tuckshop.** Reduces tuckshop drink sales and visible single-use plastic on campus.
-- **In sports halls and PE areas.** During physical activity, hydration access should be immediate. Multi-spout units suit high-traffic locations.
-- **Adjacent to staff rooms.** Often forgotten - staff need accessible drinking water too.
+The number and placement of school drinking points should be established against the current project requirements, relevant building and accessibility standards and the applicable state education-facility guidance. In practical terms, distribute drinking points so students do not need to cross the campus during short breaks and so high-traffic areas do not depend on one unit.
 
-## Accessibility - getting AS 1428.1 right
+Common locations include:
 
-For any group of two or more drinking fountains, at least one must be accessible. The key requirements:
+- playground and courtyard areas
+- classroom-block exits
+- sports halls and PE areas
+- canteen or tuckshop zones
+- administration and staff areas
+- high-traffic corridors between teaching spaces
 
-- **Spout height** between 700mm and 850mm above finished floor level for wheelchair users.
-- **Clear floor space** of 800mm × 1300mm in front of the unit, free of obstructions.
-- **Push-button activation** operable with a clenched fist (no tight pinch grips, no force greater than 22N).
-- **Approach** for ambulant disabled users, including handrail clearance where the bubbler is recessed.
+## Accessibility
 
-Combination units with a high spout (standard height) and a low spout (accessible height) on the same unit satisfy both adult-standing-height and accessibility requirements at the same location. They are now the default specification at most new school installations.
+Accessibility requirements should be checked during design rather than after equipment has been purchased. The project team should confirm the applicable clearances, approach space, controls and outlet heights under the current accessibility requirements for the building.
 
-## Bottle-fill taps
+Where a project needs both standing-height and accessible drinking points, specify the overall drinking-station layout accordingly rather than assuming one standard-height unit will satisfy every user.
 
-The shift from plain bubblers to combination bubbler-plus-bottle-fill units has been steady across Australian schools over the past decade. Drivers:
+## Bottle filling for schools
 
-- Reduces single-use plastic on campus.
-- Reduces tuckshop bottled-drink sales (helpful for healthy-canteen policies).
-- Speeds up hydration breaks in PE and during sports days.
-- Easier for younger students who struggle with the bubbler stream.
+A bottle-fill outlet is useful for schools that encourage reusable bottles. It lets students refill without holding a bottle under the bubbler stream and can reduce queues during breaks or sports sessions.
 
-Specify a unit with a sensor-activated bottle-fill spout (touchless) plus a push-button bubbler. The sensor reduces germ transfer and works hands-free for students carrying bottles.
+The [square stainless commercial bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) includes a side tap, while other cabinet styles suit sites where direct drinking is the main requirement.
 
-## Stainless-steel grade
+## Filtration and servicing
 
-For school environments - high traffic, frequent cleaning with chlorine-based disinfectants, occasional vandalism - SUS304 stainless steel is the minimum. SUS316 is preferable for outdoor or coastal locations because of saltwater aerosol corrosion.
+Commercial school bubblers should be easy for facilities staff or service contractors to maintain. The Enviro Aqua commercial range uses standard filter formats rather than proprietary sealed consumables, making future cartridge replacement simpler.
 
-Avoid cheaper steel grades and powder-coated mild steel - both will pit and corrode within a few years in school conditions.
-
-## Filtration
-
-All school bubblers should ship with at least an inline carbon filter to remove chlorine taste from the mains supply. Heavy-use sites benefit from a sediment pre-filter to extend the carbon cartridge life. Cartridge changes are typically a school-maintenance task; plan for one to two changes per year per unit depending on water quality and usage.
-
-Browse the [bubblers and coolers category](/bubblers-and-coolers/) for current WaterMark-certified options with licence numbers visible on each product. The [bubblers vs coolers](/help/bubblers-vs-coolers/) page covers the broader plumbed-vs-bottled question for any commercial setting.
+For a side-by-side comparison of cabinet material, cooling capacity, bottle-fill options and installation use cases, see the full [commercial water bubblers comparison](/commercial-water-bubblers). The [bubblers vs coolers guide](/help/bubblers-vs-coolers) explains the difference between plumbed drinking fountains and other water-cooler formats.
