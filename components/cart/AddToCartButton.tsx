@@ -12,35 +12,41 @@ export interface CompanionPurchaseItem {
   /** Automatic Shopify saving applied when this matching item is bought with the primary item. */
   bundleDiscount?: Money | null;
   available: boolean;
+  /** Live Shopify quantity. Zero can still be orderable when inventory policy is CONTINUE. */
+  quantityAvailable?: number | null;
 }
 
 interface AddToCartButtonProps {
   variantId: string;
   available: boolean;
+  /** Live Shopify quantity for low-stock/backorder messaging. */
+  inventoryQuantity?: number | null;
   /** Current selected-variant price. Used to show the live combined total. */
   unitPrice?: Money;
   /** Optional matching tank/bund sold as a separate Shopify line item. */
   companion?: CompanionPurchaseItem | null;
   /**
    * Label override from `products.json[handle].ctas.primary`. Falls
-   * back to "Add to cart" when undefined. The "Out of stock" /
-   * "Adding…" states still take precedence over the override.
+   * back to "Add to cart" when undefined. The unavailable / loading
+   * states still take precedence over the override.
    */
   label?: string;
   /**
    * When true, renders a secondary "Buy now" button below the
    * primary Add-to-cart row. Buy-now adds the variant to the cart
    * (respecting the current quantity) and redirects to the Shopify
-   * checkout URL — no drawer popup.
+   * checkout URL - no drawer popup.
    */
   enableBuyNow?: boolean;
 }
 
 const MAX_QTY = 99;
+const LOW_STOCK_THRESHOLD = 2;
 
 export function AddToCartButton({
   variantId,
   available,
+  inventoryQuantity = null,
   unitPrice,
   companion = null,
   label: labelOverride,
@@ -67,6 +73,18 @@ export function AddToCartButton({
   const pairSelected = Boolean(
     includeCompanion && companion?.available && companion.variantId,
   );
+
+  const primaryBackorder = Boolean(
+    available && inventoryQuantity !== null && inventoryQuantity <= 0,
+  );
+  const companionBackorder = Boolean(
+    pairSelected &&
+      companion?.available &&
+      companion.quantityAvailable !== null &&
+      companion.quantityAvailable !== undefined &&
+      companion.quantityAvailable <= 0,
+  );
+  const orderContainsBackorder = primaryBackorder || companionBackorder;
 
   const bundleDiscount = useMemo(() => {
     if (!companion?.bundleDiscount) return 0;
@@ -138,21 +156,46 @@ export function AddToCartButton({
     : busy
       ? 'Adding…'
       : pairSelected
-        ? 'Add bundle to cart'
-        : (labelOverride ?? 'Add to cart');
+        ? orderContainsBackorder
+          ? 'Add bundle to cart - backorder'
+          : 'Add bundle to cart'
+        : primaryBackorder
+          ? 'Add to cart - backorder'
+          : (labelOverride ?? 'Add to cart');
 
   const buyNowLabel = !available
     ? 'Out of stock'
     : buyingNow
       ? 'Redirecting…'
       : pairSelected
-        ? 'Buy bundle now'
-        : 'Buy now';
+        ? orderContainsBackorder
+          ? 'Buy bundle now - backorder'
+          : 'Buy bundle now'
+        : primaryBackorder
+          ? 'Buy now - backorder'
+          : 'Buy now';
 
   const anyBusy = busy || buyingNow || isMutating;
+  const primaryStockMessage = getStockMessage(inventoryQuantity, available);
+  const companionStockMessage = companion
+    ? getStockMessage(companion.quantityAvailable ?? null, companion.available)
+    : null;
 
   return (
     <div className="flex flex-col gap-3">
+      {primaryStockMessage && (
+        <div
+          className={`rounded-md px-4 py-3 text-sm font-semibold ${
+            primaryStockMessage.kind === 'backorder'
+              ? 'bg-amber-50 text-amber-900'
+              : 'bg-orange-50 text-orange-800'
+          }`}
+          role="status"
+        >
+          {primaryStockMessage.text}
+        </div>
+      )}
+
       {companion && (
         <label
           className={`flex cursor-pointer items-start gap-3 rounded-lg border p-4 transition-colors ${
@@ -189,6 +232,17 @@ export function AddToCartButton({
             ) : (
               <span className="mt-0.5 block text-sm text-black/65">
                 Sold separately. Add it to this order in one click.
+              </span>
+            )}
+            {companionStockMessage && (
+              <span
+                className={`mt-1 block text-xs font-semibold ${
+                  companionStockMessage.kind === 'backorder'
+                    ? 'text-amber-800'
+                    : 'text-orange-700'
+                }`}
+              >
+                {companionStockMessage.text}
               </span>
             )}
           </span>
@@ -275,6 +329,26 @@ export function AddToCartButton({
       )}
     </div>
   );
+}
+
+function getStockMessage(
+  quantity: number | null,
+  available: boolean,
+): { kind: 'low' | 'backorder'; text: string } | null {
+  if (!available || quantity === null) return null;
+  if (quantity <= 0) {
+    return {
+      kind: 'backorder',
+      text: 'Available on backorder - delivery up to 4 weeks.',
+    };
+  }
+  if (quantity <= LOW_STOCK_THRESHOLD) {
+    return {
+      kind: 'low',
+      text: `Only ${quantity} left in stock - order now.`,
+    };
+  }
+  return null;
 }
 
 function formatMoney(money: Money): string {
