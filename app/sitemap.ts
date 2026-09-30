@@ -4,8 +4,7 @@ import path from 'node:path';
 import { CATEGORIES } from '@/content/categories';
 import { listMarkdownSlugs } from '@/lib/content/markdown';
 import { getAllProductHandles } from '@/lib/shopify/queries/getAllProductHandles';
-import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
-import { getProductCategories } from '@/lib/utils/productUrl';
+import { getAllProductContent } from '@/lib/products/getProductContent';
 import { getSiteUrl } from '@/lib/seo/siteUrl';
 
 export const revalidate = 3600;
@@ -70,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const subslug = file.replace(/\.md$/, '');
         editorialEntries.push({
           url: `${base}/${section}/${entry.name}/${subslug}`,
-            changeFrequency: 'monthly',
+          changeFrequency: 'monthly',
           priority: priority - 0.1,
         });
       }
@@ -92,37 +91,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ],
   );
 
-  let productEntries: MetadataRoute.Sitemap = [];
-  try {
-    const handles = await getAllProductHandles();
-    // Shopify auto-suffixes accidental duplicate products with -dup2, -dup3,
-    // etc. Keep them out of the sitemap so Google never sees them.
-    const DUP_SUFFIX = /-dup\d+$/i;
-    const deduped = handles.filter((entry) => !DUP_SUFFIX.test(entry.handle));
-    const resolved = await Promise.all(
-      deduped.map(async (entry) => {
-        try {
-          const product = await getProductByHandle(entry.handle);
-          if (!product) return null;
-          const { category, subcategory } = getProductCategories(entry.handle);
-          if (!category || !subcategory) return null;
-          return {
-            url: `${base}/${category}/${subcategory}/${entry.handle}`,
-            lastModified: new Date(entry.updatedAt),
-            changeFrequency: 'weekly' as const,
-            priority: 0.6,
-          };
-        } catch {
-          return null;
-        }
-      }),
-    );
-    productEntries = resolved.filter(
-      (entry): entry is NonNullable<typeof entry> => entry !== null,
-    );
-  } catch (caught) {
-    console.error('[sitemap] product fetch failed:', caught);
-  }
+  // Fetch Shopify's product inventory once, then join it against the same
+  // canonical code-side catalogue used by PDP routing and validation.
+  //
+  // Do not catch this request and return a valid-but-incomplete sitemap. If
+  // Shopify is temporarily unavailable, failing this regeneration lets the
+  // previous ISR result remain usable rather than telling Google that every
+  // product has disappeared.
+  const shopifyProducts = await getAllProductHandles();
+  const shopifyByHandle = new Map(
+    shopifyProducts.map((product) => [product.handle, product] as const),
+  );
+  const productContent = getAllProductContent();
+
+  const productEntries: MetadataRoute.Sitemap = Object.entries(productContent)
+    .map(([handle, content]) => {
+      const shopifyProduct = shopifyByHandle.get(handle);
+      if (!shopifyProduct) return null;
+
+      const [category, subcategory] = content.categories;
+      if (!category || !subcategory) return null;
+
+      return {
+        url: `${base}/${category}/${subcategory}/${handle}`,
+        lastModified: new Date(shopifyProduct.updatedAt),
+        changeFrequency: 'weekly' as const,
+        priority: 0.6,
+      };
+    })
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
+    .sort((a, b) => a.url.localeCompare(b.url));
 
   return [
     ...staticEntries,
