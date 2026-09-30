@@ -8,11 +8,12 @@
  * Exits 0 when the catalogue content is valid, 1 with a punch list otherwise.
  *
  * Two passes:
- *   1. Synchronous shape + cross-handle validation. Always runs.
- *   2. Async cross-Shopify check (every content handle exists in Shopify,
- *      every Shopify handle has a content entry). Runs only when
- *      SHOPIFY_STORE_DOMAIN + SHOPIFY_STOREFRONT_PRIVATE_TOKEN
- *      + SHOPIFY_API_VERSION are set.
+ *   1. Synchronous shape + cross-handle validation. Always runs against the
+ *      merged catalogue used by the storefront.
+ *   2. Async cross-Shopify check. Base products.json entries must resolve in
+ *      the live Storefront API, while override/addition entries may be staged
+ *      before publication. Conversely, every live Shopify product must have a
+ *      content entry somewhere in the merged catalogue.
  */
 import productData from '../data/products.json';
 import productOverrides from '../data/product-overrides.json';
@@ -47,7 +48,7 @@ async function main(): Promise<void> {
   const handleCount = Object.keys(catalogData).length;
   console.log(`[validate] merged product content: ${handleCount} entries`);
 
-  // Pass 1 — pure validation.
+  // Pass 1 — pure validation over exactly what the storefront loader can see.
   const result = validateProducts(catalogData);
 
   for (const w of result.warnings) {
@@ -99,21 +100,34 @@ async function main(): Promise<void> {
   const { getAllProductHandles } = await import(
     '../lib/shopify/queries/getAllProductHandles'
   );
-  const shopifyResult = await validateAgainstShopify(
+  const fetchLiveHandles = async () => {
+    const handles = await getAllProductHandles();
+    return handles.map((h) => h.handle);
+  };
+
+  // Direction A: long-lived base catalogue entries must resolve live in Shopify.
+  // Draft/future products are deliberately kept in overrides/additions and are
+  // allowed to exist before publication.
+  const baseResult = await validateAgainstShopify(
+    productData as unknown as Parameters<typeof validateAgainstShopify>[0],
+    fetchLiveHandles,
+  );
+
+  // Direction B: every product that is live in Shopify must have storefront
+  // content somewhere in the merged catalogue. This catches newly-published
+  // products such as a bund before they can ship without a working PDP.
+  const mergedResult = await validateAgainstShopify(
     catalogData as unknown as Parameters<typeof validateAgainstShopify>[0],
-    async () => {
-      const handles = await getAllProductHandles();
-      return handles.map((h) => h.handle);
-    },
+    fetchLiveHandles,
   );
 
   const strict = process.env['STRICT_PRODUCTS_VALIDATION'] === '1';
-  const missingInShopify = shopifyResult.missingInShopify;
-  const missingInProducts = shopifyResult.missingInProducts;
+  const missingInShopify = baseResult.missingInShopify;
+  const missingInProducts = mergedResult.missingInProducts;
 
   if (missingInShopify.length === 0 && missingInProducts.length === 0) {
     console.log(
-      `${GREEN}✓${RESET} every content handle resolves in Shopify; every Shopify handle has a content entry`,
+      `${GREEN}✓${RESET} base catalogue resolves in Shopify; every live Shopify product has storefront content`,
     );
     process.exit(0);
   }
@@ -121,7 +135,7 @@ async function main(): Promise<void> {
   if (missingInShopify.length > 0) {
     console.error('');
     console.error(
-      `${RED}✖ product content references Shopify handles that don't exist:${RESET}`,
+      `${RED}✖ base product content references Shopify handles that don't exist:${RESET}`,
     );
     for (const handle of missingInShopify) {
       console.error(`    - ${handle}`);
@@ -138,7 +152,7 @@ async function main(): Promise<void> {
     const symbol = strict ? '✖' : '!';
     stream('');
     stream(
-      `${colour}${symbol} Shopify products with no content entry (${missingInProducts.length}):${RESET}`,
+      `${colour}${symbol} Shopify products with no storefront content entry (${missingInProducts.length}):${RESET}`,
     );
     for (const handle of missingInProducts) {
       stream(`    - ${handle}`);
@@ -146,7 +160,7 @@ async function main(): Promise<void> {
     stream('');
     if (strict) {
       stream(
-        `  ${DIM}STRICT_PRODUCTS_VALIDATION is set — every Shopify product must have a content entry to ship.${RESET}`,
+        `  ${DIM}STRICT_PRODUCTS_VALIDATION is set — every live Shopify product must have a content entry to ship.${RESET}`,
       );
     } else {
       stream(
