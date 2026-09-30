@@ -27,42 +27,51 @@ export const revalidate = 300;
 
 const META_DESCRIPTION_MAX = 155;
 
-interface DosingCompanionConfig {
-  handle: string;
+interface DosingPackageConfig {
+  packageHandle: string;
+  componentHandle: string;
   discountAmount: string;
 }
 
-const DOSING_COMPANIONS: Readonly<Record<string, DosingCompanionConfig>> = {
+const DOSING_PACKAGES: Readonly<Record<string, DosingPackageConfig>> = {
   'chemical-dosing-tank-50l': {
-    handle: 'chemical-bund-50l',
+    packageHandle: 'chemical-dosing-tank-and-bund-50l',
+    componentHandle: 'chemical-bund-50l',
     discountAmount: '19.00',
   },
   'chemical-bund-50l': {
-    handle: 'chemical-dosing-tank-50l',
+    packageHandle: 'chemical-dosing-tank-and-bund-50l',
+    componentHandle: 'chemical-dosing-tank-50l',
     discountAmount: '19.00',
   },
   'chemical-dosing-tank-100l': {
-    handle: 'chemical-bund-100l',
+    packageHandle: 'chemical-dosing-tank-and-bund-100l',
+    componentHandle: 'chemical-bund-100l',
     discountAmount: '29.00',
   },
   'chemical-bund-100l': {
-    handle: 'chemical-dosing-tank-100l',
+    packageHandle: 'chemical-dosing-tank-and-bund-100l',
+    componentHandle: 'chemical-dosing-tank-100l',
     discountAmount: '29.00',
   },
   'chemical-dosing-tank-200l': {
-    handle: 'chemical-bund-200l',
+    packageHandle: 'chemical-dosing-tank-and-bund-200l',
+    componentHandle: 'chemical-bund-200l',
     discountAmount: '39.00',
   },
   'chemical-bund-200l': {
-    handle: 'chemical-dosing-tank-200l',
+    packageHandle: 'chemical-dosing-tank-and-bund-200l',
+    componentHandle: 'chemical-dosing-tank-200l',
     discountAmount: '39.00',
   },
   'chemical-dosing-tank-300l': {
-    handle: 'chemical-bund-400l',
+    packageHandle: 'chemical-dosing-tank-and-bund-300l',
+    componentHandle: 'chemical-bund-400l',
     discountAmount: '49.00',
   },
   'chemical-bund-400l': {
-    handle: 'chemical-dosing-tank-300l',
+    packageHandle: 'chemical-dosing-tank-and-bund-300l',
+    componentHandle: 'chemical-dosing-tank-300l',
     discountAmount: '49.00',
   },
 };
@@ -143,23 +152,31 @@ export default async function ProductPage({
     notFound();
   }
 
-  const companionConfig = DOSING_COMPANIONS[handle] ?? null;
-  const companionProduct = companionConfig
-    ? await getProductByHandle(companionConfig.handle)
-    : null;
-  const companionVariant = companionProduct?.variants[0] ?? null;
-  const companion =
-    companionProduct && companionVariant && companionConfig
+  const packageConfig = DOSING_PACKAGES[handle] ?? null;
+  const [packageProduct, componentProduct] = packageConfig
+    ? await Promise.all([
+        getProductByHandle(packageConfig.packageHandle),
+        getProductByHandle(packageConfig.componentHandle),
+      ])
+    : [null, null];
+  const packageVariant = packageProduct?.variants[0] ?? null;
+  const packageUpgrade =
+    packageConfig && packageProduct && packageVariant
       ? {
-          title: companionProduct.title,
-          variantId: companionVariant.id,
-          price: companionVariant.price,
-          bundleDiscount: {
-            amount: companionConfig.discountAmount,
-            currencyCode: companionVariant.price.currencyCode,
+          title: packageProduct.title,
+          href: `/${category}/${subcategory}/${packageConfig.packageHandle}`,
+          price: packageVariant.price,
+          savings: {
+            amount: packageConfig.discountAmount,
+            currencyCode: packageVariant.price.currencyCode,
           },
-          available: companionVariant.availableForSale,
-          quantityAvailable: companionVariant.quantityAvailable,
+          available: packageVariant.availableForSale,
+          componentLink: componentProduct
+            ? {
+                title: componentProduct.title,
+                href: `/${category}/${subcategory}/${packageConfig.componentHandle}`,
+              }
+            : null,
         }
       : null;
 
@@ -196,7 +213,7 @@ export default async function ProductPage({
         subcategory={subcategory}
         familyPaths={familyPaths}
         initialVariantId={requestedVariantId}
-        companion={companion}
+        packageUpgrade={packageUpgrade}
       />
     </>
   );
