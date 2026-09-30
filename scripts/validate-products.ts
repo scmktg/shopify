@@ -18,6 +18,7 @@
 import productData from '../data/products.json';
 import productOverrides from '../data/product-overrides.json';
 import productAdditions from '../data/product-additions.json';
+import squareTankAdditions from '../data/product-square-tanks.json';
 import {
   isScaffoldingHandle,
   validateProducts,
@@ -34,6 +35,7 @@ const catalogData = {
   ...productData,
   ...productOverrides,
   ...productAdditions,
+  ...squareTankAdditions,
 };
 
 function hasShopifyEnv(): boolean {
