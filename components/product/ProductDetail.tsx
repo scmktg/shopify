@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import type { Product } from '@/types/product';
+import type { Product, Money } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
-import type { CompanionPurchaseItem } from '@/components/cart/AddToCartButton';
 import { CertificationSlot } from './CertificationSlot';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
@@ -36,6 +35,18 @@ function offersInstallPackage(content: ProductContent): boolean {
   return (content.tags ?? []).includes(INSTALL_PACKAGE_TAG);
 }
 
+interface PackageUpgrade {
+  title: string;
+  href: string;
+  price: Money;
+  savings: Money;
+  available: boolean;
+  componentLink: {
+    title: string;
+    href: string;
+  } | null;
+}
+
 interface ProductDetailProps {
   product: Product;
   content: ProductContent;
@@ -43,7 +54,7 @@ interface ProductDetailProps {
   subcategory: string;
   familyPaths?: ReadonlyMap<string, string> | null;
   initialVariantId?: string | null;
-  companion?: CompanionPurchaseItem | null;
+  packageUpgrade?: PackageUpgrade | null;
 }
 
 export function ProductDetail({
@@ -53,7 +64,7 @@ export function ProductDetail({
   subcategory,
   familyPaths,
   initialVariantId = null,
-  companion = null,
+  packageUpgrade = null,
 }: ProductDetailProps) {
   const subcategoryNode = findSubcategory(category, subcategory);
   const subcategoryLabel =
@@ -128,8 +139,47 @@ export function ProductDetail({
           <VariantPurchaseControls
             fallbackPrice={product.priceRange.minVariantPrice}
             ctaLabel={content.ctas?.primary ?? undefined}
-            companion={companion}
           />
+
+          {packageUpgrade && (
+            <div className="mt-5 rounded-lg border border-brand-blue/25 bg-brand-blue-light/40 p-4">
+              <p className="text-sm font-semibold text-black">
+                Need the complete setup?
+              </p>
+              <p className="mt-1 text-sm leading-6 text-black/75">
+                Buy the tank + bund package and save{' '}
+                <span className="font-semibold text-black">
+                  {formatMoney(packageUpgrade.savings)}
+                </span>{' '}
+                compared with buying the components separately.
+              </p>
+              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                <Link
+                  href={packageUpgrade.href}
+                  className="inline-flex min-h-10 items-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-black/85 transition-colors"
+                >
+                  View package · {formatMoney(packageUpgrade.price)}
+                </Link>
+                {!packageUpgrade.available && (
+                  <span className="text-xs font-medium text-black/55">
+                    Package currently unavailable
+                  </span>
+                )}
+              </div>
+              {packageUpgrade.componentLink && (
+                <p className="mt-3 text-xs leading-5 text-black/60">
+                  Already have one component?{' '}
+                  <Link
+                    href={packageUpgrade.componentLink.href}
+                    className="font-medium text-brand-blue hover:underline underline-offset-4"
+                  >
+                    View {packageUpgrade.componentLink.title}
+                  </Link>
+                  .
+                </p>
+              )}
+            </div>
+          )}
 
           <div className="mt-4">
             <CertificationSlot content={content} />
@@ -209,6 +259,16 @@ export function ProductDetail({
       </article>
     </VariantSelectionProvider>
   );
+}
+
+function formatMoney(money: Money): string {
+  const value = Number.parseFloat(money.amount);
+  if (!Number.isFinite(value)) return `${money.amount} ${money.currencyCode}`;
+  return new Intl.NumberFormat('en-AU', {
+    style: 'currency',
+    currency: money.currencyCode,
+    minimumFractionDigits: 2,
+  }).format(value);
 }
 
 function humaniseSlug(slug: string): string {
