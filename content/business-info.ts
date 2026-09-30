@@ -57,7 +57,7 @@ export const BUSINESS_INFO = {
    * Pickup window quoted on the click-and-collect buy-box line. The
    * showroom locality and link are composed in the component.
    */
-  clickAndCollectPickupWindow: 'usually ready in 2 hours',
+  clickAndCollectPickupWindow: 'usually ready within 1 hour',
   /**
    * Three short copy items for the brand trust strip rendered below
    * every product page. Single line each, no card boxes — see
