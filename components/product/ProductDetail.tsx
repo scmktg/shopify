@@ -102,14 +102,14 @@ export function ProductDetail({
         </Link>
         <span aria-hidden="true">/</span>
         <Link
-          href={`/${category}/`}
+          href={`/${category}`}
           className="hover:underline underline-offset-4"
         >
           {humaniseSlug(category)}
         </Link>
         <span aria-hidden="true">/</span>
         <Link
-          href={`/${category}/${subcategory}/`}
+          href={`/${category}/${subcategory}`}
           className="hover:underline underline-offset-4"
         >
           {humaniseSlug(subcategory)}
@@ -123,7 +123,7 @@ export function ProductDetail({
 
         <div className="md:sticky md:top-24">
           <Link
-            href={`/${category}/${subcategory}/`}
+            href={`/${category}/${subcategory}`}
             className="group inline-flex items-center gap-0.5 text-[11px] font-semibold tracking-tight uppercase text-black/60 hover:text-black bg-black/[0.04] hover:bg-black/[0.07] pl-3 pr-2 py-1 rounded-full transition-colors"
           >
             {subcategoryLabel}
@@ -236,7 +236,7 @@ export function ProductDetail({
               Live on the Central Coast NSW? Get this installed by a local
               plumber for $2,299 -{' '}
               <Link
-                href="/whole-house-installation-package/"
+                href="/whole-house-installation-package"
                 className="text-brand-blue font-semibold hover:underline underline-offset-4"
               >
                 see the install package
