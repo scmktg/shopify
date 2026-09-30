@@ -14,6 +14,11 @@
  *      the live Storefront API, while override/addition entries may be staged
  *      before publication. Conversely, every live Shopify product must have a
  *      content entry somewhere in the merged catalogue.
+ *
+ * Production safety:
+ *   - Vercel production builds must have the Shopify Storefront env vars.
+ *   - Production always runs the bidirectional Shopify/content check strictly;
+ *     a live Shopify product without storefront content fails the build.
  */
 import productData from '../data/products.json';
 import productOverrides from '../data/product-overrides.json';
@@ -64,9 +69,19 @@ function hasShopifyEnv(): boolean {
   );
 }
 
+function isProductionBuild(): boolean {
+  return process.env['VERCEL_ENV'] === 'production';
+}
+
 async function main(): Promise<void> {
   const handleCount = Object.keys(catalogData).length;
+  const production = isProductionBuild();
+  const strict = production || process.env['STRICT_PRODUCTS_VALIDATION'] === '1';
+
   console.log(`[validate] merged product content: ${handleCount} entries`);
+  if (production) {
+    console.log(`${GREEN}✓${RESET} production build: strict Shopify validation enforced`);
+  }
 
   const result = validateProducts(catalogData);
 
@@ -106,8 +121,22 @@ async function main(): Promise<void> {
   }
 
   if (!hasShopifyEnv()) {
+    if (production) {
+      console.error('');
+      console.error(
+        `${RED}✖ production product validation cannot run because Shopify env vars are missing.${RESET}`,
+      );
+      console.error(
+        `${DIM}  Required: SHOPIFY_STORE_DOMAIN + SHOPIFY_STOREFRONT_PRIVATE_TOKEN + SHOPIFY_API_VERSION${RESET}`,
+      );
+      console.error(
+        `${DIM}  Production builds must never skip the Shopify ↔ storefront catalogue integrity check.${RESET}`,
+      );
+      process.exit(1);
+    }
+
     console.log(
-      `${YELLOW}!${RESET} Shopify env not set — skipping cross-Shopify handle check.`,
+      `${YELLOW}!${RESET} Shopify env not set — skipping cross-Shopify handle check outside production.`,
     );
     console.log(
       `${DIM}  (set SHOPIFY_STORE_DOMAIN + SHOPIFY_STOREFRONT_PRIVATE_TOKEN + SHOPIFY_API_VERSION to enable)${RESET}`,
@@ -140,7 +169,6 @@ async function main(): Promise<void> {
     fetchLiveHandles,
   );
 
-  const strict = process.env['STRICT_PRODUCTS_VALIDATION'] === '1';
   const missingInShopify = baseResult.missingInShopify;
   const missingInProducts = mergedResult.missingInProducts;
 
@@ -179,11 +207,11 @@ async function main(): Promise<void> {
     stream('');
     if (strict) {
       stream(
-        `  ${DIM}STRICT_PRODUCTS_VALIDATION is set — every live Shopify product must have a content entry to ship.${RESET}`,
+        `  ${DIM}Strict product validation is active — every live Shopify product must have a storefront content entry to ship.${RESET}`,
       );
     } else {
       stream(
-        `  ${DIM}Migration backlog: warning only. Set STRICT_PRODUCTS_VALIDATION=1 to escalate this to a build failure.${RESET}`,
+        `  ${DIM}Migration backlog: warning only outside production. Set STRICT_PRODUCTS_VALIDATION=1 to escalate locally.${RESET}`,
       );
     }
   }
