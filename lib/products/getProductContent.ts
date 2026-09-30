@@ -2,6 +2,7 @@ import productData from '@/data/products.json';
 import productOverrides from '@/data/product-overrides.json';
 import productAdditions from '@/data/product-additions.json';
 import squareTankAdditions from '@/data/product-square-tanks.json';
+import dosingPackageAdditions from '@/data/product-dosing-packages.json';
 import type { ProductContent, ProductContentMap } from './schema';
 
 function isFileMetaKey(key: string): boolean {
@@ -29,12 +30,14 @@ const baseMap = productData as unknown as Record<string, ProductContent>;
 const overrideMap = productOverrides as unknown as Record<string, ProductContent>;
 const additionMap = productAdditions as unknown as Record<string, ProductContent>;
 const squareTankMap = squareTankAdditions as unknown as Record<string, ProductContent>;
+const dosingPackageMap = dosingPackageAdditions as unknown as Record<string, ProductContent>;
 
 const rawMap: Record<string, ProductContent> = {
   ...baseMap,
   ...overrideMap,
   ...additionMap,
   ...squareTankMap,
+  ...dosingPackageMap,
 };
 
 // The 50L/100L/200L dosing tanks were originally created with `bunded-*`
