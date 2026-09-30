@@ -70,6 +70,7 @@ interface CategoryViewProps {
   initialFilters?: CatalogFilterState;
   pageSize?: number;
   enableSizeFilter?: boolean;
+  defaultProductOrder?: ReadonlyArray<string>;
 }
 
 export function CategoryView({
@@ -81,6 +82,7 @@ export function CategoryView({
   initialFilters = {},
   pageSize = 24,
   enableSizeFilter = false,
+  defaultProductOrder = [],
 }: CategoryViewProps) {
   const groups = useMemo(
     () =>
@@ -89,8 +91,24 @@ export function CategoryView({
         : [],
     [categorySlug, activeSubcategory],
   );
+  const defaultOrder = useMemo(
+    () => new Map(defaultProductOrder.map((handle, index) => [handle, index])),
+    [defaultProductOrder],
+  );
+  const applyDefaultOrder = (
+    items: ReadonlyArray<ProductCardData>,
+    nextSort: SortValue,
+  ): ReadonlyArray<ProductCardData> => {
+    if (nextSort !== 'default' || defaultOrder.size === 0) return items;
+    return [...items].sort((a, b) => {
+      const aRank = defaultOrder.get(a.handle) ?? Number.MAX_SAFE_INTEGER;
+      const bRank = defaultOrder.get(b.handle) ?? Number.MAX_SAFE_INTEGER;
+      return aRank - bRank;
+    });
+  };
+
   const [products, setProducts] = useState<ReadonlyArray<ProductCardData>>(
-    initialProducts,
+    applyDefaultOrder(initialProducts, 'default'),
   );
   const [pageInfo, setPageInfo] = useState<ShopifyPageInfo>(initialPageInfo);
   const [filters, setFilters] = useState<CatalogFilterState>(initialFilters);
@@ -139,7 +157,7 @@ export function CategoryView({
             sortKey: opt.sortKey ?? undefined,
             reverse: opt.reverse,
           });
-          setProducts(page.products);
+          setProducts(applyDefaultOrder(page.products, nextSort));
           setPageInfo(page.pageInfo);
         } catch {
           setError('Could not update results. Please try again.');
@@ -176,7 +194,9 @@ export function CategoryView({
             sortKey: opt.sortKey ?? undefined,
             reverse: opt.reverse,
           });
-          setProducts((previous) => [...previous, ...page.products]);
+          setProducts((previous) =>
+            applyDefaultOrder([...previous, ...page.products], sort),
+          );
           setPageInfo(page.pageInfo);
         } catch {
           setError('Could not load more products. Please try again.');
