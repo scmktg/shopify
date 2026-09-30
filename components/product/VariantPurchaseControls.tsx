@@ -157,7 +157,6 @@ export function VariantPurchaseControls({
           variantId={selectedVariant.id}
           available={selectedVariant.availableForSale}
           inventoryQuantity={selectedVariant.quantityAvailable}
-          unitPrice={price}
           companion={companion}
           onBackorderChange={setHasBackorder}
           label={ctaLabel}
