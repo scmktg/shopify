@@ -4,47 +4,47 @@
     {
       "source": "/product/100l-chemical-dosing-tank-water-tank-poly-tank-and-bund",
       "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l",
       "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/product/hot-cold-water-cooler-direct-connect",
       "destination": "/bubblers-and-coolers/coolers-and-chillers/direct-connect-water-cooler-dispenser-3stages-filter-hot-cold-and-room-temperatu",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/product/diaphragm-booster-pump-ro-water-pump-24vdc-1100ml-min",
       "destination": "/pumps-and-tanks/pumps/ro-water-filter-24v-dc-diaphragm-pump-reverse-osmosis-pressure-booster-pump",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/product/whole-house-water-filter-1-stage-20x4-5-inch-washable-reusable",
       "destination": "/water-filters/whole-house/20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-pp-steel-bracket",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-50l",
       "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-50l",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l",
       "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-200l",
       "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-200l",
-      "statusCode": 301
+      "permanent": true
     },
     {
       "source": "/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system-dup2",
       "destination": "/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
-      "statusCode": 301
+      "permanent": true
     }
   ]
 }
