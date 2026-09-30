@@ -7,59 +7,40 @@
  *
  * Exits 0 when the catalogue content is valid, 1 with a punch list otherwise.
  *
- * Two passes:
- *   1. Synchronous shape + cross-handle validation. Always runs against the
- *      merged catalogue used by the storefront.
- *   2. Async cross-Shopify check. Base products.json entries must resolve in
- *      the live Storefront API, while override/addition entries may be staged
- *      before publication. Conversely, every live Shopify product must have a
- *      content entry somewhere in the merged catalogue.
+ * Three passes:
+ *   1. Synchronous shape + cross-handle validation against the exact merged
+ *      catalogue used by the storefront.
+ *   2. Bidirectional Shopify/content handle validation.
+ *   3. Shopify category-tag validation against the canonical code categories
+ *      that drive PDP URLs and breadcrumbs.
  *
  * Production safety:
  *   - Vercel production builds must have the Shopify Storefront env vars.
- *   - Production always runs the bidirectional Shopify/content check strictly;
- *     a live Shopify product without storefront content fails the build.
+ *   - Production always runs the Shopify/content checks strictly.
  */
-import productData from '../data/products.json';
-import productOverrides from '../data/product-overrides.json';
-import productAdditions from '../data/product-additions.json';
-import squareTankAdditions from '../data/product-square-tanks.json';
-import dosingPackageAdditions from '../data/product-dosing-packages.json';
-import bundSeoOverrides from '../data/product-bund-seo-overrides.json';
-import {
-  canonicalProductHandle,
-} from '../lib/products/getProductContent';
+import type { ProductContent, ProductContentMap } from '../lib/products/schema';
 import {
   isScaffoldingHandle,
   validateProducts,
   validateAgainstShopify,
 } from '../lib/products/validator';
+import { validateShopifyCategoryTags } from '../lib/products/shopifyCategoryValidator';
+
+const catalogDataModule = require('../lib/products/catalog-data.cjs') as {
+  baseProductCatalog: Record<string, ProductContent>;
+  mergedProductCatalog: Record<string, ProductContent>;
+  productCatalog: Record<string, ProductContent>;
+};
+
+const catalogData = catalogDataModule.mergedProductCatalog as ProductContentMap;
+const canonicalBaseData = catalogDataModule.baseProductCatalog as ProductContentMap;
+const canonicalCatalogData = catalogDataModule.productCatalog as ProductContentMap;
 
 const RED = '\x1b[31m';
 const GREEN = '\x1b[32m';
 const YELLOW = '\x1b[33m';
 const DIM = '\x1b[2m';
 const RESET = '\x1b[0m';
-
-const catalogData = {
-  ...productData,
-  ...productOverrides,
-  ...productAdditions,
-  ...squareTankAdditions,
-  ...dosingPackageAdditions,
-  ...bundSeoOverrides,
-};
-
-function canonicalizeCatalogHandles<T>(
-  catalog: Readonly<Record<string, T>>,
-): Record<string, T> {
-  return Object.fromEntries(
-    Object.entries(catalog).map(([handle, entry]) => [
-      canonicalProductHandle(handle),
-      entry,
-    ]),
-  );
-}
 
 function hasShopifyEnv(): boolean {
   return Boolean(
@@ -74,15 +55,17 @@ function isProductionBuild(): boolean {
 }
 
 async function main(): Promise<void> {
-  const handleCount = Object.keys(catalogData).length;
+  const handleCount = Object.keys(canonicalCatalogData).length;
   const production = isProductionBuild();
   const strict = production || process.env['STRICT_PRODUCTS_VALIDATION'] === '1';
 
-  console.log(`[validate] merged product content: ${handleCount} entries`);
+  console.log(`[validate] canonical product content: ${handleCount} entries`);
   if (production) {
     console.log(`${GREEN}✓${RESET} production build: strict Shopify validation enforced`);
   }
 
+  // Preserve validation of the merged source before legacy-handle canonicalisation,
+  // so malformed staging/override entries cannot be hidden by the canonical layer.
   const result = validateProducts(catalogData);
 
   for (const w of result.warnings) {
@@ -136,7 +119,7 @@ async function main(): Promise<void> {
     }
 
     console.log(
-      `${YELLOW}!${RESET} Shopify env not set — skipping cross-Shopify handle check outside production.`,
+      `${YELLOW}!${RESET} Shopify env not set — skipping cross-Shopify checks outside production.`,
     );
     console.log(
       `${DIM}  (set SHOPIFY_STORE_DOMAIN + SHOPIFY_STOREFRONT_PRIVATE_TOKEN + SHOPIFY_API_VERSION to enable)${RESET}`,
@@ -147,37 +130,25 @@ async function main(): Promise<void> {
   const { getAllProductHandles } = await import(
     '../lib/shopify/queries/getAllProductHandles'
   );
-  const fetchLiveHandles = async () => {
-    const handles = await getAllProductHandles();
-    return handles.map((h) => h.handle);
-  };
-
-  const canonicalBaseData = canonicalizeCatalogHandles(
-    productData as unknown as Record<string, unknown>,
-  );
-  const canonicalCatalogData = canonicalizeCatalogHandles(
-    catalogData as unknown as Record<string, unknown>,
-  );
+  const shopifyProducts = await getAllProductHandles();
+  const fetchLiveHandles = async () => shopifyProducts.map((product) => product.handle);
 
   const baseResult = await validateAgainstShopify(
-    canonicalBaseData as unknown as Parameters<typeof validateAgainstShopify>[0],
+    canonicalBaseData,
     fetchLiveHandles,
   );
 
   const mergedResult = await validateAgainstShopify(
-    canonicalCatalogData as unknown as Parameters<typeof validateAgainstShopify>[0],
+    canonicalCatalogData,
     fetchLiveHandles,
   );
 
   const missingInShopify = baseResult.missingInShopify;
   const missingInProducts = mergedResult.missingInProducts;
-
-  if (missingInShopify.length === 0 && missingInProducts.length === 0) {
-    console.log(
-      `${GREEN}✓${RESET} base catalogue resolves in Shopify; every live Shopify product has storefront content`,
-    );
-    process.exit(0);
-  }
+  const categoryMismatches = validateShopifyCategoryTags(
+    canonicalCatalogData,
+    shopifyProducts,
+  );
 
   if (missingInShopify.length > 0) {
     console.error('');
@@ -216,8 +187,47 @@ async function main(): Promise<void> {
     }
   }
 
+  if (categoryMismatches.length > 0) {
+    console.error('');
+    console.error(
+      `${RED}✖ Shopify category tags disagree with canonical storefront categories (${categoryMismatches.length}):${RESET}`,
+    );
+    for (const mismatch of categoryMismatches) {
+      console.error(`    - ${mismatch.handle}`);
+      console.error(
+        `      expected: primary-cat:${mismatch.expectedPrimary}, sub-cat:${mismatch.expectedSubcategory}`,
+      );
+      console.error(
+        `      actual primary: ${mismatch.primaryTags.length > 0 ? mismatch.primaryTags.join(', ') : '(none)'}`,
+      );
+      console.error(
+        `      actual subcategories: ${mismatch.subcategoryTags.length > 0 ? mismatch.subcategoryTags.join(', ') : '(none)'}`,
+      );
+      for (const issue of mismatch.issues) {
+        console.error(`      ${RED}✖${RESET} ${issue}`);
+      }
+    }
+    console.error('');
+    console.error(
+      `  ${DIM}Category tags drive Shopify PLP membership; canonical code categories drive PDP URLs. These must agree before shipping.${RESET}`,
+    );
+  }
+
+  const handleChecksOk =
+    missingInShopify.length === 0 &&
+    (missingInProducts.length === 0 || !strict);
+  const categoriesOk = categoryMismatches.length === 0;
+
+  if (handleChecksOk && categoriesOk) {
+    console.log(
+      `${GREEN}✓${RESET} Shopify handles and category tags match the canonical storefront catalogue`,
+    );
+    process.exit(0);
+  }
+
   if (missingInShopify.length > 0) process.exit(1);
   if (missingInProducts.length > 0 && strict) process.exit(1);
+  if (categoryMismatches.length > 0) process.exit(1);
   process.exit(0);
 }
 
