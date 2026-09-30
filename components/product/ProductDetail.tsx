@@ -146,19 +146,21 @@ export function ProductDetail({
               <p className="text-sm font-semibold text-black">
                 Need the complete setup?
               </p>
+              <p className="mt-1 text-sm font-medium text-black">
+                {packageUpgrade.title}
+              </p>
               <p className="mt-1 text-sm leading-6 text-black/75">
-                Buy the tank + bund package and save{' '}
                 <span className="font-semibold text-black">
-                  {formatMoney(packageUpgrade.savings)}
+                  {formatMoney(packageUpgrade.price)}
                 </span>{' '}
-                compared with buying the components separately.
+                · Save {formatMoney(packageUpgrade.savings)}
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                 <Link
                   href={packageUpgrade.href}
                   className="inline-flex min-h-10 items-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-black/85 transition-colors"
                 >
-                  View package · {formatMoney(packageUpgrade.price)}
+                  View package
                 </Link>
                 {!packageUpgrade.available && (
                   <span className="text-xs font-medium text-black/55">
