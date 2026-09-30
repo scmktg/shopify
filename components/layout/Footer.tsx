@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
 import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
+import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 
 interface FooterLink {
   label: string;
@@ -22,6 +23,7 @@ const LEARN_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'Water problems', href: '/water-problems/' },
   { label: 'Use cases', href: '/use/' },
   { label: 'Help & guides', href: '/help/' },
+  { label: 'About Zip', href: '/zip/' },
 ];
 
 const ABOUT_LINKS: ReadonlyArray<FooterLink> = [
@@ -58,16 +60,27 @@ export function Footer() {
   return (
     <footer className="bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <Link href="/" aria-label="Enviro Aqua - home" className="relative z-10 inline-block shrink-0 mb-8 cursor-pointer">
-          <Image
-            src="/logo.webp"
-            alt="Enviro Aqua"
-            width={160}
-            height={40}
-            loading="lazy"
-            className="pointer-events-none select-none h-10 w-auto"
-          />
-        </Link>
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <Link
+            href="/"
+            aria-label="Enviro Aqua - home"
+            className="relative z-10 inline-block shrink-0 cursor-pointer"
+          >
+            <Image
+              src="/logo.webp"
+              alt="Enviro Aqua"
+              width={160}
+              height={40}
+              loading="lazy"
+              className="pointer-events-none select-none h-10 w-auto"
+            />
+          </Link>
+          <div className="flex items-center gap-3 text-xs text-white/70">
+            <span>Pay with</span>
+            <ZipPaymentBadge location="footer" className="ring-offset-black" />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <FooterColumn title="Shop" links={SHOP_LINKS} />
           <FooterColumn title="Learn" links={LEARN_LINKS} />
