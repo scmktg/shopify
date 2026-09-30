@@ -109,7 +109,7 @@ export function CartDrawer() {
                   className="text-base font-semibold text-black"
                 />
               </div>
-              <ZipMessaging compact className="mb-3" />
+              <ZipMessaging money={cart.subtotalAmount} className="mb-3" />
               <p className="text-xs text-black/60 mb-3">
                 Shipping and taxes calculated at checkout.
               </p>
