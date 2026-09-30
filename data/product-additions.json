@@ -43,5 +43,230 @@
       "description": "50L polyethylene chemical bund sized to suit the 50L Chemical Dosing Tank. Secondary containment for water-treatment and chemical dosing installations.",
       "ogImage": null
     }
+  },
+  "chemical-bund-100l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "polyethylene", "secondary-containment", "100l"],
+    "shortDescription": "100L polyethylene chemical bund for secondary containment, sized to suit the 100L Chemical Dosing Tank.",
+    "description": "A **100L polyethylene chemical bund** designed to provide secondary containment for the matching 100L Chemical Dosing Tank.\n\nThe short-profile bund is sold separately from the tank and has been physically confirmed as the correct matching size.\n\n- 100L nominal bund size\n- Approx. 625 mm top outside diameter\n- Approx. 515 mm bottom outside diameter\n- Approx. 440 mm overall height\n- Polyethylene construction\n- Sized to suit the 100L Chemical Dosing Tank",
+    "features": [
+      "100L chemical bund for secondary containment",
+      "Sized to suit the matching 100L Chemical Dosing Tank",
+      "Polyethylene construction",
+      "Short-profile moulded design",
+      "Sold separately from the tank"
+    ],
+    "headlineSpecs": [
+      {"label": "Bund size", "value": "100L"},
+      {"label": "Top diameter", "value": "625 mm"},
+      {"label": "Overall height", "value": "440 mm"},
+      {"label": "Matching tank", "value": "100L Chemical Dosing Tank"}
+    ],
+    "fullSpecs": [
+      {"label": "Type", "value": "Chemical bund / secondary containment"},
+      {"label": "Nominal size", "value": "100L"},
+      {"label": "Material", "value": "Polyethylene"},
+      {"label": "Top outside diameter", "value": "625 mm"},
+      {"label": "Bottom outside diameter", "value": "515 mm"},
+      {"label": "Overall height", "value": "440 mm"},
+      {"label": "Matching tank", "value": "100L Chemical Dosing Tank - sold separately"}
+    ],
+    "recommendedFor": [
+      "Secondary containment for the 100L Chemical Dosing Tank",
+      "Water-treatment chemical dosing installations",
+      "Commercial and industrial dosing setups"
+    ],
+    "compliance": {
+      "watermark": {"status": "not_required", "licenceNumber": null, "certifier": null, "validUntil": null},
+      "wels": null,
+      "note": "Secondary-containment bund - WaterMark does not apply. Confirm site-specific containment requirements for the chemical, stored volume, installation and jurisdiction."
+    },
+    "ctas": {"primary": "Add to cart", "secondary": null},
+    "upsells": {"boughtTogether": ["chemical-dosing-tank-bunded-100l"], "moreInCategory": "auto"},
+    "seo": {
+      "title": "100L Chemical Bund | Polyethylene Secondary Containment",
+      "description": "100L polyethylene chemical bund sized to suit the 100L Chemical Dosing Tank. Secondary containment for water-treatment and chemical dosing installations.",
+      "ogImage": null
+    }
+  },
+  "chemical-bund-200l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "polyethylene", "secondary-containment", "200l"],
+    "shortDescription": "200L polyethylene chemical bund for secondary containment, sized to suit the 200L Chemical Dosing Tank.",
+    "description": "A **200L polyethylene chemical bund** designed to provide secondary containment for the matching 200L Chemical Dosing Tank.\n\nThis standard-profile bund is sold separately from the tank and has been physically confirmed as the correct matching size.\n\n- 200L nominal bund size\n- Approx. 725 mm top outside diameter\n- Approx. 580 mm bottom outside diameter\n- Approx. 732 mm overall height\n- Polyethylene construction\n- Sized to suit the 200L Chemical Dosing Tank",
+    "features": [
+      "200L chemical bund for secondary containment",
+      "Sized to suit the matching 200L Chemical Dosing Tank",
+      "Polyethylene construction",
+      "Tall moulded containment profile",
+      "Sold separately from the tank"
+    ],
+    "headlineSpecs": [
+      {"label": "Bund size", "value": "200L"},
+      {"label": "Top diameter", "value": "725 mm"},
+      {"label": "Overall height", "value": "732 mm"},
+      {"label": "Matching tank", "value": "200L Chemical Dosing Tank"}
+    ],
+    "fullSpecs": [
+      {"label": "Type", "value": "Chemical bund / secondary containment"},
+      {"label": "Nominal size", "value": "200L"},
+      {"label": "Material", "value": "Polyethylene"},
+      {"label": "Top outside diameter", "value": "725 mm"},
+      {"label": "Bottom outside diameter", "value": "580 mm"},
+      {"label": "Overall height", "value": "732 mm"},
+      {"label": "Matching tank", "value": "200L Chemical Dosing Tank - sold separately"}
+    ],
+    "recommendedFor": [
+      "Secondary containment for the 200L Chemical Dosing Tank",
+      "Water-treatment chemical dosing installations",
+      "Commercial and industrial dosing setups"
+    ],
+    "compliance": {
+      "watermark": {"status": "not_required", "licenceNumber": null, "certifier": null, "validUntil": null},
+      "wels": null,
+      "note": "Secondary-containment bund - WaterMark does not apply. Confirm site-specific containment requirements for the chemical, stored volume, installation and jurisdiction."
+    },
+    "ctas": {"primary": "Add to cart", "secondary": null},
+    "upsells": {"boughtTogether": ["chemical-dosing-tank-bunded-200l"], "moreInCategory": "auto"},
+    "seo": {
+      "title": "200L Chemical Bund | Polyethylene Secondary Containment",
+      "description": "200L polyethylene chemical bund sized to suit the 200L Chemical Dosing Tank. Secondary containment for water-treatment and chemical dosing installations.",
+      "ogImage": null
+    }
+  },
+  "chemical-bund-400l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "polyethylene", "secondary-containment", "400l"],
+    "shortDescription": "400L polyethylene chemical bund for secondary containment, used as the matched bund option for the 300L Chemical Dosing Tank.",
+    "description": "A **400L polyethylene chemical bund** designed for secondary containment and used as the matched bund option for the 300L Chemical Dosing Tank.\n\nEnviro Aqua does not stock a 300L bund, so this larger bund is the recommended containment pairing for the 300L tank.\n\n- 400L nominal bund size\n- Approx. 945 mm top outside diameter\n- Approx. 790 mm bottom outside diameter\n- Approx. 743 mm overall height\n- Polyethylene construction\n- Recommended bund pairing for the 300L Chemical Dosing Tank",
+    "features": [
+      "400L chemical bund for secondary containment",
+      "Recommended bund option for the 300L Chemical Dosing Tank",
+      "Polyethylene construction",
+      "Wide moulded containment profile",
+      "Sold separately from the tank"
+    ],
+    "headlineSpecs": [
+      {"label": "Bund size", "value": "400L"},
+      {"label": "Top diameter", "value": "945 mm"},
+      {"label": "Overall height", "value": "743 mm"},
+      {"label": "Matched tank", "value": "300L Chemical Dosing Tank"}
+    ],
+    "fullSpecs": [
+      {"label": "Type", "value": "Chemical bund / secondary containment"},
+      {"label": "Nominal size", "value": "400L"},
+      {"label": "Material", "value": "Polyethylene"},
+      {"label": "Top outside diameter", "value": "945 mm"},
+      {"label": "Bottom outside diameter", "value": "790 mm"},
+      {"label": "Overall height", "value": "743 mm"},
+      {"label": "Matched tank", "value": "300L Chemical Dosing Tank - sold separately"}
+    ],
+    "recommendedFor": [
+      "Secondary containment for the 300L Chemical Dosing Tank",
+      "Water-treatment chemical dosing installations",
+      "Commercial and industrial dosing setups"
+    ],
+    "compliance": {
+      "watermark": {"status": "not_required", "licenceNumber": null, "certifier": null, "validUntil": null},
+      "wels": null,
+      "note": "Secondary-containment bund - WaterMark does not apply. Confirm site-specific containment requirements for the chemical, stored volume, installation and jurisdiction."
+    },
+    "ctas": {"primary": "Add to cart", "secondary": null},
+    "upsells": {"boughtTogether": ["chemical-dosing-tank-300l"], "moreInCategory": "auto"},
+    "seo": {
+      "title": "400L Chemical Bund | Polyethylene Secondary Containment",
+      "description": "400L polyethylene chemical bund and the recommended containment pairing for the 300L Chemical Dosing Tank. Sold separately.",
+      "ogImage": null
+    }
+  },
+  "chemical-dosing-tank-300l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["dosing-tank", "polyethylene", "chemical-storage", "300l"],
+    "shortDescription": "300L rotationally moulded polyethylene chemical dosing tank for commercial and industrial water-treatment applications.",
+    "description": "A **300L polyethylene chemical dosing tank** for commercial and industrial water-treatment and chemical-dosing installations.\n\nThe tank is sold separately, with the 400L Chemical Bund available as the recommended secondary-containment pairing.\n\n- 300L nominal capacity\n- Approx. 710 mm diameter\n- Approx. 960 mm overall height\n- Approx. 200 mm top port\n- Rotationally moulded polyethylene construction\n- 400L Chemical Bund available separately",
+    "features": [
+      "300L chemical dosing tank",
+      "Rotationally moulded polyethylene construction",
+      "Suitable for compatible water-treatment chemical dosing applications",
+      "400L bund available separately",
+      "Tank and bund purchased as separate line items"
+    ],
+    "headlineSpecs": [
+      {"label": "Capacity", "value": "300L"},
+      {"label": "Diameter", "value": "710 mm"},
+      {"label": "Overall height", "value": "960 mm"},
+      {"label": "Bund option", "value": "400L Chemical Bund"}
+    ],
+    "fullSpecs": [
+      {"label": "Type", "value": "Chemical dosing tank"},
+      {"label": "Nominal capacity", "value": "300L"},
+      {"label": "Material", "value": "Polyethylene"},
+      {"label": "Diameter", "value": "710 mm"},
+      {"label": "Overall height", "value": "960 mm"},
+      {"label": "Top port", "value": "200 mm"},
+      {"label": "Matched bund option", "value": "400L Chemical Bund - sold separately"}
+    ],
+    "recommendedFor": [
+      "Commercial water-treatment chemical dosing",
+      "Industrial dosing installations",
+      "Compatible chlorine, antiscalant and pH-dosing applications"
+    ],
+    "compliance": {
+      "watermark": {"status": "not_required", "licenceNumber": null, "certifier": null, "validUntil": null},
+      "wels": null,
+      "note": "Confirm chemical compatibility and site-specific containment requirements for the stored chemical, volume, installation and jurisdiction."
+    },
+    "ctas": {"primary": "Add to cart", "secondary": null},
+    "upsells": {"boughtTogether": ["chemical-bund-400l"], "moreInCategory": "auto"},
+    "seo": {
+      "title": "300L Chemical Dosing Tank | Polyethylene Tank",
+      "description": "300L polyethylene chemical dosing tank for water treatment and industrial dosing. Pair with the 400L Chemical Bund for secondary containment.",
+      "ogImage": null
+    }
+  },
+  "chemical-dosing-tank-500l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["dosing-tank", "polyethylene", "chemical-storage", "500l"],
+    "shortDescription": "500L rotationally moulded polyethylene chemical dosing tank for higher-volume commercial and industrial water-treatment applications.",
+    "description": "A **500L polyethylene chemical dosing tank** for higher-volume commercial and industrial water-treatment and chemical-dosing installations.\n\nThis product is currently offered as a standalone tank. A matching bund is not shown until the exact compatible bund model and fit are confirmed.\n\n- 500L nominal capacity\n- Approx. 840 mm diameter\n- Approx. 1060 mm overall height\n- Approx. 240 mm top port\n- Rotationally moulded polyethylene construction\n- Standalone tank product",
+    "features": [
+      "500L chemical dosing tank",
+      "Rotationally moulded polyethylene construction",
+      "Suitable for higher-volume compatible dosing applications",
+      "Standalone tank configuration",
+      "Matching bund to be confirmed before being offered"
+    ],
+    "headlineSpecs": [
+      {"label": "Capacity", "value": "500L"},
+      {"label": "Diameter", "value": "840 mm"},
+      {"label": "Overall height", "value": "1060 mm"},
+      {"label": "Top port", "value": "240 mm"}
+    ],
+    "fullSpecs": [
+      {"label": "Type", "value": "Chemical dosing tank"},
+      {"label": "Nominal capacity", "value": "500L"},
+      {"label": "Material", "value": "Polyethylene"},
+      {"label": "Diameter", "value": "840 mm"},
+      {"label": "Overall height", "value": "1060 mm"},
+      {"label": "Top port", "value": "Approx. 240 mm"},
+      {"label": "Bund option", "value": "To be confirmed"}
+    ],
+    "recommendedFor": [
+      "Higher-volume commercial water-treatment chemical dosing",
+      "Industrial dosing installations",
+      "Compatible chlorine, antiscalant and pH-dosing applications"
+    ],
+    "compliance": {
+      "watermark": {"status": "not_required", "licenceNumber": null, "certifier": null, "validUntil": null},
+      "wels": null,
+      "note": "Confirm chemical compatibility and site-specific containment requirements for the stored chemical, volume, installation and jurisdiction."
+    },
+    "ctas": {"primary": "Add to cart", "secondary": null},
+    "upsells": {"boughtTogether": [], "moreInCategory": "auto"},
+    "seo": {
+      "title": "500L Chemical Dosing Tank | Polyethylene Tank",
+      "description": "500L polyethylene chemical dosing tank for higher-volume commercial and industrial water-treatment and chemical dosing applications.",
+      "ogImage": null
+    }
   }
 }
