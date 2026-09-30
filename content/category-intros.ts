@@ -5,13 +5,6 @@
  * Subcategory keys use the composite '<category>/<subcategory>' form
  * so the page can do a single getCategoryIntro lookup regardless of
  * level.
- *
- * Written per docs/06-content-rules.md (direct, knowledgeable,
- * Australian English, no exclamation marks, no AI giveaways) and the
- * SEO patterns in docs/04-seo-strategy.md. Each intro front-loads the
- * primary keyword, mentions WaterMark or WELS where relevant, and
- * lists the sub-categories so the page naturally cross-links to
- * deeper URLs.
  */
 export const CATEGORY_INTROS: Readonly<Record<string, string>> = {
   'water-filters':
@@ -21,7 +14,7 @@ export const CATEGORY_INTROS: Readonly<Record<string, string>> = {
   'bubblers-and-coolers':
     'Drinking bubblers, water coolers, and chillers for commercial sites, schools, sporting clubs, cafes, and homes. Stainless-steel bubblers are built for high-traffic public use with serviceable filtration. Coolers and chillers cover hot, cold, and room-temperature direct-connect dispensers as well as under-counter chillers paired with a feature tap. Replacement parts - bubbler heads, push-button valves, filter cartridges, taps - are stocked for every model we sell, so you are not left chasing parts when something wears out.',
   'pumps-and-tanks':
-    'Water pumps for caravans, RVs, RO systems, bore, and rainwater. Pressure tanks and replacement bladders for the common Australian brands. Dosing tanks in 50L, 100L, and 200L sizes with bunded options for chemical handling. Components and fittings to round out a build. Voltage, flow rate, and connection size are listed on every product so you can match to your install without guessing.',
+    'Water pumps for caravans, RVs, RO systems, bore, and rainwater. Pressure tanks and replacement bladders for common Australian systems. Chemical dosing tanks from 40L to 500L are available alongside separate chemical bunds for secondary containment. Voltage, flow rate, connection size and tank dimensions are listed clearly so you can match the product to your installation.',
   plumbing:
     'Plumbing fixtures and installation parts that pair with our water filtration systems - kitchen taps with three-way and dedicated filtered outlets, bathroom taps, dedicated RO filter taps, toilets, complete bundles, fittings, valves, tubing, housings, and service tools. WELS ratings and WaterMark certification are shown wherever they apply. Off-mains and rainwater installations are flagged separately from mains-pressure products so you order the correct fitting first time.',
 
@@ -46,21 +39,7 @@ export function getCategoryIntro(slug: string): string | null {
   return CATEGORY_INTROS[slug] ?? null;
 }
 
-/**
- * Unique meta descriptions for every catalogue subcategory page.
- *
- * Keys use the composite '<category>/<subcategory>' form to match
- * getCategoryIntro. Each string is hand-written, front-loads the
- * primary keyword, stays under the ~155-character Google truncation
- * window, and avoids the boilerplate template the page previously
- * generated (which produced duplicate descriptions across the 24
- * subcategory pages and tanked CTR on the same-shaped snippets).
- *
- * Australian English, no exclamation marks, no AI giveaways, per
- * docs/06-content-rules.md.
- */
 export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
-  // Water Filters
   'water-filters/under-sink':
     'Under-sink water filters in verified 2-stage and 3-stage configurations. Sediment + carbon, or add alkaline mineralisation. Standard 1/4" tubing; RO is a separate category.',
   'water-filters/whole-house':
@@ -73,8 +52,6 @@ export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
     'Bench-top water filters for renters and homeowners without plumbing access. Diverter-fitted, no drilling, 1- to 3-stage carbon and sediment configurations.',
   'water-filters/commercial':
     'Commercial water filtration for cafes, offices, schools, and hospitality. High-flow housings, WaterMark certified manifolds, scale-control and chlorine reduction.',
-
-  // Cartridges
   'cartridges/sediment':
     'Sediment filter cartridges in 1, 5, and 20 micron - PP spun and pleated. Fits standard Australian 10" × 2.5" and 20" × 4.5" Big Blue housings.',
   'cartridges/carbon':
@@ -85,26 +62,20 @@ export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
     'Specialty filter cartridges - alkaline mineral, fluoride removal, post-carbon T33, ultrafiltration, and pleated washable. Sized for Australian standard housings.',
   'cartridges/cartridge-sets':
     'Pre-built cartridge sets matched to 2, 3, 5, and 6-stage systems. One SKU covers the full service interval - sediment, carbon, and membrane where applicable.',
-
-  // Bubblers & Coolers
   'bubblers-and-coolers/bubblers':
     'Commercial water bubblers and drinking fountains in stainless steel. WaterMark-certified filtered and chilled models for schools, offices, gyms, warehouses and public venues.',
   'bubblers-and-coolers/coolers-and-chillers':
     'Water coolers and chillers - hot, cold, and ambient direct-connect dispensers plus under-counter chillers paired with a feature tap. Australian mains compatible.',
   'bubblers-and-coolers/parts':
     'Replacement parts for bubblers and water coolers - bubbler heads, push-button valves, filter cartridges, taps, and service kits for every model we stock.',
-
-  // Pumps & Tanks
   'pumps-and-tanks/pumps':
     'Water pumps for caravans, RVs, bore, rainwater, and RO systems. 12V, RO booster, pressure, solar, and submersible options with full Australian voltage compliance.',
   'pumps-and-tanks/pressure-tanks':
     'Pressure tanks and replacement bladders for Australian pump systems - 12L through 100L vertical and horizontal models, drinking-water-safe bladders.',
   'pumps-and-tanks/dosing-tanks':
-    'Chemical dosing tanks in 50L, 100L, and 200L. Bunded options for agricultural, industrial, and bore-water chemical handling. Australian compliance flagged.',
+    'Chemical dosing tanks from 40L to 500L with separate chemical bunds for secondary containment. Polyethylene construction for water-treatment dosing applications.',
   'pumps-and-tanks/components':
     'Fittings, connectors, valves, and components for water pump, pressure tank, and RO installations. 1/4", 6mm, and BSP sizes in stock for fast dispatch.',
-
-  // Plumbing
   'plumbing/kitchen-taps':
     'Kitchen taps that pair with filtration systems - three-way mixers, pull-down sprays, and dedicated filtered outlets. WELS rated, WaterMark where mains-connected.',
   'plumbing/bathroom-taps':
