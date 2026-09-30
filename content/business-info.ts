@@ -30,9 +30,9 @@ export const BUSINESS_INFO = {
   showroom: {
     locality: 'Wyong, NSW',
     /** Plain-English summary; same as opening hours. */
-    hours: 'Mon-Fri 9am-3pm AEST · Closed weekends',
+    hours: 'Mon-Thu 9am-3pm · Fri 9am-1pm AEST · Closed weekends',
     /** Schema.org openingHours format. */
-    schemaHours: 'Mo-Fr 09:00-15:00',
+    schemaHours: ['Mo-Th 09:00-15:00', 'Fr 09:00-13:00'],
   },
   /** Same-day dispatch cutoff for orders received on a business day. */
   orderCutoff: '12:00pm AEST',
@@ -50,7 +50,7 @@ export const BUSINESS_INFO = {
    * Phone-support window — narrower than the showroom hours.
    * Surfaced under the Add to cart "Questions?" line.
    */
-  phoneSupportHours: 'Mon-Fri 9am-3pm',
+  phoneSupportHours: 'Mon-Thu 9am-3pm · Fri 9am-1pm',
   /** One-line returns summary used in the buy-box meta and footer. */
   returnsSummary: '14-day returns on damaged or faulty items',
   /**
