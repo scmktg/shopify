@@ -228,13 +228,12 @@
     "categories": ["pumps-and-tanks", "dosing-tanks"],
     "tags": ["dosing-tank", "polyethylene", "chemical-storage", "500l"],
     "shortDescription": "500L rotationally moulded polyethylene chemical dosing tank for higher-volume commercial and industrial water-treatment applications.",
-    "description": "A **500L polyethylene chemical dosing tank** for higher-volume commercial and industrial water-treatment and chemical-dosing installations.\n\nThis product is currently offered as a standalone tank. A matching bund is not shown until the exact compatible bund model and fit are confirmed.\n\n- 500L nominal capacity\n- Approx. 840 mm diameter\n- Approx. 1060 mm overall height\n- Approx. 240 mm top port\n- Rotationally moulded polyethylene construction\n- Standalone tank product",
+    "description": "A **500L polyethylene chemical dosing tank** for higher-volume commercial and industrial water-treatment and chemical-dosing installations.\n\nThis product is currently offered as a standalone tank.\n\n- 500L nominal capacity\n- Approx. 840 mm diameter\n- Approx. 1060 mm overall height\n- Approx. 240 mm top port\n- Rotationally moulded polyethylene construction\n- Standalone tank product",
     "features": [
       "500L chemical dosing tank",
       "Rotationally moulded polyethylene construction",
       "Suitable for higher-volume compatible dosing applications",
-      "Standalone tank configuration",
-      "Matching bund to be confirmed before being offered"
+      "Standalone tank configuration"
     ],
     "headlineSpecs": [
       {"label": "Capacity", "value": "500L"},
@@ -248,8 +247,7 @@
       {"label": "Material", "value": "Polyethylene"},
       {"label": "Diameter", "value": "840 mm"},
       {"label": "Overall height", "value": "1060 mm"},
-      {"label": "Top port", "value": "Approx. 240 mm"},
-      {"label": "Bund option", "value": "To be confirmed"}
+      {"label": "Top port", "value": "Approx. 240 mm"}
     ],
     "recommendedFor": [
       "Higher-volume commercial water-treatment chemical dosing",
