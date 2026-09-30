@@ -29,16 +29,45 @@ export const revalidate = 300;
 
 const META_DESCRIPTION_MAX = 155;
 
-/** Matching standalone tank/bund products. Only verified pairings belong here. */
-const DOSING_COMPANION_HANDLES: Readonly<Record<string, string>> = {
-  'chemical-dosing-tank-bunded-50l': 'chemical-bund-50l',
-  'chemical-bund-50l': 'chemical-dosing-tank-bunded-50l',
-  'chemical-dosing-tank-bunded-100l': 'chemical-bund-100l',
-  'chemical-bund-100l': 'chemical-dosing-tank-bunded-100l',
-  'chemical-dosing-tank-bunded-200l': 'chemical-bund-200l',
-  'chemical-bund-200l': 'chemical-dosing-tank-bunded-200l',
-  'chemical-dosing-tank-300l': 'chemical-bund-400l',
-  'chemical-bund-400l': 'chemical-dosing-tank-300l',
+interface DosingCompanionConfig {
+  handle: string;
+  discountAmount: string;
+}
+
+/** Matching standalone tank/bund products and their automatic pair saving. */
+const DOSING_COMPANIONS: Readonly<Record<string, DosingCompanionConfig>> = {
+  'chemical-dosing-tank-bunded-50l': {
+    handle: 'chemical-bund-50l',
+    discountAmount: '19.00',
+  },
+  'chemical-bund-50l': {
+    handle: 'chemical-dosing-tank-bunded-50l',
+    discountAmount: '19.00',
+  },
+  'chemical-dosing-tank-bunded-100l': {
+    handle: 'chemical-bund-100l',
+    discountAmount: '29.00',
+  },
+  'chemical-bund-100l': {
+    handle: 'chemical-dosing-tank-bunded-100l',
+    discountAmount: '29.00',
+  },
+  'chemical-dosing-tank-bunded-200l': {
+    handle: 'chemical-bund-200l',
+    discountAmount: '39.00',
+  },
+  'chemical-bund-200l': {
+    handle: 'chemical-dosing-tank-bunded-200l',
+    discountAmount: '39.00',
+  },
+  'chemical-dosing-tank-300l': {
+    handle: 'chemical-bund-400l',
+    discountAmount: '49.00',
+  },
+  'chemical-bund-400l': {
+    handle: 'chemical-dosing-tank-300l',
+    discountAmount: '49.00',
+  },
 };
 
 /**
@@ -144,17 +173,21 @@ export default async function ProductPage({
     notFound();
   }
 
-  const companionHandle = DOSING_COMPANION_HANDLES[handle] ?? null;
-  const companionProduct = companionHandle
-    ? await getProductByHandle(companionHandle)
+  const companionConfig = DOSING_COMPANIONS[handle] ?? null;
+  const companionProduct = companionConfig
+    ? await getProductByHandle(companionConfig.handle)
     : null;
   const companionVariant = companionProduct?.variants[0] ?? null;
   const companion =
-    companionProduct && companionVariant
+    companionProduct && companionVariant && companionConfig
       ? {
           title: companionProduct.title,
           variantId: companionVariant.id,
           price: companionVariant.price,
+          bundleDiscount: {
+            amount: companionConfig.discountAmount,
+            currencyCode: companionVariant.price.currencyCode,
+          },
           available: companionVariant.availableForSale,
         }
       : null;
