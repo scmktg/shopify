@@ -8,6 +8,16 @@ function isFileMetaKey(key: string): boolean {
   return key.startsWith('__');
 }
 
+const LEGACY_TO_CANONICAL_PRODUCT_HANDLES: Readonly<Record<string, string>> = {
+  'chemical-dosing-tank-bunded-50l': 'chemical-dosing-tank-50l',
+  'chemical-dosing-tank-bunded-100l': 'chemical-dosing-tank-100l',
+  'chemical-dosing-tank-bunded-200l': 'chemical-dosing-tank-200l',
+};
+
+export function canonicalProductHandle(handle: string): string {
+  return LEGACY_TO_CANONICAL_PRODUCT_HANDLES[handle] ?? handle;
+}
+
 /**
  * In-memory accessors over the main product-content map plus small
  * explicit staging layers used while catalogue families are being
@@ -27,10 +37,25 @@ const rawMap: Record<string, ProductContent> = {
   ...squareTankMap,
 };
 
+// The 50L/100L/200L dosing tanks were originally created with `bunded-*`
+// handles even though the bunds are now separate products. Keep the content
+// source keyed as-is, but expose only the clean Shopify handles to storefront
+// callers so canonicals, related-product links and sitemap generation do not
+// perpetuate the legacy naming.
+const canonicalRawMap: Record<string, ProductContent> = { ...rawMap };
+for (const [legacyHandle, canonicalHandle] of Object.entries(
+  LEGACY_TO_CANONICAL_PRODUCT_HANDLES,
+)) {
+  const legacyContent = canonicalRawMap[legacyHandle];
+  if (!legacyContent) continue;
+  canonicalRawMap[canonicalHandle] = legacyContent;
+  delete canonicalRawMap[legacyHandle];
+}
+
 // Strip top-level metadata keys (e.g. `__placeholders`) so loader callers
 // never see them as products.
 const map: ProductContentMap = Object.fromEntries(
-  Object.entries(rawMap).filter(([key]) => !isFileMetaKey(key)),
+  Object.entries(canonicalRawMap).filter(([key]) => !isFileMetaKey(key)),
 ) as ProductContentMap;
 
 /**
@@ -38,7 +63,7 @@ const map: ProductContentMap = Object.fromEntries(
  */
 export function getProductContent(handle: string): ProductContent | null {
   if (isFileMetaKey(handle)) return null;
-  return map[handle] ?? null;
+  return map[canonicalProductHandle(handle)] ?? null;
 }
 
 export function getAllProductContent(): ProductContentMap {
@@ -65,9 +90,10 @@ export function findRelatedHandles(
 ): ReadonlyArray<string> {
   const exact: string[] = [];
   const wider: string[] = [];
-  const excludePrefix = `${excludeHandle}-`;
+  const canonicalExcludeHandle = canonicalProductHandle(excludeHandle);
+  const excludePrefix = `${canonicalExcludeHandle}-`;
   for (const [handle, content] of Object.entries(map)) {
-    if (handle === excludeHandle) continue;
+    if (handle === canonicalExcludeHandle) continue;
     if (handle.startsWith(excludePrefix)) continue;
     const [c, s] = content.categories;
     if (c !== category) continue;
