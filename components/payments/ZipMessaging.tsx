@@ -1,25 +1,31 @@
+import type { Money } from '@/types/product';
+
+const ZIP_MERCHANT_PUBLIC_KEY = 'bb5be3cd-da3b-4a78-8e40-6a979eb021a0';
+
 interface ZipMessagingProps {
+  money: Money;
   className?: string;
-  compact?: boolean;
 }
 
-export function ZipMessaging({
-  className = '',
-  compact = false,
-}: ZipMessagingProps) {
+export function ZipMessaging({ money, className = '' }: ZipMessagingProps) {
+  const amount = Number.parseFloat(money.amount);
+
+  if (!Number.isFinite(amount) || amount <= 0 || money.currencyCode !== 'AUD') {
+    return null;
+  }
+
   return (
-    <p
-      className={`flex items-center gap-2 text-black/65 ${
-        compact ? 'text-xs' : 'text-sm'
-      } ${className}`}
-    >
-      <span
-        aria-hidden="true"
-        className="inline-flex items-center justify-center rounded border border-black/15 bg-white px-1.5 py-0.5 text-[11px] font-bold leading-none tracking-tight text-black"
-      >
-        Zip
-      </span>
-      <span>Zip available at checkout</span>
-    </p>
+    <div
+      key={money.amount}
+      className={className}
+      style={{ cursor: 'pointer' }}
+      data-zm-widget="popup"
+      data-zm-region="au"
+      data-env="production"
+      data-zm-merchant={ZIP_MERCHANT_PUBLIC_KEY}
+      data-zm-price={amount.toFixed(2)}
+      data-zm-asset="productwidget"
+      data-zm-popup-asset="termsdialog"
+    />
   );
 }
