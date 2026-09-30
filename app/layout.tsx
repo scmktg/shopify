@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { headers } from 'next/headers';
+import Script from 'next/script';
 import { PromoBanner } from '@/components/layout/PromoBanner';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -53,6 +54,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           children
         ) : (
           <>
+            <Script
+              src="https://static.zip.co/lib/js/zm-widget-js/dist/zip-widget.min.js"
+              strategy="afterInteractive"
+            />
             <GoogleAnalytics />
             <JsonLdScript
               data={[
