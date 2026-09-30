@@ -38,6 +38,11 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
+# growth scripts — raw exports and generated feeds are local artefacts
+/scripts/growth/data/raw/
+/scripts/growth/data/processed/
+/scripts/growth/data/output/
+
 # os / editor
 .DS_Store
 *.pem
