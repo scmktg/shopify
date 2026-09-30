@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Check, Minus, Plus } from 'lucide-react';
 import type { Money } from '@/types/product';
 import { useCart } from './CartProvider';
@@ -25,6 +25,8 @@ interface AddToCartButtonProps {
   unitPrice?: Money;
   /** Optional matching tank/bund sold as a separate Shopify line item. */
   companion?: CompanionPurchaseItem | null;
+  /** Notifies the PDP when the current selection contains backordered units. */
+  onBackorderChange?: (hasBackorder: boolean) => void;
   /**
    * Label override from `products.json[handle].ctas.primary`. Falls
    * back to "Add to cart" when undefined. The unavailable / loading
@@ -49,6 +51,7 @@ export function AddToCartButton({
   inventoryQuantity = null,
   unitPrice,
   companion = null,
+  onBackorderChange,
   label: labelOverride,
   enableBuyNow = false,
 }: AddToCartButtonProps) {
@@ -57,38 +60,129 @@ export function AddToCartButton({
   const [buyingNow, setBuyingNow] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [includeCompanion, setIncludeCompanion] = useState(false);
-
-  const clamp = (n: number) => Math.min(MAX_QTY, Math.max(1, n));
-  const dec = () => setQuantity((q) => clamp(q - 1));
-  const inc = () => setQuantity((q) => clamp(q + 1));
-  const onTyped = (raw: string) => {
-    if (raw === '') {
-      setQuantity(1);
-      return;
-    }
-    const n = Number.parseInt(raw, 10);
-    if (Number.isFinite(n)) setQuantity(clamp(n));
-  };
+  const [backorderEnabled, setBackorderEnabled] = useState(
+    inventoryQuantity !== null && inventoryQuantity <= 0,
+  );
+  const [pendingRequestedQuantity, setPendingRequestedQuantity] = useState<
+    number | null
+  >(null);
 
   const pairSelected = Boolean(
     includeCompanion && companion?.available && companion.variantId,
   );
 
-  const primaryBackorder = Boolean(
-    available && inventoryQuantity !== null && inventoryQuantity <= 0,
-  );
-  const companionBackorder = Boolean(
+  const primaryStock =
+    inventoryQuantity === null ? null : Math.max(0, inventoryQuantity);
+  const companionStock =
     pairSelected &&
-      companion?.available &&
-      companion.quantityAvailable !== null &&
-      companion.quantityAvailable !== undefined &&
-      companion.quantityAvailable <= 0,
-  );
-  const orderContainsBackorder = primaryBackorder || companionBackorder;
+    companion?.quantityAvailable !== null &&
+    companion?.quantityAvailable !== undefined
+      ? Math.max(0, companion.quantityAvailable)
+      : null;
+
+  /**
+   * When buying a tank + bund together, the number of complete in-stock
+   * sets is limited by whichever line has less physical stock.
+   */
+  const inStockLimit = useMemo(() => {
+    const limits: number[] = [];
+    if (primaryStock !== null) limits.push(primaryStock);
+    if (companionStock !== null) limits.push(companionStock);
+    return limits.length > 0 ? Math.min(...limits) : null;
+  }, [primaryStock, companionStock]);
+
+  const clampAbsolute = (n: number) =>
+    Math.min(MAX_QTY, Math.max(1, n));
+
+  const requestQuantity = (requested: number) => {
+    const next = clampAbsolute(requested);
+
+    if (
+      !backorderEnabled &&
+      inStockLimit !== null &&
+      next > inStockLimit
+    ) {
+      setPendingRequestedQuantity(next);
+      if (inStockLimit > 0) setQuantity(inStockLimit);
+      return;
+    }
+
+    setPendingRequestedQuantity(null);
+    setQuantity(next);
+
+    if (
+      backorderEnabled &&
+      inStockLimit !== null &&
+      next <= inStockLimit
+    ) {
+      setBackorderEnabled(false);
+    }
+  };
+
+  const dec = () => requestQuantity(quantity - 1);
+  const inc = () => requestQuantity(quantity + 1);
+  const onTyped = (raw: string) => {
+    if (raw === '') {
+      requestQuantity(1);
+      return;
+    }
+    const n = Number.parseInt(raw, 10);
+    if (Number.isFinite(n)) requestQuantity(n);
+  };
+
+  const backorderedUnits =
+    backorderEnabled && inStockLimit !== null
+      ? Math.max(0, quantity - inStockLimit)
+      : 0;
+  const orderContainsBackorder = backorderedUnits > 0;
+
+  useEffect(() => {
+    setQuantity(1);
+    setPendingRequestedQuantity(null);
+    setBackorderEnabled(
+      inventoryQuantity !== null && inventoryQuantity <= 0,
+    );
+  }, [variantId, inventoryQuantity]);
+
+  useEffect(() => {
+    if (!available || inStockLimit === null) return;
+
+    if (inStockLimit <= 0) {
+      setPendingRequestedQuantity(null);
+      setBackorderEnabled(true);
+      setQuantity((current) => Math.max(1, current));
+      return;
+    }
+
+    if (!backorderEnabled && quantity > inStockLimit) {
+      setPendingRequestedQuantity(quantity);
+      setQuantity(inStockLimit);
+    }
+  }, [available, backorderEnabled, inStockLimit, quantity]);
+
+  useEffect(() => {
+    onBackorderChange?.(orderContainsBackorder);
+  }, [onBackorderChange, orderContainsBackorder]);
+
+  const confirmBackorder = () => {
+    const requested = pendingRequestedQuantity ?? Math.max(1, quantity);
+    setBackorderEnabled(true);
+    setPendingRequestedQuantity(null);
+    setQuantity(clampAbsolute(requested));
+  };
+
+  const keepInStockQuantity = () => {
+    if (inStockLimit !== null && inStockLimit > 0) {
+      setQuantity(inStockLimit);
+    }
+    setPendingRequestedQuantity(null);
+    setBackorderEnabled(false);
+  };
 
   const bundleDiscount = useMemo(() => {
     if (!companion?.bundleDiscount) return 0;
-    if (companion.bundleDiscount.currencyCode !== companion.price.currencyCode) return 0;
+    if (companion.bundleDiscount.currencyCode !== companion.price.currencyCode)
+      return 0;
     const value = Number.parseFloat(companion.bundleDiscount.amount);
     return Number.isFinite(value) && value > 0 ? value : 0;
   }, [companion]);
@@ -116,7 +210,8 @@ export function AddToCartButton({
   }, [unitPrice, pairSelected, companion, bundleDiscount, quantity]);
 
   const onAdd = async () => {
-    if (busy || buyingNow || isMutating) return;
+    if (busy || buyingNow || isMutating || pendingRequestedQuantity !== null)
+      return;
     setBusy(true);
     try {
       if (pairSelected && companion) {
@@ -133,7 +228,8 @@ export function AddToCartButton({
   };
 
   const onBuyNow = async () => {
-    if (busy || buyingNow || isMutating) return;
+    if (busy || buyingNow || isMutating || pendingRequestedQuantity !== null)
+      return;
     setBuyingNow(true);
     try {
       if (pairSelected && companion) {
@@ -159,7 +255,7 @@ export function AddToCartButton({
         ? orderContainsBackorder
           ? 'Add bundle to cart - backorder'
           : 'Add bundle to cart'
-        : primaryBackorder
+        : orderContainsBackorder
           ? 'Add to cart - backorder'
           : (labelOverride ?? 'Add to cart');
 
@@ -171,11 +267,12 @@ export function AddToCartButton({
         ? orderContainsBackorder
           ? 'Buy bundle now - backorder'
           : 'Buy bundle now'
-        : primaryBackorder
+        : orderContainsBackorder
           ? 'Buy now - backorder'
           : 'Buy now';
 
   const anyBusy = busy || buyingNow || isMutating;
+  const awaitingStockChoice = pendingRequestedQuantity !== null;
   const primaryStockMessage = getStockMessage(inventoryQuantity, available);
   const companionStockMessage = companion
     ? getStockMessage(companion.quantityAvailable ?? null, companion.available)
@@ -183,7 +280,7 @@ export function AddToCartButton({
 
   return (
     <div className="flex flex-col gap-3">
-      {primaryStockMessage && (
+      {primaryStockMessage && !orderContainsBackorder && (
         <div
           className={`rounded-md px-4 py-3 text-sm font-semibold ${
             primaryStockMessage.kind === 'backorder'
@@ -212,12 +309,18 @@ export function AddToCartButton({
             }`}
             aria-hidden="true"
           >
-            {includeCompanion && <Check className="h-3.5 w-3.5" strokeWidth={3} />}
+            {includeCompanion && (
+              <Check className="h-3.5 w-3.5" strokeWidth={3} />
+            )}
           </span>
           <input
             type="checkbox"
             checked={includeCompanion}
-            onChange={(event) => setIncludeCompanion(event.target.checked)}
+            onChange={(event) => {
+              setIncludeCompanion(event.target.checked);
+              setPendingRequestedQuantity(null);
+              setBackorderEnabled(false);
+            }}
             disabled={!companion.available || anyBusy}
             className="sr-only"
           />
@@ -227,7 +330,12 @@ export function AddToCartButton({
             </span>
             {bundleDiscount > 0 ? (
               <span className="mt-0.5 block text-sm font-medium text-brand-blue">
-                Save {formatMoneyValue(bundleDiscount, companion.price.currencyCode)} when purchased together
+                Save{' '}
+                {formatMoneyValue(
+                  bundleDiscount,
+                  companion.price.currencyCode,
+                )}{' '}
+                when purchased together
               </span>
             ) : (
               <span className="mt-0.5 block text-sm text-black/65">
@@ -253,22 +361,95 @@ export function AddToCartButton({
                   +{formatMoney(companion.price)}
                 </span>
                 <span className="block font-semibold">
-                  +{formatMoneyValue(companionEffectivePrice, companion.price.currencyCode)}
+                  +
+                  {formatMoneyValue(
+                    companionEffectivePrice,
+                    companion.price.currencyCode,
+                  )}
                 </span>
               </>
             ) : (
-              <span className="font-semibold">+{formatMoney(companion.price)}</span>
+              <span className="font-semibold">
+                +{formatMoney(companion.price)}
+              </span>
             )}
           </span>
         </label>
       )}
 
+      {awaitingStockChoice && inStockLimit !== null && (
+        <div className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          <p className="font-semibold">
+            {inStockLimit > 0
+              ? `Only ${inStockLimit} ${inStockLimit === 1 ? 'unit is' : 'units are'} currently in stock.`
+              : 'This item is currently on backorder.'}
+          </p>
+          <p className="mt-1">
+            Additional units can still be ordered, with delivery taking up to 4
+            weeks. If you backorder more than the available stock, your entire
+            order will be held and shipped together once all units are in stock.
+          </p>
+          <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+            {inStockLimit > 0 && (
+              <button
+                type="button"
+                onClick={keepInStockQuantity}
+                className="rounded-md border border-amber-700 bg-white px-4 py-2 font-semibold text-amber-950 hover:bg-amber-100"
+              >
+                Order {inStockLimit} available now
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={confirmBackorder}
+              className="rounded-md bg-amber-900 px-4 py-2 font-semibold text-white hover:bg-amber-950"
+            >
+              Backorder {pendingRequestedQuantity}{' '}
+              {pendingRequestedQuantity === 1 ? 'unit' : 'units'}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {orderContainsBackorder && inStockLimit !== null && (
+        <div
+          className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950"
+          role="status"
+        >
+          <p className="font-semibold">
+            {inStockLimit > 0
+              ? `${inStockLimit} ${inStockLimit === 1 ? 'unit is' : 'units are'} in stock; ${backorderedUnits} ${backorderedUnits === 1 ? 'unit is' : 'units are'} on backorder.`
+              : 'This order is on backorder.'}
+          </p>
+          <p className="mt-1">
+            Delivery for additional units can take up to 4 weeks. Your full
+            order will ship together once all units are available.
+          </p>
+          {inStockLimit > 0 && (
+            <button
+              type="button"
+              onClick={keepInStockQuantity}
+              className="mt-2 font-semibold underline underline-offset-2"
+            >
+              Reduce order to {inStockLimit} in-stock{' '}
+              {inStockLimit === 1 ? 'unit' : 'units'}
+            </button>
+          )}
+        </div>
+      )}
+
       {displayedTotal && (
         <div className="flex items-baseline justify-between gap-3 rounded-md bg-black/[0.04] px-4 py-3">
           <span className="text-sm font-medium text-black/70">
-            {pairSelected ? 'Bundle total' : quantity > 1 ? 'Order total' : 'Current total'}
+            {pairSelected
+              ? 'Bundle total'
+              : quantity > 1
+                ? 'Order total'
+                : 'Current total'}
           </span>
-          <span className="text-xl font-bold text-black">{displayedTotal}</span>
+          <span className="text-xl font-bold text-black">
+            {displayedTotal}
+          </span>
         </div>
       )}
 
@@ -284,13 +465,17 @@ export function AddToCartButton({
             aria-label="Decrease quantity"
             className="flex-1 sm:flex-none sm:w-11 inline-flex items-center justify-center text-black/70 hover:text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
           >
-            <Minus className="h-4 w-4" aria-hidden="true" strokeWidth={2.25} />
+            <Minus
+              className="h-4 w-4"
+              aria-hidden="true"
+              strokeWidth={2.25}
+            />
           </button>
           <input
             type="number"
             inputMode="numeric"
             min={1}
-            max={MAX_QTY}
+            max={backorderEnabled ? MAX_QTY : (inStockLimit ?? MAX_QTY)}
             value={quantity}
             onChange={(e) => onTyped(e.target.value)}
             aria-label="Quantity"
@@ -303,14 +488,18 @@ export function AddToCartButton({
             aria-label="Increase quantity"
             className="flex-1 sm:flex-none sm:w-11 inline-flex items-center justify-center text-black/70 hover:text-black hover:bg-gray-50 disabled:text-gray-300 disabled:cursor-not-allowed transition-colors"
           >
-            <Plus className="h-4 w-4" aria-hidden="true" strokeWidth={2.25} />
+            <Plus
+              className="h-4 w-4"
+              aria-hidden="true"
+              strokeWidth={2.25}
+            />
           </button>
         </div>
 
         <button
           type="button"
           onClick={onAdd}
-          disabled={!available || anyBusy}
+          disabled={!available || anyBusy || awaitingStockChoice}
           className="flex-1 bg-brand-blue hover:bg-brand-blue-hover disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
         >
           {addLabel}
@@ -321,7 +510,7 @@ export function AddToCartButton({
         <button
           type="button"
           onClick={onBuyNow}
-          disabled={!available || anyBusy}
+          disabled={!available || anyBusy || awaitingStockChoice}
           className="w-full bg-black hover:bg-black/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded transition-colors"
         >
           {buyNowLabel}
