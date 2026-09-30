@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { X } from 'lucide-react';
 import clsx from 'clsx';
 import { PriceDisplay } from '@/components/product/PriceDisplay';
+import { ZipMessaging } from '@/components/payments/ZipMessaging';
 import { useCart } from './CartProvider';
 import { CartLineRow } from './CartLineRow';
 import { trackViewCart } from '@/lib/analytics/client';
@@ -108,6 +109,7 @@ export function CartDrawer() {
                   className="text-base font-semibold text-black"
                 />
               </div>
+              <ZipMessaging compact className="mb-3" />
               <p className="text-xs text-black/60 mb-3">
                 Shipping and taxes calculated at checkout.
               </p>
@@ -138,4 +140,3 @@ export function CartDrawer() {
     </>
   );
 }
-
