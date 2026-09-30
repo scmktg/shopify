@@ -20,6 +20,9 @@ import productOverrides from '../data/product-overrides.json';
 import productAdditions from '../data/product-additions.json';
 import squareTankAdditions from '../data/product-square-tanks.json';
 import {
+  canonicalProductHandle,
+} from '../lib/products/getProductContent';
+import {
   isScaffoldingHandle,
   validateProducts,
   validateAgainstShopify,
@@ -38,6 +41,17 @@ const catalogData = {
   ...squareTankAdditions,
 };
 
+function canonicalizeCatalogHandles<T>(
+  catalog: Readonly<Record<string, T>>,
+): Record<string, T> {
+  return Object.fromEntries(
+    Object.entries(catalog).map(([handle, entry]) => [
+      canonicalProductHandle(handle),
+      entry,
+    ]),
+  );
+}
+
 function hasShopifyEnv(): boolean {
   return Boolean(
     process.env['SHOPIFY_STORE_DOMAIN'] &&
@@ -51,6 +65,8 @@ async function main(): Promise<void> {
   console.log(`[validate] merged product content: ${handleCount} entries`);
 
   // Pass 1 — pure validation over exactly what the storefront loader can see.
+  // Keep this pass on the authored/raw keys so historical sibling references
+  // remain internally self-consistent while the loader aliases them at runtime.
   const result = validateProducts(catalogData);
 
   for (const w of result.warnings) {
@@ -107,11 +123,23 @@ async function main(): Promise<void> {
     return handles.map((h) => h.handle);
   };
 
+  // A few products retain historical content keys for migration/backlink
+  // compatibility even though their Shopify handles have been cleaned up.
+  // Compare canonical handles to Shopify so those aliases do not make a valid
+  // rename look like a deleted product (or a newly-published product with no
+  // content) during Vercel's prebuild gate.
+  const canonicalBaseData = canonicalizeCatalogHandles(
+    productData as unknown as Record<string, unknown>,
+  );
+  const canonicalCatalogData = canonicalizeCatalogHandles(
+    catalogData as unknown as Record<string, unknown>,
+  );
+
   // Direction A: long-lived base catalogue entries must resolve live in Shopify.
   // Draft/future products are deliberately kept in overrides/additions and are
   // allowed to exist before publication.
   const baseResult = await validateAgainstShopify(
-    productData as unknown as Parameters<typeof validateAgainstShopify>[0],
+    canonicalBaseData as unknown as Parameters<typeof validateAgainstShopify>[0],
     fetchLiveHandles,
   );
 
@@ -119,7 +147,7 @@ async function main(): Promise<void> {
   // content somewhere in the merged catalogue. This catches newly-published
   // products such as a bund before they can ship without a working PDP.
   const mergedResult = await validateAgainstShopify(
-    catalogData as unknown as Parameters<typeof validateAgainstShopify>[0],
+    canonicalCatalogData as unknown as Parameters<typeof validateAgainstShopify>[0],
     fetchLiveHandles,
   );
 
