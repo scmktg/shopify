@@ -111,6 +111,30 @@ const PRICE_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
   },
 ];
 
+const DOSING_TYPE_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
+  {
+    value: 'tank',
+    label: 'Dosing tanks',
+    query: "tag:'facet:dosing-tank'",
+  },
+  {
+    value: 'bund',
+    label: 'Chemical bunds',
+    query: "tag:'facet:chemical-bund'",
+  },
+];
+
+const DOSING_CAPACITY_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
+  { value: '40l', label: '40L', query: "tag:'facet:capacity-40l'" },
+  { value: '50l', label: '50L', query: "tag:'facet:capacity-50l'" },
+  { value: '60l', label: '60L', query: "tag:'facet:capacity-60l'" },
+  { value: '100l', label: '100L', query: "tag:'facet:capacity-100l'" },
+  { value: '200l', label: '200L', query: "tag:'facet:capacity-200l'" },
+  { value: '300l', label: '300L', query: "tag:'facet:capacity-300l'" },
+  { value: '400l', label: '400L', query: "tag:'facet:capacity-400l'" },
+  { value: '500l', label: '500L', query: "tag:'facet:capacity-500l'" },
+];
+
 const WATER_FILTER_SYSTEMS: ReadonlyArray<CatalogFilterOption> = [
   { value: 'under-sink', label: 'Under sink', query: "tag:'sub-cat:under-sink'" },
   {
@@ -209,6 +233,32 @@ export function getCatalogFilterGroups(
   category: string,
   activeSubcategory?: string | null,
 ): ReadonlyArray<CatalogFilterGroup> {
+  if (category === 'pumps-and-tanks' && activeSubcategory === 'dosing-tanks') {
+    return [
+      {
+        id: 'dosingType',
+        param: 'type',
+        label: 'Product type',
+        multiple: true,
+        options: DOSING_TYPE_OPTIONS,
+      },
+      {
+        id: 'capacity',
+        param: 'capacity',
+        label: 'Capacity',
+        multiple: true,
+        options: DOSING_CAPACITY_OPTIONS,
+      },
+      {
+        id: 'price',
+        param: 'price',
+        label: 'Price',
+        multiple: false,
+        options: PRICE_OPTIONS,
+      },
+    ];
+  }
+
   const groups: CatalogFilterGroup[] = [];
 
   if (!activeSubcategory && CATEGORY_SYSTEM_OPTIONS[category]) {
