@@ -1,0 +1,47 @@
+{
+  "chemical-bund-50l": {
+    "categories": ["pumps-and-tanks", "dosing-tanks"],
+    "tags": ["chemical-bund", "polyethylene", "secondary-containment", "50l"],
+    "shortDescription": "50L polyethylene chemical bund for secondary containment, sized to suit the 50L Chemical Dosing Tank.",
+    "description": "A **50L polyethylene chemical bund** designed to provide secondary containment for the matching 50L Chemical Dosing Tank.\n\nThe bund is sold separately so customers can add containment when required for their installation. Its moulded, tapered profile is designed to accept the matching tank while providing additional containment volume around it.\n\n- 50L nominal bund size\n- Approx. 480 mm top outside diameter\n- Approx. 360 mm bottom outside diameter\n- Approx. 425 mm overall height\n- Rotationally moulded polyethylene construction\n- Sized to suit the 50L Chemical Dosing Tank",
+    "features": [
+      "50L chemical bund for secondary containment",
+      "Sized to suit the matching 50L Chemical Dosing Tank",
+      "Rotationally moulded polyethylene construction",
+      "Tapered moulded profile",
+      "Sold separately from the tank"
+    ],
+    "headlineSpecs": [
+      {"label": "Bund size", "value": "50L"},
+      {"label": "Top diameter", "value": "480 mm"},
+      {"label": "Overall height", "value": "425 mm"},
+      {"label": "Matching tank", "value": "50L Chemical Dosing Tank"}
+    ],
+    "fullSpecs": [
+      {"label": "Type", "value": "Chemical bund / secondary containment"},
+      {"label": "Nominal size", "value": "50L"},
+      {"label": "Material", "value": "Polyethylene"},
+      {"label": "Top outside diameter", "value": "480 mm"},
+      {"label": "Bottom outside diameter", "value": "360 mm"},
+      {"label": "Overall height", "value": "425 mm"},
+      {"label": "Matching tank", "value": "50L Chemical Dosing Tank - sold separately"}
+    ],
+    "recommendedFor": [
+      "Secondary containment for the 50L Chemical Dosing Tank",
+      "Water-treatment chemical dosing installations",
+      "Commercial and light-industrial dosing setups"
+    ],
+    "compliance": {
+      "watermark": {"status": "not_required", "licenceNumber": null, "certifier": null, "validUntil": null},
+      "wels": null,
+      "note": "Secondary-containment bund - WaterMark does not apply. Confirm site-specific containment requirements for the chemical, stored volume, installation and jurisdiction."
+    },
+    "ctas": {"primary": "Add to cart", "secondary": null},
+    "upsells": {"boughtTogether": ["chemical-dosing-tank-bunded-50l"], "moreInCategory": "auto"},
+    "seo": {
+      "title": "50L Chemical Bund | Polyethylene Secondary Containment",
+      "description": "50L polyethylene chemical bund sized to suit the 50L Chemical Dosing Tank. Secondary containment for water-treatment and chemical dosing installations.",
+      "ogImage": null
+    }
+  }
+}
