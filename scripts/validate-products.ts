@@ -20,6 +20,7 @@ import productOverrides from '../data/product-overrides.json';
 import productAdditions from '../data/product-additions.json';
 import squareTankAdditions from '../data/product-square-tanks.json';
 import dosingPackageAdditions from '../data/product-dosing-packages.json';
+import bundSeoOverrides from '../data/product-bund-seo-overrides.json';
 import {
   canonicalProductHandle,
 } from '../lib/products/getProductContent';
@@ -41,6 +42,7 @@ const catalogData = {
   ...productAdditions,
   ...squareTankAdditions,
   ...dosingPackageAdditions,
+  ...bundSeoOverrides,
 };
 
 function canonicalizeCatalogHandles<T>(
