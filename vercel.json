@@ -5,6 +5,11 @@
       "source": "/product/100l-chemical-dosing-tank-water-tank-poly-tank-and-bund",
       "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l",
       "statusCode": 301
+    },
+    {
+      "source": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l",
+      "destination": "/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l",
+      "statusCode": 301
     }
   ]
 }
