@@ -91,17 +91,12 @@ export function AddToCartButton({
     return limits.length > 0 ? Math.min(...limits) : null;
   }, [primaryStock, companionStock]);
 
-  const clampAbsolute = (n: number) =>
-    Math.min(MAX_QTY, Math.max(1, n));
+  const clampAbsolute = (n: number) => Math.min(MAX_QTY, Math.max(1, n));
 
   const requestQuantity = (requested: number) => {
     const next = clampAbsolute(requested);
 
-    if (
-      !backorderEnabled &&
-      inStockLimit !== null &&
-      next > inStockLimit
-    ) {
+    if (!backorderEnabled && inStockLimit !== null && next > inStockLimit) {
       setPendingRequestedQuantity(next);
       if (inStockLimit > 0) setQuantity(inStockLimit);
       return;
@@ -128,6 +123,27 @@ export function AddToCartButton({
     }
     const n = Number.parseInt(raw, 10);
     if (Number.isFinite(n)) requestQuantity(n);
+  };
+
+  const adjustPendingBackorder = (delta: number) => {
+    const minimum = Math.max(1, (inStockLimit ?? 0) + 1);
+    const current = pendingRequestedQuantity ?? minimum;
+    setPendingRequestedQuantity(
+      Math.min(MAX_QTY, Math.max(minimum, current + delta)),
+    );
+  };
+
+  const onPendingBackorderTyped = (raw: string) => {
+    const minimum = Math.max(1, (inStockLimit ?? 0) + 1);
+    if (raw === '') {
+      setPendingRequestedQuantity(minimum);
+      return;
+    }
+    const n = Number.parseInt(raw, 10);
+    if (!Number.isFinite(n)) return;
+    setPendingRequestedQuantity(
+      Math.min(MAX_QTY, Math.max(minimum, n)),
+    );
   };
 
   const backorderedUnits =
@@ -165,7 +181,8 @@ export function AddToCartButton({
   }, [onBackorderChange, orderContainsBackorder]);
 
   const confirmBackorder = () => {
-    const requested = pendingRequestedQuantity ?? Math.max(1, quantity);
+    const minimum = Math.max(1, (inStockLimit ?? 0) + 1);
+    const requested = pendingRequestedQuantity ?? minimum;
     setBackorderEnabled(true);
     setPendingRequestedQuantity(null);
     setQuantity(clampAbsolute(requested));
@@ -240,8 +257,6 @@ export function AddToCartButton({
       } else {
         await buyNow(variantId, quantity);
       }
-      // Successful buy-now navigates away. Keep the button disabled
-      // until the page unloads; catch resets state on failure.
     } catch {
       setBuyingNow(false);
     }
@@ -252,24 +267,16 @@ export function AddToCartButton({
     : busy
       ? 'Adding…'
       : pairSelected
-        ? orderContainsBackorder
-          ? 'Add bundle to cart - backorder'
-          : 'Add bundle to cart'
-        : orderContainsBackorder
-          ? 'Add to cart - backorder'
-          : (labelOverride ?? 'Add to cart');
+        ? 'Add bundle to cart'
+        : (labelOverride ?? 'Add to cart');
 
   const buyNowLabel = !available
     ? 'Out of stock'
     : buyingNow
       ? 'Redirecting…'
       : pairSelected
-        ? orderContainsBackorder
-          ? 'Buy bundle now - backorder'
-          : 'Buy bundle now'
-        : orderContainsBackorder
-          ? 'Buy now - backorder'
-          : 'Buy now';
+        ? 'Buy bundle now'
+        : 'Buy now';
 
   const anyBusy = busy || buyingNow || isMutating;
   const awaitingStockChoice = pendingRequestedQuantity !== null;
@@ -389,7 +396,8 @@ export function AddToCartButton({
             weeks. If you backorder more than the available stock, your entire
             order will be held and shipped together once all units are in stock.
           </p>
-          <div className="mt-3 flex flex-col gap-2 sm:flex-row">
+
+          <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center">
             {inStockLimit > 0 && (
               <button
                 type="button"
@@ -399,13 +407,47 @@ export function AddToCartButton({
                 Order {inStockLimit} available now
               </button>
             )}
+
+            <div className="flex h-10 items-stretch overflow-hidden rounded-md border border-amber-700 bg-white">
+              <button
+                type="button"
+                onClick={() => adjustPendingBackorder(-1)}
+                disabled={
+                  (pendingRequestedQuantity ?? 1) <=
+                    Math.max(1, (inStockLimit ?? 0) + 1) || anyBusy
+                }
+                aria-label="Decrease backorder quantity"
+                className="inline-flex w-10 items-center justify-center text-amber-950 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                <Minus className="h-4 w-4" aria-hidden="true" />
+              </button>
+              <input
+                type="number"
+                inputMode="numeric"
+                min={Math.max(1, (inStockLimit ?? 0) + 1)}
+                max={MAX_QTY}
+                value={pendingRequestedQuantity ?? Math.max(1, (inStockLimit ?? 0) + 1)}
+                onChange={(event) => onPendingBackorderTyped(event.target.value)}
+                aria-label="Backorder total quantity"
+                className="w-14 bg-transparent text-center font-semibold text-amber-950 focus:outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              />
+              <button
+                type="button"
+                onClick={() => adjustPendingBackorder(1)}
+                disabled={(pendingRequestedQuantity ?? 1) >= MAX_QTY || anyBusy}
+                aria-label="Increase backorder quantity"
+                className="inline-flex w-10 items-center justify-center text-amber-950 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                <Plus className="h-4 w-4" aria-hidden="true" />
+              </button>
+            </div>
+
             <button
               type="button"
               onClick={confirmBackorder}
               className="rounded-md bg-amber-900 px-4 py-2 font-semibold text-white hover:bg-amber-950"
             >
-              Backorder {pendingRequestedQuantity}{' '}
-              {pendingRequestedQuantity === 1 ? 'unit' : 'units'}
+              Continue with backorder
             </button>
           </div>
         </div>
