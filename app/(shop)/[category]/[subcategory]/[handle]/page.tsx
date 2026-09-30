@@ -29,6 +29,12 @@ export const revalidate = 300;
 
 const META_DESCRIPTION_MAX = 155;
 
+/** Matching standalone tank/bund products. Add future verified pairs here. */
+const DOSING_COMPANION_HANDLES: Readonly<Record<string, string>> = {
+  'chemical-dosing-tank-bunded-50l': 'chemical-bund-50l',
+  'chemical-bund-50l': 'chemical-dosing-tank-bunded-50l',
+};
+
 /**
  * The root layout sets a title template of `%s | Enviro Aqua`, so the
  * value returned here must NOT already carry that suffix. Some legacy
@@ -132,6 +138,21 @@ export default async function ProductPage({
     notFound();
   }
 
+  const companionHandle = DOSING_COMPANION_HANDLES[handle] ?? null;
+  const companionProduct = companionHandle
+    ? await getProductByHandle(companionHandle)
+    : null;
+  const companionVariant = companionProduct?.variants[0] ?? null;
+  const companion =
+    companionProduct && companionVariant
+      ? {
+          title: companionProduct.title,
+          variantId: companionVariant.id,
+          price: companionVariant.price,
+          available: companionVariant.availableForSale,
+        }
+      : null;
+
   const node = findSubcategory(category, subcategory);
   const pathname = `/${category}/${subcategory}/${handle}`;
   // Resolve sibling handles to their canonical paths (one segment per
@@ -174,6 +195,7 @@ export default async function ProductPage({
         subcategory={subcategory}
         familyPaths={familyPaths}
         initialVariantId={requestedVariantId}
+        companion={companion}
       />
     </>
   );
