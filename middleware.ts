@@ -55,14 +55,26 @@ const GONE_EXACT = new Set([
   '/water-filters/whole-house/whole-house-water-filter-2-stage-10-x-4-5-washable-reusable',
 ]);
 
-// Legacy WordPress products that still have a valid replacement but are
-// not represented in next.config.js. These must be checked before the
-// broad /product 410 rule below so valuable historical URLs do not get
-// treated as removed products.
+// Known legacy product URLs that still have valid replacements. Keep these
+// ahead of the broad /product 410 handling and the dynamic product route.
+// The dosing-tank handle aliases also protect backlinks and indexed URLs
+// created before the bunds were split into separate products.
 const LEGACY_PRODUCT_REDIRECTS = new Map<string, string>([
   [
     '/product/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l',
     '/pumps-and-tanks/dosing-tanks',
+  ],
+  [
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-50l',
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-50l',
+  ],
+  [
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l',
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-100l',
+  ],
+  [
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-200l',
+    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-200l',
   ],
 ]);
 
@@ -128,7 +140,9 @@ function redirectLegacyProduct(request: NextRequest): NextResponse | null {
     }
   }
 
-  return NextResponse.redirect(redirectUrl, 308);
+  // These are permanent URL migrations. Use an explicit 301 so historical
+  // backlinks and indexed URLs consolidate onto the clean canonical path.
+  return NextResponse.redirect(redirectUrl, 301);
 }
 
 function isGone(pathname: string): boolean {
