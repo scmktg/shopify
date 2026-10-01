@@ -15,6 +15,7 @@ import { BoughtTogether } from './BoughtTogether';
 import { MoreInCategory } from './MoreInCategory';
 import { BrandTrustStrip } from './BrandTrustStrip';
 import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
+import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { ShippingTierBlock } from './ShippingTierBlock';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
@@ -224,6 +225,19 @@ export function ProductDetail({
             />
           )}
 
+          {subcategory === 'bubblers' && (
+            <p className="mt-4 text-sm text-black/70">
+              Not sure which cabinet suits your site?{' '}
+              <Link
+                href="/commercial-water-bubblers"
+                className="font-semibold text-brand-blue hover:underline underline-offset-4"
+              >
+                Compare all commercial water bubblers
+              </Link>
+              .
+            </p>
+          )}
+
           <ShippingTierBlock
             tier={product.metafields.shipping_tier}
             productHandle={product.handle}
@@ -259,6 +273,30 @@ export function ProductDetail({
       <ProductFeatures features={content.features} />
       <RecommendedFor items={content.recommendedFor} />
       <ComplianceSection compliance={content.compliance} />
+      {content.faq && content.faq.length > 0 && (
+        <section className="mt-10 border-t border-gray-200 pt-10">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+                Questions about this model
+              </h2>
+              {subcategory === 'bubblers' && (
+                <p className="mt-3 text-sm text-black/70">
+                  For a side-by-side comparison of cooling, cabinet, bottle-fill and location options, see the{' '}
+                  <Link
+                    href="/commercial-water-bubblers"
+                    className="font-semibold text-brand-blue hover:underline underline-offset-4"
+                  >
+                    commercial water bubbler guide
+                  </Link>
+                  .
+                </p>
+              )}
+            </div>
+            <FaqAccordion items={content.faq} />
+          </div>
+        </section>
+      )}
       {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
       <VariantBuyBanner
