@@ -30,9 +30,8 @@ The rate is based on the product's **packed shipping weight** and your delivery 
 | Packed weight | NSW / ACT | VIC / QLD | SA | WA / TAS | NT |
 |---|---:|---:|---:|---:|---:|
 | Up to 0.5 kg | $12.95 | $12.95 | $12.95 | $12.95 | $12.95 |
-| Over 0.5 kg to 1 kg | $17.95 | $17.95 | $17.95 | $17.95 | $17.95 |
-| Over 1 kg to 3 kg | $22.95 | $22.95 | $22.95 | $22.95 | $22.95 |
-| Over 3 kg to 5 kg | $27.95 | $27.95 | $27.95 | $27.95 | $27.95 |
+| Over 0.5 kg to 3 kg | $16.95 | $16.95 | $16.95 | $16.95 | $16.95 |
+| Over 3 kg to 5 kg | $22.95 | $22.95 | $22.95 | $22.95 | $22.95 |
 | Over 5 kg to 10 kg | $34.95 | $44.95 | $49.95 | $69.95 | $99.95 |
 | Over 10 kg to 22 kg | $39.95 | $49.95 | $54.95 | $79.95 | $129.95 |
 
@@ -75,7 +74,7 @@ These products can be collected free from:
 - **Monday to Thursday, 9am-3pm AEST**
 - **Friday, 9am-1pm AEST**
 
-Orders are usually ready within one hour during business hours. We will email or text you when your order is ready.
+Orders are usually ready within one hour during business hours. We will email or text you when the order is ready.
 
 ## Dispatch times
 
