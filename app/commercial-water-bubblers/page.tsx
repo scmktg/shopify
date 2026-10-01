@@ -6,6 +6,7 @@ import {
   Check,
   Droplet,
   Dumbbell,
+  Factory,
   GraduationCap,
   Mail,
   Minus,
@@ -22,7 +23,12 @@ import { PriceDisplay } from '@/components/product/PriceDisplay';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
-import { breadcrumbSchema, faqPageSchema } from '@/lib/seo/jsonld';
+import {
+  breadcrumbSchema,
+  collectionSchema,
+  faqPageSchema,
+  productListSchema,
+} from '@/lib/seo/jsonld';
 import type { Product } from '@/types/product';
 
 export const revalidate = 3600;
@@ -45,27 +51,26 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     key: 'round',
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
     shortName: 'Round Stainless',
-    tagline: 'Cylindrical SUS304 cabinet - foyers and plazas.',
-    badge: 'Entry model',
-    highlights: ['20 L/hr · 8-12 °C', 'SUS304 cylindrical', 'Push-button'],
+    tagline: 'Compact SUS304 cabinet for sheltered commercial locations.',
+    badge: 'Compact',
+    highlights: ['20 L/hr', '8–12 °C', 'Filtered', 'WaterMark'],
   },
   {
     key: 'square',
     handle:
       'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
     shortName: 'Square Stainless',
-    tagline:
-      'Flush-fit square cabinet - corridors, kitchens, against-wall installs.',
-    badge: 'Most popular',
-    highlights: ['99 × 30 × 30 cm', 'R290 · 200 W', 'Spout + side tap'],
+    tagline: 'Flat-sided stainless cabinet with bubbler spout and side tap.',
+    badge: 'Bottle fill',
+    highlights: ['20 L/hr', '8–12 °C', 'Side tap', 'WaterMark'],
   },
   {
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
     shortName: 'HDPE Granite',
-    tagline: 'Rust-free HDPE cabinet with granite finish - full outdoor.',
+    tagline: 'Rust-free, UV-stable cabinet for exposed outdoor locations.',
     badge: 'Outdoor',
-    highlights: ['122 × 41 × 41 cm', 'Rust-free HDPE', 'UV stable'],
+    highlights: ['20 L/hr', '8–12 °C', 'Rust-free', 'WaterMark'],
   },
 ];
 
@@ -79,8 +84,8 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   {
     label: 'Cabinet material',
     values: {
-      round: 'SUS304 stainless',
-      square: 'SUS304 stainless',
+      round: 'SUS304 stainless steel',
+      square: 'SUS304 stainless steel',
       hdpe: 'HDPE polymer',
     },
   },
@@ -89,7 +94,7 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
     values: {
       round: 'Cylindrical',
       square: 'Square / flat-sided',
-      hdpe: 'Tapered, granite-stone',
+      hdpe: 'Tapered, granite-look',
     },
   },
   {
@@ -105,32 +110,28 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
     values: { round: '20 L/hr', square: '20 L/hr', hdpe: '20 L/hr' },
   },
   {
-    label: 'Water temperature',
-    values: { round: '8-12 °C', square: '8-12 °C', hdpe: '8-12 °C' },
-  },
-  {
-    label: 'Refrigerant',
-    values: { round: 'R290', square: 'R290 · 60 g', hdpe: 'R290 · 60 g' },
+    label: 'Chilled water temperature',
+    values: { round: '8–12 °C', square: '8–12 °C', hdpe: '8–12 °C' },
   },
   {
     label: 'Filtration',
     values: {
-      round: 'PP + Carbon',
-      square: 'PP + Carbon',
-      hdpe: 'PP + Carbon',
+      round: 'Sediment + carbon',
+      square: 'Sediment + carbon',
+      hdpe: 'Sediment + carbon',
     },
   },
   {
-    label: 'Side tap (bottle fill)',
-    values: { round: '-', square: 'Yes', hdpe: 'Yes' },
+    label: 'Bottle / glass fill side tap',
+    values: { round: '—', square: 'Yes', hdpe: 'Yes' },
     yes: { square: true, hdpe: true },
   },
   {
     label: 'WaterMark certified',
     values: {
-      round: 'Yes · 23484',
-      square: 'Yes · 23484',
-      hdpe: 'Yes · 23484',
+      round: 'Yes · licence 23484',
+      square: 'Yes · licence 23484',
+      hdpe: 'Yes · licence 23484',
     },
     yes: { round: true, square: true, hdpe: true },
   },
@@ -140,44 +141,86 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
     yes: { round: true, square: true, hdpe: true },
   },
   {
-    label: 'Outdoor rating',
-    values: { round: 'Sheltered', square: 'Sheltered', hdpe: 'Full outdoor' },
-    yes: { hdpe: true },
+    label: 'Location',
+    values: {
+      round: 'Indoor / sheltered',
+      square: 'Indoor / sheltered',
+      hdpe: 'Indoor / exposed outdoor',
+    },
   },
   {
-    label: 'Best for',
+    label: 'Best fit',
     values: {
-      round: 'Foyers · plazas',
-      square: 'Corridors · walls',
-      hdpe: 'Schoolyards · gym entries',
+      round: 'Offices · foyers · workshops',
+      square: 'Schools · offices · gyms',
+      hdpe: 'Schoolyards · factories · sports facilities',
     },
   },
 ];
 
 const FAQ_ITEMS = [
   {
-    q: 'Can my regular plumber install this?',
-    a: 'Yes. All three units are WaterMark certified under WMTS-105:2016, licence 23484 - any licensed Australian plumber can install on a mains supply line and issue a Certificate of Compliance.',
+    q: 'What is a commercial water bubbler?',
+    a: 'A commercial water bubbler is a mains-connected drinking-water unit designed for frequent shared use in places such as schools, offices, factories, gyms and public facilities. A chilled model cools the incoming water and dispenses it through a bubbler spout; filtered models also treat the water before dispensing.',
   },
   {
-    q: 'What does "lead-free" actually mean here?',
-    a: 'Every wetted material that contacts the drinking water - internal fittings, valves, the bubbler nozzle, the side tap - is certified to Australian drinking-water lead limits. This matters most for schools, childcare, and healthcare installations.',
+    q: 'What is the difference between a water bubbler and a drinking fountain?',
+    a: 'In Australia, “water bubbler” and “drinking fountain” are often used for the same type of fixture. “Bubbler” usually refers to the upward drinking spout, while “drinking fountain” can describe the complete fixture. Some commercial units also include a separate bottle or glass-filling tap.',
   },
   {
-    q: 'Do you ship Australia-wide?',
-    a: `Yes. Same-day dispatch from Wyong NSW on orders placed before ${BUSINESS_INFO.orderCutoff} on business days. Standard tiered freight rates Australia-wide; commercial bubblers ship free as part of our whole-system freight tier. Tracked Australia-wide.`,
+    q: 'What is the difference between a water bubbler and a water cooler?',
+    a: 'A bubbler lets a person drink directly from an upward-flowing spout. A water cooler usually dispenses into a cup or bottle. Commercial mains-connected units can combine both functions, so the best choice depends on how people will use the station.',
   },
   {
-    q: 'Are filter cartridges proprietary?',
-    a: 'No. The units take standard 10″ Australian housings. Replacement carbon + sediment cartridges are stocked, or you can source the same housings from any Australian water-filter supplier.',
+    q: 'Do commercial water bubblers need WaterMark certification in Australia?',
+    a: 'WaterMark requirements depend on the product type and its intended plumbing application. The National Construction Code requires product types listed on the WaterMark Schedule of Products to be WaterMark certified before installation. All three commercial bubblers in this Enviro Aqua range are WaterMark certified under licence 23484.',
   },
   {
-    q: 'What about outdoor installations?',
-    a: 'The stainless units are fine in sheltered locations (covered courtyards, foyers). For full outdoor exposure - schoolyards, parks, pool decks - choose the HDPE granite model. The cabinet does not rust, does not weld-pit, and the granite finish is moulded through the material rather than painted on.',
+    q: 'Who should install a mains-connected water bubbler?',
+    a: 'Use an appropriately licensed plumbing practitioner for the mains-water connection and any drainage work required by the installation. Your plumber should also confirm local plumbing requirements for the site before installation.',
   },
   {
-    q: 'Is the price really the same retail or trade?',
-    a: 'Yes. We do not run a trade portal, account application, or quote process. The price you see is the price for a homeowner, a plumber, a school P&C, or a national facilities manager. No accounts, no minimums, no surprises.',
+    q: 'How much cooling capacity does a commercial water bubbler need?',
+    a: 'Cooling capacity is measured in litres per hour, but the right capacity depends on peak demand rather than just the total number of people at a site. All three Enviro Aqua commercial bubblers are rated at 20 L/hr. For unusually high peak demand or multiple simultaneous users, consider more than one station rather than relying on a single unit.',
+  },
+  {
+    q: 'Are these water bubblers filtered?',
+    a: 'Yes. The three commercial models use sediment and carbon filtration. The filters help reduce sediment and improve taste and odour before the water is chilled and dispensed.',
+  },
+  {
+    q: 'Which water bubbler is best for outdoor use?',
+    a: 'For exposed outdoor locations, choose the rust-free HDPE granite model. The stainless-steel round and square models are better suited to indoor or sheltered positions. Site exposure, drainage, power and plumbing access should all be considered before installation.',
+  },
+  {
+    q: 'How often should a commercial water bubbler filter be changed?',
+    a: 'Filter life depends on water quality and usage. Inspect and replace filters as part of a planned maintenance schedule rather than waiting for taste, flow or pressure to noticeably decline. High-use schools, factories and gyms may need more frequent servicing than low-use offices.',
+  },
+  {
+    q: 'Are replacement cartridges proprietary?',
+    a: 'No. These units use standard 10-inch filter housings, so replacement sediment and carbon cartridges are straightforward to source and maintain.',
+  },
+  {
+    q: 'Do you ship commercial water bubblers Australia-wide?',
+    a: `Yes. Enviro Aqua ships Australia-wide from Wyong NSW. Stocked orders placed before ${BUSINESS_INFO.orderCutoff} on business days are dispatched the same day where applicable.`,
+  },
+];
+
+const ANSWERS = [
+  {
+    q: 'What should I buy for a school?',
+    a: 'Choose a WaterMark-certified, lead-free, robust unit that suits the exposure level. Use the HDPE model for exposed schoolyards; choose a stainless model for indoor or sheltered areas. The square and HDPE models also add a side tap for bottles.',
+  },
+  {
+    q: 'What should I buy for an office?',
+    a: 'A compact stainless model is usually the simplest fit. The square model works well where bottle filling is important; the round model is a straightforward chilled bubbler where direct drinking is the main use.',
+  },
+  {
+    q: 'What should I buy for a factory or warehouse?',
+    a: 'Prioritise durability, easy cleaning and access during shift peaks. The HDPE model suits harsh or exposed areas; stainless models suit sheltered factory floors, lunchrooms and indoor production areas.',
+  },
+  {
+    q: 'Do I need a bottle filler as well?',
+    a: 'Choose a side-tap model if people regularly refill drink bottles or jugs. If the station is mainly for direct drinking, a bubbler-only model keeps the fixture simpler.',
   },
 ];
 
@@ -185,63 +228,45 @@ const USE_CASES = [
   {
     icon: GraduationCap,
     title: 'Schools & childcare',
-    body: 'Lead-free wetted parts (WMTS-105:2016), low spout, easy push-button operation. NCC-compliant for installation in Australian education facilities.',
-    points: [
-      'Plumber-ready Certificate of Compliance',
-      'HDPE granite model survives full outdoor yards',
-      'Bottle-fill side tap reduces queue at break',
-    ],
+    body: 'Frequent use, simple push-button operation and robust materials matter most. Match the cabinet to whether the unit is sheltered or fully exposed.',
+    points: ['WaterMark-certified range', 'Lead-free', 'Bottle-fill options available'],
   },
   {
     icon: Building2,
-    title: 'Offices & co-working',
-    body: 'Square cabinet sits flush against walls in corridors and kitchens. Replaces bottled coolers - direct mains, no refills, no delivery slots.',
-    points: [
-      '99 cm square footprint fits foyers',
-      'Side tap for jugs and bottles',
-      'Low-GWP R290 refrigerant',
-    ],
+    title: 'Offices & workplaces',
+    body: 'Mains-connected chilled water removes bottle deliveries and suits shared kitchens, foyers and staff areas.',
+    points: ['Compact stainless options', '20 L/hr cooling', 'Standard filter housings'],
+  },
+  {
+    icon: Factory,
+    title: 'Factories & warehouses',
+    body: 'For industrial sites, select for peak-shift demand, cabinet durability, cleaning access and whether the location is exposed to weather.',
+    points: ['Rust-free outdoor option', 'Filtered chilled water', 'Multiple stations for large sites'],
   },
   {
     icon: Dumbbell,
-    title: 'Gyms & leisure',
-    body: '20 L/hr keeps up with peak-class throughput. SUS304 panels survive sweat, towels, and daily wipe-downs.',
-    points: [
-      'Continuous-duty cooling block',
-      'Integrated drip tray with drainage',
-      'Push-button rated for thousands of cycles',
-    ],
-  },
-];
-
-const CERT_POINTS = [
-  {
-    n: '01',
-    title: 'Your plumber can install it',
-    body: 'Licensed plumbers will sign off and issue a Certificate of Compliance - required for facility audits, school approvals, and commercial fit-outs.',
-  },
-  {
-    n: '02',
-    title: 'Your insurance stays valid',
-    body: 'Standard home and commercial cover applies to certified, plumber-installed fixtures. Non-WaterMark units can void cover on a leak claim.',
-  },
-  {
-    n: '03',
-    title: 'Lead-free is independently verified',
-    body: 'Wetted parts - fittings, valves, nozzle, tap - are certified against Australian drinking-water lead limits. Matters most for schools and childcare.',
+    title: 'Gyms & sporting facilities',
+    body: 'Bottle filling and chilled output are especially useful where demand comes in short peaks before and after classes or training.',
+    points: ['Bottle-fill models', '8–12 °C chilled output', 'Indoor and outdoor options'],
   },
 ];
 
 export const metadata: Metadata = {
-  title: 'Commercial Water Bubblers - WaterMark Certified | Schools, Offices & Gyms',
+  title: 'Commercial Water Bubblers Australia | WaterMark Certified',
   description:
-    'WaterMark certified, lead-free commercial water bubblers for Australian schools, offices and gyms. Three cabinets, one spec. Same price retail or trade. Same-day dispatch from Wyong NSW.',
+    'Compare filtered commercial water bubblers and drinking fountains for Australian schools, offices, factories and gyms. WaterMark certified, chilled and mains connected.',
   alternates: { canonical: PATH },
+  openGraph: {
+    title: 'Commercial Water Bubblers Australia | Enviro Aqua',
+    description:
+      'A practical Australian guide to choosing commercial water bubblers for schools, offices, factories, gyms and public facilities.',
+    url: PATH,
+  },
 };
 
 export default async function CommercialBubblersPage() {
   const products = await Promise.all(
-    CABINETS.map((c) => getProductByHandle(c.handle)),
+    CABINETS.map((cabinet) => getProductByHandle(cabinet.handle)),
   );
 
   const breadcrumbs = [
@@ -249,12 +274,24 @@ export default async function CommercialBubblersPage() {
     { name: 'Commercial Water Bubblers', href: PATH },
   ];
 
+  const productItems = products.flatMap((product) =>
+    product
+      ? [{ name: product.title, path: getProductUrl(product.handle) }]
+      : [],
+  );
+
   return (
     <>
       <JsonLdScript
         data={[
+          collectionSchema(
+            'Commercial Water Bubblers Australia',
+            PATH,
+            'Filtered, chilled and WaterMark-certified commercial water bubblers for Australian schools, workplaces, factories, gyms and public facilities.',
+          ),
+          productListSchema(productItems),
           breadcrumbSchema(
-            breadcrumbs.map((b) => ({ name: b.name, path: b.href })),
+            breadcrumbs.map((item) => ({ name: item.name, path: item.href })),
           ),
           faqPageSchema(FAQ_ITEMS),
         ]}
@@ -262,12 +299,16 @@ export default async function CommercialBubblersPage() {
 
       <article className="bg-white">
         <Hero products={products} breadcrumbs={breadcrumbs} />
-        <CertSection />
+        <QuickAnswerSection />
+        <DecisionGuideSection />
         <RangeSection products={products} />
         <CompareSection />
+        <WaterMarkSection />
+        <CapacitySection />
         <UseCasesSection />
-        <BulkContactSection />
+        <InstallationSection />
         <FaqSection />
+        <BulkContactSection />
         <TrustStrip />
       </article>
     </>
@@ -280,7 +321,7 @@ interface HeroProps {
 }
 
 function Hero({ products, breadcrumbs }: HeroProps) {
-  const heroProduct = products[1] ?? products.find((p) => p);
+  const heroProduct = products[1] ?? products.find(Boolean) ?? null;
   const heroImage = heroProduct?.featuredImage ?? null;
   const minPrice = lowestPrice(products);
 
@@ -291,98 +332,61 @@ function Hero({ products, breadcrumbs }: HeroProps) {
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
           <div>
             <span className="inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
-              The Commercial Range
+              Australian commercial range
             </span>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-              Commercial water bubblers - WaterMark certified, lead-free,
-              ready for the plumber.
+              Commercial water bubblers for schools, workplaces and public spaces.
             </h1>
-            <p className="mt-4 text-lg md:text-xl text-black/70">
-              Three cabinets, one spec. Stainless or HDPE granite - all
-              WaterMark certified (WMTS-105:2016, licence 23484) and built for
-              Australian schools, offices, and gyms.
+            <p className="mt-4 text-lg md:text-xl text-black/75">
+              Filtered, chilled, mains-connected drinking fountains with
+              WaterMark-certified options for indoor, sheltered and exposed
+              outdoor installations.
+            </p>
+            <p className="mt-4 text-base text-black/70">
+              All three Enviro Aqua commercial models provide 20 L/hr chilled
+              output at approximately 8–12 °C with sediment and carbon
+              filtration. Choose the cabinet based on location, exposure and
+              whether you need bottle filling.
             </p>
             {minPrice && (
               <p className="mt-4 text-base text-black/80">
                 <span className="font-semibold text-black">From </span>
                 <PriceDisplay money={minPrice} className="font-semibold text-black" />
-                <span className="text-black/60"> inc GST · three cabinet options</span>
+                <span className="text-black/60"> inc GST</span>
               </p>
             )}
-            <div className="mt-3 flex flex-wrap items-center gap-3">
+            <div className="mt-4 flex flex-wrap items-center gap-3">
               <WatermarkBadge href="/watermark-certified/" />
               <LeadFreeBadge />
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="#range"
+                href="#choose"
                 className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
               >
-                See the range
+                Choose a bubbler
               </a>
               <a
-                href={`tel:${BUSINESS_INFO.phone.tel}`}
-                className="inline-flex items-center justify-center gap-2 bg-white border border-black hover:bg-gray-50 text-black font-semibold px-6 py-3 rounded transition-colors"
+                href="#compare"
+                className="inline-flex items-center justify-center bg-white border border-black hover:bg-gray-50 text-black font-semibold px-6 py-3 rounded transition-colors"
               >
-                <Phone size={18} strokeWidth={1.75} aria-hidden="true" />
-                {BUSINESS_INFO.phone.display}
+                Compare models
               </a>
             </div>
-            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-6 text-sm text-black/70">
-              <li className="flex items-start gap-2">
-                <Check
-                  size={16}
-                  strokeWidth={2}
-                  aria-hidden="true"
-                  className="mt-0.5 flex-shrink-0 text-brand-blue"
-                />
-                Same price retail or trade
-              </li>
-              <li className="flex items-start gap-2">
-                <Check
-                  size={16}
-                  strokeWidth={2}
-                  aria-hidden="true"
-                  className="mt-0.5 flex-shrink-0 text-brand-blue"
-                />
-                Same-day dispatch from Wyong NSW
-              </li>
-              <li className="flex items-start gap-2">
-                <Check
-                  size={16}
-                  strokeWidth={2}
-                  aria-hidden="true"
-                  className="mt-0.5 flex-shrink-0 text-brand-blue"
-                />
-                Plumber-ready Certificate of Compliance
-              </li>
-              <li className="flex items-start gap-2">
-                <Check
-                  size={16}
-                  strokeWidth={2}
-                  aria-hidden="true"
-                  className="mt-0.5 flex-shrink-0 text-brand-blue"
-                />
-                Standard 10″ AU filter housings
-              </li>
-            </ul>
           </div>
           <div className="relative aspect-square bg-white border border-gray-200 rounded overflow-hidden">
             {heroImage ? (
               <Image
                 src={heroImage.url}
-                alt={heroImage.altText ?? heroProduct?.title ?? ''}
+                alt={heroImage.altText ?? heroProduct?.title ?? 'Commercial water bubbler'}
                 fill
                 priority
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-contain p-6"
               />
             ) : (
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 grid place-items-center text-black/30"
-              >
-                <Droplet size={64} strokeWidth={1.25} />
+              <div className="absolute inset-0 grid place-items-center text-black/30">
+                <Droplet size={64} strokeWidth={1.25} aria-hidden="true" />
               </div>
             )}
           </div>
@@ -392,76 +396,88 @@ function Hero({ products, breadcrumbs }: HeroProps) {
   );
 }
 
-function CertSection() {
+function QuickAnswerSection() {
   return (
     <section className="border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-8 lg:gap-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight leading-tight">
-              WaterMark certified. Licence 23484. WMTS-105:2016.
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue">
+              Quick answer
+            </span>
+            <h2 className="mt-2 text-3xl font-bold text-black tracking-tight">
+              What is a commercial water bubbler?
             </h2>
-            <p className="mt-4 text-base md:text-lg text-black/80">
-              In Australia, any plumbing product connected to a mains
-              drinking-water supply in a public building has to be WaterMark
-              certified. Every model in this range is. Three practical
-              consequences:
-            </p>
-            <ol className="mt-6 border-t border-gray-200">
-              {CERT_POINTS.map((point) => (
-                <li
-                  key={point.n}
-                  className="flex gap-4 py-5 border-b border-gray-200"
-                >
-                  <span className="font-mono text-sm text-black/50 mt-0.5 w-8 flex-shrink-0">
-                    {point.n}
-                  </span>
-                  <div>
-                    <p className="text-base font-semibold text-black">
-                      {point.title}
-                    </p>
-                    <p className="mt-1 text-sm text-black/70">{point.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
           </div>
-          <aside className="border border-gray-200 rounded p-6 md:p-8 bg-gray-50">
-            <div className="flex items-center gap-4 pb-5 border-b border-gray-200">
-              <WatermarkBadge />
-            </div>
-            <dl className="mt-5 space-y-4 text-sm">
-              <CertRow label="Licence number" value="23484" mono />
-              <CertRow label="Specification" value="WMTS-105:2016" mono />
-              <CertRow label="Authority" value="ABCB · Standards Australia" />
-              <CertRow label="Lead-free standard" value="AS/NZS 4020" mono />
-              <CertRow label="Covers" value="All three commercial bubbler models" />
-            </dl>
-          </aside>
+          <div className="space-y-4 text-base md:text-lg text-black/80 leading-relaxed">
+            <p>
+              A commercial water bubbler is a mains-connected drinking-water
+              fixture designed for frequent shared use. It is commonly used in
+              schools, offices, factories, gyms, sporting facilities and public
+              buildings.
+            </p>
+            <p>
+              A chilled bubbler cools incoming mains water before dispensing it
+              through an upward drinking spout. Filtered models also treat the
+              water before chilling. In Australia, the terms{' '}
+              <strong>water bubbler</strong> and{' '}
+              <strong>drinking fountain</strong> are often used interchangeably.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function CertRow({
-  label,
-  value,
-  mono,
-}: {
-  label: string;
-  value: string;
-  mono?: boolean;
-}) {
+function DecisionGuideSection() {
   return (
-    <div className="grid grid-cols-[8rem_1fr] gap-3">
-      <dt className="text-black/60">{label}</dt>
-      <dd
-        className={`text-black font-medium ${mono ? 'font-mono tracking-tight' : ''}`}
-      >
-        {value}
-      </dd>
-    </div>
+    <section id="choose" className="border-b border-gray-200 bg-gray-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+          Which commercial water bubbler should I choose?
+        </h2>
+        <p className="mt-3 max-w-3xl text-base text-black/70">
+          Start with the installation environment, then decide whether bottle
+          filling matters. Cooling and filtration are the same across this
+          range, so the cabinet and dispensing format are the main differences.
+        </p>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {ANSWERS.map((item) => (
+            <div key={item.q} className="bg-white border border-gray-200 rounded p-5 md:p-6">
+              <h3 className="text-base md:text-lg font-semibold text-black">{item.q}</h3>
+              <p className="mt-2 text-sm md:text-base text-black/75 leading-relaxed">{item.a}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-8 overflow-x-auto border border-gray-200 rounded bg-white">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-gray-200 bg-gray-50">
+                <th className="px-4 py-3 text-left font-semibold">Need</th>
+                <th className="px-4 py-3 text-left font-semibold">Best starting point</th>
+                <th className="px-4 py-3 text-left font-semibold">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ['Indoor office or foyer', 'Round stainless', 'Compact, chilled and simple'],
+                ['School corridor or gym', 'Square stainless', 'Flat-sided cabinet plus bottle-fill tap'],
+                ['Exposed schoolyard or outdoor site', 'HDPE granite', 'Rust-free, UV-stable cabinet'],
+                ['Factory or warehouse', 'HDPE or stainless', 'Choose based on exposure and cleaning environment'],
+                ['Bottle and jug filling', 'Square stainless or HDPE', 'Separate side tap'],
+              ].map(([need, model, why]) => (
+                <tr key={need} className="border-b border-gray-200 last:border-b-0">
+                  <td className="px-4 py-3 font-medium text-black">{need}</td>
+                  <td className="px-4 py-3 text-black/80">{model}</td>
+                  <td className="px-4 py-3 text-black/70">{why}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -476,28 +492,21 @@ function RangeSection({ products }: RangeSectionProps) {
         <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-              Pick your model
+              Compare the Enviro Aqua commercial bubbler range
             </h2>
-            <p className="mt-2 text-base text-black/70 max-w-2xl">
-              Cooling, filtration, and certification are identical across the
-              three. The cabinet, footprint, and intended setting are what
-              change.
+            <p className="mt-2 text-base text-black/70 max-w-3xl">
+              Three cabinets with the same core 20 L/hr chilled-water platform.
+              Choose by location, exposure and bottle-filling requirement.
             </p>
           </div>
-          <a
-            href="#compare"
-            className="text-sm font-medium text-brand-blue hover:underline underline-offset-4"
-          >
-            Compare all three →
+          <a href="#compare" className="text-sm font-medium text-brand-blue hover:underline underline-offset-4">
+            Full specifications →
           </a>
         </div>
-        <ul
-          role="list"
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
-        >
-          {CABINETS.map((cabinet, i) => (
+        <ul role="list" className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {CABINETS.map((cabinet, index) => (
             <li key={cabinet.key}>
-              <CabinetCard cabinet={cabinet} product={products[i]} />
+              <CabinetCard cabinet={cabinet} product={products[index]} />
             </li>
           ))}
         </ul>
@@ -512,75 +521,52 @@ interface CabinetCardProps {
 }
 
 function CabinetCard({ cabinet, product }: CabinetCardProps) {
-  const href = product ? getProductUrl(product.handle) : `/${cabinet.handle}/`;
+  const href = product ? getProductUrl(product.handle) : `/${cabinet.handle}`;
   const image = product?.featuredImage ?? null;
   const title = product?.title ?? cabinet.shortName;
   const price = product?.priceRange.minVariantPrice ?? null;
 
   return (
     <article className="h-full flex flex-col border border-gray-200 hover:border-gray-400 transition-colors rounded">
-      <Link
-        href={href}
-        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded-t"
-      >
+      <Link href={href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded-t">
         <div className="relative aspect-square bg-gray-50 border-b border-gray-200 rounded-t overflow-hidden">
           {image ? (
             <Image
               src={image.url}
-              alt=""
+              alt={image.altText ?? `${cabinet.shortName} commercial water bubbler`}
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
               className="object-contain p-4"
             />
           ) : (
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 grid place-items-center text-black/20"
-            >
-              <Droplet size={48} strokeWidth={1.25} />
+            <div className="absolute inset-0 grid place-items-center text-black/20">
+              <Droplet size={48} strokeWidth={1.25} aria-hidden="true" />
             </div>
           )}
           <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-white border border-gray-200 rounded px-2 py-1 text-[11px] font-semibold text-black">
-            <span
-              aria-hidden="true"
-              className="inline-block w-1.5 h-1.5 rounded-full bg-wmk-red"
-            />
             WaterMark
           </span>
-          <span className="absolute top-3 right-3 inline-flex items-center bg-black text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded">
+          <span className="absolute top-3 right-3 bg-black text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded">
             {cabinet.badge}
           </span>
         </div>
       </Link>
       <div className="p-4 sm:p-5 flex flex-col flex-1">
         <h3 className="text-base font-semibold text-black leading-snug">
-          <Link
-            href={href}
-            className="hover:underline underline-offset-4"
-          >
-            {title}
-          </Link>
+          <Link href={href} className="hover:underline underline-offset-4">{title}</Link>
         </h3>
         <p className="mt-1 text-sm text-black/60">{cabinet.tagline}</p>
         <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-black/70">
-          {cabinet.highlights.map((h) => (
-            <li key={h}>{h}</li>
-          ))}
+          {cabinet.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
         </ul>
         <div className="mt-auto pt-4 flex items-center justify-between gap-3 border-t border-gray-200">
           {price ? (
-            <PriceDisplay
-              money={price}
-              className="text-base font-semibold text-black"
-            />
+            <PriceDisplay money={price} className="text-base font-semibold text-black" />
           ) : (
             <span className="text-sm text-black/60">See product page</span>
           )}
-          <Link
-            href={href}
-            className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-semibold px-4 py-2 rounded transition-colors"
-          >
-            View
+          <Link href={href} className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-semibold px-4 py-2 rounded transition-colors">
+            View model
           </Link>
         </div>
       </div>
@@ -593,29 +579,20 @@ function CompareSection() {
     <section id="compare" className="border-b border-gray-200 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-          Specifications · side-by-side
+          Commercial water bubbler specifications
         </h2>
-        <p className="mt-2 text-base text-black/70 max-w-2xl">
-          Same cooling block, same filtration, same certification. Cabinet
-          and footprint vary by site.
+        <p className="mt-2 text-base text-black/70 max-w-3xl">
+          Compare cabinet material, size, chilling, filtration, bottle filling,
+          certification and intended installation environment side by side.
         </p>
         <div className="mt-8 overflow-x-auto border border-gray-200 rounded bg-white">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-200 bg-white">
-                <th
-                  scope="col"
-                  className="text-left font-semibold text-black px-4 py-3 w-1/4 min-w-[10rem]"
-                >
-                  Spec
-                </th>
-                {CABINETS.map((c) => (
-                  <th
-                    key={c.key}
-                    scope="col"
-                    className="text-left font-semibold text-black px-4 py-3 min-w-[10rem]"
-                  >
-                    {c.shortName}
+                <th scope="col" className="text-left font-semibold text-black px-4 py-3 w-1/4 min-w-[10rem]">Specification</th>
+                {CABINETS.map((cabinet) => (
+                  <th key={cabinet.key} scope="col" className="text-left font-semibold text-black px-4 py-3 min-w-[10rem]">
+                    {cabinet.shortName}
                   </th>
                 ))}
               </tr>
@@ -623,33 +600,20 @@ function CompareSection() {
             <tbody>
               {SPEC_ROWS.map((row) => (
                 <tr key={row.label} className="border-b border-gray-200 last:border-b-0">
-                  <th
-                    scope="row"
-                    className="text-left font-medium text-black/70 px-4 py-3 align-top"
-                  >
-                    {row.label}
-                  </th>
-                  {CABINETS.map((c) => {
-                    const value = row.values[c.key];
-                    const isYes = row.yes?.[c.key];
-                    const isDash = value === '-';
+                  <th scope="row" className="text-left font-medium text-black/70 px-4 py-3 align-top">{row.label}</th>
+                  {CABINETS.map((cabinet) => {
+                    const value = row.values[cabinet.key];
+                    const isYes = row.yes?.[cabinet.key];
+                    const isDash = value === '—';
                     return (
-                      <td
-                        key={c.key}
-                        className="px-4 py-3 text-black align-top"
-                      >
+                      <td key={cabinet.key} className="px-4 py-3 text-black align-top">
                         {isDash ? (
-                          <span aria-label="not available" className="text-black/40">
-                            <Minus size={16} strokeWidth={2} aria-hidden="true" />
-                          </span>
+                          <span aria-label="not available" className="text-black/40"><Minus size={16} strokeWidth={2} aria-hidden="true" /></span>
                         ) : isYes ? (
                           <span className="inline-flex items-center gap-1.5 text-brand-blue font-medium">
-                            <Check size={16} strokeWidth={2.25} aria-hidden="true" />
-                            {value}
+                            <Check size={16} strokeWidth={2.25} aria-hidden="true" />{value}
                           </span>
-                        ) : (
-                          value
-                        )}
+                        ) : value}
                       </td>
                     );
                   })}
@@ -663,42 +627,127 @@ function CompareSection() {
   );
 }
 
+function WaterMarkSection() {
+  return (
+    <section className="border-b border-gray-200">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-14 items-start">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue">Australian compliance</span>
+            <h2 className="mt-2 text-3xl font-bold text-black tracking-tight">
+              Do commercial water bubblers need WaterMark certification?
+            </h2>
+            <div className="mt-4 space-y-4 text-base text-black/80 leading-relaxed">
+              <p>
+                In Australia, WaterMark requirements depend on the plumbing
+                product type and intended installation. Under the National
+                Construction Code, product types listed on the WaterMark
+                Schedule of Products must be WaterMark certified before they
+                are installed.
+              </p>
+              <p>
+                All three commercial bubblers in this range are WaterMark
+                certified under licence <strong>23484</strong>. For a mains
+                installation, use an appropriately licensed plumbing
+                practitioner and have them confirm the requirements that apply
+                to your site.
+              </p>
+            </div>
+            <Link href="/watermark-certified" className="mt-5 inline-flex text-sm font-semibold text-brand-blue hover:underline underline-offset-4">
+              Learn more about WaterMark certification →
+            </Link>
+          </div>
+          <aside className="border border-gray-200 rounded p-6 md:p-8 bg-gray-50">
+            <WatermarkBadge />
+            <dl className="mt-6 space-y-4 text-sm">
+              <CertRow label="Licence" value="23484" mono />
+              <CertRow label="Specification" value="WMTS-105:2016" mono />
+              <CertRow label="Range" value="All three commercial bubbler models" />
+              <CertRow label="Installation" value="Licensed plumbing practitioner" />
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CertRow({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
+  return (
+    <div className="grid grid-cols-[7rem_1fr] gap-3">
+      <dt className="text-black/60">{label}</dt>
+      <dd className={`text-black font-medium ${mono ? 'font-mono tracking-tight' : ''}`}>{value}</dd>
+    </div>
+  );
+}
+
+function CapacitySection() {
+  return (
+    <section className="border-b border-gray-200 bg-gray-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+              How much cooling capacity do I need?
+            </h2>
+            <p className="mt-3 text-base text-black/75 leading-relaxed">
+              Commercial water-bubbler capacity is usually stated in litres
+              per hour. The right figure depends on peak demand: a school at
+              lunch, a factory at shift change and a gym after class can create
+              much heavier short-term demand than their average daily use suggests.
+            </p>
+            <p className="mt-3 text-base text-black/75 leading-relaxed">
+              Every model on this page is rated at <strong>20 L/hr</strong>.
+              For large facilities or concentrated peak periods, multiple
+              drinking stations can be a better solution than expecting one
+              unit to serve the entire site.
+            </p>
+          </div>
+          <div className="border border-gray-200 rounded bg-white p-6">
+            <h3 className="font-semibold text-black">Before choosing capacity, check:</h3>
+            <ul className="mt-4 space-y-3 text-sm text-black/75">
+              {[
+                'How many people may use the station within the same 15–30 minute period?',
+                'Will users drink directly or mostly refill bottles?',
+                'Is there another drinking-water point nearby?',
+                'Is the location hot, exposed or used during physical activity?',
+                'Can the site support a second unit if demand grows?',
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <Check size={16} strokeWidth={2} aria-hidden="true" className="mt-0.5 flex-shrink-0 text-brand-blue" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function UseCasesSection() {
   return (
     <section className="border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-          Specified into schools, offices, and gyms across NSW.
+          Where are commercial water bubblers used?
         </h2>
-        <p className="mt-2 text-base text-black/70 max-w-2xl">
-          Same hardware. Different setting. Here&apos;s how the range fits each.
+        <p className="mt-2 text-base text-black/70 max-w-3xl">
+          The core requirements are similar, but exposure, traffic patterns and
+          bottle-filling needs change by site.
         </p>
-        <ul role="list" className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+        <ul role="list" className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {USE_CASES.map((use) => (
-            <li
-              key={use.title}
-              className="p-6 border border-gray-200 rounded h-full"
-            >
-              <use.icon
-                size={32}
-                strokeWidth={1.75}
-                aria-hidden="true"
-                className="text-brand-blue"
-              />
-              <h3 className="mt-4 text-lg font-semibold text-black">
-                {use.title}
-              </h3>
-              <p className="mt-2 text-sm text-black/80">{use.body}</p>
-              <ul className="mt-4 space-y-2 text-sm text-black/80">
-                {use.points.map((p) => (
-                  <li key={p} className="flex gap-2">
-                    <Check
-                      size={16}
-                      strokeWidth={2}
-                      aria-hidden="true"
-                      className="mt-0.5 flex-shrink-0 text-brand-blue"
-                    />
-                    <span>{p}</span>
+            <li key={use.title} className="p-5 border border-gray-200 rounded h-full">
+              <use.icon size={30} strokeWidth={1.75} aria-hidden="true" className="text-brand-blue" />
+              <h3 className="mt-4 text-lg font-semibold text-black">{use.title}</h3>
+              <p className="mt-2 text-sm text-black/75">{use.body}</p>
+              <ul className="mt-4 space-y-2 text-sm text-black/75">
+                {use.points.map((point) => (
+                  <li key={point} className="flex gap-2">
+                    <Check size={15} strokeWidth={2} aria-hidden="true" className="mt-0.5 flex-shrink-0 text-brand-blue" />
+                    <span>{point}</span>
                   </li>
                 ))}
               </ul>
@@ -710,71 +759,98 @@ function UseCasesSection() {
   );
 }
 
+function InstallationSection() {
+  return (
+    <section className="border-b border-gray-200 bg-gray-50">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-10 md:gap-12">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+              How is a commercial water bubbler installed?
+            </h2>
+            <p className="mt-3 text-base text-black/70">
+              These are mains-connected chilled appliances, so plan plumbing,
+              drainage, power and servicing access before the unit arrives.
+            </p>
+          </div>
+          <ol className="space-y-4">
+            {[
+              ['1', 'Choose the location', 'Confirm indoor, sheltered or exposed outdoor conditions and allow enough clearance for use and servicing.'],
+              ['2', 'Confirm water and drainage', 'A licensed plumbing practitioner should confirm the mains connection, isolation, drainage and local plumbing requirements.'],
+              ['3', 'Confirm power', 'Chilled models require a suitable 240 V power point positioned appropriately for the installation.'],
+              ['4', 'Install and commission', 'The plumber connects the unit, checks drainage and flow, then the cooling system can be commissioned and tested.'],
+              ['5', 'Plan filter servicing', 'Keep replacement sediment and carbon cartridges available and schedule maintenance based on usage and local water conditions.'],
+            ].map(([number, title, body]) => (
+              <li key={number} className="grid grid-cols-[2rem_1fr] gap-4 border-b border-gray-200 pb-4 last:border-b-0">
+                <span className="font-mono text-sm text-black/50">{number}</span>
+                <div>
+                  <h3 className="font-semibold text-black">{title}</h3>
+                  <p className="mt-1 text-sm text-black/70">{body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FaqSection() {
+  return (
+    <section className="border-b border-gray-200">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-[0.75fr_1.25fr] gap-10 md:gap-12">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue">Commercial bubbler guide</span>
+            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-black tracking-tight">
+              Frequently asked questions
+            </h2>
+            <p className="mt-3 text-base text-black/70">
+              Clear answers on terminology, WaterMark, installation, cooling,
+              filtration, outdoor use and maintenance.
+            </p>
+          </div>
+          <FaqAccordion items={FAQ_ITEMS} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function BulkContactSection() {
   return (
     <section className="border-b border-gray-200 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="border border-gray-200 rounded bg-white p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-black/60">
-              Specifying 3+ units?
-            </span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-black/60">Commercial projects</span>
             <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-black tracking-tight">
-              Talk to a human today.
+              Specifying multiple water bubblers?
             </h2>
             <p className="mt-3 text-base text-black/80">
-              Prices are public - you don&apos;t need a quote. But for bulk
-              orders we&apos;ll coordinate scheduled delivery, plumber-ready
-              documentation, and a single point of contact. Architects,
-              facilities managers, and project plumbers welcome.
+              Enviro Aqua can help facilities managers, schools, builders,
+              plumbers and project teams choose the right cabinet mix and
+              coordinate supply across multiple locations.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-black/80">
               {[
-                'Plumber-ready spec sheets on request',
-                `Same-day dispatch on stocked SKUs - order before ${BUSINESS_INFO.orderCutoff}`,
-                `Proper tax invoice · ABN ${BUSINESS_INFO.abn}`,
-                'Australian-stocked · no proprietary cartridges',
-              ].map((p) => (
-                <li key={p} className="flex gap-2">
-                  <Check
-                    size={16}
-                    strokeWidth={2}
-                    aria-hidden="true"
-                    className="mt-0.5 flex-shrink-0 text-brand-blue"
-                  />
-                  <span>{p}</span>
+                'Product specifications and WaterMark details',
+                `Same-day dispatch on stocked orders placed before ${BUSINESS_INFO.orderCutoff}`,
+                `Australian tax invoice · ABN ${BUSINESS_INFO.abn}`,
+                'Standard replacement filter cartridges',
+              ].map((point) => (
+                <li key={point} className="flex gap-2">
+                  <Check size={16} strokeWidth={2} aria-hidden="true" className="mt-0.5 flex-shrink-0 text-brand-blue" />
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div className="flex flex-col gap-4">
-            <ContactRow
-              icon={Phone}
-              label="Call us"
-              value={BUSINESS_INFO.phone.display}
-              sub={`${BUSINESS_INFO.phoneSupportHours} AEST`}
-              href={`tel:${BUSINESS_INFO.phone.tel}`}
-            />
-            <ContactRow
-              icon={Mail}
-              label="Email us"
-              value={BUSINESS_INFO.email}
-              sub="One reply from a real human in Wyong"
-              href={`mailto:${BUSINESS_INFO.email}?subject=Commercial%20bubblers%20-%20bulk%20enquiry`}
-            />
-            <ContactRow
-              icon={Wrench}
-              label="Showroom"
-              value={`${BUSINESS_INFO.address.street}, ${BUSINESS_INFO.address.locality} ${BUSINESS_INFO.address.region}`}
-              sub={BUSINESS_INFO.showroom.hours}
-              href="/showroom/"
-            />
-            <a
-              href={`tel:${BUSINESS_INFO.phone.tel}`}
-              className="mt-2 inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
-            >
-              Call {BUSINESS_INFO.phone.display}
-            </a>
+            <ContactRow icon={Phone} label="Call" value={BUSINESS_INFO.phone.display} sub={BUSINESS_INFO.phoneSupportHours} href={`tel:${BUSINESS_INFO.phone.tel}`} />
+            <ContactRow icon={Mail} label="Email" value={BUSINESS_INFO.email} sub="Commercial bubbler enquiries" href={`mailto:${BUSINESS_INFO.email}?subject=Commercial%20water%20bubbler%20enquiry`} />
+            <ContactRow icon={Wrench} label="Showroom" value={`${BUSINESS_INFO.address.street}, ${BUSINESS_INFO.address.locality} ${BUSINESS_INFO.address.region}`} sub={BUSINESS_INFO.showroom.hours} href="/showroom" />
           </div>
         </div>
       </div>
@@ -792,91 +868,46 @@ interface ContactRowProps {
 
 function ContactRow({ icon: Icon, label, value, sub, href }: ContactRowProps) {
   return (
-    <Link
-      href={href}
-      className="flex items-start gap-4 p-4 border border-gray-200 rounded hover:border-gray-400 transition-colors"
-    >
+    <Link href={href} className="flex items-start gap-4 p-4 border border-gray-200 rounded hover:border-gray-400 transition-colors">
       <span className="flex-shrink-0 inline-grid place-items-center w-10 h-10 bg-gray-50 border border-gray-200 rounded">
         <Icon size={18} strokeWidth={1.75} aria-hidden="true" className="text-brand-blue" />
       </span>
       <span className="flex-1 min-w-0">
-        <span className="block text-xs font-semibold uppercase tracking-wider text-black/60">
-          {label}
-        </span>
-        <span className="block text-base font-medium text-black truncate">
-          {value}
-        </span>
+        <span className="block text-xs font-semibold uppercase tracking-wider text-black/60">{label}</span>
+        <span className="block text-base font-medium text-black truncate">{value}</span>
         <span className="block text-sm text-black/60">{sub}</span>
       </span>
     </Link>
   );
 }
 
-function FaqSection() {
-  return (
-    <section className="border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-10 md:gap-12">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-              Questions before you order.
-            </h2>
-            <p className="mt-3 text-base text-black/70">
-              Still unsure? Call{' '}
-              <a
-                href={`tel:${BUSINESS_INFO.phone.tel}`}
-                className="text-brand-blue hover:underline underline-offset-4 font-medium"
-              >
-                {BUSINESS_INFO.phone.display}
-              </a>{' '}
-              {BUSINESS_INFO.phoneSupportHours} AEST and we&apos;ll talk it
-              through.
-            </p>
-          </div>
-          <FaqAccordion items={FAQ_ITEMS} />
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function TrustStrip() {
-  const items: Array<{
-    icon: typeof Truck;
-    title: string;
-    body: string;
-  }> = [
+  const items: Array<{ icon: typeof Truck; title: string; body: string }> = [
     {
       icon: ShieldCheck,
-      title: 'WaterMark certified',
-      body: 'Every cabinet covered by WMTS-105:2016, licence 23484. Plumber-ready.',
+      title: 'WaterMark certified range',
+      body: 'All three commercial bubbler models are listed as WaterMark certified under licence 23484.',
     },
     {
       icon: Truck,
-      title: 'Same-day dispatch',
-      body: `Orders placed before ${BUSINESS_INFO.orderCutoff} on a business day ship the same day from Wyong NSW.`,
+      title: 'Australia-wide delivery',
+      body: `Stocked orders placed before ${BUSINESS_INFO.orderCutoff} on business days are dispatched the same day where applicable.`,
     },
     {
       icon: Wrench,
-      title: 'No proprietary lock-in',
-      body: 'Standard 10″ Australian housings. Replacement cartridges from any supplier.',
+      title: 'Straightforward servicing',
+      body: 'Standard 10-inch filter housings make replacement sediment and carbon cartridges easy to source.',
     },
   ];
+
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
         <ul role="list" className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {items.map((item) => (
             <li key={item.title}>
-              <item.icon
-                size={32}
-                strokeWidth={1.75}
-                aria-hidden="true"
-                className="text-brand-blue"
-              />
-              <h3 className="mt-3 text-base font-semibold text-black">
-                {item.title}
-              </h3>
+              <item.icon size={32} strokeWidth={1.75} aria-hidden="true" className="text-brand-blue" />
+              <h3 className="mt-3 text-base font-semibold text-black">{item.title}</h3>
               <p className="mt-1.5 text-sm text-black/70">{item.body}</p>
             </li>
           ))}
@@ -888,10 +919,12 @@ function TrustStrip() {
 
 function lowestPrice(products: ReadonlyArray<Product | null>) {
   const prices = products
-    .map((p) => p?.priceRange.minVariantPrice)
-    .filter((m): m is NonNullable<typeof m> => m !== null && m !== undefined);
+    .map((product) => product?.priceRange.minVariantPrice)
+    .filter((money): money is NonNullable<typeof money> => money !== null && money !== undefined);
+
   if (prices.length === 0) return null;
-  return prices.reduce((lo, p) =>
-    Number(p.amount) < Number(lo.amount) ? p : lo,
+
+  return prices.reduce((lowest, price) =>
+    Number(price.amount) < Number(lowest.amount) ? price : lowest,
   );
 }
