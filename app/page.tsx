@@ -141,6 +141,10 @@ interface HeroProps {
   installHeroImage: { url: string; alt: string } | null;
 }
 
+interface InstallHeroCardProps {
+  image: { url: string; alt: string } | null;
+}
+
 function Hero({ installHeroImage }: HeroProps) {
   return (
     <section className="bg-gray-50 border-b border-gray-200">
@@ -185,7 +189,7 @@ function Hero({ installHeroImage }: HeroProps) {
   );
 }
 
-function InstallHeroCard({ image }: HeroProps) {
+function InstallHeroCard({ image }: InstallHeroCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded p-5 md:p-6 flex flex-col gap-4">
       <span className="self-start inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
