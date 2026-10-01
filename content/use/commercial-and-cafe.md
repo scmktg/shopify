@@ -6,6 +6,7 @@ productGridTitle: "Commercial systems"
 relatedLinks:
   - { label: "Commercial water filters", href: "/water-filters/commercial/" }
   - { label: "Commercial water bubblers", href: "/commercial-water-bubblers" }
+  - { label: "How to choose a commercial water bubbler", href: "/help/commercial-water-bubbler-buying-guide/" }
   - { label: "Water bubblers for schools", href: "/use/commercial-and-cafe/schools/" }
   - { label: "Water bubblers for factories and warehouses", href: "/use/commercial-and-cafe/factories-and-warehouses/" }
   - { label: "Water bubblers for gyms and fitness", href: "/use/commercial-and-cafe/gyms-and-fitness/" }
@@ -28,7 +29,7 @@ The standard commercial approach is to identify the **water source, equipment, p
 
 ## Commercial drinking-water applications
 
-For shared drinking-water stations, use the dedicated guides:
+For shared drinking-water stations, start with the [commercial water bubbler buying guide](/help/commercial-water-bubbler-buying-guide/) and then use the dedicated application guides:
 
 - [Water bubblers for schools](/use/commercial-and-cafe/schools/)
 - [Water bubblers for factories and warehouses](/use/commercial-and-cafe/factories-and-warehouses/)
