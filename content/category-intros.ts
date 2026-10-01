@@ -23,7 +23,7 @@ export const CATEGORY_INTROS: Readonly<Record<string, string>> = {
   'water-filters/reverse-osmosis':
     'Residential reverse osmosis water filters in the two verified Enviro Aqua household configurations: 5-stage RO and 6-stage alkaline RO. The 5-stage system uses sediment, GAC carbon, carbon block, TFC RO membrane, and post-carbon polishing; the 6-stage adds alkaline remineralisation. Both use 12 L pressure tanks and standard 1/4" filtered-water tubing.',
   'bubblers-and-coolers/bubblers':
-    'Commercial water bubblers and drinking fountains for schools, offices, gyms, warehouses, hospitality venues, and public facilities. Choose WaterMark-certified stainless-steel models with integrated filtration and chilled output for high-traffic installations. Square cabinets sit neatly against walls and corridors, while round profiles suit open public areas. All commercial models use serviceable filtration and standard plumbing connections for straightforward maintenance.',
+    'Water bubblers and drinking fountains for Australian schools, offices, factories, warehouses, gyms, sporting facilities and public spaces. Compare stainless steel and rust-free cabinet options, mains-connected filtered drinking water, bottle-filling features and WaterMark-certified models. Choose the right drinking fountain by cabinet style, site requirements and verified model specifications.',
 
   'cartridges/specialty-cartridges':
     'Specialty filter cartridges that handle the contaminants standard sediment and carbon stages cannot - alkaline mineralisation, fluoride removal, post-carbon T33 polishing, ultrafiltration membranes, and pleated washable elements that can be cleaned and reused. Each cartridge here is sized for the Australian standard 10" × 2.5" or 20" × 4.5" housings unless noted, with micron ratings, flow rates, and rated lifespan listed on every product. Use this section when you are building a custom multi-stage system or replacing a single problem stage in an existing setup. Most products ship the same business day from our Central Coast NSW warehouse.',
@@ -63,7 +63,7 @@ export const SUBCATEGORY_META_DESCRIPTIONS: Readonly<Record<string, string>> = {
   'cartridges/cartridge-sets':
     'Pre-built cartridge sets matched to 2, 3, 5, and 6-stage systems. One SKU covers the full service interval - sediment, carbon, and membrane where applicable.',
   'bubblers-and-coolers/bubblers':
-    'Commercial water bubblers and drinking fountains in stainless steel. WaterMark-certified filtered and chilled models for schools, offices, gyms, warehouses and public venues.',
+    'Water bubblers and drinking fountains for schools, offices, factories, warehouses, gyms and public facilities. Compare WaterMark-certified stainless steel and rust-free filtered models.',
   'bubblers-and-coolers/coolers-and-chillers':
     'Water coolers and chillers - hot, cold, and ambient direct-connect dispensers plus under-counter chillers paired with a feature tap. Australian mains compatible.',
   'bubblers-and-coolers/parts':

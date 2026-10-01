@@ -51,9 +51,9 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     key: 'round',
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
     shortName: 'Round Stainless',
-    tagline: 'Compact SUS304 cabinet for sheltered commercial locations.',
-    badge: 'Compact',
-    highlights: ['20 L/hr', '8–12 °C', 'Filtered', 'WaterMark'],
+    tagline: 'Round 304 stainless steel cabinet with direct mains connection and integrated filtration.',
+    badge: 'Stainless',
+    highlights: ['304 stainless', 'Filtered', 'Direct mains', 'WaterMark'],
   },
   {
     key: 'square',
@@ -68,8 +68,8 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
     shortName: 'HDPE Granite',
-    tagline: 'Rust-free, UV-stable cabinet for exposed outdoor locations.',
-    badge: 'Outdoor',
+    tagline: 'Rust-free HDPE cabinet with chilled, filtered drinking water.',
+    badge: 'Rust-free',
     highlights: ['20 L/hr', '8–12 °C', 'Rust-free', 'WaterMark'],
   },
 ];
@@ -84,7 +84,7 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   {
     label: 'Cabinet material',
     values: {
-      round: 'SUS304 stainless steel',
+      round: '304 stainless steel',
       square: 'SUS304 stainless steel',
       hdpe: 'HDPE polymer',
     },
@@ -99,26 +99,26 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   },
   {
     label: 'Height',
-    values: { round: '~95 cm', square: '99 cm', hdpe: '122 cm' },
+    values: { round: 'Not published', square: '99 cm', hdpe: '122 cm' },
   },
   {
     label: 'Footprint',
-    values: { round: 'Ø ~30 cm', square: '30 × 30 cm', hdpe: '41 × 41 cm' },
+    values: { round: 'Not published', square: '30 × 30 cm', hdpe: '41 × 41 cm' },
   },
   {
     label: 'Cooling capacity',
-    values: { round: '20 L/hr', square: '20 L/hr', hdpe: '20 L/hr' },
+    values: { round: 'Not published', square: '20 L/hr', hdpe: '20 L/hr' },
   },
   {
     label: 'Chilled water temperature',
-    values: { round: '8–12 °C', square: '8–12 °C', hdpe: '8–12 °C' },
+    values: { round: 'Not published', square: '8–12 °C', hdpe: '8–12 °C' },
   },
   {
     label: 'Filtration',
     values: {
-      round: 'Sediment + carbon',
-      square: 'Sediment + carbon',
-      hdpe: 'Sediment + carbon',
+      round: 'Integrated filtration cartridge',
+      square: 'Sediment + activated carbon',
+      hdpe: 'PP sediment + activated carbon',
     },
   },
   {
@@ -143,9 +143,9 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   {
     label: 'Location',
     values: {
-      round: 'Indoor / sheltered',
-      square: 'Indoor / sheltered',
-      hdpe: 'Indoor / exposed outdoor',
+      round: 'Commercial / institutional',
+      square: 'Commercial / institutional',
+      hdpe: 'Commercial / institutional',
     },
   },
   {
@@ -181,23 +181,23 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How much cooling capacity does a commercial water bubbler need?',
-    a: 'Cooling capacity is measured in litres per hour, but the right capacity depends on peak demand rather than just the total number of people at a site. All three Enviro Aqua commercial bubblers are rated at 20 L/hr. For unusually high peak demand or multiple simultaneous users, consider more than one station rather than relying on a single unit.',
+    a: 'Cooling capacity is measured in litres per hour, but the right capacity depends on peak demand rather than just the total number of people at a site. The square stainless and rust-free HDPE Enviro Aqua models are verified at 20 L/hr. The round stainless model’s capacity is not published here until model-specific documentation is confirmed. For unusually high peak demand or multiple simultaneous users, consider more than one station rather than relying on a single unit.',
   },
   {
     q: 'Are these water bubblers filtered?',
-    a: 'Yes. The three commercial models use sediment and carbon filtration. The filters help reduce sediment and improve taste and odour before the water is chilled and dispensed.',
+    a: 'Yes. All three models include filtration. The square stainless model uses sediment plus activated carbon, the rust-free HDPE model uses PP sediment plus activated carbon, and the round stainless model has an integrated filtration cartridge.',
   },
   {
-    q: 'Which water bubbler is best for outdoor use?',
-    a: 'For exposed outdoor locations, choose the rust-free HDPE granite model. The stainless-steel round and square models are better suited to indoor or sheltered positions. Site exposure, drainage, power and plumbing access should all be considered before installation.',
+    q: 'Which water bubbler is best where a rust-free outer cabinet matters?',
+    a: 'Choose the HDPE granite-look model where you specifically want a rust-free outer cabinet. Confirm the actual site conditions, drainage, power and plumbing access before ordering rather than assuming cabinet material alone determines location suitability.',
   },
   {
     q: 'How often should a commercial water bubbler filter be changed?',
     a: 'Filter life depends on water quality and usage. Inspect and replace filters as part of a planned maintenance schedule rather than waiting for taste, flow or pressure to noticeably decline. High-use schools, factories and gyms may need more frequent servicing than low-use offices.',
   },
   {
-    q: 'Are replacement cartridges proprietary?',
-    a: 'No. These units use standard 10-inch filter housings, so replacement sediment and carbon cartridges are straightforward to source and maintain.',
+    q: 'What should I confirm before ordering replacement filters?',
+    a: 'Match replacements to the exact bubbler model and existing cartridge configuration. The square and rust-free models have verified sediment and activated-carbon stages; the round model uses an integrated filtration cartridge.',
   },
   {
     q: 'Do you ship commercial water bubblers Australia-wide?',
@@ -208,7 +208,7 @@ const FAQ_ITEMS = [
 const ANSWERS = [
   {
     q: 'What should I buy for a school?',
-    a: 'Choose a WaterMark-certified, lead-free, robust unit that suits the exposure level. Use the HDPE model for exposed schoolyards; choose a stainless model for indoor or sheltered areas. The square and HDPE models also add a side tap for bottles.',
+    a: 'Choose a WaterMark-certified, lead-free, robust unit that suits the exposure level. The square stainless and rust-free HDPE models add a side tap for bottle or glass filling, while the round stainless model is a simpler filtered drinking-fountain format. Confirm site conditions and installation requirements separately.',
   },
   {
     q: 'What should I buy for an office?',
@@ -216,7 +216,7 @@ const ANSWERS = [
   },
   {
     q: 'What should I buy for a factory or warehouse?',
-    a: 'Prioritise durability, easy cleaning and access during shift peaks. The HDPE model suits harsh or exposed areas; stainless models suit sheltered factory floors, lunchrooms and indoor production areas.',
+    a: 'Prioritise durability, easy cleaning and access during shift peaks. The rust-free HDPE cabinet is useful where corrosion resistance is a priority, while the stainless models provide a clean commercial finish for workplace drinking-water stations.',
   },
   {
     q: 'Do I need a bottle filler as well?',
@@ -235,31 +235,31 @@ const USE_CASES = [
     icon: Building2,
     title: 'Offices & workplaces',
     body: 'Mains-connected chilled water removes bottle deliveries and suits shared kitchens, foyers and staff areas.',
-    points: ['Compact stainless options', '20 L/hr cooling', 'Standard filter housings'],
+    points: ['Compact stainless options', 'Mains-connected drinking water', 'Filtered options'],
   },
   {
     icon: Factory,
     title: 'Factories & warehouses',
     body: 'For industrial sites, select for peak-shift demand, cabinet durability, cleaning access and whether the location is exposed to weather.',
-    points: ['Rust-free outdoor option', 'Filtered chilled water', 'Multiple stations for large sites'],
+    points: ['Rust-free HDPE option', 'Filtered drinking water', 'Multiple stations for large sites'],
   },
   {
     icon: Dumbbell,
     title: 'Gyms & sporting facilities',
     body: 'Bottle filling and chilled output are especially useful where demand comes in short peaks before and after classes or training.',
-    points: ['Bottle-fill models', '8–12 °C chilled output', 'Indoor and outdoor options'],
+    points: ['Bottle-fill models', 'Chilled filtered options', 'Multiple cabinet styles'],
   },
 ];
 
 export const metadata: Metadata = {
-  title: 'Commercial Water Bubblers Australia | WaterMark Certified',
+  title: 'Water Bubblers & Drinking Fountains Australia | Commercial & School',
   description:
-    'Compare filtered commercial water bubblers and drinking fountains for Australian schools, offices, factories and gyms. WaterMark certified, chilled and mains connected.',
+    'Shop water bubblers and drinking fountains for Australian schools, offices, factories, warehouses, gyms and public facilities. Compare filtered, chilled and WaterMark-certified models.',
   alternates: { canonical: PATH },
   openGraph: {
-    title: 'Commercial Water Bubblers Australia | Enviro Aqua',
+    title: 'Water Bubblers & Drinking Fountains Australia | Enviro Aqua',
     description:
-      'A practical Australian guide to choosing commercial water bubblers for schools, offices, factories, gyms and public facilities.',
+      'Compare water bubblers and drinking fountains for schools, offices, factories, warehouses, gyms and public facilities, with verified specifications for each model.',
     url: PATH,
   },
 };
@@ -271,7 +271,7 @@ export default async function CommercialBubblersPage() {
 
   const breadcrumbs = [
     { name: 'Home', href: '/' },
-    { name: 'Commercial Water Bubblers', href: PATH },
+    { name: 'Water Bubblers & Drinking Fountains', href: PATH },
   ];
 
   const productItems = products.flatMap((product) =>
@@ -285,9 +285,9 @@ export default async function CommercialBubblersPage() {
       <JsonLdScript
         data={[
           collectionSchema(
-            'Commercial Water Bubblers Australia',
+            'Water Bubblers & Drinking Fountains Australia',
             PATH,
-            'Filtered, chilled and WaterMark-certified commercial water bubblers for Australian schools, workplaces, factories, gyms and public facilities.',
+            'Water bubblers and drinking fountains for Australian schools, workplaces, factories, warehouses, gyms and public facilities, with verified filtration, cooling and WaterMark information by model.',
           ),
           productListSchema(productItems),
           breadcrumbSchema(
@@ -332,21 +332,22 @@ function Hero({ products, breadcrumbs }: HeroProps) {
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
           <div>
             <span className="inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
-              Australian commercial range
+              Water bubblers & drinking fountains
             </span>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-              Commercial water bubblers for schools, workplaces and public spaces.
+              Water bubblers & drinking fountains for schools, workplaces and public spaces.
             </h1>
             <p className="mt-4 text-lg md:text-xl text-black/75">
-              Filtered, chilled, mains-connected drinking fountains with
-              WaterMark-certified options for indoor, sheltered and exposed
-              outdoor installations.
+              Compare mains-connected drinking fountains and water bubblers with
+              filtered and chilled options, stainless steel or rust-free cabinets,
+              and WaterMark-certified models for Australian facilities.
             </p>
             <p className="mt-4 text-base text-black/70">
-              All three Enviro Aqua commercial models provide 20 L/hr chilled
-              output at approximately 8–12 °C with sediment and carbon
-              filtration. Choose the cabinet based on location, exposure and
-              whether you need bottle filling.
+              Choose by cabinet material, filtration, bottle-filling requirements and
+              verified cooling performance. The square stainless and rust-free
+              HDPE models are rated at 20 L/hr and approximately 8–12 °C.
+              Model-specific cooling figures for the round stainless unit are not
+              published until its technical documentation is confirmed.
             </p>
             {minPrice && (
               <p className="mt-4 text-base text-black/80">

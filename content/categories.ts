@@ -51,7 +51,7 @@ export const CATEGORIES: ReadonlyArray<Category> = [
     slug: 'bubblers-and-coolers',
     label: 'Bubblers & Coolers',
     subcategories: [
-      { slug: 'bubblers', label: 'Bubblers' },
+      { slug: 'bubblers', label: 'Water Bubblers & Drinking Fountains' },
       { slug: 'coolers-and-chillers', label: 'Coolers & Chillers' },
       { slug: 'parts', label: 'Parts' },
     ],

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { findSubcategory } from '@/content/categories';
 import {
   getCategoryIntro,
@@ -85,6 +85,10 @@ export default async function SubcategoryPage({
       : null;
   const node = findSubcategory(category, subcategory);
   if (!node) notFound();
+
+  if (category === 'bubblers-and-coolers' && subcategory === 'bubblers') {
+    permanentRedirect('/commercial-water-bubblers');
+  }
 
   const cartridgeFacetBySubcategory: Record<string, string> = {
     sediment: 'facet:cartridge-sediment',
