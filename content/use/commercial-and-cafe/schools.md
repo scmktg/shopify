@@ -1,76 +1,97 @@
 ---
-title: "School Water Bubblers & Drinking Fountains Australia"
-description: "WaterMark-certified school water bubblers and drinking fountains for Australian primary and secondary schools, with stainless-steel and outdoor options."
+title: "Water Bubblers for Schools Australia | Drinking Fountain Guide"
+description: "How to choose school water bubblers and drinking fountains in Australia: indoor vs outdoor, bottle filling, WaterMark, cooling capacity, filtration and placement."
 relatedLinks:
   - { label: "Commercial water bubblers", href: "/commercial-water-bubblers" }
   - { label: "Round stainless commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm" }
-  - { label: "Square stainless commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des" }
-  - { label: "Bubblers vs coolers", href: "/help/bubblers-vs-coolers" }
-  - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained" }
+  - { label: "Square stainless bubbler with side tap", href: "/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des" }
+  - { label: "Outdoor HDPE commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm" }
+  - { label: "Water bubbler vs water cooler", href: "/help/bubblers-vs-coolers" }
 faq:
-  - q: "How many drinking fountains does my school need?"
-    a: "The National Construction Code and relevant state education-facility requirements determine drinking-water provision. Requirements can vary by jurisdiction and project, so confirm the current minimum with the relevant authority or project consultant before finalising the layout."
-  - q: "Does every bubbler need to be wheelchair accessible?"
-    a: "Accessible drinking-water provision needs to be considered as part of the project's accessibility design. Check the current NCC, AS 1428 requirements and project-specific documentation for the required number, clearances and outlet heights."
-  - q: "Is WaterMark important for school water bubblers?"
-    a: "Yes. A plumbed drinking fountain or bubbler intended for a regulated mains-water installation should be selected with the appropriate WaterMark certification for its application. Certified products on this site show their WaterMark details on the product page."
-  - q: "Should we install bubblers with bottle-fill taps?"
-    a: "Bottle-fill capability is useful where students routinely carry reusable bottles. A combination bubbler and bottle-fill outlet can reduce queues and make the same drinking station suitable for both direct drinking and bottle refills."
-  - q: "What material is best for a school bubbler?"
-    a: "Stainless steel is a common choice for high-traffic indoor and sheltered installations. For exposed outdoor schoolyards, a rust-resistant outdoor cabinet can be a better fit depending on the site and cleaning environment."
+  - q: "What type of water bubbler is best for a school?"
+    a: "For indoor or sheltered areas, a stainless-steel commercial bubbler is usually the simplest option. For exposed schoolyards and sports areas, choose a cabinet designed for outdoor exposure, such as a rust-free HDPE model. Add a bottle-fill outlet where students regularly carry reusable bottles."
+  - q: "How much cooling capacity does a school water bubbler need?"
+    a: "Size the system for peak break-time demand rather than enrolment alone. The Enviro Aqua commercial range is rated at 20 litres per hour per unit. Larger schools or high-traffic zones may be better served by multiple drinking points rather than relying on one unit."
+  - q: "Do school water bubblers need WaterMark certification?"
+    a: "WaterMark requirements depend on the product type and plumbing application. Products listed on the WaterMark Schedule of Products must be certified for regulated plumbing installations. All three commercial bubbler models in this Enviro Aqua range are WaterMark certified under licence 23484."
+  - q: "Should a school choose a bubbler with a bottle-fill tap?"
+    a: "A bottle-fill outlet is useful where students routinely carry reusable bottles. It gives the same station two functions: direct drinking from the bubbler spout and filling bottles or cups from a separate outlet."
+  - q: "Who should install a school water bubbler?"
+    a: "Use an appropriately licensed plumbing practitioner for the mains-water connection and any drainage work. The project team should also confirm current accessibility, education-facility and local plumbing requirements before installation."
 ---
 
-Australian schools searching for **school water bubblers**, **school drinking fountains** and **filtered water fountains for schools** generally need the same things: reliable high-traffic hardware, appropriate plumbing certification, straightforward servicing and a cabinet suited to where the unit will be installed.
+A **school water bubbler** is a mains-connected drinking-water station designed for frequent shared use. In Australia the same product may also be called a **school drinking fountain**, **water fountain** or **bottle-filling station**.
 
-Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes filtered plumbed units for schools, offices, gyms and public facilities. For sheltered school corridors and indoor areas, compare the [round stainless commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) and [square stainless commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des). For exposed outdoor areas, see the [rust-free HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm).
+For most schools, the choice comes down to four questions: **where will it be installed, how many students will use it at peak times, does it need bottle filling, and what plumbing/compliance requirements apply?**
 
-## What to look for in a school water bubbler
+Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) has three filtered, chilled models. Each is rated at **20 L/hr chilled output**, delivers approximately **8–12 °C water**, uses **sediment + carbon filtration**, and is WaterMark certified under **licence 23484**.
 
-For a school or education facility, prioritise:
+## Which school water bubbler should I choose?
 
-- **WaterMark status appropriate to the installation** so the plumber and project team can verify compliance.
-- **Durable cabinet construction** suited to repeated daily use and cleaning.
-- **Simple push-button operation** that students can use quickly.
-- **Filtered chilled water** where taste and temperature are important.
-- **Standard serviceable filters and fittings** rather than proprietary consumables.
-- **Bottle-fill capability** where reusable bottles are common.
-- **Outdoor suitability** where the unit is exposed to weather rather than installed under cover.
+| School location or need | Best fit |
+|---|---|
+| Indoor corridor, administration or sheltered area | [Round stainless commercial bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) |
+| Indoor/sheltered area where students fill bottles | [Square stainless bubbler with side tap](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) |
+| Exposed schoolyard, sports area or outdoor location | [Rust-free HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm) |
+| Large campus or concentrated break-time traffic | Multiple stations positioned near the areas of highest demand |
 
-## Stainless-steel school bubblers
+## Indoor school bubblers
 
-Stainless-steel water bubblers are well suited to indoor and sheltered school locations because they are easy to clean, visually simple and durable under repeated use. The [round stainless model](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) is the simplest commercial format, while the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) adds a flat-sided cabinet that sits neatly against walls and includes a side outlet for bottle filling.
+For indoor or sheltered school locations, stainless steel is practical because it is durable, easy to wipe down and visually simple.
+
+The **round stainless model** is the straightforward bubbler-only option. It suits direct drinking in corridors, sheltered walkways, administration areas and other locations where bottle filling is not the priority.
+
+The **square stainless model** adds a separate side tap, making it more useful in schools where students routinely refill bottles or cups. Its flat-sided cabinet also suits against-wall installations.
 
 ## Outdoor school drinking fountains
 
-For exposed schoolyards, pool areas or outdoor sports zones, cabinet material matters more. The [rust-free HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm) is designed for outdoor exposure where a polymer cabinet can avoid the corrosion issues associated with lower-grade painted steel.
+An outdoor school bubbler needs a cabinet suited to exposure, not just a standard indoor unit placed outside.
 
-## Drinking-point planning
+The [HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm) uses a rust-free, UV-stable polymer cabinet and is the range's intended option for exposed schoolyards, outdoor sports areas and similar environments.
 
-The number and placement of school drinking points should be established against the current project requirements, relevant building and accessibility standards and the applicable state education-facility guidance. In practical terms, distribute drinking points so students do not need to cross the campus during short breaks and so high-traffic areas do not depend on one unit.
+The stainless models are better suited to indoor or sheltered positions.
 
-Common locations include:
+## How much cooling capacity does a school need?
 
-- playground and courtyard areas
+Cooling capacity is normally stated in **litres per hour**. The important number is peak demand, because school usage is concentrated around recess, lunch and sport rather than spread evenly through the day.
+
+All three Enviro Aqua commercial bubblers are rated at **20 L/hr**. That gives buyers a consistent capacity across the range; the cabinet and dispensing format are what change.
+
+For a large school, adding drinking points near different student zones can be more effective than expecting one central unit to serve everyone during a short break.
+
+## Bottle filling vs direct drinking
+
+A bubbler spout is useful for quick direct drinking. A separate bottle-fill outlet is useful when students carry reusable bottles.
+
+Choose the square stainless or HDPE model when bottle filling is important. Choose the round stainless model when the requirement is mainly a compact direct-drinking station.
+
+## WaterMark and plumbing
+
+WaterMark is Australia's mandatory certification scheme for certain plumbing and drainage products. It does **not** apply to every plumbing product automatically; the relevant product type and intended installation determine whether certification is required.
+
+All three commercial bubbler models in this range are WaterMark certified under **licence 23484**. See [WaterMark certification explained](/help/watermark-certification-explained) for more detail.
+
+A mains-connected school bubbler should be installed by an appropriately licensed plumbing practitioner. The project team should also confirm current local plumbing, accessibility and education-facility requirements before finalising the number, position and height of drinking points.
+
+## Filtration and maintenance
+
+The Enviro Aqua commercial bubbler range uses **sediment + carbon filtration** in standard **10-inch filter housings**.
+
+That matters for ongoing servicing because replacement cartridges are straightforward to source rather than being tied to a proprietary sealed cartridge format.
+
+Filter replacement frequency depends on water quality and usage. High-traffic schools should use a planned service schedule and inspect flow, taste and filter condition rather than waiting for performance to noticeably decline.
+
+## Where should school bubblers be placed?
+
+Practical locations include:
+
+- playground and courtyard zones
 - classroom-block exits
 - sports halls and PE areas
-- canteen or tuckshop zones
-- administration and staff areas
-- high-traffic corridors between teaching spaces
+- canteen areas
+- administration and staff zones
+- sheltered high-traffic corridors
 
-## Accessibility
+The final layout should be based on the school's project documentation, accessibility requirements and local rules. A useful practical principle is to avoid making a whole campus dependent on one drinking point during short breaks.
 
-Accessibility requirements should be checked during design rather than after equipment has been purchased. The project team should confirm the applicable clearances, approach space, controls and outlet heights under the current accessibility requirements for the building.
-
-Where a project needs both standing-height and accessible drinking points, specify the overall drinking-station layout accordingly rather than assuming one standard-height unit will satisfy every user.
-
-## Bottle filling for schools
-
-A bottle-fill outlet is useful for schools that encourage reusable bottles. It lets students refill without holding a bottle under the bubbler stream and can reduce queues during breaks or sports sessions.
-
-The [square stainless commercial bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) includes a side tap, while other cabinet styles suit sites where direct drinking is the main requirement.
-
-## Filtration and servicing
-
-Commercial school bubblers should be easy for facilities staff or service contractors to maintain. The Enviro Aqua commercial range uses standard filter formats rather than proprietary sealed consumables, making future cartridge replacement simpler.
-
-For a side-by-side comparison of cabinet material, cooling capacity, bottle-fill options and installation use cases, see the full [commercial water bubblers comparison](/commercial-water-bubblers). The [bubblers vs coolers guide](/help/bubblers-vs-coolers) explains the difference between plumbed drinking fountains and other water-cooler formats.
+For all three models side-by-side, including dimensions, bottle-fill options, materials and intended environments, use the [commercial water bubbler comparison](/commercial-water-bubblers).
