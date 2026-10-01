@@ -10,7 +10,7 @@ import {
 } from '@/lib/products/getProductContent';
 import { markdownToPlainText } from '@/lib/products/markdown';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
-import { breadcrumbSchema, productSchema } from '@/lib/seo/jsonld';
+import { breadcrumbSchema, faqPageSchema, productSchema } from '@/lib/seo/jsonld';
 
 interface ProductPageProps {
   params: Promise<{
@@ -213,22 +213,25 @@ export default async function ProductPage({
     5000,
   );
 
+  const structuredData = [
+    productSchema(product, content, pathname, descriptionPlainText),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: node?.category.label ?? category, path: `/${category}` },
+      {
+        name: node?.subcategory.label ?? subcategory,
+        path: `/${category}/${subcategory}`,
+      },
+      { name: product.title, path: pathname },
+    ]),
+    ...(content.faq && content.faq.length > 0
+      ? [faqPageSchema(content.faq)]
+      : []),
+  ];
+
   return (
     <>
-      <JsonLdScript
-        data={[
-          productSchema(product, content, pathname, descriptionPlainText),
-          breadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: node?.category.label ?? category, path: `/${category}` },
-            {
-              name: node?.subcategory.label ?? subcategory,
-              path: `/${category}/${subcategory}`,
-            },
-            { name: product.title, path: pathname },
-          ]),
-        ]}
-      />
+      <JsonLdScript data={structuredData} />
       <ProductDetail
         product={product}
         content={content}
