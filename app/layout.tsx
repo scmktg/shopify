@@ -67,8 +67,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               ]}
             />
             <CartProvider>
-              <PromoBanner />
-              <Header />
+              <div className="sticky top-0 z-40">
+                <PromoBanner />
+                <Header />
+              </div>
               <main className="flex-1">{children}</main>
               <Footer />
               <CartDrawer />
