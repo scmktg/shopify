@@ -20,6 +20,12 @@ export interface SpecRow {
   value: string;
 }
 
+/** A concise product-level question and answer rendered on the PDP and in FAQPage JSON-LD. */
+export interface ProductFaqItem {
+  q: string;
+  a: string;
+}
+
 /**
  * WaterMark certification block. Render rules (enforced in the
  * component layer, not the schema):
@@ -145,6 +151,8 @@ export interface ProductContent {
   /** Unlimited; renders as a two-column table. */
   fullSpecs?: readonly SpecRow[];
   recommendedFor?: readonly string[];
+  /** Product-specific questions, rendered visibly and exposed as FAQPage JSON-LD. */
+  faq?: readonly ProductFaqItem[];
   compliance?: ProductCompliance;
   ctas?: ProductCtas;
   upsells?: ProductUpsells;
