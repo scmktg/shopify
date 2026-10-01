@@ -1,0 +1,42 @@
+name: Revise bubbler hub v3
+
+on:
+  push:
+    paths:
+      - '.github/workflows/revise-bubbler-hub-v3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.event.head_commit.message == 'Run bubbler hub cleanup v3'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Final hub cleanup
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'app/commercial-water-bubblers/page.tsx';
+          let s = fs.readFileSync(path, 'utf8');
+          s = s.replace(
+            "body: 'Frequent use, simple push-button operation and robust materials matter most. Match the cabinet to whether the unit is sheltered or fully exposed.',",
+            "body: 'Frequent use, easy cleaning, durable materials and bottle-filling needs matter most. Confirm the actual site conditions and installation requirements before selecting a cabinet.',"
+          );
+          s = s.replace(
+            "body: 'For industrial sites, select for peak-shift demand, cabinet durability, cleaning access and whether the location is exposed to weather.',",
+            "body: 'For industrial sites, select for peak-shift demand, cabinet durability, cleaning access, plumbing access and the number of drinking stations required.',"
+          );
+          fs.writeFileSync(path, s);
+          NODE
+      - name: Commit and remove temporary workflows
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add app/commercial-water-bubblers/page.tsx
+          git rm -f .github/workflows/revise-bubbler-hub.yml .github/workflows/revise-bubbler-hub-v2.yml .github/workflows/revise-bubbler-hub-v3.yml
+          git commit -m 'Finish bubbler hub consolidation cleanup'
+          git push origin main
