@@ -11,6 +11,7 @@ import {
 import { markdownToPlainText } from '@/lib/products/markdown';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema, faqPageSchema, productSchema } from '@/lib/seo/jsonld';
+import { enrichBubblerProductSchema } from '@/lib/seo/bubblerProductSchema';
 
 interface ProductPageProps {
   params: Promise<{
@@ -213,8 +214,15 @@ export default async function ProductPage({
     5000,
   );
 
+  const baseProductSchema = productSchema(
+    product,
+    content,
+    pathname,
+    descriptionPlainText,
+  );
+
   const structuredData = [
-    productSchema(product, content, pathname, descriptionPlainText),
+    enrichBubblerProductSchema(baseProductSchema, product, content, pathname),
     breadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: node?.category.label ?? category, path: `/${category}` },
