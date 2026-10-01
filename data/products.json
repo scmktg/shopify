@@ -13,38 +13,22 @@
       "stainless-steel",
       "watermark",
       "filtered",
-      "high-traffic"
+      "high-traffic",
+      "drinking-fountain",
+      "commercial"
     ],
-    "shortDescription": "Plumbed-in commercial bubbler in SUS304 stainless steel - 20 L/hr cooling, WaterMark certified.",
-    "description": "A high-traffic public-venue bubbler built around a SUS304 stainless steel cabinet and an integrated cooling and filtration unit. Direct mains connection - no bottles to refill, no cartridges to ship.\n\nDesigned for **continuous service** in offices, schools, gyms, and hospitality. The integrated drip tray with drainage system keeps the surrounding floor dry through peak hours, and the push-button activation copes with thousands of cycles a year without service.\n\n## WaterMark Certified and Lead-Free\n\nThis unit is **WaterMark certified under licence 23484** to specification **WMTS-105:2016** (Drinking Fountains and Bubblers) - the technical standard that defines what a plumbed-in drinking-water fixture must meet for legal installation in Australia. Two practical consequences:\n\n- Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance.\n- The certification covers the **lead-free wetted materials** that contact the drinking water - fittings, internal pathways, and dispensing components. Lead-free compliance matters increasingly for schools, childcare, and public-venue installations where drinking-water lead content is subject to ongoing regulatory tightening.\n\n## Build\n\n- Welded stainless steel frame and exterior panels\n- Integrated cooling unit, factory-tested for Australian mains pressure\n- Standard plumbing connections - any qualified plumber can install or service",
+    "shortDescription": "Round 304 stainless steel drinking fountain and water bubbler with direct mains connection, integrated filtration and WaterMark certification for schools, offices, gyms and public facilities.",
+    "description": "A round **304 stainless steel drinking fountain and water bubbler** designed for commercial and institutional environments where a durable, mains-connected drinking water point is required. Its cylindrical stainless steel cabinet suits schools, offices, gyms, retail venues and other public facilities.\n\nThe unit connects directly to mains water and includes integrated filtration for drinking water service. It is intended as a permanent plumbed fixture rather than a bottle-fed water cooler.\n\nThis model is **WaterMark certified under licence 23484 to WMTS-105:2016** and uses lead-free wetted components. Installation should be completed by an appropriately licensed plumber.\n\n- Round / cylindrical 304 stainless steel cabinet\n- Direct mains water connection\n- Integrated filtration cartridge\n- Chilled drinking water service\n- Suitable for high-traffic commercial and institutional settings\n- WaterMark licence 23484 / WMTS-105:2016\n\nSpecific cooling capacity, chilled-water temperature, dimensions, electrical rating and inlet size are intentionally not stated here until model-specific technical documentation is confirmed.",
     "features": [
-      "All SUS304 stainless steel welded frame and exterior panels",
-      "Integrated drip tray with drainage system",
-      "Direct mains connection - no bottles to refill",
-      "Push-button activation rated for high-traffic public use",
-      "Standard plumbing inlets - no proprietary fittings"
+      "Round / cylindrical 304 stainless steel cabinet",
+      "Direct mains water connection for continuous drinking water service",
+      "Integrated filtration cartridge",
+      "Designed for schools, offices, gyms, retail and public facilities",
+      "WaterMark certified under licence 23484 to WMTS-105:2016"
     ],
     "headlineSpecs": [
       {
-        "label": "Cooling capacity",
-        "value": "20 L/hr"
-      },
-      {
-        "label": "Water temperature",
-        "value": "8-12°C"
-      },
-      {
         "label": "Material",
-        "value": "SUS304 stainless steel"
-      },
-      {
-        "label": "Lead free",
-        "value": "Yes"
-      }
-    ],
-    "fullSpecs": [
-      {
-        "label": "Cabinet",
         "value": "304 stainless steel"
       },
       {
@@ -52,54 +36,60 @@
         "value": "Round / cylindrical"
       },
       {
-        "label": "Cooling capacity",
-        "value": "20 litres per hour"
+        "label": "Connection",
+        "value": "Direct mains"
       },
       {
-        "label": "Water temperature",
-        "value": "8-12°C"
+        "label": "Certification",
+        "value": "WaterMark licence 23484"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Product type",
+        "value": "Filtered water bubbler / drinking fountain"
       },
       {
-        "label": "Activation",
-        "value": "Push-button"
+        "label": "Cabinet material",
+        "value": "304 stainless steel"
+      },
+      {
+        "label": "Cabinet profile",
+        "value": "Round / cylindrical"
+      },
+      {
+        "label": "Installation type",
+        "value": "Freestanding, direct mains connection"
       },
       {
         "label": "Filtration",
-        "value": "Integrated cartridge"
-      },
-      {
-        "label": "Inlet connection",
-        "value": "Standard 1/4 inch BSP"
-      },
-      {
-        "label": "Power",
-        "value": "240 V AC"
+        "value": "Integrated filtration cartridge"
       },
       {
         "label": "Certification",
         "value": "WaterMark certified, WMTS-105:2016, Licence 23484"
       },
       {
-        "label": "Lead free",
+        "label": "Lead-free wetted components",
         "value": "Yes"
       }
     ],
     "recommendedFor": [
-      "Offices and co-working spaces",
-      "Schools, universities, and childcare",
+      "Schools and education facilities",
+      "Offices and workplaces",
       "Gyms and sporting facilities",
-      "Cafés, retail, and public venues"
+      "Retail venues",
+      "Public facilities"
     ],
     "compliance": {
       "watermark": {
         "status": "certified",
         "licenceNumber": "23484",
-        "specificationNumber": "WMTS-105:2016",
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certified under WMTS-105:2016 (Drinking Fountains and Bubblers). Licence number 23484. Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance."
+      "note": "WaterMark certified under licence 23484 to WMTS-105:2016. Lead-free wetted components. Installation should be completed by an appropriately licensed plumber."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -110,10 +100,24 @@
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "Commercial Stainless Steel Filtered Cold Water Bubbler - Round WM",
-      "description": "Commercial round bubbler in SUS304 stainless steel. 20 L/hr cooling, 8-12°C, lead-free, WaterMark certified WMTS-105:2016 licence 23484. Same-day dispatch from Wyong NSW.",
+      "title": "Round Stainless Steel Water Bubbler & Drinking Fountain",
+      "description": "Round 304 stainless steel drinking fountain and water bubbler with mains connection, filtration and WaterMark certification for schools, offices and gyms.",
       "ogImage": null
-    }
+    },
+    "faq": [
+      {
+        "q": "Is this a drinking fountain or a water bubbler?",
+        "a": "It can accurately be described as either. This is a freestanding, mains-connected drinking fountain and water bubbler with integrated filtration."
+      },
+      {
+        "q": "Is the round bubbler WaterMark certified?",
+        "a": "Yes. It is WaterMark certified under licence 23484 to WMTS-105:2016."
+      },
+      {
+        "q": "What is the cooling capacity of this model?",
+        "a": "The model-specific cooling capacity is not published here until the technical documentation for this exact round unit is confirmed."
+      }
+    ]
   },
   "wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system": {
     "categories": [
@@ -601,40 +605,41 @@
       "bubblers"
     ],
     "tags": [
-      "commercial",
+      "rust-free",
+      "hdpe",
+      "watermark",
       "filtered",
-      "cold-water",
+      "chilled",
       "high-traffic",
-      "freestanding"
+      "drinking-fountain",
+      "commercial"
     ],
-    "shortDescription": "Commercial-grade water bubbler in HDPE cabinet with granite-stone finish - WaterMark certified (WMTS-105:2016, licence 23484), lead-free, 20 L/hr cooling at 8-12 °C. For visible outdoor and high-traffic public installations.",
-    "description": "A free-standing commercial drinking-water bubbler in a high-density polyethylene (HDPE) cabinet with a **granite-stone finish** - the right look for outdoor courtyards, school grounds, gym entrances, and any visible public-area installation where the standard powder-coated or stainless cabinet would either weather poorly or feel too clinical for the setting.\n\n## WaterMark Certified and Lead-Free\n\n**WaterMark certified under licence 23484** to specification **WMTS-105:2016** - the Australian technical standard for drinking fountains and bubblers. A licensed plumber can install this unit on a mains supply line, issue a certificate of compliance, and the installation is covered under standard insurance. All wetted materials in contact with the drinking water are **lead-free**, which matters for schools, childcare, and any installation subject to ongoing drinking-water lead regulation.\n\n## Why HDPE With a Granite Finish\n\nStandard commercial bubblers come in stainless steel (sharp, modern) or powder-coated steel (cheaper, but rusts at the corners over years). HDPE is neither of those - it's a tough engineering polymer that doesn't rust, doesn't pit at the welds (because there are no welds), and accepts a deep granite-stone texture moulded directly into the cabinet rather than painted on the surface.\n\nFor outdoor installations exposed to weather, salt air, or pool chlorine, the HDPE cabinet outlasts powder-coated alternatives. For visual installations - school yards, community parks, park-adjacent gyms - the granite finish reads as 'permanent fixture' rather than 'cheap unit we bolted in'.\n\n## Build and Dimensions\n\nThe cabinet stands **122 cm tall** with the bubbler spout rising approximately 7 cm above that (total reach roughly 129 cm to the bubbler nozzle), and a separate side-mounted dispensing tap at about 25 cm above the cabinet top. The 41 cm × 41 cm footprint suits standard concrete pad installation. Internal cooling is a 200 W compressor running R290 refrigerant (60 g charge) delivering 20 L/hr of chilled water at 8-12 °C.\n\nTwo-stage filtration - PP sediment plus activated carbon - sits inside the cabinet, accessible for routine cartridge replacement.\n\n## Power and Connection\n\n- 220-240 V AC, 50/60 Hz mains (also runs on 100-127 V 50/60 Hz for export builds)\n- Direct mains water connection - no bottles, no jugs, no consumable waste\n- Internal drainage routed to a standard waste outlet\n\nModel designation: YL-600P.",
+    "shortDescription": "Rust-free HDPE drinking fountain and water bubbler with chilled, filtered water, 20 L/hr cooling capacity and WaterMark certification for high-traffic facilities.",
+    "description": "A freestanding **rust-free drinking fountain and water bubbler** built for high-traffic environments where a metal cabinet is not preferred. Model **YL-600P** uses a durable HDPE cabinet with a granite-stone appearance, giving schools, sporting facilities, gyms, offices and public venues a practical chilled drinking water station with a corrosion-resistant exterior.\n\nThe integrated cooling system delivers approximately **20 litres per hour** at around **8–12°C**. Two-stage filtration combines PP sediment filtration with activated carbon, while the direct mains connection provides continuous drinking water without bottle changes. An integrated bubbler spout and side tap provide two dispensing points.\n\nThe unit is **WaterMark certified under licence 23484 to WMTS-105:2016** and uses lead-free wetted components. Installation requires mains water, drainage and power and should be completed by an appropriately licensed plumber.\n\n- Rust-free HDPE cabinet with granite-stone appearance\n- Model YL-600P\n- Chilled and filtered drinking water\n- 20 L/hr cooling capacity\n- Approximately 8–12°C water temperature\n- Two-stage PP sediment + activated carbon filtration\n- Integrated bubbler spout + side tap\n- WaterMark licence 23484 / WMTS-105:2016",
     "features": [
-      "HDPE cabinet with granite-stone finish - inherently rust-free, UV-stable, easy to clean",
-      "20 L/hr cooling capacity at 8-12 °C - sized for sustained high-traffic use",
-      "R290 hydrocarbon refrigerant - low global warming potential vs R134a",
-      "Built-in two-stage filtration: PP sediment + activated carbon",
-      "Bubbler spout (~7 cm above cabinet) plus side tap at 25 cm for bottle filling",
-      "200 W cooling power on a 220-240 V (50/60 Hz) supply",
-      "122 cm cabinet on a 41 × 41 cm footprint - freestanding, against-wall friendly",
-      "Direct mains connection - no bottles, no refills"
+      "Rust-free HDPE cabinet for demanding high-traffic environments",
+      "Chilled drinking water with 20 L/hr cooling capacity",
+      "Two-stage PP sediment and activated carbon filtration",
+      "Integrated bubbler spout and side tap",
+      "Direct mains water connection",
+      "WaterMark certified under licence 23484 to WMTS-105:2016"
     ],
     "headlineSpecs": [
-      {
-        "label": "Cabinet",
-        "value": "HDPE, granite-stone finish"
-      },
       {
         "label": "Cooling capacity",
         "value": "20 L/hr"
       },
       {
         "label": "Water temperature",
-        "value": "8-12 °C"
+        "value": "Approx. 8–12°C"
       },
       {
-        "label": "Lead free",
-        "value": "Yes"
+        "label": "Cabinet",
+        "value": "Rust-free HDPE"
+      },
+      {
+        "label": "Filtration",
+        "value": "PP sediment + activated carbon"
       }
     ],
     "fullSpecs": [
@@ -643,16 +648,20 @@
         "value": "YL-600P"
       },
       {
-        "label": "Format",
-        "value": "Freestanding, mains-connected"
+        "label": "Product type",
+        "value": "Chilled and filtered water bubbler / drinking fountain"
       },
       {
-        "label": "Cabinet",
+        "label": "Cabinet material",
         "value": "High-density polyethylene (HDPE)"
       },
       {
-        "label": "Finish",
+        "label": "Cabinet finish",
         "value": "Granite-stone appearance"
+      },
+      {
+        "label": "Installation type",
+        "value": "Freestanding, direct mains connection"
       },
       {
         "label": "Cooling capacity",
@@ -660,78 +669,81 @@
       },
       {
         "label": "Water temperature",
-        "value": "8-12 °C"
-      },
-      {
-        "label": "Cooling power",
-        "value": "200 W"
-      },
-      {
-        "label": "Refrigerant",
-        "value": "R290, 60 g charge"
-      },
-      {
-        "label": "Voltage",
-        "value": "220-240 V AC, 50/60 Hz (also 100-127 V 50/60 Hz)"
+        "value": "Approximately 8–12°C"
       },
       {
         "label": "Filtration",
-        "value": "PP sediment + activated carbon (two-stage)"
+        "value": "2-stage PP sediment + activated carbon"
       },
       {
-        "label": "Cabinet dimensions",
-        "value": "122 cm H × 41 cm W × 41 cm D"
+        "label": "Dispensing",
+        "value": "Integrated bubbler spout + side tap"
       },
       {
-        "label": "Bubbler spout height",
-        "value": "~7 cm above cabinet (total reach ~129 cm)"
+        "label": "Dimensions",
+        "value": "Approx. 122 cm H × 41 cm W × 41 cm D"
       },
       {
-        "label": "Tap height",
-        "value": "25 cm above cabinet"
+        "label": "Cooling power",
+        "value": "200 W"
+      },
+      {
+        "label": "Refrigerant",
+        "value": "R290, 60 g"
       },
       {
         "label": "Certification",
         "value": "WaterMark certified, WMTS-105:2016, Licence 23484"
       },
       {
-        "label": "Lead free",
+        "label": "Lead-free wetted components",
         "value": "Yes"
       }
     ],
     "recommendedFor": [
-      "Schools, universities, and TAFE campuses",
-      "Offices and large co-working spaces",
-      "Gyms, leisure centres, and sporting clubs",
-      "Retail and public venues with sustained foot traffic"
+      "Schools, universities and TAFE campuses",
+      "Offices and workplaces",
+      "Gyms and leisure centres",
+      "Sporting clubs and facilities",
+      "Retail and public facilities"
     ],
     "compliance": {
       "watermark": {
         "status": "certified",
         "licenceNumber": "23484",
-        "specificationNumber": "WMTS-105:2016",
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certified under WMTS-105:2016 (Drinking Fountains and Bubblers). Licence number 23484. Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance."
+      "note": "WaterMark certified under licence 23484 to WMTS-105:2016. Lead-free wetted components. Installation should be completed by an appropriately licensed plumber."
     },
     "ctas": {
       "primary": "Add to cart",
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "bubbler-filter-cto-plus-pp",
-        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "HDPE Granite-Finish Commercial Water Bubbler - WaterMark Certified",
-      "description": "Commercial drinking water bubbler in HDPE granite-finish cabinet. WaterMark certified WMTS-105:2016 licence 23484. Lead-free, 20 L/hr at 8-12 °C, 122 cm height. R290 refrigerant.",
+      "title": "Rust-Free Water Bubbler & Drinking Fountain",
+      "description": "Rust-free chilled and filtered drinking fountain and water bubbler with HDPE cabinet, 20 L/hr output and WaterMark certification for high-traffic sites.",
       "ogImage": null
-    }
+    },
+    "faq": [
+      {
+        "q": "Why choose a rust-free drinking fountain?",
+        "a": "The YL-600P uses an HDPE cabinet rather than a metal exterior, making it a practical option where a rust-free outer cabinet is preferred."
+      },
+      {
+        "q": "How much chilled water can it produce?",
+        "a": "The verified cooling capacity is 20 litres per hour, with chilled water delivered at approximately 8–12°C."
+      },
+      {
+        "q": "Is it WaterMark certified?",
+        "a": "Yes. It is WaterMark certified under licence 23484 to WMTS-105:2016."
+      }
+    ]
   },
   "commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des": {
     "categories": [
@@ -739,22 +751,23 @@
       "bubblers"
     ],
     "tags": [
-      "commercial",
       "stainless-steel",
       "watermark",
       "filtered",
-      "square-cabinet",
-      "high-traffic"
+      "chilled",
+      "high-traffic",
+      "drinking-fountain",
+      "commercial"
     ],
-    "shortDescription": "Commercial filtered water bubbler and drinking fountain in square SUS304 stainless steel. WaterMark certified, lead-free and chilled at 20 L/hr for schools, offices, gyms and public venues.",
-    "description": "This **commercial water bubbler and filtered drinking fountain** uses a square, flat-sided SUS304 stainless steel cabinet - the right profile for installations against a wall, in a corner, or anywhere the rounder cylindrical bubbler format would waste floor space. 20 L/hr cooling delivered through integrated PP sediment and activated carbon filtration.\n\n## WaterMark Certified and Lead-Free\n\n**WaterMark certified under licence 23484** to specification **WMTS-105:2016** (Drinking Fountains and Bubblers) - the Australian technical standard required for any plumbed-in drinking-water fixture connected to a mains supply line. Your licensed plumber can install this unit and issue a certificate of compliance, and the installation is covered under standard home and commercial insurance.\n\nAll wetted materials in contact with the drinking water are **lead-free** - important for schools, childcare, healthcare, and any installation subject to drinking-water lead regulation. The certification covers the full plumbing pathway: fittings, internal valves, bubbler nozzle, and dispensing tap.\n\n## Why the Square Profile\n\nRound/cylindrical bubblers look good in open plazas but waste floor space against walls and in corners. The square profile sits flush against walls, lines up cleanly in rows along corridors, and presents a flat back panel for cable and plumbing concealment behind the cabinet.\n\n## Build and Dimensions\n\n- **Cabinet:** SUS304 stainless steel, square / flat-sided\n- **Dimensions:** 99 cm H × 30 cm W × 30 cm D - significantly smaller footprint than round cylindrical bubblers\n- **Bubbler spout:** 7 cm above cabinet top (total reach ~106 cm)\n- **Side-mounted tap:** 25 cm above cabinet for bottle filling and cup dispensing\n\n## Cooling and Refrigerant\n\n- 20 L/hr chilled water output at 8-12 °C\n- 200 W compressor on R290 refrigerant (60 g charge) - modern hydrocarbon refrigerant with low global-warming potential\n- Continuous-duty rated for high-traffic public installations\n\n## Filtration\n\nTwo-stage internal filtration - PP sediment to capture particulate, activated carbon for chlorine reduction and taste. Cartridges accessible for routine replacement without disconnecting the unit from the wall.",
+    "shortDescription": "Chilled and filtered stainless steel drinking fountain and water bubbler for schools, offices, factories, warehouses, gyms and other high-traffic facilities. WaterMark certified with 20 L/hr cooling capacity.",
+    "description": "A freestanding **stainless steel drinking fountain and water bubbler** designed for busy Australian facilities that need chilled, filtered drinking water from a direct mains connection. The square, flat-sided SUS304 stainless steel cabinet gives the unit a clean commercial finish for schools, offices, factories, warehouses, gyms, sporting facilities and public-facing sites.\n\nThe integrated cooling system delivers approximately **20 litres per hour** of chilled water at around **8–12°C**, while the two-stage filtration setup combines sediment filtration with activated carbon. An integrated bubbler spout and side tap provide two convenient dispensing points from the same unit.\n\nThe unit is **WaterMark certified under licence 23484 to WMTS-105:2016** and uses lead-free wetted components. Installation requires access to mains water, drainage and power, and should be completed by an appropriately licensed plumber.\n\n- SUS304 stainless steel cabinet\n- Chilled and filtered drinking water\n- 20 L/hr cooling capacity\n- Approximately 8–12°C chilled water\n- Two-stage sediment + activated carbon filtration\n- Integrated bubbler spout + side tap\n- Direct mains connection\n- WaterMark licence 23484 / WMTS-105:2016",
     "features": [
-      "Square cabinet - sits flush against walls and corners, saves footprint vs round designs",
-      "SUS304 stainless steel cabinet, frame, and panels",
-      "20 L/hr cooling at 8-12 °C with low-GWP R290 refrigerant",
-      "Integrated PP sediment + activated carbon filtration",
-      "200 W cooling power on standard 220-240 V mains",
-      "Bubbler spout (7 cm) plus side tap (25 cm) for filling bottles and jugs"
+      "SUS304 stainless steel square cabinet for commercial and institutional settings",
+      "Chilled drinking water with 20 L/hr cooling capacity",
+      "Two-stage sediment and activated carbon filtration",
+      "Integrated bubbler spout and side tap",
+      "Direct mains water connection for continuous use",
+      "WaterMark certified under licence 23484 to WMTS-105:2016"
     ],
     "headlineSpecs": [
       {
@@ -763,25 +776,33 @@
       },
       {
         "label": "Water temperature",
-        "value": "8-12 °C"
+        "value": "Approx. 8–12°C"
+      },
+      {
+        "label": "Material",
+        "value": "SUS304 stainless steel"
+      },
+      {
+        "label": "Filtration",
+        "value": "2-stage sediment + activated carbon"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Product type",
+        "value": "Chilled and filtered water bubbler / drinking fountain"
       },
       {
         "label": "Cabinet material",
         "value": "SUS304 stainless steel"
       },
-      {
-        "label": "Lead free",
-        "value": "Yes"
-      }
-    ],
-    "fullSpecs": [
       {
         "label": "Cabinet profile",
         "value": "Square / flat-sided"
       },
       {
-        "label": "Cabinet material",
-        "value": "SUS304 stainless steel"
+        "label": "Installation type",
+        "value": "Freestanding, direct mains connection"
       },
       {
         "label": "Cooling capacity",
@@ -789,74 +810,81 @@
       },
       {
         "label": "Water temperature",
-        "value": "8-12 °C"
-      },
-      {
-        "label": "Cooling power",
-        "value": "200 W"
-      },
-      {
-        "label": "Refrigerant",
-        "value": "R290, 60 g charge"
+        "value": "Approximately 8–12°C"
       },
       {
         "label": "Filtration",
-        "value": "PP sediment + activated carbon (two-stage)"
+        "value": "2-stage sediment + activated carbon"
+      },
+      {
+        "label": "Dispensing",
+        "value": "Integrated bubbler spout + side tap"
       },
       {
         "label": "Dimensions",
-        "value": "99 cm H × 30 cm W × 30 cm D"
+        "value": "Approx. 99 cm H × 30 cm W × 30 cm D"
       },
       {
-        "label": "Bubbler spout height",
-        "value": "7 cm above cabinet"
+        "label": "Compressor power",
+        "value": "200 W"
       },
       {
-        "label": "Tap height",
-        "value": "25 cm above cabinet"
+        "label": "Refrigerant",
+        "value": "R290, 60 g"
       },
       {
         "label": "Certification",
         "value": "WaterMark certified, WMTS-105:2016, Licence 23484"
       },
       {
-        "label": "Lead free",
+        "label": "Lead-free wetted components",
         "value": "Yes"
       }
     ],
     "recommendedFor": [
-      "Foyers, corridors, and corner installations where a flat-back cabinet saves space",
-      "Cafés, retail, and food-service venues",
-      "Schools, gyms, and community facilities",
-      "Offices upgrading from bottled water dispensers"
+      "Schools and education facilities",
+      "Offices and workplaces",
+      "Factories and warehouses",
+      "Gyms and sporting facilities",
+      "Hospitality and public facilities"
     ],
     "compliance": {
       "watermark": {
         "status": "certified",
         "licenceNumber": "23484",
-        "specificationNumber": "WMTS-105:2016",
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certified under WMTS-105:2016 (Drinking Fountains and Bubblers). Licence number 23484. Your licensed plumber can install this on a mains supply line, issue a certificate of compliance, and the installation is covered under standard home and commercial insurance."
+      "note": "WaterMark certified under licence 23484 to WMTS-105:2016. Lead-free wetted components. Installation should be completed by an appropriately licensed plumber."
     },
     "ctas": {
       "primary": "Add to cart",
       "secondary": null
     },
     "upsells": {
-      "boughtTogether": [
-        "bubbler-filter-cto-plus-pp",
-        "drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet"
-      ],
+      "boughtTogether": [],
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "Commercial Water Bubbler | Square Stainless Steel | WaterMark",
-      "description": "Commercial filtered water bubbler and drinking fountain in square SUS304 stainless steel. WaterMark certified, lead-free, chilled 20 L/hr for high-traffic sites.",
+      "title": "Stainless Steel Water Bubbler & Drinking Fountain",
+      "description": "Chilled, filtered stainless steel water bubbler and drinking fountain for schools, offices, gyms and commercial sites. WaterMark certified, 20 L/hr.",
       "ogImage": null
-    }
+    },
+    "faq": [
+      {
+        "q": "Is this a water bubbler or a drinking fountain?",
+        "a": "Both terms describe this product. It is a freestanding mains-connected drinking fountain and water bubbler with chilled, filtered water."
+      },
+      {
+        "q": "How much chilled water can it produce?",
+        "a": "The verified cooling capacity is 20 litres per hour, with chilled water delivered at approximately 8–12°C."
+      },
+      {
+        "q": "Is it WaterMark certified?",
+        "a": "Yes. It is WaterMark certified under licence 23484 to WMTS-105:2016 for drinking fountains and bubblers."
+      }
+    ]
   },
   "stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap": {
     "categories": [
