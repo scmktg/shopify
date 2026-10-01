@@ -5,34 +5,61 @@ tagFilter: "use:commercial-and-cafe"
 productGridTitle: "Commercial systems"
 relatedLinks:
   - { label: "Commercial water filters", href: "/water-filters/commercial/" }
-  - { label: "Commercial bubblers", href: "/bubblers-and-coolers/bubblers/" }
-  - { label: "Bubblers for schools", href: "/use/commercial-and-cafe/schools/" }
-  - { label: "Bubblers for gyms and fitness", href: "/use/commercial-and-cafe/gyms-and-fitness/" }
+  - { label: "Commercial water bubblers", href: "/commercial-water-bubblers" }
+  - { label: "Water bubblers for schools", href: "/use/commercial-and-cafe/schools/" }
+  - { label: "Water bubblers for factories and warehouses", href: "/use/commercial-and-cafe/factories-and-warehouses/" }
+  - { label: "Water bubblers for gyms and fitness", href: "/use/commercial-and-cafe/gyms-and-fitness/" }
   - { label: "Coolers and bubblers for offices", href: "/use/commercial-and-cafe/offices/" }
-  - { label: "Hard water and scale (workshop)", href: "/water-filters/whole-house/" }
+  - { label: "Water bubbler vs water cooler", href: "/help/bubblers-vs-coolers/" }
 faq:
   - q: "What kind of filter does an espresso machine need?"
-    a: "A scale-control filter is essential. Espresso group heads and boilers fail when scale builds up - usually within twelve to eighteen months on hard water without protection. Commercial coffee filters combine a 5 micron sediment stage, carbon for taste, and an ion-exchange or polyphosphate stage to inhibit scale. Match the cartridge to your machine's flow rate and water hardness."
+    a: "Match filtration to the equipment, source water and manufacturer requirements. Commercial coffee filtration commonly combines sediment and carbon treatment with an appropriate scale-control approach. Confirm flow rate, capacity and water chemistry before selecting a cartridge."
   - q: "How big a filter do I need for a cafe?"
-    a: "Match the cartridge to peak demand. A single-group machine needs maybe 4 L/min of treated capacity; a four-group with steam wand and ice maker needs closer to 10 L/min. Undersized filters cause pressure drops, slower extraction, and shortened cartridge life. Every product page lists rated flow rate and capacity in litres."
+    a: "Size commercial filtration for peak flow and total treated-water demand rather than venue size alone. Espresso machines, ice makers and other equipment can overlap during busy periods, so use the equipment specifications and expected simultaneous demand when sizing the system."
   - q: "How often do commercial cartridges need changing?"
-    a: "Most commercial cartridges are rated by litres treated, not by time. A 22,000-litre cartridge in a busy cafe might last six months; the same cartridge in a small bakery could last two years. Track usage with a flow meter or replace on a fixed schedule based on rated capacity divided by typical daily volume."
-  - q: "Is WaterMark certification required for cafe installs?"
-    a: "Yes for any product that connects to mains pressure - that includes the in-line filter feeding your espresso machine. Certified products show their licence number on the page; a council inspector can ask to see the certificate at any time. Non-certified products are clearly labelled and are for off-mains use only."
+    a: "Follow the cartridge manufacturer's rated capacity and service guidance, then adjust for actual water quality and usage. High sediment loading, chlorine demand and heavy daily throughput can shorten service life."
+  - q: "Do commercial plumbing products need WaterMark certification?"
+    a: "WaterMark is mandatory for product categories listed on the WaterMark Schedule of Products. Not every plumbing product is automatically included, so confirm the relevant product category and installation requirements before specifying equipment."
 ---
 
-Cafes and restaurants need water filtration for two reasons: protecting expensive equipment from scale, and keeping the product consistent. Hard-water scale on an espresso boiler costs more in repairs and downtime than the filter itself does in a decade.
+Commercial water treatment depends on what the site is trying to achieve. Cafes may need equipment protection and taste control; offices may need filtered chilled drinking water; schools, gyms, factories and warehouses may need robust shared drinking stations positioned around high-traffic areas.
 
-The standard hospitality setup:
+The standard commercial approach is to identify the **water source, equipment, peak flow, contaminant or taste problem, installation environment and servicing requirements** before choosing the filtration hardware.
 
-- **Inline scale-control filter** for espresso, combi ovens, and steam-injection equipment. Removes chlorine for taste, drops sediment, and inhibits scale formation in boilers.
-- **Sediment + carbon under-counter** for the public drinking tap or bottle-fill station.
-- **Reverse osmosis** for ice makers and post-mix soft-drink lines that need very low TDS water.
+## Commercial drinking-water applications
+
+For shared drinking-water stations, use the dedicated guides:
+
+- [Water bubblers for schools](/use/commercial-and-cafe/schools/)
+- [Water bubblers for factories and warehouses](/use/commercial-and-cafe/factories-and-warehouses/)
+- [Water bubblers for gyms and fitness centres](/use/commercial-and-cafe/gyms-and-fitness/)
+- [Water coolers and bubblers for offices](/use/commercial-and-cafe/offices/)
+- [Water bubbler vs water cooler](/help/bubblers-vs-coolers/)
+- [Commercial water bubbler comparison](/commercial-water-bubblers)
+
+## Hospitality equipment filtration
+
+Cafes and restaurants commonly use filtration to protect equipment and keep beverage quality consistent.
+
+Typical applications include:
+
+- **espresso machines and boilers** where sediment, chlorine taste and scale management may matter
+- **ice makers** where water chemistry affects appearance, taste and equipment condition
+- **steam and combi equipment** where the manufacturer may specify particular water-quality limits
+- **drinking-water taps** where sediment and carbon filtration can improve clarity, taste and odour
 
 ## How to choose
 
-- **Single-group espresso, light cafe?** A 5 micron + carbon + scale cartridge in a 10" housing is usually enough. Look for cartridges rated 22,000 litres or higher.
-- **Multi-group, busy cafe?** Step up to twin parallel cartridges or a 20" Big Blue with a higher-capacity scale-control element. Pair with a TDS meter at install so you can confirm the system is working before you put it on the boiler.
-- **Ice maker or post-mix?** Reverse osmosis is standard. Lower TDS means clearer ice and better-tasting drinks; the wastewater rate is acceptable on commercial supplies.
+Start with the equipment manufacturer's water specification and the site's source-water characteristics. Then check:
 
-WaterMark certification is non-negotiable on mains-pressure installs. Certified products show the licence number on the page; we have certified options across every commercial category. Most products dispatch the same business day from our Central Coast NSW warehouse for tracked Australia-wide delivery.
+- required peak flow rate
+- expected daily volume
+- sediment loading
+- chlorine or chloramine treatment needs
+- hardness and scale risk
+- required service interval
+- plumbing certification requirements for the product category
+
+Avoid choosing a commercial cartridge only by physical size. A system needs enough flow and treatment capacity for the actual equipment it serves.
+
+For current commercial products, browse [commercial water filters](/water-filters/commercial/) or use the [commercial water bubbler guide](/commercial-water-bubblers) for shared drinking-water stations.
