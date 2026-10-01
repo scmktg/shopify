@@ -1,6 +1,7 @@
 import type { Product } from '@/types/product';
 import type { ProductContent } from '@/lib/products/schema';
 import type { JsonLd } from './jsonld';
+import { absoluteUrl } from './siteUrl';
 
 interface BubblerSchemaProfile {
   alternateNames: readonly string[];
@@ -110,6 +111,7 @@ export function enrichBubblerProductSchema(
   schema: JsonLd,
   product: Product,
   content: ProductContent,
+  pathname: string,
 ): JsonLd {
   const profile = BUBBLER_SCHEMA_PROFILES[product.handle];
   if (!profile) return schema;
@@ -150,9 +152,15 @@ export function enrichBubblerProductSchema(
     addProperty(name, value);
   }
 
+  const canonicalUrl = absoluteUrl(pathname);
+
   return {
     ...schema,
-    '@id': typeof schema['@id'] === 'string' ? schema['@id'] : undefined,
+    '@id':
+      typeof schema['@id'] === 'string'
+        ? schema['@id']
+        : `${canonicalUrl}#product`,
+    url: typeof schema.url === 'string' ? schema.url : canonicalUrl,
     alternateName: profile.alternateNames,
     material: profile.material,
     additionalProperty: existingProperties,
