@@ -228,7 +228,7 @@ const USE_CASES = [
   {
     icon: GraduationCap,
     title: 'Schools & childcare',
-    body: 'Frequent use, simple push-button operation and robust materials matter most. Match the cabinet to whether the unit is sheltered or fully exposed.',
+    body: 'Frequent use, easy cleaning, durable materials and bottle-filling needs matter most. Confirm the actual site conditions and installation requirements before selecting a cabinet.',
     points: ['WaterMark-certified range', 'Lead-free', 'Bottle-fill options available'],
   },
   {
@@ -240,7 +240,7 @@ const USE_CASES = [
   {
     icon: Factory,
     title: 'Factories & warehouses',
-    body: 'For industrial sites, select for peak-shift demand, cabinet durability, cleaning access and whether the location is exposed to weather.',
+    body: 'For industrial sites, select for peak-shift demand, cabinet durability, cleaning access, plumbing access and the number of drinking stations required.',
     points: ['Rust-free HDPE option', 'Filtered drinking water', 'Multiple stations for large sites'],
   },
   {
