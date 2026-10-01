@@ -450,28 +450,48 @@ function WhyEnviroAqua() {
 
 const FAQ_ITEMS: ReadonlyArray<{ q: string; a: string }> = [
   {
-    q: 'Which water filter should I choose for my home?',
-    a: 'Start with where you want filtered water and what you want to reduce. Under-sink systems treat drinking water at one tap, while whole-house systems treat water before it is distributed around the property. Reverse osmosis is another drinking-water option for customers seeking more comprehensive filtration.',
+    q: 'Which type of water filter should I choose?',
+    a: 'Choose based on where you want filtered water and what you want the system to do. An under-sink filter treats drinking and cooking water at one kitchen tap. A whole-house system treats water before it is distributed around the property. Reverse osmosis is a point-of-use option for customers who want a broader level of drinking-water filtration. Commercial systems are sized around application, flow and daily demand.',
   },
   {
-    q: 'What is the difference between whole-house and under-sink filtration?',
-    a: 'Whole-house systems are installed on the incoming water line and filter water for multiple fixtures. Under-sink systems are point-of-use products designed mainly for kitchen drinking and cooking water.',
+    q: 'What is the difference between a whole-house water filter and an under-sink water filter?',
+    a: 'A whole-house water filter is installed on the incoming water line so filtered water can reach multiple taps, showers and appliances. An under-sink filter treats only the water supplied to a specific drinking-water tap. Whole-house filtration is the better fit when you want property-wide treatment; under-sink filtration is simpler when drinking and cooking water are the main priority.',
   },
   {
-    q: 'Can a 3-way tap work with a water filter system?',
-    a: 'A compatible 3-way tap combines normal hot and cold water with a separate filtered-water pathway in one mixer. Check the connection and installation requirements on the individual tap and filter product pages before ordering.',
+    q: 'When should I choose reverse osmosis instead of a standard under-sink filter?',
+    a: 'A standard under-sink system is usually the simpler choice when the goal is sediment, chlorine, taste and odour reduction. Reverse osmosis adds a membrane stage and is used when customers want more comprehensive point-of-use filtration. Because exact reduction performance varies by system and membrane, compare the documented specifications and performance claims on the relevant product page before choosing.',
+  },
+  {
+    q: 'What is a 3-way filtered kitchen tap?',
+    a: 'A 3-way filtered kitchen tap combines normal hot water, normal cold water and a separate filtered-water pathway in one mixer. The filtered line remains separate from the unfiltered hot and cold supply inside the tap, which removes the need for a second small drinking-water faucet on the benchtop.',
+  },
+  {
+    q: 'Can a 3-way kitchen tap work with my existing water filter?',
+    a: 'Often, yes, provided the filter uses compatible plumbing connections and is designed to supply a separate filtered-water line. Three-way taps can be paired with many under-sink and reverse-osmosis systems, but connection sizes, pressure requirements and fittings vary. Check the compatibility information on both the tap and filter product pages before ordering.',
+  },
+  {
+    q: 'What is the difference between a commercial water bubbler and a water cooler?',
+    a: 'A commercial water bubbler is typically a plumbed-in drinking fixture designed for frequent direct drinking, while a water cooler is generally designed to dispense drinking water into a cup or bottle. Some commercial units combine bubbler, bottle-fill and chilled-water functions. The right format depends on the site, expected traffic and how users will drink from it.',
+  },
+  {
+    q: 'What type of water bubbler is suitable for schools, factories, offices and gyms?',
+    a: 'Start with the environment, expected number of users, required chilled-water output and whether bottle filling is needed. Stainless-steel commercial bubblers are commonly chosen for high-use settings because they are durable and easy to clean. Schools, factories, offices and gyms can have very different peak demand, so use the relevant application guide or compare the commercial bubbler range before selecting a model.',
   },
   {
     q: 'How often should water-filter cartridges be replaced?',
-    a: 'Replacement timing depends on cartridge type, water quality and usage. Use the interval stated for the specific cartridge or system and replace earlier if performance changes indicate the filters are exhausted.',
+    a: 'Replacement timing depends on cartridge type, water quality, system size and water usage. Many household sediment and carbon cartridges are replaced on a regular maintenance cycle, but the correct interval is the one specified for the particular cartridge or system. Replace earlier if flow drops or if taste, odour or sediment performance noticeably changes.',
   },
   {
-    q: 'Do you sell commercial water bubblers for schools and workplaces?',
-    a: 'Yes. EnviroAqua sells commercial filtered and chilled water bubblers for schools, offices, gyms, factories, warehouses and other workplaces. The commercial water bubbler range lets you compare the available designs.',
+    q: 'How do I know which replacement cartridge fits my water filter?',
+    a: 'Match the cartridge dimensions, media type and filtration stage to the existing housing or system. Common cartridge formats include 10-inch and 20-inch lengths in standard or larger-diameter housings, but the same physical size can be available in different media. Check the existing cartridge label, system specifications or product compatibility information before ordering a replacement set.',
   },
   {
-    q: 'Do you ship Australia-wide?',
-    a: 'Yes. Most products ship Australia-wide. Parcel delivery is calculated at checkout from packed weight and destination, while bulky or fragile products may use special freight or Click & Collect arrangements.',
+    q: 'Do water filters and filtered-water taps need WaterMark certification in Australia?',
+    a: 'WaterMark requirements apply to plumbing products and materials that fall within the Australian WaterMark Certification Scheme and are installed in regulated plumbing work. Whether certification is required depends on the product and installation. EnviroAqua identifies WaterMark-certified products where applicable and shows compliance information on individual product pages; regulated plumbing work should be confirmed with the installer and relevant Australian requirements.',
+  },
+  {
+    q: 'Do you ship water filters and replacement cartridges Australia-wide?',
+    a: 'Yes. Most EnviroAqua products ship Australia-wide. Parcel delivery is calculated from the packed weight and destination, while selected bulky or fragile products use different freight or Click & Collect arrangements. Stocked parcel orders placed before 12pm AEST normally dispatch the same business day from Wyong on the Central Coast NSW.',
   },
 ];
 
@@ -480,9 +500,17 @@ function Faq() {
     <section className="bg-white">
       <JsonLdScript data={faqPageSchema(FAQ_ITEMS)} />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+        <p className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
+          Water filter FAQ
+        </p>
+        <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-black tracking-tight">
           Water filtration buying questions
         </h2>
+        <p className="mt-3 text-base text-black/70">
+          Start here for the broad buying decisions. Our application and help
+          guides go deeper into system sizing, contaminants, installation and
+          product-specific requirements.
+        </p>
         <div className="mt-6 border-t border-gray-200">
           {FAQ_ITEMS.map((item) => (
             <details key={item.q} className="group border-b border-gray-200">
