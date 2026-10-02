@@ -4,6 +4,9 @@ import type { JsonLd } from './jsonld';
 import { absoluteUrl } from './siteUrl';
 
 interface BubblerSchemaProfile {
+  mpn: string;
+  modelName: string;
+  watermarkCertificate: string;
   alternateNames: readonly string[];
   material: string;
   applications: readonly string[];
@@ -12,6 +15,9 @@ interface BubblerSchemaProfile {
 
 const BUBBLER_SCHEMA_PROFILES: Readonly<Record<string, BubblerSchemaProfile>> = {
   'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': {
+    mpn: 'YL-600C',
+    modelName: 'Water Bubbler Square',
+    watermarkCertificate: '023484',
     alternateNames: [
       'Stainless steel water bubbler',
       'Stainless steel drinking fountain',
@@ -43,6 +49,9 @@ const BUBBLER_SCHEMA_PROFILES: Readonly<Record<string, BubblerSchemaProfile>> = 
     ],
   },
   'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': {
+    mpn: 'YL-600R',
+    modelName: 'Water Bubbler Round',
+    watermarkCertificate: '023484',
     alternateNames: [
       'Round stainless steel water bubbler',
       'Round stainless steel drinking fountain',
@@ -68,6 +77,9 @@ const BUBBLER_SCHEMA_PROFILES: Readonly<Record<string, BubblerSchemaProfile>> = 
     ],
   },
   'commercial-rust-free-filtered-cold-water-bubbler-wm': {
+    mpn: 'YL-600P',
+    modelName: 'Water Bubbler Grey',
+    watermarkCertificate: '023484',
     alternateNames: [
       'Rust-free water bubbler',
       'Rust-free drinking fountain',
@@ -108,9 +120,9 @@ function normalisePropertyName(value: unknown): string {
  *
  * The base schema remains the source of truth for price, availability, SKU,
  * images, offers, returns and certification. This layer only adds terminology,
- * material, applications and technical facts that are useful to search engines
- * and AI systems. It deliberately avoids inferring unverified specifications,
- * particularly for the round model.
+ * manufacturer model identifiers, material, applications and technical facts
+ * that are useful to search engines and AI systems. It deliberately avoids
+ * inferring unverified specifications, particularly for the round model.
  */
 export function enrichBubblerProductSchema(
   schema: JsonLd,
@@ -147,6 +159,10 @@ export function enrichBubblerProductSchema(
     'Water bubbler; drinking fountain; drinking water fountain',
   );
 
+  addProperty('Manufacturer model ID', profile.mpn);
+  addProperty('WaterMark model name', profile.modelName);
+  addProperty('WaterMark certificate', profile.watermarkCertificate);
+
   const applications =
     content.recommendedFor && content.recommendedFor.length > 0
       ? content.recommendedFor
@@ -166,6 +182,8 @@ export function enrichBubblerProductSchema(
         ? schema['@id']
         : `${canonicalUrl}#product`,
     url: typeof schema.url === 'string' ? schema.url : canonicalUrl,
+    mpn: profile.mpn,
+    model: profile.modelName,
     alternateName: profile.alternateNames,
     material: profile.material,
     additionalProperty: existingProperties,
