@@ -62,7 +62,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     shortName: 'Square Stainless',
     tagline: 'Best all-round commercial option with a stainless cabinet and separate bottle-fill side tap.',
     badge: 'Best all-round',
-    highlights: ['20 L/hr', '8–12 °C', 'Bottle-fill tap', 'WaterMark'],
+    highlights: ['20 L/hr', '8-12 °C', 'Bottle-fill tap', 'WaterMark'],
   },
   {
     key: 'hdpe',
@@ -70,7 +70,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     shortName: 'Outdoor HDPE',
     tagline: 'Best for exposed outdoor locations where a rust-free cabinet and bottle filling matter.',
     badge: 'Outdoor',
-    highlights: ['20 L/hr', '8–12 °C', 'Rust-free HDPE', 'WaterMark'],
+    highlights: ['20 L/hr', '8-12 °C', 'Rust-free HDPE', 'WaterMark'],
   },
 ];
 
@@ -111,7 +111,7 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   },
   {
     label: 'Chilled water temperature',
-    values: { round: 'Not published', square: '8–12 °C', hdpe: '8–12 °C' },
+    values: { round: 'Not published', square: '8-12 °C', hdpe: '8-12 °C' },
   },
   {
     label: 'Filtration',
@@ -123,7 +123,7 @@ const SPEC_ROWS: ReadonlyArray<SpecRow> = [
   },
   {
     label: 'Bottle / glass fill side tap',
-    values: { round: '—', square: 'Yes', hdpe: 'Yes' },
+    values: { round: 'Not available', square: 'Yes', hdpe: 'Yes' },
     yes: { square: true, hdpe: true },
   },
   {
@@ -336,7 +336,7 @@ function Hero({ products, breadcrumbs }: HeroProps) {
           </h1>
           <p className="mt-4 text-lg md:text-xl text-black/75 max-w-3xl">
             Shop three WaterMark-certified commercial models for schools, offices,
-            factories, gyms and public facilities — including stainless steel and
+            factories, gyms and public facilities, including stainless steel and
             rust-free outdoor options.
           </p>
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
@@ -588,10 +588,10 @@ function CompareSection() {
                   {CABINETS.map((cabinet) => {
                     const value = row.values[cabinet.key];
                     const isYes = row.yes?.[cabinet.key];
-                    const isDash = value === '—';
+                    const isUnavailable = value === 'Not available';
                     return (
                       <td key={cabinet.key} className="px-4 py-3 text-black align-top">
-                        {isDash ? (
+                        {isUnavailable ? (
                           <span aria-label="not available" className="text-black/40"><Minus size={16} strokeWidth={2} aria-hidden="true" /></span>
                         ) : isYes ? (
                           <span className="inline-flex items-center gap-1.5 text-brand-blue font-medium">
@@ -693,7 +693,7 @@ function CapacitySection() {
             <h3 className="font-semibold text-black">Before choosing capacity, check:</h3>
             <ul className="mt-4 space-y-3 text-sm text-black/75">
               {[
-                'How many people may use the station within the same 15–30 minute period?',
+                'How many people may use the station within the same 15-30 minute period?',
                 'Will users drink directly or mostly refill bottles?',
                 'Is there another drinking-water point nearby?',
                 'Is the location hot, exposed or used during physical activity?',
