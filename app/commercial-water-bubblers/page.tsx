@@ -51,8 +51,8 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     key: 'round',
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
     shortName: 'Round Stainless',
-    tagline: 'Round 304 stainless steel cabinet with direct mains connection and integrated filtration.',
-    badge: 'Stainless',
+    tagline: 'Best for compact indoor commercial spaces where direct chilled drinking is the priority.',
+    badge: 'Compact indoor',
     highlights: ['304 stainless', 'Filtered', 'Direct mains', 'WaterMark'],
   },
   {
@@ -60,17 +60,17 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     handle:
       'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
     shortName: 'Square Stainless',
-    tagline: 'Flat-sided stainless cabinet with bubbler spout and side tap.',
-    badge: 'Bottle fill',
-    highlights: ['20 L/hr', '8–12 °C', 'Side tap', 'WaterMark'],
+    tagline: 'Best all-round commercial option with a stainless cabinet and separate bottle-fill side tap.',
+    badge: 'Best all-round',
+    highlights: ['20 L/hr', '8–12 °C', 'Bottle-fill tap', 'WaterMark'],
   },
   {
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    shortName: 'HDPE Granite',
-    tagline: 'Rust-free HDPE cabinet with chilled, filtered drinking water.',
-    badge: 'Rust-free',
-    highlights: ['20 L/hr', '8–12 °C', 'Rust-free', 'WaterMark'],
+    shortName: 'Outdoor HDPE',
+    tagline: 'Best for exposed outdoor locations where a rust-free cabinet and bottle filling matter.',
+    badge: 'Outdoor',
+    highlights: ['20 L/hr', '8–12 °C', 'Rust-free HDPE', 'WaterMark'],
   },
 ];
 
@@ -299,17 +299,17 @@ export default async function CommercialBubblersPage() {
 
       <article className="bg-white">
         <Hero products={products} breadcrumbs={breadcrumbs} />
-        <QuickAnswerSection />
-        <DecisionGuideSection />
         <RangeSection products={products} />
         <CompareSection />
+        <TrustStrip />
+        <QuickAnswerSection />
+        <DecisionGuideSection />
         <WaterMarkSection />
         <CapacitySection />
         <UseCasesSection />
         <InstallationSection />
         <FaqSection />
         <BulkContactSection />
-        <TrustStrip />
       </article>
     </>
   );
@@ -321,75 +321,48 @@ interface HeroProps {
 }
 
 function Hero({ products, breadcrumbs }: HeroProps) {
-  const heroProduct = products[1] ?? products.find(Boolean) ?? null;
-  const heroImage = heroProduct?.featuredImage ?? null;
   const minPrice = lowestPrice(products);
 
   return (
     <section className="bg-gray-50 border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-12">
         <Breadcrumbs items={breadcrumbs} />
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-          <div>
-            <span className="inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
-              Water bubblers & drinking fountains
-            </span>
-            <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-              Water bubblers & drinking fountains for schools, workplaces and public spaces.
-            </h1>
-            <p className="mt-4 text-lg md:text-xl text-black/75">
-              Compare mains-connected drinking fountains and water bubblers with
-              filtered and chilled options, stainless steel or rust-free cabinets,
-              and WaterMark-certified models for Australian facilities.
-            </p>
-            <p className="mt-4 text-base text-black/70">
-              Choose by cabinet material, filtration, bottle-filling requirements and
-              verified cooling performance. The square stainless and rust-free
-              HDPE models are rated at 20 L/hr and approximately 8–12 °C.
-              Model-specific cooling figures for the round stainless unit are not
-              published until its technical documentation is confirmed.
-            </p>
+        <div className="mt-6 max-w-4xl">
+          <span className="inline-flex items-center bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
+            Water bubblers & drinking fountains
+          </span>
+          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
+            Commercial water bubblers & drinking fountains.
+          </h1>
+          <p className="mt-4 text-lg md:text-xl text-black/75 max-w-3xl">
+            Shop three WaterMark-certified commercial models for schools, offices,
+            factories, gyms and public facilities — including stainless steel and
+            rust-free outdoor options.
+          </p>
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
             {minPrice && (
-              <p className="mt-4 text-base text-black/80">
+              <p className="text-base text-black/80">
                 <span className="font-semibold text-black">From </span>
                 <PriceDisplay money={minPrice} className="font-semibold text-black" />
                 <span className="text-black/60"> inc GST</span>
               </p>
             )}
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <WatermarkBadge href="/watermark-certified/" />
-              <LeadFreeBadge />
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href="#choose"
-                className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
-              >
-                Choose a bubbler
-              </a>
-              <a
-                href="#compare"
-                className="inline-flex items-center justify-center bg-white border border-black hover:bg-gray-50 text-black font-semibold px-6 py-3 rounded transition-colors"
-              >
-                Compare models
-              </a>
-            </div>
+            <WatermarkBadge href="/watermark-certified/" />
+            <LeadFreeBadge />
           </div>
-          <div className="relative aspect-square bg-white border border-gray-200 rounded overflow-hidden">
-            {heroImage ? (
-              <Image
-                src={heroImage.url}
-                alt={heroImage.altText ?? heroProduct?.title ?? 'Commercial water bubbler'}
-                fill
-                priority
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-contain p-6"
-              />
-            ) : (
-              <div className="absolute inset-0 grid place-items-center text-black/30">
-                <Droplet size={64} strokeWidth={1.25} aria-hidden="true" />
-              </div>
-            )}
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="#range"
+              className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
+            >
+              Shop water bubblers
+            </a>
+            <a
+              href="#compare"
+              className="inline-flex items-center justify-center bg-white border border-black hover:bg-gray-50 text-black font-semibold px-6 py-3 rounded transition-colors"
+            >
+              Compare all 3 models
+            </a>
           </div>
         </div>
       </div>
@@ -440,8 +413,8 @@ function DecisionGuideSection() {
         </h2>
         <p className="mt-3 max-w-3xl text-base text-black/70">
           Start with the installation environment, then decide whether bottle
-          filling matters. Cooling and filtration are the same across this
-          range, so the cabinet and dispensing format are the main differences.
+          filling matters. Cabinet style, dispensing format and verified cooling
+          specifications are the main differences between these models.
         </p>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
           {ANSWERS.map((item) => (
@@ -462,7 +435,7 @@ function DecisionGuideSection() {
             </thead>
             <tbody>
               {[
-                ['Indoor office or foyer', 'Round stainless', 'Compact, chilled and simple'],
+                ['Indoor office or foyer', 'Round stainless', 'Compact, filtered and simple'],
                 ['School corridor or gym', 'Square stainless', 'Flat-sided cabinet plus bottle-fill tap'],
                 ['Exposed schoolyard or outdoor site', 'HDPE granite', 'Rust-free, UV-stable cabinet'],
                 ['Factory or warehouse', 'HDPE or stainless', 'Choose based on exposure and cleaning environment'],
@@ -488,21 +461,22 @@ interface RangeSectionProps {
 
 function RangeSection({ products }: RangeSectionProps) {
   return (
-    <section id="range" className="border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
+    <section id="range" className="border-b border-gray-200 scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+        <div className="flex flex-wrap items-end justify-between gap-4 mb-7">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-              Compare the Enviro Aqua commercial bubbler range
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-blue">
+              Shop the range
+            </span>
+            <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-black tracking-tight">
+              Choose your commercial water bubbler
             </h2>
             <p className="mt-2 text-base text-black/70 max-w-3xl">
-              Three cabinets with the same core 20 L/hr chilled-water platform.
-              Choose by location, exposure and bottle-filling requirement.
+              Three models, each built for a different installation. Pick the one
+              that matches your location and bottle-filling needs, then go straight
+              to the product page to order.
             </p>
           </div>
-          <a href="#compare" className="text-sm font-medium text-brand-blue hover:underline underline-offset-4">
-            Full specifications →
-          </a>
         </div>
         <ul role="list" className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {CABINETS.map((cabinet, index) => (
@@ -511,6 +485,11 @@ function RangeSection({ products }: RangeSectionProps) {
             </li>
           ))}
         </ul>
+        <div className="mt-6 text-center">
+          <a href="#compare" className="inline-flex text-sm font-semibold text-brand-blue hover:underline underline-offset-4">
+            Not sure which bubbler you need? Compare all 3 models ↓
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -553,21 +532,25 @@ function CabinetCard({ cabinet, product }: CabinetCardProps) {
         </div>
       </Link>
       <div className="p-4 sm:p-5 flex flex-col flex-1">
-        <h3 className="text-base font-semibold text-black leading-snug">
+        <p className="text-xs font-semibold uppercase tracking-wider text-brand-blue">{cabinet.shortName}</p>
+        <h3 className="mt-1 text-base font-semibold text-black leading-snug">
           <Link href={href} className="hover:underline underline-offset-4">{title}</Link>
         </h3>
-        <p className="mt-1 text-sm text-black/60">{cabinet.tagline}</p>
+        <p className="mt-2 text-sm text-black/70 leading-relaxed">{cabinet.tagline}</p>
         <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-black/70">
           {cabinet.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
         </ul>
         <div className="mt-auto pt-4 flex items-center justify-between gap-3 border-t border-gray-200">
           {price ? (
-            <PriceDisplay money={price} className="text-base font-semibold text-black" />
+            <div>
+              <PriceDisplay money={price} className="text-lg font-semibold text-black" />
+              <span className="block text-[11px] text-black/50">inc GST</span>
+            </div>
           ) : (
             <span className="text-sm text-black/60">See product page</span>
           )}
-          <Link href={href} className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-semibold px-4 py-2 rounded transition-colors">
-            View model
+          <Link href={href} className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white text-sm font-semibold px-4 py-2.5 rounded transition-colors">
+            View & buy
           </Link>
         </div>
       </div>
@@ -577,16 +560,16 @@ function CabinetCard({ cabinet, product }: CabinetCardProps) {
 
 function CompareSection() {
   return (
-    <section id="compare" className="border-b border-gray-200 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <section id="compare" className="border-b border-gray-200 bg-gray-50 scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-12">
         <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-          Commercial water bubbler specifications
+          Compare all 3 commercial water bubblers
         </h2>
         <p className="mt-2 text-base text-black/70 max-w-3xl">
-          Compare cabinet material, size, chilling, filtration, bottle filling,
+          Quickly compare cabinet material, size, chilling, filtration, bottle filling,
           certification and intended installation environment side by side.
         </p>
-        <div className="mt-8 overflow-x-auto border border-gray-200 rounded bg-white">
+        <div className="mt-7 overflow-x-auto border border-gray-200 rounded bg-white">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-200 bg-white">
@@ -698,10 +681,12 @@ function CapacitySection() {
               much heavier short-term demand than their average daily use suggests.
             </p>
             <p className="mt-3 text-base text-black/75 leading-relaxed">
-              Every model on this page is rated at <strong>20 L/hr</strong>.
-              For large facilities or concentrated peak periods, multiple
-              drinking stations can be a better solution than expecting one
-              unit to serve the entire site.
+              The square stainless and rust-free HDPE models are verified at
+              <strong> 20 L/hr</strong>. The round stainless model’s capacity is
+              not published here until model-specific documentation is confirmed.
+              For large facilities or concentrated peak periods, multiple drinking
+              stations can be a better solution than expecting one unit to serve
+              the entire site.
             </p>
           </div>
           <div className="border border-gray-200 rounded bg-white p-6">
@@ -902,14 +887,16 @@ function TrustStrip() {
   ];
 
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-14">
-        <ul role="list" className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="bg-white border-b border-gray-200">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-10">
+        <ul role="list" className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {items.map((item) => (
-            <li key={item.title}>
-              <item.icon size={32} strokeWidth={1.75} aria-hidden="true" className="text-brand-blue" />
-              <h3 className="mt-3 text-base font-semibold text-black">{item.title}</h3>
-              <p className="mt-1.5 text-sm text-black/70">{item.body}</p>
+            <li key={item.title} className="flex gap-4">
+              <item.icon size={28} strokeWidth={1.75} aria-hidden="true" className="text-brand-blue flex-shrink-0" />
+              <div>
+                <h3 className="text-base font-semibold text-black">{item.title}</h3>
+                <p className="mt-1 text-sm text-black/70">{item.body}</p>
+              </div>
             </li>
           ))}
         </ul>
