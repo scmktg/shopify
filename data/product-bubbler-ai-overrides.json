@@ -14,7 +14,6 @@
     "headlineSpecs": [
       {"label":"Model","value":"YL-600R"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Water temperature","value":"8–12 °C"},
       {"label":"Cabinet","value":"SUS304 stainless steel"},
       {"label":"WaterMark","value":"Certified · certificate 023484"}
     ],
@@ -63,7 +62,6 @@
     "headlineSpecs": [
       {"label":"Model","value":"YL-600C"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Water temperature","value":"8–12 °C"},
       {"label":"Cabinet size","value":"99 × 30 × 30 cm"},
       {"label":"WaterMark","value":"Certified · certificate 023484"}
     ],
@@ -113,7 +111,6 @@
     "headlineSpecs": [
       {"label":"Model","value":"YL-600P"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Water temperature","value":"8–12 °C"},
       {"label":"Cabinet","value":"Rust-free UV-stable HDPE"},
       {"label":"WaterMark","value":"Certified · certificate 023484"}
     ],
