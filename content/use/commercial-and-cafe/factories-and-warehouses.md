@@ -13,7 +13,7 @@ faq:
   - q: "Do Australian workplaces need drinking water for workers?"
     a: "Work health and safety guidance requires workers to have access to clean and safe drinking water and adequate facilities. Exact legal requirements and the status of model codes can vary by jurisdiction, so workplaces should confirm obligations with their state or territory regulator."
   - q: "How much cooling capacity should a factory water bubbler have?"
-    a: "Size for the busiest shift-change or break period, not just average daily use. The Enviro Aqua commercial range is rated at 20 litres per hour per unit. Larger sites can distribute demand across multiple stations in different work zones."
+    a: "Size for the busiest shift-change or break period, not just average daily use. All three Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8–12 °C. Larger sites can distribute demand across multiple stations in different work zones."
   - q: "Should warehouse bubblers include bottle filling?"
     a: "Often yes. Workers in warehouses, workshops and factories commonly carry reusable bottles, so a separate side tap can be more practical than using the bubbler spout alone. The square stainless and HDPE models include a side tap."
   - q: "Can a commercial bubbler be installed outdoors?"
@@ -24,7 +24,15 @@ A **factory or warehouse water bubbler** is a commercial drinking-water station 
 
 Safe Work Australia guidance says workers should have access to clean, safe drinking water and notes that drinking fountains are one way water can be supplied hygienically. It also recommends drinking water be at or below **24 °C**; individual jurisdictions determine how model WHS guidance applies locally.
 
-Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) supplies chilled water at approximately **8–12 °C**, with **20 L/hr cooling capacity**, sediment + carbon filtration and WaterMark certification under **licence 23484**.
+Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) consists of three filtered, chilled models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.** All three are WaterMark certified under **Certificate 023484**.
+
+## WaterMark identity of the Enviro Aqua commercial bubbler range
+
+| Brand name | Model ID | WaterMark model name | Certificate |
+|---|---|---|---|
+| Enviro Aqua | **YL-600C** | **Water Bubbler Square** | **023484** |
+| Enviro Aqua | **YL-600R** | **Water Bubbler Round** | **023484** |
+| Enviro Aqua | **YL-600P** | **Water Bubbler Grey** | **023484** |
 
 ## Which industrial water bubbler should I choose?
 
@@ -37,17 +45,15 @@ Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) suppl
 
 ## Factories: plan for peak demand
 
-Factories often have concentrated drinking-water demand at shift changes, scheduled breaks and after physically demanding work.
+Factories often have concentrated drinking-water demand at shift changes, scheduled breaks and after physically demanding work. That means average daily usage is less useful than **how many people may need water in the same 10–20 minute window**.
 
-That means average daily usage is less useful than **how many people may need water in the same 10–20 minute window**.
-
-All three Enviro Aqua commercial models are rated at **20 L/hr chilled output**. On a larger site, two or more stations can distribute demand and reduce the distance workers need to travel from their work area.
+All three Enviro Aqua commercial models are rated at **20 L/hr chilled output at approximately 8–12 °C**. On a larger site, two or more stations can distribute demand and reduce the distance workers need to travel from their work area.
 
 ## Warehouses: bottle filling is often important
 
 Warehouse workers frequently carry bottles onto the floor, so a separate filling outlet can be more useful than a bubbler spout alone.
 
-The **square stainless** and **HDPE** models include a side tap for bottles or cups. The **round stainless** model is the simpler direct-drinking option.
+The **YL-600C Water Bubbler Square** and **YL-600P Water Bubbler Grey** include a side tap for bottles or cups. The **YL-600R Water Bubbler Round** is the simpler direct-drinking option.
 
 For sites with forklifts, picking zones or long aisles, placement matters as much as the model. Drinking water should be accessible without creating unnecessary travel through vehicle routes or restricted work areas.
 
@@ -64,13 +70,11 @@ For loading docks, open yards, outdoor workshops or exposed factory entrances, t
 
 Hot factories, workshops and warehouses can increase drinking-water demand substantially. Safe Work Australia guidance recommends access to drinking water and indicates water should be cool, with **24 °C or below** given as guidance.
 
-The Enviro Aqua commercial range chills water to approximately **8–12 °C**. Sites with unusually high heat load or large crews should consider multiple drinking points and review their broader heat-management and hydration procedures with the relevant WHS guidance.
+All three Enviro Aqua commercial models chill water to approximately **8–12 °C**. Sites with unusually high heat load or large crews should consider multiple drinking points and review their broader heat-management and hydration procedures with the relevant WHS guidance.
 
 ## Filtration in industrial environments
 
-All three commercial bubbler models use **sediment + carbon filtration**.
-
-Sediment filtration is useful where older pipework or site conditions introduce particulate matter, while carbon filtration improves taste and odour. The range uses standard **10-inch filter housings**, making replacement cartridges straightforward to source.
+All three commercial bubbler models include drinking-water filtration. The **YL-600C square model** uses sediment plus activated carbon, the **YL-600P HDPE model** uses PP sediment plus activated carbon, and the **YL-600R round model** uses an integrated drinking-water cartridge.
 
 Dusty or high-use industrial environments should be placed on a planned inspection and filter-change schedule.
 
@@ -78,21 +82,13 @@ Dusty or high-use industrial environments should be placed on a planned inspecti
 
 WaterMark is mandatory for certain plumbing and drainage product categories identified by the WaterMark Schedule of Products. Not every mains-connected product is automatically subject to the scheme, so the relevant product category and installation need to be checked.
 
-All three Enviro Aqua commercial bubbler models are WaterMark certified under **licence 23484**.
+All three Enviro Aqua commercial bubbler models are WaterMark certified under **Certificate 023484**.
 
 Use an appropriately licensed plumbing practitioner for the mains-water connection and any drainage work, and confirm site-specific plumbing and WHS requirements before installation.
 
 ## Where should a factory or warehouse place drinking stations?
 
-Common locations include:
-
-- staff break and lunch areas
-- warehouse picking zones
-- production-floor entrances
-- loading areas and dispatch zones
-- workshop entrances
-- outdoor work yards
-- near high-heat processes, where safe and appropriate
+Common locations include staff break and lunch areas, warehouse picking zones, production-floor entrances, loading areas and dispatch zones, workshop entrances, outdoor work yards and locations near high-heat processes where safe and appropriate.
 
 Avoid placing the only drinking station in an office area that is inconvenient for floor workers. On large sites, multiple smaller stations can provide better practical access than a single central unit.
 
