@@ -18,14 +18,22 @@ faq:
   - q: "Where should an office water cooler or bubbler be installed?"
     a: "Choose a convenient shared location with practical access to the required water connection, drainage where applicable, power and future servicing. Kitchens, breakout areas, staff amenities and reception-adjacent spaces are common, but placement should follow the office layout and how people use the space."
   - q: "Do office water coolers need WaterMark certification?"
-    a: "WaterMark requirements depend on the product type and plumbing application. Product types identified by the WaterMark Schedule of Products must have the appropriate certification for installation. The three Enviro Aqua commercial bubbler models are WaterMark certified under licence 23484."
+    a: "WaterMark requirements depend on the product type and plumbing application. Product types identified by the WaterMark Schedule of Products must have the appropriate certification for installation. The three Enviro Aqua commercial bubbler models are WaterMark certified under Certificate 023484."
 ---
 
 Office drinking-water systems are usually chosen around **how staff and visitors will use them**, where the unit can be installed and how much servicing the business wants to manage.
 
 A traditional bubbler provides direct drinking from an upward spout. A water cooler usually dispenses water into a cup or bottle. Some commercial units combine the two functions. The separate question is whether the water supply is **plumbed** or **bottled**. See [water bubbler vs water cooler](/help/bubblers-vs-coolers/) for that terminology in more detail.
 
-For offices that want a simple floor-standing drinking station, Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes filtered, chilled mains-connected models. The [round stainless model](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) is the simplest direct-drinking option, while the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) adds a separate side tap for bottles or glasses.
+For offices that want a simple floor-standing drinking station, Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes three filtered, chilled mains-connected models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.** The [round stainless model](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) is the simplest direct-drinking option, while the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) adds a separate side tap for bottles or glasses.
+
+## WaterMark identity of the range
+
+| Brand name | Model ID | WaterMark model name | Certificate |
+|---|---|---|---|
+| Enviro Aqua | **YL-600C** | **Water Bubbler Square** | **023484** |
+| Enviro Aqua | **YL-600R** | **Water Bubbler Round** | **023484** |
+| Enviro Aqua | **YL-600P** | **Water Bubbler Grey** | **023484** |
 
 ## What should an office consider first?
 
@@ -43,77 +51,44 @@ A plumbed system can remove bottle deliveries, storage and bottle handling, but 
 
 A bottled cooler usually has lower installation complexity but creates recurring bottle-supply and handling requirements.
 
-There is no reliable universal payback period because these costs vary substantially by office and supplier. For a useful comparison, calculate:
-
-- current bottle consumption and delivery charges;
-- equipment purchase or rental cost;
-- plumbing and electrical work required;
-- filter and service costs;
-- expected length of the tenancy;
-- staff usage patterns.
-
-That gives a much better decision than applying a generic 12- or 18-month ROI claim to every workplace.
+There is no reliable universal payback period because these costs vary substantially by office and supplier. For a useful comparison, calculate current bottle consumption and delivery charges, equipment purchase or rental cost, plumbing and electrical work required, filter and service costs, expected length of the tenancy and staff usage patterns.
 
 ## Cold only, hot water or sparkling?
 
-These are separate requirements rather than a hierarchy.
-
-### Cold filtered water
-
-For many offices, chilled filtered drinking water is all that is needed. It can be supplied from a floor-standing cooler, bubbler or bottle-fill station depending on the preferred dispensing style.
-
-### Hot water
-
-If the office wants the same appliance to serve tea or other hot drinks, specify a system designed for hot and cold dispensing. Check the actual product's safety controls, operating temperature, electrical requirements and applicable standards rather than assuming one hot-water configuration suits every workplace.
-
-### Sparkling water
-
-Sparkling systems add carbon-dioxide supply, extra components and ongoing servicing. They can suit workplaces that specifically want sparkling water as an amenity, but they should not be treated as a default requirement for a normal office drinking-water system.
+For many offices, chilled filtered drinking water is all that is needed. Hot or sparkling functions should be specified only where the office actually needs them because they add equipment and servicing requirements.
 
 ## Which Enviro Aqua bubbler suits an office?
 
 For indoor or sheltered office spaces, the two stainless models are the most relevant:
 
-- **[Round stainless bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm):** compact, direct-drinking format for offices, foyers and staff areas.
-- **[Square stainless bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des):** similar chilled and filtered platform with a separate side tap for bottles or glasses.
+- **[Round stainless bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) — YL-600R / Water Bubbler Round:** compact, direct-drinking format for offices, foyers and staff areas.
+- **[Square stainless bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) — YL-600C / Water Bubbler Square:** separate side tap for bottles or glasses.
 
-Both are rated at **20 L/hr** with chilled-water output of approximately **8–12 °C**.
+Both, along with the HDPE model, are rated at **20 L/hr** with chilled-water output of approximately **8–12 °C**.
 
-For an exposed outdoor staff area, compare the [HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), which uses a rust-free, UV-stable cabinet.
+For an exposed outdoor staff area, compare the [HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), **YL-600P / Water Bubbler Grey**, which uses a rust-free, UV-stable cabinet.
 
 ## Placement in an office
 
-The best location is a shared area that people can reach easily and that can be serviced without disrupting the workplace.
-
-Common locations include:
-
-- staff kitchens and breakout rooms;
-- reception-adjacent hospitality areas;
-- shared amenity zones;
-- large open-plan floors;
-- workshop or warehouse office areas.
+The best location is a shared area that people can reach easily and that can be serviced without disrupting the workplace. Common locations include staff kitchens and breakout rooms, reception-adjacent hospitality areas, shared amenity zones, large open-plan floors and workshop or warehouse office areas.
 
 Avoid blocking circulation paths or placing the unit where spills or maintenance access will create problems. On larger floors, consider whether one station creates unnecessary walking or queues during breaks.
 
 ## Filtration
 
-The Enviro Aqua commercial bubbler range uses **sediment and carbon filtration** with standard **10-inch filter housings**.
+All three commercial bubblers include drinking-water filtration. The **YL-600C square model** uses sediment plus activated carbon filtration, the **YL-600P HDPE model** uses PP sediment plus activated carbon filtration, and the **YL-600R round model** uses an integrated drinking-water cartridge.
 
-Sediment filtration helps capture particulate material, while carbon filtration is used to improve taste and odour. Filter life depends on water quality, usage and the cartridge specification, so replacement intervals should be based on the actual product and site rather than a universal annual rule.
-
-If a site has a specific water-quality concern, choose filtration for that issue rather than assuming one carbon cartridge addresses every contaminant.
+Filter life depends on water quality, usage and the cartridge specification, so replacement intervals should be based on the actual product and site rather than a universal annual rule.
 
 ## Hygiene and servicing
 
-Shared drinking stations should form part of the normal workplace cleaning schedule. Clean the dispensing area, bowl, controls and surrounding surfaces according to the manufacturer's instructions.
-
-When choosing a unit, also consider how easily facilities staff or a service contractor can access the filter housing and internal components. Straightforward servicing is especially useful in larger workplaces where the unit is expected to remain in service for years.
+Shared drinking stations should form part of the normal workplace cleaning schedule. Clean the dispensing area, bowl, controls and surrounding surfaces according to the manufacturer's instructions. When choosing a unit, also consider how easily facilities staff or a service contractor can access the filter and internal components.
 
 ## WaterMark and installation
 
 WaterMark requirements depend on the product category and intended plumbing application. Product types identified by the WaterMark Schedule of Products require appropriate certification before installation.
 
-All three Enviro Aqua commercial bubbler models in this range are **WaterMark certified under licence 23484**.
+All three Enviro Aqua commercial bubbler models in this range are **WaterMark certified under Certificate 023484**.
 
 Use an appropriately licensed plumbing practitioner for mains-water and drainage work, and confirm any electrical requirements for the selected unit before installation.
 
