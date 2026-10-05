@@ -150,10 +150,12 @@ export function ProductDetail({
             <ThreeWayTapHeroBenefits />
           )}
 
-          <VariantPurchaseControls
-            fallbackPrice={product.priceRange.minVariantPrice}
-            ctaLabel={content.ctas?.primary ?? undefined}
-          />
+          {!showFourStageAlternative && (
+            <VariantPurchaseControls
+              fallbackPrice={product.priceRange.minVariantPrice}
+              ctaLabel={content.ctas?.primary ?? undefined}
+            />
+          )}
 
           {showFourStageAlternative && (
             <div className="mt-5 rounded-lg border border-black/15 bg-black/[0.03] p-4">
@@ -322,10 +324,12 @@ export function ProductDetail({
       )}
       {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
-      <VariantBuyBanner
-        fallbackPrice={product.priceRange.minVariantPrice}
-        ctaLabel={content.ctas?.primary ?? undefined}
-      />
+      {!showFourStageAlternative && (
+        <VariantBuyBanner
+          fallbackPrice={product.priceRange.minVariantPrice}
+          ctaLabel={content.ctas?.primary ?? undefined}
+        />
+      )}
 
       {boughtTogether.length > 0 && (
         <BoughtTogether handles={boughtTogether} />
@@ -343,11 +347,13 @@ export function ProductDetail({
 
       <BrandTrustStrip category={category} subcategory={subcategory} />
 
-      <VariantMobileStickyBuyBar
-        fallbackPrice={product.priceRange.minVariantPrice}
-        title={product.title}
-        fallbackThumbnail={product.featuredImage ?? product.images[0] ?? null}
-      />
+      {!showFourStageAlternative && (
+        <VariantMobileStickyBuyBar
+          fallbackPrice={product.priceRange.minVariantPrice}
+          title={product.title}
+          fallbackThumbnail={product.featuredImage ?? product.images[0] ?? null}
+        />
+      )}
       </article>
     </VariantSelectionProvider>
   );
