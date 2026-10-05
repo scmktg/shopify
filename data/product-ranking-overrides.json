@@ -7,10 +7,9 @@
     }
   },
   "4-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system": {
-    "shortDescription": "4-stage whole-house water filter system using the SPS-204S platform: three Big Blue filtration stages plus a 48 W UV lamp, rated up to 34 L/min at a 40 mJ/cm² UV dose, 45 L/min at 30 mJ/cm² and 85 L/min at 16 mJ/cm².",
-    "description": "A complete **4-stage whole-house filtration and UV disinfection system** built around the **SPS-204S** platform. It combines three Big Blue cartridge stages with a stainless-steel UV chamber so incoming water is filtered before it reaches the UV lamp.\n\nThe existing filtration configuration remains **sediment → GAC carbon → polishing carbon block → UV-C**. The first three stages reduce suspended sediment plus chlorine, taste and odour before the UV stage treats the clarified water.\n\n## SPS-204S UV performance\n\nThe SPS-204S does not have one single flow rating independent of UV dose. Its validated maximum flow depends on the UV dose required:\n\n- **34 L/min at 40 mJ/cm²**\n- **45 L/min at 30 mJ/cm²**\n- **85 L/min at 16 mJ/cm²**\n\nFor applications where a higher UV dose is the priority, use the **34 L/min at 40 mJ/cm²** figure as the key design point rather than the 85 L/min maximum-flow figure. The manual notes that the published flow ratings are shown at **95% UV transmittance (UVT)**.\n\n## UV system specifications\n\n- **UV model:** SPS-204S\n- **UV lamp power:** 48 W\n- **Maximum power consumption:** 63 W\n- **Supply:** 100–240 V AC, 50/60 Hz\n- **UV chamber:** SUS304 stainless steel\n- **UV inlet / outlet:** 3/4\" and 1\" BSPT\n- **Rated lamp service life:** 9,000 hours\n- **Operating pressure:** 4–100 PSI\n- **Ambient air temperature:** 2–50 °C\n- **Maximum humidity:** 95%\n- **Maximum water hardness:** 120 ppm\n- **Maximum iron:** 0.3 ppm\n- **Minimum UVT:** 75%\n- **Frame:** coated steel standing bracket, as used on models ending in S\n\n## Why upstream filtration matters\n\nUV performance depends heavily on water clarity. Sediment, colour and dissolved material can reduce UV transmission and shield microorganisms from the lamp. The three cartridge stages therefore do more than improve taste and appearance: they help prepare the water for more effective UV treatment.\n\n## What this system targets\n\nThis system combines **sediment filtration, activated carbon and UV disinfection**. The filtration stages reduce dirt, sand, silt and rust plus chlorine, taste and odour; the UV stage is used for microbiological treatment when the water quality and flow are within the SPS-204S operating limits.\n\nThis system is **not a water softener**. Dissolved calcium and magnesium that cause hardness and scale require ion-exchange softening or membrane treatment.\n\n## Installation and maintenance\n\nInstall the system on the incoming water line with suitable isolation and bypass arrangements so cartridges and the UV lamp can be serviced. For mains-connected installations, use an appropriately licensed plumber. Replace the UV lamp according to the SPS-204S rated service life of approximately **9,000 operating hours**, even if the lamp still illuminates, because germicidal UV output declines with use.",
+    "shortDescription": "4-stage whole-house water filter system with three Big Blue filtration stages plus a 48 W UV lamp, rated up to 34 L/min at a 40 mJ/cm² UV dose, 45 L/min at 30 mJ/cm² and 85 L/min at 16 mJ/cm².",
+    "description": "A complete **4-stage whole-house filtration and UV disinfection system** combining three Big Blue cartridge stages with a stainless-steel UV chamber so incoming water is filtered before it reaches the UV lamp.\n\nThe filtration configuration is **sediment → GAC carbon → polishing carbon block → UV-C**. The first three stages reduce suspended sediment plus chlorine, taste and odour before the UV stage treats the clarified water.\n\n## UV performance\n\nThe UV system does not have one single flow rating independent of UV dose. Its maximum rated flow depends on the UV dose required:\n\n- **34 L/min at 40 mJ/cm²**\n- **45 L/min at 30 mJ/cm²**\n- **85 L/min at 16 mJ/cm²**\n\nFor applications where a higher UV dose is the priority, use the **34 L/min at 40 mJ/cm²** figure as the key design point rather than the 85 L/min maximum-flow figure. The manual notes that the published flow ratings are shown at **95% UV transmittance (UVT)**.\n\n## UV system specifications\n\n- **UV lamp power:** 48 W\n- **Maximum power consumption:** 63 W\n- **Supply:** 100–240 V AC, 50/60 Hz\n- **UV chamber:** SUS304 stainless steel\n- **UV inlet / outlet:** 3/4\" and 1\" BSPT\n- **Rated lamp service life:** 9,000 hours\n- **Operating pressure:** 4–100 PSI\n- **Ambient air temperature:** 2–50 °C\n- **Maximum humidity:** 95%\n- **Maximum water hardness:** 120 ppm\n- **Maximum iron:** 0.3 ppm\n- **Minimum UVT:** 75%\n- **Frame:** coated steel standing bracket\n\n## Why upstream filtration matters\n\nUV performance depends heavily on water clarity. Sediment, colour and dissolved material can reduce UV transmission and shield microorganisms from the lamp. The three cartridge stages therefore do more than improve taste and appearance: they help prepare the water for more effective UV treatment.\n\n## What this system targets\n\nThis system combines **sediment filtration, activated carbon and UV disinfection**. The filtration stages reduce dirt, sand, silt and rust plus chlorine, taste and odour; the UV stage is used for microbiological treatment when the water quality and flow are within the stated operating limits.\n\nThis system is **not a water softener**. Dissolved calcium and magnesium that cause hardness and scale require ion-exchange softening or membrane treatment.\n\n## Installation and maintenance\n\nInstall the system on the incoming water line with suitable isolation and bypass arrangements so cartridges and the UV lamp can be serviced. For mains-connected installations, use an appropriately licensed plumber. Replace the UV lamp according to its rated service life of approximately **9,000 operating hours**, even if the lamp still illuminates, because germicidal UV output declines with use.",
     "features": [
-      "SPS-204S whole-house UV platform",
       "4-stage treatment: sediment + GAC carbon + carbon block + UV-C",
       "48 W UV lamp with 9,000-hour rated service life",
       "34 L/min at 40 mJ/cm² UV dose",
@@ -19,17 +18,16 @@
       "SUS304 stainless-steel UV chamber",
       "100–240 V AC, 50/60 Hz power supply",
       "4–100 PSI operating pressure",
-      "Coated steel standing frame on SPS-204S configuration"
+      "Coated steel standing frame"
     ],
     "headlineSpecs": [
-      {"label":"UV model","value":"SPS-204S"},
       {"label":"UV dose / flow","value":"40 mJ/cm² @ 34 L/min"},
       {"label":"Lamp power","value":"48 W"},
-      {"label":"Lamp life","value":"9,000 hours"}
+      {"label":"Lamp life","value":"9,000 hours"},
+      {"label":"UV chamber","value":"SUS304 stainless steel"}
     ],
     "fullSpecs": [
       {"label":"Treatment stages","value":"4 stages: sediment, GAC carbon, carbon block, UV-C"},
-      {"label":"UV model","value":"SPS-204S"},
       {"label":"Maximum rated flow at 16 mJ/cm²","value":"85 L/min"},
       {"label":"Maximum rated flow at 30 mJ/cm²","value":"45 L/min"},
       {"label":"Maximum rated flow at 40 mJ/cm²","value":"34 L/min"},
@@ -47,18 +45,18 @@
       {"label":"Maximum hardness","value":"120 ppm"},
       {"label":"Maximum iron","value":"0.3 ppm"},
       {"label":"Minimum UVT","value":"75%"},
-      {"label":"Frame","value":"Coated steel standing bracket / frame (S model)"}
+      {"label":"Frame","value":"Coated steel standing bracket / frame"}
     ],
     "faq": [
-      {"q":"What UV steriliser is supplied with this 4-stage whole-house system?","a":"This system uses the SPS-204S UV platform with a 48 W UV lamp and SUS304 stainless-steel UV chamber."},
-      {"q":"What is the SPS-204S flow rating?","a":"The flow rating depends on UV dose: up to 85 L/min at 16 mJ/cm², 45 L/min at 30 mJ/cm² and 34 L/min at 40 mJ/cm². For higher-dose disinfection design, use the 34 L/min at 40 mJ/cm² figure rather than treating 85 L/min as a universal disinfection rating."},
-      {"q":"How long does the UV lamp last?","a":"The SPS-204S lamp has a rated service life of approximately 9,000 operating hours. Replace it on schedule because UV-C output declines over time even if the lamp still appears to be illuminated."},
-      {"q":"What water quality does the SPS-204S require?","a":"The manual specifies minimum UV transmittance of 75%, maximum hardness of 120 ppm and maximum iron of 0.3 ppm. Published flow rates are shown at 95% UVT, so actual UV performance depends on incoming water quality and clarity."},
-      {"q":"What are the electrical requirements?","a":"The SPS-204S accepts 100–240 V AC at 50/60 Hz, has a 48 W lamp and a maximum power consumption of 63 W."}
+      {"q":"What UV steriliser is supplied with this 4-stage whole-house system?","a":"The system includes a 48 W UV lamp with a SUS304 stainless-steel UV chamber."},
+      {"q":"What is the UV flow rating?","a":"The flow rating depends on UV dose: up to 85 L/min at 16 mJ/cm², 45 L/min at 30 mJ/cm² and 34 L/min at 40 mJ/cm². For higher-dose disinfection design, use the 34 L/min at 40 mJ/cm² figure rather than treating 85 L/min as a universal disinfection rating."},
+      {"q":"How long does the UV lamp last?","a":"The UV lamp has a rated service life of approximately 9,000 operating hours. Replace it on schedule because UV-C output declines over time even if the lamp still appears to be illuminated."},
+      {"q":"What water quality does the UV system require?","a":"The manual specifies minimum UV transmittance of 75%, maximum hardness of 120 ppm and maximum iron of 0.3 ppm. Published flow rates are shown at 95% UVT, so actual UV performance depends on incoming water quality and clarity."},
+      {"q":"What are the electrical requirements?","a":"The UV system accepts 100–240 V AC at 50/60 Hz, has a 48 W lamp and a maximum power consumption of 63 W."}
     ],
     "seo": {
-      "title": "4 Stage Whole House Water Filter + SPS-204S UV | 48W, 40 mJ/cm²",
-      "description": "4-stage whole-house filtration with SPS-204S UV steriliser. 48 W lamp, 34 L/min at 40 mJ/cm², 45 L/min at 30 mJ/cm², 9,000-hour lamp life."
+      "title": "4 Stage Whole House Water Filter + UV | 48W, 40 mJ/cm²",
+      "description": "4-stage whole-house filtration with UV sterilisation. 48 W lamp, 34 L/min at 40 mJ/cm², 45 L/min at 30 mJ/cm² and 9,000-hour lamp life."
     }
   },
   "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
