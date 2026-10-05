@@ -1,148 +1,132 @@
 {
   "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
     "tags": ["commercial-water-bubbler", "drinking-fountain", "filtered-water-bubbler", "watermark-certified", "stainless-steel", "indoor", "sheltered"],
-    "shortDescription": "Compact filtered commercial water bubbler with 20 L/hr chilled-water capacity, SUS304 stainless-steel cabinet and WaterMark certification for Australian commercial installations.",
-    "description": "**What is this model best for?** This round stainless-steel commercial water bubbler is the compact option in the Enviro Aqua range. It is suited to offices, foyers, workshops, sheltered factory areas and other commercial locations where direct chilled drinking water is the main requirement.\n\n**Why choose the round model?** Choose it when you want a simple bubbler-only station with a smaller cylindrical footprint. If users also need to fill bottles or jugs, compare the square stainless and HDPE models, which include a side tap.\n\n**How does it work?** The unit connects to the mains water supply, filters the incoming water through sediment and carbon filtration, chills it to approximately 8–12 °C and dispenses it through the bubbler spout. Rated cooling capacity is 20 L/hr.\n\n**Installation and maintenance.** Use an appropriately licensed plumbing practitioner for the mains-water connection and any required drainage work. The unit uses standard 10-inch filter housings, making replacement sediment and carbon cartridges straightforward to source and service.",
+    "shortDescription": "Enviro Aqua YL-600R Water Bubbler Round: filtered commercial stainless-steel water bubbler with 20 L/hr chilled-water capacity, approximately 8–12 °C output and WaterMark Certificate 023484.",
+    "description": "**WaterMark identity:** Enviro Aqua, model YL-600R, WaterMark model name Water Bubbler Round, Certificate 023484.\n\n**What is this model best for?** This round stainless-steel commercial water bubbler is the compact direct-drinking option in the Enviro Aqua range. It suits offices, foyers, workshops, sheltered factory areas and other commercial locations where a separate bottle-filling tap is not essential.\n\n**Cooling:** Rated cooling capacity is 20 L/hr with chilled-water output of approximately 8–12 °C.\n\n**Filtration:** The round model uses an integrated drinking-water cartridge.\n\n**Installation:** Use an appropriately licensed plumbing practitioner for the mains-water connection and any required drainage work.",
     "features": [
       "20 L/hr chilled-water capacity",
       "Approximately 8–12 °C chilled-water output",
-      "Sediment + carbon filtration",
+      "Integrated drinking-water filtration cartridge",
       "SUS304 stainless-steel cylindrical cabinet",
-      "WaterMark certified · licence 23484",
-      "Standard 10-inch filter housings"
+      "WaterMark Certificate 023484",
+      "WaterMark model YL-600R · Water Bubbler Round"
     ],
     "headlineSpecs": [
       {"label":"Model","value":"YL-600R"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Cabinet","value":"SUS304 stainless steel"},
-      {"label":"WaterMark","value":"Certified · certificate 023484"}
+      {"label":"Water temperature","value":"Approx. 8–12 °C"},
+      {"label":"WaterMark","value":"Certificate 023484"}
     ],
     "fullSpecs": [
+      {"label":"Brand name","value":"Enviro Aqua"},
       {"label":"Manufacturer model ID","value":"YL-600R"},
       {"label":"WaterMark model name","value":"Water Bubbler Round"},
       {"label":"WaterMark certificate","value":"023484"},
-      {"label":"Product type","value":"Filtered commercial water bubbler / drinking fountain"},
+      {"label":"Product type","value":"Chilled and filtered commercial water bubbler / drinking fountain"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Chilled water temperature","value":"8–12 °C"},
-      {"label":"Filtration","value":"Sediment + carbon"},
-      {"label":"Filter housing","value":"Standard 10-inch"},
+      {"label":"Chilled water temperature","value":"Approximately 8–12 °C"},
+      {"label":"Filtration","value":"Integrated drinking-water cartridge"},
       {"label":"Cabinet material","value":"SUS304 stainless steel"},
       {"label":"Cabinet profile","value":"Cylindrical / round"},
       {"label":"Bottle / glass fill side tap","value":"No"},
       {"label":"Recommended location","value":"Indoor or sheltered commercial locations"},
-      {"label":"Water connection","value":"Mains-connected"},
-      {"label":"Installation","value":"Licensed plumbing practitioner recommended for mains connection and drainage"},
-      {"label":"WaterMark certification","value":"Yes · licence 23484"},
-      {"label":"Range comparison","value":"Compact bubbler-only model; see /commercial-water-bubblers for all three models"}
+      {"label":"Water connection","value":"Mains-connected"}
     ],
     "recommendedFor": ["Offices and workplaces", "Foyers and staff areas", "Sheltered factory and warehouse areas", "Workshops", "Commercial sites needing direct chilled drinking water"],
-    "compliance": {"note":"WaterMark certified commercial bubbler, licence 23484. Confirm site-specific plumbing, drainage and electrical requirements with the relevant licensed trades before installation."},
-    "seo": {"title":"Commercial Water Bubbler | Round Stainless Steel | WaterMark","description":"Round stainless commercial water bubbler with filtration, 20 L/hr cooling and WaterMark certification. For offices, workplaces and sheltered commercial sites."},
+    "compliance": {"note":"Enviro Aqua YL-600R, WaterMark model name Water Bubbler Round, is WaterMark certified under Certificate 023484. Confirm site-specific plumbing, drainage and electrical requirements with the relevant licensed trades before installation."},
+    "seo": {"title":"Commercial Water Bubbler | Round Stainless Steel | WaterMark","description":"Enviro Aqua YL-600R Water Bubbler Round. 20 L/hr chilled output at approx. 8–12 °C. WaterMark Certificate 023484."},
     "family": {"label":"Choose commercial bubbler model","siblings":[{"handle":"commercial-stainless-steel-filtered-cold-water-bubbler-round-wm","label":"Round stainless"},{"handle":"commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des","label":"Square + side tap"},{"handle":"commercial-rust-free-filtered-cold-water-bubbler-wm","label":"Outdoor HDPE"}]},
     "faq": [
-      {"q":"Is the round commercial water bubbler suitable for an office?","a":"Yes. The round stainless model is well suited to offices, foyers and staff areas where direct chilled drinking water is the main requirement and a separate bottle-filling tap is not essential."},
-      {"q":"Can this water bubbler be installed outdoors?","a":"Use this stainless model in indoor or sheltered locations. For an exposed outdoor schoolyard, factory yard or sporting facility, choose the rust-free HDPE commercial bubbler instead."},
-      {"q":"Does this commercial water bubbler filter the water?","a":"Yes. Incoming mains water passes through sediment and carbon filtration before being chilled and dispensed."},
-      {"q":"How much chilled water can it produce?","a":"The rated cooling capacity is 20 litres per hour, with chilled water output of approximately 8–12 °C under the stated operating specification."},
-      {"q":"Who should install this mains-connected bubbler?","a":"Use an appropriately licensed plumbing practitioner for the mains-water connection and any required drainage work, and confirm the site-specific installation requirements before fitting the unit."}
+      {"q":"What is the WaterMark identity of the round Enviro Aqua bubbler?","a":"Brand: Enviro Aqua. Model ID: YL-600R. WaterMark model name: Water Bubbler Round. Certificate: 023484."},
+      {"q":"How much chilled water can the round bubbler produce?","a":"The YL-600R is rated at 20 litres per hour with chilled-water output of approximately 8–12 °C."},
+      {"q":"Does the round model have a bottle-filling side tap?","a":"No. The round YL-600R is the direct-drinking option. Choose the square YL-600C or HDPE YL-600P where a separate side tap is required."}
     ]
   },
   "commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des": {
     "tags": ["commercial-water-bubbler", "drinking-fountain", "filtered-water-bubbler", "watermark-certified", "stainless-steel", "bottle-fill", "schools", "offices", "gyms"],
-    "shortDescription": "Filtered square stainless-steel commercial water bubbler with 20 L/hr chilled-water capacity, side tap for bottle filling and WaterMark certification.",
-    "description": "**What is this model best for?** This square stainless-steel commercial water bubbler suits schools, offices, gyms, corridors, staff areas and other sheltered commercial locations where users need both a drinking spout and a separate tap for filling bottles, glasses or jugs.\n\n**Why choose the square model?** It combines the same 20 L/hr chilled-water performance and filtration as the rest of the range with a flat-sided 30 × 30 cm cabinet and a bottle/glass-fill side tap. Choose the round model when direct drinking is enough; choose the HDPE model when the installation is fully exposed outdoors.\n\n**How does it work?** The unit connects to mains water, filters the incoming supply through sediment and carbon filtration, chills it to approximately 8–12 °C and dispenses through either the bubbler spout or side tap.\n\n**Installation and maintenance.** Use an appropriately licensed plumbing practitioner for the mains-water connection and drainage. Standard 10-inch filter housings keep replacement sediment and carbon cartridges simple to source and maintain.",
+    "shortDescription": "Enviro Aqua YL-600C Water Bubbler Square: filtered stainless-steel commercial bubbler with 20 L/hr chilled-water capacity, approximately 8–12 °C output, side tap and WaterMark Certificate 023484.",
+    "description": "**WaterMark identity:** Enviro Aqua, model YL-600C, WaterMark model name Water Bubbler Square, Certificate 023484.\n\n**What is this model best for?** The square stainless-steel model suits schools, offices, gyms and sheltered commercial locations where users need both a direct-drinking bubbler and a separate side tap for filling bottles, cups or jugs.\n\n**Cooling:** Rated cooling capacity is 20 L/hr with chilled-water output of approximately 8–12 °C.\n\n**Filtration:** Two-stage sediment plus activated-carbon filtration.\n\n**Installation:** Use an appropriately licensed plumbing practitioner for the mains-water connection and drainage.",
     "features": [
       "20 L/hr chilled-water capacity",
       "Approximately 8–12 °C chilled-water output",
       "Bubbler spout + side tap for bottles and glasses",
-      "Sediment + carbon filtration",
+      "Sediment + activated-carbon filtration",
       "SUS304 stainless-steel cabinet",
-      "WaterMark certified · licence 23484"
+      "WaterMark Certificate 023484"
     ],
     "headlineSpecs": [
       {"label":"Model","value":"YL-600C"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Cabinet size","value":"99 × 30 × 30 cm"},
-      {"label":"WaterMark","value":"Certified · certificate 023484"}
+      {"label":"Water temperature","value":"Approx. 8–12 °C"},
+      {"label":"WaterMark","value":"Certificate 023484"}
     ],
     "fullSpecs": [
+      {"label":"Brand name","value":"Enviro Aqua"},
       {"label":"Manufacturer model ID","value":"YL-600C"},
       {"label":"WaterMark model name","value":"Water Bubbler Square"},
       {"label":"WaterMark certificate","value":"023484"},
-      {"label":"Product type","value":"Filtered commercial water bubbler / drinking fountain with side tap"},
+      {"label":"Product type","value":"Chilled and filtered commercial water bubbler / drinking fountain with side tap"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Chilled water temperature","value":"8–12 °C"},
-      {"label":"Filtration","value":"Sediment + carbon"},
-      {"label":"Filter housing","value":"Standard 10-inch"},
+      {"label":"Chilled water temperature","value":"Approximately 8–12 °C"},
+      {"label":"Filtration","value":"Sediment + activated carbon"},
       {"label":"Cabinet material","value":"SUS304 stainless steel"},
       {"label":"Dimensions","value":"99 × 30 × 30 cm"},
-      {"label":"Cabinet profile","value":"Square / flat-sided"},
       {"label":"Bottle / glass fill side tap","value":"Yes"},
       {"label":"Recommended location","value":"Indoor or sheltered commercial locations"},
-      {"label":"Water connection","value":"Mains-connected"},
-      {"label":"Installation","value":"Licensed plumbing practitioner recommended for mains connection and drainage"},
-      {"label":"WaterMark certification","value":"Yes · licence 23484"},
-      {"label":"Range comparison","value":"Side-tap stainless model; see /commercial-water-bubblers for all three models"}
+      {"label":"Water connection","value":"Mains-connected"}
     ],
     "recommendedFor": ["Schools and education facilities", "Offices and workplaces", "Gyms and leisure facilities", "Corridors and staff areas", "Commercial sites where bottle filling is useful"],
-    "compliance": {"note":"WaterMark certified commercial bubbler, licence 23484. Confirm site-specific plumbing, drainage and electrical requirements with the relevant licensed trades before installation."},
-    "seo": {"title":"Commercial Water Bubbler with Bottle Tap | WaterMark","description":"Square stainless commercial water bubbler with filtration, bottle-fill side tap, 20 L/hr cooling and WaterMark certification for schools, offices and gyms."},
+    "compliance": {"note":"Enviro Aqua YL-600C, WaterMark model name Water Bubbler Square, is WaterMark certified under Certificate 023484. Confirm site-specific plumbing, drainage and electrical requirements with the relevant licensed trades before installation."},
+    "seo": {"title":"Commercial Water Bubbler with Bottle Tap | WaterMark","description":"Enviro Aqua YL-600C Water Bubbler Square. 20 L/hr chilled output at approx. 8–12 °C, bottle-fill side tap and WaterMark Certificate 023484."},
     "family": {"label":"Choose commercial bubbler model","siblings":[{"handle":"commercial-stainless-steel-filtered-cold-water-bubbler-round-wm","label":"Round stainless"},{"handle":"commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des","label":"Square + side tap"},{"handle":"commercial-rust-free-filtered-cold-water-bubbler-wm","label":"Outdoor HDPE"}]},
     "faq": [
-      {"q":"Is the square commercial water bubbler suitable for schools?","a":"Yes. It is designed for shared commercial use and combines chilled filtered drinking water with a side tap for filling bottles and glasses. For a fully exposed outdoor schoolyard, compare it with the HDPE model."},
-      {"q":"Does the square bubbler have a bottle-filling tap?","a":"Yes. It has the bubbler drinking spout plus a separate side tap for filling bottles, glasses or jugs."},
-      {"q":"Can this stainless water bubbler be installed outdoors?","a":"Use the square stainless model in indoor or sheltered locations. Choose the rust-free HDPE model where the cabinet will be fully exposed to outdoor weather."},
-      {"q":"Is the water filtered and chilled?","a":"Yes. The unit uses sediment and carbon filtration and is rated for 20 L/hr cooling with approximately 8–12 °C chilled-water output."},
-      {"q":"What installation does the square bubbler require?","a":"It is a mains-connected commercial unit. Use an appropriately licensed plumbing practitioner for the water connection and required drainage, and confirm suitable power and servicing access for the installation site."}
+      {"q":"What is the WaterMark identity of the square Enviro Aqua bubbler?","a":"Brand: Enviro Aqua. Model ID: YL-600C. WaterMark model name: Water Bubbler Square. Certificate: 023484."},
+      {"q":"How much chilled water can the square bubbler produce?","a":"The YL-600C is rated at 20 litres per hour with chilled-water output of approximately 8–12 °C."},
+      {"q":"Does the square model have a bottle-filling tap?","a":"Yes. The YL-600C has a direct-drinking bubbler spout plus a separate side tap for filling bottles, glasses or jugs."}
     ]
   },
   "commercial-rust-free-filtered-cold-water-bubbler-wm": {
     "tags": ["commercial-water-bubbler", "drinking-fountain", "filtered-water-bubbler", "watermark-certified", "hdpe", "outdoor", "rust-free", "schools", "factories", "sports-facilities"],
-    "shortDescription": "Rust-free HDPE commercial water bubbler for exposed outdoor sites, with filtration, 20 L/hr chilled-water capacity, bottle-fill side tap and WaterMark certification.",
-    "description": "**What is this model best for?** This rust-free HDPE commercial water bubbler is the outdoor-focused model in the range. It suits exposed schoolyards, factory and warehouse areas, sports facilities, pool surrounds and other locations where a metal cabinet would face regular weather exposure.\n\n**Why choose the HDPE model?** The UV-stable HDPE cabinet does not rely on a stainless-steel exterior, making it the strongest choice in the range for exposed outdoor conditions. It also includes a separate side tap for filling bottles, glasses or jugs. Use a stainless model when the installation is indoors or sheltered and a smaller footprint is preferred.\n\n**How does it work?** The unit connects to mains water, filters the incoming supply through sediment and carbon filtration, chills it to approximately 8–12 °C and dispenses through the bubbler spout or side tap. Rated cooling capacity is 20 L/hr.\n\n**Installation and maintenance.** Use an appropriately licensed plumbing practitioner for the mains-water connection and drainage. Standard 10-inch filter housings make sediment and carbon cartridge replacement straightforward as part of a planned maintenance schedule.",
+    "shortDescription": "Enviro Aqua YL-600P Water Bubbler Grey: rust-free HDPE commercial bubbler with 20 L/hr chilled-water capacity, approximately 8–12 °C output, side tap and WaterMark Certificate 023484.",
+    "description": "**WaterMark identity:** Enviro Aqua, model YL-600P, WaterMark model name Water Bubbler Grey, Certificate 023484.\n\n**What is this model best for?** The rust-free HDPE model is the outdoor-focused option in the range for exposed schoolyards, factory and warehouse areas, sports facilities and other locations where a non-metal outer cabinet is useful. It includes a separate side tap for filling bottles, glasses or jugs.\n\n**Cooling:** Rated cooling capacity is 20 L/hr with chilled-water output of approximately 8–12 °C.\n\n**Filtration:** Two-stage PP sediment plus activated-carbon filtration.\n\n**Installation:** Use an appropriately licensed plumbing practitioner for the mains-water connection and drainage.",
     "features": [
       "Rust-free UV-stable HDPE cabinet",
-      "Designed for exposed outdoor commercial locations",
       "20 L/hr chilled-water capacity",
       "Approximately 8–12 °C chilled-water output",
       "Bubbler spout + side tap for bottle filling",
-      "WaterMark certified · licence 23484"
+      "PP sediment + activated-carbon filtration",
+      "WaterMark Certificate 023484"
     ],
     "headlineSpecs": [
       {"label":"Model","value":"YL-600P"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Cabinet","value":"Rust-free UV-stable HDPE"},
-      {"label":"WaterMark","value":"Certified · certificate 023484"}
+      {"label":"Water temperature","value":"Approx. 8–12 °C"},
+      {"label":"WaterMark","value":"Certificate 023484"}
     ],
     "fullSpecs": [
+      {"label":"Brand name","value":"Enviro Aqua"},
       {"label":"Manufacturer model ID","value":"YL-600P"},
       {"label":"WaterMark model name","value":"Water Bubbler Grey"},
       {"label":"WaterMark certificate","value":"023484"},
-      {"label":"Product type","value":"Filtered outdoor commercial water bubbler / drinking fountain with side tap"},
+      {"label":"Product type","value":"Chilled and filtered outdoor commercial water bubbler / drinking fountain with side tap"},
       {"label":"Cooling capacity","value":"20 L/hr"},
-      {"label":"Chilled water temperature","value":"8–12 °C"},
-      {"label":"Filtration","value":"Sediment + carbon"},
-      {"label":"Filter housing","value":"Standard 10-inch"},
+      {"label":"Chilled water temperature","value":"Approximately 8–12 °C"},
+      {"label":"Filtration","value":"PP sediment + activated carbon"},
       {"label":"Cabinet material","value":"HDPE polymer"},
       {"label":"Cabinet properties","value":"Rust-free and UV-stable"},
       {"label":"Dimensions","value":"122 × 41 × 41 cm"},
       {"label":"Bottle / glass fill side tap","value":"Yes"},
       {"label":"Recommended location","value":"Indoor or exposed outdoor commercial locations"},
-      {"label":"Water connection","value":"Mains-connected"},
-      {"label":"Installation","value":"Licensed plumbing practitioner recommended for mains connection and drainage"},
-      {"label":"WaterMark certification","value":"Yes · licence 23484"},
-      {"label":"Range comparison","value":"Outdoor/rust-free model; see /commercial-water-bubblers for all three models"}
+      {"label":"Water connection","value":"Mains-connected"}
     ],
     "recommendedFor": ["Exposed schoolyards", "Factories and warehouses", "Sports and leisure facilities", "Pool and recreation areas", "Outdoor commercial locations where rust resistance matters"],
-    "compliance": {"note":"WaterMark certified commercial bubbler, licence 23484. Confirm site-specific plumbing, drainage, electrical and weather-exposure requirements with the relevant licensed trades before installation."},
-    "seo": {"title":"Outdoor Commercial Water Bubbler | Rust-Free HDPE | WaterMark","description":"Rust-free outdoor commercial water bubbler with HDPE cabinet, filtration, side tap, 20 L/hr cooling and WaterMark certification for schools and facilities."},
+    "compliance": {"note":"Enviro Aqua YL-600P, WaterMark model name Water Bubbler Grey, is WaterMark certified under Certificate 023484. Confirm site-specific plumbing, drainage, electrical and weather-exposure requirements with the relevant licensed trades before installation."},
+    "seo": {"title":"Outdoor Commercial Water Bubbler | Rust-Free HDPE | WaterMark","description":"Enviro Aqua YL-600P Water Bubbler Grey. 20 L/hr chilled output at approx. 8–12 °C, side tap and WaterMark Certificate 023484."},
     "family": {"label":"Choose commercial bubbler model","siblings":[{"handle":"commercial-stainless-steel-filtered-cold-water-bubbler-round-wm","label":"Round stainless"},{"handle":"commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des","label":"Square + side tap"},{"handle":"commercial-rust-free-filtered-cold-water-bubbler-wm","label":"Outdoor HDPE"}]},
     "faq": [
-      {"q":"Which Enviro Aqua water bubbler is best for outdoor use?","a":"The rust-free HDPE model is the range option intended for exposed outdoor commercial locations. Its UV-stable polymer cabinet avoids the corrosion concerns associated with exposed metal cabinetry."},
-      {"q":"Is this outdoor bubbler suitable for schools and factories?","a":"Yes. It is suited to exposed schoolyards, factory and warehouse areas, sports facilities and other high-use commercial locations where weather resistance and bottle filling are useful."},
-      {"q":"Does the HDPE water bubbler have a bottle-filling tap?","a":"Yes. It includes the direct-drinking bubbler spout plus a separate side tap for bottles, glasses and jugs."},
-      {"q":"Is the outdoor water bubbler filtered and chilled?","a":"Yes. Incoming mains water passes through sediment and carbon filtration before chilling. Rated cooling capacity is 20 L/hr with approximately 8–12 °C chilled-water output."},
-      {"q":"What installation does the outdoor bubbler require?","a":"It is mains-connected and requires site-appropriate plumbing and drainage. Use an appropriately licensed plumbing practitioner and confirm electrical, drainage and weather-exposure requirements for the installation location."}
+      {"q":"What is the WaterMark identity of the HDPE Enviro Aqua bubbler?","a":"Brand: Enviro Aqua. Model ID: YL-600P. WaterMark model name: Water Bubbler Grey. Certificate: 023484."},
+      {"q":"How much chilled water can the HDPE bubbler produce?","a":"The YL-600P is rated at 20 litres per hour with chilled-water output of approximately 8–12 °C."},
+      {"q":"Does the HDPE model have a bottle-filling tap?","a":"Yes. The YL-600P has a direct-drinking bubbler spout plus a separate side tap for filling bottles, glasses or jugs."}
     ]
   }
 }
