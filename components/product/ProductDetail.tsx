@@ -31,6 +31,10 @@ import { DosingTankComparison } from '@/components/category/DosingTankComparison
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const THREE_WAY_TAP_HANDLE =
   '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c';
+const SOLD_OUT_THREE_STAGE_UV_HANDLE =
+  '3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system';
+const FOUR_STAGE_UV_PATH =
+  '/water-filters/whole-house/4-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system';
 
 function offersInstallPackage(content: ProductContent): boolean {
   return (content.tags ?? []).includes(INSTALL_PACKAGE_TAG);
@@ -79,6 +83,8 @@ export function ProductDetail({
     subcategoryNode?.subcategory.label ?? humaniseSlug(subcategory);
   const boughtTogether = content.upsells?.boughtTogether ?? [];
   const moreSource = content.upsells?.moreInCategory ?? 'auto';
+  const showFourStageAlternative =
+    product.handle === SOLD_OUT_THREE_STAGE_UV_HANDLE;
 
   return (
     <VariantSelectionProvider
@@ -148,6 +154,23 @@ export function ProductDetail({
             fallbackPrice={product.priceRange.minVariantPrice}
             ctaLabel={content.ctas?.primary ?? undefined}
           />
+
+          {showFourStageAlternative && (
+            <div className="mt-5 rounded-lg border border-black/15 bg-black/[0.03] p-4">
+              <p className="text-sm font-semibold text-black">Sold out</p>
+              <p className="mt-1 text-sm leading-6 text-black/70">
+                This 3-stage UV system is currently unavailable. For the closest
+                replacement, choose the upgraded 4-stage whole house system with
+                UV and an additional carbon filtration stage.
+              </p>
+              <Link
+                href={FOUR_STAGE_UV_PATH}
+                className="mt-3 inline-flex min-h-10 items-center justify-center rounded-md bg-black px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-black/85"
+              >
+                View 4 Stage Whole House Water Filter System | UV
+              </Link>
+            </div>
+          )}
 
           {packageUpgrade && (
             <div className="mt-5 rounded-lg border border-brand-blue/25 bg-brand-blue-light/40 p-4">
