@@ -58,16 +58,9 @@ export async function generateMetadata({
   return {
     title: seoTitle,
     description,
-    alternates: {
-      canonical: `/${category}/${subcategory}`,
-    },
+    alternates: { canonical: `/${category}/${subcategory}` },
     ...(shouldNoIndex
-      ? {
-          robots: {
-            index: false,
-            follow: true,
-          },
-        }
+      ? { robots: { index: false, follow: true } }
       : {}),
   };
 }
@@ -97,7 +90,6 @@ export default async function SubcategoryPage({
     'specialty-cartridges': 'facet:cartridge-specialty',
     'cartridge-sets': 'facet:cartridge-set',
   };
-
   const cartridgeFacet =
     category === 'cartridges'
       ? cartridgeFacetBySubcategory[subcategory]
@@ -136,6 +128,7 @@ export default async function SubcategoryPage({
       ? 'Commercial Water Bubblers & Drinking Fountains'
       : `${node.subcategory.label} ${node.category.label}`;
   const intro = getCategoryIntro(`${category}/${subcategory}`);
+  const isWholeHouse = category === 'water-filters' && subcategory === 'whole-house';
 
   return (
     <>
@@ -162,15 +155,30 @@ export default async function SubcategoryPage({
         subcategories={node.category.subcategories}
         activeSubSlug={node.subcategory.slug}
       />
+
+      {isWholeHouse && (
+        <section className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg border border-brand-blue/20 bg-brand-blue-light p-6 md:flex md:items-center md:justify-between md:gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-2xl font-semibold text-black">Need your whole-house filter installed?</h2>
+              <p className="mt-2 text-black/75">
+                Complete whole-house water filter installation is available across eligible Sydney and NSW Central Coast properties for <strong>$2,399 inc GST supplied and installed</strong>, subject to standard installation conditions.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3 md:mt-0 md:shrink-0">
+              <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation</Link>
+              <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-white">Sydney installation</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {category === 'water-filters' &&
         (subcategory === 'under-sink' || subcategory === 'reverse-osmosis') && (
           <WaterFilterStageGuide subcategory={subcategory} />
         )}
       {loadFailed && (
-        <div
-          role="status"
-          className="mx-auto mt-6 max-w-7xl rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-black"
-        >
+        <div role="status" className="mx-auto mt-6 max-w-7xl rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-black">
           Products are temporarily unavailable. Please refresh the page to try again.
         </div>
       )}
@@ -184,19 +192,13 @@ export default async function SubcategoryPage({
         pageSize={PAGE_SIZE}
         enableSizeFilter={category === 'cartridges'}
       />
-      {page.pageInfo.hasNextPage &&
-        page.pageInfo.endCursor &&
-        !hasCatalogFilters(initialFilters) && (
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 text-center">
-            <Link
-              href={`${pathname}?after=${encodeURIComponent(page.pageInfo.endCursor)}`}
-              rel="next"
-              className="text-sm font-medium text-brand-blue hover:underline underline-offset-4"
-            >
-              Next catalogue page
-            </Link>
-          </div>
-        )}
+      {page.pageInfo.hasNextPage && page.pageInfo.endCursor && !hasCatalogFilters(initialFilters) && (
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 text-center">
+          <Link href={`${pathname}?after=${encodeURIComponent(page.pageInfo.endCursor)}`} rel="next" className="text-sm font-medium text-brand-blue hover:underline underline-offset-4">
+            Next catalogue page
+          </Link>
+        </div>
+      )}
     </>
   );
 }
