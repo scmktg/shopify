@@ -1,0 +1,96 @@
+{
+  "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-12vdc": {
+    "shortDescription": "6W UV water steriliser with confirmed Philips TUV 6W G6 T5 lamp. Philips lamp data: 1.9W UV-C output at 100 hours, approx. 253.7 nm peak wavelength and 9,000-hour rated useful life. 12V DC system power supply.",
+    "description": "A **6W ultraviolet water steriliser** using the confirmed **Philips TUV 6W G6 T5** germicidal UV-C lamp. This version uses a **12V DC system power supply / ballast**. The lamp itself is the same lamp used in the 220–240V AC version.\n\n## UV Lamp\n\n- **Lamp manufacturer:** Philips / Signify\n- **Lamp model:** Philips TUV 6W G6 T5\n- **Philips / Signify product code:** 928000704013\n- **Lamp type:** T5 germicidal UV-C lamp\n- **Lamp power:** 6W\n- **UV-C output:** 1.9W at 100 hours\n- **Peak UV-C wavelength:** approximately 253.7 nm (254 nm)\n- **Nominal lamp voltage:** 42V\n- **Nominal lamp current:** 0.16A\n- **Rated useful life:** 9,000 hours\n- **Base:** G5\n- **Lamp format:** T5\n- **Replacement lamp:** Philips TUV 6W G6 T5 / Signify 928000704013\n\n**Important:** 1.9W is the lamp's UV-C radiant output at 100 hours, not its electrical power consumption. Lamp wattage and UV-C output do not establish a reactor dose in mJ/cm².\n\n## UV Reactor / System Specifications\n\n- **System power supply / ballast:** 12V DC\n- **Reactor flow:** 1 GPM\n- **UV chamber:** stainless steel\n\nNo UV dose-at-flow claim is inferred from the Philips lamp data.",
+    "features": [
+      "Confirmed Philips TUV 6W G6 T5 germicidal UV-C lamp",
+      "6W lamp power",
+      "1.9W UV-C radiant output at 100 hours",
+      "Approximately 253.7 nm UV-C peak wavelength",
+      "9,000-hour rated useful life",
+      "G5 base / T5 format",
+      "12V DC system power supply / ballast",
+      "1 GPM reactor flow retained separately from lamp specifications"
+    ],
+    "headlineSpecs": [
+      {"label":"UV lamp","value":"Philips TUV 6W G6 T5"},
+      {"label":"Lamp power","value":"6W"},
+      {"label":"UV-C output","value":"1.9W at 100 hours"},
+      {"label":"System power supply","value":"12V DC"}
+    ],
+    "fullSpecs": [
+      {"label":"Lamp manufacturer","value":"Philips / Signify"},
+      {"label":"Lamp model","value":"Philips TUV 6W G6 T5"},
+      {"label":"Philips / Signify product code","value":"928000704013"},
+      {"label":"Lamp type","value":"T5 germicidal UV-C lamp"},
+      {"label":"Lamp power","value":"6W"},
+      {"label":"UV-C output","value":"1.9W at 100 hours"},
+      {"label":"Peak UV-C wavelength","value":"Approximately 253.7 nm"},
+      {"label":"Lamp voltage","value":"42V nominal"},
+      {"label":"Lamp current","value":"0.16A nominal"},
+      {"label":"Rated useful life","value":"9,000 hours"},
+      {"label":"Lamp base","value":"G5"},
+      {"label":"Lamp format","value":"T5"},
+      {"label":"Replacement lamp","value":"Philips TUV 6W G6 T5 / Signify 928000704013"},
+      {"label":"System power supply / ballast","value":"12V DC"},
+      {"label":"UV reactor flow","value":"1 GPM"},
+      {"label":"UV reactor chamber","value":"Stainless steel"}
+    ],
+    "faq": [
+      {"q":"Which Philips UV lamp does the 12V 6W steriliser use?","a":"It uses the confirmed Philips TUV 6W G6 T5, Signify product code 928000704013."},
+      {"q":"What is the UV-C output of the 6W Philips lamp?","a":"Philips lists 1.9W of UV-C radiant output at 100 hours. This is not the lamp's electrical power consumption and should not be converted into a reactor UV dose."},
+      {"q":"What is different between the 12V and 220–240V 6W units?","a":"They use the same Philips TUV 6W G6 T5 lamp. The system power supply / ballast differs: this version uses 12V DC."}
+    ],
+    "seo": {
+      "title": "6W UV Water Steriliser | Philips TUV Lamp | 12V DC",
+      "description": "6W UV steriliser with confirmed Philips TUV 6W G6 T5 lamp, 1.9W UV-C output at 100h, 253.7 nm peak wavelength and 12V DC system power."
+    }
+  },
+  "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v": {
+    "shortDescription": "6W UV water steriliser with confirmed Philips TUV 6W G6 T5 lamp. Philips lamp data: 1.9W UV-C output at 100 hours, approx. 253.7 nm peak wavelength and 9,000-hour rated useful life. 220–240V AC system power supply.",
+    "description": "A **6W ultraviolet water steriliser** using the confirmed **Philips TUV 6W G6 T5** germicidal UV-C lamp. This version uses a **220–240V AC system power supply / ballast**. The lamp itself is the same lamp used in the 12V DC version.\n\n## UV Lamp\n\n- **Lamp manufacturer:** Philips / Signify\n- **Lamp model:** Philips TUV 6W G6 T5\n- **Philips / Signify product code:** 928000704013\n- **Lamp type:** T5 germicidal UV-C lamp\n- **Lamp power:** 6W\n- **UV-C output:** 1.9W at 100 hours\n- **Peak UV-C wavelength:** approximately 253.7 nm (254 nm)\n- **Nominal lamp voltage:** 42V\n- **Nominal lamp current:** 0.16A\n- **Rated useful life:** 9,000 hours\n- **Base:** G5\n- **Lamp format:** T5\n- **Replacement lamp:** Philips TUV 6W G6 T5 / Signify 928000704013\n\n**Important:** 1.9W is the lamp's UV-C radiant output at 100 hours, not its electrical power consumption. Lamp wattage and UV-C output do not establish a reactor dose in mJ/cm².\n\n## UV Reactor / System Specifications\n\n- **System power supply / ballast:** 220–240V AC\n- **Reactor flow:** 1 GPM\n- **UV chamber:** stainless steel\n\nNo UV dose-at-flow claim is inferred from the Philips lamp data.",
+    "features": [
+      "Confirmed Philips TUV 6W G6 T5 germicidal UV-C lamp",
+      "6W lamp power",
+      "1.9W UV-C radiant output at 100 hours",
+      "Approximately 253.7 nm UV-C peak wavelength",
+      "9,000-hour rated useful life",
+      "G5 base / T5 format",
+      "220–240V AC system power supply / ballast",
+      "1 GPM reactor flow retained separately from lamp specifications"
+    ],
+    "headlineSpecs": [
+      {"label":"UV lamp","value":"Philips TUV 6W G6 T5"},
+      {"label":"Lamp power","value":"6W"},
+      {"label":"UV-C output","value":"1.9W at 100 hours"},
+      {"label":"System power supply","value":"220–240V AC"}
+    ],
+    "fullSpecs": [
+      {"label":"Lamp manufacturer","value":"Philips / Signify"},
+      {"label":"Lamp model","value":"Philips TUV 6W G6 T5"},
+      {"label":"Philips / Signify product code","value":"928000704013"},
+      {"label":"Lamp type","value":"T5 germicidal UV-C lamp"},
+      {"label":"Lamp power","value":"6W"},
+      {"label":"UV-C output","value":"1.9W at 100 hours"},
+      {"label":"Peak UV-C wavelength","value":"Approximately 253.7 nm"},
+      {"label":"Lamp voltage","value":"42V nominal"},
+      {"label":"Lamp current","value":"0.16A nominal"},
+      {"label":"Rated useful life","value":"9,000 hours"},
+      {"label":"Lamp base","value":"G5"},
+      {"label":"Lamp format","value":"T5"},
+      {"label":"Replacement lamp","value":"Philips TUV 6W G6 T5 / Signify 928000704013"},
+      {"label":"System power supply / ballast","value":"220–240V AC"},
+      {"label":"UV reactor flow","value":"1 GPM"},
+      {"label":"UV reactor chamber","value":"Stainless steel"}
+    ],
+    "faq": [
+      {"q":"Which Philips UV lamp does the 220–240V 6W steriliser use?","a":"It uses the confirmed Philips TUV 6W G6 T5, Signify product code 928000704013."},
+      {"q":"What is the UV-C output of the 6W Philips lamp?","a":"Philips lists 1.9W of UV-C radiant output at 100 hours. This is not the lamp's electrical power consumption and should not be converted into a reactor UV dose."},
+      {"q":"What is different between the 12V and 220–240V 6W units?","a":"They use the same Philips TUV 6W G6 T5 lamp. The system power supply / ballast differs: this version uses 220–240V AC."}
+    ],
+    "seo": {
+      "title": "6W UV Water Steriliser | Philips TUV Lamp | 220–240V AC",
+      "description": "6W UV steriliser with confirmed Philips TUV 6W G6 T5 lamp, 1.9W UV-C output at 100h, 253.7 nm peak wavelength and 220–240V AC system power."
+    }
+  }
+}
