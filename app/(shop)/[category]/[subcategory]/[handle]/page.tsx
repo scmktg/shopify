@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { findSubcategory } from '@/content/categories';
@@ -19,14 +20,13 @@ interface ProductPageProps {
     subcategory: string;
     handle: string;
   }>;
-  searchParams?: Promise<{
-    variant?: string;
-  }>;
+  searchParams?: Promise<{ variant?: string }>;
 }
 
 export const revalidate = 300;
-
 const META_DESCRIPTION_MAX = 155;
+const INSTALLED_WHOLE_HOUSE_HANDLE =
+  'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system';
 
 interface DosingPackageConfig {
   packageHandle: string;
@@ -35,70 +35,32 @@ interface DosingPackageConfig {
 }
 
 const DOSING_PACKAGES: Readonly<Record<string, DosingPackageConfig>> = {
-  'chemical-dosing-tank-50l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-50l',
-    componentHandle: 'chemical-bund-50l',
-    discountAmount: '19.00',
-  },
-  'chemical-bund-50l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-50l',
-    componentHandle: 'chemical-dosing-tank-50l',
-    discountAmount: '19.00',
-  },
-  'chemical-dosing-tank-100l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-100l',
-    componentHandle: 'chemical-bund-100l',
-    discountAmount: '29.00',
-  },
-  'chemical-bund-100l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-100l',
-    componentHandle: 'chemical-dosing-tank-100l',
-    discountAmount: '29.00',
-  },
-  'chemical-dosing-tank-200l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-200l',
-    componentHandle: 'chemical-bund-200l',
-    discountAmount: '39.00',
-  },
-  'chemical-bund-200l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-200l',
-    componentHandle: 'chemical-dosing-tank-200l',
-    discountAmount: '39.00',
-  },
-  'chemical-dosing-tank-300l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-300l',
-    componentHandle: 'chemical-bund-400l',
-    discountAmount: '49.00',
-  },
-  'chemical-bund-400l': {
-    packageHandle: 'chemical-dosing-tank-and-bund-300l',
-    componentHandle: 'chemical-dosing-tank-300l',
-    discountAmount: '49.00',
-  },
+  'chemical-dosing-tank-50l': { packageHandle: 'chemical-dosing-tank-and-bund-50l', componentHandle: 'chemical-bund-50l', discountAmount: '19.00' },
+  'chemical-bund-50l': { packageHandle: 'chemical-dosing-tank-and-bund-50l', componentHandle: 'chemical-dosing-tank-50l', discountAmount: '19.00' },
+  'chemical-dosing-tank-100l': { packageHandle: 'chemical-dosing-tank-and-bund-100l', componentHandle: 'chemical-bund-100l', discountAmount: '29.00' },
+  'chemical-bund-100l': { packageHandle: 'chemical-dosing-tank-and-bund-100l', componentHandle: 'chemical-dosing-tank-100l', discountAmount: '29.00' },
+  'chemical-dosing-tank-200l': { packageHandle: 'chemical-dosing-tank-and-bund-200l', componentHandle: 'chemical-bund-200l', discountAmount: '39.00' },
+  'chemical-bund-200l': { packageHandle: 'chemical-dosing-tank-and-bund-200l', componentHandle: 'chemical-dosing-tank-200l', discountAmount: '39.00' },
+  'chemical-dosing-tank-300l': { packageHandle: 'chemical-dosing-tank-and-bund-300l', componentHandle: 'chemical-bund-400l', discountAmount: '49.00' },
+  'chemical-bund-400l': { packageHandle: 'chemical-dosing-tank-and-bund-300l', componentHandle: 'chemical-dosing-tank-300l', discountAmount: '49.00' },
 };
 
 const BRAND_SUFFIX_RE = /\s*[\|—–-]\s*Enviro\s*Aqua\s*$/i;
 
 function stripBrandSuffix(title: string): string {
   let out = title;
-  while (BRAND_SUFFIX_RE.test(out)) {
-    out = out.replace(BRAND_SUFFIX_RE, '').trim();
-  }
+  while (BRAND_SUFFIX_RE.test(out)) out = out.replace(BRAND_SUFFIX_RE, '').trim();
   return out;
 }
 
-async function resolveMetaDescription(
-  content: ReturnType<typeof getProductContent>,
-): Promise<string> {
+async function resolveMetaDescription(content: ReturnType<typeof getProductContent>): Promise<string> {
   if (!content) return '';
   if (content.seo?.description?.trim()) return content.seo.description.trim();
   if (content.shortDescription?.trim()) return content.shortDescription.trim();
   return markdownToPlainText(content.description, META_DESCRIPTION_MAX);
 }
 
-export async function generateMetadata({
-  params,
-}: ProductPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const { category, subcategory, handle } = await params;
   const product = await getProductByHandle(handle);
   if (!product) return {};
@@ -107,34 +69,19 @@ export async function generateMetadata({
 
   const title = stripBrandSuffix(content.seo?.title ?? product.title);
   const description = await resolveMetaDescription(content);
-  const ogImage =
-    content.seo?.ogImage ??
-    (product.featuredImage ? product.featuredImage.url : null);
+  const ogImage = content.seo?.ogImage ?? (product.featuredImage ? product.featuredImage.url : null);
   const images = ogImage ? [ogImage] : [];
 
   return {
     title,
     description,
-    alternates: {
-      canonical: `/${category}/${subcategory}/${handle}`,
-    },
-    openGraph: {
-      title,
-      description,
-      images,
-    },
-    twitter: {
-      title,
-      description,
-      images,
-    },
+    alternates: { canonical: `/${category}/${subcategory}/${handle}` },
+    openGraph: { title, description, images },
+    twitter: { title, description, images },
   };
 }
 
-export default async function ProductPage({
-  params,
-  searchParams,
-}: ProductPageProps) {
+export default async function ProductPage({ params, searchParams }: ProductPageProps) {
   const { category, subcategory, handle } = await params;
   const requestedVariantId = (await searchParams)?.variant ?? null;
 
@@ -146,12 +93,7 @@ export default async function ProductPage({
   const content = getProductContent(handle);
   if (!content) notFound();
 
-  if (
-    content.categories[0] !== category ||
-    content.categories[1] !== subcategory
-  ) {
-    notFound();
-  }
+  if (content.categories[0] !== category || content.categories[1] !== subcategory) notFound();
 
   const packageConfig = DOSING_PACKAGES[handle] ?? null;
   const [packageProduct, componentProduct] = packageConfig
@@ -162,80 +104,42 @@ export default async function ProductPage({
     : [null, null];
   const packageVariant = packageProduct?.variants[0] ?? null;
   const currentIsTank = handle.startsWith('chemical-dosing-tank-');
-  const tankProduct = packageConfig
-    ? currentIsTank
-      ? product
-      : componentProduct
-    : null;
-  const bundProduct = packageConfig
-    ? currentIsTank
-      ? componentProduct
-      : product
-    : null;
+  const tankProduct = packageConfig ? (currentIsTank ? product : componentProduct) : null;
+  const bundProduct = packageConfig ? (currentIsTank ? componentProduct : product) : null;
   const packageUpgrade =
     packageConfig && packageProduct && packageVariant
       ? {
           title: packageProduct.title,
           href: `/${category}/${subcategory}/${packageConfig.packageHandle}`,
           price: packageVariant.price,
-          savings: {
-            amount: packageConfig.discountAmount,
-            currencyCode: packageVariant.price.currencyCode,
-          },
+          savings: { amount: packageConfig.discountAmount, currencyCode: packageVariant.price.currencyCode },
           available: packageVariant.availableForSale,
-          tank: tankProduct
-            ? {
-                title: tankProduct.title,
-                image: tankProduct.featuredImage ?? tankProduct.images[0] ?? null,
-              }
-            : null,
-          bund: bundProduct
-            ? {
-                title: bundProduct.title,
-                image: bundProduct.featuredImage ?? bundProduct.images[0] ?? null,
-              }
-            : null,
+          tank: tankProduct ? { title: tankProduct.title, image: tankProduct.featuredImage ?? tankProduct.images[0] ?? null } : null,
+          bund: bundProduct ? { title: bundProduct.title, image: bundProduct.featuredImage ?? bundProduct.images[0] ?? null } : null,
           componentLink: componentProduct
-            ? {
-                title: componentProduct.title,
-                href: `/${category}/${subcategory}/${packageConfig.componentHandle}`,
-              }
+            ? { title: componentProduct.title, href: `/${category}/${subcategory}/${packageConfig.componentHandle}` }
             : null,
         }
       : null;
 
   const node = findSubcategory(category, subcategory);
   const pathname = `/${category}/${subcategory}/${handle}`;
-  const familyPaths = content.family
-    ? resolveFamilyPaths(content.family.siblings.map((s) => s.handle))
-    : null;
-  const descriptionPlainText = await markdownToPlainText(
-    content.description,
-    5000,
-  );
+  const familyPaths = content.family ? resolveFamilyPaths(content.family.siblings.map((s) => s.handle)) : null;
+  const descriptionPlainText = await markdownToPlainText(content.description, 5000);
 
-  const baseProductSchema = productSchema(
-    product,
-    content,
-    pathname,
-    descriptionPlainText,
-  );
-
+  const baseProductSchema = productSchema(product, content, pathname, descriptionPlainText);
   const structuredData = [
     enrichBubblerProductSchema(baseProductSchema, product, content, pathname),
     breadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: node?.category.label ?? category, path: `/${category}` },
-      {
-        name: node?.subcategory.label ?? subcategory,
-        path: `/${category}/${subcategory}`,
-      },
+      { name: node?.subcategory.label ?? subcategory, path: `/${category}/${subcategory}` },
       { name: product.title, path: pathname },
     ]),
-    ...(content.faq && content.faq.length > 0
-      ? [faqPageSchema(content.faq)]
-      : []),
+    ...(content.faq && content.faq.length > 0 ? [faqPageSchema(content.faq)] : []),
   ];
+
+  const showInstallationUpsell = handle === INSTALLED_WHOLE_HOUSE_HANDLE;
 
   return (
     <>
@@ -249,13 +153,28 @@ export default async function ProductPage({
         initialVariantId={requestedVariantId}
         packageUpgrade={packageUpgrade}
       />
+      {showInstallationUpsell && (
+        <section className="border-t border-gray-200 bg-gray-50">
+          <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
+            <div className="rounded-lg border border-brand-blue/20 bg-white p-6 md:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-blue">Professional installation</p>
+              <h2 className="mt-2 text-2xl font-semibold text-black">Want this system professionally installed?</h2>
+              <p className="mt-3 max-w-3xl text-black/75">
+                The standard package is <strong>$2,399 inc GST supplied and installed</strong> for eligible Sydney and NSW Central Coast properties, subject to standard installation conditions.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation — $2,399</Link>
+                <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-brand-blue-light">Sydney installation — $2,399</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }
 
-function resolveFamilyPaths(
-  handles: ReadonlyArray<string>,
-): ReadonlyMap<string, string> {
+function resolveFamilyPaths(handles: ReadonlyArray<string>): ReadonlyMap<string, string> {
   const all = getAllProductContent();
   const map = new Map<string, string>();
   for (const handle of handles) {
