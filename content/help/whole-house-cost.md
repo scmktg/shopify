@@ -1,90 +1,80 @@
 ---
 title: "Whole House Water Filter Installation Cost - Australia"
-description: "Whole-house water filtration installation costs in Australia: system price, licensed plumber install cost, cartridge running cost, and five-year ownership cost."
+description: "What affects whole-house water filter installation cost in Australia, what a standard install includes, and Enviro Aqua's $2,399 supplied-and-installed package for eligible Sydney and Central Coast homes."
 relatedLinks:
-  - { label: "Whole-house installation package - Central Coast", href: "/whole-house-installation-package" }
-  - { label: "Whole-home filtration", href: "/use/whole-home-filtration" }
+  - { label: "Whole-house installation NSW — $2,399", href: "/whole-house-installation-package" }
+  - { label: "Central Coast installation — $2,399", href: "/locations/central-coast-nsw/whole-house-water-filter-installation" }
+  - { label: "Sydney installation — $2,399", href: "/locations/sydney-nsw/whole-house-water-filter-installation" }
   - { label: "Whole-house water filters", href: "/water-filters/whole-house" }
-  - { label: "WaterMark certification explained", href: "/help/watermark-certification-explained" }
 faq:
-  - q: "Why does the install cost as much as the system?"
-    a: "Because it has to. A whole-house system sits on the cold-water mains and must be plumbed by a licensed plumber to comply with state regulations and to keep the warranty intact. A standard install is two to four hours of labour plus brackets, isolation valves, and the bypass loop. $500-$1,500 is the realistic range. The system is the cheap part."
-  - q: "Can I install it myself?"
-    a: "Not legally on the mains in any Australian state. Mains-pressure plumbing changes require a licensed plumber by law. Under-sink filters with push-fit fittings on a single tap are usually fine to DIY. Anything that touches the cold-water mains is a plumber job."
-  - q: "What happens if I install a non-WaterMark system on the mains?"
-    a: "It fails inspection. WaterMark certification is mandatory for any product that connects to mains pressure in Australia. A non-certified system will not pass a plumbing inspection, will likely void your home insurance for water-damage claims, and a licensed plumber should refuse to install it. The 'cheap' overseas system online is not actually cheap if you have to rip it out and start again."
-  - q: "How long do whole-house cartridges last?"
-    a: "On town water, six to twelve months for sediment and carbon stages in a typical four-bedroom home. On rainwater or a sediment-heavy supply, three to six months. The give-away is pressure drop - when you notice flow slowing at fully-open taps, the sediment cartridge is loaded. Cartridge changes are a five-minute job once the system is installed."
-  - q: "Is a cheaper two-stage system enough, or do I need three stages?"
-    a: "Two stages (sediment + carbon) handles most town-water installs. Step up to three stages if you need a specific extra - KDF for hard-water scale, catalytic carbon for chloramine, or UV for tank water. Do not buy more stages than you need; every additional stage is more cartridges to buy and more pressure drop."
+  - q: "How much is Enviro Aqua's standard whole-house installation package?"
+    a: "The standard package is $2,399 inc GST supplied and installed for eligible Sydney and Central Coast properties, subject to standard installation conditions."
+  - q: "What can make a whole-house installation cost more?"
+    a: "Unusual access, extensive pipework, difficult excavation, non-standard plumbing or additional components can require a revised quote before work proceeds."
+  - q: "Where is a whole-house filter normally installed?"
+    a: "It is typically installed on the incoming cold-water main before water is distributed through the property, where the plumbing layout and access make that appropriate."
+  - q: "Does tank water use the same installation package?"
+    a: "Not automatically. Tank water can require a different treatment setup, including sediment filtration, carbon treatment and UV where appropriate. The water source should be assessed before selecting the system."
 ---
 
-What a **whole-house water filtration installation** actually costs in Australia, with no hidden running-cost surprises. There are three main line items: the filter system, the licensed plumber installation, and replacement cartridges over time.
+The cost of **whole-house water filter installation** depends on both the filtration system and the plumbing work required at the property. The most useful comparison is not simply the filter price: access to the incoming water main, pipework, mounting position and any additional components all affect the final installation scope.
 
-## The system
+## Enviro Aqua standard supply-and-install package
 
-WaterMark-certified whole-house systems for a typical Australian home land in three brackets:
+Enviro Aqua offers a fixed **$2,399 inc GST supplied-and-installed package** for eligible Sydney and NSW Central Coast homes.
 
-- **Two-stage 10" × 4.5" Big Blue** - sediment + carbon. Around $300-$450. Suits smaller homes, holiday properties, or anywhere flow demand is modest.
-- **Two-stage 20" × 4.5" Big Blue** - same configuration, larger housings. Around $450-$700. The right call for a four-bedroom family home - bigger cartridges last longer and don't drop flow when multiple outlets are running.
-- **Three-stage 20" × 4.5" Big Blue** - sediment + carbon + a third stage (KDF, catalytic carbon, or UV). Around $700-$1,100 depending on the third stage. UV adds the most because of the lamp and ballast.
+The package is designed for standard installations and includes the whole-house filtration system plus professional installation, subject to service-area availability and property suitability.
 
-These are real numbers for certified systems with brand-name Australian housings. Anything significantly cheaper online is usually non-certified, which means a plumber will not install it on the mains.
+- [View the NSW installation package](/whole-house-installation-package)
+- [Central Coast whole-house installation](/locations/central-coast-nsw/whole-house-water-filter-installation)
+- [Sydney whole-house installation](/locations/sydney-nsw/whole-house-water-filter-installation)
 
-## Whole-house water filter installation cost
+## What a standard installation includes
 
-A licensed plumber installs whole-house systems on the cold-water mains, after the meter and before the line splits to internal taps. Expect:
+For the Enviro Aqua package, the standard scope includes the filtration system, supplied cartridges, mounting hardware, standard fittings, professional plumbing installation, testing and commissioning.
 
-- **$500-$800** for a straightforward install - exposed pipework, easy access, no relocations.
-- **$800-$1,500** for a harder install - buried pipework needing excavation, indoor mounting through a stud wall, bypass loop on a meter pit, or council water-meter relocations.
+The **$2,399 package applies to standard installations with reasonable access to the incoming water main and typical plumbing requirements**. Unusual access, extensive pipework, difficult excavation, non-standard plumbing or extra components may require a revised quote before work proceeds.
 
-The price covers labour, the bracket and isolation valves, the bypass loop (so you can change cartridges without losing whole-house water), and any pipe/fittings to bridge the system into the existing run.
+## What affects installation cost?
 
-If you are on the NSW Central Coast, see the [Whole House Installation Package](/whole-house-installation-package) for the current packaged system-and-installation option in eligible postcodes. For supply-only purchases, compare the current [whole-house water filter systems](/water-filters/whole-house).
+### Access to the incoming main
 
-## Cartridge running cost
+A straightforward external run with clear access is different from buried pipework, difficult excavation or a main that needs substantial rerouting.
 
-This is where the honest numbers matter. A typical four-bedroom family home on town water:
+### Existing pipework
 
-- **Sediment cartridge (5 micron pleated polypropylene):** $25-$40, replace every six to twelve months.
-- **Carbon block cartridge:** $35-$55, replace every six to twelve months.
-- **KDF or catalytic carbon (third stage if fitted):** $55-$90, replace annually.
-- **UV lamp (third stage if fitted):** $90-$130, replace annually.
+Pipe material, condition, diameter and the amount of new pipework required can change the installation scope.
 
-Two-stage system: about **$70-$130 per year** in cartridges.
+### Mounting location
 
-Three-stage with KDF: about **$130-$200 per year**.
+The system needs an appropriate position with access for future cartridge servicing. The final location depends on the property's plumbing layout.
 
-Three-stage with UV: about **$200-$300 per year** (lamp dominates).
+### Additional components
 
-Rural tank water doubles the sediment-cartridge frequency, so add roughly $40 per year for tank properties.
+Some properties need extra isolation, bypass arrangements, protection or non-standard fittings. These should be identified before installation rather than assumed to be included in every property.
 
-## Five-year total cost of ownership
+## Where is a whole-house filter installed?
 
-For a typical four-bedroom Central Coast family home on town water, two-stage 20" Big Blue, straightforward install:
+A whole-house system is normally installed on the **incoming cold-water main before water is distributed through the property**, where the plumbing layout makes that appropriate.
 
-| Item | Cost |
-|---|---|
-| System | $550 |
-| Install (licensed plumber) | $700 |
-| Cartridges, year 1 | $100 |
-| Cartridges, years 2-5 | $400 |
-| **Five-year total** | **$1,750** |
+This means the system can treat water before it reaches multiple taps, showers and appliances. The exact position varies from property to property.
 
-That works out to about **$350 a year**, or **$30 a month**. Compare to bottled-water deliveries at $15-$25 a bottle.
+## What filtration is included?
 
-## The WaterMark angle on cost
+The standard Enviro Aqua whole-house package uses a 3-stage system with sediment and activated-carbon filtration. The intended treatment includes suspended sediment plus improvement of chlorine, taste and odour on suitable mains-water supplies.
 
-WaterMark certification is not a marketing badge. It is the legally required certification for any product connecting to mains pressure in Australia. A non-certified system bought on price will:
+For the exact current system specification, see the [whole-house product page](/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system/).
 
-- Fail a plumbing inspection if your council ever checks.
-- Likely void your home and contents insurance for any water-damage claim caused by the unit.
-- Be refused for installation by a licensed plumber acting properly under their licence.
+Do not assume the standard mains-water configuration is the correct treatment for untreated rainwater, bore water or other non-standard sources.
 
-Every WaterMark-certified product on this site shows its licence number on the page. See [WaterMark certification explained](/help/watermark-certification-explained) for the full rundown of what the scheme actually covers and why it matters.
+## Tank and rainwater properties
 
-## Where the savings actually are
+Tank-water properties can require a different treatment train. Depending on the source and intended use, that can include sediment filtration, carbon treatment and UV disinfection where appropriate.
 
-Right-size the system. Do not pay for three stages if two will do the job. Match housing size to flow demand - a 10" × 2.5" housing will choke a four-bedroom home, and a 20" × 4.5" housing on a one-bedroom unit is overspend.
+The standard mains-water package should therefore not be treated as a universal tank-water solution. See the [rural tank-water guide](/use/rural-tank-water) for that use case.
 
-Browse the [whole-house category](/water-filters/whole-house) to compare current pricing, or read the [whole-home filtration guide](/use/whole-home-filtration) for help matching a system to your water source and treatment goal.
+## Product cost versus installed cost
+
+A supply-only whole-house system and a fully installed system are different purchases. Supply-only pricing covers the equipment. Installed pricing also needs to account for the property-specific plumbing work, mounting, fittings, testing and commissioning.
+
+Browse the [whole-house water filter range](/water-filters/whole-house) for supply-only systems, or use the regional installation pages when the goal is a complete installed solution.
