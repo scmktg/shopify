@@ -7,11 +7,6 @@ import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import { MobileMenu } from './MobileMenu';
 
 export function Header() {
-  const navItems = CATEGORIES.map((c) => ({
-    label: c.label,
-    href: `/${c.slug}/`,
-  }));
-
   return (
     <header className="bg-white text-black border-b border-gray-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between gap-4">
@@ -86,7 +81,7 @@ export function Header() {
           />
           <SearchBar triggerClassName="inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
           <CartButton className="relative inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
-          <MobileMenu items={navItems} />
+          <MobileMenu categories={CATEGORIES} />
         </div>
       </div>
     </header>
