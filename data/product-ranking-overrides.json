@@ -59,6 +59,110 @@
       "description": "4-stage whole-house filtration with UV sterilisation. 48 W lamp, 34 L/min at 40 mJ/cm², 45 L/min at 30 mJ/cm² and 9,000-hour lamp life."
     }
   },
+  "uv-water-filter-ultraviolet-sterilisation-1500lph-25w-220v-240v": {
+    "shortDescription": "25W UV water steriliser with confirmed Philips TUV 25W/G25 T8 lamp. Philips lamp data: 7.3W UV-C output at 100 hours, approx. 253.7 nm peak wavelength and 9,000-hour rated useful life.",
+    "description": "A **25W ultraviolet water steriliser** for whole-home and commercial water-treatment applications using the confirmed **Philips TUV 25W/G25 T8** germicidal UV-C lamp.\n\n## UV Lamp\n\n- **Lamp manufacturer:** Philips / Signify\n- **Lamp model:** Philips TUV 25W/G25 T8\n- **Philips product designation:** TUV 25W 1SL/25\n- **Philips / Signify product code:** 928039404005\n- **Lamp type:** T8 germicidal UV-C lamp\n- **Lamp power:** 25W\n- **UV-C output:** 7.3W at 100 hours\n- **Peak UV-C wavelength:** approximately 253.7 nm (254 nm)\n- **Nominal lamp voltage:** 48V\n- **Nominal lamp current:** 0.612A\n- **Rated useful life:** 9,000 hours\n- **UV-C output depreciation at useful-life point:** approximately 15%\n- **Base:** G13 bi-pin\n- **Tube diameter:** approximately 28 mm\n- **Maximum overall length:** approximately 451.6 mm\n- **Replacement lamp:** Philips TUV 25W/G25 T8 / TUV 25W 1SL/25 / Signify 928039404005\n\n**Important:** 7.3W is the lamp's UV-C radiant output at 100 hours, not its electrical power consumption. Lamp wattage and UV-C output do not establish a reactor dose in mJ/cm².\n\n## UV Reactor / System Specifications\n\n- **Chamber material:** 304 stainless steel\n- **Power supply:** 220–240V AC with Australian plug\n- **Connections:** 3/4-inch inlet and outlet\n- **Approximate chamber dimensions:** Ø64 × 520 mm\n- **Reactor flow:** the product title states 1500 LPH, while existing technical documentation also references up to 23 L/min. This discrepancy remains flagged for separate reactor-manufacturer verification.\n\nNo UV dose-at-flow claim is made from the Philips lamp data.",
+    "features": [
+      "Confirmed Philips TUV 25W/G25 T8 germicidal UV-C lamp",
+      "25W lamp power",
+      "7.3W UV-C radiant output at 100 hours",
+      "Approximately 253.7 nm UV-C peak wavelength",
+      "9,000-hour rated useful life",
+      "G13 bi-pin base",
+      "304 stainless-steel reactor chamber",
+      "Reactor flow discrepancy retained for manufacturer verification"
+    ],
+    "headlineSpecs": [
+      {"label":"UV lamp","value":"Philips TUV 25W/G25 T8"},
+      {"label":"Lamp power","value":"25W"},
+      {"label":"UV-C output","value":"7.3W at 100 hours"},
+      {"label":"Lamp life","value":"9,000 hours"}
+    ],
+    "fullSpecs": [
+      {"label":"Lamp manufacturer","value":"Philips / Signify"},
+      {"label":"Lamp model","value":"Philips TUV 25W/G25 T8"},
+      {"label":"Philips product designation","value":"TUV 25W 1SL/25"},
+      {"label":"Philips / Signify product code","value":"928039404005"},
+      {"label":"Lamp type","value":"T8 germicidal UV-C lamp"},
+      {"label":"Lamp power","value":"25W"},
+      {"label":"UV-C output","value":"7.3W at 100 hours"},
+      {"label":"Peak UV-C wavelength","value":"Approximately 253.7 nm"},
+      {"label":"Lamp voltage","value":"48V nominal"},
+      {"label":"Lamp current","value":"0.612A nominal"},
+      {"label":"Rated useful life","value":"9,000 hours"},
+      {"label":"UV-C output depreciation at useful-life point","value":"Approximately 15%"},
+      {"label":"Lamp base","value":"G13 bi-pin"},
+      {"label":"Tube diameter","value":"Approximately 28 mm"},
+      {"label":"Maximum overall lamp length","value":"Approximately 451.6 mm"},
+      {"label":"Replacement lamp","value":"Philips TUV 25W/G25 T8 / TUV 25W 1SL/25 / Signify 928039404005"},
+      {"label":"UV reactor chamber","value":"304 stainless steel"},
+      {"label":"UV reactor power supply","value":"220–240V AC with Australian plug"},
+      {"label":"UV reactor connections","value":"3/4-inch inlet and outlet"},
+      {"label":"UV reactor dimensions","value":"Approximately Ø64 × 520 mm"},
+      {"label":"UV reactor flow","value":"1500 LPH product rating; separate 23 L/min reference remains under reactor-manufacturer verification"}
+    ],
+    "faq": [
+      {"q":"Which Philips UV lamp does this 25W steriliser use?","a":"It uses the confirmed Philips TUV 25W/G25 T8, Philips designation TUV 25W 1SL/25, Signify product code 928039404005."},
+      {"q":"What is the UV-C output of the 25W Philips lamp?","a":"Philips lists 7.3W of UV-C radiant output at 100 hours. This is not the lamp's electrical power consumption and it should not be converted into a reactor dose in mJ/cm²."},
+      {"q":"How long is the confirmed Philips lamp rated to last?","a":"The Philips TUV 25W/G25 T8 has a rated useful life of 9,000 hours."},
+      {"q":"What is the reactor flow rating?","a":"The product title states 1500 LPH while existing technical documentation also references 23 L/min. That discrepancy remains flagged for reactor-manufacturer verification and is not resolved from the Philips lamp datasheet."}
+    ],
+    "seo": {
+      "title": "25W UV Water Steriliser | Philips TUV Lamp | 1500LPH",
+      "description": "25W UV steriliser with confirmed Philips TUV 25W/G25 T8 lamp. 7.3W UV-C output at 100h, 253.7 nm peak wavelength and 9,000-hour lamp life."
+    }
+  },
+  "ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp": {
+    "shortDescription": "55W UV water steriliser with confirmed Philips TUV 55W HO G55 T8 lamp. Philips lists approx. 54W actual lamp consumption, 19.7W UV-C output at 100 hours and a 9,000-hour rated useful life.",
+    "description": "A **55W ultraviolet water steriliser** for whole-home and commercial water-treatment applications using the confirmed **Philips TUV 55W HO G55 T8** germicidal UV-C lamp.\n\nThe product remains customer-facing as a **55W UV Steriliser**, matching Philips' 55W HO commercial lamp class. Philips lists actual lamp power consumption at approximately **54W**.\n\n## UV Lamp\n\n- **Lamp manufacturer:** Philips / Signify\n- **Lamp model:** Philips TUV 55W HO G55 T8\n- **Philips product designation:** TUV 55W HO 1SL/6\n- **Philips / Signify product code:** 928049504003\n- **Lamp class:** 55W HO\n- **Philips-listed actual lamp power consumption:** approximately 54W\n- **UV-C output:** 19.7W at 100 hours\n- **Peak UV-C wavelength:** approximately 253.7 nm (254 nm)\n- **Nominal lamp voltage:** 86V\n- **Nominal lamp current:** 0.765A\n- **Rated useful life:** 9,000 hours\n- **UV-C output depreciation at useful-life point:** approximately 15%\n- **Base:** G13 bi-pin\n- **Tube diameter:** approximately 28 mm\n- **Maximum overall length:** approximately 908.8 mm\n- **Replacement lamp:** Philips TUV 55W HO G55 T8 / TUV 55W HO 1SL/6 / Signify 928049504003\n\n**Important:** 19.7W is the lamp's UV-C radiant output at 100 hours, not its electrical power consumption. No UV dose in mJ/cm² is inferred from the lamp data.\n\n## UV Reactor / System Specifications\n\n- **Reactor rated flow:** 2700 LPH\n- **Power supply:** 220–240V AC\n- **UV chamber:** stainless steel\n\nThe 2700 LPH reactor rating is preserved as an existing system specification. No claim is made that 2700 LPH corresponds to 16, 30 or 40 mJ/cm² because that relationship has not been independently verified for this reactor.",
+    "features": [
+      "Confirmed Philips TUV 55W HO G55 T8 germicidal UV-C lamp",
+      "55W HO lamp class; Philips lists approximately 54W actual lamp consumption",
+      "19.7W UV-C radiant output at 100 hours",
+      "Approximately 253.7 nm UV-C peak wavelength",
+      "9,000-hour rated useful life",
+      "G13 bi-pin base",
+      "2700 LPH reactor rating retained separately from lamp performance",
+      "No inferred dose-at-flow claim"
+    ],
+    "headlineSpecs": [
+      {"label":"UV lamp","value":"Philips TUV 55W HO G55 T8"},
+      {"label":"Lamp class","value":"55W HO"},
+      {"label":"UV-C output","value":"19.7W at 100 hours"},
+      {"label":"Lamp life","value":"9,000 hours"}
+    ],
+    "fullSpecs": [
+      {"label":"Lamp manufacturer","value":"Philips / Signify"},
+      {"label":"Lamp model","value":"Philips TUV 55W HO G55 T8"},
+      {"label":"Philips product designation","value":"TUV 55W HO 1SL/6"},
+      {"label":"Philips / Signify product code","value":"928049504003"},
+      {"label":"Lamp class","value":"55W HO"},
+      {"label":"Philips-listed actual lamp power consumption","value":"Approximately 54W"},
+      {"label":"UV-C output","value":"19.7W at 100 hours"},
+      {"label":"Peak UV-C wavelength","value":"Approximately 253.7 nm"},
+      {"label":"Lamp voltage","value":"86V nominal"},
+      {"label":"Lamp current","value":"0.765A nominal"},
+      {"label":"Rated useful life","value":"9,000 hours"},
+      {"label":"UV-C output depreciation at useful-life point","value":"Approximately 15%"},
+      {"label":"Lamp base","value":"G13 bi-pin"},
+      {"label":"Tube diameter","value":"Approximately 28 mm"},
+      {"label":"Maximum overall lamp length","value":"Approximately 908.8 mm"},
+      {"label":"Replacement lamp","value":"Philips TUV 55W HO G55 T8 / TUV 55W HO 1SL/6 / Signify 928049504003"},
+      {"label":"UV reactor rated flow","value":"2700 LPH"},
+      {"label":"UV reactor power supply","value":"220–240V AC"},
+      {"label":"UV reactor chamber","value":"Stainless steel"}
+    ],
+    "faq": [
+      {"q":"Which Philips UV lamp does this 55W steriliser use?","a":"It uses the confirmed Philips TUV 55W HO G55 T8, Philips designation TUV 55W HO 1SL/6, Signify product code 928049504003."},
+      {"q":"Why is the product called 55W if Philips lists approximately 54W?","a":"55W HO is the Philips commercial lamp class/designation. Philips lists actual lamp power consumption at approximately 54W, so the product can remain customer-facing as a 55W UV Steriliser while the detailed specifications state the measured/nominal consumption separately."},
+      {"q":"What is the UV-C output of the Philips lamp?","a":"Philips lists 19.7W of UV-C radiant output at 100 hours. This is not the lamp's electrical power consumption and it does not establish reactor dose in mJ/cm²."},
+      {"q":"Does 2700 LPH correspond to a particular UV dose?","a":"No dose-at-flow relationship is claimed here. The 2700 LPH reactor rating is kept separate from the Philips lamp data and requires reactor-manufacturer documentation for any mJ/cm² statement."}
+    ],
+    "seo": {
+      "title": "55W UV Water Steriliser | Philips TUV HO Lamp | 2700LPH",
+      "description": "55W UV steriliser with confirmed Philips TUV 55W HO G55 T8 lamp. 19.7W UV-C output at 100h, approx. 253.7 nm and 9,000-hour lamp life."
+    }
+  },
   "commercial-stainless-steel-filtered-cold-water-bubbler-round-wm": {
     "seo": {
       "title": "Commercial Water Bubbler | Stainless Steel, Filtered, WaterMark",
