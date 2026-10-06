@@ -4,12 +4,9 @@ import { loadMarkdownPage, listMarkdownSlugs } from '@/lib/content/markdown';
 import { EditorialPage } from '@/components/editorial/EditorialPage';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
-import { absoluteUrl } from '@/lib/seo/siteUrl';
-import {
-  breadcrumbSchema,
-  faqPageSchema,
-  type JsonLd,
-} from '@/lib/seo/jsonld';
+import { BUSINESS_INFO } from '@/content/business-info';
+import { absoluteUrl, getSiteUrl } from '@/lib/seo/siteUrl';
+import { breadcrumbSchema, faqPageSchema, type JsonLd } from '@/lib/seo/jsonld';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,9 +21,7 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const page = await loadMarkdownPage(`${SECTION}/${slug}`);
   if (!page) return {};
@@ -37,23 +32,52 @@ export async function generateMetadata({
   };
 }
 
-function localBusinessSchema(slug: string, name: string): JsonLd {
+function locationSchema(slug: string, name: string): JsonLd {
+  const path = `/${SECTION}/${slug}`;
+
+  if (slug === 'central-coast-nsw') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': `${absoluteUrl(path)}#local-business`,
+      name: BUSINESS_INFO.name,
+      description: name,
+      telephone: BUSINESS_INFO.phone.tel,
+      url: getSiteUrl(),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: BUSINESS_INFO.address.street,
+        addressLocality: BUSINESS_INFO.address.locality,
+        addressRegion: BUSINESS_INFO.address.region,
+        postalCode: BUSINESS_INFO.address.postalCode,
+        addressCountry: BUSINESS_INFO.address.country,
+      },
+      areaServed: { '@type': 'AdministrativeArea', name: 'Central Coast NSW' },
+    };
+  }
+
+  if (slug === 'sydney-nsw') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      '@id': `${absoluteUrl(path)}#service-area`,
+      name: 'Enviro Aqua Sydney water filtration service area',
+      description: name,
+      provider: {
+        '@type': 'Organization',
+        name: BUSINESS_INFO.name,
+        telephone: BUSINESS_INFO.phone.tel,
+        url: getSiteUrl(),
+      },
+      areaServed: { '@type': 'City', name: 'Sydney NSW' },
+    };
+  }
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${absoluteUrl(`/${SECTION}/${slug}`)}#local-business`,
-    name: 'Enviro Aqua',
-    description: name,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Central Coast',
-      addressRegion: 'NSW',
-      addressCountry: 'AU',
-    },
-    areaServed: {
-      '@type': 'Place',
-      name: 'Central Coast NSW and Australia-wide',
-    },
+    '@type': 'WebPage',
+    '@id': absoluteUrl(path),
+    name,
   };
 }
 
@@ -62,11 +86,7 @@ export default async function LocationPage({ params }: PageProps) {
   const page = await loadMarkdownPage(`${SECTION}/${slug}`);
   if (!page) notFound();
 
-  // Location pages list popular catalogue products rather than a
-  // tag-filtered subset — locals are buying anything we sell.
-  const products = (
-    await getProducts({ first: 24, sortKey: 'BEST_SELLING' })
-  ).products;
+  const products = (await getProducts({ first: 24, sortKey: 'BEST_SELLING' })).products;
 
   const breadcrumbs = [
     { name: 'Home', href: '/' },
@@ -75,21 +95,13 @@ export default async function LocationPage({ params }: PageProps) {
   ];
 
   const ld: JsonLd[] = [
-    breadcrumbSchema(
-      breadcrumbs.map((b) => ({ name: b.name, path: b.href })),
-    ),
-    localBusinessSchema(slug, page.title),
+    breadcrumbSchema(breadcrumbs.map((b) => ({ name: b.name, path: b.href }))),
+    locationSchema(slug, page.title),
   ];
   if (page.faq.length > 0) ld.push(faqPageSchema(page.faq));
 
-  return (
-    <>
-      <JsonLdScript data={ld} />
-      <EditorialPage
-        page={page}
-        products={products}
-        breadcrumbs={breadcrumbs}
-      />
-    </>
-  );
+  return <>
+    <JsonLdScript data={ld} />
+    <EditorialPage page={page} products={products} breadcrumbs={breadcrumbs} />
+  </>;
 }
