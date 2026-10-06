@@ -23,7 +23,7 @@ const FAQS = [
   { q: 'Where is the Enviro Aqua showroom?', a: `${fullAddress()}. We are in the Amsterdam Circuit industrial area in Wyong on the NSW Central Coast.` },
   { q: 'What are your opening hours?', a: 'The Wyong showroom is open Monday to Thursday, 9am to 3pm AEST, and Friday, 9am to 1pm AEST. We are closed on weekends and public holidays.' },
   { q: 'Do you offer Click & Collect?', a: 'Yes. Click & Collect is free with no minimum order. Most orders placed during business hours are ready within about one hour, and we send confirmation when they are ready.' },
-  { q: 'Do you offer whole-house water filter installation on the Central Coast?', a: 'Yes. The standard whole-house installation package is $2,399 inc GST supplied and installed for eligible Central Coast properties, subject to standard installation conditions.' },
+  { q: 'Do you offer whole-house water filter installation on the Central Coast?', a: 'Yes. The standard whole-house installation package is $2,399 + GST supplied and installed for eligible Central Coast properties, subject to standard installation conditions.' },
 ];
 
 const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress())}`;
@@ -84,7 +84,7 @@ export default function ShowroomPage() {
         <section className="mt-16">
           <div className="bg-brand-blue-light border border-brand-blue/20 rounded-lg p-6 md:p-8">
             <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">Need a whole-house filter installed on the Central Coast?</h2>
-            <p className="mt-3 text-base text-black/80 max-w-2xl">Our standard whole-house package is <strong>$2,399 inc GST supplied and installed</strong> for eligible Central Coast properties, subject to standard installation conditions.</p>
+            <p className="mt-3 text-base text-black/80 max-w-2xl">Our standard whole-house package is <strong>$2,399 + GST supplied and installed</strong> for eligible Central Coast properties, subject to standard installation conditions.</p>
             <Link href={CENTRAL_COAST_INSTALL} className="mt-5 inline-flex items-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded">View Central Coast installation →</Link>
           </div>
         </section>
