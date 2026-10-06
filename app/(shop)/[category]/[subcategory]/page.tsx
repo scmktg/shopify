@@ -162,7 +162,7 @@ export default async function SubcategoryPage({
             <div className="max-w-2xl">
               <h2 className="text-2xl font-semibold text-black">Need your whole-house filter installed?</h2>
               <p className="mt-2 text-black/75">
-                Complete whole-house water filter installation is available across eligible Sydney and NSW Central Coast properties for <strong>$2,399 inc GST supplied and installed</strong>, subject to standard installation conditions.
+                Complete whole-house water filter installation is available across eligible Sydney and NSW Central Coast properties for <strong>$2,399 + GST supplied and installed</strong>, subject to standard installation conditions.
               </p>
             </div>
             <div className="mt-5 flex flex-wrap gap-3 md:mt-0 md:shrink-0">
