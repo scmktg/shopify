@@ -19,10 +19,11 @@ interface BoughtTogetherCard {
 }
 
 /**
- * "Frequently bought together" rail. Each card has image, title,
- * price, and an inline Add-to-cart button — this is the basket
- * builder, distinct from the "More in this category" rail (which
- * is link-only).
+ * Related-product rail. Each card has image, title, price, and an inline
+ * Add-to-cart button. Pressure-tank pages whose explicit related product is
+ * a replacement bladder use a more specific heading so the compatibility
+ * relationship is clear rather than presenting the bladder as a generic
+ * cross-sell.
  *
  * Legacy aliases are normalized before Shopify is queried so old content
  * references cannot make a valid canonical product disappear from the rail.
@@ -38,6 +39,9 @@ export async function BoughtTogether({ handles }: BoughtTogetherProps) {
 
   const canonicalHandles = Array.from(
     new Set(handles.map((handle) => canonicalProductHandle(handle))),
+  );
+  const replacementBladderOnly = canonicalHandles.every((handle) =>
+    handle.startsWith('bladder-for-'),
   );
 
   let cards: ReadonlyArray<BoughtTogetherCard> = [];
@@ -78,7 +82,9 @@ export async function BoughtTogether({ handles }: BoughtTogetherProps) {
   return (
     <section className="mt-12 border-t border-gray-100 pt-8">
       <h2 className="text-2xl font-semibold text-black tracking-tight">
-        Frequently bought together
+        {replacementBladderOnly
+          ? 'Replacement bladder available separately'
+          : 'Frequently bought together'}
       </h2>
       <ul
         role="list"
