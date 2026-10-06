@@ -160,11 +160,11 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-brand-blue">Professional installation</p>
               <h2 className="mt-2 text-2xl font-semibold text-black">Want this system professionally installed?</h2>
               <p className="mt-3 max-w-3xl text-black/75">
-                The standard package is <strong>$2,399 inc GST supplied and installed</strong> for eligible Sydney and NSW Central Coast properties, subject to standard installation conditions.
+                The standard package is <strong>$2,399 + GST supplied and installed</strong> for eligible Sydney and NSW Central Coast properties, subject to standard installation conditions.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation — $2,399</Link>
-                <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-brand-blue-light">Sydney installation — $2,399</Link>
+                <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation — $2,399 + GST</Link>
+                <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-brand-blue-light">Sydney installation — $2,399 + GST</Link>
               </div>
             </div>
           </div>
