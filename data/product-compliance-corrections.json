@@ -1,0 +1,40 @@
+{
+  "3-way-pull-down-spray-tap-kitchen-mixer-in-black-chrome-and-nickel": {
+    "shortDescription": "Three-way kitchen mixer tap combining hot, cold and filtered water in one fixture, with a dedicated filtered-water lever and pull-down spray function.",
+    "description": "A **three-way kitchen mixer tap** that combines hot, cold and filtered water in a single fixture. The dedicated filtered-water lever keeps filtered water separate from the standard hot/cold mixer, making it suitable for under-sink RO and filtered-water systems.\n\n## Key features\n\n- Solid brass construction\n- Ceramic disc cartridge\n- Dedicated filtered-water lever\n- Hot, cold and filtered water through one fixture\n- Pull-down spray function\n\n## Installation\n\nProfessional installation is recommended. Installation requirements can vary by application and local plumbing requirements.\n\n## Compliance\n\n**No WaterMark certification is claimed for this product.**",
+    "features": [
+      "Three-way hot, cold and filtered-water operation",
+      "Dedicated filtered-water lever",
+      "Pull-down spray function",
+      "Solid brass construction",
+      "Ceramic disc cartridge"
+    ],
+    "headlineSpecs": [
+      {"label":"Waterways","value":"Hot, cold and filtered water"},
+      {"label":"Construction","value":"Solid brass"},
+      {"label":"Cartridge","value":"Ceramic disc"},
+      {"label":"WaterMark","value":"Not claimed"}
+    ],
+    "fullSpecs": [
+      {"label":"Product type","value":"Three-way filtered-water kitchen mixer tap"},
+      {"label":"Waterways","value":"Hot, cold and filtered water"},
+      {"label":"Filtered-water control","value":"Dedicated lever"},
+      {"label":"Construction","value":"Solid brass"},
+      {"label":"Cartridge","value":"Ceramic disc"},
+      {"label":"Spray function","value":"Pull-down spray"},
+      {"label":"WaterMark certification","value":"Not claimed"}
+    ],
+    "compliance": {
+      "watermark": null,
+      "note": "No WaterMark certification is claimed for this product."
+    },
+    "faq": [
+      {"q":"Is this tap WaterMark certified?","a":"No WaterMark certification is claimed for this product."},
+      {"q":"Can it be used with an under-sink filtered-water or RO system?","a":"Yes. The tap has a dedicated filtered-water pathway and lever, separate from the hot and cold mixer."}
+    ],
+    "seo": {
+      "title": "3-Way Pull-Down Kitchen Mixer Tap | Hot, Cold & Filtered Water",
+      "description": "Three-way pull-down kitchen mixer tap with separate hot, cold and filtered-water operation, solid brass construction and ceramic disc cartridge."
+    }
+  }
+}
