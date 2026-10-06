@@ -21,11 +21,11 @@ const SYDNEY_PATH = '/locations/sydney-nsw/whole-house-water-filter-installation
 const FAQ_ITEMS = [
   {
     q: 'How much does whole-house water filter installation cost on the Central Coast?',
-    a: "Enviro Aqua's standard whole-house installation package is $2,399 inc GST, including the filtration system and professional installation, subject to standard installation conditions.",
+    a: "Enviro Aqua's standard whole-house installation package is $2,399 + GST, including the filtration system and professional installation, subject to standard installation conditions.",
   },
   {
     q: 'How much does whole-house water filter installation cost in Sydney?',
-    a: "Enviro Aqua's standard whole-house installation package is $2,399 inc GST, including the filtration system and professional installation, subject to service-area availability and standard installation conditions.",
+    a: "Enviro Aqua's standard whole-house installation package is $2,399 + GST, including the filtration system and professional installation, subject to service-area availability and standard installation conditions.",
   },
   {
     q: 'What whole-house filter is included?',
@@ -41,7 +41,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What counts as a standard installation?',
-    a: 'The $2,399 package applies where there is reasonable access to the incoming water main and typical plumbing requirements. Unusual access, extensive pipework, difficult excavation, non-standard plumbing or extra components may require a revised quote before work proceeds.',
+    a: 'The $2,399 + GST package applies where there is reasonable access to the incoming water main and typical plumbing requirements. Unusual access, extensive pipework, difficult excavation, non-standard plumbing or extra components may require a revised quote before work proceeds.',
   },
   {
     q: 'Can the standard package be used for rainwater or tank water?',
@@ -50,14 +50,14 @@ const FAQ_ITEMS = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Whole House Water Filter Installation NSW | $2,399 Supplied & Installed',
+  title: 'Whole House Water Filter Installation NSW | $2,399 + GST',
   description:
-    'Whole-house water filter supplied and professionally installed for $2,399 inc GST across eligible Central Coast and Sydney service areas. Standard installation conditions apply.',
+    'Whole-house water filter supplied and professionally installed for $2,399 excluding GST across eligible Central Coast and Sydney service areas. Standard installation conditions apply.',
   alternates: { canonical: PATH },
   openGraph: {
-    title: 'Whole House Water Filter Installation NSW | $2,399 Supplied & Installed',
+    title: 'Whole House Water Filter Installation NSW | $2,399 + GST',
     description:
-      'Complete whole-house filtration system plus professional installation for $2,399 inc GST across eligible Central Coast and Sydney service areas.',
+      'Complete whole-house filtration system plus professional installation for $2,399 excluding GST across eligible Central Coast and Sydney service areas.',
     url: absoluteUrl(PATH),
   },
 };
@@ -86,7 +86,7 @@ function serviceSchema(): JsonLd {
       url: absoluteUrl(PATH),
       price: PRICE.toFixed(2),
       priceCurrency: 'AUD',
-      description: 'Standard whole-house filtration system supply and installation package; conditions apply.',
+      description: 'Standard whole-house filtration system supply and installation package: $2,399 excluding GST; conditions apply.',
     },
   };
 }
@@ -112,12 +112,12 @@ export default function InstallPackagePage() {
             <Breadcrumbs items={breadcrumbs} />
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-brand-blue">NSW installation service</p>
             <h1 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-black">
-              Whole House Water Filter Installation — $2,399 Supplied &amp; Installed
+              Whole House Water Filter Installation — $2,399 + GST Supplied &amp; Installed
             </h1>
             <p className="mt-5 max-w-3xl text-lg text-black/70">
-              Get a complete whole-house water filtration system supplied and professionally installed for $2,399 inc GST. Available across eligible NSW Central Coast and Sydney service areas.
+              Get a complete whole-house water filtration system supplied and professionally installed for $2,399 + GST. Available across eligible NSW Central Coast and Sydney service areas.
             </p>
-            <p className="mt-3 text-sm text-black/60">Standard installation conditions apply.</p>
+            <p className="mt-3 text-sm text-black/60">Price excludes GST. Standard installation conditions apply.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#quote-form" className="inline-flex items-center justify-center rounded bg-brand-blue px-6 py-3 font-semibold text-white hover:bg-brand-blue-hover">Get Installed</a>
               <a href="#service-areas" className="inline-flex items-center justify-center rounded border border-gray-300 px-6 py-3 font-semibold text-black hover:bg-white">Check Service Area</a>
@@ -129,8 +129,8 @@ export default function InstallPackagePage() {
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12">
             <div className="rounded-lg border border-gray-200 p-6 md:p-8">
               <p className="text-sm uppercase tracking-[0.14em] text-black/50">Standard package</p>
-              <p className="mt-2 text-5xl font-bold text-black">$2,399 <span className="text-lg font-medium text-black/60">inc GST</span></p>
-              <p className="mt-3 text-black/70">System + professional installation included. We confirm service area and standard-install suitability before booking.</p>
+              <p className="mt-2 text-5xl font-bold text-black">$2,399 <span className="text-lg font-medium text-black/60">+ GST</span></p>
+              <p className="mt-3 text-black/70">System + professional installation included. Price excludes GST. We confirm service area and standard-install suitability before booking.</p>
             </div>
           </div>
         </section>
@@ -150,7 +150,7 @@ export default function InstallPackagePage() {
         <section className="border-b border-gray-200">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
             <h2 className="text-3xl font-semibold text-black">What is a standard installation?</h2>
-            <p className="mt-4 text-black/70">The $2,399 package applies to standard installations with reasonable access to the incoming water main and typical plumbing requirements. Unusual access, extensive pipework, difficult excavation, non-standard plumbing or additional components may require a revised quote before work proceeds.</p>
+            <p className="mt-4 text-black/70">The $2,399 + GST package applies to standard installations with reasonable access to the incoming water main and typical plumbing requirements. Unusual access, extensive pipework, difficult excavation, non-standard plumbing or additional components may require a revised quote before work proceeds.</p>
             <h2 className="mt-10 text-3xl font-semibold text-black">Where the system is installed</h2>
             <p className="mt-4 text-black/70">The system is typically installed on the incoming cold-water main, generally after the meter and before water is distributed through the property where the plumbing layout makes that suitable.</p>
             <h2 className="mt-10 text-3xl font-semibold text-black">What the system filters</h2>
