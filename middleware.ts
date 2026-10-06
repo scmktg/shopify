@@ -81,6 +81,10 @@ const LEGACY_PRODUCT_REDIRECTS = new Map<string, string>([
     '/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system-dup2',
     '/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
   ],
+  [
+    '/water-filters/uv-sterilisation/uv-water-filter-ultraviolet-sterilisation-2700lph-55w-220v-240v',
+    '/water-filters/uv-sterilisation/ultraviolet-water-sterilizer-stainless-steel-unit-55w-2700lph-phillip-lamp',
+  ],
 ]);
 
 // WooCommerce query parameters from the retired WordPress storefront.
