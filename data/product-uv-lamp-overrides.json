@@ -315,12 +315,7 @@
       "Compact under-sink installations subject to applicable requirements"
     ],
     "compliance": {
-      "watermark": {
-        "status": "unknown",
-        "licenceNumber": null,
-        "certifier": null,
-        "validUntil": null
-      },
+      "watermark": null,
       "wels": null,
       "note": "WaterMark certification and applicability have not been verified; confirm plumbing requirements for the intended installation."
     },
