@@ -29,6 +29,8 @@ import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
+const BRUSHED_GOLD_RO_TAP_HANDLE =
+  'premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold';
 const THREE_WAY_TAP_HANDLE =
   '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c';
 const SOLD_OUT_THREE_STAGE_UV_HANDLE =
@@ -153,6 +155,7 @@ export function ProductDetail({
           {!showFourStageAlternative && (
             <VariantPurchaseControls
               fallbackPrice={product.priceRange.minVariantPrice}
+              singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
             />
           )}
