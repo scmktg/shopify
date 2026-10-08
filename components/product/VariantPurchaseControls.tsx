@@ -17,12 +17,15 @@ interface VariantPurchaseControlsProps {
   fallbackPrice: Money;
   ctaLabel?: string;
   companion?: CompanionPurchaseItem | null;
+  /** Explicit finish for legacy single-variant listings without a Shopify Colour option. */
+  singleFinish?: string;
 }
 
 export function VariantPurchaseControls({
   fallbackPrice,
   ctaLabel,
   companion = null,
+  singleFinish,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -69,6 +72,16 @@ export function VariantPurchaseControls({
       </div>
 
       <ZipMessaging money={price} className="mt-2" />
+
+      {singleFinish && variants.length === 1 && optionNames.length === 0 && (
+        <fieldset className="mt-6" aria-label="Product finish">
+          <legend className="text-sm font-semibold text-black">Finish: <span className="font-normal text-black/70">{singleFinish}</span></legend>
+          <span className="mt-2 inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-black bg-white px-3 py-2 text-sm font-semibold text-black" aria-current="true">
+            <ColourSwatch value={singleFinish} selected />
+            {singleFinish}
+          </span>
+        </fieldset>
+      )}
 
       {variants.length > 1 && optionNames.length > 0 && (
         <div className="mt-6 space-y-4" aria-label="Product options">
