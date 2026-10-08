@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import { ShoppingCart, ArrowUpRight } from 'lucide-react';
+import { useCart } from '@/components/cart/CartProvider';
 import type { ProductCardData, ProductCardVariant } from '@/types/product';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
@@ -21,6 +23,8 @@ interface ColourChoice {
 
 export function ProductCard({ product }: ProductCardProps) {
   const baseHref = getProductUrl(product.handle);
+  const { addItem, buyNow, isMutating, isReady } = useCart();
+  const [pendingAction, setPendingAction] = useState<'cart' | 'buy' | null>(null);
 
   const colourChoices = useMemo<ReadonlyArray<ColourChoice>>(() => {
     const seen = new Set<string>();
@@ -47,6 +51,15 @@ export function ProductCard({ product }: ProductCardProps) {
     colourChoices[0] ??
     null;
   const selectedVariant = selectedChoice?.variant ?? null;
+  // Direct checkout only when a colour swatch fully specifies the variant.
+  const direct = product.variants.length === 1 || (
+    selectedVariant !== null &&
+    colourChoices.length === product.variants.length &&
+    product.variants.every((variant) => variant.selectedOptions.every(
+      (option) => isColourOptionName(option.name) || option.name.toLowerCase() === 'title',
+    ))
+  );
+  const purchaseVariant = direct ? (selectedVariant ?? product.variants[0]) : null;
   const image = selectedVariant?.image ?? product.featuredImage;
   const href = selectedVariant
     ? `${baseHref}?variant=${encodeURIComponent(selectedVariant.id)}`
@@ -54,6 +67,17 @@ export function ProductCard({ product }: ProductCardProps) {
   const imageAlt = selectedChoice
     ? `${product.title} - ${selectedChoice.value}`
     : product.title;
+
+  const purchase = async (action: 'cart' | 'buy') => {
+    if (!purchaseVariant?.availableForSale || !isReady || isMutating || pendingAction) return;
+    setPendingAction(action);
+    try {
+      if (action === 'cart') await addItem(purchaseVariant.id, 1);
+      else await buyNow(purchaseVariant.id, 1);
+    } finally {
+      setPendingAction(null);
+    }
+  };
 
   const trackSelection = () => {
     const price = Number.parseFloat(product.price.amount);
@@ -142,6 +166,31 @@ export function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
         )}
+
+        <div className="mt-4 grid grid-cols-2 gap-2">
+          {purchaseVariant?.availableForSale ? (
+            <>
+              <button type="button" onClick={() => void purchase('cart')}
+                disabled={!isReady || isMutating || pendingAction !== null}
+                className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg border border-black bg-white px-2 py-2.5 text-xs font-semibold text-black shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 sm:text-sm">
+                <ShoppingCart size={16} aria-hidden="true" />
+                {pendingAction === 'cart' ? 'Adding…' : 'Add to cart'}
+              </button>
+              <button type="button" onClick={() => void purchase('buy')}
+                disabled={!isReady || isMutating || pendingAction !== null}
+                className="inline-flex min-h-11 items-center justify-center gap-1 rounded-lg bg-black px-2 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 sm:text-sm">
+                {pendingAction === 'buy' ? 'Redirecting…' : 'Buy now'}
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </button>
+            </>
+          ) : (
+            <Link href={href} onClick={trackSelection}
+              className="col-span-2 inline-flex min-h-11 items-center justify-center rounded-lg border border-black bg-white px-3 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-black hover:text-white">
+              {purchaseVariant ? 'View availability' : 'Choose options'}
+              <ArrowUpRight size={16} className="ml-1.5" aria-hidden="true" />
+            </Link>
+          )}
+        </div>
       </div>
     </article>
   );
