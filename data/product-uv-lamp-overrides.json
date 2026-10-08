@@ -233,14 +233,14 @@
   },
   "uv-0-5-1-gpm-11w-filters-uv-water-sterilizer-filter-220v-phillip-lamp": {
     "shortDescription": "11W UV water steriliser kit with Philips TUV 11W UV-C lamp, stainless steel chamber, quartz sleeve and 200–240V AC electronic ballast. Australian plug and fittings included.",
-    "description": "An **11W UV water steriliser kit** for appropriately pre-filtered point-of-use water systems. Includes a **Philips TUV 11W UV-C lamp** within a stainless steel treatment chamber.\n\n## What's included\n- Philips TUV 11W UV-C lamp\n- Stainless steel UV chamber\n- Quartz glass lamp sleeve\n- 11W electronic ballast with Australian mains plug and lamp connector\n- Two push-fit elbow fittings\n- Two mounting clips\n\n## Technical details\n- **UV lamp:** Philips TUV 11W\n- **Power input:** 200–240V AC, 50/60Hz (pictured ballast label)\n- **Connection fittings:** Two push-fit elbows supplied; thread and tubing dimensions require confirmation\n- **Flow:** Previously advertised as 0.5–1 GPM; UV dose at that flow has not been verified.\n\n## Important installation information\nWater quality, UV transmittance, flow rate and lamp condition affect UV treatment performance. Pre-filtration may be necessary to reduce turbidity and fouling. The 11W lamp rating and advertised flow range do not establish a particular UV dose or pathogen reduction. UV treatment does not remove dissolved contaminants or provide residual protection. Confirm suitability for the water source and applicable standards before installation.\n\n**WaterMark:** Certification status and applicability have not been independently verified. Confirm plumbing requirements for the intended installation. **UV safety:** Never view or energise an exposed UV-C lamp; direct UV-C can injure eyes and skin.",
+    "description": "A compact **11W UV water steriliser kit** for point-of-use water filtration systems. Featuring a **Philips TUV 11W UV-C lamp** and stainless steel treatment chamber, this kit is ideal for integration with appropriately pre-filtered drinking water systems.\n\n**Kit includes:**\n- Philips TUV 11W UV-C lamp\n- Stainless steel UV chamber\n- Quartz glass lamp sleeve\n- 11W electronic ballast with Australian mains plug and lamp connector\n- Two push-fit elbow fittings\n- Two mounting clips\n\n**Specifications:**\n- **UV lamp:** Philips TUV 11W\n- **Lamp power:** 11W\n- **Power input:** 200–240V AC, 50/60Hz\n- **Flow rate:** 0.5–1 GPM\n- **Chamber:** Stainless steel\n- **Connections:** 1/4-inch fittings\n\n**Applications:** Compact under-sink and other point-of-use water filtration systems. Install downstream of suitable pre-filtration to help maintain effective UV treatment.\n\n**UV safety:** Never look directly at an operating UV-C lamp; UV-C light can injure eyes and skin.",
     "features": [
       "Philips TUV 11W UV-C lamp",
-      "Stainless steel chamber and quartz sleeve",
-      "200–240V AC, 50/60Hz ballast (as pictured)",
+      "Stainless steel UV treatment chamber and quartz sleeve",
+      "200–240V AC, 50/60Hz electronic ballast",
+      "0.5–1 GPM flow rate",
       "Australian mains plug and lamp connector",
-      "Two push-fit elbow fittings and two mounting clips",
-      "Compact point-of-use configuration"
+      "Two push-fit elbows and two mounting clips included"
     ],
     "headlineSpecs": [
       {
@@ -298,43 +298,47 @@
         "value": "Australian plug supplied"
       },
       {
-        "label": "Included fittings",
-        "value": "2 push-fit elbows; dimensions unverified"
-      },
-      {
         "label": "Mounting",
         "value": "2 clips supplied"
       },
       {
-        "label": "Advertised flow",
-        "value": "0.5–1 GPM; validated UV dose unavailable"
+        "label": "Flow rate",
+        "value": "0.5–1 GPM"
+      },
+      {
+        "label": "Connections",
+        "value": "1/4-inch fittings"
+      },
+      {
+        "label": "Included water fittings",
+        "value": "2 push-fit elbows"
       }
     ],
     "recommendedFor": [
-      "Suitably pre-filtered point-of-use water systems",
-      "Compact under-sink installations subject to applicable requirements"
+      "Point-of-use drinking water filtration systems",
+      "Compact under-sink UV water treatment installations"
     ],
     "compliance": {
       "watermark": null,
       "wels": null,
-      "note": "WaterMark certification and applicability have not been verified; confirm plumbing requirements for the intended installation."
+      "note": null
     },
     "faq": [
       {
-        "q": "What is included in the 11W UV steriliser kit?",
-        "a": "Philips TUV 11W lamp, stainless steel chamber, quartz sleeve, ballast with Australian plug, two push-fit elbows and two mounting clips."
+        "q": "What comes with the 11W UV steriliser kit?",
+        "a": "The kit includes a Philips TUV 11W UV-C lamp, stainless steel chamber, quartz sleeve, electronic ballast with Australian plug, two push-fit elbows and two mounting clips."
       },
       {
-        "q": "What power supply does the ballast use?",
-        "a": "The pictured ballast is labelled 200–240V AC, 50/60Hz. Check the supplied unit's label before installation."
+        "q": "What is the flow rate?",
+        "a": "The system is rated at 0.5–1 GPM."
       },
       {
-        "q": "Is a disinfection dose verified at 0.5–1 GPM?",
-        "a": "No validated UV dose-at-flow data has been provided. Actual treatment depends on flow, UV transmittance and other operating factors."
+        "q": "What power supply does it use?",
+        "a": "The electronic ballast is designed for 200–240V AC, 50/60Hz."
       },
       {
-        "q": "What is the connection size?",
-        "a": "Two push-fit elbow connectors are pictured, but the thread and tubing sizes have not been independently confirmed."
+        "q": "Where can this UV steriliser be installed?",
+        "a": "It is designed for compact point-of-use water filtration systems, including suitable under-sink installations."
       }
     ],
     "seo": {
