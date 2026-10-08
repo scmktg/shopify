@@ -137,7 +137,7 @@ Every product description has these sections, in this order, as HTML headings (h
 3. **Technical Specifications** (definition list or table)
 4. **What's Included** (bulleted list)
 5. **Installation Notes** (1–2 paragraphs, optional for non-installable products)
-6. **Compliance & Certification** (mandatory — even if just "This product is not subject to WaterMark certification")
+6. **WaterMark certification details** (only for products with independently verified, model-specific WaterMark certification; omit this section entirely for all other products)
 
 **Minimum 600 characters. No duplicate descriptions across products.**
 
