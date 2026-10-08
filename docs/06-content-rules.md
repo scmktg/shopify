@@ -27,10 +27,9 @@ In this exact order:
    - DIY vs licensed plumber required
    - Tools needed
    - Approximate install time
-6. **Compliance & Certification** (mandatory)
-   - WaterMark status (certified / not required / not certified)
-   - WELS rating where relevant
-   - If certified: licence number, link to certificate
+6. **WaterMark certification** (only when verified for this exact product/model)
+   - Include the model-specific certificate/licence number and a supporting link.
+   - For all other products, omit the certification section and every certification-status disclaimer entirely. Do not display 'not required', 'not certified', 'pending', or 'certification does not apply' in customer-facing copy.
 
 **Minimum 600 characters.**
 
@@ -129,6 +128,6 @@ Never appear in customer-facing copy:
 ## Required phrases (when relevant)
 
 - WaterMark-certified products: badge + "WaterMark Certified" text + licence number visible
-- Non-certified plumbing products: clear "Not WaterMark certified — for off-mains use only" warning
+- Products without verified model-specific WaterMark certification: do not show any certification wording or certification-status disclaimer
 - Shipping class: every product page renders a shipping block aligned to the current four-class model (`parcel`, `free`, `freight`, `pickup_only`). Shopify checkout is authoritative for final delivery eligibility and rates.
 - Wholesale pricing: "Wholesale price — same for everyone, no account needed"
