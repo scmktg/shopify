@@ -92,7 +92,7 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <article className="group">
+    <article className="group flex h-full flex-col">
       <Link
         href={href}
         onClick={trackSelection}
@@ -117,7 +117,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
 
-      <div className="mt-3">
+      <div className="mt-3 flex flex-1 flex-col">
         <Link
           href={href}
           onClick={trackSelection}
@@ -167,25 +167,25 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
 
-        <div className="mt-4 grid grid-cols-2 gap-2">
+        <div className="mt-auto grid grid-cols-1 gap-2 pt-4 xl:grid-cols-2">
           {purchaseVariant?.availableForSale ? (
             <>
               <button type="button" onClick={() => void purchase('cart')}
                 disabled={!isReady || isMutating || pendingAction !== null}
-                className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg border border-black bg-white px-2 py-2.5 text-xs font-semibold text-black shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 sm:text-sm">
+                className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-black bg-white px-2 py-2.5 text-xs font-semibold text-black shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 2xl:text-sm">
                 <ShoppingCart size={16} aria-hidden="true" />
                 {pendingAction === 'cart' ? 'Adding…' : 'Add to cart'}
               </button>
               <button type="button" onClick={() => void purchase('buy')}
                 disabled={!isReady || isMutating || pendingAction !== null}
-                className="inline-flex min-h-11 items-center justify-center gap-1 rounded-lg bg-black px-2 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 sm:text-sm">
+                className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1 whitespace-nowrap rounded-lg bg-black px-2 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 2xl:text-sm">
                 {pendingAction === 'buy' ? 'Redirecting…' : 'Buy now'}
                 <ArrowUpRight size={15} aria-hidden="true" />
               </button>
             </>
           ) : (
             <Link href={href} onClick={trackSelection}
-              className="col-span-2 inline-flex min-h-11 items-center justify-center rounded-lg border border-black bg-white px-3 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-black hover:text-white">
+              className="inline-flex min-h-11 min-w-0 items-center justify-center rounded-lg border border-black bg-white px-2 py-2.5 text-xs font-semibold text-black transition-colors hover:bg-black hover:text-white xl:col-span-2 2xl:text-sm">
               {purchaseVariant ? 'View availability' : 'Choose options'}
               <ArrowUpRight size={16} className="ml-1.5" aria-hidden="true" />
             </Link>
