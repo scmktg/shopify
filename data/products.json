@@ -18949,11 +18949,10 @@
       "three-stage",
       "big-blue",
       "20x45",
-      "triple-housing",
-      "alternative-sku"
+      "triple-housing"
     ],
-    "shortDescription": "Triple Big Blue 20\" × 4.95. Same triple-housing format, value-tier pricing.",
-    "description": "An alternative-SKU listing for the triple Big Blue 20\" × 4.\n\n \n\n## Build and Configuration\n\nTriple-housing 20\" × 4.5\" Big Blue 3-stage whole-house water filter system. The 3-stage configuration covers the standard whole-house treatment combinations (sediment + carbon + polish, configurable per cartridge selection). The Big Blue 20\" × 4.5\" format delivers full whole-house flow capacity at 1\" inlet/outlet connections.\n\n## When This SKU Fits\n\n- **Trade buyers** who want the triple Big Blue format at a lower price tier\n\n## What This System Targets\n\nThis multi-stage system combines **sediment filtration** with **activated carbon**. It is therefore suited to reducing suspended dirt, sand, silt and rust, while also improving chlorine, taste and odour and reducing some organic compounds.\n\n**It is not a true water softener and it is not a microbiological disinfection system.** Hardness minerals such as calcium and magnesium require ion-exchange softening or membrane treatment, while bacteria, viruses and parasites require an appropriately validated membrane or UV/disinfection stage.",
+    "shortDescription": "Triple Big Blue 20\" × 4.5\" three-stage whole-house water filter system with 1\" inlet and outlet connections.",
+    "description": "## Build and Configuration\n\nTriple-housing 20\" × 4.5\" Big Blue 3-stage whole-house water filter system. The 3-stage configuration covers the standard whole-house treatment combinations (sediment + carbon + polish, configurable per cartridge selection). The Big Blue 20\" × 4.5\" format delivers full whole-house flow capacity at 1\" inlet/outlet connections.\n\n## Applications\n\n- **Trade buyers** seeking a three-stage Big Blue whole-house filtration system\n\n## What This System Targets\n\nThis multi-stage system combines **sediment filtration** with **activated carbon**. It is therefore suited to reducing suspended dirt, sand, silt and rust, while also improving chlorine, taste and odour and reducing some organic compounds.\n\n**It is not a true water softener and it is not a microbiological disinfection system.** Hardness minerals such as calcium and magnesium require ion-exchange softening or membrane treatment, while bacteria, viruses and parasites require an appropriately validated membrane or UV/disinfection stage.",
     "features": [
       "Triple Big Blue 20\" × 4.5\" 3-stage whole-house water filter",
       "1\" inlet and outlet - Australian mains supply standard",
@@ -18972,10 +18971,6 @@
       {
         "label": "Inlet/outlet",
         "value": "1\""
-      },
-      {
-        "label": "Tier",
-        "value": "Alternative SKU"
       }
     ],
     "fullSpecs": [
@@ -19006,8 +19001,8 @@
     ],
     "recommendedFor": [
       "Whole-house installations not requiring WaterMark certification",
-      "Trade buyers wanting triple Big Blue format at lower price tier",
-      "Renovation budgets where the premium WaterMark SKU isn't justified",
+      "Trade buyers seeking a triple Big Blue filtration system",
+      "Projects with cartridge-based whole-house filtration requirements",
       "Owners explicitly informed by their plumber that non-WaterMark is acceptable"
     ],
     "compliance": {
@@ -19031,8 +19026,8 @@
       "moreInCategory": "auto"
     },
     "seo": {
-      "title": "Triple Big Blue 3-Stage Whole-House Filter (Alt SKU) - 20\" × 4.5\" | Enviro Aqua",
-      "description": "Triple Big Blue 20\" × 4.5\" 3-stage whole-house filter, alternative SKU at $1,199.95. Standard Big Blue format.",
+      "title": "Triple Big Blue 3-Stage Whole-House Filter - 20\" × 4.5\" | Enviro Aqua",
+      "description": "Triple Big Blue 20\" × 4.5\" three-stage whole-house water filter with 1\" inlet and outlet connections.",
       "ogImage": null
     }
   },
