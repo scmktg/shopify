@@ -17,6 +17,7 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    __eaAnalyticsConfigured?: boolean;
   }
 }
 
@@ -109,7 +110,7 @@ function emit(
       recent.set(dedupKey, now + dedupWindowMs);
       if (recent.size > 100) recent.clear();
     }
-    if (typeof window.gtag !== 'function') {
+    if (typeof window.gtag !== 'function' || !window.__eaAnalyticsConfigured) {
       pending.enqueue(name, params, now);
       logDiagnostic('queued pending tag initialization', name);
       return;
@@ -124,7 +125,7 @@ function emit(
 export function flushPendingAnalytics(): void {
   if (typeof window === 'undefined') return;
   if (!canTrack()) { pending.clear(); return; }
-  if (typeof window.gtag !== 'function') return;
+  if (typeof window.gtag !== 'function' || !window.__eaAnalyticsConfigured) return;
   for (const event of pending.drain()) {
     try { window.gtag('event', event.name, event.params); }
     catch { logDiagnostic('dispatch failed', event.name); }

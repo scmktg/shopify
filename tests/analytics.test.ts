@@ -96,6 +96,7 @@ const cart = {
 const storage = new Map<string, string>([['enviroaqua:analytics-consent','granted']]);
 const calls: unknown[][] = [];
 const browser = {
+  __eaAnalyticsConfigured: true,
   localStorage: {
     getItem: (key: string) => storage.get(key) ?? null,
     setItem: (key: string, value: string) => { storage.set(key, value); },
@@ -193,4 +194,13 @@ test('analytics transport errors never throw into commerce', () => {
   Object.assign(browser,{gtag:()=>{throw Error('blocked');}});
   assert.doesNotThrow(()=>trackSearch('transport-error'));
   Object.assign(browser,{gtag:original});
+});
+
+test('events are buffered until GA4 configuration is ready', () => {
+  browser.__eaAnalyticsConfigured = false;
+  trackSearch('config-pending-test');
+  assert.equal(events('search').length, 0);
+  browser.__eaAnalyticsConfigured = true;
+  flushPendingAnalytics();
+  assert.equal(events('search').length, 1);
 });

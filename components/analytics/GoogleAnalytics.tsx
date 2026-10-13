@@ -21,8 +21,16 @@ function PageViewTracker() {
       }
     };
     track();
+    const onReady = () => {
+      flushPendingAnalytics();
+      track();
+    };
     window.addEventListener('enviroaqua:analytics-consent-changed', track);
-    return () => window.removeEventListener('enviroaqua:analytics-consent-changed', track);
+    window.addEventListener('enviroaqua:analytics-ready', onReady);
+    return () => {
+      window.removeEventListener('enviroaqua:analytics-consent-changed', track);
+      window.removeEventListener('enviroaqua:analytics-ready', onReady);
+    };
   }, [pathname, query]);
 
   return null;
@@ -41,7 +49,8 @@ export function GoogleAnalytics() {
         {"gtag('js', new Date());" +
          "gtag('set', 'linker', { domains: ['www.enviroaqua.com.au','enviroaqua.com.au','checkout.enviroaqua.com.au'], accept_incoming: true });" +
          "gtag('config', " + JSON.stringify(GA4_ID) + ", { send_page_view: false, transport_type: 'beacon' });" +
-         (GOOGLE_ADS_ID ? "gtag('config', " + JSON.stringify(GOOGLE_ADS_ID) + ");" : "")}
+         (GOOGLE_ADS_ID ? "gtag('config', " + JSON.stringify(GOOGLE_ADS_ID) + ");" : "") +
+         "window.__eaAnalyticsConfigured = true; window.dispatchEvent(new Event('enviroaqua:analytics-ready'));"}
       </Script>
       <Suspense fallback={null}><PageViewTracker /></Suspense>
     </>

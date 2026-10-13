@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useVariantSelection } from '@/components/product/VariantSelectionProvider';
-import { trackViewItem } from '@/lib/analytics/client';
+import { getAnalyticsConsent, trackViewItem } from '@/lib/analytics/client';
 
 interface ProductViewTrackerProps {
   productId: string;
@@ -23,10 +23,12 @@ export function ProductViewTracker({
   const tracked = useRef<Set<string>>(new Set());
 
   useEffect(() => {
-    if (tracked.current.has(selectedVariant.id)) return;
-    tracked.current.add(selectedVariant.id);
-    const price = Number.parseFloat(selectedVariant.price.amount);
-    trackViewItem({
+    const track = () => {
+      if (tracked.current.has(selectedVariant.id) ||
+          getAnalyticsConsent() !== 'granted') return;
+      tracked.current.add(selectedVariant.id);
+      const price = Number.parseFloat(selectedVariant.price.amount);
+      trackViewItem({
       item_id: selectedVariant.id,
       item_name: itemName,
       price: Number.isFinite(price) ? price : 0,
@@ -38,6 +40,10 @@ export function ProductViewTracker({
       item_handle: productHandle,
       shopify_product_id: productId,
     }, selectedVariant.price.currencyCode);
+    };
+    track();
+    window.addEventListener('enviroaqua:analytics-consent-changed', track);
+    return () => window.removeEventListener('enviroaqua:analytics-consent-changed', track);
   }, [brand, category, itemName, productHandle, productId, selectedVariant]);
   return null;
 }

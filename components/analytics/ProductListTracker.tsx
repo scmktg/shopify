@@ -13,9 +13,14 @@ export function ProductListTracker({
   const pathname = usePathname();
   const signature = products.map((product) => product.id).join(',');
   useEffect(() => {
-    if (products.length) {
-      trackViewItemList(products, pathname, pathname === '/search' ? 'Search results' : 'Product list');
-    }
+    const track = () => {
+      if (products.length) {
+        trackViewItemList(products, pathname, pathname === '/search' ? 'Search results' : 'Product list');
+      }
+    };
+    track();
+    window.addEventListener('enviroaqua:analytics-consent-changed', track);
+    return () => window.removeEventListener('enviroaqua:analytics-consent-changed', track);
   }, [pathname, signature, products]);
   return null;
 }
