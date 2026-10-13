@@ -1,0 +1,22 @@
+name: SM-001 Analytics Checks
+on:
+  push:
+    branches:
+      - sm-001-measurement-implementation
+  workflow_dispatch:
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: TypeScript
+        run: npm run type-check
+      - name: Analytics tests
+        run: npm run test:analytics
