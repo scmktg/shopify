@@ -168,8 +168,8 @@ test('search event only uses meaningful text', () => {
 });
 test('promotions distinguish views and selections', () => {
   trackViewPromotion('/bubblers','Bubblers');
-  trackSelectPromotion('/bubblers','Bubblers');
   assert.equal(events('view_promotion').length,1);
+  trackSelectPromotion('/bubblers','Bubblers');
   assert.equal(events('select_promotion').length,1);
 });
 test('consent denial prevents GA4 ecommerce dispatch', () => {
