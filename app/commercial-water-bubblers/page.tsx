@@ -58,11 +58,11 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    shortName: 'Outdoor HDPE',
+    shortName: 'Rust-Free HDPE',
     modelId: 'YL-600P',
     modelName: 'Water Bubbler Grey',
-    tagline: 'Rust-free HDPE commercial bubbler for exposed outdoor locations, with a separate side tap.',
-    badge: 'Outdoor',
+    tagline: 'Rust-free HDPE commercial bubbler with a separate side tap for bottles, glasses and jugs.',
+    badge: 'Rust-free cabinet',
     highlights: ['20 L/hr', 'Approx. 8–12 °C', 'Rust-free HDPE', 'WaterMark 023484'],
   },
 ];
@@ -89,8 +89,8 @@ const FAQ_ITEMS = [
     a: 'The YL-600C Water Bubbler Square and YL-600P Water Bubbler Grey include a separate side tap for filling bottles, glasses or jugs. The YL-600R Water Bubbler Round is the simpler direct-drinking model.',
   },
   {
-    q: 'Which Enviro Aqua bubbler is best for an exposed outdoor location?',
-    a: 'The YL-600P Water Bubbler Grey uses a rust-free, UV-stable HDPE outer cabinet and is the range option intended for exposed outdoor commercial locations. The stainless models are better suited to indoor or sheltered positions.',
+    q: 'Which Enviro Aqua bubblers include a separate bottle-filling tap?',
+    a: 'The YL-600P Water Bubbler Grey and YL-600C Water Bubbler Square both include a separate side tap for filling bottles, glasses or jugs. The YL-600P features a rust-free HDPE outer cabinet, while the YL-600C features stainless steel.',
   },
   {
     q: 'Do commercial water bubblers need WaterMark certification in Australia?',
@@ -292,7 +292,7 @@ function ComparisonSection() {
     ['Cabinet', '304 stainless steel', 'SUS304 stainless steel', 'Rust-free HDPE'],
     ['Filtration', 'Integrated drinking-water cartridge', 'Sediment + activated carbon', 'PP sediment + activated carbon'],
     ['Bottle / glass fill side tap', 'No', 'Yes', 'Yes'],
-    ['Best location', 'Indoor / sheltered', 'Indoor / sheltered', 'Exposed outdoor / commercial'],
+    ['Cabinet format', 'Compact stainless', 'Square stainless', 'Rust-free HDPE'],
   ] as const;
 
   return (
@@ -379,10 +379,10 @@ function IdentityRow({ label, value }: { label: string; value: string }) {
 
 function ApplicationSection() {
   const links = [
-    ['Schools', '/use/commercial-and-cafe/schools/', 'Choose by indoor/outdoor position, bottle filling and peak break-time demand.'],
+    ['Schools', '/use/commercial-and-cafe/schools/', 'Choose by bottle filling, placement and peak break-time demand.'],
     ['Factories & warehouses', '/use/commercial-and-cafe/factories-and-warehouses/', 'Plan around shift peaks, work zones, heat, exposure and bottle filling.'],
     ['Offices', '/use/commercial-and-cafe/offices/', 'Compare compact direct-drinking and bottle-fill options for shared workplaces.'],
-    ['Gyms & fitness centres', '/use/commercial-and-cafe/gyms-and-fitness/', 'Plan for class peaks, reusable bottles and indoor vs outdoor training areas.'],
+    ['Gyms & fitness centres', '/use/commercial-and-cafe/gyms-and-fitness/', 'Plan for class peaks, reusable bottles and convenient placement in fitness facilities.'],
   ] as const;
 
   return (
@@ -417,7 +417,7 @@ function FaqSection() {
             </h2>
             <p className="mt-3 text-black/70">
               Verified answers on cooling performance, WaterMark identities, bottle filling,
-              outdoor selection and installation.
+              model selection and installation.
             </p>
           </div>
           <FaqAccordion items={FAQ_ITEMS} />
