@@ -18949,15 +18949,17 @@
       "three-stage",
       "big-blue",
       "20x45",
-      "triple-housing"
+      "triple-housing",
+      "watermark"
     ],
-    "shortDescription": "Triple Big Blue 20\" × 4.5\" three-stage whole-house water filter system with 1\" inlet and outlet connections.",
-    "description": "## Build and Configuration\n\nTriple-housing 20\" × 4.5\" Big Blue 3-stage whole-house water filter system. The 3-stage configuration covers the standard whole-house treatment combinations (sediment + carbon + polish, configurable per cartridge selection). The Big Blue 20\" × 4.5\" format delivers full whole-house flow capacity at 1\" inlet/outlet connections.\n\n## Applications\n\n- **Trade buyers** seeking a three-stage Big Blue whole-house filtration system\n\n## What This System Targets\n\nThis multi-stage system combines **sediment filtration** with **activated carbon**. It is therefore suited to reducing suspended dirt, sand, silt and rust, while also improving chlorine, taste and odour and reducing some organic compounds.\n\n**It is not a true water softener and it is not a microbiological disinfection system.** Hardness minerals such as calcium and magnesium require ion-exchange softening or membrane treatment, while bacteria, viruses and parasites require an appropriately validated membrane or UV/disinfection stage.",
+    "shortDescription": "Triple Big Blue 20\" × 4.5\" three-stage whole-house water filter system with 1\" inlet and outlet connections. WaterMark certified.",
+    "description": "## Build and Configuration\n\nTriple-housing 20\" × 4.5\" Big Blue 3-stage whole-house water filter system. The 3-stage configuration covers the standard whole-house treatment combinations (sediment + carbon + polish, configurable per cartridge selection). The Big Blue 20\" × 4.5\" format delivers full whole-house flow capacity at 1\" inlet/outlet connections.\n\n## WaterMark Certification\n\nThis whole-house water filter system is **WaterMark certified** for the Australian market. WaterMark certification provides assurance that the certified product meets the applicable requirements of the WaterMark Certification Scheme. Have your licensed plumber confirm the installation requirements for your site.\n\n## Applications\n\n- **Trade buyers** seeking a three-stage Big Blue whole-house filtration system\n\n## What This System Targets\n\nThis multi-stage system combines **sediment filtration** with **activated carbon**. It is therefore suited to reducing suspended dirt, sand, silt and rust, while also improving chlorine, taste and odour and reducing some organic compounds.\n\n**It is not a true water softener and it is not a microbiological disinfection system.** Hardness minerals such as calcium and magnesium require ion-exchange softening or membrane treatment, while bacteria, viruses and parasites require an appropriately validated membrane or UV/disinfection stage.",
     "features": [
       "Triple Big Blue 20\" × 4.5\" 3-stage whole-house water filter",
       "1\" inlet and outlet - Australian mains supply standard",
       "3-stage configuration with cartridge selection per stage",
-      "Standard Big Blue cartridges - widely-stocked replacements"
+      "Standard Big Blue cartridges - widely-stocked replacements",
+      "WaterMark certified"
     ],
     "headlineSpecs": [
       {
@@ -18971,6 +18973,10 @@
       {
         "label": "Inlet/outlet",
         "value": "1\""
+      },
+      {
+        "label": "WaterMark",
+        "value": "Certified"
       }
     ],
     "fullSpecs": [
@@ -18997,23 +19003,26 @@
       {
         "label": "Cartridge replacement interval",
         "value": "6-12 months"
+      },
+      {
+        "label": "WaterMark certification",
+        "value": "Certified"
       }
     ],
     "recommendedFor": [
-      "Whole-house installations not requiring WaterMark certification",
+      "Whole-house filtration installations requiring a WaterMark certified product",
       "Trade buyers seeking a triple Big Blue filtration system",
-      "Projects with cartridge-based whole-house filtration requirements",
-      "Owners explicitly informed by their plumber that non-WaterMark is acceptable"
+      "Projects with cartridge-based whole-house filtration requirements"
     ],
     "compliance": {
       "watermark": {
-        "status": "not_required",
+        "status": "certified",
         "licenceNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": null
+      "note": "WaterMark certified. Certificate or licence number not supplied; verify the exact listing in the ABCB WaterMark Product Database."
     },
     "ctas": {
       "primary": "Add to cart",
@@ -19027,7 +19036,7 @@
     },
     "seo": {
       "title": "Triple Big Blue 3-Stage Whole-House Filter - 20\" × 4.5\" | Enviro Aqua",
-      "description": "Triple Big Blue 20\" × 4.5\" three-stage whole-house water filter with 1\" inlet and outlet connections.",
+      "description": "Triple Big Blue 20\" × 4.5\" three-stage whole-house water filter with 1\" inlet and outlet connections. WaterMark certified.",
       "ogImage": null
     }
   },
