@@ -1,95 +1,43 @@
-# Analytics & Conversion Tracking
+# Enviro Aqua — SM-001 measurement activation
 
-## Purpose
+## Implemented in Next.js
 
-Enviro Aqua is a headless Next.js storefront with Shopify checkout. Tracking therefore spans two surfaces:
+GA4 events are emitted for initial page views, client-side navigation, query changes, product lists, product selections, selected-variant product views, successful cart additions/removals and quantity deltas, cart drawer/page views, Buy Now and ordinary checkout initiation, submitted searches and desktop promotional banner impressions/clicks. Events use the **Shopify variant GID** as item_id, with optional SKU, handle and product GID as supplemental fields. Merchant Center offer IDs must be mapped separately where necessary. Shopify money fields supply values and currency.
 
-1. **Next.js storefront** — page/product/cart behaviour.
-2. **Shopify checkout** — payment, order completion and the authoritative purchase event.
+The event dispatcher uses an early Google dataLayer bootstrap and a bounded ephemeral fallback queue (40 events, 30s TTL), and suppresses rapid duplicate page/list/cart/checkout events. There is no guarantee of delivery under network/ad blockers.
 
-Never fire a `purchase` event from the Next.js storefront. A cart or checkout redirect is not a completed order.
+**Consent defaults denied** for analytics_storage, ad_storage, ad_user_data, ad_personalization. A banner offers accept/reject optional Google analytics and advertising tracking, and the footer lets visitors change their choice. No optional ecommerce analytics event is sent without a locally stored affirmative choice. Verify legal language, regional policy and Shopify checkout privacy settings before claiming compliance. A choice on Next.js does **not** automatically set Shopify Checkout consent.
 
-## Storefront implementation
+### Production settings
 
-The Next.js app loads Google Analytics through:
+- NEXT_PUBLIC_GA4_MEASUREMENT_ID=G-BPEY3T2B9Q (code default)
+- NEXT_PUBLIC_GOOGLE_ADS_ID=AW-... (optional; only the actual existing tag ID)
+- NEXT_PUBLIC_ANALYTICS_DEBUG=true (optional **development-only** diagnostics; off by default)
 
-- `components/analytics/GoogleAnalytics.tsx`
-- `lib/analytics/client.ts`
+No private credentials may be placed in NEXT_PUBLIC values.
 
-Production environment variables:
+## Shopify Checkout purchase ownership — EXTERNAL ACTIVATION REQUIRED
 
-```
-NEXT_PUBLIC_GA4_MEASUREMENT_ID=G-XXXXXXXXXX
-NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXXX
-```
+The Next.js storefront cannot confirm a completed payment. **No purchase or refund events are emitted by this code**, and no new Google Ads purchase conversion has been created.
 
-The Google Ads ID is optional until the account has a valid ecommerce conversion setup.
+1. **Shopify Admin → Sales channels → Google & YouTube:** verify the currently active Google Ads purchase integration and whether it sends GA4 purchases. Preserve the existing Google Shopping App Purchase source unless order-level reconciliation demonstrates a defect.
+2. **Shopify Admin → Settings → Customer events:** enumerate installed app and custom pixels. Identify which emits checkout_started, checkout_shipping_info_submitted, payment_info_submitted and checkout_completed. These events may vary by payment flow.
+3. If no existing checkout integration sends a GA4 purchase, configure a **single supported Shopify checkout-side app/Web Pixel** subscribing to checkout_completed. Map the actual Shopify order ID to GA4 transaction_id, actual currency, purchased line items and discounts. GA4 purchase value is the sum of item prices times quantities **excluding separate shipping and tax**; provide shipping and tax fields separately. Repeated reporting must reuse the exact same transaction_id. Validate this pixel before activation to avoid overlapping purchase events.
+4. **Google Ads → Goals → Conversions:** inspect primary/secondary purchase actions, account-default/campaign goals, value and count settings, transaction ID diagnostics and Enhanced Conversions. Do not add another primary Google Ads purchase signal without a controlled decision.
+5. **GA4 → Admin → Data streams** and DebugView: verify G-BPEY3T2B9Q, cross-domain measurement, unwanted referrals, duplicate automatic page views and storefront-to-checkout attribution.
+6. **Shopify Admin → Settings → Customer privacy:** reconcile the consent configuration with the new Next.js consent interface. The headless banner does not automatically configure Shopify Customer Privacy API state.
+7. Refund reporting is **not active**. A tested pure refund payload helper exists, but the required secure Shopify webhook installation, persistent idempotency store, GA4 Measurement Protocol identity and authorised configuration cannot safely be inferred or deployed through GitHub alone. Do not send synthetic refund/purchase events.
 
-### Events currently emitted
+Shopify custom pixels execute in a sandbox, so do not assume headless storefront window.gtag or cookies are available inside checkout. Prefer verified app pixels over an additional unsupported custom Google implementation.
 
-- `page_view`
-- `select_item`
-- `view_item`
-- `add_to_cart`
-- `remove_from_cart`
-- `view_cart`
-- `begin_checkout`
+References:
+- https://help.shopify.com/en/manual/promoting-marketing/pixels/custom-pixels
+- https://help.shopify.com/en/manual/promoting-marketing/pixels/custom-pixels/gtm-tutorial
+- https://shopify.dev/docs/api/web-pixels-api/standard-events/checkout_completed
+- https://developers.google.com/analytics/devguides/collection/ga4/ecommerce
 
-Commerce events use live Shopify price, currency, SKU/handle and variant data where available.
+## Verification
 
-## Cross-domain attribution
+Run npm run type-check; npm run test:analytics; npm run build. The build preflight depends on live Shopify; do not disable existing validators. Afterwards validate production GA4 DebugView and Google Tag Assistant on desktop/mobile, both consent states, all checkout paths, at least one authorised test order, and Google Ads ↔ Shopify transaction and revenue reconciliation.
 
-The storefront tag configures linker domains for:
-
-- `www.enviroaqua.com.au`
-- `enviroaqua.com.au`
-- `checkout.enviroaqua.com.au`
-
-This is intended to preserve Google attribution when the customer leaves the Next.js storefront for Shopify checkout.
-
-## Purchase tracking
-
-The authoritative `purchase` event must be generated from Shopify after checkout completion.
-
-Use **Shopify Admin → Settings → Customer events** and configure a supported Google/GA4 integration or a Custom Pixel / GTM pixel that subscribes to Shopify's `checkout_completed` standard event.
-
-At minimum, map:
-
-- Shopify order ID → GA4 `transaction_id`
-- checkout currency → `currency`
-- checkout total → `value`
-- tax → `tax`
-- shipping → `shipping`
-- checkout line items → `items`
-
-Shopify's `checkout_completed` event is the only source in this architecture that should emit the browser-side purchase event.
-
-### Deduplication rule
-
-There must be exactly one GA4 purchase event per Shopify order ID.
-
-If the Google & YouTube app, a custom pixel, GTM, or another analytics app already emits purchases, do not add a second purchase pixel.
-
-## Google Ads
-
-A Google Ads Purchase conversion should use the same confirmed Shopify order event. Enhanced conversions can be enabled on that conversion action where appropriate.
-
-Do not optimize Smart Bidding toward add-to-cart or checkout events as if they were purchases.
-
-## Validation checklist
-
-After production variables and checkout purchase tracking are configured:
-
-1. Open GA4 DebugView.
-2. Visit a product page — confirm `page_view` and `view_item`.
-3. Click a product from a grid — confirm `select_item`.
-4. Add it to cart — confirm one `add_to_cart`.
-5. Open cart — confirm `view_cart`.
-6. Start checkout — confirm one `begin_checkout`.
-7. Complete a test order — confirm one `purchase`, with the Shopify order ID as `transaction_id`.
-8. Confirm the session/source is preserved from the storefront through checkout.
-9. Confirm Google Ads records the test purchase only once.
-
-## Historical Shopify analytics caveat
-
-Shopify's Online Store session funnel is not a reliable measure of the full headless storefront journey. Use GA4 as the primary behavioural funnel and Shopify as the source of truth for orders/revenue.
+Never create live orders without prior approval, and never alter Google Ads budgets, bidding or conversion-goal settings in the storefront release.

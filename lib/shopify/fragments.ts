@@ -26,6 +26,9 @@ export const PRODUCT_CARD_FRAGMENT = /* GraphQL */ `
       edges {
         node {
           id
+          sku
+          title
+          price { amount currencyCode }
           availableForSale
           image {
             url

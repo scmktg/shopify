@@ -9,6 +9,7 @@ import { CartProvider } from '@/components/cart/CartProvider';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { ConsentBanner } from '@/components/analytics/ConsentBanner';
 import {
   localBusinessSchema,
   organisationSchema,
@@ -58,7 +59,16 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               src="https://static.zip.co/lib/js/zm-widget-js/dist/zip-widget.min.js"
               strategy="beforeInteractive"
             />
+            <Script id="enviroaqua-consent-bootstrap" strategy="beforeInteractive">
+              {"window.dataLayer = window.dataLayer || [];" +
+               "window.gtag = function(){ window.dataLayer.push(arguments); };" +
+               "gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});" +
+               "try {if(localStorage.getItem('enviroaqua:analytics-consent')==='granted'){" +
+               "gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});" +
+               "}}catch(e){}"}
+            </Script>
             <GoogleAnalytics />
+            <ConsentBanner />
             <JsonLdScript
               data={[
                 organisationSchema(),

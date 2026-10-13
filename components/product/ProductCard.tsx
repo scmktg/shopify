@@ -10,7 +10,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
 import { PriceDisplay } from './PriceDisplay';
 import { ColourSwatch } from './ColourSwatch';
-import { trackSelectItem } from '@/lib/analytics/client';
+import { cardToAnalyticsItem, trackSelectItem } from '@/lib/analytics/client';
 
 interface ProductCardProps {
   product: ProductCardData;
@@ -80,15 +80,7 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   const trackSelection = () => {
-    const price = Number.parseFloat(product.price.amount);
-    trackSelectItem({
-      item_id: product.handle,
-      item_name: product.title,
-      price: Number.isFinite(price) ? price : 0,
-      quantity: 1,
-      item_category: product.productType,
-      item_brand: 'Enviro Aqua',
-    });
+    trackSelectItem(cardToAnalyticsItem(product, selectedVariant?.id));
   };
 
   return (

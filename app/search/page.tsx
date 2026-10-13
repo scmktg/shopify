@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { searchProducts } from '@/lib/shopify/queries/searchProducts';
 import { ProductGrid } from '@/components/product/ProductGrid';
+import { SearchTracker } from '@/components/analytics/SearchTracker';
 
 interface SearchPageProps {
   searchParams: Promise<{ q?: string }>;
@@ -18,6 +19,8 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   const results = trimmed.length >= 2 ? await searchProducts(trimmed, 24) : [];
 
   return (
+    <>
+      <SearchTracker query={trimmed} />
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-12">
       <h1 className="text-3xl md:text-4xl font-semibold text-black">
         {trimmed ? `Results for "${trimmed}"` : 'Search'}
@@ -34,5 +37,6 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         </div>
       )}
     </section>
+    </>
   );
 }

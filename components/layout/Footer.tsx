@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
 import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
 import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
+import { CookiePreferencesButton } from '@/components/analytics/ConsentBanner';
 
 interface FooterLink {
   label: string;
@@ -141,6 +142,7 @@ export function Footer() {
             <Link href="/privacy/" className="hover:underline underline-offset-4">
               Privacy
             </Link>
+            <CookiePreferencesButton />
             <Link href="/terms/" className="hover:underline underline-offset-4">
               Terms
             </Link>

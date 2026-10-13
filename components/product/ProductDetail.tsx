@@ -94,10 +94,9 @@ export function ProductDetail({
       initialVariantId={initialVariantId}
     >
       <ProductViewTracker
-        itemId={product.handle}
+        productId={product.id}
+        productHandle={product.handle}
         itemName={product.title}
-        price={Number.parseFloat(product.priceRange.minVariantPrice.amount)}
-        currency={product.priceRange.minVariantPrice.currencyCode}
         category={subcategoryLabel}
         brand={product.vendor || 'Enviro Aqua'}
       />

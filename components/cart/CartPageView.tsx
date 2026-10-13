@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { trackBeginCheckout, trackViewCart } from '@/lib/analytics/client';
 import { PriceDisplay } from '@/components/product/PriceDisplay';
 import { ZipMessaging } from '@/components/payments/ZipMessaging';
 import { useCart } from './CartProvider';
@@ -8,6 +10,12 @@ import { CartLineRow } from './CartLineRow';
 
 export function CartPageView() {
   const { cart, isReady, error } = useCart();
+  const viewedCart = useRef<string | null>(null);
+  useEffect(() => {
+    if (!cart || cart.lines.length === 0 || viewedCart.current === cart.id) return;
+    viewedCart.current = cart.id;
+    trackViewCart(cart);
+  }, [cart]);
 
   if (!isReady) {
     return (
@@ -68,6 +76,7 @@ export function CartPageView() {
           )}
           <a
             href={cart.checkoutUrl}
+            onClick={() => trackBeginCheckout(cart)}
             className="mt-5 block w-full text-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors"
           >
             Checkout

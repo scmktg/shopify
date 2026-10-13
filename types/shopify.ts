@@ -67,6 +67,9 @@ export interface ShopifyProductCardRaw {
   priceRange: { minVariantPrice: Money };
   variants: ShopifyConnection<{
     id: string;
+    sku: string | null;
+    title: string;
+    price: Money;
     availableForSale: boolean;
     image: ProductImage | null;
     selectedOptions: ReadonlyArray<SelectedOption>;

@@ -1,42 +1,44 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useVariantSelection } from '@/components/product/VariantSelectionProvider';
 import { trackViewItem } from '@/lib/analytics/client';
 
 interface ProductViewTrackerProps {
-  itemId: string;
+  productId: string;
+  productHandle: string;
   itemName: string;
-  price: number;
-  currency: string;
   category?: string;
   brand?: string;
 }
 
 export function ProductViewTracker({
-  itemId,
+  productId,
+  productHandle,
   itemName,
-  price,
-  currency,
   category,
   brand = 'Enviro Aqua',
 }: ProductViewTrackerProps) {
-  const tracked = useRef(false);
+  const { selectedVariant } = useVariantSelection();
+  const tracked = useRef<Set<string>>(new Set());
 
   useEffect(() => {
-    if (tracked.current) return;
-    tracked.current = true;
-    trackViewItem(
-      {
-        item_id: itemId,
-        item_name: itemName,
-        price,
-        quantity: 1,
-        item_category: category,
-        item_brand: brand,
-      },
-      currency,
-    );
-  }, [brand, category, currency, itemId, itemName, price]);
-
+    if (tracked.current.has(selectedVariant.id)) return;
+    tracked.current.add(selectedVariant.id);
+    const price = Number.parseFloat(selectedVariant.price.amount);
+    trackViewItem({
+      item_id: selectedVariant.id,
+      item_name: itemName,
+      price: Number.isFinite(price) ? price : 0,
+      quantity: 1,
+      item_category: category,
+      item_brand: brand,
+      item_variant: selectedVariant.title,
+      ...(selectedVariant.sku ? { item_sku: selectedVariant.sku } : {}),
+      item_handle: productHandle,
+      shopify_product_id: productId,
+    }, selectedVariant.price.currencyCode);
+  }, [brand, category, itemName, productHandle, productId, selectedVariant]);
   return null;
 }
+

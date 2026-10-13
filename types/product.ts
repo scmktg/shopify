@@ -115,6 +115,9 @@ export interface Product {
  */
 export interface ProductCardVariant {
   id: string;
+  sku: string | null;
+  title: string;
+  price: Money;
   availableForSale: boolean;
   image: ProductImage | null;
   selectedOptions: ReadonlyArray<SelectedOption>;

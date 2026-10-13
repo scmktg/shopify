@@ -1,5 +1,6 @@
 import type { ProductCardData } from '@/types/product';
 import { ProductCard } from './ProductCard';
+import { ProductListTracker } from '@/components/analytics/ProductListTracker';
 
 interface ProductGridProps {
   products: ReadonlyArray<ProductCardData>;
@@ -15,6 +16,8 @@ export function ProductGrid({ products }: ProductGridProps) {
   }
 
   return (
+    <>
+    <ProductListTracker products={products} />
     <ul
       role="list"
       className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
@@ -25,5 +28,6 @@ export function ProductGrid({ products }: ProductGridProps) {
         </li>
       ))}
     </ul>
+    </>
   );
 }

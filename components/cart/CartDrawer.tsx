@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { X } from 'lucide-react';
 import clsx from 'clsx';
@@ -8,14 +8,17 @@ import { PriceDisplay } from '@/components/product/PriceDisplay';
 import { ZipMessaging } from '@/components/payments/ZipMessaging';
 import { useCart } from './CartProvider';
 import { CartLineRow } from './CartLineRow';
-import { trackViewCart } from '@/lib/analytics/client';
+import { trackBeginCheckout, trackViewCart } from '@/lib/analytics/client';
 
 export function CartDrawer() {
   const { cart, isOpen, closeDrawer, error } = useCart();
+  const wasOpen = useRef(false);
 
   useEffect(() => {
-    if (!isOpen || !cart || cart.lines.length === 0) return;
-    trackViewCart(cart);
+    if (isOpen && !wasOpen.current && cart && cart.lines.length > 0) {
+      trackViewCart(cart);
+    }
+    wasOpen.current = isOpen;
   }, [isOpen, cart]);
 
   useEffect(() => {
@@ -115,6 +118,7 @@ export function CartDrawer() {
               </p>
               <a
                 href={cart.checkoutUrl}
+                onClick={() => trackBeginCheckout(cart)}
                 className="block w-full text-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors"
               >
                 Checkout

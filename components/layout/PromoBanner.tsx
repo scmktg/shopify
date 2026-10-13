@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { trackViewPromotion, trackSelectPromotion } from '@/lib/analytics/client';
 import Link from 'next/link';
 import {
   PROMO_ROTATING_ITEMS,
@@ -49,6 +50,13 @@ export function PromoBanner() {
     }, PROMO_ROTATION_MS);
     return () => window.clearInterval(id);
   }, [paused]);
+
+  useEffect(() => {
+    const item = PROMO_ROTATING_ITEMS[index];
+    if (item && !paused && document.visibilityState === 'visible' && window.matchMedia('(min-width: 640px)').matches) {
+      trackViewPromotion(item.href, item.text);
+    }
+  }, [index, paused]);
 
   return (
     <div className="bg-black text-white text-[12px] sm:text-[13px]">
@@ -99,6 +107,7 @@ export function PromoBanner() {
                 >
                   <Link
                     href={item.href}
+                    onClick={() => trackSelectPromotion(item.href, item.text)}
                     tabIndex={active ? 0 : -1}
                     className="text-white/80 hover:text-white hover:underline underline-offset-4 truncate max-w-full transition-colors"
                   >
