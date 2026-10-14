@@ -91,6 +91,7 @@ const cart = {
   subtotalAmount: { amount: '1999.90', currencyCode: 'AUD' },
   totalAmount: { amount: '1999.90', currencyCode: 'AUD' },
   checkoutUrl: 'https://checkout.enviroaqua.com.au/checkouts/test',
+  attributes: [],
   lines: [line],
 };
 const storage = new Map<string, string>([['enviroaqua:analytics-consent','granted']]);
