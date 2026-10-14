@@ -27,5 +27,6 @@ export interface Cart {
   subtotalAmount: Money;
   totalAmount: Money;
   checkoutUrl: string;
+  attributes: ReadonlyArray<{ key: string; value: string }>;
   lines: ReadonlyArray<CartLine>;
 }
