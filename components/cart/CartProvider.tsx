@@ -219,7 +219,10 @@ export function CartProvider({ children }: CartProviderProps) {
         for (const item of items) {
           trackAddToCart(updated, item.variantId, item.quantity);
         }
-        await syncAttribution(updated.id);
+        await Promise.race([
+          syncAttribution(updated.id),
+          new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
+        ]);
         trackBeginCheckout(updated);
         if (typeof window !== 'undefined') {
           window.location.assign(updated.checkoutUrl);
