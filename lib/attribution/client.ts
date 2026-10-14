@@ -5,7 +5,6 @@ import { getAnalyticsConsent } from '@/lib/analytics/client';
 const KEY = 'enviroaqua:acquisition:v1';
 const RETENTION_MS = 30 * 24 * 60 * 60 * 1000;
 const OWN_HOSTS = new Set(['enviroaqua.com.au', 'www.enviroaqua.com.au', 'checkout.enviroaqua.com.au']);
-const UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'] as const;
 
 export interface AcquisitionTouch {
   source: string;
