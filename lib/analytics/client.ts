@@ -36,7 +36,10 @@ export function getAnalyticsConsent(): 'granted' | 'denied' | null {
   if (typeof window === 'undefined') return null;
   try {
     const stored = window.localStorage.getItem(CONSENT_KEY);
-    return stored === 'granted' || stored === 'denied' ? stored : null;
+    if (stored === 'granted' || stored === 'denied') return stored;
+    // Australia has an unobtrusive default; non-AU or unknown locations retain opt-in.
+    return typeof document !== 'undefined' &&
+      document.documentElement?.dataset?.eaRegion === 'au' ? 'granted' : null;
   } catch { return null; }
 }
 
