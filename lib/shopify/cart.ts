@@ -12,6 +12,7 @@ const CART_FRAGMENT = /* GraphQL */ `
     id
     totalQuantity
     checkoutUrl
+    attributes { key value }
     cost {
       subtotalAmount {
         amount
@@ -89,6 +90,16 @@ const CART_CREATE_MUTATION = /* GraphQL */ `
   }
 `;
 
+const CART_ATTRIBUTES_UPDATE_MUTATION = /* GraphQL */ `
+  ${CART_FRAGMENT}
+  mutation CartAttributesUpdate($cartId: ID!, $attributes: [AttributeInput!]!) {
+    cartAttributesUpdate(cartId: $cartId, attributes: $attributes) {
+      cart { ...CartFields }
+      userErrors { field message }
+    }
+  }
+`;
+
 const CART_LINES_ADD_MUTATION = /* GraphQL */ `
   ${CART_FRAGMENT}
   mutation CartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
@@ -157,6 +168,7 @@ interface RawCart {
   id: string;
   totalQuantity: number;
   checkoutUrl: string;
+  attributes: ReadonlyArray<{ key: string; value: string }>;
   cost: {
     subtotalAmount: Money;
     totalAmount: Money;
@@ -217,6 +229,7 @@ function transformCart(raw: RawCart): Cart {
     subtotalAmount: raw.cost.subtotalAmount,
     totalAmount: raw.cost.totalAmount,
     checkoutUrl: rewriteCheckoutHost(raw.checkoutUrl),
+    attributes: raw.attributes ?? [],
     lines: raw.lines.edges.map((edge) => transformLine(edge.node)),
   };
 }
@@ -244,6 +257,41 @@ export async function getCart(cartId: string): Promise<Cart | null> {
   }
   if (!data?.cart) return null;
   return transformCart(data.cart);
+}
+
+/**
+ * Merge only our attribution namespace with current Shopify cart attributes.
+ * This avoids erasing gift notes, delivery preferences or other integrations.
+ * Do not send ad click identifiers or personal data in these attributes.
+ */
+export async function syncCartAcquisition(
+  cartId: string,
+  attribution: ReadonlyArray<{ key: string; value: string }>,
+): Promise<Cart> {
+  const current = await getCart(cartId);
+  if (!current) throw new Error('Cart no longer exists');
+  const keys = new Set(attribution.map(attribute => attribute.key));
+  const existing = current.attributes.filter(attribute => !keys.has(attribute.key));
+  // Clearing our namespace when permission is withdrawn is deliberate.
+  const merged = [
+    ...existing.filter(attribute => !attribute.key.startsWith('_ea_first_') &&
+      !attribute.key.startsWith('_ea_latest_') && attribute.key !== '_ea_attribution_version'),
+    ...attribution,
+  ];
+  const unchanged = merged.length === current.attributes.length &&
+    merged.every((attribute, index) => attribute.key === current.attributes[index]?.key &&
+      attribute.value === current.attributes[index]?.value);
+  if (unchanged) return current;
+  type Data = { cartAttributesUpdate: {
+    cart: RawCart | null; userErrors: ReadonlyArray<UserError>
+  } };
+  const result: ShopifyClientResponse<Data> = await shopifyClient.request<Data>(
+    CART_ATTRIBUTES_UPDATE_MUTATION, { variables: { cartId, attributes: merged } },
+  );
+  if (result.errors) throw new Error('Could not synchronize cart attribution');
+  throwOnUserErrors('cartAttributesUpdate', result.data?.cartAttributesUpdate.userErrors ?? []);
+  if (!result.data?.cartAttributesUpdate.cart) throw new Error('No updated cart returned');
+  return transformCart(result.data.cartAttributesUpdate.cart);
 }
 
 export async function createCart(): Promise<Cart> {
