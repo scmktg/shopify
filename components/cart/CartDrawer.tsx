@@ -8,10 +8,10 @@ import { PriceDisplay } from '@/components/product/PriceDisplay';
 import { ZipMessaging } from '@/components/payments/ZipMessaging';
 import { useCart } from './CartProvider';
 import { CartLineRow } from './CartLineRow';
-import { trackBeginCheckout, trackViewCart } from '@/lib/analytics/client';
+import { trackViewCart } from '@/lib/analytics/client';
 
 export function CartDrawer() {
-  const { cart, isOpen, closeDrawer, error } = useCart();
+  const { cart, isOpen, closeDrawer, error, checkout } = useCart();
   const wasOpen = useRef(false);
 
   useEffect(() => {
@@ -118,7 +118,7 @@ export function CartDrawer() {
               </p>
               <a
                 href={cart.checkoutUrl}
-                onClick={() => trackBeginCheckout(cart)}
+                onClick={(event) => { event.preventDefault(); void checkout(); }}
                 className="block w-full text-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors"
               >
                 Checkout
