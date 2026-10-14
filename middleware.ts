@@ -205,6 +205,9 @@ export function middleware(request: NextRequest) {
   // `headers()`, which mirrors request headers, not response headers.
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
+  // Only Vercel's known AU country signal opts into bannerless Australian measurement.
+  // Missing or non-AU signals require an explicit visitor choice.
+  requestHeaders.set('x-ea-region', request.headers.get('x-vercel-ip-country') === 'AU' ? 'au' : 'consent-required');
   return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
