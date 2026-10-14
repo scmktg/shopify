@@ -205,3 +205,23 @@ test('events are buffered until GA4 configuration is ready', () => {
   flushPendingAnalytics();
   assert.equal(events('search').length, 1);
 });
+
+test('Australian visitors receive measurement without the banner, while opt-outs persist', () => {
+  const previousDocument = (globalThis as {document?: unknown}).document;
+  const previousChoice = storage.get('enviroaqua:analytics-consent');
+  try {
+    Object.assign(globalThis, {document: {documentElement: {dataset: {eaRegion: 'au'}}}});
+    storage.delete('enviroaqua:analytics-consent');
+    assert.equal(getAnalyticsConsent(), 'granted');
+    storage.set('enviroaqua:analytics-consent','denied');
+    assert.equal(getAnalyticsConsent(), 'denied');
+    storage.delete('enviroaqua:analytics-consent');
+    Object.assign(globalThis, {document: {documentElement: {dataset: {eaRegion: 'consent-required'}}}});
+    assert.equal(getAnalyticsConsent(), null);
+  } finally {
+    if (previousChoice === undefined) storage.delete('enviroaqua:analytics-consent');
+    else storage.set('enviroaqua:analytics-consent', previousChoice);
+    if (previousDocument === undefined) Reflect.deleteProperty(globalThis, 'document');
+    else Object.assign(globalThis, {document: previousDocument});
+  }
+});
