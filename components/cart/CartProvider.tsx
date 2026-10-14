@@ -14,6 +14,7 @@ import {
   addToCart,
   createCart,
   getCart,
+  syncCartAcquisition,
   removeCartLine,
   updateCartLine,
 } from '@/lib/shopify/cart';
@@ -22,6 +23,7 @@ import {
   type CartItemInput,
 } from '@/lib/shopify/addMultipleToCart';
 import type { Cart } from '@/types/cart';
+import { acquisitionCartAttributes, captureAcquisition } from '@/lib/attribution/client';
 import {
   trackAddToCart,
   trackBeginCheckout,
@@ -46,6 +48,7 @@ interface CartContextValue {
    */
   buyNow: (variantId: string, quantity?: number) => Promise<void>;
   buyNowItems: (items: ReadonlyArray<CartItemInput>) => Promise<void>;
+  checkout: () => Promise<void>;
   updateItem: (lineId: string, quantity: number) => Promise<void>;
   removeItem: (lineId: string) => Promise<void>;
   openDrawer: () => void;
@@ -70,6 +73,18 @@ export function CartProvider({ children }: CartProviderProps) {
   // share one createCart promise rather than producing two carts.
   const pendingCartRef = useRef<Promise<Cart> | null>(null);
 
+  const syncAttribution = useCallback(async (cartId: string): Promise<Cart | null> => {
+    try {
+      captureAcquisition();
+      const updated = await syncCartAcquisition(cartId, acquisitionCartAttributes());
+      return updated;
+    } catch {
+      // Optional attribution must never prevent checkout.
+      return null;
+    }
+  }, []);
+
+
   useEffect(() => {
     let cancelled = false;
     const cartId = readStoredCartId();
@@ -83,6 +98,7 @@ export function CartProvider({ children }: CartProviderProps) {
         if (cancelled) return;
         if (fetched) {
           setCart(fetched);
+          void syncAttribution(fetched.id);
         } else {
           clearStoredCartId();
         }
@@ -95,7 +111,17 @@ export function CartProvider({ children }: CartProviderProps) {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [syncAttribution]);
+
+  // Withdrawal of permission removes attribution from an existing cart.
+  useEffect(() => {
+    const onConsent = () => {
+      const id = readStoredCartId();
+      if (id) void syncAttribution(id);
+    };
+    window.addEventListener('enviroaqua:analytics-consent-changed', onConsent);
+    return () => window.removeEventListener('enviroaqua:analytics-consent-changed', onConsent);
+  }, [syncAttribution]);
 
   const ensureCart = useCallback(async (): Promise<Cart> => {
     if (cart) return cart;
@@ -103,12 +129,13 @@ export function CartProvider({ children }: CartProviderProps) {
     const promise = createCart().then((created) => {
       writeStoredCartId(created.id);
       setCart(created);
+      void syncAttribution(created.id);
       pendingCartRef.current = null;
       return created;
     });
     pendingCartRef.current = promise;
     return promise;
-  }, [cart]);
+  }, [cart, syncAttribution]);
 
   const addItem = useCallback(
     async (variantId: string, quantity = 1) => {
@@ -160,6 +187,10 @@ export function CartProvider({ children }: CartProviderProps) {
         const updated = await addToCart(current.id, variantId, quantity);
         setCart(updated);
         trackAddToCart(updated, variantId, quantity);
+        await Promise.race([
+          syncAttribution(updated.id),
+          new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
+        ]);
         trackBeginCheckout(updated);
         // Hard nav off the storefront; client-side router is irrelevant
         // for an external Shopify checkout URL.
@@ -173,7 +204,7 @@ export function CartProvider({ children }: CartProviderProps) {
       // Note: no finally — on success we're navigating away, so we leave
       // isMutating=true to keep buttons disabled until the page unloads.
     },
-    [ensureCart],
+    [ensureCart, syncAttribution],
   );
 
   const buyNowItems = useCallback(
@@ -188,6 +219,10 @@ export function CartProvider({ children }: CartProviderProps) {
         for (const item of items) {
           trackAddToCart(updated, item.variantId, item.quantity);
         }
+        await Promise.race([
+          syncAttribution(updated.id),
+          new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
+        ]);
         trackBeginCheckout(updated);
         if (typeof window !== 'undefined') {
           window.location.assign(updated.checkoutUrl);
@@ -197,8 +232,18 @@ export function CartProvider({ children }: CartProviderProps) {
         setIsMutating(false);
       }
     },
-    [ensureCart],
+    [ensureCart, syncAttribution],
   );
+
+  const checkout = useCallback(async () => {
+    if (!cart) return;
+    await Promise.race([
+      syncAttribution(cart.id),
+      new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
+    ]);
+    trackBeginCheckout(cart);
+    if (typeof window !== 'undefined') window.location.assign(cart.checkoutUrl);
+  }, [cart, syncAttribution]);
 
   const updateItem = useCallback(
     async (lineId: string, quantity: number) => {
@@ -258,6 +303,7 @@ export function CartProvider({ children }: CartProviderProps) {
       addItems,
       buyNow,
       buyNowItems,
+      checkout,
       updateItem,
       removeItem,
       openDrawer,
@@ -274,6 +320,7 @@ export function CartProvider({ children }: CartProviderProps) {
       addItems,
       buyNow,
       buyNowItems,
+      checkout,
       updateItem,
       removeItem,
       openDrawer,

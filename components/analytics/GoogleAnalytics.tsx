@@ -3,6 +3,7 @@
 import Script from 'next/script';
 import { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { initializeAcquisition } from '@/lib/attribution/client';
 import { flushPendingAnalytics, getAnalyticsConsent, trackPageView } from '@/lib/analytics/client';
 
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID || 'G-BPEY3T2B9Q';
@@ -12,6 +13,12 @@ function PageViewTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const query = searchParams.toString();
+
+  useEffect(() => {
+    initializeAcquisition();
+    window.addEventListener('enviroaqua:analytics-consent-changed', initializeAcquisition);
+    return () => window.removeEventListener('enviroaqua:analytics-consent-changed', initializeAcquisition);
+  }, []);
 
   useEffect(() => {
     if (!GA4_ID) return;
