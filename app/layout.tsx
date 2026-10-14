@@ -47,9 +47,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   // make that decision server-side without leaking client routing.
   const pathname = (await headers()).get('x-pathname') ?? '';
   const isAdminRoute = pathname.startsWith('/admin');
+  const consentRegion = (await headers()).get('x-ea-region') === 'au' ? 'au' : 'consent-required';
 
   return (
-    <html lang="en-AU">
+    <html lang="en-AU" data-ea-region={consentRegion}>
       <body className="flex flex-col min-h-screen">
         {isAdminRoute ? (
           children
@@ -62,10 +63,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             <Script id="enviroaqua-consent-bootstrap" strategy="beforeInteractive">
               {"window.dataLayer = window.dataLayer || [];" +
                "window.gtag = function(){ window.dataLayer.push(arguments); };" +
-               "gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});" +
-               "try {if(localStorage.getItem('enviroaqua:analytics-consent')==='granted'){" +
-               "gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});" +
-               "}}catch(e){}"}
+               "var choice=null;try{choice=localStorage.getItem('enviroaqua:analytics-consent')}catch(e){};" +
+               "var allowed=choice==='granted'||(choice!=='denied'&&document.documentElement.dataset.eaRegion==='au');" +
+               "gtag('consent','default',{analytics_storage:allowed?'granted':'denied',ad_storage:allowed?'granted':'denied',ad_user_data:allowed?'granted':'denied',ad_personalization:allowed?'granted':'denied',wait_for_update:500});"}
             </Script>
             <GoogleAnalytics />
             <ConsentBanner />
