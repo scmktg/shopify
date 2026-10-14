@@ -23,7 +23,7 @@ import {
   type CartItemInput,
 } from '@/lib/shopify/addMultipleToCart';
 import type { Cart } from '@/types/cart';
-import { acquisitionCartAttributes } from '@/lib/attribution/client';
+import { acquisitionCartAttributes, captureAcquisition } from '@/lib/attribution/client';
 import {
   trackAddToCart,
   trackBeginCheckout,
@@ -75,8 +75,8 @@ export function CartProvider({ children }: CartProviderProps) {
 
   const syncAttribution = useCallback(async (cartId: string): Promise<Cart | null> => {
     try {
+      captureAcquisition();
       const updated = await syncCartAcquisition(cartId, acquisitionCartAttributes());
-      setCart(updated);
       return updated;
     } catch {
       // Optional attribution must never prevent checkout.
@@ -111,6 +111,16 @@ export function CartProvider({ children }: CartProviderProps) {
     return () => {
       cancelled = true;
     };
+  }, [syncAttribution]);
+
+  // Withdrawal of permission removes attribution from an existing cart.
+  useEffect(() => {
+    const onConsent = () => {
+      const id = readStoredCartId();
+      if (id) void syncAttribution(id);
+    };
+    window.addEventListener('enviroaqua:analytics-consent-changed', onConsent);
+    return () => window.removeEventListener('enviroaqua:analytics-consent-changed', onConsent);
   }, [syncAttribution]);
 
   const ensureCart = useCallback(async (): Promise<Cart> => {
@@ -177,7 +187,10 @@ export function CartProvider({ children }: CartProviderProps) {
         const updated = await addToCart(current.id, variantId, quantity);
         setCart(updated);
         trackAddToCart(updated, variantId, quantity);
-        await syncAttribution(updated.id);
+        await Promise.race([
+          syncAttribution(updated.id),
+          new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
+        ]);
         trackBeginCheckout(updated);
         // Hard nav off the storefront; client-side router is irrelevant
         // for an external Shopify checkout URL.
@@ -221,7 +234,10 @@ export function CartProvider({ children }: CartProviderProps) {
 
   const checkout = useCallback(async () => {
     if (!cart) return;
-    await syncAttribution(cart.id);
+    await Promise.race([
+      syncAttribution(cart.id),
+      new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
+    ]);
     trackBeginCheckout(cart);
     if (typeof window !== 'undefined') window.location.assign(cart.checkoutUrl);
   }, [cart, syncAttribution]);
