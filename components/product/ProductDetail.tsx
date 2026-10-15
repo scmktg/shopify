@@ -131,6 +131,7 @@ export function ProductDetail({
             images={product.images}
             title={product.title}
             showLeadFreeBadge={shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            watermarkLicence={content.compliance?.watermark?.licenceNumber}
           />
         </div>
 
