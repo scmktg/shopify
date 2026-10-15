@@ -11,6 +11,7 @@ interface ProductGalleryProps {
   title: string;
   preferredImage?: ProductImage | null;
   showLeadFreeBadge?: boolean;
+  watermarkLicence?: string | null;
 }
 
 /**
@@ -32,6 +33,7 @@ export function ProductGallery({
   title,
   preferredImage = null,
   showLeadFreeBadge = false,
+  watermarkLicence = null,
 }: ProductGalleryProps) {
   const galleryImages =
     preferredImage && !images.some((image) => image.url === preferredImage.url)
@@ -94,7 +96,7 @@ export function ProductGallery({
         className="object-contain"
       />
 
-      {showLeadFreeBadge && <WaterMarkLeadFreeOverlay />}
+      {showLeadFreeBadge && watermarkLicence && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} />}
 
       {showArrows && (
         <>
