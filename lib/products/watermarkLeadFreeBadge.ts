@@ -7,7 +7,7 @@ const ELIGIBLE_BUBBLER_HANDLES = new Set([
   'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
 ]);
 
-/** Require both the allowlist and existing catalogue compliance evidence. */
+/** Explicit product allowlist and authoritative WaterMark status, not overrideable prose. */
 export function shouldShowWaterMarkLeadFreeBadge(
   handle: string,
   content: ProductContent,
@@ -16,7 +16,6 @@ export function shouldShowWaterMarkLeadFreeBadge(
   return (
     ELIGIBLE_BUBBLER_HANDLES.has(handle) &&
     watermark?.status === 'certified' &&
-    Boolean(watermark.licenceNumber) &&
-    /\blead[ -]?free\b/i.test(content.compliance?.note ?? '')
+    Boolean(watermark.licenceNumber)
   );
 }
