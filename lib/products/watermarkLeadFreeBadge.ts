@@ -17,6 +17,6 @@ export function shouldShowWaterMarkLeadFreeBadge(
     ELIGIBLE_BUBBLER_HANDLES.has(handle) &&
     watermark?.status === 'certified' &&
     Boolean(watermark.licenceNumber) &&
-    /\\blead[ -]?free\\b/i.test(content.compliance?.note ?? '')
+    /\blead[ -]?free\b/i.test(content.compliance?.note ?? '')
   );
 }
