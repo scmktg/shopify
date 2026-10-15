@@ -257,7 +257,14 @@ function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Prod
           </span>
         )}
         {image && watermarkLicence && (
-          <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
+          // These three legacy product photos already contain an embedded logo.
+          // An opaque corner masks it on this comparison card until clean Shopify
+          // photographs are supplied; the photo URL itself remains untouched.
+          <div className="pointer-events-none absolute left-5 top-5 z-10 h-[34%] w-[34%] bg-white">
+            <div className="relative h-full w-full">
+              <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
+            </div>
+          </div>
         )}
         <span className="absolute top-3 right-3 bg-black text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded">
           {cabinet.badge}
