@@ -6,6 +6,8 @@ import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { WatermarkBadge, LeadFreeBadge } from '@/components/product/WatermarkBadge';
 import { PriceDisplay } from '@/components/product/PriceDisplay';
+import { WaterMarkLeadFreeOverlay } from '@/components/product/WaterMarkLeadFreeOverlay';
+import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
@@ -236,6 +238,7 @@ function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Prod
   const href = product ? getProductUrl(product.handle) : `/${cabinet.handle}`;
   const image = product?.featuredImage ?? null;
   const price = product?.priceRange.minVariantPrice ?? null;
+  const watermarkLicence = getInitialBubblerWaterMarkLicence(cabinet.handle);
 
   return (
     <div className="border border-gray-200 rounded overflow-hidden flex flex-col">
@@ -252,6 +255,9 @@ function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Prod
           <span className="absolute inset-0 grid place-items-center text-black/20">
             <Droplet size={48} strokeWidth={1.25} aria-hidden="true" />
           </span>
+        )}
+        {image && watermarkLicence && (
+          <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
         )}
         <span className="absolute top-3 right-3 bg-black text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded">
           {cabinet.badge}
