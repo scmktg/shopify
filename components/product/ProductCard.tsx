@@ -110,7 +110,7 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           )}
           {image && watermarkLicence && (
-            <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact />
+            <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
           )}
         </div>
       </Link>
