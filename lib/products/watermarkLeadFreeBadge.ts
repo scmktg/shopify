@@ -19,3 +19,8 @@ export function shouldShowWaterMarkLeadFreeBadge(
     Boolean(watermark.licenceNumber)
   );
 }
+
+/** Limited initial catalogue rollout for cards, which do not receive ProductContent. */
+export function getInitialBubblerWaterMarkLicence(handle: string): string | null {
+  return ELIGIBLE_BUBBLER_HANDLES.has(handle) ? '23484' : null;
+}
