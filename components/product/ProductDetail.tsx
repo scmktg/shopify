@@ -27,6 +27,7 @@ import { ThreeWayTapHeroBenefits } from './ThreeWayTapHeroBenefits';
 import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
+import { shouldShowWaterMarkLeadFreeBadge } from '@/lib/products/watermarkLeadFreeBadge';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const BRUSHED_GOLD_RO_TAP_HANDLE =
@@ -126,7 +127,11 @@ export function ProductDetail({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div>
-          <VariantProductGallery images={product.images} title={product.title} />
+          <VariantProductGallery
+            images={product.images}
+            title={product.title}
+            showLeadFreeBadge={shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+          />
         </div>
 
         <div className="md:sticky md:top-24">
