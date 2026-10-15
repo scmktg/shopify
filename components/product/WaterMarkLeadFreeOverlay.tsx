@@ -6,10 +6,10 @@ export function WaterMarkLeadFreeOverlay() {
     <div
       className="pointer-events-none absolute left-2 top-2 z-10 w-[clamp(64px,20%,112px)] sm:left-3 sm:top-3"
       role="img"
-      aria-label="WaterMark Lead Free certification"
+      aria-label="WaterMark certification"
     >
       <Image
-        src="/watermark-lead-free.png"
+        src="/WaterMark-Certified.png"
         alt=""
         width={112}
         height={112}
