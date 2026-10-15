@@ -23,7 +23,7 @@ export function WaterMarkLeadFreeOverlay({
         width={112}
         height={112}
         sizes={compact ? '112px' : '136px'}
-        className={`h-auto object-contain ${compact ? 'w-12 sm:w-14' : 'w-14 sm:w-[72px]'}`}
+        className={`h-auto object-contain ${compact ? 'w-16 sm:w-[72px]' : 'w-20 sm:w-24'}`}
       />
       <span aria-hidden="true" className={`mt-0.5 block font-extrabold tracking-tight ${compact ? 'text-[11px] leading-[1.1] sm:text-xs' : 'text-sm leading-tight sm:text-base'}`}>
         WaterMark
@@ -31,7 +31,7 @@ export function WaterMarkLeadFreeOverlay({
       <span aria-hidden="true" className={`block font-extrabold tracking-tight ${compact ? 'text-[11px] leading-[1.1] sm:text-xs' : 'text-sm leading-tight sm:text-base'}`}>
         Lead Free
       </span>
-      <span aria-hidden="true" className={`mt-1 block whitespace-nowrap rounded bg-white/95 px-1.5 py-1 font-semibold leading-none shadow-sm ${compact ? 'text-[10px] sm:text-[11px]' : 'text-xs sm:text-[13px]'}`}>
+      <span aria-hidden="true" className={`mt-1 block whitespace-nowrap rounded bg-white/95 px-1 py-0.5 font-semibold leading-none shadow-sm ${compact ? 'text-[9px] sm:text-[10px]' : 'text-[10px] sm:text-[11px]'}`}>
         Licence {licenceNumber}
       </span>
     </div>
