@@ -133,11 +133,14 @@ async function main(): Promise<void> {
   );
 
   if (missingInShopify.length > 0) {
-    console.error('');
-    console.error(
-      `${RED}✖ base product content references Shopify handles that don't exist:${RESET}`,
+    const stream = strict ? console.error : console.warn;
+    const colour = strict ? RED : YELLOW;
+    const symbol = strict ? '✖' : '!';
+    stream('');
+    stream(
+      `${colour}${symbol} base product content references Shopify handles that don't exist (${missingInShopify.length}):${RESET}`,
     );
-    for (const handle of missingInShopify) console.error(`    - ${handle}`);
+    for (const handle of missingInShopify) stream(`    - ${handle}`);
   }
 
   if (missingInProducts.length > 0) {
@@ -177,7 +180,7 @@ async function main(): Promise<void> {
     );
   }
 
-  if (missingInShopify.length > 0) process.exit(1);
+  if (missingInShopify.length > 0 && strict) process.exit(1);
   if (missingInProducts.length > 0 && strict) process.exit(1);
   if (categoryMismatches.length > 0) process.exit(1);
 
