@@ -104,7 +104,7 @@ export function VariantPurchaseControls({
                 <legend className="text-sm font-semibold text-black">
                   {normaliseOptionName(name)}:{' '}
                   <span className="font-normal text-black/70">
-                    {selectedOptions.get(name)}
+                    {titleCaseVariantOption(selectedOptions.get(name) ?? '')}
                   </span>
                 </legend>
                 <div className="mt-2 flex flex-wrap gap-2">
@@ -128,7 +128,7 @@ export function VariantPurchaseControls({
                         type="button"
                         onClick={() => selectOption(name, value)}
                         aria-pressed={selected}
-                        aria-label={`${normaliseOptionName(name)}: ${value}`}
+                        aria-label={`${normaliseOptionName(name)}: ${titleCaseVariantOption(value)}`}
                         className={
                           colourOption
                             ? selected
@@ -153,7 +153,7 @@ export function VariantPurchaseControls({
                             !available && !colourOption ? 'line-through' : ''
                           }
                         >
-                          {value}
+                          {titleCaseVariantOption(value)}
                         </span>
                       </button>
                     );
@@ -181,6 +181,11 @@ export function VariantPurchaseControls({
       </div>
     </>
   );
+}
+
+/** Format option labels without changing the Shopify values used for selection. */
+function titleCaseVariantOption(value: string): string {
+  return value.toLowerCase().replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
 }
 
 function normaliseOptionName(name: string): string {
