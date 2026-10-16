@@ -102,7 +102,7 @@ export function VariantPurchaseControls({
             return (
               <fieldset key={name}>
                 <legend className="text-sm font-semibold text-black">
-                  {normaliseOptionName(name)}:{' '}
+                  {titleCaseVariantOption(normaliseOptionName(name))}:{' '}
                   <span className="font-normal text-black/70">
                     {titleCaseVariantOption(selectedOptions.get(name) ?? '')}
                   </span>
@@ -128,7 +128,7 @@ export function VariantPurchaseControls({
                         type="button"
                         onClick={() => selectOption(name, value)}
                         aria-pressed={selected}
-                        aria-label={`${normaliseOptionName(name)}: ${titleCaseVariantOption(value)}`}
+                        aria-label={`${titleCaseVariantOption(normaliseOptionName(name))}: ${titleCaseVariantOption(value)}`}
                         className={
                           colourOption
                             ? selected
