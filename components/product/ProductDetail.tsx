@@ -153,7 +153,6 @@ export function ProductDetail({
           {!showFourStageAlternative && (
             <VariantPurchaseControls
               fallbackPrice={product.priceRange.minVariantPrice}
-              productHandle={product.handle}
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
             />
