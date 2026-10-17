@@ -1,15 +1,15 @@
 ---
 title: "Water Bubblers for Schools Australia | Drinking Fountain Guide"
-description: "How to choose school water bubblers and drinking fountains in Australia: indoor vs outdoor, bottle filling, WaterMark, cooling capacity, filtration and placement."
+description: "How to choose school water bubblers and drinking fountains in Australia: bottle filling, WaterMark, cooling capacity, filtration and placement."
 relatedLinks:
   - { label: "Commercial water bubblers", href: "/commercial-water-bubblers" }
   - { label: "Round stainless commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm" }
   - { label: "Square stainless bubbler with side tap", href: "/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des" }
-  - { label: "Outdoor HDPE commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm" }
+  - { label: "HDPE bubbler with side tap", href: "/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm" }
   - { label: "Water bubbler vs water cooler", href: "/help/bubblers-vs-coolers" }
 faq:
   - q: "What type of water bubbler is best for a school?"
-    a: "For indoor or sheltered areas, a stainless-steel commercial bubbler is usually the simplest option. For exposed schoolyards and sports areas, choose a cabinet designed for outdoor exposure, such as a rust-free HDPE model. Add a bottle-fill outlet where students regularly carry reusable bottles."
+    a: "The round stainless steel model is a straightforward direct-drinking option. The square stainless steel and HDPE models add a separate side tap for filling bottles."
   - q: "How much cooling capacity does a school water bubbler need?"
     a: "Size the system for peak break-time demand rather than enrolment alone. All three Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8–12 °C. Larger schools or high-traffic zones may be better served by multiple drinking points rather than relying on one unit."
   - q: "Do school water bubblers need WaterMark certification?"
@@ -42,7 +42,6 @@ These are the model identities used for the products' WaterMark certification an
 |---|---|
 | Indoor corridor, administration or sheltered area | [Round stainless commercial bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) |
 | Indoor/sheltered area where students fill bottles | [Square stainless bubbler with side tap](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) |
-| Exposed schoolyard, sports area or outdoor location | [Rust-free HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm) |
 | Large campus or concentrated break-time traffic | Multiple stations positioned near the areas of highest demand |
 
 ## Indoor school bubblers
@@ -53,11 +52,8 @@ The **round stainless model (YL-600R / Water Bubbler Round)** is the straightfor
 
 The **square stainless model (YL-600C / Water Bubbler Square)** adds a separate side tap, making it more useful in schools where students routinely refill bottles or cups. Its flat-sided cabinet also suits against-wall installations.
 
-## Outdoor school drinking fountains
 
-An outdoor school bubbler needs a cabinet suited to exposure, not just a standard indoor unit placed outside.
 
-The [HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), WaterMark model **YL-600P / Water Bubbler Grey**, uses a rust-free, UV-stable polymer cabinet and is the range's intended option for exposed schoolyards, outdoor sports areas and similar environments.
 
 The stainless models are better suited to indoor or sheltered positions.
 
