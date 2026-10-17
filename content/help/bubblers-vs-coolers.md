@@ -15,7 +15,7 @@ faq:
   - q: "Are water coolers always bottled?"
     a: "No. Water coolers can be bottled or plumbed directly to mains water. A plumbed cooler removes bottle deliveries but still normally dispenses into a cup or bottle rather than through a direct-drinking bubbler stream."
   - q: "Which is better for a school or gym?"
-    a: "A bubbler or combination bubbler-and-bottle-fill unit is usually practical where people need quick direct access as well as bottle refills. The best cabinet also depends on whether the station is indoors, sheltered or fully exposed outdoors."
+    a: "A bubbler or combination bubbler-and-bottle-fill unit is usually practical where people need quick direct access as well as bottle refills. Compare cabinet materials, bottle-filling needs and site requirements."
   - q: "Which is better for an office?"
     a: "Offices often prefer cup or bottle dispensing, so a plumbed cooler or a bubbler with a separate side tap can work well. A bubbler-only unit is simpler where direct drinking is the main requirement."
 ---
@@ -47,7 +47,7 @@ A water bubbler is a drinking-water fixture with an upward-flowing spout. The us
 
 In Australia, **bubbler** and **drinking fountain** are often used for the same general fixture. The word "bubbler" more specifically describes the direct-drinking outlet, while "drinking fountain" can refer to the complete unit.
 
-Commercial bubblers are common in schools, gyms and sporting facilities, factories and warehouses, public buildings, parks and outdoor facilities, and workplaces with high shared usage.
+Commercial bubblers are common in schools, gyms and sporting facilities, factories and warehouses, public buildings and workplaces with high shared usage.
 
 Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) uses filtered, chilled mains water. **All three cabinet styles are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.**
 
@@ -75,11 +75,11 @@ In Enviro Aqua's range, the **YL-600C Water Bubbler Square** and **YL-600P Water
 
 Schools often benefit from a **bubbler or combination unit** because students can drink directly even when they do not have a bottle. Where reusable bottles are common, a separate filling outlet makes the same station more versatile.
 
-The other important decision is environment: use stainless steel for indoor or sheltered locations and an outdoor-suitable cabinet for exposed schoolyards. See the [school water bubbler guide](/use/commercial-and-cafe/schools/).
+See the [school water bubbler guide](/use/commercial-and-cafe/schools/) for help choosing a drinking station.
 
 ## Which is better for factories and warehouses?
 
-Factories and warehouses need accessible drinking water positioned around real work patterns. A bubbler is useful for quick direct access, while a side tap is valuable for workers who carry bottles during a shift. For exposed yards or loading areas, cabinet weather resistance becomes a major selection factor.
+Factories and warehouses need accessible drinking water positioned around real work patterns. A bubbler is useful for quick direct access, while a side tap is valuable for workers who carry bottles during a shift.
 
 See [water bubblers for factories and warehouses](/use/commercial-and-cafe/factories-and-warehouses/) for the industrial selection guide.
 
@@ -113,6 +113,6 @@ For more detail, see [WaterMark certification explained](/help/watermark-certifi
 
 Choose a **bubbler** when direct drinking is important. Choose a **cooler** when cup or bottle dispensing is the primary use. Choose a **combination bubbler + fill outlet** when you need both.
 
-Then separately decide whether the site calls for a permanent mains-connected system or a bottled supply, and whether the cabinet needs to handle indoor, sheltered or exposed outdoor conditions.
+Then separately decide whether the site calls for a permanent mains-connected system or a bottled supply.
 
 To compare Enviro Aqua's three commercial drinking-fountain models side-by-side, see the [commercial water bubbler buying guide](/commercial-water-bubblers).
