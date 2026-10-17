@@ -29,6 +29,7 @@ interface CabinetSpec {
   key: CabinetKey;
   handle: string;
   shortName: string;
+  displayName: string;
   modelId: string;
   modelName: string;
   tagline: string;
@@ -40,7 +41,8 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'round',
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
-    shortName: 'Round Stainless',
+    shortName: 'Round Stainless Steel',
+    displayName: 'Round Stainless Steel Water Bubbler',
     modelId: 'YL-600R',
     modelName: 'Water Bubbler Round',
     tagline: 'Compact stainless commercial bubbler for direct chilled drinking in indoor and sheltered locations.',
@@ -50,7 +52,8 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'square',
     handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
-    shortName: 'Square Stainless',
+    shortName: 'Square Stainless Steel',
+    displayName: 'Stainless Steel Water Bubbler with Tap',
     modelId: 'YL-600C',
     modelName: 'Water Bubbler Square',
     tagline: 'Stainless commercial bubbler with a separate side tap for bottles, glasses and jugs.',
@@ -60,12 +63,13 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    shortName: 'Rust-Free HDPE',
+    shortName: 'HDPE Design',
+    displayName: 'HDPE Water Bubbler with Tap',
     modelId: 'YL-600P',
     modelName: 'Water Bubbler Grey',
-    tagline: 'Rust-free HDPE commercial bubbler with a separate side tap for bottles, glasses and jugs.',
-    badge: 'Rust-free cabinet',
-    highlights: ['20 L/hr', 'Approx. 8–12 °C', 'Rust-free HDPE', 'WaterMark 023484'],
+    tagline: 'Contemporary HDPE drinking fountain with a separate side tap for bottles, glasses and jugs.',
+    badge: 'Contemporary design',
+    highlights: ['20 L/hr', 'Approx. 8–12 °C', 'HDPE cabinet', 'WaterMark 023484'],
   },
 ];
 
@@ -92,7 +96,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Which Enviro Aqua bubblers include a separate bottle-filling tap?',
-    a: 'The YL-600P Water Bubbler Grey and YL-600C Water Bubbler Square both include a separate side tap for filling bottles, glasses or jugs. The YL-600P features a rust-free HDPE outer cabinet, while the YL-600C features stainless steel.',
+    a: 'The YL-600P Water Bubbler Grey and YL-600C Water Bubbler Square both include a separate side tap for filling bottles, glasses or jugs. The YL-600P features an HDPE outer cabinet, while the YL-600C features stainless steel.',
   },
   {
     q: 'Do commercial water bubblers need WaterMark certification in Australia?',
@@ -269,7 +273,7 @@ function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Prod
       </Link>
       <div className="p-5 flex flex-col flex-1">
         <p className="text-xs font-semibold uppercase tracking-wider text-brand-blue">{cabinet.shortName}</p>
-        <h3 className="mt-1 text-xl font-semibold text-black">{cabinet.modelName}</h3>
+        <h3 className="mt-1 text-xl font-semibold text-black">{cabinet.displayName}</h3>
         <p className="mt-1 text-sm font-mono text-black/60">{cabinet.modelId}</p>
         <p className="mt-3 text-sm text-black/70 leading-relaxed">{cabinet.tagline}</p>
         <ul className="mt-4 space-y-2 text-sm text-black/75">
@@ -299,10 +303,10 @@ function ComparisonSection() {
     ['WaterMark certificate', '023484', '023484', '023484'],
     ['Cooling capacity', '20 L/hr', '20 L/hr', '20 L/hr'],
     ['Chilled water temperature', 'Approx. 8–12 °C', 'Approx. 8–12 °C', 'Approx. 8–12 °C'],
-    ['Cabinet', '304 stainless steel', 'SUS304 stainless steel', 'Rust-free HDPE'],
+    ['Cabinet', '304 stainless steel', 'SUS304 stainless steel', 'HDPE'],
     ['Filtration', 'Integrated drinking-water cartridge', 'Sediment + activated carbon', 'PP sediment + activated carbon'],
     ['Bottle / glass fill side tap', 'No', 'Yes', 'Yes'],
-    ['Cabinet format', 'Compact stainless', 'Square stainless', 'Rust-free HDPE'],
+    ['Cabinet format', 'Round stainless steel', 'Square stainless steel', 'Contemporary HDPE'],
   ] as const;
 
   return (
