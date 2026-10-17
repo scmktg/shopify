@@ -1,6 +1,6 @@
 ---
 title: "How to Choose a Commercial Water Bubbler in Australia"
-description: "A practical Australian buying guide to commercial water bubblers: indoor vs outdoor, bottle filling, cooling capacity, filtration, WaterMark, installation and maintenance."
+description: "A practical Australian buying guide to commercial water bubblers: bottle filling, cooling capacity, filtration, WaterMark, installation and maintenance."
 relatedLinks:
   - { label: "Compare commercial water bubblers", href: "/commercial-water-bubblers" }
   - { label: "Water bubblers for schools", href: "/use/commercial-and-cafe/schools/" }
@@ -16,8 +16,6 @@ faq:
     a: "Choose for peak demand rather than daily headcount alone. All three Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8–12 °C. Unusually high peak demand may be better handled with more than one station."
   - q: "Should I choose a water bubbler with a bottle-filling tap?"
     a: "Choose bottle filling where users commonly carry reusable bottles, jugs or drink containers. The square stainless and HDPE Enviro Aqua models include a side tap. The round stainless model is the simpler direct-drinking option."
-  - q: "Which commercial water bubbler is best for outdoor use?"
-    a: "For a fully exposed outdoor position, prioritise a cabinet designed for weather exposure. In the Enviro Aqua range, the rust-free UV-stable HDPE model is the outdoor option. The stainless round and square models are better suited to indoor or sheltered commercial locations."
   - q: "Do commercial water bubblers need WaterMark certification in Australia?"
     a: "Drinking fountains and bottle fillers are product types included in the WaterMark Schedule of Products for cold or chilled water dispensing apparatus. Enviro Aqua's three current commercial bubbler models are WaterMark certified under Certificate 023484."
   - q: "Who should install a commercial water bubbler?"
@@ -28,7 +26,7 @@ Choosing a **commercial water bubbler** is mostly a site-design decision. The be
 
 For most Australian schools, offices, factories, warehouses, gyms and public facilities, work through these decisions in order:
 
-1. Is the location indoor, sheltered or fully exposed outdoors?
+1. Where will the station be installed and how will people access it?
 2. Do users need direct drinking only, or bottle filling as well?
 3. What does peak demand look like at the busiest time of day?
 4. Do you need chilled water, filtration, or both?
@@ -55,15 +53,14 @@ These exact model IDs and model names are the WaterMark identities for the curre
 
 - **Indoor or sheltered location, direct drinking mainly:** start with the [round stainless commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm), **YL-600R / Water Bubbler Round**.
 - **Indoor or sheltered location where bottle filling matters:** start with the [square stainless commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des), **YL-600C / Water Bubbler Square**.
-- **Exposed outdoor location:** start with the [rust-free HDPE commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), **YL-600P / Water Bubbler Grey**.
+- **Non-metal cabinet with a bottle-filling tap:** consider the [HDPE commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), **YL-600P / Water Bubbler Grey**.
 
-All three current models are rated at **20 L/hr with approximately 8–12 °C chilled-water output** and are WaterMark certified under **Certificate 023484**. The biggest buying differences are cabinet material, exposure suitability, dispensing format and filtration configuration.
+All three current models are rated at **20 L/hr with approximately 8–12 °C chilled-water output** and are WaterMark certified under **Certificate 023484**. The biggest buying differences are cabinet material, dispensing format and filtration configuration.
 
-## 1. Start with the installation environment
+## 1. Compare cabinet materials
 
-For offices, foyers, school corridors, staff areas, sheltered factory floors and similar locations, a stainless-steel cabinet is a strong starting point. The round and square commercial models are intended for indoor or sheltered positions.
+The round and square models have stainless-steel cabinets. The YL-600P has an HDPE outer cabinet and a separate bottle-filling tap. Compare the material and dispensing format to match the intended use.
 
-For schoolyards, external factory areas, sporting facilities and other locations exposed to weather, choose a cabinet specifically suited to that environment. The **YL-600P Water Bubbler Grey** uses a rust-free, UV-stable HDPE cabinet and is the outdoor-focused model in the range.
 
 ## 2. Decide whether bottle filling matters
 
@@ -99,9 +96,9 @@ The current Enviro Aqua commercial bubbler models are:
 
 For more detail on the scheme, see [WaterMark certification explained](/help/watermark-certification-explained/).
 
-## 6. Check the site before buying
+## 6. Check plumbing and servicing access
 
-Before ordering, confirm the mains-water supply, drainage route, power supply, cabinet position, service access and whether the installation is indoor, sheltered or exposed outdoor. Use an appropriately licensed plumbing practitioner for the relevant mains-water and drainage work.
+Before ordering, confirm the mains-water supply, drainage route, power supply, cabinet position, service access and the available installation space. Use an appropriately licensed plumbing practitioner for the relevant mains-water and drainage work.
 
 ## 7. Think about maintenance before installation
 
@@ -114,10 +111,10 @@ Multiple stations may make sense where buildings or work zones are separated, a 
 ## Choosing by application
 
 ### Schools
-Prioritise durability, placement, bottle-filling behaviour, outdoor exposure and peak demand during breaks. See [water bubblers for schools](/use/commercial-and-cafe/schools/).
+Prioritise durability, placement, bottle-filling behaviour and peak demand during breaks. See [water bubblers for schools](/use/commercial-and-cafe/schools/).
 
 ### Factories and warehouses
-Prioritise access during shift peaks, cabinet durability, exposure, bottle filling and station placement across the work area. See [water bubblers for factories and warehouses](/use/commercial-and-cafe/factories-and-warehouses/).
+Prioritise access during shift peaks, cabinet durability, bottle filling and station placement across the work area. See [water bubblers for factories and warehouses](/use/commercial-and-cafe/factories-and-warehouses/).
 
 ### Offices
 Compact stainless models suit many office and staff-area installations. See [water bubblers and coolers for offices](/use/commercial-and-cafe/offices/).
