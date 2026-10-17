@@ -58,7 +58,6 @@ For sites with forklifts, picking zones or long aisles, placement matters as muc
 Use the cabinet construction to match the environment:
 
 - **SUS304 stainless steel:** suitable for indoor and sheltered commercial positions.
-- **HDPE polymer cabinet:** rust-free and UV-stable for exposed outdoor positions.
 
 
 ## Drinking water in hot workplaces
