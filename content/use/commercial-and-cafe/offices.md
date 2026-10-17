@@ -66,7 +66,6 @@ For indoor or sheltered office spaces, the two stainless models are the most rel
 
 Both, along with the HDPE model, are rated at **20 L/hr** with chilled-water output of approximately **8–12 °C**.
 
-For an exposed outdoor staff area, compare the [HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), **YL-600P / Water Bubbler Grey**, which uses a rust-free, UV-stable cabinet.
 
 ## Placement in an office
 
