@@ -9,6 +9,8 @@ import type { ProductCardData, ProductCardVariant } from '@/types/product';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
 import { PriceDisplay } from './PriceDisplay';
+import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
+import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
 import { ColourSwatch } from './ColourSwatch';
 import { cardToAnalyticsItem, trackSelectItem } from '@/lib/analytics/client';
 
@@ -23,6 +25,7 @@ interface ColourChoice {
 
 export function ProductCard({ product }: ProductCardProps) {
   const baseHref = getProductUrl(product.handle);
+  const watermarkLicence = getInitialBubblerWaterMarkLicence(product.handle);
   const { addItem, buyNow, isMutating, isReady } = useCart();
   const [pendingAction, setPendingAction] = useState<'cart' | 'buy' | null>(null);
 
@@ -105,6 +108,9 @@ export function ProductCard({ product }: ProductCardProps) {
               aria-hidden="true"
               className="absolute inset-0 bg-gray-100"
             />
+          )}
+          {image && watermarkLicence && (
+            <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
           )}
         </div>
       </Link>

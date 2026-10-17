@@ -6,6 +6,8 @@ import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { WatermarkBadge, LeadFreeBadge } from '@/components/product/WatermarkBadge';
 import { PriceDisplay } from '@/components/product/PriceDisplay';
+import { WaterMarkLeadFreeOverlay } from '@/components/product/WaterMarkLeadFreeOverlay';
+import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
@@ -27,6 +29,7 @@ interface CabinetSpec {
   key: CabinetKey;
   handle: string;
   shortName: string;
+  displayName: string;
   modelId: string;
   modelName: string;
   tagline: string;
@@ -38,7 +41,8 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'round',
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
-    shortName: 'Round Stainless',
+    shortName: 'Round Stainless Steel',
+    displayName: 'Round Stainless Steel Water Bubbler',
     modelId: 'YL-600R',
     modelName: 'Water Bubbler Round',
     tagline: 'Compact stainless commercial bubbler for direct chilled drinking in indoor and sheltered locations.',
@@ -48,7 +52,8 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'square',
     handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
-    shortName: 'Square Stainless',
+    shortName: 'Square Stainless Steel',
+    displayName: 'Stainless Steel Water Bubbler with Tap',
     modelId: 'YL-600C',
     modelName: 'Water Bubbler Square',
     tagline: 'Stainless commercial bubbler with a separate side tap for bottles, glasses and jugs.',
@@ -58,12 +63,13 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    shortName: 'Rust-Free HDPE',
+    shortName: 'HDPE Design',
+    displayName: 'HDPE Water Bubbler with Tap',
     modelId: 'YL-600P',
     modelName: 'Water Bubbler Grey',
-    tagline: 'Rust-free HDPE commercial bubbler with a separate side tap for bottles, glasses and jugs.',
-    badge: 'Rust-free cabinet',
-    highlights: ['20 L/hr', 'Approx. 8–12 °C', 'Rust-free HDPE', 'WaterMark 023484'],
+    tagline: 'Contemporary HDPE drinking fountain with a separate side tap for bottles, glasses and jugs.',
+    badge: 'Contemporary design',
+    highlights: ['20 L/hr', 'Approx. 8–12 °C', 'HDPE cabinet', 'WaterMark 023484'],
   },
 ];
 
@@ -90,7 +96,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Which Enviro Aqua bubblers include a separate bottle-filling tap?',
-    a: 'The YL-600P Water Bubbler Grey and YL-600C Water Bubbler Square both include a separate side tap for filling bottles, glasses or jugs. The YL-600P features a rust-free HDPE outer cabinet, while the YL-600C features stainless steel.',
+    a: 'The YL-600P Water Bubbler Grey and YL-600C Water Bubbler Square both include a separate side tap for filling bottles, glasses or jugs. The YL-600P features an HDPE outer cabinet, while the YL-600C features stainless steel.',
   },
   {
     q: 'Do commercial water bubblers need WaterMark certification in Australia?',
@@ -236,6 +242,7 @@ function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Prod
   const href = product ? getProductUrl(product.handle) : `/${cabinet.handle}`;
   const image = product?.featuredImage ?? null;
   const price = product?.priceRange.minVariantPrice ?? null;
+  const watermarkLicence = getInitialBubblerWaterMarkLicence(cabinet.handle);
 
   return (
     <div className="border border-gray-200 rounded overflow-hidden flex flex-col">
@@ -253,13 +260,20 @@ function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Prod
             <Droplet size={48} strokeWidth={1.25} aria-hidden="true" />
           </span>
         )}
+        {image && watermarkLicence && (
+          <div className="pointer-events-none absolute left-[7%] top-[7%] z-10 h-[30%] w-[30%]">
+            <div className="relative h-full w-full">
+              <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
+            </div>
+          </div>
+        )}
         <span className="absolute top-3 right-3 bg-black text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded">
           {cabinet.badge}
         </span>
       </Link>
       <div className="p-5 flex flex-col flex-1">
         <p className="text-xs font-semibold uppercase tracking-wider text-brand-blue">{cabinet.shortName}</p>
-        <h3 className="mt-1 text-xl font-semibold text-black">{cabinet.modelName}</h3>
+        <h3 className="mt-1 text-xl font-semibold text-black">{cabinet.displayName}</h3>
         <p className="mt-1 text-sm font-mono text-black/60">{cabinet.modelId}</p>
         <p className="mt-3 text-sm text-black/70 leading-relaxed">{cabinet.tagline}</p>
         <ul className="mt-4 space-y-2 text-sm text-black/75">
@@ -289,10 +303,10 @@ function ComparisonSection() {
     ['WaterMark certificate', '023484', '023484', '023484'],
     ['Cooling capacity', '20 L/hr', '20 L/hr', '20 L/hr'],
     ['Chilled water temperature', 'Approx. 8–12 °C', 'Approx. 8–12 °C', 'Approx. 8–12 °C'],
-    ['Cabinet', '304 stainless steel', 'SUS304 stainless steel', 'Rust-free HDPE'],
+    ['Cabinet', '304 stainless steel', 'SUS304 stainless steel', 'HDPE'],
     ['Filtration', 'Integrated drinking-water cartridge', 'Sediment + activated carbon', 'PP sediment + activated carbon'],
     ['Bottle / glass fill side tap', 'No', 'Yes', 'Yes'],
-    ['Cabinet format', 'Compact stainless', 'Square stainless', 'Rust-free HDPE'],
+    ['Cabinet format', 'Round stainless steel', 'Square stainless steel', 'Contemporary HDPE'],
   ] as const;
 
   return (

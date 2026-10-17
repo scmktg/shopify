@@ -4,11 +4,14 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { ProductImage } from '@/types/product';
+import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
 
 interface ProductGalleryProps {
   images: ReadonlyArray<ProductImage>;
   title: string;
   preferredImage?: ProductImage | null;
+  showLeadFreeBadge?: boolean;
+  watermarkLicence?: string | null;
 }
 
 /**
@@ -29,6 +32,8 @@ export function ProductGallery({
   images,
   title,
   preferredImage = null,
+  showLeadFreeBadge = false,
+  watermarkLicence = null,
 }: ProductGalleryProps) {
   const galleryImages =
     preferredImage && !images.some((image) => image.url === preferredImage.url)
@@ -90,6 +95,8 @@ export function ProductGallery({
         sizes="(min-width: 768px) 50vw, 100vw"
         className="object-contain"
       />
+
+      {showLeadFreeBadge && watermarkLicence && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} />}
 
       {showArrows && (
         <>

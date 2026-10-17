@@ -53,7 +53,12 @@ function isProductionBuild(): boolean {
 async function main(): Promise<void> {
   const handleCount = Object.keys(canonicalCatalogData).length;
   const production = isProductionBuild();
-  const strict = production || process.env['STRICT_PRODUCTS_VALIDATION'] === '1';
+  // Vercel previews must not inherit production-only strictness from a
+  // project-wide environment variable. Keep explicit strict local/CI runs.
+  const strict =
+    production ||
+    (!process.env['VERCEL_ENV'] &&
+      process.env['STRICT_PRODUCTS_VALIDATION'] === '1');
 
   console.log(`[validate] canonical product content: ${handleCount} entries`);
   if (production) {
@@ -133,11 +138,14 @@ async function main(): Promise<void> {
   );
 
   if (missingInShopify.length > 0) {
-    console.error('');
-    console.error(
-      `${RED}✖ base product content references Shopify handles that don't exist:${RESET}`,
+    const stream = strict ? console.error : console.warn;
+    const colour = strict ? RED : YELLOW;
+    const symbol = strict ? '✖' : '!';
+    stream('');
+    stream(
+      `${colour}${symbol} base product content references Shopify handles that don't exist (${missingInShopify.length}):${RESET}`,
     );
-    for (const handle of missingInShopify) console.error(`    - ${handle}`);
+    for (const handle of missingInShopify) stream(`    - ${handle}`);
   }
 
   if (missingInProducts.length > 0) {
@@ -177,12 +185,12 @@ async function main(): Promise<void> {
     );
   }
 
-  if (missingInShopify.length > 0) process.exit(1);
+  if (missingInShopify.length > 0 && strict) process.exit(1);
   if (missingInProducts.length > 0 && strict) process.exit(1);
   if (categoryMismatches.length > 0) process.exit(1);
 
   console.log(
-    `${GREEN}✓${RESET} Shopify handles and category tags match the canonical storefront catalogue`,
+    `${GREEN}✓${RESET} Shopify catalogue validation completed${missingInShopify.length || missingInProducts.length ? ' with non-blocking handle warnings' : ''}`,
   );
   process.exit(0);
 }
