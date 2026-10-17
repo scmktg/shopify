@@ -1,10 +1,10 @@
 ---
 title: "Water Bubblers for Gyms and Fitness Centres Australia"
-description: "How to choose a commercial water bubbler or bottle-fill station for an Australian gym, including cooling capacity, placement, filtration and indoor vs outdoor use."
+description: "How to choose a commercial water bubbler or bottle-fill station for an Australian gym, including cooling capacity, placement, filtration and bottle-filling needs."
 relatedLinks:
   - { label: "Commercial water bubblers", href: "/commercial-water-bubblers" }
   - { label: "Square stainless bubbler with bottle-fill tap", href: "/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des" }
-  - { label: "Outdoor HDPE commercial bubbler", href: "/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm" }
+  - { label: "HDPE bubbler with side tap", href: "/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm" }
   - { label: "Water bubbler vs water cooler", href: "/help/bubblers-vs-coolers/" }
   - { label: "Water bubblers for offices", href: "/use/commercial-and-cafe/offices/" }
   - { label: "Water bubblers for factories and warehouses", href: "/use/commercial-and-cafe/factories-and-warehouses/" }
@@ -16,14 +16,14 @@ faq:
   - q: "Where should gym water bubblers be installed?"
     a: "Place drinking stations where members can reach them easily without disrupting training areas or creating queues. Common locations include entrances, cardio or strength zones, shared circulation areas and near group-training spaces. The number and exact placement should follow the size, layout and peak traffic of the facility."
   - q: "What cabinet material is suitable for a gym bubbler?"
-    a: "SUS304 stainless steel is a practical option for indoor and sheltered commercial locations. For exposed outdoor areas, choose a cabinet designed for outdoor use. Enviro Aqua's HDPE model uses a rust-free, UV-stable cabinet for exposed installations."
+    a: "All three models offer chilled filtered water. Choose by cabinet material and whether a separate bottle-filling tap is needed."
   - q: "Do gym water bubblers need WaterMark certification?"
     a: "WaterMark requirements depend on the product type and plumbing application. Product types identified by the WaterMark Schedule of Products must have the appropriate certification for installation. The three Enviro Aqua commercial bubblers in this range are WaterMark certified under Certificate 023484."
 ---
 
 Gyms and fitness centres often create **short periods of high drinking-water demand** before classes, between sessions and during busy training periods. A suitable gym water bubbler therefore needs to be chosen around peak use, bottle-filling behaviour, cabinet location and ease of servicing rather than membership numbers alone.
 
-Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes three filtered, chilled models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.** For gyms, the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) is a useful starting point because it combines a bubbler spout with a separate side tap for bottles. For exposed outdoor training areas, compare the [rust-free HDPE model](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm).
+Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes three filtered, chilled models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.** For gyms, the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) is a useful starting point because it combines a bubbler spout with a separate side tap for bottles.
 
 ## WaterMark identity of the Enviro Aqua commercial bubbler range
 
@@ -35,7 +35,7 @@ Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) inclu
 
 ## What should a gym look for in a water bubbler?
 
-For most gym and fitness-centre installations, compare peak demand, bottle filling, cooling capacity, cabinet exposure, filtration and cartridge servicing, plumbing/drainage/power access, and the applicable WaterMark and plumbing requirements.
+For most gym and fitness-centre installations, compare peak demand, bottle filling, cooling capacity, cabinet material, filtration and cartridge servicing, plumbing/drainage/power access, and the applicable WaterMark and plumbing requirements.
 
 ## How much cooling capacity does a gym need?
 
@@ -53,15 +53,13 @@ The **YL-600C Water Bubbler Square** and **YL-600P Water Bubbler Grey** both inc
 
 ## Where should a gym water bubbler be placed?
 
-There is no single correct spacing rule for every gym. Placement should follow how members actually move through the facility. Useful locations can include the entrance or main circulation path, between major training zones, near cardio or strength areas, close to group-training spaces, or in a sheltered transition area serving an outdoor training zone.
+There is no single correct spacing rule for every gym. Placement should follow how members actually move through the facility. Useful locations can include the entrance or main circulation path, between major training zones, near cardio or strength areas, close to group-training spaces, or in a convenient shared access area.
 
 Avoid locations that create congestion around equipment, emergency paths or narrow walkways. Also make sure the proposed position has practical access to water, drainage, power and future servicing.
 
-## Indoor vs outdoor gym bubblers
 
 For indoor and sheltered areas, a SUS304 stainless-steel cabinet is a practical commercial option. The Enviro Aqua round and square models use stainless-steel cabinets and are intended for indoor or sheltered installations.
 
-For exposed outdoor training areas, the [HDPE commercial bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), **YL-600P / Water Bubbler Grey**, uses a rust-free, UV-stable polymer cabinet and is the better starting point where the station will be exposed to weather.
 
 If the site is coastal, chemically aggressive or otherwise unusual, assess the installation environment specifically rather than relying on a generic material rule.
 
