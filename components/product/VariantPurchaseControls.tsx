@@ -15,7 +15,6 @@ import { DispatchCountdown } from './DispatchCountdown';
 
 interface VariantPurchaseControlsProps {
   fallbackPrice: Money;
-  productHandle?: string;
   ctaLabel?: string;
   companion?: CompanionPurchaseItem | null;
   /** Explicit finish for legacy single-variant listings without a Shopify Colour option. */
@@ -24,7 +23,6 @@ interface VariantPurchaseControlsProps {
 
 export function VariantPurchaseControls({
   fallbackPrice,
-  productHandle,
   ctaLabel,
   companion = null,
   singleFinish,
@@ -106,7 +104,7 @@ export function VariantPurchaseControls({
                 <legend className="text-sm font-semibold text-black">
                   {titleCaseVariantOption(normaliseOptionName(name))}:{' '}
                   <span className="font-normal text-black/70">
-                    {displayVariantOption(selectedOptions.get(name) ?? '', productHandle)}
+                    {titleCaseVariantOption(selectedOptions.get(name) ?? '')}
                   </span>
                 </legend>
                 <div className="mt-2 flex flex-wrap gap-2">
@@ -130,7 +128,7 @@ export function VariantPurchaseControls({
                         type="button"
                         onClick={() => selectOption(name, value)}
                         aria-pressed={selected}
-                        aria-label={`${titleCaseVariantOption(normaliseOptionName(name))}: ${displayVariantOption(value, productHandle)}`}
+                        aria-label={`${titleCaseVariantOption(normaliseOptionName(name))}: ${titleCaseVariantOption(value)}`}
                         className={
                           colourOption
                             ? selected
@@ -155,7 +153,7 @@ export function VariantPurchaseControls({
                             !available && !colourOption ? 'line-through' : ''
                           }
                         >
-                          {displayVariantOption(value, productHandle)}
+                          {titleCaseVariantOption(value)}
                         </span>
                       </button>
                     );
@@ -188,23 +186,6 @@ export function VariantPurchaseControls({
 /** Format option labels without changing the Shopify values used for selection. */
 function titleCaseVariantOption(value: string): string {
   return value.toLowerCase().replace(/\b[a-z]/g, (letter) => letter.toUpperCase());
-}
-
-/** Display-only labels for the three commercial bubbler designs. Shopify option
- * values and variant IDs remain unchanged for selection, cart and analytics. */
-function displayVariantOption(value: string, productHandle?: string): string {
-  const bubblerHandles = new Set([
-    'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
-    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
-    'commercial-rust-free-filtered-cold-water-bubbler-wm',
-  ]);
-  if (productHandle && bubblerHandles.has(productHandle)) {
-    const normalised = value.trim().toLowerCase();
-    if (/round/.test(normalised)) return 'Round Steel Bubbler';
-    if (/hdpe/.test(normalised)) return 'HDPE Bubbler + Tap';
-    if (/square/.test(normalised) || /steel.*(tap|filler)/.test(normalised)) return 'Steel Bubbler + Tap';
-  }
-  return titleCaseVariantOption(value);
 }
 
 function normaliseOptionName(name: string): string {
