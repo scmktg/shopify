@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
-import { QuoteBuilder } from './QuoteBuilder';
+import { QuoteDownloadBuilder } from './QuoteDownloadBuilder';
 
 export const metadata: Metadata = {
-  title: 'Formal Quotations',
-  description: 'Prepare a product quotation for school, business or organisation purchasing approval.',
-  robots: { index: false, follow: false },
+ title: 'Generate a Quote | Enviro Aqua',
+ description: 'Build a live product quotation and save it as a PDF without waiting for email.',
+ robots: { index: false, follow: false },
 };
 
-export default function QuotesPage() {
-  return <QuoteBuilder />;
-}
+export default function QuotesPage(){return <QuoteDownloadBuilder/>;}
