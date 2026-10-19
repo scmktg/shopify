@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   const organisation = String(input.organisation ?? '').trim();
   const contactName = String(input.contact_name ?? '').trim();
   const postcode = String(input.postcode ?? '').trim();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 160 ||
+  if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email) || email.length > 160 ||
       !organisation || organisation.length > 120 || !contactName || contactName.length > 100 ||
       !/^\d{4}$/.test(postcode)) return invalid('Please enter valid organisation and contact information.');
   if (!Array.isArray(input.items) || input.items.length < 1 || input.items.length > 20) return invalid('Select between one and twenty items.');
@@ -38,6 +38,11 @@ export async function POST(request: NextRequest) {
   }
   if (new Set(parsed.map(i => i.variant_id)).size !== parsed.length) return invalid('Combine duplicate variants.');
   try {
+    // Per-address issuance limit. Production deployment additionally requires WAF/IP limits.
+    const recent = await quoteDb<{ id: string }[]>('quotes', 'GET',
+      'select=id&customer_email=eq.' + encodeURIComponent(email) +
+      '&created_at=gte.' + encodeURIComponent(new Date(Date.now() - 60 * 60 * 1000).toISOString()) + '&limit=4');
+    if (recent.length >= 3) return NextResponse.json({ error: 'Too many quotation requests. Please try later.' }, { status: 429 });
     const items: QuoteItem[] = [];
     for (const row of parsed) {
       const product = await fetchProductByHandle(row.handle);
