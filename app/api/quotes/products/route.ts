@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
         id: product.id,
         title: product.title,
         handle: product.handle,
+        image: product.featuredImage ? { url: product.featuredImage.url, altText: product.featuredImage.altText } : null,
         variants: product.variants.map((variant) => ({
           id: variant.id,
           title: variant.title,
