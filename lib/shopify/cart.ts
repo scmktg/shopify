@@ -616,26 +616,46 @@ export async function estimateProductShipping(
   }
 }
 
-/** Shopify-derived shipping cost for all quoted lines together, not individual item estimates. */
+
+const QUOTE_CART_CREATE = /* GraphQL */ `
+ mutation QuoteCartCreate($input:CartInput!){cartCreate(input:$input){cart{id} userErrors{field message}}}
+`;
+const QUOTE_DELIVERY_ADD = /* GraphQL */ `
+ mutation QuoteDeliveryAdd($cartId:ID!,$addresses:[CartSelectableAddressInput!]!){
+  cartDeliveryAddressesAdd(cartId:$cartId,addresses:$addresses){
+   cart{id deliveryGroups(first:20){nodes{deliveryOptions{title deliveryMethodType estimatedCost{amount currencyCode}}}}}
+   userErrors{field message}
+  }
+ }
+`;
+const QUOTE_CART_RATES = /* GraphQL */ `
+ query QuoteCartRates($id:ID!){cart(id:$id){deliveryGroups(first:20){nodes{deliveryOptions{title deliveryMethodType estimatedCost{amount currencyCode}}}}}}
+`;
+/** Obtain actual Shopify rates for the combined basket and delivery postcode. */
 export async function estimateQuoteShipping(lines: ReadonlyArray<{variantId:string;quantity:number}>, postcodeInput:string):Promise<ShippingEstimateResult>{
- const postcode=postcodeInput.trim();
- const provinceCode=provinceForAustralianPostcode(postcode);
- if(!provinceCode) return {ok:false,postcode,provinceCode:null,options:[],error:'Enter a valid 4-digit Australian postcode.'};
- if(!lines.length||lines.length>50||lines.some(l=>!l.variantId.startsWith('gid://shopify/ProductVariant/')||!Number.isSafeInteger(l.quantity)||l.quantity<1||l.quantity>99))
-  return {ok:false,postcode,provinceCode,options:[],error:'Invalid products or quantities.'};
- try {
-  const result=await shopifyClient.request<{cartCreate:{cart:RawShippingEstimateCart|null;userErrors:ReadonlyArray<UserError>}}>(SHIPPING_ESTIMATE_MUTATION,{
-   variables:{input:{lines:lines.map(l=>({merchandiseId:l.variantId,quantity:l.quantity})),buyerIdentity:{countryCode:'AU'},delivery:{addresses:[{selected:true,oneTimeUse:true,validationStrategy:'COUNTRY_CODE_ONLY',address:{deliveryAddress:{countryCode:'AU',provinceCode,zip:postcode}}}]}}}
-  });
-  if(result.errors||!result.data?.cartCreate.cart||result.data.cartCreate.userErrors.length)
-   return {ok:false,postcode,provinceCode,options:[],error:'Shopify could not calculate delivery for this selection.'};
-  const groups=result.data.cartCreate.cart.deliveryGroups.nodes;
-  if(!groups.length)return {ok:false,postcode,provinceCode,options:[],error:'No delivery groups returned by Shopify.'};
-  // Each Shopify delivery group must have an available shipping method.
-  // Selecting the cheapest option from each group produces the combined rate.
+ const postcode=postcodeInput.trim();const provinceCode=provinceForAustralianPostcode(postcode);
+ const failure=(error:string):ShippingEstimateResult=>({ok:false,postcode,provinceCode,options:[],error});
+ if(!provinceCode)return failure('Enter a valid 4-digit Australian postcode.');
+ if(!lines.length||lines.length>50||lines.some(l=>!l.variantId.startsWith('gid://shopify/ProductVariant/')||!Number.isSafeInteger(l.quantity)||l.quantity<1||l.quantity>99))return failure('Invalid products or quantities.');
+ try{
+  type CartCreated={cartCreate:{cart:{id:string}|null;userErrors:ReadonlyArray<UserError>}};
+  const created=await shopifyClient.request<CartCreated>(QUOTE_CART_CREATE,{variables:{input:{lines:lines.map(l=>({merchandiseId:l.variantId,quantity:l.quantity})),buyerIdentity:{countryCode:'AU'}}}});
+  const id=created.data?.cartCreate.cart?.id;
+  if(created.errors||!id||created.data?.cartCreate.userErrors.length)return failure('Shopify could not create a delivery estimate.');
+  type Added={cartDeliveryAddressesAdd:{cart:{id:string;deliveryGroups:RawShippingEstimateCart['deliveryGroups']}|null;userErrors:ReadonlyArray<UserError>}};
+  const addresses=[{selected:true,oneTimeUse:true,validationStrategy:'COUNTRY_CODE_ONLY',address:{deliveryAddress:{countryCode:'AU',provinceCode,zip:postcode}}}];
+  const added=await shopifyClient.request<Added>(QUOTE_DELIVERY_ADD,{variables:{cartId:id,addresses}});
+  if(added.errors||added.data?.cartDeliveryAddressesAdd.userErrors.length)return failure('Shopify could not apply this delivery postcode.');
+  let groups=added.data?.cartDeliveryAddressesAdd.cart?.deliveryGroups.nodes??[];
+  if(!groups.length){
+   const reread=await shopifyClient.request<{cart:{deliveryGroups:RawShippingEstimateCart['deliveryGroups']}|null}>(QUOTE_CART_RATES,{variables:{id}});
+   if(reread.errors)return failure('Shopify could not retrieve shipping options.');
+   groups=reread.data?.cart?.deliveryGroups.nodes??[];
+  }
+  if(!groups.length)return failure('Shopify returned no shipping options for this basket and postcode. Pickup-only products or incomplete shipping configuration may prevent delivery.');
   const rates=groups.map(g=>g.deliveryOptions.filter(o=>o.deliveryMethodType==='SHIPPING'&&o.estimatedCost.currencyCode==='AUD'&&Number.isFinite(Number(o.estimatedCost.amount))).sort((a,b)=>Number(a.estimatedCost.amount)-Number(b.estimatedCost.amount))[0]);
-  if(rates.some(r=>!r))return {ok:false,postcode,provinceCode,options:[],error:'Delivery is unavailable for at least one quoted product. Check checkout or contact Enviro Aqua.'};
-  const cents=rates.reduce((sum,r)=>sum+Math.round(Number(r.estimatedCost.amount)*100),0);
+  if(rates.some(r=>!r))return failure('Delivery unavailable for at least one selected product. Contact Enviro Aqua about freight or pickup.');
+  const cents=rates.reduce((n,r)=>n+Math.round(Number(r.estimatedCost.amount)*100),0);
   return {ok:true,postcode,provinceCode,options:[{title:'Shopify delivery estimate',deliveryMethodType:'SHIPPING',estimatedCost:{amount:(cents/100).toFixed(2),currencyCode:'AUD'}}],error:null};
- }catch(e){console.error('[shopify] quote shipping estimate failed',e);return {ok:false,postcode,provinceCode,options:[],error:'Shipping rates are temporarily unavailable.'};}
+ }catch(e){console.error('[shopify] quote shipping estimate failed',e);return failure('Shipping rates temporarily unavailable.');}
 }
