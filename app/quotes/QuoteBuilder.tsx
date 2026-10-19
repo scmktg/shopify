@@ -25,6 +25,7 @@ export function QuoteBuilder() {
   const [poNumber, setPoNumber] = useState('');
   const [poFor, setPoFor] = useState('');
   const [history, setHistory] = useState<Quote[] | null>(null);
+  const [historySearch, setHistorySearch] = useState('');
   const total = lines.reduce((n, l) => n + l.price * l.quantity, 0);
 
   async function findProducts(event: FormEvent) {
@@ -127,7 +128,7 @@ export function QuoteBuilder() {
   }
 
   return (
-    <main className="mx-auto max-w-6xl px-5 py-12 text-zinc-950 md:py-20">
+    <div className="mx-auto max-w-6xl px-5 py-12 text-zinc-950 md:py-20">
       <div className="mb-11 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">Enviro Aqua / Business purchasing</p>
         <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">Formal quotations.</h1>
@@ -175,8 +176,9 @@ export function QuoteBuilder() {
             </form>
             <button type="button" onClick={loadHistory} disabled={busy} className="mt-4 text-sm font-medium underline underline-offset-4 disabled:opacity-40">View my saved quotations →</button>
             {history && <div className="mt-5 space-y-4">
+              <label className="block text-sm">Search saved quotations<input type="search" value={historySearch} onChange={e => setHistorySearch(e.target.value)} placeholder="Reference or organisation" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
               {history.length === 0 && <p className="text-sm text-zinc-500">No quotations associated with this verified email.</p>}
-              {history.map(quote => <article key={quote.reference} className="rounded-xl border border-zinc-200 p-4">
+              {history.filter(q => (q.reference + ' ' + q.organisation).toLowerCase().includes(historySearch.toLowerCase())).map(quote => <article key={quote.reference} className="rounded-xl border border-zinc-200 p-4">
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div><p className="font-semibold">{quote.reference}</p><p className="text-sm text-zinc-500">{quote.organisation} · {new Date(quote.created_at).toLocaleDateString('en-AU')}</p></div>
                   <p className="font-semibold">{aud(quote.product_total_cents / 100)}</p>
@@ -230,6 +232,6 @@ export function QuoteBuilder() {
           </section>
         </aside>
       </div>
-    </main>
+    </div>
   );
 }
