@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
   let body: { email?: unknown };
   try { body = await request.json(); } catch { return NextResponse.json({ error: 'Invalid request.' }, { status: 400 }); }
   const email = normaliseEmail(String(body.email ?? ''));
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 160) return NextResponse.json({ error: 'Enter a valid email.' }, { status: 400 });
+  if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email) || email.length > 160) return NextResponse.json({ error: 'Enter a valid email.' }, { status: 400 });
 
   const response = NextResponse.json({ message: 'If your email is valid, a verification link will arrive shortly.' });
   try {
