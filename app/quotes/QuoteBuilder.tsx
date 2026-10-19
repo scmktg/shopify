@@ -148,8 +148,8 @@ export function QuoteBuilder() {
     <div className="mx-auto max-w-7xl px-4 py-10 text-zinc-950 sm:px-6 md:py-16">
       <div className="mb-9 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">Enviro Aqua / Business purchasing</p>
-        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">Formal quotations.</h1>
-        <p className="mt-5 text-lg text-zinc-600">Create an official quotation for your school, organisation or business. One advertised price for retail and trade.</p>
+        <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">Need a Quote Fast?</h1>
+        <p className="mt-5 text-lg leading-relaxed text-zinc-600">Simply add your desired products, enter your organisation details and our system will automatically generate you a quote. Perfect for schools, government and corporate organisations. Quotes are valid for 14 days and can be converted into a purchase online or submitted for invoice approval. If you have any questions or require more information, please don\u0027t hesitate to give us a call on <a className="font-semibold text-zinc-950 underline underline-offset-4" href="tel:+61287728162">(02) 8772 8162</a> or send us an email to <a className="font-semibold text-zinc-950 underline underline-offset-4" href="mailto:info@enviroaqua.com.au">info@enviroaqua.com.au</a>.</p>
       </div>
       <nav aria-label="Quote steps" className="mb-8 grid grid-cols-3 gap-2 sm:gap-3">
         {(['Select products', 'Your details', 'Download / email'] as const).map((label, index) => {
