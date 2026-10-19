@@ -8,6 +8,7 @@ type Product = { id: string; title: string; handle: string; image: { url: string
 type Line = { id: string; handle: string; name: string; variant: string; price: number; quantity: number };
 type SavedItem = { name: string; variant: string; quantity: number; unit_price_cents: number };
 type Quote = { reference: string; organisation: string; contact_name: string; postcode: string; items: SavedItem[]; product_total_cents: number; status: string; created_at: string; expires_at: string; freight_status: string };
+const displayVariant = (title: string) => title.trim().toLowerCase() === 'default title' ? '' : title;
 const aud = (n: number) => new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD' }).format(n);
 
 export function QuoteBuilder() {
@@ -60,6 +61,12 @@ export function QuoteBuilder() {
       return found ? current.map(l => l.id === variant.id ? { ...l, quantity: Math.min(l.quantity + 1, 99) } : l)
         : [...current, { id: variant.id, handle: product.handle, name: product.title, variant: variant.title, price, quantity: 1 }];
     });
+  }
+
+  function adjustQuantity(id: string, delta: number) {
+    setLines(current => current.map(line => line.id === id
+      ? { ...line, quantity: Math.min(99, line.quantity + delta) } : line
+    ).filter(line => line.quantity > 0));
   }
 
   async function issue() {
@@ -183,7 +190,7 @@ export function QuoteBuilder() {
         {lines.length === 0 && <p className="mt-3 text-sm text-zinc-500">No products selected.</p>}
         <div className="mt-4 space-y-3 lg:hidden">
           {lines.map(line => <div key={line.id} className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 pb-3">
-            <div><p className="font-medium">{line.name}</p><p className="text-sm text-zinc-500">{line.variant} · {aud(line.price)} each</p></div>
+            <div><p className="font-medium">{line.name}</p><p className="text-sm text-zinc-500">{displayVariant(line.variant) ? displayVariant(line.variant) + ' · ' : ''}{aud(line.price)} each</p></div>
             <div className="flex items-center gap-3">
               <button type="button" aria-label={'Decrease ' + line.name} className="h-9 w-9 rounded-lg border border-zinc-300" onClick={() => setLines(list => list.map(l => l.id === line.id ? { ...l, quantity: l.quantity - 1 } : l).filter(l => l.quantity > 0))}>−</button>
               <span>{line.quantity}</span>
@@ -238,7 +245,7 @@ export function QuoteBuilder() {
         <p className="mt-1 text-sm text-zinc-500">Your selection stays here as you continue.</p>
         <div className="mt-5 max-h-[360px] space-y-4 overflow-y-auto">
           {lines.length === 0 ? <div className="rounded-xl border border-dashed border-zinc-300 bg-white px-4 py-8 text-center text-sm text-zinc-500">Selected products will appear here.</div> :
-          lines.map(line => <div key={line.id} className="border-b border-zinc-200 pb-4 text-sm"><p className="font-semibold leading-snug">{line.name}</p><p className="mt-1 text-zinc-500">{line.variant}</p><div className="mt-2 flex items-center justify-between"><span>{line.quantity} × {aud(line.price)}</span><strong>{aud(line.quantity * line.price)}</strong></div></div>)}
+          lines.map(line => <div key={line.id} className="border-b border-zinc-200 pb-4 text-sm"><p className="font-semibold leading-snug">{line.name}</p>{displayVariant(line.variant) && <p className="mt-1 text-zinc-500">{displayVariant(line.variant)}</p>}<div className="mt-3 flex flex-wrap items-center justify-between gap-2"><div className="flex items-center gap-2"><button type="button" aria-label={"Decrease quantity of " + line.name} onClick={() => adjustQuantity(line.id, -1)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-300 bg-white text-lg hover:border-black">−</button><span className="min-w-5 text-center font-semibold" aria-live="polite">{line.quantity}</span><button type="button" aria-label={"Increase quantity of " + line.name} disabled={line.quantity >= 99} onClick={() => adjustQuantity(line.id, 1)} className="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-300 bg-white text-lg hover:border-black disabled:opacity-40">+</button></div><strong>{aud(line.quantity * line.price)}</strong></div><p className="mt-1 text-xs text-zinc-500">{aud(line.price)} each</p></div>)}
         </div>
         <div className="mt-5 flex items-center justify-between border-t border-zinc-300 pt-5 text-base font-semibold"><span>Product subtotal</span><span>{aud(total)}</span></div>
         <p className="mt-3 text-xs leading-relaxed text-zinc-500">Freight is not included. Final charges are confirmed at checkout.</p>
