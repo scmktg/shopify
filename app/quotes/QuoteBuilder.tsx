@@ -22,6 +22,8 @@ export function QuoteBuilder() {
   const [error, setError] = useState('');
   const [notice, setNotice] = useState('');
   const [issued, setIssued] = useState('');
+  const [poNumber, setPoNumber] = useState('');
+  const [poFor, setPoFor] = useState('');
   const [history, setHistory] = useState<Quote[] | null>(null);
   const total = lines.reduce((n, l) => n + l.price * l.quantity, 0);
 
@@ -98,6 +100,21 @@ export function QuoteBuilder() {
     finally { setBusy(false); }
   }
 
+  async function submitPO(reference: string) {
+    setBusy(true); setError(''); setNotice('');
+    try {
+      const response = await fetch('/api/quotes/' + encodeURIComponent(reference) + '/purchase-order', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ po_number: poNumber }),
+      });
+      const data = await response.json() as { error?: string };
+      if (!response.ok) throw Error(data.error || 'Unable to submit purchase order.');
+      setNotice('Your purchase order reference has been submitted for review. Invoice terms are subject to Enviro Aqua approval.');
+      setPoFor(''); setPoNumber('');
+    } catch (caught) { setError(caught instanceof Error ? caught.message : 'Unable to submit purchase order.'); }
+    finally { setBusy(false); }
+  }
+
   async function checkout(reference: string) {
     setBusy(true); setError(''); setNotice('');
     try {
@@ -168,8 +185,17 @@ export function QuoteBuilder() {
                 <div className="mt-3 flex flex-wrap gap-4 text-sm font-medium">
                   <a className="underline underline-offset-4" href={'/api/quotes/' + encodeURIComponent(quote.reference) + '/pdf'}>Download PDF</a>
                   {quote.status !== 'purchased' && quote.status !== 'cancelled' && Date.parse(quote.expires_at) > Date.now() &&
-                    <button type="button" onClick={() => checkout(quote.reference)} disabled={busy} className="underline underline-offset-4 disabled:opacity-40">Proceed to checkout →</button>}
+                    <>
+                      <button type="button" onClick={() => checkout(quote.reference)} disabled={busy} className="underline underline-offset-4 disabled:opacity-40">Proceed to checkout →</button>
+                      <button type="button" onClick={() => setPoFor(poFor === quote.reference ? '' : quote.reference)} className="underline underline-offset-4">Submit purchase order →</button>
+                    </>}
                 </div>
+                {poFor === quote.reference && <form onSubmit={e => { e.preventDefault(); void submitPO(quote.reference); }} className="mt-4 flex flex-wrap gap-2">
+                  <label htmlFor={'po-' + quote.reference} className="sr-only">Purchase order number</label>
+                  <input id={'po-' + quote.reference} required value={poNumber} onChange={e => setPoNumber(e.target.value)} maxLength={80} placeholder="Purchase order number" className="min-w-0 flex-1 rounded-lg border border-zinc-300 px-3 py-2 text-sm" />
+                  <button disabled={busy} className="rounded-lg bg-black px-4 py-2 text-sm text-white disabled:opacity-40">Send for review</button>
+                  <p className="w-full text-xs text-zinc-500">This requests review only. No MYOB invoice or credit terms are issued automatically.</p>
+                </form>}
               </article>)}
             </div>}
           </section>
