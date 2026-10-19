@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getProducts } from '@/lib/shopify/queries/getProducts';
+import { searchProducts } from '@/lib/shopify/queries/searchProducts';
 
 export async function GET(request: NextRequest) {
   const query = (request.nextUrl.searchParams.get('q') ?? '').trim();
@@ -7,9 +7,9 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ products: [] }, { headers: { 'Cache-Control': 'no-store' } });
   }
   try {
-    const result = await getProducts({ query, first: 12 });
+    const products = await searchProducts(query, 12);
     return NextResponse.json({
-      products: result.products.map((product) => ({
+      products: products.map((product) => ({
         id: product.id,
         title: product.title,
         handle: product.handle,
