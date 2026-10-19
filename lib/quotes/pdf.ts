@@ -29,7 +29,10 @@ export function quotePdf(quote: SavedQuote): Buffer {
       ' Tf 48 ' + y + ' Td (' + esc(value) + ') Tj ET');
     y -= gap;
   }
-  line('ENVIRO AQUA', 22, true, 35);
+  line('ENVIRO AQUA', 22, true, 22);
+  line('ABN 24 638 197 734  |  ACN 638 197 734', 9, false, 15);
+  line('6/45 Amsterdam Cct, Wyong NSW 2259  |  (02) 8772 8162', 9, false, 15);
+  line('info@enviroaqua.com.au  |  www.enviroaqua.com.au', 9, false, 31);
   line('FORMAL PRODUCT QUOTATION', 16, true, 29);
   line('Quote reference: ' + quote.reference, 11, true);
   line('Issued: ' + new Date(quote.created_at).toLocaleDateString('en-AU', { timeZone: 'Australia/Melbourne' }));
