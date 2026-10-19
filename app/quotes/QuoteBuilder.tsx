@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 
 type Variant = { id: string; title: string; availableForSale: boolean; price: { amount: string; currencyCode: string } };
 type Product = { id: string; title: string; handle: string; variants: Variant[] };
