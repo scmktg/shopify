@@ -53,7 +53,8 @@ export function quotePdf(quote: SavedQuote): Buffer {
     'The final order total, including freight and applicable taxes,',
     'will be confirmed before payment at Shopify checkout.',
     'This document is a quotation, not a tax invoice or proof of payment.',
-    'Subject to product availability and the stated validity period.',
+    'Valid for 14 days, subject to unchanged product prices and availability.',
+    'If product prices change, a refreshed quotation is required.',
     'Purchase orders and invoice terms require separate approval.',
   ]) line(part, 9, false, 15);
   const objects: string[] = [''];
