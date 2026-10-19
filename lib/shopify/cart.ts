@@ -632,10 +632,10 @@ const QUOTE_CART_RATES = /* GraphQL */ `
  query QuoteCartRates($id:ID!){cart(id:$id){deliveryGroups(first:20){nodes{deliveryOptions{title deliveryMethodType estimatedCost{amount currencyCode}}}}}}
 `;
 /** Obtain actual Shopify rates for the combined basket and delivery postcode. */
-export async function estimateQuoteShipping(lines: ReadonlyArray<{variantId:string;quantity:number}>, postcodeInput:string):Promise<ShippingEstimateResult>{
- const postcode=postcodeInput.trim();const provinceCode=provinceForAustralianPostcode(postcode);
+export async function estimateQuoteShipping(lines: ReadonlyArray<{variantId:string;quantity:number}>, destination:{street:string;city:string;provinceCode:string;postcode:string}):Promise<ShippingEstimateResult>{
+ const postcode=destination.postcode.trim();const provinceCode=provinceForAustralianPostcode(postcode);
  const failure=(error:string):ShippingEstimateResult=>({ok:false,postcode,provinceCode,options:[],error});
- if(!provinceCode)return failure('Enter a valid 4-digit Australian postcode.');
+ if(!provinceCode||provinceCode!==destination.provinceCode||!destination.street.trim()||!destination.city.trim())return failure('Enter a complete delivery address with matching state and postcode.');
  if(!lines.length||lines.length>50||lines.some(l=>!l.variantId.startsWith('gid://shopify/ProductVariant/')||!Number.isSafeInteger(l.quantity)||l.quantity<1||l.quantity>99))return failure('Invalid products or quantities.');
  try{
   type CartCreated={cartCreate:{cart:{id:string}|null;userErrors:ReadonlyArray<UserError>}};
@@ -643,7 +643,7 @@ export async function estimateQuoteShipping(lines: ReadonlyArray<{variantId:stri
   const id=created.data?.cartCreate.cart?.id;
   if(created.errors||!id||created.data?.cartCreate.userErrors.length)return failure('Shopify could not create a delivery estimate.');
   type Added={cartDeliveryAddressesAdd:{cart:{id:string;deliveryGroups:RawShippingEstimateCart['deliveryGroups']}|null;userErrors:ReadonlyArray<UserError>}};
-  const addresses=[{selected:true,oneTimeUse:true,validationStrategy:'COUNTRY_CODE_ONLY',address:{deliveryAddress:{countryCode:'AU',provinceCode,zip:postcode}}}];
+  const addresses=[{selected:true,oneTimeUse:true,validationStrategy:'COUNTRY_CODE_ONLY',address:{deliveryAddress:{countryCode:'AU',provinceCode,zip:postcode,address1:destination.street.trim(),city:destination.city.trim()}}}];
   const added=await shopifyClient.request<Added>(QUOTE_DELIVERY_ADD,{variables:{cartId:id,addresses}});
   if(added.errors||added.data?.cartDeliveryAddressesAdd.userErrors.length)return failure('Shopify could not apply this delivery postcode.');
   let groups=added.data?.cartDeliveryAddressesAdd.cart?.deliveryGroups.nodes??[];
