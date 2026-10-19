@@ -10,7 +10,7 @@ export function quoteDbConfigured() {
 
 export async function quoteDb<T>(table: string, method: 'GET' | 'POST' | 'PATCH', query: string, body?: unknown, prefer?: string): Promise<T> {
   if (!url || !key) throw new Error('Quotation storage is not configured');
-  if (!['quotes', 'quote_access_challenges', 'quote_sessions'].includes(table)) throw new Error('Invalid table');
+  if (!['quotes', 'quote_access_challenges', 'quote_sessions', 'quote_purchase_order_requests'].includes(table)) throw new Error('Invalid table');
   const response = await fetch(url + '/rest/v1/' + table + '?' + query, {
     method,
     headers: {
