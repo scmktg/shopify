@@ -138,48 +138,50 @@ export function QuoteBuilder() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-12 text-zinc-950 md:py-20">
-      <div className="mb-11 max-w-3xl">
+    <div className="mx-auto max-w-7xl px-4 py-10 text-zinc-950 sm:px-6 md:py-16">
+      <div className="mb-9 max-w-3xl">
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.24em] text-zinc-500">Enviro Aqua / Business purchasing</p>
         <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">Formal quotations.</h1>
         <p className="mt-5 text-lg text-zinc-600">Create an official quotation for your school, organisation or business. One advertised price for retail and trade.</p>
       </div>
-      <nav aria-label="Quote steps" className="mb-8 grid grid-cols-3 gap-2">
+      <nav aria-label="Quote steps" className="mb-8 grid grid-cols-3 gap-2 sm:gap-3">
         {(['Select products', 'Your details', 'Download / email'] as const).map((label, index) => {
           const number = (index + 1) as 1 | 2 | 3;
           const accessible = number === 1 || (number === 2 && lines.length > 0) || (number === 3 && Boolean(issued));
           return <button key={label} type="button" disabled={!accessible} aria-current={step === number ? 'step' : undefined}
             onClick={() => setStep(number)}
-            className={['rounded-xl border px-2 py-4 text-left text-xs font-medium sm:px-5 sm:text-sm', step === number ? 'border-black bg-black text-white' : 'border-zinc-200 text-zinc-500', !accessible ? 'opacity-50' : ''].join(' ')}>
+            className={['rounded-2xl border px-3 py-4 text-left text-xs font-semibold transition-colors sm:px-6 sm:py-5 sm:text-base', step === number ? 'border-black bg-black text-white' : 'border-zinc-200 text-zinc-500', !accessible ? 'opacity-50' : ''].join(' ')}>
             <span className="mr-2 opacity-70">0{number}</span>{label}
           </button>;
         })}
       </nav>
-      {step === 1 && <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
+      <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
+      <div className="min-w-0">
+      {step === 1 && <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8">
         <h2 className="text-2xl font-semibold">Step 1 — Select products</h2>
         <p className="mt-2 text-sm text-zinc-500">Search by product name. Results update automatically while you type.</p>
         <label htmlFor="quote-search" className="sr-only">Search products</label>
         <input id="quote-search" type="search" value={query} onChange={e => setQuery(e.target.value)}
           maxLength={80} placeholder="Start typing a product name…" autoComplete="off"
-          className="mt-5 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:border-black" />
-        <div className="mt-5 space-y-4" aria-live="polite" aria-busy={searching}>
+          className="mt-5 w-full rounded-2xl border border-zinc-300 bg-zinc-50 px-5 py-4 text-base outline-none transition focus:border-black focus:bg-white focus:ring-2 focus:ring-zinc-200" />
+        <div className="mt-5 max-h-[560px] space-y-3 overflow-y-auto pr-1" aria-live="polite" aria-busy={searching}>
           {searching && <p className="text-sm text-zinc-500">Searching products…</p>}
           {!searching && query.trim().length >= 2 && products.length === 0 &&
             <p className="text-sm text-zinc-500">No matching products found.</p>}
           {!searching && query.trim().length < 2 && <p className="text-sm text-zinc-500">Enter at least two characters to search.</p>}
-          {products.map(product => <div key={product.id} className="border-b border-zinc-100 pb-4">
-            <div className="flex items-center gap-4"><div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-zinc-200 bg-white">{product.image ? <Image src={product.image.url} alt={product.image.altText || product.title} fill sizes="80px" className="object-contain p-1.5" /> : <span className="flex h-full items-center justify-center text-xs text-zinc-400">No image</span>}</div><p className="font-medium">{product.title}</p></div>
+          {products.map(product => <div key={product.id} className="rounded-2xl border border-zinc-200 bg-white p-4 transition hover:border-zinc-400 hover:shadow-sm">
+            <div className="flex items-center gap-4"><div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-zinc-100 bg-zinc-50 sm:h-28 sm:w-28">{product.image ? <Image src={product.image.url} alt={product.image.altText || product.title} fill sizes="(min-width: 640px) 112px, 96px" className="object-contain p-1.5" /> : <span className="flex h-full items-center justify-center text-xs text-zinc-400">No image</span>}</div><div className="min-w-0"><p className="text-sm font-semibold leading-snug sm:text-base">{product.title}</p><p className="mt-1 text-xs text-zinc-500">Choose an option below to add it to your quote</p></div></div>
             <div className="mt-3 flex flex-wrap gap-2">{product.variants.map(variant =>
               <button type="button" key={variant.id} disabled={!variant.availableForSale || variant.price.currencyCode !== 'AUD'}
                 onClick={() => add(product, variant)}
-                className="rounded-xl border border-zinc-300 px-3 py-2 text-sm hover:border-black disabled:opacity-40">
+                className="rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-left text-sm font-medium transition hover:border-black hover:bg-zinc-100 focus-visible:ring-2 focus-visible:ring-black disabled:cursor-not-allowed disabled:opacity-40">
                 {variant.title === 'Default Title' ? 'Standard' : variant.title} · {aud(Number(variant.price.amount))} +
               </button>)}</div>
           </div>)}
         </div>
-        <h3 className="mt-8 text-lg font-semibold">Products in your quote</h3>
+        <h3 className="mt-8 text-lg font-semibold lg:hidden">Products in your quote</h3>
         {lines.length === 0 && <p className="mt-3 text-sm text-zinc-500">No products selected.</p>}
-        <div className="mt-4 space-y-3">
+        <div className="mt-4 space-y-3 lg:hidden">
           {lines.map(line => <div key={line.id} className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 pb-3">
             <div><p className="font-medium">{line.name}</p><p className="text-sm text-zinc-500">{line.variant} · {aud(line.price)} each</p></div>
             <div className="flex items-center gap-3">
@@ -190,12 +192,12 @@ export function QuoteBuilder() {
             </div>
           </div>)}
         </div>
-        <div className="mt-6 flex items-center justify-between border-t border-zinc-200 pt-5 font-semibold"><span>Product subtotal</span><span>{aud(total)}</span></div>
+        <div className="mt-6 flex items-center justify-between border-t border-zinc-200 pt-5 font-semibold lg:hidden"><span>Product subtotal</span><span>{aud(total)}</span></div>
         <p className="mt-2 text-xs text-zinc-500">Freight is excluded. Prices are verified when the quote is issued.</p>
         <button type="button" disabled={!lines.length} onClick={() => { setError(''); setStep(2); }}
           className="mt-6 w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-40">Continue to your details →</button>
       </section>}
-      {step === 2 && <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
+      {step === 2 && <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8">
         <h2 className="text-2xl font-semibold">Step 2 — Your details</h2>
         <p className="mt-2 text-sm text-zinc-500">Enter the organisation and contact details to appear on your quotation.</p>
         <form onSubmit={e => { e.preventDefault(); setError(''); setStep(3); }} className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -209,7 +211,7 @@ export function QuoteBuilder() {
           </div>
         </form>
       </section>}
-      {step === 3 && <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
+      {step === 3 && <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8">
         <h2 className="text-2xl font-semibold">Step 3 — Download or email your quote</h2>
         <p className="mt-2 text-zinc-600">Review your details and product total, then generate your formal quotation. A PDF will be sent to your email address.</p>
         <div className="mt-6 rounded-xl bg-zinc-50 p-5 text-sm">
@@ -230,9 +232,48 @@ export function QuoteBuilder() {
           <button type="button" onClick={() => { setIssued(''); setLines([]); setStep(1); setQuery(''); }} className="mt-4 text-sm underline underline-offset-4">Start another quotation</button>
         </div>}
       </section>}
+      </div>
+      <aside className="rounded-3xl border border-zinc-200 bg-zinc-50 p-5 shadow-sm lg:sticky lg:top-28 sm:p-6" aria-label="Quotation summary">
+        <div className="flex items-center justify-between"><h2 className="text-lg font-semibold">Quote summary</h2><span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-zinc-600">{lines.reduce((n, l) => n + l.quantity, 0)} items</span></div>
+        <p className="mt-1 text-sm text-zinc-500">Your selection stays here as you continue.</p>
+        <div className="mt-5 max-h-[360px] space-y-4 overflow-y-auto">
+          {lines.length === 0 ? <div className="rounded-xl border border-dashed border-zinc-300 bg-white px-4 py-8 text-center text-sm text-zinc-500">Selected products will appear here.</div> :
+          lines.map(line => <div key={line.id} className="border-b border-zinc-200 pb-4 text-sm"><p className="font-semibold leading-snug">{line.name}</p><p className="mt-1 text-zinc-500">{line.variant}</p><div className="mt-2 flex items-center justify-between"><span>{line.quantity} × {aud(line.price)}</span><strong>{aud(line.quantity * line.price)}</strong></div></div>)}
+        </div>
+        <div className="mt-5 flex items-center justify-between border-t border-zinc-300 pt-5 text-base font-semibold"><span>Product subtotal</span><span>{aud(total)}</span></div>
+        <p className="mt-3 text-xs leading-relaxed text-zinc-500">Freight is not included. Final charges are confirmed at checkout.</p>
+      </aside>
+      </div>
       {error && <p role="alert" className="mt-5 text-sm text-red-700">{error}</p>}
       {notice && <p role="status" className="mt-5 text-sm text-zinc-700">{notice}</p>}
-      <div className="mt-12"></div>
+      <section className="mt-12 rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8" aria-labelledby="saved-quotes-title">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div><h2 id="saved-quotes-title" className="text-2xl font-semibold">Already have a quotation?</h2><p className="mt-2 text-sm text-zinc-600">Verify your email to view previous quotes, download PDFs or proceed to checkout.</p></div>
+          <button type="button" onClick={loadHistory} disabled={busy} className="rounded-xl border border-zinc-300 px-4 py-3 text-sm font-medium hover:border-black disabled:opacity-40">View saved quotes →</button>
+        </div>
+        <form onSubmit={sendLogin} className="mt-6 flex flex-wrap gap-3">
+          <label htmlFor="quote-login" className="sr-only">Email address for saved quotations</label>
+          <input id="quote-login" type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email address" className="min-w-0 flex-1 rounded-xl border border-zinc-300 px-4 py-3" />
+          <button disabled={busy} className="rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white disabled:opacity-40">Email secure access link</button>
+        </form>
+        {history && <div className="mt-6 space-y-3">
+          <label className="block text-sm">Search quotations<input type="search" value={historySearch} onChange={e => setHistorySearch(e.target.value)} placeholder="Search reference or organisation" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
+          {history.length === 0 && <p className="text-sm text-zinc-500">No quotations were found for this verified account.</p>}
+          {history.filter(q => (q.reference + ' ' + q.organisation).toLowerCase().includes(historySearch.toLowerCase())).map(quote => <article key={quote.reference} className="rounded-2xl border border-zinc-200 p-4 sm:p-5">
+            <div className="flex flex-wrap justify-between gap-3"><div><p className="font-semibold">{quote.reference}</p><p className="mt-1 text-sm text-zinc-500">{quote.organisation} · {new Date(quote.created_at).toLocaleDateString('en-AU')}</p></div><strong>{aud(quote.product_total_cents / 100)}</strong></div>
+            <p className="mt-2 text-xs text-zinc-500">Status: {quote.status.replaceAll('_', ' ')} · Expires {new Date(quote.expires_at).toLocaleDateString('en-AU')} · Freight not included</p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold"><a className="underline underline-offset-4" href={'/api/quotes/' + encodeURIComponent(quote.reference) + '/pdf'}>Download PDF</a>
+            {quote.status !== 'purchased' && quote.status !== 'cancelled' && Date.parse(quote.expires_at) > Date.now() && <>
+              <button type="button" disabled={busy} onClick={() => checkout(quote.reference)} className="underline underline-offset-4 disabled:opacity-40">Proceed to checkout</button>
+              <button type="button" onClick={() => setPoFor(poFor === quote.reference ? '' : quote.reference)} className="underline underline-offset-4">Submit purchase order</button>
+            </>}</div>
+            {poFor === quote.reference && <form onSubmit={e => { e.preventDefault(); void submitPO(quote.reference); }} className="mt-4 flex flex-wrap gap-2">
+              <label htmlFor={'po-' + quote.reference} className="sr-only">Purchase order reference</label><input id={'po-' + quote.reference} required value={poNumber} onChange={e => setPoNumber(e.target.value)} maxLength={80} placeholder="Purchase order reference" className="min-w-0 flex-1 rounded-xl border border-zinc-300 px-4 py-3 text-sm" />
+              <button disabled={busy} className="rounded-xl bg-black px-4 py-3 text-sm text-white">Send for review</button><p className="w-full text-xs text-zinc-500">Purchase orders are reviewed manually. Invoice terms are not automatic.</p>
+            </form>}
+          </article>)}
+        </div>}
+      </section>
     </div>
   );
 }
