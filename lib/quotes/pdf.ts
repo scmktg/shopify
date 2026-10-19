@@ -1,4 +1,3 @@
-import 'server-only';
 import type { SavedQuote } from './server';
 
 const dollars = (cents: number) => '$' + (cents / 100).toFixed(2);
