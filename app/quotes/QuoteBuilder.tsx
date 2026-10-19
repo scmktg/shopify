@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState, type FormEvent } from 'react';
+import Image from 'next/image';
 
 type Variant = { id: string; title: string; availableForSale: boolean; price: { amount: string; currencyCode: string } };
-type Product = { id: string; title: string; handle: string; variants: Variant[] };
+type Product = { id: string; title: string; handle: string; image: { url: string; altText: string | null } | null; variants: Variant[] };
 type Line = { id: string; handle: string; name: string; variant: string; price: number; quantity: number };
 type SavedItem = { name: string; variant: string; quantity: number; unit_price_cents: number };
 type Quote = { reference: string; organisation: string; contact_name: string; postcode: string; items: SavedItem[]; product_total_cents: number; status: string; created_at: string; expires_at: string; freight_status: string };
@@ -167,7 +168,7 @@ export function QuoteBuilder() {
             <p className="text-sm text-zinc-500">No matching products found.</p>}
           {!searching && query.trim().length < 2 && <p className="text-sm text-zinc-500">Enter at least two characters to search.</p>}
           {products.map(product => <div key={product.id} className="border-b border-zinc-100 pb-4">
-            <p className="font-medium">{product.title}</p>
+            <div className="flex items-center gap-4"><div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-zinc-200 bg-white">{product.image ? <Image src={product.image.url} alt={product.image.altText || product.title} fill sizes="80px" className="object-contain p-1.5" /> : <span className="flex h-full items-center justify-center text-xs text-zinc-400">No image</span>}</div><p className="font-medium">{product.title}</p></div>
             <div className="mt-3 flex flex-wrap gap-2">{product.variants.map(variant =>
               <button type="button" key={variant.id} disabled={!variant.availableForSale || variant.price.currencyCode !== 'AUD'}
                 onClick={() => add(product, variant)}
