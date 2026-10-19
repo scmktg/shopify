@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, type FormEvent } from 'react';
+import { useEffect, useState } from 'react';
 
 type Variant = { id: string; title: string; availableForSale: boolean; price: { amount: string; currencyCode: string } };
 type Product = { id: string; title: string; handle: string; variants: Variant[] };
@@ -61,8 +61,7 @@ export function QuoteBuilder() {
     });
   }
 
-  async function issue(event: FormEvent) {
-    event.preventDefault();
+  async function issue() {
     setError(''); setNotice(''); setBusy(true);
     try {
       const response = await fetch('/api/quotes', {
@@ -220,7 +219,7 @@ export function QuoteBuilder() {
         {!issued ? <>
           <button type="button" onClick={() => setStep(2)} className="mt-6 mr-3 rounded-xl border border-zinc-300 px-5 py-3">← Edit details</button>
           <button type="button" disabled={busy || lines.length === 0} onClick={() => {
-            void issue({ preventDefault: () => undefined } as FormEvent);
+            void issue();
           }} className="mt-6 rounded-xl bg-black px-6 py-3 font-semibold text-white disabled:opacity-40">
             {busy ? 'Generating…' : 'Generate and email PDF'}
           </button>
