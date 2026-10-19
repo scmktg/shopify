@@ -38,6 +38,8 @@ export function QuoteDownloadBuilder(){
  function add(product:Product,variant:Variant){
   const price=Number(variant.price.amount);if(!variant.availableForSale||variant.price.currencyCode!=='AUD'||!Number.isFinite(price)||price<0)return;
   setLines(prev=>{const found=prev.find(x=>x.id===variant.id);return found?prev.map(x=>x.id===variant.id?{...x,quantity:Math.min(x.quantity+1,99)}:x):[...prev,{id:variant.id,title:product.title,variant:variant.title,quantity:1,cents:Math.round(price*100)}];});
+  setSearch('');
+  setResults([]);
  }
  function change(id:string,n:number){setLines(prev=>prev.map(x=>x.id===id?{...x,quantity:Math.min(99,Math.max(0,n))}:x).filter(x=>x.quantity>0));}
  const valid=organisation.trim().length>0&&contact.trim().length>0&&lines.length>0;
