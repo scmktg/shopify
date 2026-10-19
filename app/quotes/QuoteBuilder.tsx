@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 
 type Variant = { id: string; title: string; availableForSale: boolean; price: { amount: string; currencyCode: string } };
 type Product = { id: string; title: string; handle: string; variants: Variant[] };
@@ -10,6 +10,7 @@ type Quote = { reference: string; organisation: string; contact_name: string; po
 const aud = (n: number) => new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD' }).format(n);
 
 export function QuoteBuilder() {
+  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [query, setQuery] = useState('');
   const [products, setProducts] = useState<Product[]>([]);
   const [lines, setLines] = useState<Line[]>([]);
@@ -28,19 +29,27 @@ export function QuoteBuilder() {
   const [historySearch, setHistorySearch] = useState('');
   const total = lines.reduce((n, l) => n + l.price * l.quantity, 0);
 
-  async function findProducts(event: FormEvent) {
-    event.preventDefault();
-    setError('');
-    if (query.trim().length < 2) return;
-    setSearching(true);
-    try {
-      const response = await fetch('/api/quotes/products?q=' + encodeURIComponent(query.trim()), { cache: 'no-store' });
-      if (!response.ok) throw Error();
-      const data = await response.json() as { products: Product[] };
-      setProducts(data.products);
-    } catch { setError('Product search is currently unavailable.'); }
-    finally { setSearching(false); }
-  }
+  useEffect(() => {
+    const term = query.trim();
+    if (term.length < 2) { setProducts([]); setSearching(false); setError(''); return; }
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      setSearching(true);
+      try {
+        const response = await fetch('/api/quotes/products?q=' + encodeURIComponent(term), {
+          cache: 'no-store', signal: controller.signal,
+        });
+        if (!response.ok) throw new Error('Search failed');
+        const data = await response.json() as { products: Product[] };
+        if (!controller.signal.aborted) { setProducts(data.products); setError(''); }
+      } catch {
+        if (!controller.signal.aborted) { setProducts([]); setError('Product search is temporarily unavailable.'); }
+      } finally {
+        if (!controller.signal.aborted) setSearching(false);
+      }
+    }, 300);
+    return () => { window.clearTimeout(timer); controller.abort(); };
+  }, [query]);
 
   function add(product: Product, variant: Variant) {
     const price = Number(variant.price.amount);
@@ -67,6 +76,7 @@ export function QuoteBuilder() {
       if (!response.ok && response.status !== 202) throw Error(data.error || 'Could not issue quotation.');
       if (!data.reference) throw Error('Could not issue quotation.');
       setIssued(data.reference);
+      setStep(3);
       setNotice(data.delivery === 'sent'
         ? 'Your official quotation has been issued and its reference emailed to you.'
         : 'Your quotation was saved but email delivery could not be confirmed. Contact us with your reference.');
@@ -134,104 +144,95 @@ export function QuoteBuilder() {
         <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">Formal quotations.</h1>
         <p className="mt-5 text-lg text-zinc-600">Create an official quotation for your school, organisation or business. One advertised price for retail and trade.</p>
       </div>
-      <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="space-y-8">
-          <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
-            <h2 className="text-xl font-semibold">01 / Find your products</h2>
-            <form onSubmit={findProducts} className="mt-5 flex gap-3">
-              <label htmlFor="quote-search" className="sr-only">Find a product</label>
-              <input id="quote-search" value={query} onChange={e => setQuery(e.target.value)} maxLength={80} placeholder="Search bubblers, filters and more" className="min-w-0 flex-1 rounded-xl border border-zinc-300 px-4 py-3 focus:border-black" />
-              <button disabled={searching || query.trim().length < 2} className="rounded-xl bg-black px-5 py-3 font-medium text-white disabled:opacity-40">{searching ? 'Searching…' : 'Search'}</button>
-            </form>
-            <div className="mt-5 space-y-4" aria-live="polite">
-              {products.length === 0 && <p className="text-sm text-zinc-500">Search our catalogue to add products and variants.</p>}
-              {products.map(product => <div key={product.id} className="border-b border-zinc-100 pb-4">
-                <p className="font-medium">{product.title}</p>
-                <div className="mt-3 flex flex-wrap gap-2">{product.variants.map(variant =>
-                  <button type="button" key={variant.id} disabled={!variant.availableForSale || variant.price.currencyCode !== 'AUD'} onClick={() => add(product, variant)}
-                    className="rounded-xl border border-zinc-300 px-3 py-2 text-sm hover:border-black disabled:opacity-40">
-                    {variant.title === 'Default Title' ? 'Standard' : variant.title} · {aud(Number(variant.price.amount))} +
-                  </button>)}
-                </div>
-              </div>)}
-            </div>
-          </section>
-          <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
-            <h2 className="text-xl font-semibold">02 / Customer information</h2>
-            <p className="mt-2 text-sm text-zinc-500">We use these details to prepare your quote and securely identify your records.</p>
-            <form id="quote-issue-form" onSubmit={issue} className="mt-5 grid gap-4 sm:grid-cols-2">
-              <label className="text-sm">Organisation name *<input required value={organisation} onChange={e => setOrganisation(e.target.value)} maxLength={120} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
-              <label className="text-sm">Contact name *<input required value={contact} onChange={e => setContact(e.target.value)} maxLength={100} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
-              <label className="text-sm">Email address *<input required type="email" value={email} onChange={e => setEmail(e.target.value)} maxLength={160} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
-              <label className="text-sm">Delivery postcode *<input required value={postcode} onChange={e => setPostcode(e.target.value.replace(/[^0-9]/g, '').slice(0, 4))} minLength={4} maxLength={4} inputMode="numeric" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
-            </form>
-          </section>
-          <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
-            <h2 className="text-xl font-semibold">03 / My quotations</h2>
-            <p className="mt-2 text-sm text-zinc-500">Verify your email to view your saved quotations, download PDFs and convert an active quote to a Shopify checkout.</p>
-            <form onSubmit={sendLogin} className="mt-5 flex flex-wrap gap-3">
-              <label htmlFor="quote-login" className="sr-only">Email to access quotations</label>
-              <input id="quote-login" type="email" required value={email} onChange={e => setEmail(e.target.value)} placeholder="Your email address" className="min-w-0 flex-1 rounded-xl border border-zinc-300 px-4 py-3" />
-              <button disabled={busy} className="rounded-xl border border-zinc-900 px-5 py-3 font-medium disabled:opacity-40">Email secure link</button>
-            </form>
-            <button type="button" onClick={loadHistory} disabled={busy} className="mt-4 text-sm font-medium underline underline-offset-4 disabled:opacity-40">View my saved quotations →</button>
-            {history && <div className="mt-5 space-y-4">
-              <label className="block text-sm">Search saved quotations<input type="search" value={historySearch} onChange={e => setHistorySearch(e.target.value)} placeholder="Reference or organisation" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
-              {history.length === 0 && <p className="text-sm text-zinc-500">No quotations associated with this verified email.</p>}
-              {history.filter(q => (q.reference + ' ' + q.organisation).toLowerCase().includes(historySearch.toLowerCase())).map(quote => <article key={quote.reference} className="rounded-xl border border-zinc-200 p-4">
-                <div className="flex flex-wrap items-start justify-between gap-2">
-                  <div><p className="font-semibold">{quote.reference}</p><p className="text-sm text-zinc-500">{quote.organisation} · {new Date(quote.created_at).toLocaleDateString('en-AU')}</p></div>
-                  <p className="font-semibold">{aud(quote.product_total_cents / 100)}</p>
-                </div>
-                <p className="mt-2 text-xs text-zinc-500">Status: {quote.status.replaceAll('_', ' ')} · Valid until {new Date(quote.expires_at).toLocaleDateString('en-AU')} · Freight pending</p>
-                <div className="mt-3 flex flex-wrap gap-4 text-sm font-medium">
-                  <a className="underline underline-offset-4" href={'/api/quotes/' + encodeURIComponent(quote.reference) + '/pdf'}>Download PDF</a>
-                  {quote.status !== 'purchased' && quote.status !== 'cancelled' && Date.parse(quote.expires_at) > Date.now() &&
-                    <>
-                      <button type="button" onClick={() => checkout(quote.reference)} disabled={busy} className="underline underline-offset-4 disabled:opacity-40">Proceed to checkout →</button>
-                      <button type="button" onClick={() => setPoFor(poFor === quote.reference ? '' : quote.reference)} className="underline underline-offset-4">Submit purchase order →</button>
-                    </>}
-                </div>
-                {poFor === quote.reference && <form onSubmit={e => { e.preventDefault(); void submitPO(quote.reference); }} className="mt-4 flex flex-wrap gap-2">
-                  <label htmlFor={'po-' + quote.reference} className="sr-only">Purchase order number</label>
-                  <input id={'po-' + quote.reference} required value={poNumber} onChange={e => setPoNumber(e.target.value)} maxLength={80} placeholder="Purchase order number" className="min-w-0 flex-1 rounded-lg border border-zinc-300 px-3 py-2 text-sm" />
-                  <button disabled={busy} className="rounded-lg bg-black px-4 py-2 text-sm text-white disabled:opacity-40">Send for review</button>
-                  <p className="w-full text-xs text-zinc-500">This requests review only. No MYOB invoice or credit terms are issued automatically.</p>
-                </form>}
-              </article>)}
-            </div>}
-          </section>
+      <nav aria-label="Quote steps" className="mb-8 grid grid-cols-3 gap-2">
+        {(['Select products', 'Your details', 'Download / email'] as const).map((label, index) => {
+          const number = (index + 1) as 1 | 2 | 3;
+          const accessible = number === 1 || (number === 2 && lines.length > 0) || (number === 3 && Boolean(issued));
+          return <button key={label} type="button" disabled={!accessible} aria-current={step === number ? 'step' : undefined}
+            onClick={() => setStep(number)}
+            className={['rounded-xl border px-2 py-4 text-left text-xs font-medium sm:px-5 sm:text-sm', step === number ? 'border-black bg-black text-white' : 'border-zinc-200 text-zinc-500', !accessible ? 'opacity-50' : ''].join(' ')}>
+            <span className="mr-2 opacity-70">0{number}</span>{label}
+          </button>;
+        })}
+      </nav>
+      {step === 1 && <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
+        <h2 className="text-2xl font-semibold">Step 1 — Select products</h2>
+        <p className="mt-2 text-sm text-zinc-500">Search by product name. Results update automatically while you type.</p>
+        <label htmlFor="quote-search" className="sr-only">Search products</label>
+        <input id="quote-search" type="search" value={query} onChange={e => setQuery(e.target.value)}
+          maxLength={80} placeholder="Start typing a product name…" autoComplete="off"
+          className="mt-5 w-full rounded-xl border border-zinc-300 px-4 py-3 focus:border-black" />
+        <div className="mt-5 space-y-4" aria-live="polite" aria-busy={searching}>
+          {searching && <p className="text-sm text-zinc-500">Searching products…</p>}
+          {!searching && query.trim().length >= 2 && products.length === 0 &&
+            <p className="text-sm text-zinc-500">No matching products found.</p>}
+          {!searching && query.trim().length < 2 && <p className="text-sm text-zinc-500">Enter at least two characters to search.</p>}
+          {products.map(product => <div key={product.id} className="border-b border-zinc-100 pb-4">
+            <p className="font-medium">{product.title}</p>
+            <div className="mt-3 flex flex-wrap gap-2">{product.variants.map(variant =>
+              <button type="button" key={variant.id} disabled={!variant.availableForSale || variant.price.currencyCode !== 'AUD'}
+                onClick={() => add(product, variant)}
+                className="rounded-xl border border-zinc-300 px-3 py-2 text-sm hover:border-black disabled:opacity-40">
+                {variant.title === 'Default Title' ? 'Standard' : variant.title} · {aud(Number(variant.price.amount))} +
+              </button>)}</div>
+          </div>)}
         </div>
-        <aside className="lg:sticky lg:top-28 lg:self-start">
-          <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
-            <h2 className="text-xl font-semibold">Your quotation</h2>
-            <p className="mt-2 text-sm text-zinc-500">Selected product prices. Freight will be confirmed separately at checkout.</p>
-            <div className="mt-6 space-y-5">
-              {lines.length === 0 && <p className="text-sm text-zinc-500">Add a product to get started.</p>}
-              {lines.map(line => <div key={line.id} className="border-b border-zinc-100 pb-4">
-                <p className="font-medium">{line.name}</p><p className="text-sm text-zinc-500">{line.variant}</p>
-                <div className="mt-3 flex items-center justify-between gap-3"><div className="flex items-center gap-3">
-                  <button type="button" aria-label={'Decrease ' + line.name} onClick={() => setLines(list => list.map(l => l.id === line.id ? { ...l, quantity: l.quantity - 1 } : l).filter(l => l.quantity > 0))} className="h-8 w-8 rounded-lg border border-zinc-300">−</button>
-                  <span>{line.quantity}</span>
-                  <button type="button" aria-label={'Increase ' + line.name} onClick={() => setLines(list => list.map(l => l.id === line.id ? { ...l, quantity: Math.min(99, l.quantity + 1) } : l))} className="h-8 w-8 rounded-lg border border-zinc-300">+</button>
-                </div><span className="font-semibold">{aud(line.price * line.quantity)}</span></div>
-              </div>)}
-              <div className="flex justify-between border-t border-zinc-200 pt-5 text-lg font-semibold"><span>Product subtotal</span><span>{aud(total)}</span></div>
-              <p className="text-xs leading-relaxed text-zinc-500">Prices are revalidated when a quote is issued. Freight and any final tax adjustments are confirmed at checkout. Quotation validity: 14 days. A quotation is not an invoice.</p>
+        <h3 className="mt-8 text-lg font-semibold">Products in your quote</h3>
+        {lines.length === 0 && <p className="mt-3 text-sm text-zinc-500">No products selected.</p>}
+        <div className="mt-4 space-y-3">
+          {lines.map(line => <div key={line.id} className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 pb-3">
+            <div><p className="font-medium">{line.name}</p><p className="text-sm text-zinc-500">{line.variant} · {aud(line.price)} each</p></div>
+            <div className="flex items-center gap-3">
+              <button type="button" aria-label={'Decrease ' + line.name} className="h-9 w-9 rounded-lg border border-zinc-300" onClick={() => setLines(list => list.map(l => l.id === line.id ? { ...l, quantity: l.quantity - 1 } : l).filter(l => l.quantity > 0))}>−</button>
+              <span>{line.quantity}</span>
+              <button type="button" aria-label={'Increase ' + line.name} className="h-9 w-9 rounded-lg border border-zinc-300" onClick={() => setLines(list => list.map(l => l.id === line.id ? { ...l, quantity: Math.min(99, l.quantity + 1) } : l))}>+</button>
+              <span className="min-w-24 text-right font-medium">{aud(line.price * line.quantity)}</span>
             </div>
-            <button type="submit" form="quote-issue-form" disabled={!lines.length || busy || Boolean(issued)} className="mt-6 w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-40">
-              {busy ? 'Please wait…' : issued ? 'Quotation issued' : 'Issue formal quotation'}
-            </button>
-            {issued && <div className="mt-4 rounded-xl bg-zinc-100 p-4 text-sm">
-              <p className="font-semibold">{issued}</p>
-              <p className="mt-2">For secure PDF download and online checkout, verify your email in the My quotations section.</p>
-              <button type="button" onClick={() => { setIssued(''); setLines([]); setNotice(''); }} className="mt-3 underline underline-offset-4">Start another quotation</button>
-            </div>}
-            {error && <p role="alert" className="mt-4 text-sm text-red-700">{error}</p>}
-            {notice && <p role="status" className="mt-4 text-sm text-zinc-700">{notice}</p>}
-          </section>
-        </aside>
-      </div>
+          </div>)}
+        </div>
+        <div className="mt-6 flex items-center justify-between border-t border-zinc-200 pt-5 font-semibold"><span>Product subtotal</span><span>{aud(total)}</span></div>
+        <p className="mt-2 text-xs text-zinc-500">Freight is excluded. Prices are verified when the quote is issued.</p>
+        <button type="button" disabled={!lines.length} onClick={() => { setError(''); setStep(2); }}
+          className="mt-6 w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-40">Continue to your details →</button>
+      </section>}
+      {step === 2 && <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
+        <h2 className="text-2xl font-semibold">Step 2 — Your details</h2>
+        <p className="mt-2 text-sm text-zinc-500">Enter the organisation and contact details to appear on your quotation.</p>
+        <form onSubmit={e => { e.preventDefault(); setError(''); setStep(3); }} className="mt-6 grid gap-4 sm:grid-cols-2">
+          <label className="text-sm">Organisation name *<input required value={organisation} onChange={e => setOrganisation(e.target.value)} maxLength={120} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
+          <label className="text-sm">Contact name *<input required value={contact} onChange={e => setContact(e.target.value)} maxLength={100} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
+          <label className="text-sm">Email address *<input required type="email" value={email} onChange={e => setEmail(e.target.value)} maxLength={160} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
+          <label className="text-sm">Delivery postcode *<input required value={postcode} onChange={e => setPostcode(e.target.value.replace(/[^0-9]/g, '').slice(0, 4))} minLength={4} maxLength={4} inputMode="numeric" className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
+          <div className="sm:col-span-2 flex flex-wrap gap-3 pt-3">
+            <button type="button" onClick={() => setStep(1)} className="rounded-xl border border-zinc-300 px-5 py-3">← Back to products</button>
+            <button type="submit" className="flex-1 rounded-xl bg-black px-5 py-3 font-semibold text-white">Review and generate quote →</button>
+          </div>
+        </form>
+      </section>}
+      {step === 3 && <section className="rounded-3xl border border-zinc-200 p-6 md:p-8">
+        <h2 className="text-2xl font-semibold">Step 3 — Download or email your quote</h2>
+        <p className="mt-2 text-zinc-600">Review your details and product total, then generate your formal quotation. A PDF will be sent to your email address.</p>
+        <div className="mt-6 rounded-xl bg-zinc-50 p-5 text-sm">
+          <p className="font-semibold">{organisation}</p><p>{contact} · {email}</p><p>Delivery postcode: {postcode}</p>
+          <p className="mt-4">{lines.reduce((n, l) => n + l.quantity, 0)} product(s) · Product subtotal <strong>{aud(total)}</strong></p>
+          <p className="mt-2 text-xs text-zinc-500">Freight is not included; final costs and any tax adjustments are confirmed at checkout.</p>
+        </div>
+        {!issued ? <>
+          <button type="button" onClick={() => setStep(2)} className="mt-6 mr-3 rounded-xl border border-zinc-300 px-5 py-3">← Edit details</button>
+          <button type="button" disabled={busy || lines.length === 0} onClick={() => {
+            void issue({ preventDefault: () => undefined } as FormEvent);
+          }} className="mt-6 rounded-xl bg-black px-6 py-3 font-semibold text-white disabled:opacity-40">
+            {busy ? 'Generating…' : 'Generate and email PDF'}
+          </button>
+        </> : <div className="mt-6 rounded-xl border border-zinc-200 p-5">
+          <p className="font-semibold">Quotation issued: {issued}</p>
+          <p className="mt-2 text-sm text-zinc-600">Your PDF has been sent if email delivery succeeded. For a secure online download, verify your email below.</p>
+          <button type="button" onClick={() => { setIssued(''); setLines([]); setStep(1); setQuery(''); }} className="mt-4 text-sm underline underline-offset-4">Start another quotation</button>
+        </div>}
+      </section>}
+      {error && <p role="alert" className="mt-5 text-sm text-red-700">{error}</p>}
+      {notice && <p role="status" className="mt-5 text-sm text-zinc-700">{notice}</p>}
+      <div className="mt-12"></div>
     </div>
   );
 }
