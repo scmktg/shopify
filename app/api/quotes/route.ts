@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { newQuoteReference, normaliseEmail, quoteDb, quoteDbConfigured, type QuoteItem, type SavedQuote } from '@/lib/quotes/server';
 import { Resend } from 'resend';
+import { quotePdf } from '@/lib/quotes/pdf';
 
 export const runtime = 'nodejs';
 
@@ -65,6 +66,7 @@ export async function POST(request: NextRequest) {
       from: process.env.QUOTES_EMAIL_FROM,
       to: [email],
       subject: 'Enviro Aqua quotation ' + reference,
+      attachments: [{ filename: reference + '.pdf', content: quotePdf(saved).toString('base64') }],
       text: [
         'Your quotation reference: ' + reference,
         'Organisation: ' + organisation,
