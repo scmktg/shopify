@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { quoteDb, tokenDigest, type SavedQuote } from '@/lib/quotes/server';
+import { authorizeQuote } from '@/lib/quotes/lookup-session';
 import { shopifyClient } from '@/lib/shopify/client';
 import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 export const runtime='nodejs';
 const noStore={'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'};
 const fail=(error:string,status=400)=>NextResponse.json({error},{status,headers:noStore});
 async function find(token:string){
+ if(/^EA-Q-[A-F0-9]{16}$/.test(token)){
+  if(!await authorizeQuote(token))return null;
+  const matches=await quoteDb<SavedQuote[]>('quotes','GET','select=*&reference=eq.'+encodeURIComponent(token)+'&limit=1');
+  return matches[0]??null;
+ }
  if(!/^[A-Za-z0-9_-]{43}$/.test(token))return null;
  const rows=await quoteDb<SavedQuote[]>('quotes','GET','select=*&access_token_digest=eq.'+tokenDigest(token)+'&limit=1');
  return rows[0]??null;
