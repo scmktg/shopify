@@ -31,8 +31,8 @@ export async function POST(request:NextRequest){
  }
  if(new Set(selected.map(v=>v.variantId)).size!==selected.length)return fail('Duplicate product variants.');
  try{
-  const recent=await quoteDb<{id:string}[]>('quotes','GET','select=id&customer_email=eq.'+encodeURIComponent(email)+'&created_at=gte.'+encodeURIComponent(new Date(Date.now()-3600000).toISOString())+'&limit=4');
-  if(recent.length>=3)return fail('Too many quotes requested. Please try later.',429);
+  const recent=await quoteDb<{id:string}[]>('quotes','GET','select=id&customer_email=eq.'+encodeURIComponent(email)+'&created_at=gte.'+encodeURIComponent(new Date(Date.now()-3600000).toISOString())+'&limit=31');
+  if(recent.length>=30)return fail('Quote generation limit reached for this email address. Please try again later.',429);
   const items=[];
   for(const row of selected){
    const product=await fetchProductByHandle(row.handle);
