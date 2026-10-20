@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { quoteDb, tokenDigest, type SavedQuote } from '@/lib/quotes/server';
 import { authorizeQuote } from '@/lib/quotes/lookup-session';
+import { validQuoteSignature } from '@/lib/quotes/signed-link';
 import { shopifyClient } from '@/lib/shopify/client';
 import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 export const runtime='nodejs';
 const noStore={'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'};
 const fail=(error:string,status=400)=>NextResponse.json({error},{status,headers:noStore});
-async function find(token:string){
+export async function findPrivateQuote(token:string,access:string|null=null){
  if(/^EA-Q-[A-F0-9]{16}$/.test(token)){
-  if(!await authorizeQuote(token))return null;
+  if(!await authorizeQuote(token)&&!validQuoteSignature(token,access))return null;
   const matches=await quoteDb<SavedQuote[]>('quotes','GET','select=*&reference=eq.'+encodeURIComponent(token)+'&limit=1');
   return matches[0]??null;
  }
@@ -18,7 +19,7 @@ async function find(token:string){
 }
 export async function GET(_request:NextRequest,{params}:{params:Promise<{token:string}>}){
  try{
-  const quote=await find((await params).token);
+  const quote=await findPrivateQuote((await params).token,_request.nextUrl.searchParams.get('access'));
   if(!quote)return fail('Quotation not found.',404);
   const {access_token_digest,customer_email,...visible}=quote;
   return NextResponse.json({quote:{...visible,customer_email}},{headers:noStore});
