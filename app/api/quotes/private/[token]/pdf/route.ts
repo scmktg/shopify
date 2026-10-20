@@ -19,8 +19,10 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
   }else if(/^[A-Za-z0-9_-]{43}$/.test(token)){
    rows=await quoteDb<SavedQuote[]>('quotes','GET','select=*&access_token_digest=eq.'+tokenDigest(token)+'&limit=1');
   }else return new NextResponse('Not found',{status:404});
-  const quote=rows[0];if(!quote)return new NextResponse('Not found',{status:404});
+  const saved=rows[0];if(!saved)return new NextResponse('Not found',{status:404});
+  const quote=request.nextUrl.searchParams.get('document')==='quote'?{...saved,invoice_reference:null,invoice_status:null,invoice_created_at:null}:saved;
   const url=new URL('/quotes/view/'+encodeURIComponent(quote.reference),request.nextUrl.origin);
+  url.searchParams.set('tab',quote.invoice_reference?'invoice':'quote');
   url.searchParams.set('access',quoteAccessSignature(quote.reference));
   const logo=await readFile(join(process.cwd(),'public','logo.webp'));
   const html=quoteDocumentHtml(quote,url.toString(),'data:image/webp;base64,'+logo.toString('base64'));
