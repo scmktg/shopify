@@ -25,7 +25,7 @@ export default function FindQuotePage(){
  return <main className="mx-auto max-w-2xl px-4 py-12 text-zinc-950 sm:px-6 sm:py-20">
   <p className="text-xs font-semibold uppercase tracking-[.2em] text-zinc-500">ENVIRO AQUA / QUOTATIONS</p>
   <h1 className="mt-3 text-4xl font-semibold tracking-tight">Find Your Quote</h1>
-  <p className="mt-4 max-w-xl text-zinc-600">Already generated a quotation? Enter your quotation reference and email address to view your saved document, convert it to an invoice or download a PDF. No login required.</p>
+  <p className="mt-4 max-w-xl text-zinc-600">Already generated a quote? Enter your reference and email address to view, download or convert to an invoice.</p>
   <form onSubmit={e=>void findQuote(e)} className="mt-8 space-y-5 rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
    <label className="block text-sm font-medium" htmlFor="find-quote-reference">Quotation reference
     <input id="find-quote-reference" value={reference} onChange={e=>setReference(e.target.value)} placeholder="EA-Q-XXXXXXXXXXXXXXXX" autoCapitalize="characters" autoComplete="off" spellCheck={false} maxLength={21} required className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 uppercase outline-none focus:border-black focus:ring-2 focus:ring-zinc-200"/>
