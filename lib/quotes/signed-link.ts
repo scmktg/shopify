@@ -1,5 +1,5 @@
 import {createHmac,timingSafeEqual} from 'node:crypto';
-const key=process.env.QUOTES_SUPABASE_SERVICE_ROLE_KEY;
+const key=process.env.QUOTES_LINK_SIGNING_KEY;
 export function quoteAccessSignature(reference:string){
  if(!key)throw new Error('Quote access not configured');
  return createHmac('sha256',key).update('quote-pdf-link:v1:'+reference).digest('hex');
