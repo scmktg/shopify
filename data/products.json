@@ -18708,14 +18708,14 @@
       "low-pressure",
       "vontron"
     ],
-    "shortDescription": "Vontron ULP21-4040 ultra-low-pressure commercial RO membrane, 4040 format, rated 2,400 GPD (9.1 m³/day) with 99.0% stable salt rejection under specified test conditions.",
-    "description": "The **Vontron ULP21-4040** is an ultra-low-pressure commercial reverse osmosis membrane element designed for use in compatible 4040 pressure vessels. The manufacturer's specification identifies suitable feedwater sources with NaCl concentration below 2,000 ppm, including surface water, groundwater, tap water and municipal water.\n\n## Performance\n\n- **Average permeate production: 2,400 US GPD (9.1 m³/day)** under standard test conditions\n- **Stable salt rejection: 99.0%; minimum: 98.5%** under standard test conditions\n- 90 ft² (8.4 m²) active membrane area\n- Test conditions: 150 psi (1.03 MPa), 25°C, 1,500 ppm NaCl, pH 7.5 and 15% recovery\n\nThese values describe laboratory test performance, not a guaranteed installed-system output. The manufacturer states that individual membrane flow may vary by ±15% from nominal. Actual results depend on feedwater quality, temperature, pressure, recovery and system configuration.\n\n## Compatibility and operating limits\n\nThe 4040 format is approximately 1,016 mm long and 99.7 mm in diameter. Confirm the membrane model, end connections, vessel dimensions and system design before purchase. Maximum operating pressure is 600 psi (4.14 MPa); maximum feedwater temperature is 45°C. Feedwater residual chlorine must be below 0.1 ppm. Follow the Vontron technical sheet for additional pH, SDI, flow and pressure-drop limits and start-up flushing instructions.\n\nSupplied as **one membrane element** only. A housing or complete RO system is not included.",
+    "shortDescription": "Vontron ULP21-4040 commercial reverse osmosis membrane with 2,400 GPD nominal capacity, 99% stable salt rejection and a 4-inch × 40-inch element format.",
+    "description": "The **Vontron ULP21-4040** is a commercial ultra-low-pressure reverse osmosis membrane designed for efficient water purification in commercial and industrial RO systems. With a **2,400 GPD (9,100 litres/day) nominal capacity** and **99% stable salt rejection**, it provides high-capacity desalination of tap water, groundwater, surface water and municipal water.\n\n## Key Features\n\n- **2,400 GPD nominal capacity** (9,100 litres per day)\n- **99% stable salt rejection**, with 98.5% minimum rejection\n- Ultra-low-pressure reverse osmosis design\n- **4040 membrane size:** 1,016 mm long × 99.7 mm diameter\n- **90 ft² (8.4 m²)** active membrane area\n- Suitable for purified process water, boiler make-up water and commercial water treatment\n\n## Technical Specifications\n\nThe ULP21-4040 operates at a 150 PSI reference test pressure, with a maximum working pressure of 600 PSI and maximum feedwater temperature of 45°C. The complete operating limits are listed in the specifications table below.\n\n## What's Included\n\n1 × Vontron ULP21-4040 reverse osmosis membrane element.",
     "features": [
-      "Rated average permeate production of 2,400 US GPD (9.1 m³/day) at specified test conditions",
-      "99.0% stable salt rejection (minimum 98.5%) under test conditions",
-      "Ultra-low-pressure Vontron ULP21-4040 membrane design",
-      "4040 commercial RO format, 1,016 mm length and 99.7 mm diameter",
-      "Active membrane area of 90 ft² (8.4 m²)"
+      "2,400 GPD (9,100 litres/day) nominal membrane capacity",
+      "99% stable salt rejection; 98.5% minimum rejection",
+      "Ultra-low-pressure commercial reverse osmosis membrane",
+      "4040 format — 1,016 mm length × 99.7 mm diameter",
+      "90 ft² (8.4 m²) active membrane area"
     ],
     "headlineSpecs": [
       {
@@ -18753,7 +18753,7 @@
         "value": "90 ft² (8.4 m²)"
       },
       {
-        "label": "Average permeate at test conditions",
+        "label": "Nominal membrane capacity",
         "value": "2,400 US GPD (9.1 m³/day)"
       },
       {
@@ -18842,10 +18842,10 @@
       }
     ],
     "recommendedFor": [
-      "Compatible commercial reverse osmosis water treatment systems",
-      "Suitable feedwater desalination in accordance with Vontron operating requirements",
-      "Pure water and boiler make-up water applications",
-      "Food processing and pharmaceutical production water treatment where system design is appropriate"
+      "Commercial reverse osmosis water treatment",
+      "Tap water, groundwater and surface water desalination",
+      "Purified process water and boiler make-up water",
+      "Food and beverage processing water treatment"
     ],
     "compliance": {
       "watermark": {
@@ -18867,25 +18867,25 @@
     },
     "seo": {
       "title": "Vontron ULP21-4040 RO Membrane | 2,400 GPD | 4040",
-      "description": "Vontron ULP21-4040 commercial RO membrane. Rated 2,400 GPD, 99% stable rejection, 4040 size. View verified dimensions and operating specifications.",
+      "description": "Vontron ULP21-4040 commercial RO membrane. 2,400 GPD nominal capacity, 99% stable salt rejection and 4-inch × 40-inch format. Technical specifications.",
       "ogImage": null
     },
     "faq": [
       {
-        "q": "How much water can the Vontron ULP21-4040 produce?",
-        "a": "The manufacturer's average rating is 2,400 US gallons per day (9.1 m³/day) under specified laboratory conditions. Actual system output depends on operating conditions."
+        "q": "What is the capacity of the Vontron ULP21-4040 membrane?",
+        "a": "The ULP21-4040 has a nominal membrane capacity of 2,400 US GPD (9,100 litres per day)."
       },
       {
-        "q": "What is the salt rejection rating?",
-        "a": "The manufacturer's stable salt rejection rating is 99.0%, with a stated minimum of 98.5% at the specified test conditions."
+        "q": "What is the salt rejection rate?",
+        "a": "Stable salt rejection is 99%, with a minimum rejection rating of 98.5%."
       },
       {
-        "q": "What are the actual 4040 membrane dimensions?",
-        "a": "The technical drawing specifies 1,016 mm overall element length and 99.7 mm element diameter. Other labelled drawing dimensions are C = 19.1 mm and D = 26.7 mm."
+        "q": "What are the membrane dimensions?",
+        "a": "The membrane is 1,016 mm long and 99.7 mm in diameter (4040 format)."
       },
       {
-        "q": "Is this compatible with every 4040 RO housing?",
-        "a": "Not automatically. Confirm the existing membrane model, connections and system operating requirements before purchase."
+        "q": "What is the maximum working pressure?",
+        "a": "Maximum working pressure is 600 PSI (4.14 MPa)."
       }
     ]
   }
