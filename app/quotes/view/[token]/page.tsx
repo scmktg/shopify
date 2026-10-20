@@ -1,18 +1,20 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useSearchParams } from 'next/navigation';
 type Item={name:string;variant:string;quantity:number;unit_price_cents:number};
 type Quote={reference:string;organisation:string;contact_name:string;customer_email:string;created_at:string;expires_at:string;items:Item[];product_total_cents:number;freight_cents?:number|null;included_gst_cents?:number|null;delivery_address?:{street:string;suburb:string;state:string;postcode:string;abn?:string}|null;invoice_reference?:string|null;invoice_status?:string|null;status:string;shopify_order_id?:string|null};
 const money=(cents:number)=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(cents/100);
 export default function PrivateQuotePage(){
  const params=useParams<{token:string}>();const token=params.token;
+ const searchParams=useSearchParams();const access=searchParams.get('access');
+ const suffix=access?'?access='+encodeURIComponent(access):'';
  const [quote,setQuote]=useState<Quote|null>(null),[loading,setLoading]=useState(true),[error,setError]=useState('');
  const [paying,setPaying]=useState(false);
- useEffect(()=>{let active=true;const load=async()=>{try{const r=await fetch('/api/quotes/private/'+encodeURIComponent(token),{cache:'no-store'});const data=await r.json();if(!r.ok)throw new Error(data.error||'Unable to load quotation.');if(active)setQuote(data.quote);}catch(e){if(active)setError(e instanceof Error?e.message:'Unable to load quotation.');}finally{if(active)setLoading(false);}};void load();return()=>{active=false;};},[token]);
+ useEffect(()=>{let active=true;const load=async()=>{try{const r=await fetch('/api/quotes/private/'+encodeURIComponent(token)+suffix,{cache:'no-store'});const data=await r.json();if(!r.ok)throw new Error(data.error||'Unable to load quotation.');if(active)setQuote(data.quote);}catch(e){if(active)setError(e instanceof Error?e.message:'Unable to load quotation.');}finally{if(active)setLoading(false);}};void load();return()=>{active=false;};},[token,suffix]);
  async function convert(){
   if(!quote||paying)return;setPaying(true);setError('');
   try{
-   const response=await fetch('/api/quotes/private/'+encodeURIComponent(token),{method:'POST'});
+   const response=await fetch('/api/quotes/private/'+encodeURIComponent(token)+suffix,{method:'POST'});
    const data=await response.json();
    if(!response.ok||!data.invoiceReference)throw new Error(data.error||'Unable to create invoice.');
    setQuote(prev=>prev?{...prev,invoice_reference:data.invoiceReference,invoice_status:'unpaid'}:prev);
@@ -22,7 +24,7 @@ export default function PrivateQuotePage(){
  async function pay(){
   if(!quote?.invoice_reference||paying)return;setPaying(true);setError('');
   try{
-   const response=await fetch('/api/quotes/private/'+encodeURIComponent(token),{method:'PUT'});
+   const response=await fetch('/api/quotes/private/'+encodeURIComponent(token)+suffix,{method:'PUT'});
    const data=await response.json();
    if(!response.ok||!data.checkoutUrl)throw new Error(data.error||'Unable to open checkout.');
    window.location.assign(data.checkoutUrl);
@@ -40,7 +42,7 @@ export default function PrivateQuotePage(){
    <div className="mt-5 ml-auto max-w-xs space-y-2 border-t-2 border-black pt-3 text-xs"><div className="flex justify-between"><span>Products incl. GST</span><span>{money(quote.product_total_cents)}</span></div><div className="flex justify-between"><span>Delivery</span><span>{quote.freight_cents===null||quote.freight_cents===undefined?"To be confirmed":money(quote.freight_cents)}</span></div><div className="flex justify-between text-zinc-600"><span>Included GST</span><span>{money(quote.included_gst_cents??Math.round(quote.product_total_cents/11))}</span></div><div className="flex justify-between border-t pt-2 text-sm font-bold"><span>{quote.freight_cents===null||quote.freight_cents===undefined?"Quoted product total":"Quoted total incl. GST"}</span><span>{money(quote.product_total_cents+(quote.freight_cents??0))}</span></div><p className="text-[10px] text-zinc-500">Final shipping and charges are confirmed at Shopify checkout.</p></div>
    <p className="mt-10 border-t pt-4 text-[10px] text-zinc-500">To proceed with your quotation, use the payment button on the website. Keep your quotation reference for future enquiries.</p>
   </article>
-  <div className="mt-5 space-y-3 print:hidden"><button type="button" onClick={()=>window.print()} className="w-full rounded-xl border border-zinc-300 px-5 py-3 font-semibold">Download {quote.invoice_reference?'Invoice':'Quotation'} / Save PDF</button>{quote.invoice_status!=='paid'&&(!quote.invoice_reference?<button type="button" disabled={paying} onClick={()=>void convert()} className="w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-50">{paying?'Creating invoice…':'Convert to Invoice →'}</button>:<button type="button" disabled={paying} onClick={()=>void pay()} className="w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-50">{paying?'Opening secure checkout…':'Pay & Order Now →'}</button>)} {quote.invoice_status==='paid'&&<p className="rounded-xl bg-zinc-100 p-4 text-center text-sm font-semibold">Payment confirmed — invoice paid</p>}<p className="text-xs text-zinc-500">Invoice conversion creates an unpaid invoice first. Pay & Order Now opens Shopify checkout with your email, delivery address, name and organisation supplied for checkout prefill. Review all details before payment.</p></div>
+  <div className="mt-5 space-y-3 print:hidden"><a href={"/api/quotes/private/"+encodeURIComponent(token)+"/pdf"+suffix} className="block w-full rounded-xl border border-zinc-300 px-5 py-3 text-center font-semibold">Download {quote.invoice_reference?"Invoice":"Quotation"} PDF ↓</a>{quote.invoice_status!=='paid'&&(!quote.invoice_reference?<button type="button" disabled={paying} onClick={()=>void convert()} className="w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-50">{paying?'Creating invoice…':'Convert to Invoice →'}</button>:<button type="button" disabled={paying} onClick={()=>void pay()} className="w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-50">{paying?'Opening secure checkout…':'Pay & Order Now →'}</button>)} {quote.invoice_status==='paid'&&<p className="rounded-xl bg-zinc-100 p-4 text-center text-sm font-semibold">Payment confirmed — invoice paid</p>}<p className="text-xs text-zinc-500">Invoice conversion creates an unpaid invoice first. Pay & Order Now opens Shopify checkout with your email, delivery address, name and organisation supplied for checkout prefill. Review all details before payment.</p></div>
   </>}
   <style jsx global>{`@media print{ @page{size:A4;margin:12mm}body{background:white!important}header,nav,footer{display:none!important}article header{display:flex!important}.print\\:hidden{display:none!important}}`}</style>
  </main>;
