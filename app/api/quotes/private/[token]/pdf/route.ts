@@ -30,7 +30,7 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
    await page.setContent(html,{waitUntil:'load'});
    bytes=await page.pdf({format:'A4',printBackground:true,preferCSSPageSize:true});
   }finally{await browser.close();}
-  return new NextResponse(bytes,{headers:{
+  return new NextResponse(new Uint8Array(bytes),{headers:{
    'Content-Type':'application/pdf',
    'Content-Disposition':'attachment; filename="'+(quote.invoice_reference||quote.reference)+'.pdf"',
    'Cache-Control':'private, no-store',
