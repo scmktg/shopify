@@ -1,7 +1,7 @@
 import { createHmac, timingSafeEqual } from 'node:crypto';
 import { cookies } from 'next/headers';
 const NAME='ea_quote_lookup';
-const key=process.env.QUOTES_SUPABASE_SERVICE_ROLE_KEY;
+const key=process.env.QUOTES_LINK_SIGNING_KEY;
 const ttl=60*60*12;
 const sign=(body:string)=>createHmac('sha256',key||'').update(body).digest('hex');
 export async function authorizeQuote(reference:string){
