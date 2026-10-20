@@ -19,7 +19,7 @@ const wrap = (value: string, max = 85): string[] => {
 };
 
 // Minimal vector PDF writer; no remotely loaded assets or unsafe HTML.
-export function quotePdf(quote: SavedQuote): Buffer {
+export function quotePdf(quote: SavedQuote, onlineUrl?: string): Buffer {
   const pages: string[][] = [[]];
   let y = 785;
   function line(value: string, size = 10, bold = false, gap = 17) {
@@ -28,35 +28,43 @@ export function quotePdf(quote: SavedQuote): Buffer {
       ' Tf 48 ' + y + ' Td (' + esc(value) + ') Tj ET');
     y -= gap;
   }
-  line('ENVIRO AQUA', 22, true, 22);
-  line('ABN 24 638 197 734  |  ACN 638 197 734', 9, false, 15);
-  line('6/45 Amsterdam Cct, Wyong NSW 2259  |  (02) 8772 8162', 9, false, 15);
-  line('info@enviroaqua.com.au  |  www.enviroaqua.com.au', 9, false, 31);
-  line('FORMAL PRODUCT QUOTATION', 16, true, 29);
-  line('Quote reference: ' + quote.reference, 11, true);
-  line('Issued: ' + new Date(quote.created_at).toLocaleDateString('en-AU', { timeZone: 'Australia/Melbourne' }));
-  line('Valid until: ' + new Date(quote.expires_at).toLocaleDateString('en-AU', { timeZone: 'Australia/Melbourne' }), 10, false, 25);
-  line('Prepared for: ' + quote.organisation, 11, true);
-  line('Attention: ' + quote.contact_name);
-  line('Email: ' + quote.customer_email);
-  line('Delivery postcode: ' + quote.postcode, 10, false, 29);
-  line('PRODUCTS', 12, true, 23);
-  for (const item of quote.items) {
-    for (const part of wrap(item.name + (item.variant === 'Default Title' ? '' : ' / ' + item.variant), 83)) line(part, 10, true, 15);
-    line('Quantity: ' + item.quantity + '    Unit: ' + dollars(item.unit_price_cents) +
-      '    Line total: ' + dollars(item.unit_price_cents * item.quantity), 10, false, 22);
+  const invoice=Boolean(quote.invoice_reference);
+  line('ENVIRO AQUA',20,true,25);
+  line('6/45 Amsterdam Circuit, Wyong NSW 2259',9,false,13);
+  line('(02) 8772 8162  |  info@enviroaqua.com.au  |  www.enviroaqua.com.au',9,false,13);
+  line('ABN: 24 638 197 734',9,false,26);
+  line(invoice?'INVOICE':'QUOTATION',17,true,24);
+  line('Reference: '+(quote.invoice_reference||quote.reference),10,true,17);
+  line('Issued: '+new Date(quote.invoice_created_at||quote.created_at).toLocaleDateString('en-AU',{timeZone:'Australia/Sydney'}),9);
+  if(!invoice)line('Valid until: '+new Date(quote.expires_at).toLocaleDateString('en-AU',{timeZone:'Australia/Sydney'}),9);
+  if(invoice)line('Status: '+(quote.invoice_status==='paid'?'PAID':'PAYMENT OUTSTANDING'),10,true);
+  y-=12;
+  line('PREPARED FOR',9,true,16);
+  line(quote.organisation,10,true,16);
+  line(quote.contact_name,9);
+  line(quote.customer_email,9);
+  const addr=quote.delivery_address;
+  if(addr){line('DELIVERY TO',9,true);for(const x of wrap(addr.street+', '+addr.suburb+' '+addr.state+' '+addr.postcode,82))line(x,9);
+   if(addr.abn)line('Customer ABN: '+addr.abn,9);
   }
-  line('Product subtotal (AUD): ' + dollars(quote.product_total_cents), 12, true, 29);
-  for (const part of [
-    'Freight: TO BE CONFIRMED. Freight is not included in the subtotal.',
-    'Product pricing is based on Shopify prices at the time of issue.',
-    'The final order total, including freight and applicable taxes,',
-    'will be confirmed before payment at Shopify checkout.',
-    'This document is a quotation, not a tax invoice or proof of payment.',
-    'Valid for 14 days, subject to unchanged product prices and availability.',
-    'If product prices change, a refreshed quotation is required.',
-    'Purchase orders and invoice terms require separate approval.',
-  ]) line(part, 9, false, 15);
+  y-=12;line('PRODUCTS',10,true,22);
+  for(const item of quote.items){
+   for(const part of wrap(item.name+(item.variant==='Default Title'?'':' / '+item.variant),78))line(part,9,true,14);
+   line('Qty: '+item.quantity+'    Unit: '+dollars(item.unit_price_cents)+'    Total: '+dollars(item.quantity*item.unit_price_cents),9,false,20);
+  }
+  y-=8;
+  line('Products (incl. GST): '+dollars(quote.product_total_cents),10,true);
+  line('Shipping: '+(quote.freight_cents==null?'To be confirmed':dollars(quote.freight_cents)),9);
+  line('Included GST: '+dollars(quote.included_gst_cents??Math.round(quote.product_total_cents/11)),9);
+  line('TOTAL (incl. GST): '+dollars(quote.product_total_cents+(quote.freight_cents??0)),12,true,26);
+  if(invoice&&quote.invoice_status==='paid')line('PAID - Thank you for your payment',12,true,23);
+  if(onlineUrl){
+   if(y<140){pages.push([]);y=785;}
+   line(invoice?'PAY INVOICE ONLINE':'CONVERT TO INVOICE ONLINE',12,true,23);
+   line('Click the button above to securely open your saved document.',9);
+  }
+  const linkPage=pages.length-1;
+  const linkY=y+40;
   const objects: string[] = [''];
   const push = (s: string) => { objects.push(s); return objects.length - 1; };
   const catalog = push('');
@@ -64,10 +72,13 @@ export function quotePdf(quote: SavedQuote): Buffer {
   const font = push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
   const boldFont = push('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>');
   const kids: number[] = [];
-  for (const lines of pages) {
+  const linkUri=onlineUrl?onlineUrl.replace(/[^\x20-\x7E]/g,''):null;
+  const linkAnnot=linkUri?push('<< /Type /Annot /Subtype /Link /Rect [42 '+(linkY-9)+' 510 '+(linkY+18)+'] /Border [0 0 0] /A << /S /URI /URI ('+esc(linkUri)+') >> >>'):null;
+  for (const [index,lines] of pages.entries()) {
+    if(invoice&&quote.invoice_status!=='paid'&&index===0)lines.unshift('q 0.9 g BT /F2 75 Tf 98 435 Td 0.82 0.57 -0.57 0.82 0 0 Tm (UNPAID) Tj ET Q');
     const stream = lines.join('\n') + '\n';
     const contentId = push('<< /Length ' + Buffer.byteLength(stream, 'latin1') + ' >>\nstream\n' + stream + 'endstream');
-    kids.push(push('<< /Type /Page /Parent ' + pagesId + ' 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ' + font + ' 0 R /F2 ' + boldFont + ' 0 R >> >> /Contents ' + contentId + ' 0 R >>'));
+    kids.push(push('<< /Type /Page /Parent ' + pagesId + ' 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ' + font + ' 0 R /F2 ' + boldFont + ' 0 R >> >> /Contents ' + contentId + ' 0 R '+(linkAnnot!==null&&index===linkPage?'/Annots ['+linkAnnot+' 0 R] ':'')+'>>'));
   }
   objects[pagesId] = '<< /Type /Pages /Count ' + kids.length + ' /Kids [' + kids.map(i => i + ' 0 R').join(' ') + '] >>';
   objects[catalog] = '<< /Type /Catalog /Pages ' + pagesId + ' 0 R >>';
