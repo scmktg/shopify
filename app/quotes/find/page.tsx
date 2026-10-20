@@ -23,7 +23,7 @@ export default function FindQuotePage(){
   }catch(err){setError(err instanceof Error?err.message:'Unable to find your quotation.');setBusy(false);}
  }
  return <main className="mx-auto max-w-2xl px-4 py-12 text-zinc-950 sm:px-6 sm:py-20">
-  <p className="text-xs font-semibold uppercase tracking-[.2em] text-zinc-500">ENVIRO AQUA / QUOTATIONS</p>
+  
   <h1 className="mt-3 text-4xl font-semibold tracking-tight">Find Your Quote</h1>
   <p className="mt-4 max-w-xl text-zinc-600">Already generated a quote? Enter your reference and email address to view, download or convert to an invoice.</p>
   <form onSubmit={e=>void findQuote(e)} className="mt-8 space-y-5 rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
