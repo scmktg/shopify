@@ -49,6 +49,7 @@ export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:s
   if(!quote)return fail('Invoice not found.',404);
   if(!quote.invoice_reference)return fail('Convert your quotation to an invoice first.',409);
   if(quote.invoice_status==='paid'||quote.status==='purchased')return fail('This invoice has already been paid.',409);
+  if(quote.shopify_order_id)return fail('An order has already been placed for this invoice. Please follow your order confirmation or contact Enviro Aqua.',409);
   if(quote.status==='cancelled'||Date.parse(quote.expires_at)<=Date.now())return fail('This quotation has expired.',409);
   // Reuse an already-created checkout instead of generating additional carts.
   if(quote.invoice_status==='checkout_started'&&quote.shopify_cart_id){
