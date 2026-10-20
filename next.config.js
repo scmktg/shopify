@@ -534,6 +534,10 @@ function expandCategoryRules(tuples) {
 }
 
 const nextConfig = {
+  // Ship the compressed Chromium executable and its libraries with the PDF serverless function.
+  outputFileTracingIncludes: {
+    '/api/quotes/private/[token]/pdf': ['./node_modules/@sparticuz/chromium/bin/**'],
+  },
   images: {
     remotePatterns: [
       {
