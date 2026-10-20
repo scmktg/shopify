@@ -5,6 +5,7 @@ import {validQuoteSignature,quoteAccessSignature} from '@/lib/quotes/signed-link
 import {quoteDocumentHtml} from '@/lib/quotes/document-html';
 import chromium from '@sparticuz/chromium';
 import puppeteer from 'puppeteer-core';
+import {quotePdf} from '@/lib/quotes/pdf';
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
 export const runtime='nodejs';
