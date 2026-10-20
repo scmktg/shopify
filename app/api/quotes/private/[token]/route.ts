@@ -31,7 +31,7 @@ type CartResult={cartCreate:{cart:{id:string;checkoutUrl:string}|null;userErrors
 type AddressResult={cartDeliveryAddressesAdd:{cart:{id:string;checkoutUrl:string}|null;userErrors:{message:string}[]}};
 export async function POST(_request:NextRequest,{params}:{params:Promise<{token:string}>}){
  try{
-  const quote=await find((await params).token);
+  const quote=await findPrivateQuote((await params).token,_request.nextUrl.searchParams.get('access'));
   if(!quote)return fail('Quotation not found.',404);
   if(quote.status==='cancelled'||Date.parse(quote.expires_at)<=Date.now())return fail('This quotation has expired.',409);
   if(quote.invoice_status==='paid')return fail('Invoice already paid.',409);
@@ -44,7 +44,7 @@ export async function POST(_request:NextRequest,{params}:{params:Promise<{token:
 }
 export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:string}>}){
  try{
-  const quote=await find((await params).token);
+  const quote=await findPrivateQuote((await params).token,_request.nextUrl.searchParams.get('access'));
   if(!quote)return fail('Invoice not found.',404);
   if(!quote.invoice_reference)return fail('Convert your quotation to an invoice first.',409);
   if(quote.invoice_status==='paid'||quote.status==='purchased')return fail('This invoice has already been paid.',409);
