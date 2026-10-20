@@ -8,6 +8,7 @@ import puppeteer from 'puppeteer-core';
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
 export const runtime='nodejs';
+export const maxDuration=60;
 export async function GET(request:NextRequest,{params}:{params:Promise<{token:string}>}){
  try{
   const {token}=await params;
@@ -24,7 +25,7 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
   const logo=await readFile(join(process.cwd(),'public','logo.webp'));
   const html=quoteDocumentHtml(quote,url.toString(),'data:image/webp;base64,'+logo.toString('base64'));
   if(request.nextUrl.searchParams.get('format')==='html')return new NextResponse(html,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; img-src data:; style-src 'unsafe-inline'; frame-ancestors 'self'; base-uri 'none'; form-action 'none'",'X-Content-Type-Options':'nosniff'}});
-  const browser=await puppeteer.launch({args:chromium.args,executablePath:await chromium.executablePath(),headless:true});
+  const browser=await puppeteer.launch({args:[...chromium.args,'--no-sandbox','--disable-setuid-sandbox'],executablePath:await chromium.executablePath(),headless:true});
   let bytes:Uint8Array;
   try{
    const page=await browser.newPage();
@@ -38,5 +39,5 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
    'Referrer-Policy':'no-referrer',
    'X-Content-Type-Options':'nosniff'
   }});
- }catch{return new NextResponse('Unable to generate document',{status:503});}
+ }catch(error){console.error('[quotes] PDF generation failed',error);return new NextResponse('Unable to generate document',{status:503});}
 }
