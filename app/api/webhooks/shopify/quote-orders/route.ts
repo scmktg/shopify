@@ -42,11 +42,11 @@ export async function POST(request: NextRequest) {
       return Boolean(match && ordered.get(match[1]) === item.quantity);
     });
     if (!matches) return NextResponse.json({ ok: true });
-    const eligible = ['paid', 'authorized', 'partially_paid'].includes(order.financial_status || '');
+    const eligible = order.financial_status === 'paid';
     if (!eligible) return NextResponse.json({ ok: true });
     await quoteDb('quotes', 'PATCH',
       'reference=eq.' + reference + '&shopify_order_id=is.null',
-      { status: 'purchased', shopify_order_id: String(order.id), confirmed_at: new Date().toISOString() });
+      { status: 'purchased', invoice_status: 'paid', invoice_paid_at: new Date().toISOString(), shopify_order_id: String(order.id), confirmed_at: new Date().toISOString() });
     return NextResponse.json({ ok: true });
   } catch {
     // Shopify retries on non-2xx status.
