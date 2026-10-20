@@ -26,6 +26,7 @@ export async function GET(_request:NextRequest,{params}:{params:Promise<{token:s
  }catch{return fail('Unable to retrieve quotation.',503);}
 }
 const CREATE_CART=`mutation QuotePayCart($input:CartInput!){cartCreate(input:$input){cart{id checkoutUrl} userErrors{message}}}`;
+const FETCH_CART=`query ExistingQuoteCheckout($id:ID!){cart(id:$id){id checkoutUrl}}`;
 const ADD_ADDRESS=`mutation QuoteAddress($cartId:ID!,$addresses:[CartSelectableAddressInput!]!){cartDeliveryAddressesAdd(cartId:$cartId,addresses:$addresses){cart{id checkoutUrl} userErrors{message}}}`;
 type CartResult={cartCreate:{cart:{id:string;checkoutUrl:string}|null;userErrors:{message:string}[]}};
 type AddressResult={cartDeliveryAddressesAdd:{cart:{id:string;checkoutUrl:string}|null;userErrors:{message:string}[]}};
@@ -49,6 +50,21 @@ export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:s
   if(!quote.invoice_reference)return fail('Convert your quotation to an invoice first.',409);
   if(quote.invoice_status==='paid'||quote.status==='purchased')return fail('This invoice has already been paid.',409);
   if(quote.status==='cancelled'||Date.parse(quote.expires_at)<=Date.now())return fail('This quotation has expired.',409);
+  // Reuse an already-created checkout instead of generating additional carts.
+  if(quote.invoice_status==='checkout_started'&&quote.shopify_cart_id){
+   const existing=await shopifyClient.request<{cart:{checkoutUrl:string}|null}>(FETCH_CART,{variables:{id:quote.shopify_cart_id}});
+   if(existing.data?.cart?.checkoutUrl){
+    const checkout=new URL(existing.data.cart.checkoutUrl);
+    const host=process.env.SHOPIFY_CHECKOUT_DOMAIN;if(host){checkout.hostname=host;checkout.protocol='https:';}
+    return NextResponse.json({checkoutUrl:checkout.toString(),reused:true},{headers:noStore});
+   }
+   return fail('Existing checkout is no longer available. Please contact Enviro Aqua for assistance.',409);
+  }
+  if(quote.invoice_status==='checkout_started'){
+   return fail('Checkout is being prepared. Please try again shortly.',409);
+  }
+  const reserved=await quoteDb<{id:string}[]>('quotes','PATCH','id=eq.'+quote.id+'&invoice_status=eq.unpaid&shopify_cart_id=is.null&select=id',{invoice_status:'checkout_started',status:'checkout_started',checkout_started_at:new Date().toISOString()},'return=representation');
+  if(!reserved.length)return fail('Checkout has already been started. Please refresh the page.',409);
   for(const item of quote.items){
    const product=await fetchProductByHandle(item.handle),variant=product?.variants.find(v=>v.id===item.variant_id);
    if(!variant?.availableForSale||variant.price.currencyCode!=='AUD'||Math.round(Number(variant.price.amount)*100)!==item.unit_price_cents)
@@ -74,7 +90,7 @@ export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:s
    if(updated.errors||!delivery?.cart||delivery.userErrors?.length)return fail('Shopify could not prefill the delivery address. Please try again.',503);
    checkoutUrl=delivery.cart.checkoutUrl||checkoutUrl;
   }
-  await quoteDb('quotes','PATCH','id=eq.'+quote.id,{invoice_status:'checkout_started',status:'checkout_started',checkout_started_at:new Date().toISOString(),shopify_cart_id:cart.id});
+  await quoteDb('quotes','PATCH','id=eq.'+quote.id,{shopify_cart_id:cart.id});
   // Shopify may return the storefront host instead of the actual checkout host.
   const host=process.env.SHOPIFY_CHECKOUT_DOMAIN;
   if(host){const url=new URL(checkoutUrl);url.hostname=host;url.protocol='https:';checkoutUrl=url.toString();}
