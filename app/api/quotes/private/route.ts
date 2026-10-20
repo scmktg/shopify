@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
+import { estimateQuoteShipping } from '@/lib/shopify/cart';
 import { newAccessToken, newQuoteReference, normaliseEmail, quoteDb, quoteDbConfigured, tokenDigest } from '@/lib/quotes/server';
 
 export const runtime = 'nodejs';
@@ -44,11 +45,13 @@ export async function POST(request:NextRequest){
   const total=items.reduce((sum,item)=>sum+item.unit_price_cents*item.quantity,0);
   // Shipping estimates are informational. Never trust the price submitted by a browser.
   // Checkout always recalculates its own shipping and taxes.
+  const estimated=await estimateQuoteShipping(items.map(i=>({variantId:i.variant_id,quantity:i.quantity})),{street,city:suburb,provinceCode:state,postcode});
+  const freight=estimated.ok&&estimated.options[0]?Math.round(Number(estimated.options[0].estimatedCost.amount)*100):null;
   const token=newAccessToken(),reference=newQuoteReference();
   const rows=await quoteDb<{id:string}[]>('quotes','POST','select=id',[{
    reference,access_token_digest:tokenDigest(token),customer_email:email,organisation,contact_name:contact,postcode,items,
-   delivery_address:{street,suburb,state,postcode,abn:abn||null},product_total_cents:total,included_gst_cents:Math.round(total/11),
-   freight_status:'to_be_confirmed',status:'issued',
+   delivery_address:{street,suburb,state,postcode,abn:abn||null},product_total_cents:total,freight_cents:freight,included_gst_cents:Math.round(total/11)+(freight===null?0:Math.round(freight/11)),
+   freight_status:freight===null?'to_be_confirmed':'confirmed',status:'issued',
   }],'return=representation');
   if(!rows[0])throw new Error('Save failed');
   return NextResponse.json({reference,url:'/quotes/view/'+token},{status:201,headers:{'Cache-Control':'no-store','Referrer-Policy':'no-referrer'}});
