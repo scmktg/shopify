@@ -76,7 +76,9 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  const linkAction=doc.context.obj({S:PDFName.of('URI'),URI:PDFString.of(link)});
  const annotation=doc.context.obj({Type:PDFName.of('Annot'),Subtype:PDFName.of('Link'),Rect:[L,H-top-46,R,H-top],Border:[0,0,0],A:linkAction});
  page.node.addAnnot(doc.context.register(annotation));
- line('Click to open your quote online at enviroaqua.com.au',L+104,top+59,8,false,grey);
+ const footerText='Click to open your quote online at enviroaqua.com.au';
+ const footerWidth=normal.widthOfTextAtSize(footerText,8);
+ line(footerText,L+(R-L-footerWidth)/2,top+59,8,false,grey);
  if(q.invoice_reference&&q.invoice_status!=='paid')page.drawText('UNPAID',{x:135,y:400,size:73,font:bold,color:rgb(.9,.9,.92),rotate:degrees(33)});
  return doc.save();
 }
