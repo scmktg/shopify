@@ -7,7 +7,7 @@ import { fetchProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 export const runtime='nodejs';
 const noStore={'Cache-Control':'private, no-store','Referrer-Policy':'no-referrer'};
 const fail=(error:string,status=400)=>NextResponse.json({error},{status,headers:noStore});
-export async function findPrivateQuote(token:string,access:string|null=null){
+async function findPrivateQuote(token:string,access:string|null=null){
  if(/^EA-Q-[A-F0-9]{16}$/.test(token)){
   if(!await authorizeQuote(token)&&!validQuoteSignature(token,access))return null;
   const matches=await quoteDb<SavedQuote[]>('quotes','GET','select=*&reference=eq.'+encodeURIComponent(token)+'&limit=1');
