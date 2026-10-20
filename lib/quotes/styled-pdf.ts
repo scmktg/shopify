@@ -24,7 +24,8 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
   if(current)result.push(current);return result;
  };
  const header=()=>{
-  page.drawImage(logo,{x:L,y:H-94,width:160,height:48});
+  const logoSize=logo.scaleToFit(160,48);
+  page.drawImage(logo,{x:L,y:H-46-logoSize.height,width:logoSize.width,height:logoSize.height});
   ['6/45 Amsterdam Circuit, Wyong NSW 2259','(02) 8772 8162','info@enviroaqua.com.au','www.enviroaqua.com.au','ABN: 24 638 197 734'].forEach((t,i)=>line(t,L,105+i*12,8.5,false,grey));
   line(q.invoice_reference?'INVOICE':'QUOTATION',R-185,49,12,true,black,{right:R});
   line(q.invoice_reference||q.reference,R-250,72,8.5,false,grey,{right:R});
@@ -75,7 +76,7 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  const linkAction=doc.context.obj({S:PDFName.of('URI'),URI:PDFString.of(link)});
  const annotation=doc.context.obj({Type:PDFName.of('Annot'),Subtype:PDFName.of('Link'),Rect:[L,H-top-46,R,H-top],Border:[0,0,0],A:linkAction});
  page.node.addAnnot(doc.context.register(annotation));
- line('Click to open your saved document on enviroaqua.com.au',L+104,top+59,8,false,grey);
+ line('Click to open your quote online at enviroaqua.com.au',L+104,top+59,8,false,grey);
  if(q.invoice_reference&&q.invoice_status!=='paid')page.drawText('UNPAID',{x:135,y:400,size:73,font:bold,color:rgb(.9,.9,.92),rotate:degrees(33)});
  return doc.save();
 }
