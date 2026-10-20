@@ -2,7 +2,11 @@ import {NextRequest,NextResponse} from 'next/server';
 import {quoteDb,tokenDigest,type SavedQuote} from '@/lib/quotes/server';
 import {authorizeQuote} from '@/lib/quotes/lookup-session';
 import {validQuoteSignature,quoteAccessSignature} from '@/lib/quotes/signed-link';
-import {quotePdf} from '@/lib/quotes/pdf';
+import {quoteDocumentHtml} from '@/lib/quotes/document-html';
+import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer-core';
+import {readFile} from 'node:fs/promises';
+import {join} from 'node:path';
 export const runtime='nodejs';
 export async function GET(request:NextRequest,{params}:{params:Promise<{token:string}>}){
  try{
@@ -17,8 +21,16 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
   const quote=rows[0];if(!quote)return new NextResponse('Not found',{status:404});
   const url=new URL('/quotes/view/'+encodeURIComponent(quote.reference),request.nextUrl.origin);
   url.searchParams.set('access',quoteAccessSignature(quote.reference));
-  const bytes=quotePdf(quote,url.toString());
-  return new NextResponse(new Uint8Array(bytes),{headers:{
+  const logo=await readFile(join(process.cwd(),'public','logo.webp'));
+  const html=quoteDocumentHtml(quote,url.toString(),'data:image/webp;base64,'+logo.toString('base64'));
+  const browser=await puppeteer.launch({args:chromium.args,executablePath:await chromium.executablePath(),headless:true});
+  let bytes:Uint8Array;
+  try{
+   const page=await browser.newPage();
+   await page.setContent(html,{waitUntil:'load'});
+   bytes=await page.pdf({format:'A4',printBackground:true,preferCSSPageSize:true});
+  }finally{await browser.close();}
+  return new NextResponse(bytes,{headers:{
    'Content-Type':'application/pdf',
    'Content-Disposition':'attachment; filename="'+(quote.invoice_reference||quote.reference)+'.pdf"',
    'Cache-Control':'private, no-store',
