@@ -18694,5 +18694,113 @@
       "water-filters",
       "whole-house"
     ]
+  },
+  "vontron-ulp21-4040-commercial-reverse-osmosis-membrane-4-40": {
+    "categories": [
+      "cartridges",
+      "ro-membranes"
+    ],
+    "tags": [
+      "reverse-osmosis",
+      "ro-membrane",
+      "commercial",
+      "4040",
+      "low-pressure",
+      "vontron"
+    ],
+    "shortDescription": "Vontron ULP21-4040 low-pressure commercial reverse osmosis replacement membrane in the 4-inch × 40-inch (4040) format.",
+    "description": "The **Vontron ULP21-4040** is a low-pressure reverse osmosis membrane element for compatible commercial water treatment systems. Its nominal 4-inch × 40-inch (4040) size makes it an option when replacing an existing 4040-format RO element.\n\n## Key features\n\n- Vontron ULP21-4040 membrane model\n- 4040 format — nominally 4 inches in diameter and 40 inches in length\n- Low-pressure reverse osmosis design\n- Intended for suitable commercial RO systems and membrane pressure vessels\n- Supplied as a single membrane element; the pressure vessel and complete system are not included\n\n## Choosing the correct replacement\n\nBefore ordering, compare the model of your existing membrane and confirm the vessel, end connections, operating conditions and system requirements. A 4040 designation alone does not guarantee compatibility. Actual output, rejection and operating life vary with feed-water conditions and system operation. Check the manufacturer's model-specific technical specification for operating limits before installation.",
+    "features": [
+      "Vontron ULP21-4040 commercial RO membrane",
+      "Standard 4040 nominal size: 4-inch × 40-inch",
+      "Low-pressure membrane element for compatible RO installations",
+      "Single replacement element for servicing existing commercial systems"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Brand",
+        "value": "Vontron"
+      },
+      {
+        "label": "Model",
+        "value": "ULP21-4040"
+      },
+      {
+        "label": "Nominal format",
+        "value": "4040 (4\" × 40\")"
+      },
+      {
+        "label": "Type",
+        "value": "Low-pressure RO membrane"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Brand",
+        "value": "Vontron"
+      },
+      {
+        "label": "Model",
+        "value": "ULP21-4040"
+      },
+      {
+        "label": "Membrane type",
+        "value": "Low-pressure reverse osmosis"
+      },
+      {
+        "label": "Nominal size",
+        "value": "4 inches × 40 inches (4040)"
+      },
+      {
+        "label": "Quantity",
+        "value": "1 membrane element"
+      },
+      {
+        "label": "Use",
+        "value": "Compatible commercial RO pressure vessels and systems"
+      }
+    ],
+    "recommendedFor": [
+      "Replacing a verified ULP21-4040 membrane in an existing RO system",
+      "Commercial reverse osmosis system maintenance",
+      "Commercial water treatment service contractors"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "not_required",
+        "licenceNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": null
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [],
+      "moreInCategory": "auto"
+    },
+    "seo": {
+      "title": "Vontron ULP21-4040 RO Membrane | 4\" × 40\" Commercial",
+      "description": "Vontron ULP21-4040 low-pressure 4040 reverse osmosis membrane for compatible commercial RO systems. Check model and pressure-vessel compatibility.",
+      "ogImage": null
+    },
+    "faq": [
+      {
+        "q": "What size is a 4040 reverse osmosis membrane?",
+        "a": "4040 describes the nominal 4-inch diameter and 40-inch length membrane format. Always check the exact model and connection compatibility."
+      },
+      {
+        "q": "Does this include the membrane housing?",
+        "a": "No. This listing is for one membrane element only. The pressure vessel and other RO equipment are sold separately."
+      },
+      {
+        "q": "Will this fit any 4040 RO system?",
+        "a": "Not necessarily. Confirm the membrane model, end connections, housing and operating requirements before ordering."
+      }
+    ]
   }
 }
