@@ -534,9 +534,10 @@ function expandCategoryRules(tuples) {
 }
 
 const nextConfig = {
-  // Ship the compressed Chromium executable and its libraries with the PDF serverless function.
+  // PDFKit loads built-in Helvetica AFM metrics from disk at runtime.
+  // Next's serverless file tracing must explicitly include these non-JS assets.
   outputFileTracingIncludes: {
-    '/api/quotes/private/[token]/pdf': ['./node_modules/@sparticuz/chromium/bin/**'],
+    '/api/quotes/private/[token]/pdf': ['./node_modules/pdfkit/js/data/**', './public/logo.webp'],
   },
   images: {
     remotePatterns: [
