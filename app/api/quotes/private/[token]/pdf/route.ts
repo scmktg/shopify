@@ -3,8 +3,8 @@ import {quoteDb,tokenDigest,type SavedQuote} from '@/lib/quotes/server';
 import {authorizeQuote} from '@/lib/quotes/lookup-session';
 import {validQuoteSignature,quoteAccessSignature} from '@/lib/quotes/signed-link';
 import {quoteDocumentHtml} from '@/lib/quotes/document-html';
-import chromium from '@sparticuz/chromium';
-import puppeteer from 'puppeteer-core';
+import sharp from 'sharp';
+import {styledQuotePdf} from '@/lib/quotes/styled-pdf';
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
 export const runtime='nodejs';
@@ -25,18 +25,8 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
   const logo=await readFile(join(process.cwd(),'public','logo.webp'));
   const html=quoteDocumentHtml(quote,url.toString(),'data:image/webp;base64,'+logo.toString('base64'));
   if(request.nextUrl.searchParams.get('format')==='html')return new NextResponse(html,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; img-src data:; style-src 'unsafe-inline'; frame-ancestors 'self'; base-uri 'none'; form-action 'none'",'X-Content-Type-Options':'nosniff'}});
-  let bytes:Uint8Array;
-  try{
-   const browser=await puppeteer.launch({args:[...chromium.args,'--no-sandbox','--disable-setuid-sandbox'],executablePath:await chromium.executablePath(),headless:true});
-   try{
-    const page=await browser.newPage();
-    await page.setContent(html,{waitUntil:'load'});
-    bytes=await page.pdf({format:'A4',printBackground:true,preferCSSPageSize:true});
-   }finally{await browser.close();}
-  }catch(error){
-   console.error('[quotes] Chromium PDF generation failed',error);
-   return new NextResponse('PDF rendering is temporarily unavailable. Please try again.',{status:503,headers:{'Cache-Control':'no-store'}});
-  }
+  const logoPng=await sharp(logo).png().toBuffer();
+  const bytes=await styledQuotePdf(quote,url.toString(),logoPng);
   return new NextResponse(new Uint8Array(bytes),{headers:{
    'Content-Type':'application/pdf',
    'Content-Disposition':'attachment; filename="'+(quote.invoice_reference||quote.reference)+'.pdf"',
