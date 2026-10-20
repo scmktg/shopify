@@ -29,6 +29,7 @@ import { DosingTankComparison } from '@/components/category/DosingTankComparison
 import { shouldShowWaterMarkLeadFreeBadge } from '@/lib/products/watermarkLeadFreeBadge';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
+const SHIPPING_QUOTE_ONLY_HANDLE = 'commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment';
 const BRUSHED_GOLD_RO_TAP_HANDLE =
   'premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold';
 const THREE_WAY_TAP_HANDLE =
@@ -87,6 +88,7 @@ export function ProductDetail({
   const moreSource = content.upsells?.moreInCategory ?? 'auto';
   const showFourStageAlternative =
     product.handle === SOLD_OUT_THREE_STAGE_UV_HANDLE;
+  const requiresShippingQuote = product.handle === SHIPPING_QUOTE_ONLY_HANDLE;
 
   return (
     <VariantSelectionProvider
@@ -150,12 +152,33 @@ export function ProductDetail({
             <ThreeWayTapHeroBenefits />
           )}
 
-          {!showFourStageAlternative && (
+          {!showFourStageAlternative && !requiresShippingQuote && (
             <VariantPurchaseControls
               fallbackPrice={product.priceRange.minVariantPrice}
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
             />
+          )}
+
+          {requiresShippingQuote && (
+            <div className="mt-5 rounded-lg border border-brand-blue/25 bg-brand-blue-light/40 p-5">
+              <p className="text-sm font-semibold text-black">SKU: EA-WF-RO-13</p>
+              <p className="mt-3 text-3xl font-bold text-black">{formatMoney(product.priceRange.minVariantPrice)}</p>
+              <p className="mt-1 text-sm text-black/60">inc GST · Shipping quoted separately</p>
+              <h2 className="mt-5 text-lg font-semibold text-black">Contact us for a shipping quote to purchase</h2>
+              <p className="mt-2 text-sm leading-6 text-black/75">
+                Our team will review your delivery location and freight requirements and provide a shipping quote before you purchase this system.
+              </p>
+              <a
+                href="mailto:info@enviroaqua.com.au?subject=Shipping%20Quote%20-%20500%20LPH%20RO%20Plant"
+                className="mt-4 inline-flex min-h-12 w-full items-center justify-center rounded-md bg-brand-blue px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-blue-hover"
+              >
+                Contact Us for Shipping Quote
+              </a>
+              <p className="mt-3 text-center text-sm text-black/70">
+                Or call <a href="tel:+61287728162" className="font-semibold underline underline-offset-4">(02) 8772 8162</a>
+              </p>
+            </div>
           )}
 
           {showFourStageAlternative && (
@@ -264,10 +287,12 @@ export function ProductDetail({
             </p>
           )}
 
-          <ShippingTierBlock
-            tier={product.metafields.shipping_tier}
-            productHandle={product.handle}
-          />
+          {!requiresShippingQuote && (
+            <ShippingTierBlock
+              tier={product.metafields.shipping_tier}
+              productHandle={product.handle}
+            />
+          )}
 
           <VariantProductTrustBlock productId={product.id} />
 
@@ -325,7 +350,7 @@ export function ProductDetail({
       )}
       {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
-      {!showFourStageAlternative && (
+      {!showFourStageAlternative && !requiresShippingQuote && (
         <VariantBuyBanner
           fallbackPrice={product.priceRange.minVariantPrice}
           ctaLabel={content.ctas?.primary ?? undefined}
@@ -348,7 +373,7 @@ export function ProductDetail({
 
       <BrandTrustStrip category={category} subcategory={subcategory} />
 
-      {!showFourStageAlternative && (
+      {!showFourStageAlternative && !requiresShippingQuote && (
         <VariantMobileStickyBuyBar
           fallbackPrice={product.priceRange.minVariantPrice}
           title={product.title}
