@@ -42,11 +42,24 @@ export async function POST(request: NextRequest) {
       return Boolean(match && ordered.get(match[1]) === item.quantity);
     });
     if (!matches) return NextResponse.json({ ok: true });
-    const eligible = order.financial_status === 'paid';
-    if (!eligible) return NextResponse.json({ ok: true });
+    // A manual bank transfer creates an unpaid Shopify order. Link that order
+    // immediately, but never treat order creation as proof of payment.
+    const orderId = String(order.id);
+    if (quote.shopify_order_id && quote.shopify_order_id !== orderId) {
+      return NextResponse.json({ ok: true });
+    }
+    if (order.financial_status !== 'paid') {
+      if (!quote.shopify_order_id && quote.invoice_status !== 'paid') {
+        await quoteDb('quotes', 'PATCH',
+          'reference=eq.' + reference + '&shopify_order_id=is.null&invoice_status=neq.paid',
+          { shopify_order_id: orderId });
+      }
+      return NextResponse.json({ ok: true });
+    }
+    // The order/paid webhook must be configured in Shopify for this update.
     await quoteDb('quotes', 'PATCH',
-      'reference=eq.' + reference + '&shopify_order_id=is.null',
-      { status: 'purchased', invoice_status: 'paid', invoice_paid_at: new Date().toISOString(), shopify_order_id: String(order.id), confirmed_at: new Date().toISOString() });
+      'reference=eq.' + reference + '&shopify_order_id=' + (quote.shopify_order_id ? 'eq.' + encodeURIComponent(orderId) : 'is.null') + '&invoice_status=neq.paid',
+      { status: 'purchased', invoice_status: 'paid', invoice_paid_at: new Date().toISOString(), shopify_order_id: orderId, confirmed_at: new Date().toISOString() });
     return NextResponse.json({ ok: true });
   } catch {
     // Shopify retries on non-2xx status.
