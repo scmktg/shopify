@@ -1,4 +1,4 @@
-import { PDFDocument, StandardFonts, rgb, degrees } from 'pdf-lib';
+import { PDFDocument, StandardFonts, rgb, degrees, PDFName, PDFString } from 'pdf-lib';
 import type { SavedQuote } from './server';
 
 const money=(n:number)=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(n/100);
@@ -69,15 +69,12 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  totalRow('Total incl. GST',money(q.product_total_cents+(q.freight_cents??0)),true);
  top=Math.max(top+23,645);if(top+88>H-45)top=next();
  const button=(q.invoice_reference?(q.invoice_status==='paid'?'VIEW PAID INVOICE':'PAY INVOICE'):'CONVERT TO INVOICE');
- page.drawRectangle({x:L,y:H-(top+46),width:R-L,height:46,color:black,borderRadius:0} as Parameters<typeof page.drawRectangle>[0]);
+ page.drawRectangle({x:L,y:H-(top+46),width:R-L,height:46,color:black});
  const btnSize=12;const textWidth=bold.widthOfTextAtSize(button+'  >',btnSize);
  page.drawText(button+'  >',{x:L+(R-L-textWidth)/2,y:H-top-29,font:bold,size:btnSize,color:white});
- const uri=doc.context.obj({Type:'Annot',Subtype:'Link',Rect:[L,H-top-46,R,H-top],Border:[0,0,0],A:{S:'URI',URI:PDFDocument.prototype.constructor?undefined:undefined}});
- // Explicit PDF link action, supported by all standard PDF readers.
- const linkAction=doc.context.obj({S:'URI',URI:link});
- const annotation=doc.context.obj({Type:'Annot',Subtype:'Link',Rect:[L,H-top-46,R,H-top],Border:[0,0,0],A:linkAction});
- const ref=doc.context.register(annotation);
- const existing=page.node.Annots();if(existing)existing.push(ref);else page.node.set(PDFDocument.prototype.constructor?undefined as never:undefined as never,annotation);
+ const linkAction=doc.context.obj({S:PDFName.of('URI'),URI:PDFString.of(link)});
+ const annotation=doc.context.obj({Type:PDFName.of('Annot'),Subtype:PDFName.of('Link'),Rect:[L,H-top-46,R,H-top],Border:[0,0,0],A:linkAction});
+ page.node.addAnnot(doc.context.register(annotation));
  line('Click to open your saved document on enviroaqua.com.au',L+104,top+59,8,false,grey);
  if(q.invoice_reference&&q.invoice_status!=='paid')page.drawText('UNPAID',{x:135,y:400,size:73,font:bold,color:rgb(.9,.9,.92),rotate:degrees(33)});
  return doc.save();
