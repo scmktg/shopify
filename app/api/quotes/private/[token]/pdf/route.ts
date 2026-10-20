@@ -23,6 +23,7 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
   url.searchParams.set('access',quoteAccessSignature(quote.reference));
   const logo=await readFile(join(process.cwd(),'public','logo.webp'));
   const html=quoteDocumentHtml(quote,url.toString(),'data:image/webp;base64,'+logo.toString('base64'));
+  if(request.nextUrl.searchParams.get('format')==='html')return new NextResponse(html,{headers:{'Content-Type':'text/html; charset=utf-8','Cache-Control':'private, no-store','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'none'; img-src data:; style-src 'unsafe-inline'; frame-ancestors 'self'; base-uri 'none'; form-action 'none'",'X-Content-Type-Options':'nosniff'}});
   const browser=await puppeteer.launch({args:chromium.args,executablePath:await chromium.executablePath(),headless:true});
   let bytes:Uint8Array;
   try{
