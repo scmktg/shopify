@@ -64,4 +64,12 @@ export type SavedQuote = {
   expires_at: string;
   shopify_cart_id: string | null;
   shopify_order_id: string | null;
+  access_token_digest?: string | null;
+  delivery_address?: {street:string;suburb:string;state:string;postcode:string;abn?:string} | null;
+  freight_cents?: number | null;
+  included_gst_cents?: number | null;
+  invoice_reference?: string | null;
+  invoice_status?: 'unpaid'|'checkout_started'|'paid'|null;
+  invoice_created_at?: string | null;
+  invoice_paid_at?: string | null;
 };
