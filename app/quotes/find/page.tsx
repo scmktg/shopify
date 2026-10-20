@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 
 export default function FindQuotePage(){
  const router=useRouter();
+ const [kind,setKind]=useState<'quote'|'invoice'>('quote');
  const [reference,setReference]=useState('');
  const [email,setEmail]=useState('');
  const [busy,setBusy]=useState(false);
@@ -13,10 +14,10 @@ export default function FindQuotePage(){
   event.preventDefault();
   if(busy)return;
   const ref=reference.trim().toUpperCase();
-  if(!/^EA-Q-[A-F0-9]{16}$/.test(ref)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())){setError('Enter your quotation reference and email address.');return;}
+  if(!(kind==='invoice'?/^EA-INV-[A-F0-9]{16}$/:/^EA-Q-[A-F0-9]{16}$/).test(ref)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())){setError('Enter your '+(kind==='invoice'?'invoice':'quotation')+' reference and email address.');return;}
   setBusy(true);setError('');
   try{
-   const response=await fetch('/api/quotes/lookup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reference:ref,email:email.trim()})});
+   const response=await fetch('/api/quotes/lookup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reference:ref,email:email.trim(),kind})});
    const data=await response.json() as {url?:string;error?:string};
    if(!response.ok||!data.url)throw new Error(data.error||'We could not find a quotation matching those details.');
    router.push(data.url);
@@ -24,18 +25,19 @@ export default function FindQuotePage(){
  }
  return <main className="mx-auto max-w-2xl px-4 py-12 text-zinc-950 sm:px-6 sm:py-20">
   
-  <h1 className="mt-3 text-4xl font-semibold tracking-tight">Find Your Quote</h1>
-  <p className="mt-4 max-w-xl text-zinc-600">Already generated a quote? Enter your reference and email address to view, download or convert to an invoice.</p>
+  <h1 className="mt-3 text-4xl font-semibold tracking-tight">Find Your {kind==='quote'?'Quote':'Invoice'}</h1>
+  <p className="mt-4 max-w-xl text-zinc-600">{kind==='quote'?'Already generated a quote? Enter your reference and email address to view, download or convert to an invoice.':'Already have an invoice? Enter your invoice reference and email address to view, download or pay it.'}</p>
+  <div role="tablist" aria-label="Document type" className="mt-7 flex gap-2 rounded-2xl bg-zinc-100 p-1">{(['quote','invoice'] as const).map(option=><button type="button" key={option} role="tab" aria-selected={kind===option} onClick={()=>{setKind(option);setReference('');setError('');}} className={'flex-1 rounded-xl px-5 py-3 text-sm font-semibold transition '+(kind===option?'bg-white text-black shadow-sm':'text-zinc-500 hover:text-black')}>{option==='quote'?'Find Your Quote':'Find Your Invoice'}</button>)}</div>
   <form onSubmit={e=>void findQuote(e)} className="mt-8 space-y-5 rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
-   <label className="block text-sm font-medium" htmlFor="find-quote-reference">Quotation reference
-    <input id="find-quote-reference" value={reference} onChange={e=>setReference(e.target.value)} placeholder="EA-Q-XXXXXXXXXXXXXXXX" autoCapitalize="characters" autoComplete="off" spellCheck={false} maxLength={21} required className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 uppercase outline-none focus:border-black focus:ring-2 focus:ring-zinc-200"/>
+   <label className="block text-sm font-medium" htmlFor="find-quote-reference">{kind==='quote'?'Quotation reference':'Invoice reference'}
+    <input id="find-quote-reference" value={reference} onChange={e=>setReference(e.target.value)} placeholder={kind==='quote'?'EA-Q-XXXXXXXXXXXXXXXX':'EA-INV-XXXXXXXXXXXXXXXX'} autoCapitalize="characters" autoComplete="off" spellCheck={false} maxLength={kind==='quote'?21:23} required className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 uppercase outline-none focus:border-black focus:ring-2 focus:ring-zinc-200"/>
    </label>
    <label className="block text-sm font-medium" htmlFor="find-quote-email">Email address
     <input id="find-quote-email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="name@organisation.com.au" autoComplete="email" maxLength={160} required className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 outline-none focus:border-black focus:ring-2 focus:ring-zinc-200"/>
    </label>
-   <p className="text-xs leading-relaxed text-zinc-500">Use the email address entered when the quotation was generated. No login or verification code is required.</p>
+   <p className="text-xs leading-relaxed text-zinc-500">Use the email address provided with your original quotation. No login or verification code is required.</p>
    {error&&<p role="alert" className="rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
-   <button type="submit" disabled={busy} className="w-full rounded-xl bg-black px-6 py-4 font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-50">{busy?'Finding quotation…':'Find My Quote →'}</button>
+   <button type="submit" disabled={busy} className="w-full rounded-xl bg-black px-6 py-4 font-semibold text-white transition hover:bg-zinc-800 disabled:opacity-50">{busy?'Finding '+kind+'…':'Find My '+(kind==='quote'?'Quote':'Invoice')+' →'}</button>
   </form>
   <p className="mt-6 text-sm text-zinc-600">Need a new quotation? <Link href="/quotes" className="font-semibold text-black underline underline-offset-4">Generate a quote</Link></p>
  </main>;
