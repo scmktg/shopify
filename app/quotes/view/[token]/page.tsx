@@ -35,7 +35,7 @@ export default function PrivateQuotePage(){
  }
 
  return <main className="mx-auto max-w-3xl px-4 py-10 text-zinc-950 sm:px-6">
-  <div className="print:hidden"><a href="/quotes" className="text-sm underline underline-offset-4">← Quotations</a><h1 className="mt-5 text-3xl font-semibold tracking-tight">{quote?.invoice_reference&&tab==='invoice'?'Invoice':'Saved quotation'}</h1><p className="mt-2 text-sm text-zinc-600">This is a private document. Keep its link safe; no account or email verification is required.</p></div>
+  <div className="print:hidden"><a href="/quotes" className="text-sm underline underline-offset-4">← Quotations</a><h1 className="mt-5 text-3xl font-semibold tracking-tight">{quote?.invoice_reference&&tab==='invoice'?'Invoice':'Saved quotation'}</h1></div>
   {loading&&<p className="mt-8">Loading quotation…</p>}
   {error&&<p role="alert" className="mt-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">{error}</p>}
   {quote&&<>{quote.invoice_reference&&<div role="tablist" aria-label="Document view" className="mt-6 flex rounded-xl bg-zinc-100 p-1 print:hidden"><button type="button" role="tab" aria-selected={tab==='quote'} onClick={()=>setTab('quote')} className={'flex-1 rounded-lg px-5 py-3 font-semibold '+(tab==='quote'?'bg-white shadow-sm':'text-zinc-500')}>Quote</button><button type="button" role="tab" aria-selected={tab==='invoice'} onClick={()=>setTab('invoice')} className={'flex-1 rounded-lg px-5 py-3 font-semibold '+(tab==='invoice'?'bg-white shadow-sm':'text-zinc-500')}>Invoice</button></div>}<article className="relative mt-6 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm print:mt-0 print:border-0 print:p-0 print:shadow-none sm:p-9">
