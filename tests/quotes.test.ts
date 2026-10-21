@@ -51,3 +51,18 @@ test('escapes PDF strings and creates multiple pages for long quotations', () =>
   assert.match(pdf, /\/Count [2-9]/);
   assert.match(pdf, /%%EOF/);
 });
+
+test('invoice PDF displays the customer-facing Shopify order number', () => {
+  const invoice: SavedQuote = {
+    ...example,
+    reference: 'EA-Q-3410',
+    invoice_reference: 'EA-INV-3410',
+    invoice_status: 'paid',
+    shopify_order_id: '18971175944513',
+    shopify_order_name: '#1136',
+  };
+  const pdf = quotePdf(invoice).toString('latin1');
+  assert.match(pdf, /EA-INV-3410/);
+  assert.match(pdf, /Shopify order: #1136/);
+  assert.doesNotMatch(pdf, /18971175944513/);
+});
