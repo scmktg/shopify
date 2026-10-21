@@ -46,13 +46,19 @@ export async function POST(request:NextRequest){
   // Shipping estimates are informational. Never trust the price submitted by a browser.
   // Checkout always recalculates its own shipping and taxes.
   const estimated=await estimateQuoteShipping(items.map(i=>({variantId:i.variant_id,quantity:i.quantity})),{street,city:suburb,provinceCode:state,postcode});
-  if(!estimated.ok||!estimated.options[0])return fail('Shipping must be successfully calculated before a quotation can be generated. Please check your delivery address and try again.',422);
-  const freight=Math.round(Number(estimated.options[0].estimatedCost.amount)*100);
+  if(!estimated.ok||!estimated.options.length)return fail('Shipping must be successfully calculated before a quotation can be generated. Please check your delivery address and try again.',422);
+  const requested=body.shippingSelection;
+  if(!requested||typeof requested!=='object')return fail('Please select an available shipping or pickup option.',422);
+  const choice=requested as Record<string,unknown>;
+  const matching=estimated.options.find(o=>o.title===choice.title&&o.deliveryMethodType===choice.deliveryMethodType&&Math.round(Number(o.estimatedCost.amount)*100)===Number(choice.costCents));
+  if(!matching)return fail('Your selected delivery option is no longer available at this price. Please recalculate shipping.',409);
+  const shippingSelection={title:matching.title||'Delivery',deliveryMethodType:matching.deliveryMethodType,costCents:Math.round(Number(matching.estimatedCost.amount)*100)};
+  const freight=shippingSelection.costCents;
   if(!Number.isSafeInteger(freight)||freight<0)return fail('Unable to confirm a valid shipping fee. Please try again.',422);
   const token=newAccessToken(),reference=await newQuoteReference();
   const rows=await quoteDb<{id:string}[]>('quotes','POST','select=id',[{
    reference,access_token_digest:tokenDigest(token),customer_email:email,organisation,contact_name:contact,postcode,items,
-   delivery_address:{street,suburb,state,postcode,abn:abn||null},product_total_cents:total,freight_cents:freight,included_gst_cents:Math.round(total/11)+(Math.round(freight/11)),
+   delivery_address:{street,suburb,state,postcode,abn:abn||null},shipping_selection:shippingSelection,product_total_cents:total,freight_cents:freight,included_gst_cents:Math.round(total/11)+(Math.round(freight/11)),
    freight_status:'confirmed',status:'issued',
   }],'return=representation');
   if(!rows[0])throw new Error('Save failed');
