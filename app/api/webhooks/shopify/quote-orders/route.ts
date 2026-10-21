@@ -6,6 +6,7 @@ export const runtime = 'nodejs';
 
 type ShopifyOrder = {
   id?: number;
+  name?: string;
   email?: string;
   financial_status?: string;
   cancelled_at?: string | null;
@@ -43,6 +44,7 @@ export async function POST(request: NextRequest) {
       return Boolean(match && ordered.get(match[1]) === item.quantity);
     });
     if (!matches) return NextResponse.json({ ok: true });
+    const orderName = typeof order.name === 'string' && order.name.length <= 64 && order.name.length > 0 ? order.name : null;
     // Process reversals only for the order already linked to this quotation.
     // A cancelled order must never stay PAID, even when the cancellation
     // notification still carries financial_status='paid'.
@@ -53,11 +55,11 @@ export async function POST(request: NextRequest) {
         const nextStatus = isFullyRefunded ? 'refunded' : 'cancelled';
         await quoteDb('quotes', 'PATCH',
           'id=eq.' + encodeURIComponent(quote.id) + '&shopify_order_id=eq.' + encodeURIComponent(String(order.id)),
-          { invoice_status: nextStatus });
+          { invoice_status: nextStatus, ...(orderName ? {shopify_order_name:orderName} : {}) });
       } else if (quote.shopify_order_id === String(order.id) && isFullyRefunded && quote.invoice_status === 'cancelled') {
         await quoteDb('quotes', 'PATCH',
           'id=eq.' + encodeURIComponent(quote.id) + '&shopify_order_id=eq.' + encodeURIComponent(String(order.id)),
-          { invoice_status: 'refunded' });
+          { invoice_status: 'refunded', ...(orderName ? {shopify_order_name:orderName} : {}) });
       }
       return NextResponse.json({ ok: true });
     }
@@ -75,14 +77,14 @@ export async function POST(request: NextRequest) {
       if (!quote.shopify_order_id && quote.invoice_status !== 'paid') {
         await quoteDb('quotes', 'PATCH',
           'reference=eq.' + reference + '&shopify_order_id=is.null&invoice_status=neq.paid',
-          { shopify_order_id: orderId });
+          { shopify_order_id: orderId, ...(orderName ? {shopify_order_name:orderName} : {}) });
       }
       return NextResponse.json({ ok: true });
     }
     // The order/paid webhook must be configured in Shopify for this update.
     await quoteDb('quotes', 'PATCH',
       'reference=eq.' + reference + '&shopify_order_id=' + (quote.shopify_order_id ? 'eq.' + encodeURIComponent(orderId) : 'is.null') + '&invoice_status=neq.paid',
-      { status: 'purchased', invoice_status: 'paid', invoice_paid_at: new Date().toISOString(), shopify_order_id: orderId, confirmed_at: new Date().toISOString() });
+      { status: 'purchased', invoice_status: 'paid', invoice_paid_at: new Date().toISOString(), shopify_order_id: orderId, ...(orderName ? {shopify_order_name:orderName} : {}), confirmed_at: new Date().toISOString() });
     return NextResponse.json({ ok: true });
   } catch {
     // Shopify retries on non-2xx status.
