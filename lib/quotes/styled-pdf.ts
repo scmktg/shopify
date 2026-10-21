@@ -65,7 +65,7 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  const tx=329;hline(top+10,tx,R,1.5,black);top+=28;
  const totalRow=(label:string,value:string,isBold=false)=>{line(label,tx,top,isBold?10.5:9,isBold,isBold?black:grey);line(value,475,top,isBold?10.5:9,isBold,black,{right:R});top+=24;};
  totalRow('Products',money(q.product_total_cents));
- totalRow('Shipping fee',q.freight_cents==null?'Pending':money(q.freight_cents));
+ totalRow(q.shipping_selection?(q.shipping_selection.deliveryMethodType==='PICK_UP'?'Click & Collect':q.shipping_selection.title):'Shipping fee',q.freight_cents==null?'Pending':money(q.freight_cents));
  totalRow('Included GST',money(q.included_gst_cents??Math.round(q.product_total_cents/11)));
  hline(top,tx,R);top+=12;
  totalRow('Total incl. GST',money(q.product_total_cents+(q.freight_cents??0)),true);
