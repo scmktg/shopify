@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
       items.push({ handle: product.handle, variant_id: variant.id, name: product.title, variant: variant.title, quantity: row.quantity, unit_price_cents: cents });
     }
     const total = items.reduce((sum, i) => sum + i.unit_price_cents * i.quantity, 0);
-    const reference = newQuoteReference();
+    const reference = await newQuoteReference();
     const records = await quoteDb<SavedQuote[]>('quotes', 'POST', 'select=*', [{
       reference, customer_email: email, organisation, contact_name: contactName, postcode,
       items, product_total_cents: total, freight_status: 'to_be_confirmed', status: 'issued',
