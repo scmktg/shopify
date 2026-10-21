@@ -13,7 +13,7 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
  try{
   const {token}=await params;
   let rows:SavedQuote[]=[];
-  if(/^EA-Q-[A-F0-9]{16}$/.test(token)){
+  if(/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/.test(token)){
    if(!await authorizeQuote(token)&&!validQuoteSignature(token,request.nextUrl.searchParams.get('access')))return new NextResponse('Not found',{status:404});
    rows=await quoteDb<SavedQuote[]>('quotes','GET','select=*&reference=eq.'+encodeURIComponent(token)+'&limit=1');
   }else if(/^[A-Za-z0-9_-]{43}$/.test(token)){
