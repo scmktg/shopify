@@ -37,7 +37,7 @@ export function quotePdf(quote: SavedQuote, onlineUrl?: string): Buffer {
   line('Reference: '+(quote.invoice_reference||quote.reference),10,true,17);
   line('Issued: '+new Date(quote.invoice_created_at||quote.created_at).toLocaleDateString('en-AU',{timeZone:'Australia/Sydney'}),9);
   if(!invoice)line('Valid until: '+new Date(quote.expires_at).toLocaleDateString('en-AU',{timeZone:'Australia/Sydney'}),9);
-  if(invoice)line('Status: '+(quote.invoice_status==='paid'?'PAID':'PAYMENT OUTSTANDING'),10,true);
+  if(invoice)line('Status: '+(quote.invoice_status==='cancelled'?'CANCELLED':quote.invoice_status==='refunded'?'REFUNDED':quote.invoice_status==='paid'?'PAID':'PAYMENT OUTSTANDING'),10,true);
   y-=12;
   line('PREPARED FOR',9,true,16);
   line(quote.organisation,10,true,16);
@@ -76,7 +76,7 @@ export function quotePdf(quote: SavedQuote, onlineUrl?: string): Buffer {
   const linkAnnot=linkUri?push('<< /Type /Annot /Subtype /Link /Rect [42 '+(linkY-9)+' 510 '+(linkY+18)+'] /Border [0 0 0] /A << /S /URI /URI ('+esc(linkUri)+') >> >>'):null;
   for (const [index,lines] of pages.entries()) {
     if(linkAnnot!==null&&index===linkPage)lines.unshift('q 0.25 G 1.2 w 44 '+(linkY-10)+' 486 31 re S Q');
-    if(invoice&&quote.invoice_status!=='paid'&&index===0)lines.unshift('q 0.88 g BT /F2 75 Tf 0.82 0.57 -0.57 0.82 125 350 Tm (UNPAID) Tj ET Q');
+    if(invoice&&quote.invoice_status!=='paid'&&index===0)lines.unshift('q 0.88 g BT /F2 75 Tf 0.82 0.57 -0.57 0.82 125 350 Tm ('+esc(quote.invoice_status==='cancelled'?'CANCELLED':quote.invoice_status==='refunded'?'REFUNDED':'UNPAID')+') Tj ET Q');
     const stream = lines.join('\n') + '\n';
     const contentId = push('<< /Length ' + Buffer.byteLength(stream, 'latin1') + ' >>\nstream\n' + stream + 'endstream');
     kids.push(push('<< /Type /Page /Parent ' + pagesId + ' 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ' + font + ' 0 R /F2 ' + boldFont + ' 0 R >> >> /Contents ' + contentId + ' 0 R '+(linkAnnot!==null&&index===linkPage?'/Annots ['+linkAnnot+' 0 R] ':'')+'>>'));
