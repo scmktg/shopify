@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 type Item={name:string;variant:string;quantity:number;unit_price_cents:number};
-type Quote={reference:string;organisation:string;contact_name:string;customer_email:string;created_at:string;expires_at:string;items:Item[];product_total_cents:number;freight_cents?:number|null;included_gst_cents?:number|null;delivery_address?:{street:string;suburb:string;state:string;postcode:string;abn?:string}|null;invoice_reference?:string|null;invoice_status?:string|null;status:string;shopify_order_id?:string|null;shopify_order_name?:string|null};
+type Quote={reference:string;organisation:string;contact_name:string;customer_email:string;created_at:string;expires_at:string;items:Item[];product_total_cents:number;freight_cents?:number|null;included_gst_cents?:number|null;delivery_address?:{street:string;suburb:string;state:string;postcode:string;abn?:string}|null;invoice_reference?:string|null;invoice_status?:string|null;status:string;shopify_order_id?:string|null;shopify_order_name?:string|null;shipping_selection?:{title:string;deliveryMethodType:string;costCents:number}|null};
 const money=(cents:number)=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(cents/100);
 export default function PrivateQuotePage(){
  const params=useParams<{token:string}>();const token=params.token;
