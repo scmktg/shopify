@@ -10,7 +10,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
     const email = await quoteSessionEmail();
     if (!email) return NextResponse.json({ error: 'Please verify your email first.' }, { status: 401 });
     const { reference } = await params;
-    if (!/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/.test(reference)) return NextResponse.json({ error: 'Invalid quotation.' }, { status: 400 });
+    if (!/^EA-Q-(?:[A-F0-9]{16}|\d{4,})$/.test(reference)) return NextResponse.json({ error: 'Invalid quotation.' }, { status: 400 });
     const body = await request.json() as { po_number?: unknown; notes?: unknown };
     const poNumber = String(body.po_number ?? '').trim();
     const notes = String(body.notes ?? '').trim();
