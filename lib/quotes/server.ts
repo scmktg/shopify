@@ -69,7 +69,7 @@ export type SavedQuote = {
   freight_cents?: number | null;
   included_gst_cents?: number | null;
   invoice_reference?: string | null;
-  invoice_status?: 'unpaid'|'checkout_started'|'paid'|null;
+  invoice_status?: 'unpaid'|'checkout_started'|'paid'|'cancelled'|'refunded'|null;
   invoice_created_at?: string | null;
   invoice_paid_at?: string | null;
 };
