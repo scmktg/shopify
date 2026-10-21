@@ -35,6 +35,7 @@ export function quotePdf(quote: SavedQuote, onlineUrl?: string): Buffer {
   line('ABN: 24 638 197 734',9,false,26);
   line(invoice?'INVOICE':'QUOTATION',17,true,24);
   line('Reference: '+(quote.invoice_reference||quote.reference),10,true,17);
+  if(quote.shopify_order_name)line('Shopify order: '+quote.shopify_order_name,9);
   line('Issued: '+new Date(quote.invoice_created_at||quote.created_at).toLocaleDateString('en-AU',{timeZone:'Australia/Sydney'}),9);
   if(!invoice)line('Valid until: '+new Date(quote.expires_at).toLocaleDateString('en-AU',{timeZone:'Australia/Sydney'}),9);
   if(invoice)line('Status: '+(quote.invoice_status==='cancelled'?'CANCELLED':quote.invoice_status==='refunded'?'REFUNDED':quote.invoice_status==='paid'?'PAID':'PAYMENT OUTSTANDING'),10,true);
