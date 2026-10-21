@@ -37,7 +37,7 @@ export async function newQuoteReference(): Promise<string> {
   });
   if (!response.ok) throw new Error('Unable to allocate quotation reference: HTTP ' + response.status);
   const reference: unknown = await response.json();
-  if (typeof reference !== 'string' || !/^EA-Q-\\d{4,}$/.test(reference)) throw new Error('Invalid quotation reference');
+  if (typeof reference !== 'string' || !/^EA-Q-\d{4,}$/.test(reference)) throw new Error('Invalid quotation reference');
   return reference;
 }
 export function newAccessToken() {
