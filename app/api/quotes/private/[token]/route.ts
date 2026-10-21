@@ -27,9 +27,12 @@ export async function GET(_request:NextRequest,{params}:{params:Promise<{token:s
 }
 const CREATE_CART=`mutation QuotePayCart($input:CartInput!){cartCreate(input:$input){cart{id checkoutUrl} userErrors{message}}}`;
 const FETCH_CART=`query ExistingQuoteCheckout($id:ID!){cart(id:$id){id checkoutUrl}}`;
-const ADD_ADDRESS=`mutation QuoteAddress($cartId:ID!,$addresses:[CartSelectableAddressInput!]!){cartDeliveryAddressesAdd(cartId:$cartId,addresses:$addresses){cart{id checkoutUrl} userErrors{message}}}`;
+const ADD_ADDRESS=`mutation QuoteAddress($cartId:ID!,$addresses:[CartSelectableAddressInput!]!){cartDeliveryAddressesAdd(cartId:$cartId,addresses:$addresses){cart{id checkoutUrl deliveryGroups(first:10){nodes{id deliveryOptions{handle title deliveryMethodType estimatedCost{amount currencyCode}}}}} userErrors{message}}}`;
+const SELECT_DELIVERY=`mutation QuoteSelectDelivery($cartId:ID!,$selectedDeliveryOptions:[CartSelectedDeliveryOptionInput!]!){cartSelectedDeliveryOptionsUpdate(cartId:$cartId,selectedDeliveryOptions:$selectedDeliveryOptions){cart{id checkoutUrl deliveryGroups(first:10){nodes{selectedDeliveryOption{handle}}}} userErrors{message}}}`;
 type CartResult={cartCreate:{cart:{id:string;checkoutUrl:string}|null;userErrors:{message:string}[]}};
-type AddressResult={cartDeliveryAddressesAdd:{cart:{id:string;checkoutUrl:string}|null;userErrors:{message:string}[]}};
+type DeliveryOption={handle:string;title:string|null;deliveryMethodType:string;estimatedCost:{amount:string;currencyCode:string}};
+type DeliveryGroup={id:string;deliveryOptions:DeliveryOption[]};
+type AddressResult={cartDeliveryAddressesAdd:{cart:{id:string;checkoutUrl:string;deliveryGroups:{nodes:DeliveryGroup[]}}|null;userErrors:{message:string}[]}};
 export async function POST(_request:NextRequest,{params}:{params:Promise<{token:string}>}){
  try{
   const quote=await findPrivateQuote((await params).token,_request.nextUrl.searchParams.get('access'));
@@ -75,7 +78,7 @@ export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:s
   try{
   const created=await shopifyClient.request<CartResult>(CREATE_CART,{variables:{input:{
    lines:quote.items.map(i=>({merchandiseId:i.variant_id,quantity:i.quantity})),
-   attributes:[{key:'enviro_aqua_quote',value:quote.reference},{key:'enviro_aqua_invoice',value:quote.invoice_reference}],
+   attributes:[{key:'enviro_aqua_quote',value:quote.reference},{key:'enviro_aqua_invoice',value:quote.invoice_reference},...(quote.shipping_selection?[{key:'enviro_aqua_delivery_method',value:quote.shipping_selection.deliveryMethodType},{key:'enviro_aqua_delivery_option',value:quote.shipping_selection.title}]:[])],
    buyerIdentity:{email:quote.customer_email,countryCode:'AU'},
   }}});
   const cart=created.data?.cartCreate?.cart;
@@ -93,6 +96,20 @@ export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:s
    const delivery=updated.data?.cartDeliveryAddressesAdd;
    if(updated.errors||!delivery?.cart||delivery.userErrors?.length)return fail('Shopify could not prefill the delivery address. Please try again.',503);
    checkoutUrl=delivery.cart.checkoutUrl||checkoutUrl;
+   const choice=quote.shipping_selection;
+   if(choice){
+    const groups=delivery.cart.deliveryGroups.nodes;
+    if(groups.length!==1)return fail('The delivery options for this order have changed. Please contact Enviro Aqua for an updated quote.',409);
+    const match=groups[0].deliveryOptions.find(o=>
+      o.title===choice.title&&o.deliveryMethodType===choice.deliveryMethodType&&
+      o.estimatedCost.currencyCode==='AUD'&&Math.round(Number(o.estimatedCost.amount)*100)===choice.costCents
+    );
+    if(!match)return fail('Your quoted delivery or pickup option is no longer available at the agreed price. Please request an updated quote.',409);
+    const selected=await shopifyClient.request<{cartSelectedDeliveryOptionsUpdate:{cart:{checkoutUrl:string;deliveryGroups:{nodes:Array<{selectedDeliveryOption:{handle:string}|null}>}}|null;userErrors:{message:string}[]}}>(SELECT_DELIVERY,{variables:{cartId:cart.id,selectedDeliveryOptions:[{deliveryGroupId:groups[0].id,deliveryOptionHandle:match.handle}]}});
+    if(selected.errors||selected.data?.cartSelectedDeliveryOptionsUpdate.userErrors.length||selected.data?.cartSelectedDeliveryOptionsUpdate.cart?.deliveryGroups.nodes[0]?.selectedDeliveryOption?.handle!==match.handle)
+      return fail('Shopify could not retain the selected delivery option. Please contact Enviro Aqua.',409);
+    checkoutUrl=selected.data.cartSelectedDeliveryOptionsUpdate.cart.checkoutUrl||checkoutUrl;
+   }
   }
   // Shopify may return the storefront host instead of the actual checkout host.
   const host=process.env.SHOPIFY_CHECKOUT_DOMAIN;
