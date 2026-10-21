@@ -77,6 +77,7 @@ export type SavedQuote = {
   shopify_order_name?: string | null;
   access_token_digest?: string | null;
   delivery_address?: {street:string;suburb:string;state:string;postcode:string;abn?:string} | null;
+  shipping_selection?: {title:string;deliveryMethodType:string;costCents:number}|null;
   freight_cents?: number | null;
   included_gst_cents?: number | null;
   invoice_reference?: string | null;
