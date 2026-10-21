@@ -14,7 +14,7 @@ export default function FindQuotePage(){
   event.preventDefault();
   if(busy)return;
   const ref=reference.trim().toUpperCase();
-  if(!(kind==='invoice'?/^EA-INV-(?:[A-F0-9]{16}|\\d{4,})$/:/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/).test(ref)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())){setError('Enter your '+(kind==='invoice'?'invoice':'quotation')+' reference and email address.');return;}
+  if(!(kind==='invoice'?/^EA-INV-(?:[A-F0-9]{16}|\d{4,})$/:/^EA-Q-(?:[A-F0-9]{16}|\d{4,})$/).test(ref)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())){setError('Enter your '+(kind==='invoice'?'invoice':'quotation')+' reference and email address.');return;}
   setBusy(true);setError('');
   try{
    const response=await fetch('/api/quotes/lookup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reference:ref,email:email.trim(),kind})});
