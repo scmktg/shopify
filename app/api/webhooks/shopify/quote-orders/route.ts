@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
   try { order = JSON.parse(raw.toString('utf8')) as ShopifyOrder; }
   catch { return NextResponse.json({ error: 'Invalid JSON.' }, { status: 400 }); }
   const reference = order.note_attributes?.find(v => v.name === 'enviro_aqua_quote')?.value;
-  if (!reference || !/^EA-Q-[A-F0-9]{16}$/.test(reference) || !order.id || !order.email) {
+  if (!reference || !/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/.test(reference) || !order.id || !order.email) {
     return NextResponse.json({ ok: true });
   }
   try {
