@@ -27,8 +27,18 @@ export async function quoteDb<T>(table: string, method: 'GET' | 'POST' | 'PATCH'
   return response.json() as Promise<T>;
 }
 
-export function newQuoteReference() {
-  return 'EA-Q-' + randomBytes(8).toString('hex').toUpperCase();
+export async function newQuoteReference(): Promise<string> {
+  if (!url || !key) throw new Error('Quotation storage is not configured');
+  const response = await fetch(url + '/rest/v1/rpc/next_enviro_quote_reference', {
+    method: 'POST',
+    headers: { apikey: key, Authorization: 'Bearer ' + key, 'Content-Type': 'application/json' },
+    body: '{}',
+    cache: 'no-store',
+  });
+  if (!response.ok) throw new Error('Unable to allocate quotation reference: HTTP ' + response.status);
+  const reference: unknown = await response.json();
+  if (typeof reference !== 'string' || !/^EA-Q-\\d{4,}$/.test(reference)) throw new Error('Invalid quotation reference');
+  return reference;
 }
 export function newAccessToken() {
   return randomBytes(32).toString('base64url');
@@ -64,6 +74,7 @@ export type SavedQuote = {
   expires_at: string;
   shopify_cart_id: string | null;
   shopify_order_id: string | null;
+  shopify_order_name?: string | null;
   access_token_digest?: string | null;
   delivery_address?: {street:string;suburb:string;state:string;postcode:string;abn?:string} | null;
   freight_cents?: number | null;
