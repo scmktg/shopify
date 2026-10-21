@@ -294,6 +294,22 @@ export function ProductDetail({
             />
           )}
 
+          {subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5' && (
+            <p className="mt-2 text-xs leading-relaxed text-black/60">
+              Additional freight charges may apply to some remote locations.
+              If this affects your order, our team will contact you to confirm
+              any additional costs before dispatch. To check delivery costs
+              before ordering, give us a quick call on{' '}
+              <a
+                href="tel:+61287728162"
+                className="font-semibold underline underline-offset-2 hover:text-brand-blue"
+              >
+                (02) 8772 8162
+              </a>
+              .
+            </p>
+          )}
+
           <VariantProductTrustBlock productId={product.id} />
 
           {offersInstallPackage(content) && (
