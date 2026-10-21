@@ -8,7 +8,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
     const email = await quoteSessionEmail();
     if (!email) return NextResponse.json({ error: 'Please verify your email.' }, { status: 401 });
     const { reference } = await params;
-    if (!/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/.test(reference)) return NextResponse.json({ error: 'Invalid quote.' }, { status: 400 });
+    if (!/^EA-Q-(?:[A-F0-9]{16}|\d{4,})$/.test(reference)) return NextResponse.json({ error: 'Invalid quote.' }, { status: 400 });
     const matches = await quoteDb<SavedQuote[]>('quotes', 'GET',
       'select=*&reference=eq.' + reference + '&customer_email=eq.' + encodeURIComponent(email) + '&limit=1');
     if (!matches[0]) return NextResponse.json({ error: 'Quote not found.' }, { status: 404 });
