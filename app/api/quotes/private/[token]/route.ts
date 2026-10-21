@@ -101,7 +101,7 @@ export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:s
     const groups=delivery.cart.deliveryGroups.nodes;
     if(groups.length!==1)return fail('The delivery options for this order have changed. Please contact Enviro Aqua for an updated quote.',409);
     const match=groups[0].deliveryOptions.find(o=>
-      o.title===choice.title&&o.deliveryMethodType===choice.deliveryMethodType&&
+      (o.title||'Delivery')===choice.title&&o.deliveryMethodType===choice.deliveryMethodType&&
       o.estimatedCost.currencyCode==='AUD'&&Math.round(Number(o.estimatedCost.amount)*100)===choice.costCents
     );
     if(!match)return fail('Your quoted delivery or pickup option is no longer available at the agreed price. Please request an updated quote.',409);
