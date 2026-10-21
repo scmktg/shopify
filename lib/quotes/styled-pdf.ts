@@ -29,7 +29,7 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
   ['6/45 Amsterdam Circuit, Wyong NSW 2259','(02) 8772 8162','info@enviroaqua.com.au','www.enviroaqua.com.au','ABN: 24 638 197 734'].forEach((t,i)=>line(t,L,105+i*12,8.5,false,grey));
   line(q.invoice_reference?'INVOICE':'QUOTATION',R-185,49,12,true,black,{right:R});
   line(q.invoice_reference||q.reference,R-250,72,8.5,false,grey,{right:R});
-  if(q.invoice_reference)line(q.invoice_status==='paid'?'PAID':'UNPAID',R-110,92,10,true,q.invoice_status==='paid'?rgb(.09,.48,.21):rgb(.6,.12,.12),{right:R});
+  if(q.invoice_reference)line(q.invoice_status==='cancelled'?'CANCELLED':q.invoice_status==='refunded'?'REFUNDED':q.invoice_status==='paid'?'PAID':'UNPAID',R-110,92,10,true,q.invoice_status==='paid'?rgb(.09,.48,.21):rgb(.6,.12,.12),{right:R});
   hline(186,L,R,1.5,black);
  };
  const next=()=>{page=doc.addPage([W,H]);header();return 218;};
@@ -69,7 +69,7 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  hline(top,tx,R);top+=12;
  totalRow('Total incl. GST',money(q.product_total_cents+(q.freight_cents??0)),true);
  top=Math.max(top+23,645);if(top+88>H-45)top=next();
- const button=(q.invoice_reference?(q.invoice_status==='paid'?'VIEW PAID INVOICE':'PAY INVOICE'):'CONVERT TO INVOICE');
+ const button=(q.invoice_reference?(q.invoice_status==='cancelled'||q.invoice_status==='refunded'?'VIEW INVOICE':q.invoice_status==='paid'?'VIEW PAID INVOICE':'PAY INVOICE'):'CONVERT TO INVOICE');
  page.drawRectangle({x:L,y:H-(top+46),width:R-L,height:46,color:black});
  const btnSize=12;const textWidth=bold.widthOfTextAtSize(button+'  >',btnSize);
  page.drawText(button+'  >',{x:L+(R-L-textWidth)/2,y:H-top-29,font:bold,size:btnSize,color:white});
@@ -79,6 +79,6 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  const footerText='Click to open your quote online at enviroaqua.com.au';
  const footerWidth=normal.widthOfTextAtSize(footerText,8);
  line(footerText,L+(R-L-footerWidth)/2,top+59,8,false,grey);
- if(q.invoice_reference&&q.invoice_status!=='paid')page.drawText('UNPAID',{x:135,y:400,size:73,font:bold,color:rgb(.9,.9,.92),rotate:degrees(33)});
+ if(q.invoice_reference&&q.invoice_status!=='paid')page.drawText(q.invoice_status==='cancelled'?'CANCELLED':q.invoice_status==='refunded'?'REFUNDED':'UNPAID',{x:90,y:400,size:65,font:bold,color:rgb(.9,.9,.92),rotate:degrees(33)});
  return doc.save();
 }
