@@ -21,7 +21,7 @@ export async function POST(_request: NextRequest, { params }: { params: Promise<
     const email = await quoteSessionEmail();
     if (!email) return NextResponse.json({ error: 'Please verify your email before checkout.' }, { status: 401 });
     const { reference } = await params;
-    if (!/^EA-Q-[A-F0-9]{16}$/.test(reference)) return NextResponse.json({ error: 'Invalid quote.' }, { status: 400 });
+    if (!/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/.test(reference)) return NextResponse.json({ error: 'Invalid quote.' }, { status: 400 });
     const [quote] = await quoteDb<SavedQuote[]>('quotes', 'GET',
       'select=*&reference=eq.' + reference + '&customer_email=eq.' + encodeURIComponent(email) + '&limit=1');
     if (!quote) return NextResponse.json({ error: 'Quote not found.' }, { status: 404 });
