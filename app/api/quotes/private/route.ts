@@ -49,7 +49,7 @@ export async function POST(request:NextRequest){
   if(!estimated.ok||!estimated.options[0])return fail('Shipping must be successfully calculated before a quotation can be generated. Please check your delivery address and try again.',422);
   const freight=Math.round(Number(estimated.options[0].estimatedCost.amount)*100);
   if(!Number.isSafeInteger(freight)||freight<0)return fail('Unable to confirm a valid shipping fee. Please try again.',422);
-  const token=newAccessToken(),reference=newQuoteReference();
+  const token=newAccessToken(),reference=await newQuoteReference();
   const rows=await quoteDb<{id:string}[]>('quotes','POST','select=id',[{
    reference,access_token_digest:tokenDigest(token),customer_email:email,organisation,contact_name:contact,postcode,items,
    delivery_address:{street,suburb,state,postcode,abn:abn||null},product_total_cents:total,freight_cents:freight,included_gst_cents:Math.round(total/11)+(Math.round(freight/11)),
