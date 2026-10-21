@@ -414,6 +414,7 @@ export async function removeCartLine(
 
 
 export interface ShippingEstimateOption {
+  handle: string;
   title: string | null;
   deliveryMethodType: string;
   estimatedCost: Money;
@@ -434,6 +435,7 @@ const SHIPPING_ESTIMATE_MUTATION = /* GraphQL */ `
         deliveryGroups(first: 10) {
           nodes {
             deliveryOptions {
+              handle
               title
               deliveryMethodType
               estimatedCost {
@@ -623,13 +625,13 @@ const QUOTE_CART_CREATE = /* GraphQL */ `
 const QUOTE_DELIVERY_ADD = /* GraphQL */ `
  mutation QuoteDeliveryAdd($cartId:ID!,$addresses:[CartSelectableAddressInput!]!){
   cartDeliveryAddressesAdd(cartId:$cartId,addresses:$addresses){
-   cart{id deliveryGroups(first:20){nodes{deliveryOptions{title deliveryMethodType estimatedCost{amount currencyCode}}}}}
+   cart{id deliveryGroups(first:20){nodes{deliveryOptions{handle title deliveryMethodType estimatedCost{amount currencyCode}}}}}
    userErrors{field message}
   }
  }
 `;
 const QUOTE_CART_RATES = /* GraphQL */ `
- query QuoteCartRates($id:ID!){cart(id:$id){deliveryGroups(first:20){nodes{deliveryOptions{title deliveryMethodType estimatedCost{amount currencyCode}}}}}}
+ query QuoteCartRates($id:ID!){cart(id:$id){deliveryGroups(first:20){nodes{deliveryOptions{handle title deliveryMethodType estimatedCost{amount currencyCode}}}}}}
 `;
 /** Obtain actual Shopify rates for the combined basket and delivery postcode. */
 export async function estimateQuoteShipping(lines: ReadonlyArray<{variantId:string;quantity:number}>, destination:{street:string;city:string;provinceCode:string;postcode:string}):Promise<ShippingEstimateResult>{
@@ -653,9 +655,14 @@ export async function estimateQuoteShipping(lines: ReadonlyArray<{variantId:stri
    groups=reread.data?.cart?.deliveryGroups.nodes??[];
   }
   if(!groups.length)return failure('Shopify returned no shipping options for this basket and postcode. Pickup-only products or incomplete shipping configuration may prevent delivery.');
-  const rates=groups.map(g=>g.deliveryOptions.filter(o=>o.deliveryMethodType==='SHIPPING'&&o.estimatedCost.currencyCode==='AUD'&&Number.isFinite(Number(o.estimatedCost.amount))).sort((a,b)=>Number(a.estimatedCost.amount)-Number(b.estimatedCost.amount))[0]);
-  if(rates.some(r=>!r))return failure('Delivery unavailable for at least one selected product. Contact Enviro Aqua about freight or pickup.');
-  const cents=rates.reduce((n,r)=>n+Math.round(Number(r.estimatedCost.amount)*100),0);
-  return {ok:true,postcode,provinceCode,options:[{title:'Shopify delivery estimate',deliveryMethodType:'SHIPPING',estimatedCost:{amount:(cents/100).toFixed(2),currencyCode:'AUD'}}],error:null};
+  if(groups.length!==1)return failure('Your basket has multiple delivery groups. Please contact Enviro Aqua for a combined freight quote.');
+  const options=groups[0].deliveryOptions.filter(o=>
+   ['SHIPPING','PICK_UP','LOCAL'].includes(o.deliveryMethodType) &&
+   Boolean(o.handle) && o.estimatedCost.currencyCode==='AUD' &&
+   Number.isFinite(Number(o.estimatedCost.amount)) &&
+   Number(o.estimatedCost.amount)>=0
+  ).sort((a,b)=>Number(a.estimatedCost.amount)-Number(b.estimatedCost.amount));
+  if(!options.length)return failure('No delivery or pickup options are currently available for this basket.');
+  return {ok:true,postcode,provinceCode,options,error:null};
  }catch(e){console.error('[shopify] quote shipping estimate failed',e);return failure('Shipping rates temporarily unavailable.');}
 }
