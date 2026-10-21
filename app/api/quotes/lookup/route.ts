@@ -13,8 +13,8 @@ export async function POST(request:NextRequest){
   const kind=body.kind==='invoice'?'invoice':'quote';
   const reference=kind==='invoice'?supplied.replace(/^EA-INV-/,'EA-Q-'):supplied;
   const email=normaliseEmail(String(body.email||''));
-  if(!/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/.test(reference)||email.length>160||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return generic();
-  if(kind==='invoice'&&!/^EA-INV-(?:[A-F0-9]{16}|\\d{4,})$/.test(supplied))return generic();
+  if(!/^EA-Q-(?:[A-F0-9]{16}|\d{4,})$/.test(reference)||email.length>160||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return generic();
+  if(kind==='invoice'&&!/^EA-INV-(?:[A-F0-9]{16}|\d{4,})$/.test(supplied))return generic();
   if(!await claimQuoteLimit('lookup:ref:'+reference,8,3600))return NextResponse.json({error:'Too many lookup attempts. Please try again later.'},{status:429,headers:{'Cache-Control':'no-store','Retry-After':'3600'}});
   const rows=await quoteDb<Pick<SavedQuote,'reference'|'invoice_reference'>[]>('quotes','GET','select=reference,invoice_reference&reference=eq.'+encodeURIComponent(reference)+'&customer_email=eq.'+encodeURIComponent(email)+'&limit=1');
   if(!rows.length||(kind==='invoice'&&rows[0].invoice_reference!==supplied))return generic();
