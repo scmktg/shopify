@@ -14,7 +14,7 @@ export default function FindQuotePage(){
   event.preventDefault();
   if(busy)return;
   const ref=reference.trim().toUpperCase();
-  if(!(kind==='invoice'?/^EA-INV-[A-F0-9]{16}$/:/^EA-Q-[A-F0-9]{16}$/).test(ref)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())){setError('Enter your '+(kind==='invoice'?'invoice':'quotation')+' reference and email address.');return;}
+  if(!(kind==='invoice'?/^EA-INV-(?:[A-F0-9]{16}|\\d{4,})$/:/^EA-Q-(?:[A-F0-9]{16}|\\d{4,})$/).test(ref)||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())){setError('Enter your '+(kind==='invoice'?'invoice':'quotation')+' reference and email address.');return;}
   setBusy(true);setError('');
   try{
    const response=await fetch('/api/quotes/lookup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({reference:ref,email:email.trim(),kind})});
@@ -30,7 +30,7 @@ export default function FindQuotePage(){
   <div role="tablist" aria-label="Document type" className="mt-7 flex gap-2 rounded-2xl bg-zinc-100 p-1">{(['quote','invoice'] as const).map(option=><button type="button" key={option} role="tab" aria-selected={kind===option} onClick={()=>{setKind(option);setReference('');setError('');}} className={'flex-1 rounded-xl px-5 py-3 text-sm font-semibold transition '+(kind===option?'bg-white text-black shadow-sm':'text-zinc-500 hover:text-black')}>{option==='quote'?'Find Your Quote':'Find Your Invoice'}</button>)}</div>
   <form onSubmit={e=>void findQuote(e)} className="mt-8 space-y-5 rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
    <label className="block text-sm font-medium" htmlFor="find-quote-reference">{kind==='quote'?'Quotation reference':'Invoice reference'}
-    <input id="find-quote-reference" value={reference} onChange={e=>setReference(e.target.value)} placeholder={kind==='quote'?'EA-Q-XXXXXXXXXXXXXXXX':'EA-INV-XXXXXXXXXXXXXXXX'} autoCapitalize="characters" autoComplete="off" spellCheck={false} maxLength={kind==='quote'?21:23} required className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 uppercase outline-none focus:border-black focus:ring-2 focus:ring-zinc-200"/>
+    <input id="find-quote-reference" value={reference} onChange={e=>setReference(e.target.value)} placeholder={kind==='quote'?'EA-Q-3410':'EA-INV-3410'} autoCapitalize="characters" autoComplete="off" spellCheck={false} maxLength={64} required className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 uppercase outline-none focus:border-black focus:ring-2 focus:ring-zinc-200"/>
    </label>
    <label className="block text-sm font-medium" htmlFor="find-quote-email">Email address
     <input id="find-quote-email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="name@organisation.com.au" autoComplete="email" maxLength={160} required className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3 outline-none focus:border-black focus:ring-2 focus:ring-zinc-200"/>
