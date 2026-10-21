@@ -8,6 +8,7 @@ type ShopifyOrder = {
   id?: number;
   email?: string;
   financial_status?: string;
+  cancelled_at?: string | null;
   note_attributes?: Array<{ name?: string; value?: string }>;
   line_items?: Array<{ variant_id?: number; quantity?: number }>;
 };
@@ -42,6 +43,28 @@ export async function POST(request: NextRequest) {
       return Boolean(match && ordered.get(match[1]) === item.quantity);
     });
     if (!matches) return NextResponse.json({ ok: true });
+    // Process reversals only for the order already linked to this quotation.
+    // A cancelled order must never stay PAID, even when the cancellation
+    // notification still carries financial_status='paid'.
+    const isCancelled = Boolean(order.cancelled_at) || request.headers.get('x-shopify-topic') === 'orders/cancelled';
+    const isFullyRefunded = order.financial_status === 'refunded';
+    if (isCancelled || isFullyRefunded) {
+      if (quote.shopify_order_id === String(order.id) && quote.invoice_status !== 'cancelled' && quote.invoice_status !== 'refunded') {
+        const nextStatus = isFullyRefunded ? 'refunded' : 'cancelled';
+        await quoteDb('quotes', 'PATCH',
+          'id=eq.' + encodeURIComponent(quote.id) + '&shopify_order_id=eq.' + encodeURIComponent(String(order.id)),
+          { invoice_status: nextStatus });
+      } else if (quote.shopify_order_id === String(order.id) && isFullyRefunded && quote.invoice_status === 'cancelled') {
+        await quoteDb('quotes', 'PATCH',
+          'id=eq.' + encodeURIComponent(quote.id) + '&shopify_order_id=eq.' + encodeURIComponent(String(order.id)),
+          { invoice_status: 'refunded' });
+      }
+      return NextResponse.json({ ok: true });
+    }
+    // Once reversed, delayed order/paid notifications cannot re-mark it PAID.
+    if (quote.invoice_status === 'cancelled' || quote.invoice_status === 'refunded') {
+      return NextResponse.json({ ok: true });
+    }
     // A manual bank transfer creates an unpaid Shopify order. Link that order
     // immediately, but never treat order creation as proof of payment.
     const orderId = String(order.id);
