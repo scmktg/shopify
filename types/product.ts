@@ -37,6 +37,14 @@ export interface ProductImage {
   height: number;
 }
 
+/** Shopify-hosted video attached to a product's Media gallery. */
+export interface ProductVideo {
+  id: string;
+  url: string;
+  poster: string | null;
+  alt: string | null;
+}
+
 export interface SelectedOption {
   name: string;
   value: string;
@@ -97,6 +105,7 @@ export interface Product {
   tags: ReadonlyArray<string>;
   featuredImage: ProductImage | null;
   images: ReadonlyArray<ProductImage>;
+  videos: ReadonlyArray<ProductVideo>;
   priceRange: { minVariantPrice: Money };
   variants: ReadonlyArray<ProductVariant>;
   seo: ProductSeo;
