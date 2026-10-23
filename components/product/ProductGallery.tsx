@@ -59,6 +59,12 @@ export function ProductGallery({
     if (!player) return;
     player.muted = false;
     setMuted(false);
+    // Attach the media URL only after explicit interaction to avoid
+    // downloading video bytes during initial product-page loading.
+    if (!player.getAttribute('src') && video) {
+      player.src = video.url;
+      player.load();
+    }
     setVideoOpen(true);
     setBuffering(true);
     void player.play().catch(() => {
@@ -126,10 +132,9 @@ export function ProductGallery({
         >
           <video
             ref={videoRef}
-            src={video.url}
             poster={video.poster ?? undefined}
             playsInline
-            preload="auto"
+            preload="none"
             disablePictureInPicture
             disableRemotePlayback
             controlsList="nofullscreen nodownload noremoteplayback"
