@@ -127,7 +127,7 @@ export function ProductGallery({
     >
       {video ? (
         <div
-          className={`absolute inset-0 z-10 flex items-center justify-center bg-black transition-opacity duration-150 ${videoOpen ? 'opacity-100' : 'pointer-events-none invisible opacity-0'}`}
+          className={`absolute inset-0 z-10 flex items-center justify-center overflow-hidden bg-white transition-opacity duration-150 ${videoOpen ? 'opacity-100' : 'pointer-events-none invisible opacity-0'}`}
           aria-hidden={!videoOpen}
         >
           <video
@@ -146,7 +146,7 @@ export function ProductGallery({
             onPause={() => setPlaying(false)}
             onEnded={() => setPlaying(false)}
             onContextMenu={(event) => event.preventDefault()}
-            className="h-full w-full object-contain"
+            className="block h-full w-full object-contain bg-white"
             aria-label={video.alt || `${title} product video`}
           />
           {videoOpen && buffering && (
