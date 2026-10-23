@@ -130,6 +130,7 @@ export function ProductDetail({
         <div>
           <VariantProductGallery
             images={product.images}
+            videos={subcategory === 'bubblers' ? product.videos : []}
             title={product.title}
             showLeadFreeBadge={shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
