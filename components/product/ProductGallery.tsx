@@ -131,6 +131,7 @@ export function ProductGallery({
           aria-hidden={!videoOpen}
         >
           <video
+            key={video.url}
             ref={videoRef}
             poster={video.poster ?? undefined}
             playsInline
