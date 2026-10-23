@@ -44,24 +44,28 @@ export function ProductGallery({
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
+  const [buffering, setBuffering] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const closeVideo = () => {
     videoRef.current?.pause();
     setVideoOpen(false);
     setPlaying(false);
+    setBuffering(false);
   };
   const openVideo = () => {
-    setVideoOpen(true);
-    setMuted(true);
-    setPlaying(false);
-  };
-  useEffect(() => {
-    if (!videoOpen) return;
+    // Call play() during the actual click: browsers allow audio here.
     const player = videoRef.current;
     if (!player) return;
-    void player.play().catch(() => setPlaying(false));
-  }, [videoOpen]);
+    player.muted = false;
+    setMuted(false);
+    setVideoOpen(true);
+    setBuffering(true);
+    void player.play().catch(() => {
+      setPlaying(false);
+      setBuffering(false);
+    });
+  };
   useEffect(() => {
     closeVideo();
   }, [video?.url]);
@@ -115,26 +119,35 @@ export function ProductGallery({
       aria-roledescription="carousel"
       aria-label={`${title} images`}
     >
-      {videoOpen && video ? (
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black">
+      {video ? (
+        <div
+          className={`absolute inset-0 z-10 flex items-center justify-center bg-black transition-opacity duration-150 ${videoOpen ? 'opacity-100' : 'pointer-events-none invisible opacity-0'}`}
+          aria-hidden={!videoOpen}
+        >
           <video
             ref={videoRef}
             src={video.url}
             poster={video.poster ?? undefined}
             playsInline
-            autoPlay
-            preload="metadata"
+            preload="auto"
             disablePictureInPicture
             disableRemotePlayback
             controlsList="nofullscreen nodownload noremoteplayback"
             muted={muted}
-            onPlay={() => setPlaying(true)}
+            onPlaying={() => { setPlaying(true); setBuffering(false); }}
+            onWaiting={() => setBuffering(true)}
+            onCanPlay={() => setBuffering(false)}
             onPause={() => setPlaying(false)}
             onEnded={() => setPlaying(false)}
             onContextMenu={(event) => event.preventDefault()}
             className="h-full w-full object-contain"
             aria-label={video.alt || `${title} product video`}
           />
+          {videoOpen && buffering && (
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <span className="h-7 w-7 animate-spin rounded-full border-2 border-white/30 border-t-white" aria-label="Loading video" role="status" />
+            </div>
+          )}
           <button
             type="button"
             aria-label="Close video and return to product photos"
