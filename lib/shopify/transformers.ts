@@ -165,6 +165,14 @@ export function transformShopifyProduct(raw: ShopifyProductRaw): Product {
     tags: raw.tags,
     featuredImage: raw.featuredImage,
     images: raw.images.edges.map((edge) => edge.node),
+    videos: (raw.media?.nodes ?? []).flatMap((node) => {
+      if (node.mediaContentType !== 'VIDEO' || !node.sources?.length) return [];
+      const source = node.sources.find((item) => item.mimeType === 'video/mp4')
+        ?? node.sources.find((item) => item.mimeType.startsWith('video/'));
+      return source && node.id
+        ? [{ id: node.id, url: source.url, poster: node.previewImage?.url ?? null, alt: node.alt ?? null }]
+        : [];
+    }),
     priceRange: raw.priceRange,
     variants: raw.variants.edges.map((edge) => edge.node),
     seo: raw.seo,
