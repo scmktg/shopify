@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   },
   description:
     'Wholesale prices on water filters, cartridges, and filtration systems for every Australian home, trade, and business. One price for everyone.',
+  verification: {
+    other: {
+      'msvalidate.01': '6370CA947FCCBE20FF859D700690C9FC',
+    },
+  },
   icons: {
     icon: [{ url: '/favicon.jpeg', type: 'image/jpeg' }],
     shortcut: '/favicon.jpeg',
