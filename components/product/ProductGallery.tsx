@@ -44,7 +44,7 @@ export function ProductGallery({
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   const closeVideo = () => {
     videoRef.current?.pause();
@@ -53,7 +53,8 @@ export function ProductGallery({
   };
   const openVideo = () => {
     setVideoOpen(true);
-    setPlaying(true);
+    setMuted(true);
+    setPlaying(false);
   };
   useEffect(() => {
     if (!videoOpen) return;
@@ -121,6 +122,8 @@ export function ProductGallery({
             src={video.url}
             poster={video.poster ?? undefined}
             playsInline
+            autoPlay
+            preload="metadata"
             disablePictureInPicture
             disableRemotePlayback
             controlsList="nofullscreen nodownload noremoteplayback"
