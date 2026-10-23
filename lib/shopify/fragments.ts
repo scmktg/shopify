@@ -81,6 +81,17 @@ export const PRODUCT_FRAGMENT = /* GraphQL */ `
       width
       height
     }
+    media(first: 20) {
+      nodes {
+        ... on Video {
+          id
+          mediaContentType
+          alt
+          previewImage { url }
+          sources { url mimeType format }
+        }
+      }
+    }
     images(first: 10) {
       edges {
         node {
