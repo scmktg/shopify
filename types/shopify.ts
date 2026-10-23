@@ -47,6 +47,15 @@ export interface ShopifyProductRaw {
   tags: ReadonlyArray<string>;
   featuredImage: ProductImage | null;
   images: ShopifyConnection<ProductImage>;
+  media: {
+    nodes: ReadonlyArray<{
+      id?: string;
+      mediaContentType?: string;
+      alt?: string | null;
+      previewImage?: { url: string } | null;
+      sources?: ReadonlyArray<{ url: string; mimeType: string; format: string }>;
+    }>;
+  };
   priceRange: { minVariantPrice: Money };
   variants: ShopifyConnection<ShopifyVariantNode>;
   /**
