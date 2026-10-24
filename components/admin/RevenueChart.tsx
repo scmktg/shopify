@@ -54,7 +54,7 @@ export function RevenueChart({ series, currencyCode }: RevenueChartProps) {
                 y={y}
                 width={barWidth}
                 height={barHeight}
-                fill="#0066CC"
+                fill="var(--color-brand-blue)"
                 rx={1}
               >
                 <title>
