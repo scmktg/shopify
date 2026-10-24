@@ -46,5 +46,8 @@
       "destination": "/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system",
       "permanent": true
     }
+  ],
+  "regions": [
+    "syd1"
   ]
 }
