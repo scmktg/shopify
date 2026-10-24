@@ -316,7 +316,7 @@ function ProductSpotlight({
               {product ? (
                 <Link
                   href={getProductUrl(product.handle)}
-                  className={`inline-flex items-center justify-center font-semibold px-5 py-3 rounded transition-colors ${
+                  className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-center font-semibold transition-colors ${
                     dark
                       ? 'bg-white text-black hover:bg-white/90'
                       : 'bg-brand-blue text-white hover:bg-brand-blue-hover'
@@ -327,7 +327,7 @@ function ProductSpotlight({
               ) : null}
               <Link
                 href={rangeHref}
-                className={`inline-flex items-center justify-center gap-1 font-semibold px-5 py-3 rounded border transition-colors ${
+                className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border px-5 py-3 text-center font-semibold transition-colors ${
                   dark
                     ? 'border-white/25 text-white hover:border-white/60'
                     : 'border-gray-300 text-black hover:border-brand-blue hover:text-brand-blue'
