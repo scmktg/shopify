@@ -210,13 +210,18 @@ test('Australian visitors receive measurement without the banner, while opt-outs
   const previousDocument = (globalThis as {document?: unknown}).document;
   const previousChoice = storage.get('enviroaqua:analytics-consent');
   try {
-    Object.assign(globalThis, {document: {documentElement: {dataset: {eaRegion: 'au'}}}});
+    Object.assign(globalThis, {document: {cookie: 'ea_region=au'}});
     storage.delete('enviroaqua:analytics-consent');
     assert.equal(getAnalyticsConsent(), 'granted');
-    storage.set('enviroaqua:analytics-consent','denied');
+
+    storage.set('enviroaqua:analytics-consent', 'denied');
     assert.equal(getAnalyticsConsent(), 'denied');
+
     storage.delete('enviroaqua:analytics-consent');
-    Object.assign(globalThis, {document: {documentElement: {dataset: {eaRegion: 'consent-required'}}}});
+    Object.assign(globalThis, {document: {cookie: 'ea_region=consent-required'}});
+    assert.equal(getAnalyticsConsent(), null);
+
+    Object.assign(globalThis, {document: {cookie: ''}});
     assert.equal(getAnalyticsConsent(), null);
   } finally {
     if (previousChoice === undefined) storage.delete('enviroaqua:analytics-consent');
