@@ -168,7 +168,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {purchaseVariant?.availableForSale ? (
             <button type="button" onClick={() => void purchase()}
               disabled={!isReady || isMutating || pendingAction !== null}
-              className="inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-lg bg-brand-blue px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50">
+              className="inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-lg bg-brand-blue px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
               <ShoppingCart size={17} aria-hidden="true" />
               {pendingAction === 'cart' ? 'Adding…' : 'Add to cart'}
             </button>
