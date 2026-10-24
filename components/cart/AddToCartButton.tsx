@@ -528,12 +528,12 @@ export function AddToCartButton({
             onClick={onBuyNow}
             disabled={actionsUnavailable || anyBusy}
             aria-busy={buyingNow}
-            className={`h-12 min-w-0 rounded px-3 text-sm font-semibold text-white transition-colors sm:px-6 sm:text-base ${
+            className={`h-12 min-w-0 rounded-lg border px-3 text-sm font-semibold transition-colors sm:px-6 sm:text-base ${
               actionsUnavailable
-                ? 'cursor-not-allowed bg-gray-400'
+                ? 'cursor-not-allowed border-gray-300 bg-gray-100 text-gray-500'
                 : buyingNow
-                  ? 'cursor-wait bg-black/80'
-                  : 'bg-black hover:bg-black/90 disabled:cursor-wait disabled:bg-black'
+                  ? 'cursor-wait border-gray-300 bg-gray-50 text-black'
+                  : 'border-gray-300 bg-white text-black hover:border-gray-500 hover:bg-gray-50 disabled:cursor-wait'
             }`}
           >
             {buyNowLabel}
