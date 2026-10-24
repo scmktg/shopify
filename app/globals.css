@@ -55,13 +55,13 @@ h6 {
 @layer utilities {
   :where(button, a):not([aria-label]):not([class*="w-10"]):not([class*="w-9"]):not([class*="rounded-full"]):is(.bg-brand-blue) { border-radius: 12px; }
 
-  :where(button, a):not([aria-label]):not([class*="w-10"]):not([class*="w-9"]):not([class*="rounded-full"]):is(.bg-brand-blue, .hover\\:bg-brand-blue-hover, .bg-black, .bg-gray-900, .bg-white, .border-gray-300, .border-black, .border-brand-blue):is(.py-3, .py-4, .py-2\\.5, .h-12, .min-h-11) {
+  :where(button, a):not([aria-label]):not([class*="w-10"]):not([class*="w-9"]):not([class*="rounded-full"]):is(.bg-brand-blue, .hover\:bg-brand-blue-hover, .bg-black, .bg-gray-900, .bg-white, .border-gray-300, .border-black, .border-brand-blue):is(.py-3, .py-4, .py-2\.5, .h-12, .min-h-11) {
     min-height: 48px;
     border-radius: 12px;
   }
 
   :where(button, a).bg-brand-blue:active:not(:disabled),
-  :where(button, a).hover\\:bg-brand-blue-hover:active:not(:disabled) {
+  :where(button, a).hover\:bg-brand-blue-hover:active:not(:disabled) {
     background-color: var(--color-brand-blue-pressed);
   }
 }
