@@ -199,18 +199,17 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Expose pathname to the root layout so it can suppress storefront
-  // chrome (header/footer/cart) on admin routes. Must be set on the
-  // forwarded request headers — server components read it via
-  // `headers()`, which mirrors request headers, not response headers.
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set('x-pathname', pathname);
-  // Only Vercel's known AU country signal opts into bannerless Australian measurement.
-  // Missing or non-AU signals require an explicit visitor choice.
-  requestHeaders.set('x-ea-region', request.headers.get('x-vercel-ip-country') === 'AU' ? 'au' : 'consent-required');
-  return NextResponse.next({ request: { headers: requestHeaders } });
+  // Consent geo is provided by middleware without reading headers in the React layout.
+  const region = request.headers.get('x-vercel-ip-country') === 'AU' ? 'au' : 'consent-required';
+  const response = NextResponse.next();
+  if (request.cookies.get('ea_region')?.value !== region) {
+    response.cookies.set('ea_region', region, {
+      path: '/', maxAge: 604800, sameSite: 'lax',
+      secure: process.env.NODE_ENV === 'production', httpOnly: false,
+    });
+  }
+  return response;
 }
-
 export const config = {
   matcher: ['/((?!_next/static|_next/image|favicon.ico|api/).*)'],
 };
