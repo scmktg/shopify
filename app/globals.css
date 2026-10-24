@@ -2,9 +2,9 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-brand-blue: #0066CC;
-  --color-brand-blue-hover: #0052A3;
-  --color-brand-blue-light: #E6F0FA;
+  --color-brand-blue: #2200CC;
+  --color-brand-blue-hover: #1B00A3;
+  --color-brand-blue-light: #E9E5FA;
 
   /*
    * WaterMark certification badge red. The official WaterMark
