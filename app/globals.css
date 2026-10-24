@@ -4,6 +4,7 @@
 @theme {
   --color-brand-blue: #2200CC;
   --color-brand-blue-hover: #1B00A3;
+  --color-brand-blue-pressed: #150080;
   --color-brand-blue-light: #E9E5FA;
 
   /*
@@ -43,4 +44,17 @@ h5,
 h6 {
   line-height: 1.15;
   letter-spacing: -0.01em;
+}
+
+/*
+ * Brand-primary buttons and button-style links darken while pressed.
+ * Scoped to existing brand blue utilities; disabled buttons remain unchanged.
+ */
+@layer utilities {
+  button.bg-brand-blue:active:not(:disabled),
+  a.bg-brand-blue:active,
+  button.hover\\:bg-brand-blue-hover:active:not(:disabled),
+  a.hover\\:bg-brand-blue-hover:active {
+    background-color: var(--color-brand-blue-pressed);
+  }
 }
