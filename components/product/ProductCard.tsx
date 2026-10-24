@@ -26,8 +26,8 @@ interface ColourChoice {
 export function ProductCard({ product }: ProductCardProps) {
   const baseHref = getProductUrl(product.handle);
   const watermarkLicence = getInitialBubblerWaterMarkLicence(product.handle);
-  const { addItem, buyNow, isMutating, isReady } = useCart();
-  const [pendingAction, setPendingAction] = useState<'cart' | 'buy' | null>(null);
+  const { addItem, isMutating, isReady } = useCart();
+  const [pendingAction, setPendingAction] = useState<'cart' | null>(null);
 
   const colourChoices = useMemo<ReadonlyArray<ColourChoice>>(() => {
     const seen = new Set<string>();
@@ -71,12 +71,11 @@ export function ProductCard({ product }: ProductCardProps) {
     ? `${product.title} - ${selectedChoice.value}`
     : product.title;
 
-  const purchase = async (action: 'cart' | 'buy') => {
+  const purchase = async () => {
     if (!purchaseVariant?.availableForSale || !isReady || isMutating || pendingAction) return;
-    setPendingAction(action);
+    setPendingAction('cart');
     try {
-      if (action === 'cart') await addItem(purchaseVariant.id, 1);
-      else await buyNow(purchaseVariant.id, 1);
+      await addItem(purchaseVariant.id, 1);
     } finally {
       setPendingAction(null);
     }
@@ -165,25 +164,17 @@ export function ProductCard({ product }: ProductCardProps) {
           </div>
         )}
 
-        <div className="mt-auto grid grid-cols-1 gap-2 pt-4 xl:grid-cols-2">
+        <div className="mt-auto pt-4">
           {purchaseVariant?.availableForSale ? (
-            <>
-              <button type="button" onClick={() => void purchase('cart')}
-                disabled={!isReady || isMutating || pendingAction !== null}
-                className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-black bg-white px-2 py-2.5 text-xs font-semibold text-black shadow-sm transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 2xl:text-sm">
-                <ShoppingCart size={16} aria-hidden="true" />
-                {pendingAction === 'cart' ? 'Adding…' : 'Add to cart'}
-              </button>
-              <button type="button" onClick={() => void purchase('buy')}
-                disabled={!isReady || isMutating || pendingAction !== null}
-                className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1 whitespace-nowrap rounded-lg bg-black px-2 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-black/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50 2xl:text-sm">
-                {pendingAction === 'buy' ? 'Redirecting…' : 'Buy now'}
-                <ArrowUpRight size={15} aria-hidden="true" />
-              </button>
-            </>
+            <button type="button" onClick={() => void purchase()}
+              disabled={!isReady || isMutating || pendingAction !== null}
+              className="inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-lg bg-brand-blue px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-50">
+              <ShoppingCart size={17} aria-hidden="true" />
+              {pendingAction === 'cart' ? 'Adding…' : 'Add to cart'}
+            </button>
           ) : (
             <Link href={href} onClick={trackSelection}
-              className="inline-flex min-h-11 min-w-0 items-center justify-center rounded-lg border border-black bg-white px-2 py-2.5 text-xs font-semibold text-black transition-colors hover:bg-black hover:text-white xl:col-span-2 2xl:text-sm">
+              className="inline-flex min-h-12 w-full min-w-0 items-center justify-center rounded-lg border border-gray-300 bg-white px-3 py-3 text-sm font-semibold text-black transition-colors hover:border-gray-500 hover:bg-gray-50">
               {purchaseVariant ? 'View availability' : 'Choose options'}
               <ArrowUpRight size={16} className="ml-1.5" aria-hidden="true" />
             </Link>
