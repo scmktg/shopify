@@ -58,3 +58,17 @@ h6 {
     background-color: var(--color-brand-blue-pressed);
   }
 }
+
+/*
+ * Apple-inspired primary action geometry.
+ * HIG recommends a comfortable 44pt touch target; 12px radius is
+ * Enviro Aqua's web adaptation, not an Apple-mandated radius.
+ * Only full primary actions are selected — not icons, badges or options.
+ */
+@layer utilities {
+  :where(button, a).bg-brand-blue,
+  :where(button, a).hover\\:bg-brand-blue-hover {
+    min-height: 44px;
+    border-radius: 12px;
+  }
+}
