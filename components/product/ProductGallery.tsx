@@ -13,6 +13,7 @@ interface ProductGalleryProps {
   preferredImage?: ProductImage | null;
   showLeadFreeBadge?: boolean;
   watermarkLicence?: string | null;
+  cinematicVideoOverlay?: boolean;
 }
 
 /**
@@ -36,6 +37,7 @@ export function ProductGallery({
   preferredImage = null,
   showLeadFreeBadge = false,
   watermarkLicence = null,
+  cinematicVideoOverlay = false,
 }: ProductGalleryProps) {
   const galleryImages =
     preferredImage && !images.some((image) => image.url === preferredImage.url)
@@ -149,6 +151,15 @@ export function ProductGallery({
             className="block h-full w-full object-contain bg-white"
             aria-label={video.alt || `${title} product video`}
           />
+          {cinematicVideoOverlay && (
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 z-10"
+              style={{
+                background: 'radial-gradient(ellipse at center, transparent 44%, rgba(12, 22, 35, 0.035) 72%, rgba(12, 22, 35, 0.16) 100%)',
+              }}
+            />
+          )}
           {videoOpen && buffering && (
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
               <span className="h-7 w-7 animate-spin rounded-full border-2 border-white/30 border-t-white" aria-label="Loading video" role="status" />
