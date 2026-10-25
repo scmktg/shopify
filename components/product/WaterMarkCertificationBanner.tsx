@@ -24,7 +24,7 @@ export function WaterMarkCertificationBanner({
         className="pointer-events-none absolute inset-0 h-full w-full"
       >
         {/* Adjacent, parallel polygons: no seams or detached triangles. */}
-        <polygon points="700,0 752,0 506,360 454,360" fill="#a82b35" />
+        <polygon points="700,0 752,0 506,360 454,360" fill="var(--color-brand-blue)" />
         <polygon points="752,0 1000,0 1000,360 506,360" fill="#faf9f7" />
       </svg>
 
