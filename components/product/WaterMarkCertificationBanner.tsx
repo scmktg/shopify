@@ -11,10 +11,17 @@ export function WaterMarkCertificationBanner({
 }) {
   return (
     <div
-      className="mx-auto mt-4 flex min-h-[126px] w-full max-w-[70vh] items-center rounded-lg border border-gray-200 bg-[#f8f9fa] px-4 py-4 text-[#222222] sm:min-h-[168px] sm:px-6 sm:py-5"
+      className="relative mx-auto mt-4 flex min-h-[126px] w-full max-w-[70vh] items-center overflow-hidden rounded-lg border border-gray-200 bg-[#f8f9fa] px-4 py-4 text-[#222222] sm:min-h-[168px] sm:px-6 sm:py-5"
       aria-label="WaterMark certified product"
     >
-      <div className="flex min-w-0 flex-1 flex-col justify-center pr-3 sm:pr-5">
+      {/* Crisp, subtle diagonal stripes restore the original design character. */}
+      <svg aria-hidden="true" viewBox="0 0 1000 360" preserveAspectRatio="none"
+        className="pointer-events-none absolute inset-0 h-full w-full">
+        <polygon points="700,0 730,0 450,360 420,360" fill="var(--color-brand-blue)" opacity="0.72" />
+        <polygon points="730,0 743,0 463,360 450,360" fill="var(--color-brand-blue)" opacity="0.13" />
+      </svg>
+
+      <div className="relative z-10 flex min-w-0 flex-1 flex-col justify-center pr-3 sm:pr-5">
         <p className="text-[10px] font-medium uppercase tracking-[0.09em] text-gray-500 sm:text-xs">
           This product is
         </p>
@@ -29,9 +36,9 @@ export function WaterMarkCertificationBanner({
         )}
       </div>
 
-      <div aria-hidden="true" className="h-[86px] w-[2px] shrink-0 rounded-full bg-brand-blue sm:h-[112px]" />
 
-      <div className="flex w-[36%] shrink-0 flex-col items-center justify-center pl-3 text-center sm:w-[34%] sm:pl-5">
+
+      <div className="relative z-10 flex w-[36%] shrink-0 flex-col items-center justify-center pl-3 text-center sm:w-[34%] sm:pl-5">
         <Image
           src="/watermark-icon.png"
           alt="WaterMark"
