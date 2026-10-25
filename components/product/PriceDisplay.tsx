@@ -14,6 +14,7 @@ function formatterFor(currency: string): Intl.NumberFormat {
     formatter = new Intl.NumberFormat('en-AU', {
       style: 'currency',
       currency,
+      useGrouping: false,
     });
     formatterCache.set(currency, formatter);
   }
@@ -24,7 +25,7 @@ export function PriceDisplay({ money, className, hideWholeDollarCents = false }:
   const amount = Number.parseFloat(money.amount);
   const formatted = Number.isFinite(amount)
     ? (hideWholeDollarCents && Number.isInteger(amount)
-        ? new Intl.NumberFormat('en-AU', { style: 'currency', currency: money.currencyCode, minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(amount)
+        ? new Intl.NumberFormat('en-AU', { style: 'currency', currency: money.currencyCode, useGrouping: false, minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(amount)
         : formatterFor(money.currencyCode).format(amount))
     : money.amount;
   return (
