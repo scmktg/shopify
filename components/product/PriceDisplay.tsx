@@ -28,22 +28,14 @@ export function PriceDisplay({ money, className, hideWholeDollarCents = false }:
         ? new Intl.NumberFormat('en-AU', { style: 'currency', currency: money.currencyCode, useGrouping: false, minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(amount)
         : formatterFor(money.currencyCode).format(amount))
     : money.amount;
+  const symbolPosition = formatted.indexOf('$');
   return (
     <span className={`tabular-nums ${className ?? ''}`}>
-      {formatted.includes('    </span>
-  );
-}
-) ? (
+      {symbolPosition >= 0 ? (
         <>
-          {formatted.slice(0, formatted.indexOf('    </span>
-  );
-}
-))}
+          {formatted.slice(0, symbolPosition)}
           <span className="text-[0.75em]">$</span>
-          {formatted.slice(formatted.indexOf('    </span>
-  );
-}
-) + 1)}
+          {formatted.slice(symbolPosition + 1)}
         </>
       ) : formatted}
     </span>
