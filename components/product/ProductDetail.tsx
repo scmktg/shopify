@@ -103,7 +103,7 @@ export function ProductDetail({
         brand={product.vendor || 'Enviro Aqua'}
       />
       <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
-      <nav aria-label="Breadcrumb" className="mb-7 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium sm:text-sm">
+      <div className="mb-7 md:w-[calc((100%-3rem)/2)]"><nav aria-label="Breadcrumb" className="mx-auto flex w-full max-w-[70vh] flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium sm:text-sm">
         <Link href={`/${category}`} className="rounded-md text-black/55 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
           {humaniseSlug(category)}
         </Link>
@@ -111,7 +111,7 @@ export function ProductDetail({
         <Link href={`/${category}/${subcategory}`} className="rounded-md font-semibold text-black/80 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
           {subcategoryLabel}
         </Link>
-      </nav>
+      </nav></div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div>
