@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Truck } from 'lucide-react';
 import type { ShippingTier } from '@/types/product';
 import { VariantShippingEstimator } from './VariantShippingEstimator';
-import { DispatchCountdown } from './DispatchCountdown';
+import { VariantDispatchCountdown } from './VariantDispatchCountdown';
 
 interface ShippingTierBlockProps {
   tier: ShippingTier | null;
@@ -144,14 +144,14 @@ export function ShippingTierBlock({
   if (combinedBubblerShipping && resolvedTier === 'T5') {
     return (
       <section aria-label="Delivery and dispatch information" className="mt-4 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-black">
-        <DispatchCountdown compact />
+        <VariantDispatchCountdown compact />
         <div className="mt-3 border-t border-gray-200 pt-3">
           <div className="flex items-center gap-2 font-semibold">
             <Truck aria-hidden="true" className="h-4 w-4 shrink-0 text-brand-blue" />
             <span>Free delivery Australia-wide</span>
           </div>
           <p className="mt-1.5 text-xs leading-relaxed text-black/70">
-            Same-day dispatch for orders before 12pm Sydney time on business days. Click &amp; Collect is available from our Central Coast showroom.
+            Same-day dispatch applies to in-stock items ordered before 12pm Sydney time on business days. Click &amp; Collect is available from our Central Coast showroom.
           </p>
         </div>
         <p className="mt-3 border-t border-gray-200 pt-3 text-xs leading-relaxed text-black/60">
