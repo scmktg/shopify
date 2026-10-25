@@ -2,10 +2,12 @@ import Link from 'next/link';
 import { Truck } from 'lucide-react';
 import type { ShippingTier } from '@/types/product';
 import { VariantShippingEstimator } from './VariantShippingEstimator';
+import { DispatchCountdown } from './DispatchCountdown';
 
 interface ShippingTierBlockProps {
   tier: ShippingTier | null;
   productHandle: string;
+  combinedBubblerShipping?: boolean;
 }
 
 interface TierCopy {
@@ -119,6 +121,7 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
 export function ShippingTierBlock({
   tier,
   productHandle,
+  combinedBubblerShipping = false,
 }: ShippingTierBlockProps) {
   const resolvedTier: ShippingTier | null = tier;
   if (resolvedTier === null) {
@@ -137,6 +140,30 @@ export function ShippingTierBlock({
         clickAndCollect: <>Free Click &amp; Collect from our Wyong NSW showroom.</>,
         trailing: <>Shopify checkout will show the available delivery options.</>,
       };
+
+  if (combinedBubblerShipping && resolvedTier === 'T5') {
+    return (
+      <section aria-label="Delivery and dispatch information" className="mt-4 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-black">
+        <DispatchCountdown compact />
+        <div className="mt-3 border-t border-gray-200 pt-3">
+          <div className="flex items-center gap-2 font-semibold">
+            <Truck aria-hidden="true" className="h-4 w-4 shrink-0 text-brand-blue" />
+            <span>Free delivery Australia-wide</span>
+          </div>
+          <p className="mt-1.5 text-xs leading-relaxed text-black/70">
+            Free Click &amp; Collect from our Wyong NSW showroom. Same-day dispatch for orders before 12pm Sydney time on business days.
+          </p>
+        </div>
+        <p className="mt-3 border-t border-gray-200 pt-3 text-xs leading-relaxed text-black/60">
+          Remote-area freight charges may apply. If so, our team will contact you to confirm any additional cost before dispatch. To check before ordering, call{' '}
+          <a href="tel:+61287728162" className="font-medium underline underline-offset-2 hover:text-brand-blue">(02) 8772 8162</a>.
+        </p>
+        <Link href="/shipping/" className="mt-2 inline-block text-xs font-medium text-brand-blue underline underline-offset-2 hover:text-brand-blue-hover">
+          See full shipping details
+        </Link>
+      </section>
+    );
+  }
 
   // Free-delivery products do not need a postcode quote. Show the
   // benefit immediately instead of making customers open an estimator.
