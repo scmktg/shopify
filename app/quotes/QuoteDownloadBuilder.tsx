@@ -97,26 +97,26 @@ export function QuoteDownloadBuilder({ bubblerOnly = false, bubblerProducts = []
    <section className="quote-editor space-y-7"><nav aria-label="Quotation progress" className="rounded-2xl border border-zinc-200 bg-white p-3 shadow-sm sm:p-4"><ol className="grid grid-cols-3 gap-2">{(['Products','Your details','Download'] as const).map((label,index)=>{const n=(index+1) as 1|2|3;return <li key={label}><button type="button" onClick={()=>setStep(n)} aria-current={step===n?'step':undefined} aria-label={'Go to '+label} className={['flex w-full items-center gap-2 rounded-xl px-2 py-3 text-left transition-colors hover:bg-zinc-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black sm:px-3',step===n?'bg-zinc-950 text-white':step>n?'bg-zinc-100 text-zinc-900':'text-zinc-400'].join(' ')}><span className={['flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold',step===n?'bg-white text-black':step>n?'bg-black text-white':'border border-zinc-300'].join(' ')}>{step>n?'✓':n}</span><span className="min-w-0 text-xs font-semibold sm:text-sm">{label}</span></button></li>})}</ol><div className="mt-3 h-1 overflow-hidden rounded-full bg-zinc-100"><div className="h-full rounded-full bg-black transition-all" style={{width:(step/3*100)+'%'}}/></div></nav>
     {step===1&&<>
     <div className="rounded-3xl border border-zinc-200 bg-white p-5 sm:p-7"><h2 className="text-xl font-semibold">Step 1 of 3 / {bubblerOnly ? 'Choose bubblers & quantities' : 'Add products'}</h2>{bubblerOnly ? (
-    <div className="mt-5 grid gap-4 sm:grid-cols-3" aria-label="Choose commercial bubbler models">
+    <div className="mt-5 grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2 xl:grid-cols-3" aria-label="Choose commercial bubbler models">
       {bubblerProducts.map((p) => {
         const available = p.variants.filter((v) => v.availableForSale && v.price.currencyCode === 'AUD');
         const selected = lines.some((line) => line.handle === p.handle);
         return (
-          <article key={p.handle} className={`overflow-hidden rounded-xl border bg-white transition-colors ${selected ? 'border-brand-blue ring-1 ring-brand-blue' : 'border-zinc-200'}`}>
-            <div className="relative aspect-square bg-zinc-50">
-              {p.image ? <Image src={p.image.url} alt={p.image.altText || p.title} fill sizes="(min-width: 640px) 200px, 80vw" className="object-contain p-3" /> : <div className="flex h-full items-center justify-center text-xs text-zinc-500">Image unavailable</div>}
+          <article key={p.handle} className={`flex h-full min-w-0 flex-col overflow-hidden rounded-xl border bg-white transition-colors ${selected ? 'border-brand-blue ring-1 ring-brand-blue' : 'border-zinc-200'}`}>
+            <div className="relative aspect-[4/3] w-full border-b border-zinc-100 bg-zinc-50">
+              {p.image ? <Image src={p.image.url} alt={p.image.altText || p.title} fill sizes="(min-width: 1280px) 190px, (min-width: 640px) 240px, 85vw" className="object-contain p-3" /> : <div className="flex h-full items-center justify-center text-xs text-zinc-500">Image unavailable</div>}
             </div>
-            <div className="p-3">
-              <p className="min-h-12 text-sm font-semibold leading-snug">{p.title}</p>
+            <div className="flex flex-1 flex-col p-3">
+              <p className="line-clamp-3 min-h-[3.75rem] text-[13px] font-semibold leading-5">{p.title}</p>
               {available.length === 1 ? (
-                <button type="button" onClick={() => add(p, available[0])} className={`mt-3 min-h-11 w-full rounded-lg px-3 py-2 text-sm font-semibold ${selected ? 'bg-zinc-100 text-zinc-900' : 'bg-brand-blue text-white hover:bg-brand-blue-hover'}`}>
+                <button type="button" onClick={() => add(p, available[0])} className={`mt-auto min-h-11 w-full rounded-lg px-3 py-2 text-sm font-semibold ${selected ? 'bg-zinc-100 text-zinc-900' : 'bg-brand-blue text-white hover:bg-brand-blue-hover'}`}>
                   {selected ? 'Add another' : 'Select model'}
                 </button>
               ) : available.length > 1 ? (
-                <div className="mt-3 space-y-2">
+                <div className="mt-auto space-y-2 pt-2">
                   {available.map((v) => <button key={v.id} type="button" onClick={() => add(p, v)} className="w-full rounded-lg border border-zinc-300 px-2 py-2 text-left text-xs hover:border-brand-blue">{v.title} · {aud(Math.round(Number(v.price.amount) * 100))}</button>)}
                 </div>
-              ) : <p className="mt-3 text-xs text-zinc-500">Currently unavailable</p>}
+              ) : <p className="mt-auto pt-2 text-xs text-zinc-500">Currently unavailable</p>}
             </div>
           </article>
         );
