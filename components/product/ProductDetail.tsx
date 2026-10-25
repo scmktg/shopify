@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import type { Product, Money, ProductImage } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
 import { CertificationSlot } from './CertificationSlot';
+import { WaterMarkCertificationBanner } from './WaterMarkCertificationBanner';
+import { isLeadFree } from './WatermarkBadge';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { ProductFeatures } from './ProductFeatures';
@@ -124,19 +125,10 @@ export function ProductDetail({
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
           />
           {subcategory === 'bubblers' && content.compliance?.watermark?.status === 'certified' && (
-            <div className="mx-auto mt-4 w-full max-w-[70vh]">
-              <Image
-                src="/watermark-certified-badge.png"
-                alt="WaterMark certified"
-                width={2160}
-                height={1080}
-                sizes="(min-width: 768px) 45vw, 100vw"
-                quality={70}
-                loading="eager"
-                fetchPriority="low"
-                className="block h-auto w-full object-contain"
-              />
-            </div>
+            <WaterMarkCertificationBanner
+              licenceNumber={content.compliance.watermark.licenceNumber}
+              leadFree={isLeadFree(content)}
+            />
           )}
         </div>
 
