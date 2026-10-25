@@ -156,6 +156,7 @@ export function ProductDetail({
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
               offerInstallationAssistance={subcategory === 'bubblers'}
+              hideWholeDollarCents={subcategory === 'bubblers'}
               showDispatchCountdown={!(subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5')}
             />
           )}
