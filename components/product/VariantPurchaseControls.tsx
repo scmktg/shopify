@@ -21,6 +21,7 @@ interface VariantPurchaseControlsProps {
   singleFinish?: string;
   offerInstallationAssistance?: boolean;
   showDispatchCountdown?: boolean;
+  hideWholeDollarCents?: boolean;
 }
 
 export function VariantPurchaseControls({
@@ -30,6 +31,7 @@ export function VariantPurchaseControls({
   singleFinish,
   offerInstallationAssistance = false,
   showDispatchCountdown = true,
+  hideWholeDollarCents = false,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -50,12 +52,13 @@ export function VariantPurchaseControls({
         <div className="flex items-baseline gap-2 flex-wrap">
           <PriceDisplay
             money={price}
+            hideWholeDollarCents={hideWholeDollarCents}
             className="text-3xl md:text-4xl font-bold text-black tracking-tight"
           />
           <span className="text-sm text-black/50">inc GST</span>
           {compareAt && (
             <s className="ml-2 text-base text-black/60">
-              <PriceDisplay money={compareAt} />
+              <PriceDisplay money={compareAt} hideWholeDollarCents={hideWholeDollarCents} />
             </s>
           )}
           {savings && (
