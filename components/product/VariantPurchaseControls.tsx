@@ -11,7 +11,7 @@ import { PriceDisplay } from './PriceDisplay';
 import { useVariantSelection } from './VariantSelectionProvider';
 import { ColourSwatch } from './ColourSwatch';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
-import { DispatchCountdown } from './DispatchCountdown';
+import { VariantDispatchCountdown } from './VariantDispatchCountdown';
 
 interface VariantPurchaseControlsProps {
   fallbackPrice: Money;
@@ -169,13 +169,13 @@ export function VariantPurchaseControls({
           inventoryQuantity={selectedVariant.quantityAvailable}
           companion={companion}
           onBackorderChange={setHasBackorder}
+          integratedStockStatus
           label={ctaLabel}
           enableBuyNow
           offerInstallationAssistance={offerInstallationAssistance}
         />
         {selectedVariant.availableForSale &&
-          selectedVariant.quantityAvailable !== 0 &&
-          !hasBackorder && showDispatchCountdown && <DispatchCountdown />}
+          showDispatchCountdown && <VariantDispatchCountdown hasBackorder={hasBackorder} />}
       </div>
     </>
   );
