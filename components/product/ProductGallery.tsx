@@ -148,7 +148,7 @@ export function ProductGallery({
             onPause={() => setPlaying(false)}
             onEnded={() => setPlaying(false)}
             onContextMenu={(event) => event.preventDefault()}
-            className="block h-full w-full object-contain bg-white"
+            className={`block h-full w-full object-contain bg-white ${cinematicVideoOverlay ? "brightness-[1.03] contrast-[1.06] saturate-[1.08]" : ""}`}
             aria-label={video.alt || `${title} product video`}
           />
           {cinematicVideoOverlay && (
