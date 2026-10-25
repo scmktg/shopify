@@ -44,12 +44,6 @@ export function VariantPurchaseControls({
 
   return (
     <>
-      {selectedVariant.sku && (
-        <p className="mt-2 text-sm text-black/60">
-          SKU: <span className="font-mono">{selectedVariant.sku}</span>
-        </p>
-      )}
-
       <div className="mt-4 flex items-baseline justify-between gap-4 flex-wrap">
         <div className="flex items-baseline gap-2 flex-wrap">
           <PriceDisplay
