@@ -34,7 +34,7 @@ export function PriceDisplay({ money, className, hideWholeDollarCents = false }:
       {symbolPosition >= 0 ? (
         <>
           {formatted.slice(0, symbolPosition)}
-          <span className="text-[0.75em]">$</span>
+          <span className="relative -top-[0.35em] mr-[0.08em] align-baseline text-[0.6em] font-normal text-gray-500">$</span>
           {formatted.slice(symbolPosition + 1)}
         </>
       ) : formatted}
