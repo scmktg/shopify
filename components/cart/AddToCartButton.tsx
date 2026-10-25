@@ -379,13 +379,13 @@ export function AddToCartButton({
       )}
 
       {offerInstallationAssistance && (
-        <label className="flex cursor-pointer items-start gap-2 py-1.5">
+        <label className="flex cursor-pointer items-start gap-2 rounded-lg border border-gray-200/80 bg-gray-50/70 px-3 py-2.5">
           <input type="checkbox" checked={installationRequested}
             onChange={(event) => setInstallationRequested(event.target.checked)}
             disabled={anyBusy} className="mt-0.5 h-4 w-4 shrink-0 accent-brand-blue" />
           <span className="min-w-0">
             <span className="block text-sm font-medium text-black">I'd like help arranging installation</span>
-            <span className="block text-xs leading-5 text-black/60">We can help find a local licensed plumber. Installation quoted separately, subject to availability.</span>
+            <span className="block text-xs leading-5 text-black/60">We'll contact you after your order to help find a local licensed plumber. Installation quoted separately, subject to availability.</span>
           </span>
         </label>
       )}
