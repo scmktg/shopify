@@ -46,7 +46,7 @@ export function WaterMarkCertificationBanner({
       {/* The logo and its caption are one centred unit, not separately positioned. */}
       <div className="absolute inset-y-0 right-[2%] z-10 flex w-[28%] flex-col items-center justify-center text-black sm:right-[3%] sm:w-[26%]">
         <Image
-          src="/watermark-icon.png"
+          src="/watermark-icon-banner.png"
           alt=""
           width={112}
           height={112}
