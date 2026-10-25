@@ -16,7 +16,7 @@ interface DispatchState {
  * so it remains accurate for the Wyong dispatch cutoff regardless of
  * the shopper's own device timezone.
  */
-export function DispatchCountdown() {
+export function DispatchCountdown({ compact = false }: { compact?: boolean } = {}) {
   const [state, setState] = useState<DispatchState | null>(null);
 
   useEffect(() => {
@@ -32,6 +32,18 @@ export function DispatchCountdown() {
       detail: 'for same-day dispatch from Wyong NSW',
       urgent: false,
     };
+
+  if (compact) {
+    return (
+      <div className="flex items-start gap-2.5">
+        <Truck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
+        <div className="min-w-0">
+          <p className="text-sm font-semibold text-black tabular-nums">{current.headline}</p>
+          <p className="mt-0.5 text-xs leading-relaxed text-black/65">{current.detail}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
