@@ -51,7 +51,6 @@ export function AddToCartButton({
   inventoryQuantity = null,
   companion = null,
   onBackorderChange,
-  label: labelOverride,
   enableBuyNow = false,
   offerInstallationAssistance = false,
 }: AddToCartButtonProps) {
@@ -259,9 +258,7 @@ export function AddToCartButton({
     ? 'Out of stock'
     : busy
       ? 'Adding…'
-      : pairSelected
-        ? 'Add bundle to cart'
-        : (labelOverride ?? 'Add to cart');
+      : 'Add to cart';
 
   const buyNowLabel = !available
     ? 'Out of stock'
