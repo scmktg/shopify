@@ -150,6 +150,21 @@ export function ProductDetail({
             <ThreeWayTapHeroBenefits />
           )}
 
+          {subcategory === 'bubblers' && (
+            <div className="mt-5 rounded-lg border border-gray-200 bg-gray-50 px-4 py-4">
+              <p className="text-sm font-semibold text-black">Need a quote for a purchase order?</p>
+              <p className="mt-1 text-xs leading-relaxed text-black/65">
+                Choose your commercial bubbler models and quantities, add a delivery address, and download an itemised quote for approval.
+              </p>
+              <Link
+                href="/commercial-bubbler-quote"
+                className="mt-3 inline-flex min-h-11 items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-gray-100"
+              >
+                Create your quote
+              </Link>
+            </div>
+          )}
+
           {!showFourStageAlternative && (
             <VariantPurchaseControls
               fallbackPrice={product.priceRange.minVariantPrice}
