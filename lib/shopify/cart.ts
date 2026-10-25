@@ -315,6 +315,7 @@ export async function addToCart(
   cartId: string,
   merchandiseId: string,
   quantity: number,
+  attributes: ReadonlyArray<{ key: string; value: string }> = [],
 ): Promise<Cart> {
   const safeQty = Math.min(Math.max(Math.floor(quantity), 1), 999);
   type CartLinesAddData = {
@@ -327,7 +328,7 @@ export async function addToCart(
     await shopifyClient.request<CartLinesAddData>(CART_LINES_ADD_MUTATION, {
       variables: {
         cartId,
-        lines: [{ merchandiseId, quantity: safeQty }],
+        lines: [{ merchandiseId, quantity: safeQty, attributes }],
       },
     });
   const { data, errors } = result;
