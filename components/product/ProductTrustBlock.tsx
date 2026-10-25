@@ -5,7 +5,6 @@ import {
   PHONE_DISPLAY,
   PHONE_SUPPORT_HOURS,
   PHONE_TEL,
-  RETURNS_SUMMARY,
   SHOWROOM_LOCALITY,
 } from '@/lib/site-config';
 import { BackInStockNotify } from './BackInStockNotify';
@@ -46,12 +45,12 @@ export function ProductTrustBlock({
           aria-hidden="true"
         />
         <span>
-          {RETURNS_SUMMARY} -{' '}
+          12 month warranty on all units -{' '}
           <Link
-            href="/returns/"
+            href="/returns/#warranty"
             className="underline underline-offset-4 hover:text-brand-blue"
           >
-            returns policy
+            warranty policy
           </Link>
         </span>
       </p>
