@@ -24,7 +24,7 @@ function formatterFor(currency: string): Intl.NumberFormat {
 export function PriceDisplay({ money, className, hideWholeDollarCents = false }: PriceDisplayProps) {
   const amount = Number.parseFloat(money.amount);
   const formatted = Number.isFinite(amount)
-    ? (hideWholeDollarCents && Number.isInteger(amount)
+    ? (Number.isInteger(amount)
         ? new Intl.NumberFormat('en-AU', { style: 'currency', currency: money.currencyCode, useGrouping: false, minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(amount)
         : formatterFor(money.currencyCode).format(amount))
     : money.amount;
