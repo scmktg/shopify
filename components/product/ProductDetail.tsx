@@ -122,6 +122,19 @@ export function ProductDetail({
             showLeadFreeBadge={shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
           />
+          {subcategory === 'bubblers' && content.compliance?.watermark?.status === 'certified' && (
+            <div className="mx-auto mt-4 w-full max-w-[70vh]">
+              <img
+                src="/watermark-certified-badge.png"
+                alt="WaterMark certified"
+                width={1200}
+                height={200}
+                loading="lazy"
+                decoding="async"
+                className="block h-auto w-full object-contain"
+              />
+            </div>
+          )}
         </div>
 
         <div className="md:sticky md:top-24">
@@ -245,7 +258,7 @@ export function ProductDetail({
           )}
 
           <div className="mt-4">
-            <CertificationSlot content={content} />
+            <CertificationSlot content={content} hideCertifiedBadge={subcategory === 'bubblers'} />
           </div>
 
           {content.family && familyPaths && (
