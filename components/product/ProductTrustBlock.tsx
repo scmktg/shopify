@@ -68,7 +68,7 @@ export function ProductTrustBlock({
           >
             {PHONE_DISPLAY}
           </a>{' '}
-          {PHONE_SUPPORT_HOURS}
+          {PHONE_SUPPORT_HOURS.replace(/\s*·\s*Closed weekends\s*$/i, '')}
         </span>
       </p>
     </section>
