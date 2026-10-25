@@ -155,6 +155,7 @@ export function ProductDetail({
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
               offerInstallationAssistance={subcategory === 'bubblers'}
+              showDispatchCountdown={!(subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5')}
             />
           )}
 
@@ -269,23 +270,8 @@ export function ProductDetail({
             <ShippingTierBlock
               tier={product.metafields.shipping_tier}
               productHandle={product.handle}
+              combinedBubblerShipping={subcategory === 'bubblers'}
             />
-          )}
-
-          {subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5' && (
-            <p className="mt-2 text-xs leading-relaxed text-black/60">
-              Additional freight charges may apply to some remote locations.
-              If this affects your order, our team will contact you to confirm
-              any additional costs before dispatch. To check delivery costs
-              before ordering, give us a quick call on{' '}
-              <a
-                href="tel:+61287728162"
-                className="font-semibold underline underline-offset-2 hover:text-brand-blue"
-              >
-                (02) 8772 8162
-              </a>
-              .
-            </p>
           )}
 
           <VariantProductTrustBlock productId={product.id} />
