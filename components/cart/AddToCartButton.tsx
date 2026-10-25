@@ -25,6 +25,7 @@ interface AddToCartButtonProps {
   companion?: CompanionPurchaseItem | null;
   /** Notifies the PDP when the current selection contains backordered units. */
   onBackorderChange?: (hasBackorder: boolean) => void;
+  integratedStockStatus?: boolean;
   /**
    * Label override from `products.json[handle].ctas.primary`. Falls
    * back to "Add to cart" when undefined. The unavailable / loading
@@ -51,6 +52,7 @@ export function AddToCartButton({
   inventoryQuantity = null,
   companion = null,
   onBackorderChange,
+  integratedStockStatus = false,
   enableBuyNow = false,
   offerInstallationAssistance = false,
 }: AddToCartButtonProps) {
@@ -278,7 +280,7 @@ export function AddToCartButton({
 
   return (
     <div className="flex flex-col gap-3">
-      {primaryStockMessage && !orderContainsBackorder && (
+      {primaryStockMessage && !orderContainsBackorder && !integratedStockStatus && (
         <div
           className={`rounded-md px-4 py-3 text-sm font-semibold ${
             primaryStockMessage.kind === 'backorder'
