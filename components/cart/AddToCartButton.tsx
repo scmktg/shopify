@@ -38,6 +38,8 @@ interface AddToCartButtonProps {
    * checkout URL - no drawer popup.
    */
   enableBuyNow?: boolean;
+  /** Only commercial bubbler PDPs offer free installation referral assistance. */
+  offerInstallationAssistance?: boolean;
 }
 
 const MAX_QTY = 99;
@@ -51,12 +53,17 @@ export function AddToCartButton({
   onBackorderChange,
   label: labelOverride,
   enableBuyNow = false,
+  offerInstallationAssistance = false,
 }: AddToCartButtonProps) {
   const { addItem, addItems, buyNow, buyNowItems, isMutating } = useCart();
   const [busy, setBusy] = useState(false);
   const [buyingNow, setBuyingNow] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [includeCompanion, setIncludeCompanion] = useState(false);
+  const [installationRequested, setInstallationRequested] = useState(false);
+  const installationAttributes = offerInstallationAssistance && installationRequested
+    ? [{ key: 'Installation assistance', value: 'Requested - contact customer to arrange local licensed plumber (quoted separately)' }]
+    : [];
   const [backorderEnabled, setBackorderEnabled] = useState(
     inventoryQuantity !== null && inventoryQuantity <= 0,
   );
@@ -215,9 +222,11 @@ export function AddToCartButton({
     try {
       if (pairSelected && companion) {
         await addItems([
-          { variantId, quantity },
+          { variantId, quantity, attributes: installationAttributes },
           { variantId: companion.variantId, quantity },
         ]);
+      } else if (installationAttributes.length > 0) {
+        await addItems([{ variantId, quantity, attributes: installationAttributes }]);
       } else {
         await addItem(variantId, quantity);
       }
@@ -236,6 +245,8 @@ export function AddToCartButton({
           { variantId, quantity },
           { variantId: companion.variantId, quantity },
         ]);
+      } else if (installationAttributes.length > 0) {
+        await buyNowItems([{ variantId, quantity, attributes: installationAttributes }]);
       } else {
         await buyNow(variantId, quantity);
       }
@@ -363,6 +374,19 @@ export function AddToCartButton({
                 +{formatMoney(companion.price)}
               </span>
             )}
+          </span>
+        </label>
+      )}
+
+      {offerInstallationAssistance && (
+        <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 bg-gray-50/50 p-4">
+          <input type="checkbox" checked={installationRequested}
+            onChange={(event) => setInstallationRequested(event.target.checked)}
+            disabled={anyBusy} className="mt-1 h-4 w-4 shrink-0 accent-brand-blue" />
+          <span>
+            <span className="block text-sm font-semibold text-black">I'd like help arranging installation</span>
+            <span className="mt-1 block text-sm leading-5 text-black/70">We can help connect you with a licensed plumber in your area to arrange professional installation of your new water fountain.</span>
+            <span className="mt-1 block text-xs leading-5 text-black/60">Optional and free to request. Installation is quoted separately and subject to local availability. Our team will contact you after your order.</span>
           </span>
         </label>
       )}
