@@ -552,8 +552,8 @@ export function AddToCartButton({
               actionsUnavailable
                 ? 'cursor-not-allowed border-gray-300 bg-gray-100 text-gray-500'
                 : buyingNow
-                  ? 'cursor-wait border-gray-300 bg-gray-50 text-black'
-                  : 'border-gray-300 bg-white text-black hover:border-gray-500 hover:bg-gray-50 disabled:cursor-wait'
+                  ? 'cursor-wait border-[#292929] bg-[#292929] text-white'
+                  : 'border-[#292929] bg-[#292929] text-white hover:border-[#414141] hover:bg-[#414141] disabled:cursor-wait'
             }`}
           >
             {buyNowLabel}
