@@ -264,18 +264,6 @@ export function ProductDetail({
             <CertificationSlot content={content} hideCertifiedBadge={subcategory === 'bubblers'} />
           </div>
 
-          {subcategory === 'bubblers' && (
-            <p className="mt-4 text-sm text-black/70">
-              Not sure which cabinet suits your site?{' '}
-              <Link
-                href="/commercial-water-bubblers"
-                className="font-semibold text-brand-blue hover:underline underline-offset-4"
-              >
-                Compare all commercial water bubblers
-              </Link>
-              .
-            </p>
-          )}
 
           {!requiresShippingQuote && (
             <ShippingTierBlock
