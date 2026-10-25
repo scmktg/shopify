@@ -141,6 +141,14 @@ export function ProductDetail({
             <ThreeWayTapHeroBenefits />
           )}
 
+          {content.family && familyPaths && (
+            <FamilySelector
+              family={content.family}
+              currentHandle={product.handle}
+              paths={familyPaths}
+            />
+          )}
+
           {!showFourStageAlternative && !requiresShippingQuote && (
             <VariantPurchaseControls
               fallbackPrice={product.priceRange.minVariantPrice}
@@ -255,14 +263,6 @@ export function ProductDetail({
           <div className="mt-4">
             <CertificationSlot content={content} hideCertifiedBadge={subcategory === 'bubblers'} />
           </div>
-
-          {content.family && familyPaths && (
-            <FamilySelector
-              family={content.family}
-              currentHandle={product.handle}
-              paths={familyPaths}
-            />
-          )}
 
           {subcategory === 'bubblers' && (
             <p className="mt-4 text-sm text-black/70">
