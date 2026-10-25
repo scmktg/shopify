@@ -20,6 +20,7 @@ interface VariantPurchaseControlsProps {
   /** Explicit finish for legacy single-variant listings without a Shopify Colour option. */
   singleFinish?: string;
   offerInstallationAssistance?: boolean;
+  showDispatchCountdown?: boolean;
 }
 
 export function VariantPurchaseControls({
@@ -28,6 +29,7 @@ export function VariantPurchaseControls({
   companion = null,
   singleFinish,
   offerInstallationAssistance = false,
+  showDispatchCountdown = true,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -174,7 +176,7 @@ export function VariantPurchaseControls({
         />
         {selectedVariant.availableForSale &&
           selectedVariant.quantityAvailable !== 0 &&
-          !hasBackorder && <DispatchCountdown />}
+          !hasBackorder && showDispatchCountdown && <DispatchCountdown />}
       </div>
     </>
   );
