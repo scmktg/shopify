@@ -33,7 +33,7 @@ export function WaterMarkCertificationBanner({
         <p className="text-[clamp(11px,1.35vw,16px)] font-semibold uppercase leading-tight tracking-wide">
           This product is
         </p>
-        <p className="mt-1.5 text-[clamp(22px,2.55vw,37px)] font-extrabold uppercase leading-[1.05] tracking-[-0.035em] sm:mt-2">
+        <p className="mt-1.5 text-[clamp(24px,2.55vw,37px)] font-extrabold uppercase leading-[1.05] tracking-[-0.035em] sm:mt-2">
           WaterMark<br />Certified
         </p>
         {licenceNumber && (
@@ -55,7 +55,7 @@ export function WaterMarkCertificationBanner({
           className="block h-auto w-[66%] max-w-[90px] object-contain sm:w-[70%] sm:max-w-[96px]"
         />
         {leadFree && (
-          <span className="-mt-2 block whitespace-nowrap text-[clamp(13px,1.6vw,21px)] font-bold leading-none sm:-mt-2">
+          <span className="mt-0.5 block whitespace-nowrap text-[clamp(13px,1.6vw,21px)] font-bold leading-none sm:mt-1">
             Lead Free
           </span>
         )}
