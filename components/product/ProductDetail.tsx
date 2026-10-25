@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Product, Money, ProductImage } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
@@ -124,13 +125,15 @@ export function ProductDetail({
           />
           {subcategory === 'bubblers' && content.compliance?.watermark?.status === 'certified' && (
             <div className="mx-auto mt-4 w-full max-w-[70vh]">
-              <img
+              <Image
                 src="/watermark-certified-badge.png"
                 alt="WaterMark certified"
-                width={1200}
-                height={200}
-                loading="lazy"
-                decoding="async"
+                width={2160}
+                height={1080}
+                sizes="(min-width: 768px) 45vw, 100vw"
+                quality={70}
+                loading="eager"
+                fetchPriority="low"
                 className="block h-auto w-full object-contain"
               />
             </div>
