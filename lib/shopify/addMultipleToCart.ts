@@ -6,6 +6,7 @@ import type { Cart } from '@/types/cart';
 export interface CartItemInput {
   variantId: string;
   quantity: number;
+  attributes?: ReadonlyArray<{ key: string; value: string }>;
 }
 
 /**
@@ -24,7 +25,7 @@ export async function addMultipleToCart(
 
   let updated: Cart | null = null;
   for (const item of items) {
-    updated = await addToCart(cartId, item.variantId, item.quantity);
+    updated = await addToCart(cartId, item.variantId, item.quantity, item.attributes);
   }
 
   if (!updated) throw new Error('Could not update cart.');
