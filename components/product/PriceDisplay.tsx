@@ -29,7 +29,7 @@ export function PriceDisplay({ money, className, hideWholeDollarCents = false }:
     : money.amount;
   return (
     <span className={`tabular-nums ${className ?? ''}`}>
-      {formatted} {money.currencyCode}
+      {formatted}
     </span>
   );
 }
