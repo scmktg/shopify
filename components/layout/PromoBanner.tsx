@@ -59,7 +59,7 @@ export function PromoBanner() {
   }, [index, paused]);
 
   return (
-    <div className="bg-black text-white text-[12px] sm:text-[13px]">
+    <div className="bg-[#000000] text-white text-[12px] sm:text-[13px]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-9 sm:h-10 flex items-center justify-center sm:justify-between gap-4">
         {/*
           Static line — always visible. On mobile the rotating side
