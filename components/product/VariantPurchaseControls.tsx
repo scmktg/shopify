@@ -19,6 +19,7 @@ interface VariantPurchaseControlsProps {
   companion?: CompanionPurchaseItem | null;
   /** Explicit finish for legacy single-variant listings without a Shopify Colour option. */
   singleFinish?: string;
+  offerInstallationAssistance?: boolean;
 }
 
 export function VariantPurchaseControls({
@@ -26,6 +27,7 @@ export function VariantPurchaseControls({
   ctaLabel,
   companion = null,
   singleFinish,
+  offerInstallationAssistance = false,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -174,6 +176,7 @@ export function VariantPurchaseControls({
           onBackorderChange={setHasBackorder}
           label={ctaLabel}
           enableBuyNow
+          offerInstallationAssistance={offerInstallationAssistance}
         />
         {selectedVariant.availableForSale &&
           selectedVariant.quantityAvailable !== 0 &&
