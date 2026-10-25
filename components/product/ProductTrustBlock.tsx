@@ -1,11 +1,9 @@
 import Link from 'next/link';
-import clsx from 'clsx';
 import { Phone, RefreshCcw } from 'lucide-react';
 import {
   PHONE_DISPLAY,
   PHONE_SUPPORT_HOURS,
   PHONE_TEL,
-  SHOWROOM_LOCALITY,
 } from '@/lib/site-config';
 import { BackInStockNotify } from './BackInStockNotify';
 
@@ -33,8 +31,6 @@ export function ProductTrustBlock({
       aria-label="Availability and shipping"
       className={`mt-6 flex flex-col gap-2.5 text-sm text-black font-medium ${className}`}
     >
-      <StockLine stockStatus={stockStatus} stockCount={stockCount} />
-
       {!inStock && (
         <BackInStockNotify productId={productId} sku={sku} />
       )}
@@ -75,33 +71,3 @@ export function ProductTrustBlock({
   );
 }
 
-interface StockLineProps {
-  stockStatus: StockStatus;
-  stockCount?: number;
-}
-
-function StockLine({ stockStatus, stockCount }: StockLineProps) {
-  const dotClass = clsx(
-    'inline-block h-2.5 w-2.5 rounded-full mt-1.5 flex-shrink-0',
-    stockStatus === 'in_stock' && 'bg-green-600',
-    stockStatus === 'low_stock' && 'bg-amber-500',
-    stockStatus === 'out_of_stock' && 'bg-gray-400',
-  );
-
-  let body: React.ReactNode;
-  if (stockStatus === 'in_stock') {
-    body = <>In stock · ships from {SHOWROOM_LOCALITY}</>;
-  } else if (stockStatus === 'low_stock') {
-    const n = stockCount ?? 0;
-    body = <>Only {n} left in stock</>;
-  } else {
-    body = <>Currently out of stock</>;
-  }
-
-  return (
-    <p className="flex items-start gap-2">
-      <span className={dotClass} aria-hidden="true" />
-      <span>{body}</span>
-    </p>
-  );
-}
