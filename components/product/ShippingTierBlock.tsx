@@ -151,7 +151,7 @@ export function ShippingTierBlock({
             <span>Free delivery Australia-wide</span>
           </div>
           <p className="mt-1.5 text-xs leading-relaxed text-black/70">
-            Free Click &amp; Collect from our Wyong NSW showroom. Same-day dispatch for orders before 12pm Sydney time on business days.
+            Same-day dispatch for orders before 12pm Sydney time on business days. Click &amp; Collect is available from our Central Coast showroom.
           </p>
         </div>
         <p className="mt-3 border-t border-gray-200 pt-3 text-xs leading-relaxed text-black/60">
