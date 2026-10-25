@@ -16,7 +16,7 @@ interface DispatchState {
  * so it remains accurate for the Wyong dispatch cutoff regardless of
  * the shopper's own device timezone.
  */
-export function DispatchCountdown({ compact = false }: { compact?: boolean } = {}) {
+export function DispatchCountdown({ compact = false, inStock = false, backorder = false }: { compact?: boolean; inStock?: boolean; backorder?: boolean } = {}) {
   const [state, setState] = useState<DispatchState | null>(null);
 
   useEffect(() => {
@@ -33,9 +33,21 @@ export function DispatchCountdown({ compact = false }: { compact?: boolean } = {
       urgent: false,
     };
 
+  if (backorder) {
+    return (
+      <div role="status" className={compact ? 'flex flex-wrap items-center gap-2.5' : 'mt-3 flex flex-wrap items-center gap-2.5 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3'}>
+        <span className="inline-flex shrink-0 items-center rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-900">On backorder</span>
+        <span className="text-sm font-medium text-amber-900">Delivery may take up to 4 weeks. Dispatch countdown does not apply.</span>
+      </div>
+    );
+  }
+
+  const stockBadge = inStock ? <span className="inline-flex shrink-0 items-center rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-semibold text-green-800">In stock</span> : null;
+
   if (compact) {
     return (
-      <div className="flex items-start gap-2.5">
+      <div className="flex flex-wrap items-start gap-2.5">
+        {stockBadge}
         <Truck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
         <div className="min-w-0">
           <p className="text-sm font-semibold text-black tabular-nums">{current.headline}</p>
@@ -53,7 +65,8 @@ export function DispatchCountdown({ compact = false }: { compact?: boolean } = {
           : 'mt-3 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3'
       }
     >
-      <div className="flex items-start gap-3">
+      <div className="flex flex-wrap items-start gap-3">
+        {stockBadge}
         <div
           className={
             current.urgent
