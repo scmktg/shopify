@@ -2,6 +2,8 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
+  /* Shared charcoal for previously black text, icons, borders and buttons. */
+  --color-black: #292929;
   --color-brand-blue: #2200CC;
   --color-brand-blue-hover: #1B00A3;
   --color-brand-blue-pressed: #150080;
@@ -22,7 +24,7 @@
 html,
 body {
   background-color: #ffffff;
-  color: #000000;
+  color: var(--color-black);
   font-family: var(--font-sans);
   line-height: 1.5;
 }
