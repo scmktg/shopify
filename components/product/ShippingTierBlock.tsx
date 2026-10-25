@@ -158,9 +158,6 @@ export function ShippingTierBlock({
           Remote-area freight charges may apply. If so, our team will contact you to confirm any additional cost before dispatch. To check before ordering, call{' '}
           <a href="tel:+61287728162" className="font-medium underline underline-offset-2 hover:text-brand-blue">(02) 8772 8162</a>.
         </p>
-        <Link href="/shipping/" className="mt-2 inline-block text-xs font-medium text-brand-blue underline underline-offset-2 hover:text-brand-blue-hover">
-          See full shipping details
-        </Link>
       </section>
     );
   }
