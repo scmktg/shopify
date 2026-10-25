@@ -134,7 +134,7 @@ export function ProductDetail({
         </div>
 
         <div className="md:sticky md:top-24">
-          <h1 className="text-3xl md:text-4xl font-semibold text-black tracking-tight">
+          <h1 className="text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight">
             {product.title}
           </h1>
 
