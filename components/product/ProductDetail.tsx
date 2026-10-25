@@ -103,26 +103,17 @@ export function ProductDetail({
         brand={product.vendor || 'Enviro Aqua'}
       />
       <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
-      <nav
-        aria-label="Breadcrumb"
-        className="text-sm text-black/70 mb-6 flex items-center gap-2 flex-wrap"
-      >
-        <Link href="/" className="hover:underline underline-offset-4">
+      <nav aria-label="Breadcrumb" className="mb-7 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium sm:text-sm">
+        <Link href="/" className="rounded-md text-black/50 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
           Home
         </Link>
-        <span aria-hidden="true">/</span>
-        <Link
-          href={`/${category}`}
-          className="hover:underline underline-offset-4"
-        >
+        <span aria-hidden="true" className="text-black/25">/</span>
+        <Link href={`/${category}`} className="rounded-md text-black/55 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
           {humaniseSlug(category)}
         </Link>
-        <span aria-hidden="true">/</span>
-        <Link
-          href={`/${category}/${subcategory}`}
-          className="hover:underline underline-offset-4"
-        >
-          {humaniseSlug(subcategory)}
+        <span aria-hidden="true" className="text-black/25">/</span>
+        <Link href={`/${category}/${subcategory}`} className="rounded-md font-semibold text-black/80 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+          {subcategoryLabel}
         </Link>
       </nav>
 
@@ -138,14 +129,7 @@ export function ProductDetail({
         </div>
 
         <div className="md:sticky md:top-24">
-          <Link
-            href={`/${category}/${subcategory}`}
-            className="inline-flex items-center rounded-full bg-black px-4 py-2 text-xs font-medium tracking-wide text-white transition-colors hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-          >
-            {subcategoryLabel}
-          </Link>
-
-          <h1 className="mt-3 text-3xl md:text-4xl font-semibold text-black tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-semibold text-black tracking-tight">
             {product.title}
           </h1>
 
