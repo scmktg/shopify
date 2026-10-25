@@ -127,7 +127,7 @@ export function ProductDetail({
           {subcategory === 'bubblers' && content.compliance?.watermark?.status === 'certified' && (
             <WaterMarkCertificationBanner
               licenceNumber={content.compliance?.watermark?.licenceNumber}
-              leadFree={isLeadFree(content)}
+              leadFree={isLeadFree(content) || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             />
           )}
         </div>
