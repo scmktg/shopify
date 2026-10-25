@@ -379,14 +379,13 @@ export function AddToCartButton({
       )}
 
       {offerInstallationAssistance && (
-        <label className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 bg-gray-50/50 p-4">
+        <label className="flex cursor-pointer items-start gap-2 py-1.5">
           <input type="checkbox" checked={installationRequested}
             onChange={(event) => setInstallationRequested(event.target.checked)}
-            disabled={anyBusy} className="mt-1 h-4 w-4 shrink-0 accent-brand-blue" />
-          <span>
-            <span className="block text-sm font-semibold text-black">I'd like help arranging installation</span>
-            <span className="mt-1 block text-sm leading-5 text-black/70">We can help connect you with a licensed plumber in your area to arrange professional installation of your new water fountain.</span>
-            <span className="mt-1 block text-xs leading-5 text-black/60">Optional and free to request. Installation is quoted separately and subject to local availability. Our team will contact you after your order.</span>
+            disabled={anyBusy} className="mt-0.5 h-4 w-4 shrink-0 accent-brand-blue" />
+          <span className="min-w-0">
+            <span className="block text-sm font-medium text-black">I'd like help arranging installation</span>
+            <span className="block text-xs leading-5 text-black/60">We can help find a local licensed plumber. Installation quoted separately, subject to availability.</span>
           </span>
         </label>
       )}
