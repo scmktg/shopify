@@ -385,7 +385,7 @@ export function AddToCartButton({
             disabled={anyBusy} className="mt-0.5 h-4 w-4 shrink-0 accent-brand-blue" />
           <span className="min-w-0">
             <span className="block text-sm font-medium text-black">I'd like help arranging installation</span>
-            <span className="block text-xs leading-5 text-black/60">We'll contact you after your order to help find a local licensed plumber.</span>
+            <span className="block text-xs leading-5 text-black/60">We'll contact you after your order to help you find a local licensed plumber.</span>
           </span>
         </label>
       )}
