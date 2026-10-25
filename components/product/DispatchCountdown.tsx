@@ -75,7 +75,7 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
     >
       <div className="flex flex-wrap items-start gap-3">
         {!inStock && <div
-          className=
+          className={
             current.urgent
               ? 'mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white text-brand-blue shadow-sm'
               : 'mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white text-black/60'
@@ -90,7 +90,7 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
 
         <div className="min-w-0">
           <p className="text-sm font-bold text-black tabular-nums">
-            {current.headline}
+            {dispatchHeadline}
           </p>
           <p className="mt-0.5 text-xs text-black/65">{current.detail}</p>
         </div>
