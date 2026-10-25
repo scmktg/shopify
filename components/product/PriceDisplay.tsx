@@ -30,7 +30,22 @@ export function PriceDisplay({ money, className, hideWholeDollarCents = false }:
     : money.amount;
   return (
     <span className={`tabular-nums ${className ?? ''}`}>
-      {formatted}
+      {formatted.includes('    </span>
+  );
+}
+) ? (
+        <>
+          {formatted.slice(0, formatted.indexOf('    </span>
+  );
+}
+))}
+          <span className="text-[0.75em]">$</span>
+          {formatted.slice(formatted.indexOf('    </span>
+  );
+}
+) + 1)}
+        </>
+      ) : formatted}
     </span>
   );
 }
