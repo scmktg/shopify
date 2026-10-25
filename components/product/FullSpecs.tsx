@@ -1,4 +1,5 @@
 import type { SpecRow } from '@/lib/products/schema';
+import { VariantSkuSpec } from './VariantSkuSpec';
 
 interface FullSpecsProps {
   specs?: ReadonlyArray<SpecRow>;
@@ -12,14 +13,15 @@ interface FullSpecsProps {
  * alignment in tables comes from layout, not from numeral metrics.
  */
 export function FullSpecs({ specs }: FullSpecsProps) {
-  if (!specs || specs.length === 0) return null;
+  const visibleSpecs = (specs ?? []).filter((row) => row.label.trim().toLowerCase() !== 'sku');
   return (
     <section className="mt-12 border-t border-gray-100 pt-8">
       <h2 className="text-2xl font-semibold text-black tracking-tight">
         Specifications
       </h2>
       <dl className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
-        {specs.map((row) => (
+        <VariantSkuSpec />
+        {visibleSpecs.map((row) => (
           <div
             key={row.label}
             className="flex justify-between gap-4 border-b border-gray-100 py-2"
