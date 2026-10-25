@@ -67,12 +67,8 @@ export function VariantPurchaseControls({
             </span>
           )}
         </div>
-        <span className="text-sm text-black/50">
-          Same price retail or trade
-        </span>
+        <ZipMessaging money={price} className="shrink-0 self-center" />
       </div>
-
-      <ZipMessaging money={price} className="mt-2" />
 
       {singleFinish && variants.length === 1 && optionNames.length === 0 && (
         <fieldset className="mt-6" aria-label="Product finish">
