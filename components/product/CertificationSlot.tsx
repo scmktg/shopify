@@ -8,6 +8,7 @@ import {
 
 interface CertificationSlotProps {
   content: ProductContent;
+  hideCertifiedBadge?: boolean;
 }
 
 /**
@@ -24,20 +25,20 @@ interface CertificationSlotProps {
  * either, both, or neither. Nothing here implies that WMK
  * certification means lead-free, or vice versa.
  */
-export function CertificationSlot({ content }: CertificationSlotProps) {
+export function CertificationSlot({ content, hideCertifiedBadge = false }: CertificationSlotProps) {
   const wm = content.compliance?.watermark ?? null;
   const wmkCertified = wm?.status === 'certified';
   const wmkPending = wm?.status === 'pending';
   const leadFree = isLeadFree(content);
 
-  if (!wmkCertified && !wmkPending && !leadFree) return null;
+  if (!(wmkCertified && !hideCertifiedBadge) && !wmkPending && !leadFree) return null;
 
   const caption = wmkCertified && wm ? formatCaption(wm) : null;
 
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-wrap items-center gap-2">
-        {wmkCertified && <WatermarkBadge href="/watermark-certified/" />}
+        {wmkCertified && !hideCertifiedBadge && <WatermarkBadge href="/watermark-certified/" />}
         {wmkPending && (
           <span
             role="img"
