@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 const BUBBLER_HANDLES = [
   'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
-  'commercial-rust-free-filtered-cold-water-bubbler-wm',
   'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
+  'commercial-rust-free-filtered-cold-water-bubbler-wm',
 ] as const;
 
 export default async function CommercialBubblerQuotePage() {
