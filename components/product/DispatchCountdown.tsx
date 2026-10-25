@@ -42,15 +42,23 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
     );
   }
 
-  const stockBadge = inStock ? <span className="inline-flex shrink-0 items-center rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-semibold text-green-800">In stock</span> : null;
+  const dispatchHeadline = inStock ? (
+    <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+      <span className="inline-flex items-center gap-1.5">
+        <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-green-600" />
+        <span>In Stock</span>
+      </span>
+      <span aria-hidden="true" className="text-black/40">·</span>
+      <span>{current.headline}</span>
+    </span>
+  ) : current.headline;
 
   if (compact) {
     return (
       <div className="flex flex-wrap items-start gap-2.5">
-        {stockBadge}
-        <Truck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
+        {!inStock && <Truck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />}
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-black tabular-nums">{current.headline}</p>
+          <p className="text-sm font-semibold text-black tabular-nums">{dispatchHeadline}</p>
           <p className="mt-0.5 text-xs leading-relaxed text-black/65">{current.detail}</p>
         </div>
       </div>
@@ -66,9 +74,8 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
       }
     >
       <div className="flex flex-wrap items-start gap-3">
-        {stockBadge}
-        <div
-          className={
+        {!inStock && <div
+          className=
             current.urgent
               ? 'mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white text-brand-blue shadow-sm'
               : 'mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white text-black/60'
@@ -79,7 +86,7 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
           ) : (
             <Truck className="h-4 w-4" aria-hidden="true" />
           )}
-        </div>
+        </div>}
 
         <div className="min-w-0">
           <p className="text-sm font-bold text-black tabular-nums">
