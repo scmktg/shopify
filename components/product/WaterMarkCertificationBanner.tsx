@@ -14,7 +14,7 @@ export function WaterMarkCertificationBanner({
 }) {
   return (
     <div
-      className="relative mx-auto mt-4 aspect-[3/1] w-full max-w-[70vh] overflow-hidden rounded-md border border-[#d0000a] bg-[#111111] text-white sm:aspect-[2.8/1]"
+      className="relative mx-auto mt-4 aspect-[3/1] w-full max-w-[70vh] overflow-hidden rounded-md border border-gray-200 bg-[#242424] text-white sm:aspect-[2.8/1]"
       aria-label="WaterMark certified product"
     >
       <svg
@@ -24,16 +24,15 @@ export function WaterMarkCertificationBanner({
         className="pointer-events-none absolute inset-0 h-full w-full"
       >
         {/* Adjacent, parallel polygons: no seams or detached triangles. */}
-        <polygon points="700,0 756,0 510,360 454,360" fill="#9c0611" />
-        <polygon points="756,0 780,0 534,360 510,360" fill="#ff293a" />
-        <polygon points="780,0 1000,0 1000,360 534,360" fill="#fff" />
+        <polygon points="700,0 752,0 506,360 454,360" fill="#a82b35" />
+        <polygon points="752,0 1000,0 1000,360 506,360" fill="#faf9f7" />
       </svg>
 
       <div className="absolute inset-y-0 left-[4%] z-10 flex w-[51%] flex-col justify-center sm:left-[5%] sm:w-[49%]">
         <p className="text-[clamp(11px,1.35vw,16px)] font-semibold uppercase leading-tight tracking-wide">
           This product is
         </p>
-        <p className="mt-1.5 text-[clamp(24px,2.55vw,37px)] font-extrabold uppercase leading-[1.05] tracking-[-0.035em] sm:mt-2">
+        <p className="mt-1.5 text-[clamp(23px,2.45vw,35px)] font-bold uppercase leading-[1.05] tracking-[-0.035em] sm:mt-2">
           WaterMark<br />Certified
         </p>
         {licenceNumber && (
