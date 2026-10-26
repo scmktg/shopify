@@ -59,10 +59,10 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           </h2>
         </section>
         <section className="mx-auto mt-9 max-w-3xl space-y-4 text-center" aria-label="Why stainless steel">
-          <h3 className="text-xl font-semibold text-black">The timeless stainless steel drinking fountain.</h3>
-          <p className="text-base leading-7 text-black/65">There is a reason stainless steel fountains have remained a favourite in Australian gyms, schools and commercial facilities for decades.</p>
-          <p className="text-base leading-7 text-black/65">Their classic appearance, dependable construction and straightforward cleaning make them a natural fit for commercial environments.</p>
-          <p className="text-base leading-7 text-black/65">Two convenient ways to enjoy chilled, filtered water. No compromise, no complexity. Just one sleek, practical unit.</p>
+          <h3 className="text-xl font-semibold text-black">The timeless stainless steel design.</h3>
+          <p className="text-base leading-7 text-black/65">There is a reason these units have remained a favourite in Australian gyms, schools and commercial facilities for decades. A classic appearance, dependable construction and straightforward cleaning make them a natural fit for most commercial environments.</p>
+          <p className="text-base leading-7 text-black/65">With two convenient ways to enjoy chilled, filtered water, there&apos;s no compromise and no complexity.</p>
+          <p className="text-base leading-7 text-black/65">Just one sleek, practical unit.</p>
         </section>
         <section className="mx-auto mt-11 grid max-w-4xl gap-8 md:grid-cols-2" aria-label="Bubbler and tap details">
           {[
