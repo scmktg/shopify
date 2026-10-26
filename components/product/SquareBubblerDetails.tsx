@@ -39,25 +39,26 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
   const remaining = specs.filter((item) => !listed.has(item.label));
 
   return (
-    <div className="mt-14 border-t border-black/10 pt-5">
-      <div role="tablist" aria-label="Product information" className="flex w-full gap-4 overflow-x-auto border-b border-black/10 sm:gap-10">
+    <div className="mt-12 border-t border-black/10 pt-7">
+      <div className="mb-7 flex flex-wrap items-end justify-between gap-3"><div><p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Explore the YL-600C</p><h2 className="mt-2 text-xl font-semibold tracking-tight text-black sm:text-2xl">Everything you need to know</h2></div><p className="text-xs text-black/45">Details, technical data &amp; documents</p></div>
+      <div role="tablist" aria-label="Product information" className="flex w-full gap-7 overflow-x-auto border-b border-black/10 sm:gap-10">
         {(['description', 'specifications', 'downloads'] as const).map((value) => (
           <button key={value} type="button" role="tab"
             id={`square-bubbler-tab-${value}`}
             aria-controls={`square-bubbler-panel-${value}`}
             aria-selected={activeTab === value}
             onClick={() => setActiveTab(value)}
-            className={`relative min-h-12 shrink-0 px-0 py-3 text-left text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:flex-none sm:px-5 ${activeTab === value ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}
+            className={`relative min-h-12 shrink-0 px-0 py-3 text-left text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:flex-none sm:px-0 ${activeTab === value ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}
           >{value}</button>
         ))}
       </div>
-      <div id="square-bubbler-panel-description" role="tabpanel" aria-labelledby="square-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-12">
+      <div id="square-bubbler-panel-description" role="tabpanel" aria-labelledby="square-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-10">
         <section className="text-center" aria-labelledby="square-bubbler-editorial-title">
           <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.12em] text-black uppercase"><span aria-hidden="true" className="text-2xl leading-none">✦</span> Our most popular model</p>
-          <h2 id="square-bubbler-editorial-title" className="mx-auto mt-7 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
+          <h2 id="square-bubbler-editorial-title" className="mx-auto mt-6 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
             Drink or refill... all from one<br className="hidden md:block" /> <strong className="font-semibold">Sleek <span className="ea-steel-shine">Stainless Steel</span> Fountain</strong>
           </h2>
-          <div className="relative mt-10 overflow-hidden rounded-xl bg-[#e8e9e9] aspect-[16/7] min-h-[240px]">
+          <div className="relative mt-9 overflow-hidden rounded-lg bg-[#e8e9e9] aspect-[16/7] min-h-[240px]">
             <img src="/images/bubblers/square-editorial-hero.webp" alt="Stainless steel drinking fountain with separate bottle-filling tap" className="absolute inset-0 z-10 h-full w-full object-cover" onError={(event) => {event.currentTarget.style.display = 'none';}} />
             <div className="absolute inset-0 bg-gradient-to-br from-[#e6e6e6] via-[#c8cacc] to-[#f6f6f6]" aria-hidden="true" />
             <div className="absolute inset-0 flex items-center justify-center text-center"><p className="rounded bg-white/80 px-4 py-2 text-xs font-medium text-black/50 backdrop-blur-sm">Hero product photo</p></div>
@@ -65,18 +66,18 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             <span className="absolute right-[7%] top-[42%] z-20 rounded-md bg-white/95 px-4 py-3 text-xs font-semibold shadow-sm sm:text-sm">Drink & Refresh</span>
           </div>
         </section>
-        <section className="mx-auto mt-10 max-w-3xl space-y-5 text-center" aria-label="Why stainless steel">
+        <section className="mx-auto mt-12 max-w-3xl space-y-4 text-center" aria-label="Why stainless steel">
           <h3 className="text-xl font-semibold text-black">The timeless stainless steel drinking fountain.</h3>
           <p className="text-base leading-7 text-black/65">There is a reason stainless steel fountains have remained a favourite in Australian gyms, schools and commercial facilities for decades.</p>
           <p className="text-base leading-7 text-black/65">Their classic appearance, dependable construction and straightforward cleaning make them a natural fit for commercial environments.</p>
           <p className="text-base leading-7 text-black/65">Two convenient ways to enjoy chilled, filtered water. No compromise, no complexity. Just one sleek, practical unit.</p>
         </section>
-        <section className="mt-10 grid gap-4 md:grid-cols-2" aria-label="Bubbler and tap details">
+        <section className="mt-10 grid gap-5 md:grid-cols-2" aria-label="Bubbler and tap details">
           {[
             {image:'/images/bubblers/square-editorial-bubbler.webp',alt:'Close-up of drinking bubbler',heading:'Rubber protection guard',detail:'Thoughtful protection around the drinking spout.'},
             {image:'/images/bubblers/square-editorial-tap.webp',alt:'Close-up of bottle-filling tap',heading:'360° swivel tap',detail:'Flexible access for filling bottles, glasses and jugs.'}
           ].map((item) => (
-            <div key={item.image} className="relative aspect-[5/4] min-h-[220px] overflow-hidden rounded-xl bg-gradient-to-br from-[#e9eaeb] via-[#c5c8ca] to-[#f4f5f5]">
+            <div key={item.image} className="relative aspect-[5/4] min-h-[220px] overflow-hidden rounded-lg bg-gradient-to-br from-[#e9eaeb] via-[#c5c8ca] to-[#f4f5f5]">
               <img src={item.image} alt={item.alt} className="absolute inset-0 h-full w-full object-cover" onError={(event)=>{event.currentTarget.style.display='none';}} />
               <div className="absolute right-4 top-4 rounded-md bg-white/95 px-4 py-3 text-right shadow-sm backdrop-blur-sm">
                 <h4 className="text-sm font-semibold text-black">{item.heading}</h4>
@@ -102,14 +103,14 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
       </div>
       <div id="square-bubbler-panel-specifications" role="tabpanel" aria-labelledby="square-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-9">
       <section aria-labelledby="square-bubbler-specs">
-        <h2 id="square-bubbler-specs" className="text-2xl font-semibold tracking-tight text-black">Technical specifications</h2>
+        <h2 id="square-bubbler-specs" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
         <p className="mt-2 text-sm text-black/60">Key product details organised for easy comparison and purchasing approval.</p>
         <div className="mt-8 grid gap-x-14 gap-y-10 lg:grid-cols-2">
           {SPEC_GROUPS.map((group) => {
             const rows = specs.filter((item) => group.labels.some((label) => label === item.label));
             if (!rows.length) return null;
             return (
-              <div key={group.heading} className="border-t border-black/15">
+              <div key={group.heading} className="border-t border-black/10">
                 <h3 className="border-b border-black/10 py-4 text-sm font-semibold text-black">{group.heading}</h3>
                 <dl className="py-1">
                   {rows.map((row) => (
@@ -141,7 +142,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
       </div>
       <div id="square-bubbler-panel-downloads" role="tabpanel" aria-labelledby="square-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
       <section aria-labelledby="square-bubbler-documents">
-        <h2 id="square-bubbler-documents" className="text-2xl font-semibold tracking-tight text-black">Product documents</h2>
+        <h2 id="square-bubbler-documents" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Product documents</h2>
         <p className="mt-2 text-sm leading-6 text-black/65">Download the documents for your plumber, facilities team or purchasing approval.</p>
         <div className="mt-7 divide-y divide-black/10 border-y border-black/10">
           {DOCUMENTS.map((document) => (
