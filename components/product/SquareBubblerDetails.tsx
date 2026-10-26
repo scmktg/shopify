@@ -83,7 +83,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.13em] text-black/45">Integrated water filtration</p>
             <h3 id="square-bubbler-filtration" className="mt-4 text-[clamp(1.8rem,3.4vw,3.2rem)] font-light leading-tight tracking-tight text-black">
-              Built-in filtration for<br className="hidden sm:block" /> <span className="font-semibold">cleaner, great tasting water.</span>
+              Built-in filtration for<br className="hidden sm:block" /> <span className="ea-water-shine font-semibold">cleaner, great tasting water.</span>
             </h3>
           </div>
           <div className="mx-auto mt-10 grid max-w-6xl items-center gap-8 md:grid-cols-[1.05fr_1.15fr] md:gap-12">
@@ -100,14 +100,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
               <p className="mt-5 text-base leading-8 text-black/65">Enjoy better-tasting drinking water with a convenient 2-in-1 cartridge that combines sediment and activated-carbon filtration to help reduce unwanted particles, tastes and odours.</p>
               <p className="mt-4 text-base leading-8 text-black/65">With both filtration stages combined into a single replaceable cartridge, routine upkeep stays simple. Simply open the front panel to access the cartridge. No plumbing required for routine cartridge replacement.</p>
               <p className="mt-5 text-base font-semibold leading-7 text-black">No separate filters to juggle. Just one convenient cartridge.</p>
-              <div className="mt-8 border-t border-black/10 pt-6">
-                <h5 className="text-sm font-semibold text-black">Typical replacement guide</h5>
-                <dl className="mt-4 space-y-3 text-sm text-black/65">
-                  <div className="flex flex-wrap justify-between gap-2 border-b border-black/10 pb-3"><dt>Busy, high-use facilities</dt><dd className="font-semibold text-black">Every 3 to 6 months</dd></div>
-                  <div className="flex flex-wrap justify-between gap-2 border-b border-black/10 pb-3"><dt>Quieter workplaces</dt><dd className="font-semibold text-black">Every 6 to 12 months</dd></div>
-                </dl>
-                <p className="mt-4 text-xs leading-5 text-black/45">Indicative intervals only. Actual replacement frequency depends on water quality, usage and the cartridge manufacturer's instructions.</p>
-              </div>
+
             </div>
           </div>
         </section>
@@ -122,8 +115,21 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             -webkit-text-fill-color: transparent;
             animation: ea-steel-sweep 6s ease-in-out infinite;
           }
+          .ea-water-shine {
+            color: #167bb7;
+            background: linear-gradient(105deg, #085e9f 0%, #1788c6 24%, #75d1eb 46%, #168bc9 65%, #075b9b 100%);
+            background-size: 240% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: ea-water-flow 7s ease-in-out infinite;
+          }
+          @keyframes ea-water-flow {
+            0%, 15% { background-position: 100% 0; }
+            65%, 100% { background-position: 0 0; }
+          }
           @keyframes ea-steel-sweep { 0%, 18% { background-position: 100% 0; } 55%, 100% { background-position: 0 0; } }
-          @media (prefers-reduced-motion: reduce) { .ea-steel-shine { animation: none; background-position: 50% 0; } }
+          @media (prefers-reduced-motion: reduce) { .ea-steel-shine, .ea-water-shine { animation: none; background-position: 50% 0; } }
         `}</style>
       </div>
       <div id="square-bubbler-panel-specifications" role="tabpanel" aria-labelledby="square-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-9">
