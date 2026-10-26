@@ -86,19 +86,20 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
               Built-in filtration for<br className="hidden sm:block" /> <span className="font-semibold">cleaner, great tasting water.</span>
             </h3>
           </div>
-          <div className="mx-auto mt-10 grid max-w-5xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
+          <div className="mx-auto mt-10 grid max-w-6xl items-center gap-8 md:grid-cols-[1.05fr_1.15fr] md:gap-12">
             <div className="flex min-h-[320px] items-center justify-center sm:min-h-[420px]">
               <img
                 src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Untitled_design.png?v=1793006569"
                 alt="Interior of the stainless steel water bubbler showing the integrated filtration cartridge and components"
                 loading="lazy"
-                className="max-h-[520px] h-auto w-full object-contain"
+                className="max-h-[650px] h-auto w-full object-contain"
               />
             </div>
             <div>
               <h4 className="text-xl font-semibold tracking-tight text-black sm:text-2xl">One cartridge. Two filtration stages.</h4>
-              <p className="mt-5 text-base leading-8 text-black/65">An integrated cartridge combines sediment and activated-carbon filtration to help reduce particles and improve the taste of drinking water.</p>
-              <p className="mt-4 text-base leading-8 text-black/65">The cartridge is accessible behind the front panel, making routine filter changes more straightforward.</p>
+              <p className="mt-5 text-base leading-8 text-black/65">Enjoy better-tasting drinking water with a convenient 2-in-1 cartridge that combines sediment and activated-carbon filtration to help reduce unwanted particles, tastes and odours.</p>
+              <p className="mt-4 text-base leading-8 text-black/65">With both filtration stages combined into a single replaceable cartridge, routine upkeep stays simple. Simply open the front panel to access the cartridge. No plumbing required for routine cartridge replacement.</p>
+              <p className="mt-5 text-base font-semibold leading-7 text-black">No separate filters to juggle. Just one convenient cartridge.</p>
               <div className="mt-8 border-t border-black/10 pt-6">
                 <h5 className="text-sm font-semibold text-black">Typical replacement guide</h5>
                 <dl className="mt-4 space-y-3 text-sm text-black/65">
