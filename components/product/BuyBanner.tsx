@@ -34,19 +34,19 @@ export function BuyBanner({
   return (
     <section
       aria-label="Add to cart"
-      className={minimal ? "mt-16 border-y border-black/10 bg-white py-10 md:py-12" : "mt-12 bg-brand-blue-light border border-brand-blue/20 rounded-lg p-6 md:p-8"}
+      className={minimal ? "mt-16 rounded-2xl border border-white/10 bg-[#1c1c1e] p-6 shadow-sm sm:p-8 lg:p-10" : "mt-12 bg-brand-blue-light border border-brand-blue/20 rounded-lg p-6 md:p-8"}
     >
       <div className={minimal ? "grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-12" : "grid gap-6 md:grid-cols-2 md:items-center"}>
         <div>
-          <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+          <h2 className={minimal ? "text-2xl md:text-3xl font-semibold text-white tracking-tight" : "text-2xl md:text-3xl font-semibold text-black tracking-tight"}>
             {minimal ? "Bring chilled, filtered water to your space." : "Ready to order?"}
           </h2>
-          <p className="mt-2 text-sm text-black/70">
+          <p className={minimal ? "mt-3 text-sm leading-6 text-white/65" : "mt-2 text-sm text-black/70"}>
             Order before {ORDER_CUTOFF_DISPLAY} on a business day for
             same-day dispatch from Wyong NSW.{' '}
             <Link
               href="/shipping/"
-              className="underline underline-offset-4 hover:text-brand-blue"
+              className={minimal ? "text-white/85 underline underline-offset-4 hover:text-white" : "underline underline-offset-4 hover:text-brand-blue"}
             >
               See shipping details
             </Link>
@@ -55,14 +55,14 @@ export function BuyBanner({
           <div className="mt-5 flex items-baseline gap-2 flex-wrap">
             <PriceDisplay
               money={price}
-              className="text-2xl md:text-3xl font-bold text-black tracking-tight"
+              className={minimal ? "text-3xl md:text-4xl font-bold text-white tracking-tight" : "text-2xl md:text-3xl font-bold text-black tracking-tight"}
             />
-            <span className="text-sm text-black/50">inc GST</span>
+            <span className={minimal ? "text-sm text-white/60" : "text-sm text-black/50"}>inc GST</span>
             {!minimal && <span className="text-sm text-black/50">· Same price retail or trade</span>}
           </div>
         </div>
 
-        <div>
+        <div className={minimal ? "rounded-xl bg-white p-3 sm:p-4" : undefined}>
           <AddToCartButton
             variantId={variantId}
             available={available}
