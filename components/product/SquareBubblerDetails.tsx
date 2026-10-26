@@ -34,7 +34,7 @@ const SPEC_GROUPS = [
 
 export function SquareBubblerDetails({ content }: { content: ProductContent }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications' | 'downloads'>('description');
-  const specs = (content.fullSpecs ?? []).filter((item) => item.label.toLowerCase() !== 'sku');
+  const specs = (content.fullSpecs ?? []).filter((item) => !['sku', 'product type', 'watermark model name'].includes(item.label.trim().toLowerCase()));
   const listed = new Set<string>(SPEC_GROUPS.flatMap((group) => [...group.labels]));
   const remaining = specs.filter((item) => !listed.has(item.label));
 
