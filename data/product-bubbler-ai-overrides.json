@@ -203,6 +203,10 @@
         "value": "20 L/hr"
       },
       {
+        "label": "Refrigerant",
+        "value": "R290"
+      },
+      {
         "label": "Chilled water temperature",
         "value": "Approximately 8–12 °C"
       },
@@ -277,7 +281,7 @@
       },
       {
         "q": "What refrigerant does this water bubbler use?",
-        "a": "The YL-600C uses R290 (propane) refrigerant in its cooling system. R290 has a low global warming potential, but it is flammable, so refrigeration system servicing must be carried out by appropriately qualified technicians."
+        "a": "We use R290 which is a natural, high-efficiency refrigerant used in modern cooling systems. Unlike many traditional refrigerants, it has an exceptionally low global warming potential and zero ozone-depleting potential."
       },
       {
         "q": "How often does the water filter need replacing?",
