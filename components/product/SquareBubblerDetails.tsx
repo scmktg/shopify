@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 import { Download, FileText, ShieldCheck, Wrench } from 'lucide-react';
 
@@ -30,12 +33,25 @@ const SPEC_GROUPS = [
 ] as const;
 
 export function SquareBubblerDetails({ content }: { content: ProductContent }) {
+  const [activeTab, setActiveTab] = useState<'description' | 'specifications' | 'downloads'>('description');
   const specs = (content.fullSpecs ?? []).filter((item) => item.label.toLowerCase() !== 'sku');
   const listed = new Set<string>(SPEC_GROUPS.flatMap((group) => [...group.labels]));
   const remaining = specs.filter((item) => !listed.has(item.label));
 
   return (
-    <div className="mt-12 border-t border-black/10 pt-10">
+    <div className="mt-12 border-t border-black/10 pt-8">
+      <div role="tablist" aria-label="Product information" className="flex w-full gap-1 border-b border-black/15 sm:gap-6">
+        {(['description', 'specifications', 'downloads'] as const).map((value) => (
+          <button key={value} type="button" role="tab"
+            id={`square-bubbler-tab-${value}`}
+            aria-controls={`square-bubbler-panel-${value}`}
+            aria-selected={activeTab === value}
+            onClick={() => setActiveTab(value)}
+            className={`relative min-h-12 flex-1 px-2 py-3 text-center text-sm font-semibold capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:flex-none sm:px-5 ${activeTab === value ? 'text-brand-blue after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[3px] after:bg-brand-blue' : 'text-black/60 hover:text-black'}`}
+          >{value}</button>
+        ))}
+      </div>
+      <div id="square-bubbler-panel-description" role="tabpanel" aria-labelledby="square-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-8">
       <div className="max-w-3xl">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-blue">Commercial drinking water</p>
         <h2 className="mt-3 text-2xl font-semibold tracking-tight text-black md:text-3xl">
@@ -62,7 +78,9 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
         ))}
       </section>
 
-      <section className="mt-12" aria-labelledby="square-bubbler-specs">
+      </div>
+      <div id="square-bubbler-panel-specifications" role="tabpanel" aria-labelledby="square-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-8">
+      <section aria-labelledby="square-bubbler-specs">
         <h2 id="square-bubbler-specs" className="text-2xl font-semibold tracking-tight text-black">Technical specifications</h2>
         <p className="mt-2 text-sm text-black/60">Key product details organised for easy comparison and purchasing approval.</p>
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
@@ -99,7 +117,9 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
         </div>
       </section>
 
-      <section className="mt-12" aria-labelledby="square-bubbler-documents">
+      </div>
+      <div id="square-bubbler-panel-downloads" role="tabpanel" aria-labelledby="square-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-8">
+      <section aria-labelledby="square-bubbler-documents">
         <h2 id="square-bubbler-documents" className="text-2xl font-semibold tracking-tight text-black">Product documents</h2>
         <p className="mt-2 text-sm leading-6 text-black/65">Download the documents for your plumber, facilities team or purchasing approval.</p>
         <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -133,6 +153,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           <p className="mt-3 text-sm leading-6 text-black/70">Enviro Aqua YL-600C · WaterMark model name: Water Bubbler Square · Certificate 023484. Confirm site-specific compliance with your licensed tradesperson.</p>
         </div>
       </section>
+      </div>
     </div>
   );
 }
