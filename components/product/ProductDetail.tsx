@@ -296,7 +296,7 @@ export function ProductDetail({
         </div>
       </div>
 
-      <HeadlineSpecs specs={content.headlineSpecs} />
+      {!isSquareBubbler && <HeadlineSpecs specs={content.headlineSpecs} />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
         <ThreeWayTapSalesSections />
       )}
