@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
-import { Download, FileText, ShieldCheck, Wrench } from 'lucide-react';
+import { Download, FileText } from 'lucide-react';
 
 const DOCUMENTS = [
   {
@@ -231,16 +231,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
         </div>
       </section>
 
-      <section className="mt-12 grid gap-8 border-t border-black/10 pt-8 md:grid-cols-2" aria-label="Installation and certification">
-        <div className="">
-          <div className="flex items-center gap-3"><Wrench className="text-black/65" size={19} aria-hidden="true" /><h2 className="text-base font-semibold text-black">Installation information</h2></div>
-          <p className="mt-3 text-sm leading-6 text-black/70">Mains-water, drainage and electrical provisions must be confirmed for the installation site. Engage an appropriately licensed plumber and refer to the technical installation guide before installation.</p>
-        </div>
-        <div className="">
-          <div className="flex items-center gap-3"><ShieldCheck className="text-black/65" size={19} aria-hidden="true" /><h2 className="text-base font-semibold text-black">WaterMark certification</h2></div>
-          <p className="mt-3 text-sm leading-6 text-black/70">Enviro Aqua YL-600C · WaterMark model name: Water Bubbler Square · Certificate 023484. Confirm site-specific compliance with your licensed tradesperson.</p>
-        </div>
-      </section>
+
       </div>
     </div>
   );
