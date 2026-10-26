@@ -58,9 +58,9 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             Drink or refill... all from one<br className="hidden md:block" /> <strong className="font-semibold">Sleek <span className="ea-steel-shine">Stainless Steel</span> Fountain</strong>
           </h2>
           <div className="relative mt-10 overflow-hidden rounded-xl bg-[#e8e9e9] aspect-[16/7] min-h-[240px]">
-            <img src="/images/bubblers/square-editorial-hero.webp" alt="Stainless steel drinking fountain with separate bottle-filling tap" className="h-full w-full object-cover" onError={(event) => {event.currentTarget.style.display = 'none';}} />
-            <div className="absolute inset-0 -z-0 bg-gradient-to-br from-[#e6e6e6] via-[#c8cacc] to-[#f6f6f6]" aria-hidden="true" />
-            <div className="absolute inset-0 z-10 flex items-center justify-center text-center"><p className="rounded bg-white/80 px-4 py-2 text-xs font-medium text-black/50 backdrop-blur-sm">Hero product photo</p></div>
+            <img src="/images/bubblers/square-editorial-hero.webp" alt="Stainless steel drinking fountain with separate bottle-filling tap" className="absolute inset-0 z-10 h-full w-full object-cover" onError={(event) => {event.currentTarget.style.display = 'none';}} />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#e6e6e6] via-[#c8cacc] to-[#f6f6f6]" aria-hidden="true" />
+            <div className="absolute inset-0 flex items-center justify-center text-center"><p className="rounded bg-white/80 px-4 py-2 text-xs font-medium text-black/50 backdrop-blur-sm">Hero product photo</p></div>
             <span className="absolute left-[7%] top-[22%] z-20 rounded-md bg-white/95 px-4 py-3 text-xs font-semibold shadow-sm sm:text-sm">Fill Up & Go</span>
             <span className="absolute right-[7%] top-[42%] z-20 rounded-md bg-white/95 px-4 py-3 text-xs font-semibold shadow-sm sm:text-sm">Drink & Refresh</span>
           </div>
