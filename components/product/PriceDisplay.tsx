@@ -30,12 +30,12 @@ export function PriceDisplay({ money, className, hideWholeDollarCents = false }:
     : money.amount;
   const symbolPosition = formatted.indexOf('$');
   return (
-    <span className={`tabular-nums ${className ?? ''}`}>
+    <span className={`inline-flex items-baseline whitespace-nowrap tabular-nums ${className ?? ''}`}>
       {symbolPosition >= 0 ? (
         <>
           {formatted.slice(0, symbolPosition)}
-          <span className="relative -top-[0.35em] mr-[0.08em] align-baseline text-[0.6em] font-normal text-gray-500">$</span>
-          {formatted.slice(symbolPosition + 1)}
+          <span className="relative -top-[0.35em] mr-[0.15em] shrink-0 text-[0.6em] font-normal tracking-normal text-gray-500">$</span>
+          <span>{formatted.slice(symbolPosition + 1)}</span>
         </>
       ) : formatted}
     </span>
