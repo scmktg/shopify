@@ -51,107 +51,54 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           >{value}</button>
         ))}
       </div>
-      <div id="square-bubbler-panel-description" role="tabpanel" aria-labelledby="square-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-10">
-        <div className="w-full">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">Commercial drinking fountains</p>
-          <h2 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl">
-            Commercial Stainless Steel Water Bubbler with Bottle-Filling Tap
+      <div id="square-bubbler-panel-description" role="tabpanel" aria-labelledby="square-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-12">
+        <section className="text-center" aria-labelledby="square-bubbler-editorial-title">
+          <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.12em] text-black uppercase"><span aria-hidden="true" className="text-2xl leading-none">✦</span> Our most popular model</p>
+          <h2 id="square-bubbler-editorial-title" className="mx-auto mt-7 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
+            Drink or refill... all from one<br className="hidden md:block" /> <strong className="font-semibold">Sleek <span className="ea-steel-shine">Stainless Steel</span> Fountain</strong>
           </h2>
-          <p className="mt-5 text-lg font-medium leading-8 text-black/85">
-            Chilled, filtered drinking water for your workplace, school or gym, with a convenient side tap for refilling bottles and glasses.
-          </p>
-          <p className="mt-4 text-base leading-8 text-black/65">
-            Give staff, students and visitors two easy ways to stay hydrated, all from one durable stainless-steel drinking fountain.
-          </p>
-          <ul className="mt-8 grid gap-x-12 gap-y-4 text-sm leading-7 text-black/75 lg:grid-cols-2">
-            {[
-              ['Drink or refill', 'Built-in drinking fountain and separate bottle-filling tap.'],
-              ['Enjoy chilled water', '20 L/hr rated cooling capacity and approximately 8 to 12°C water output.'],
-              ['Filtered drinking water', 'Sediment and activated-carbon filtration.'],
-              ['Built for commercial spaces', 'SUS304 stainless-steel cabinet.'],
-              ['WaterMark certified', 'Certificate 023484.'],
-            ].map(([title, detail]) => (
-              <li key={title} className="flex items-start gap-3">
-                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-blue" aria-hidden="true" />
-                <span><strong className="font-semibold text-black">{title}:</strong> {detail}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <section className="mt-12 border-t border-black/10 pt-10" aria-labelledby="square-bubbler-benefits">
-          <h3 id="square-bubbler-benefits" className="text-xl font-semibold tracking-tight text-black md:text-2xl">
-            Two Ways to Drink. One Convenient Water Fountain.
-          </h3>
-          <div className="mt-7 grid gap-8 md:grid-cols-3">
-            {[
-              {
-                heading: 'Refreshing Drinking Water, Whenever You Need It',
-                body: 'Give people easy access to chilled, filtered water throughout the day. The mains-connected fountain provides a dedicated place to drink without relying on bottled drinking water.',
-              },
-              {
-                heading: 'Refill Bottles, Cups and Jugs with Ease',
-                body: 'The separate side tap makes it easy to fill reusable bottles, cups and glasses, ideal for shared spaces where people prefer different ways to drink.',
-              },
-              {
-                heading: 'Made for Everyday Commercial Use',
-                body: 'Its SUS304 stainless-steel cabinet offers a practical, professional finish for indoor and sheltered commercial environments.',
-              },
-            ].map((item) => (
-              <div key={item.heading}>
-                <h4 className="text-base font-semibold leading-6 text-black">{item.heading}</h4>
-                <p className="mt-3 text-sm leading-7 text-black/65">{item.body}</p>
-              </div>
-            ))}
+          <div className="relative mt-10 overflow-hidden rounded-xl bg-[#e8e9e9] aspect-[16/7] min-h-[240px]">
+            <img src="/images/bubblers/square-editorial-hero.webp" alt="Stainless steel drinking fountain with separate bottle-filling tap" className="h-full w-full object-cover" onError={(event) => {event.currentTarget.style.display = 'none';}} />
+            <div className="absolute inset-0 -z-0 bg-gradient-to-br from-[#e6e6e6] via-[#c8cacc] to-[#f6f6f6]" aria-hidden="true" />
+            <div className="absolute inset-0 z-10 flex items-center justify-center text-center"><p className="rounded bg-white/80 px-4 py-2 text-xs font-medium text-black/50 backdrop-blur-sm">Hero product photo</p></div>
+            <span className="absolute left-[7%] top-[22%] z-20 rounded-md bg-white/95 px-4 py-3 text-xs font-semibold shadow-sm sm:text-sm">Fill Up & Go</span>
+            <span className="absolute right-[7%] top-[42%] z-20 rounded-md bg-white/95 px-4 py-3 text-xs font-semibold shadow-sm sm:text-sm">Drink & Refresh</span>
           </div>
         </section>
-
-        <section className="mt-12 border-t border-black/10 pt-10" aria-labelledby="square-bubbler-places">
-          <h3 id="square-bubbler-places" className="text-xl font-semibold tracking-tight text-black md:text-2xl">A Practical Addition to Your Facility</h3>
-          <div className="mt-7 grid gap-7 md:grid-cols-3">
-            {[
-              ['Schools and campuses', 'Provide a convenient drinking and bottle-refilling station for students and staff.'],
-              ['Gyms and recreation centres', 'Give members somewhere to refill water bottles or enjoy a quick drink.'],
-              ['Offices and workplaces', 'Make drinking water easily available to employees and visitors throughout the day.'],
-            ].map(([heading, body]) => (
-              <div key={heading}>
-                <h4 className="text-sm font-semibold text-black">{heading}</h4>
-                <p className="mt-2 text-sm leading-7 text-black/65">{body}</p>
+        <section className="mx-auto mt-10 max-w-3xl space-y-5 text-center" aria-label="Why stainless steel">
+          <h3 className="text-xl font-semibold text-black">The timeless stainless steel drinking fountain.</h3>
+          <p className="text-base leading-7 text-black/65">There is a reason stainless steel fountains have remained a favourite in Australian gyms, schools and commercial facilities for decades.</p>
+          <p className="text-base leading-7 text-black/65">Their classic appearance, dependable construction and straightforward cleaning make them a natural fit for commercial environments.</p>
+          <p className="text-base leading-7 text-black/65">Two convenient ways to enjoy chilled, filtered water. No compromise, no complexity. Just one sleek, practical unit.</p>
+        </section>
+        <section className="mt-10 grid gap-4 md:grid-cols-2" aria-label="Bubbler and tap details">
+          {[
+            {image:'/images/bubblers/square-editorial-bubbler.webp',alt:'Close-up of drinking bubbler',heading:'Rubber protection guard',detail:'Thoughtful protection around the drinking spout.'},
+            {image:'/images/bubblers/square-editorial-tap.webp',alt:'Close-up of bottle-filling tap',heading:'360° swivel tap',detail:'Flexible access for filling bottles, glasses and jugs.'}
+          ].map((item) => (
+            <div key={item.image} className="relative aspect-[5/4] min-h-[220px] overflow-hidden rounded-xl bg-gradient-to-br from-[#e9eaeb] via-[#c5c8ca] to-[#f4f5f5]">
+              <img src={item.image} alt={item.alt} className="absolute inset-0 h-full w-full object-cover" onError={(event)=>{event.currentTarget.style.display='none';}} />
+              <div className="absolute right-4 top-4 rounded-md bg-white/95 px-4 py-3 text-right shadow-sm backdrop-blur-sm">
+                <h4 className="text-sm font-semibold text-black">{item.heading}</h4>
               </div>
-            ))}
-          </div>
+              <p className="absolute bottom-4 left-4 right-4 rounded-md bg-white/90 px-3 py-2 text-xs font-medium text-black/65 backdrop-blur-sm">{item.detail}</p>
+            </div>
+          ))}
         </section>
-
-        <section className="mt-12 border-t border-black/10 pt-10" aria-labelledby="square-bubbler-included">
-          <h3 id="square-bubbler-included" className="text-xl font-semibold tracking-tight text-black md:text-2xl">What’s Included in This Model?</h3>
-          <ul className="mt-5 grid gap-x-10 gap-y-2 text-sm leading-7 text-black/70 md:grid-cols-2">
-            {[
-              'Built-in drinking fountain',
-              'Separate side tap for filling bottles and glasses',
-              'Chilled-water system rated at 20 litres per hour',
-              'Sediment and activated-carbon water filtration',
-              'SUS304 stainless-steel cabinet',
-              'WaterMark-certified model',
-            ].map((feature) => <li key={feature} className="flex items-start gap-3"><span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-black/40" aria-hidden="true" />{feature}</li>)}
-          </ul>
-        </section>
-
-        <section className="mt-12 border-t border-black/10 pt-10" aria-labelledby="square-bubbler-installation">
-          <h3 id="square-bubbler-installation" className="text-xl font-semibold tracking-tight text-black md:text-2xl">Installation Made Easier</h3>
-          <p className="mt-4 text-sm leading-7 text-black/70">
-            This mains-connected bubbler requires appropriate plumbing and drainage. Installation must be completed by an appropriately licensed plumbing practitioner.
-          </p>
-          <h4 className="mt-5 text-sm font-semibold text-black">Need help finding an installer?</h4>
-          <p className="mt-2 text-sm leading-7 text-black/70">
-            Select installation assistance when ordering and Enviro Aqua can help you locate a local licensed plumber. Installation charges and site-specific requirements are confirmed separately.
-          </p>
-        </section>
-        <div className="mt-12 border-t border-black/10 pt-8">
-          <p className="text-lg font-semibold text-black">Convenient access to chilled, filtered water for your facility.</p>
-          <p className="mt-2 text-sm leading-7 text-black/65">
-            A stainless-steel drinking fountain and separate bottle-filling tap in one practical unit. Questions before ordering? Call <a href="tel:+61287728162" className="font-semibold text-black underline underline-offset-4">(02) 8772 8162</a>.
-          </p>
-        </div>
+        <p className="mt-7 text-center text-sm text-black/55">Suitable for schools, gyms, offices and sheltered commercial facilities.</p>
+        <style jsx>{`
+          .ea-steel-shine {
+            color: #9b9fa3;
+            background: linear-gradient(105deg, #868a8f 10%, #b9bdc1 38%, #f5f6f7 49%, #969ba1 60%, #72777b 88%);
+            background-size: 240% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: ea-steel-sweep 6s ease-in-out infinite;
+          }
+          @keyframes ea-steel-sweep { 0%, 18% { background-position: 100% 0; } 55%, 100% { background-position: 0 0; } }
+          @media (prefers-reduced-motion: reduce) { .ea-steel-shine { animation: none; background-position: 50% 0; } }
+        `}</style>
       </div>
       <div id="square-bubbler-panel-specifications" role="tabpanel" aria-labelledby="square-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-9">
       <section aria-labelledby="square-bubbler-specs">
