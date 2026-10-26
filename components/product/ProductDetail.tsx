@@ -131,7 +131,6 @@ export function ProductDetail({
             <WaterMarkCertificationBanner
               licenceNumber={content.compliance?.watermark?.licenceNumber}
               leadFree={isLeadFree(content) || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
-              refined={isSquareBubbler}
             />
           )}
         </div>
