@@ -113,9 +113,14 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             <button
               type="button"
               onClick={openSpecifications}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-black px-9 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700"
+              className="inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700"
             >
-              Specifications
+              <span>Specifications</span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                  <path d="M5 19 19 5M7 5h12v12" />
+                </svg>
+              </span>
             </button>
           </div>
         </section>
