@@ -7,11 +7,13 @@ import { useVariantSelection } from './VariantSelectionProvider';
 interface VariantBuyBannerProps {
   fallbackPrice: Money;
   ctaLabel?: string;
+  minimal?: boolean;
 }
 
 export function VariantBuyBanner({
   fallbackPrice,
   ctaLabel,
+  minimal = false,
 }: VariantBuyBannerProps) {
   const { selectedVariant } = useVariantSelection();
   return (
@@ -20,6 +22,7 @@ export function VariantBuyBanner({
       available={selectedVariant.availableForSale}
       price={selectedVariant.price ?? fallbackPrice}
       ctaLabel={ctaLabel}
+      minimal={minimal}
     />
   );
 }
