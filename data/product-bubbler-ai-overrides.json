@@ -264,16 +264,44 @@
     },
     "faq": [
       {
-        "q": "What is the WaterMark identity of the square Enviro Aqua bubbler?",
-        "a": "Brand: Enviro Aqua. Model ID: YL-600C. WaterMark model name: Water Bubbler Square. Certificate: 023484."
+        "q": "Does this water fountain connect to plumbing?",
+        "a": "Yes. The fountain connects directly to a mains-water supply. An appropriately licensed plumber should complete the water and drainage connections."
       },
       {
-        "q": "How much chilled water can the square bubbler produce?",
-        "a": "The YL-600C is rated at 20 litres per hour with chilled-water output of approximately 8–12 °C."
+        "q": "Can I fill water bottles as well as drink directly from the bubbler?",
+        "a": "Absolutely. The fountain has two separate dispensing options: a traditional bubbler for a quick drink and a convenient side tap for filling reusable bottles, glasses and jugs."
       },
       {
-        "q": "Does the square model have a bottle-filling tap?",
-        "a": "Yes. The YL-600C has a direct-drinking bubbler spout plus a separate side tap for filling bottles, glasses or jugs."
+        "q": "Does the bubbler provide chilled water?",
+        "a": "Yes. The unit provides approximately 8 to 12°C chilled water, with a rated cooling capacity of 20 litres per hour. Actual performance depends on incoming water temperature, ambient conditions and demand."
+      },
+      {
+        "q": "How often does the water filter need replacing?",
+        "a": "Filter replacement depends on water quality and usage. As a general planning guide, busy facilities may need changes every 3 to 6 months, while quieter offices may be able to wait 6 to 12 months. Follow the cartridge manufacturer’s instructions and replace earlier if performance indicates it is necessary."
+      },
+      {
+        "q": "Is replacing the filter complicated?",
+        "a": "The unit uses an integrated cartridge combining sediment and activated-carbon filtration. Routine servicing involves replacing one cartridge rather than maintaining separate cartridges for each filtration stage."
+      },
+      {
+        "q": "Are replacement filters readily available?",
+        "a": "Yes. Enviro Aqua offers replacement cartridges through our website. Contact our team if you need help choosing the correct cartridge or confirming current stock."
+      },
+      {
+        "q": "Can this water fountain be installed outdoors?",
+        "a": "The stainless steel model is intended for indoor or appropriately sheltered commercial installations. Please check the installation environment with our team before ordering."
+      },
+      {
+        "q": "Is this drinking fountain WaterMark certified?",
+        "a": "Yes. The square stainless steel model is WaterMark certified under licence 23484 (Certificate 023484). You can verify its certification through the WaterMark database."
+      },
+      {
+        "q": "Is installation included in the price?",
+        "a": "Installation is arranged separately. An appropriately licensed plumber is required for the water and drainage connections. Select installation assistance when ordering or contact our team if you need help finding a local licensed plumber."
+      },
+      {
+        "q": "How long does delivery take?",
+        "a": "We dispatch from the NSW Central Coast, with eligible in-stock orders generally dispatched the same or next business day. After dispatch, delivery to NSW addresses typically takes around 1 to 3 business days, while other states may take around 3 to 10 business days. Times vary by postcode, carrier and regional or remote location."
       }
     ]
   },
