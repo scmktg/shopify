@@ -7,6 +7,7 @@ import { WaterMarkCertificationBanner } from './WaterMarkCertificationBanner';
 import { isLeadFree } from './WatermarkBadge';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
+import { SquareBubblerDetails } from './SquareBubblerDetails';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -91,6 +92,7 @@ export function ProductDetail({
   const showFourStageAlternative =
     product.handle === SOLD_OUT_THREE_STAGE_UV_HANDLE;
   const requiresShippingQuote = product.handle === SHIPPING_QUOTE_ONLY_HANDLE;
+  const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
 
   return (
     <VariantSelectionProvider
@@ -298,14 +300,20 @@ export function ProductDetail({
       {product.handle === THREE_WAY_TAP_HANDLE && (
         <ThreeWayTapSalesSections />
       )}
-      <FullSpecs specs={content.fullSpecs} />
-      <ProductOverview
-        description={content.description}
-        shortDescription={content.shortDescription}
-      />
-      <ProductFeatures features={content.features} />
-      <RecommendedFor items={content.recommendedFor} />
-      <ComplianceSection compliance={content.compliance} />
+      {isSquareBubbler ? (
+        <SquareBubblerDetails content={content} />
+      ) : (
+        <>
+          <FullSpecs specs={content.fullSpecs} />
+          <ProductOverview
+            description={content.description}
+            shortDescription={content.shortDescription}
+          />
+          <ProductFeatures features={content.features} />
+          <RecommendedFor items={content.recommendedFor} />
+          <ComplianceSection compliance={content.compliance} />
+        </>
+      )}
       {content.faq && content.faq.length > 0 && (
         <section className="mt-10 border-t border-gray-200 pt-10">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
