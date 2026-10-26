@@ -315,28 +315,39 @@ export function ProductDetail({
         </>
       )}
       {content.faq && content.faq.length > 0 && (
-        <section className="mt-10 border-t border-gray-200 pt-10">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-                Questions about this model
-              </h2>
-              {subcategory === 'bubblers' && (
-                <p className="mt-3 text-sm text-black/70">
-                  For a side-by-side comparison of cooling, cabinet, bottle-fill and location options, see the{' '}
-                  <Link
-                    href="/commercial-water-bubblers"
-                    className="font-semibold text-brand-blue hover:underline underline-offset-4"
-                  >
-                    commercial water bubbler guide
-                  </Link>
-                  .
-                </p>
-              )}
+        isSquareBubbler ? (
+          <section className="mt-16 border-t border-black/10 pt-12 md:mt-20 md:pt-16" aria-labelledby="square-bubbler-faq-heading">
+            <div className="mx-auto max-w-5xl">
+              <div className="mb-9 text-center md:mb-12">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">Helpful information</p>
+                <h2 id="square-bubbler-faq-heading" className="mt-3 text-2xl font-semibold tracking-tight text-black md:text-3xl">
+                  Frequently asked questions
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-black/60">Everything you need to know before choosing your water bubbler.</p>
+              </div>
+              <FaqAccordion items={content.faq} variant="minimal" />
             </div>
-            <FaqAccordion items={content.faq} />
-          </div>
-        </section>
+          </section>
+        ) : (
+          <section className="mt-10 border-t border-gray-200 pt-10">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+                  Questions about this model
+                </h2>
+                {subcategory === 'bubblers' && (
+                  <p className="mt-3 text-sm text-black/70">
+                    For a side-by-side comparison of cooling, cabinet, bottle-fill and location options, see the{' '}
+                    <Link href="/commercial-water-bubblers" className="font-semibold text-brand-blue hover:underline underline-offset-4">
+                      commercial water bubbler guide
+                    </Link>.
+                  </p>
+                )}
+              </div>
+              <FaqAccordion items={content.faq} />
+            </div>
+          </section>
+        )
       )}
       {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
