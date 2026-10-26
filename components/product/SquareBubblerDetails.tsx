@@ -57,31 +57,24 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           <h2 id="square-bubbler-editorial-title" className="mx-auto mt-6 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
             Drink or refill... all from one<br className="hidden md:block" /> <strong className="font-semibold">Sleek <span className="ea-steel-shine">Stainless Steel</span> Fountain</strong>
           </h2>
-          <div className="relative mt-9 overflow-hidden rounded-lg bg-[#e8e9e9] aspect-[16/7] min-h-[240px]">
-            <img src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/square-bubbler.png?v=1793001001" alt="Stainless steel drinking fountain with separate bottle-filling tap" className="absolute inset-0 z-10 h-full w-full object-cover" onError={(event) => {event.currentTarget.style.display = 'none';}} />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#e6e6e6] via-[#c8cacc] to-[#f6f6f6]" aria-hidden="true" />
-            <div className="absolute inset-0 flex items-center justify-center text-center"><p className="rounded bg-white/80 px-4 py-2 text-xs font-medium text-black/50 backdrop-blur-sm">Hero product photo</p></div>
-            <span className="absolute left-[7%] top-[22%] z-20 rounded-md bg-white/95 px-4 py-3 text-xs font-semibold shadow-sm sm:text-sm">Fill Up & Go</span>
-            <span className="absolute right-[7%] top-[42%] z-20 rounded-md bg-white/95 px-4 py-3 text-xs font-semibold shadow-sm sm:text-sm">Drink & Refresh</span>
-          </div>
         </section>
-        <section className="mx-auto mt-12 max-w-3xl space-y-4 text-center" aria-label="Why stainless steel">
+        <section className="mx-auto mt-9 max-w-3xl space-y-4 text-center" aria-label="Why stainless steel">
           <h3 className="text-xl font-semibold text-black">The timeless stainless steel drinking fountain.</h3>
           <p className="text-base leading-7 text-black/65">There is a reason stainless steel fountains have remained a favourite in Australian gyms, schools and commercial facilities for decades.</p>
           <p className="text-base leading-7 text-black/65">Their classic appearance, dependable construction and straightforward cleaning make them a natural fit for commercial environments.</p>
           <p className="text-base leading-7 text-black/65">Two convenient ways to enjoy chilled, filtered water. No compromise, no complexity. Just one sleek, practical unit.</p>
         </section>
-        <section className="mt-10 grid gap-5 md:grid-cols-2" aria-label="Bubbler and tap details">
+        <section className="mx-auto mt-11 grid max-w-4xl gap-8 md:grid-cols-2" aria-label="Bubbler and tap details">
           {[
             {image:'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/close-up-bubbler-tap.png?v=1793001350',alt:'Close-up of drinking bubbler',heading:'Rubber protection guard',detail:'Thoughtful protection around the drinking spout.'},
             {image:'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Polished_Chrome_Faucet_in_Modern_Sink.png?v=1793001452',alt:'Close-up of bottle-filling tap',heading:'360° swivel tap',detail:'Flexible access for filling bottles, glasses and jugs.'}
           ].map((item) => (
-            <div key={item.image} className="relative aspect-[5/4] min-h-[220px] overflow-hidden rounded-lg bg-gradient-to-br from-[#e9eaeb] via-[#c5c8ca] to-[#f4f5f5]">
-              <img src={item.image} alt={item.alt} className="absolute inset-0 h-full w-full object-cover" onError={(event)=>{event.currentTarget.style.display='none';}} />
-              <div className="absolute right-4 top-4 rounded-md bg-white/95 px-4 py-3 text-right shadow-sm backdrop-blur-sm">
-                <h4 className="text-sm font-semibold text-black">{item.heading}</h4>
+            <div key={item.image} className="group min-w-0">
+              <div className="aspect-[5/4] overflow-hidden rounded-lg bg-[#ebeced]">
+                <img src={item.image} alt={item.alt} loading="lazy" className="h-full w-full object-cover" onError={(event)=>{event.currentTarget.style.display='none';}} />
               </div>
-              <p className="absolute bottom-4 left-4 right-4 rounded-md bg-white/90 px-3 py-2 text-xs font-medium text-black/65 backdrop-blur-sm">{item.detail}</p>
+              <h4 className="mt-4 text-sm font-semibold text-black">{item.heading}</h4>
+              <p className="mt-1 text-sm leading-6 text-black/60">{item.detail}</p>
             </div>
           ))}
         </section>
