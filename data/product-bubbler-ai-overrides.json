@@ -276,6 +276,10 @@
         "a": "Yes. The unit provides approximately 8 to 12°C chilled water, with a rated cooling capacity of 20 litres per hour. Actual performance depends on incoming water temperature, ambient conditions and demand."
       },
       {
+        "q": "What refrigerant does this water bubbler use?",
+        "a": "The YL-600C uses R290 (propane) refrigerant in its cooling system. R290 has a low global warming potential, but it is flammable, so refrigeration system servicing must be carried out by appropriately qualified technicians."
+      },
+      {
         "q": "How often does the water filter need replacing?",
         "a": "Filter replacement depends on water quality and usage. As a general planning guide, busy facilities may need changes every 3 to 6 months, while quieter offices may be able to wait 6 to 12 months. Follow the cartridge manufacturer’s instructions and replace earlier if performance indicates it is necessary."
       },
