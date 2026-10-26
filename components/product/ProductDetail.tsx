@@ -355,6 +355,7 @@ export function ProductDetail({
         <VariantBuyBanner
           fallbackPrice={product.priceRange.minVariantPrice}
           ctaLabel={content.ctas?.primary ?? undefined}
+          minimal={isSquareBubbler}
         />
       )}
 
