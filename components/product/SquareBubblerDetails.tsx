@@ -52,21 +52,21 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
         ))}
       </div>
       <div id="square-bubbler-panel-description" role="tabpanel" aria-labelledby="square-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-10">
-        <div className="max-w-4xl">
+        <div className="w-full">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">Commercial drinking fountains</p>
-          <h2 className="mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl">
+          <h2 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-black md:text-3xl">
             Commercial Stainless Steel Water Bubbler with Bottle-Filling Tap
           </h2>
-          <p className="mt-5 max-w-3xl text-lg font-medium leading-8 text-black/85">
-            Chilled, filtered drinking water for your workplace, school or gym — with a convenient side tap for refilling bottles and glasses.
+          <p className="mt-5 text-lg font-medium leading-8 text-black/85">
+            Chilled, filtered drinking water for your workplace, school or gym, with a convenient side tap for refilling bottles and glasses.
           </p>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-black/65">
+          <p className="mt-4 text-base leading-8 text-black/65">
             Give staff, students and visitors two easy ways to stay hydrated, all from one durable stainless-steel drinking fountain.
           </p>
-          <ul className="mt-7 grid gap-x-10 gap-y-3 text-sm leading-7 text-black/75 md:grid-cols-2">
+          <ul className="mt-8 grid gap-x-12 gap-y-4 text-sm leading-7 text-black/75 lg:grid-cols-2">
             {[
               ['Drink or refill', 'Built-in drinking fountain and separate bottle-filling tap.'],
-              ['Enjoy chilled water', '20 L/hr rated cooling capacity and approximately 8–12°C water output.'],
+              ['Enjoy chilled water', '20 L/hr rated cooling capacity and approximately 8 to 12°C water output.'],
               ['Filtered drinking water', 'Sediment and activated-carbon filtration.'],
               ['Built for commercial spaces', 'SUS304 stainless-steel cabinet.'],
               ['WaterMark certified', 'Certificate 023484.'],
@@ -91,7 +91,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
               },
               {
                 heading: 'Refill Bottles, Cups and Jugs with Ease',
-                body: 'The separate side tap makes it easy to fill reusable bottles, cups and glasses — ideal for shared spaces where people prefer different ways to drink.',
+                body: 'The separate side tap makes it easy to fill reusable bottles, cups and glasses, ideal for shared spaces where people prefer different ways to drink.',
               },
               {
                 heading: 'Made for Everyday Commercial Use',
@@ -138,11 +138,11 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
 
         <section className="mt-12 border-t border-black/10 pt-10" aria-labelledby="square-bubbler-installation">
           <h3 id="square-bubbler-installation" className="text-xl font-semibold tracking-tight text-black md:text-2xl">Installation Made Easier</h3>
-          <p className="mt-4 max-w-3xl text-sm leading-7 text-black/70">
+          <p className="mt-4 text-sm leading-7 text-black/70">
             This mains-connected bubbler requires appropriate plumbing and drainage. Installation must be completed by an appropriately licensed plumbing practitioner.
           </p>
           <h4 className="mt-5 text-sm font-semibold text-black">Need help finding an installer?</h4>
-          <p className="mt-2 max-w-3xl text-sm leading-7 text-black/70">
+          <p className="mt-2 text-sm leading-7 text-black/70">
             Select installation assistance when ordering and Enviro Aqua can help you locate a local licensed plumber. Installation charges and site-specific requirements are confirmed separately.
           </p>
         </section>
