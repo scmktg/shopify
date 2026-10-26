@@ -10,6 +10,7 @@ interface BuyBannerProps {
   price: Money;
   /** Label override from `products.json[handle].ctas.primary`. */
   ctaLabel?: string;
+  minimal?: boolean;
 }
 
 /**
@@ -28,16 +29,17 @@ export function BuyBanner({
   available,
   price,
   ctaLabel,
+  minimal = false,
 }: BuyBannerProps) {
   return (
     <section
       aria-label="Add to cart"
-      className="mt-12 bg-brand-blue-light border border-brand-blue/20 rounded-lg p-6 md:p-8"
+      className={minimal ? "mt-16 border-y border-black/10 bg-white py-10 md:py-12" : "mt-12 bg-brand-blue-light border border-brand-blue/20 rounded-lg p-6 md:p-8"}
     >
-      <div className="grid gap-6 md:grid-cols-2 md:items-center">
+      <div className={minimal ? "grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-12" : "grid gap-6 md:grid-cols-2 md:items-center"}>
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-            Ready to order?
+            {minimal ? "Bring chilled, filtered water to your space." : "Ready to order?"}
           </h2>
           <p className="mt-2 text-sm text-black/70">
             Order before {ORDER_CUTOFF_DISPLAY} on a business day for
@@ -50,15 +52,13 @@ export function BuyBanner({
             </Link>
             .
           </p>
-          <div className="mt-4 flex items-baseline gap-2 flex-wrap">
+          <div className="mt-5 flex items-baseline gap-2 flex-wrap">
             <PriceDisplay
               money={price}
               className="text-2xl md:text-3xl font-bold text-black tracking-tight"
             />
             <span className="text-sm text-black/50">inc GST</span>
-            <span className="text-sm text-black/50">
-              · Same price retail or trade
-            </span>
+            {!minimal && <span className="text-sm text-black/50">· Same price retail or trade</span>}
           </div>
         </div>
 
