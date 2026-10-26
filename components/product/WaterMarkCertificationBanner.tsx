@@ -8,10 +8,29 @@ import { CheckCircle2 } from 'lucide-react';
 export function WaterMarkCertificationBanner({
   licenceNumber,
   leadFree,
+  refined = false,
 }: {
   licenceNumber: string | null | undefined;
   leadFree: boolean;
+  refined?: boolean;
 }) {
+  if (refined) {
+    return (
+      <div className="mt-4 overflow-hidden rounded-xl border border-black/10 bg-[#1c1c1e] shadow-sm" aria-label="WaterMark certified product">
+        <div className="grid min-h-[190px] grid-cols-[minmax(0,1fr)_32%] sm:min-h-[220px]">
+          <div className="flex min-w-0 flex-col justify-center px-5 py-7 text-white sm:px-8 sm:py-8">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/55 sm:text-xs">Certified for confidence</p>
+            <p className="mt-2 text-[clamp(23px,3vw,36px)] font-semibold leading-[1.07] tracking-tight">WaterMark<br />Certified</p>
+            {licenceNumber && <p className="mt-4 flex items-center gap-2 text-xs font-medium text-white/75 sm:text-sm"><CheckCircle2 className="h-4 w-4 shrink-0 text-white/80" aria-hidden="true" />Licence {licenceNumber}</p>}
+          </div>
+          <div className="flex flex-col items-center justify-center border-l border-black/10 bg-[#f5f5f3] px-2 py-5 sm:px-4">
+            <Image src="/watermark-icon-banner.png" alt="WaterMark logo" width={112} height={112} sizes="(min-width: 768px) 110px, 24vw" className="h-auto w-[70%] max-w-[94px] object-contain" />
+            {leadFree && <span className="mt-2 text-center text-[clamp(12px,1.5vw,17px)] font-semibold leading-tight tracking-tight text-[#252525]">Lead Free</span>}
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div
       className="relative mx-auto mt-4 aspect-[3/1] w-full max-w-[70vh] overflow-hidden rounded-md border border-gray-200 bg-[#456A92] text-white sm:aspect-[2.8/1]"
