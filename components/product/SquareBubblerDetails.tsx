@@ -74,7 +74,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
         <section className="mt-10 grid gap-5 md:grid-cols-2" aria-label="Bubbler and tap details">
           {[
             {image:'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/square-bubbler-tap.png?v=1793000962',alt:'Close-up of drinking bubbler',heading:'Rubber protection guard',detail:'Thoughtful protection around the drinking spout.'},
-            {image:'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/square-bubbler-tap.png?v=1793000962',alt:'Close-up of bottle-filling tap',heading:'360° swivel tap',detail:'Flexible access for filling bottles, glasses and jugs.'}
+            {image:'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/square-bubbler-spout.png?v=1793000962',alt:'Close-up of bottle-filling tap',heading:'360° swivel tap',detail:'Flexible access for filling bottles, glasses and jugs.'}
           ].map((item) => (
             <div key={item.image} className="relative aspect-[5/4] min-h-[220px] overflow-hidden rounded-lg bg-gradient-to-br from-[#e9eaeb] via-[#c5c8ca] to-[#f4f5f5]">
               <img src={item.image} alt={item.alt} className="absolute inset-0 h-full w-full object-cover" onError={(event)=>{event.currentTarget.style.display='none';}} />
