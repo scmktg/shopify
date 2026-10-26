@@ -24,7 +24,7 @@ const SPEC_GROUPS = [
   },
   {
     heading: 'Construction & installation',
-    labels: ['Cabinet material', 'Dimensions', 'Recommended location', 'Water connection'],
+    labels: ['Cabinet material', 'Dimensions', 'Voltage', 'Power', 'Recommended location', 'Water connection'],
   },
   {
     heading: 'Product identification & compliance',
