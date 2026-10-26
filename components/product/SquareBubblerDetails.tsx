@@ -87,9 +87,9 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             </h3>
           </div>
           <div className="mx-auto mt-10 grid max-w-5xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
-            <div className="flex min-h-[320px] items-center justify-center rounded-lg bg-[#f7f8f8] p-5 sm:min-h-[420px] sm:p-8">
+            <div className="flex min-h-[320px] items-center justify-center sm:min-h-[420px]">
               <img
-                src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Open_Stainless_Water_Cooler_Filter_Unit.png?v=1793006340"
+                src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Untitled_design.png?v=1793006569"
                 alt="Interior of the stainless steel water bubbler showing the integrated filtration cartridge and components"
                 loading="lazy"
                 className="max-h-[520px] h-auto w-full object-contain"
