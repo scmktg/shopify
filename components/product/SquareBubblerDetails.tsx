@@ -98,7 +98,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             <div>
               <h4 className="text-xl font-semibold tracking-tight text-black sm:text-2xl">One cartridge. Two filtration stages.</h4>
               <p className="mt-5 text-base leading-8 text-black/65">Enjoy better-tasting drinking water with a convenient 2-in-1 cartridge that combines sediment and activated-carbon filtration to help reduce unwanted particles, tastes and odours.</p>
-              <p className="mt-4 text-base leading-8 text-black/65">With both filtration stages combined into a single replaceable cartridge, routine upkeep stays simple. Simply open the front panel to access the cartridge. No plumbing required for routine cartridge replacement.</p>
+              <p className="mt-4 text-base leading-8 text-black/65">With both filtration stages combined into a single replaceable cartridge, routine upkeep stays simple. Simply open the front panel to access the cartridge. No plumbing work or disconnection required for maintenance.</p>
               <p className="mt-5 text-base font-semibold leading-7 text-black">No separate filters to juggle. Just one convenient cartridge.</p>
 
             </div>
