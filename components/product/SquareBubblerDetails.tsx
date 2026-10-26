@@ -20,7 +20,7 @@ const DOCUMENTS = [
 const SPEC_GROUPS = [
   {
     heading: 'Performance & filtration',
-    labels: ['Product type', 'Cooling capacity', 'Chilled water temperature', 'Filtration', 'Bottle / glass fill side tap'],
+    labels: ['Product type', 'Cooling capacity', 'Chilled water temperature', 'Refrigerant', 'Filtration', 'Bottle / glass fill side tap'],
   },
   {
     heading: 'Construction & installation',
