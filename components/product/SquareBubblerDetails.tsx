@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 import { Download, FileText, ShieldCheck, Wrench } from 'lucide-react';
 
@@ -34,13 +34,19 @@ const SPEC_GROUPS = [
 
 export function SquareBubblerDetails({ content }: { content: ProductContent }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications' | 'downloads'>('description');
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const openSpecifications = () => {
+    setActiveTab('specifications');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    tabsRef.current?.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'start' });
+  };
   const specs = (content.fullSpecs ?? []).filter((item) => !['sku', 'product type', 'watermark model name'].includes(item.label.trim().toLowerCase()));
   const listed = new Set<string>(SPEC_GROUPS.flatMap((group) => [...group.labels]));
   const remaining = specs.filter((item) => !listed.has(item.label));
 
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
-      <div role="tablist" aria-label="Product information" className="flex w-full items-center justify-center gap-8 overflow-x-auto border-b border-black/10 sm:gap-16">
+      <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex w-full items-center justify-center gap-8 overflow-x-auto border-b border-black/10 sm:gap-16">
         {(['description', 'specifications', 'downloads'] as const).map((value) => (
           <button key={value} type="button" role="tab"
             id={`square-bubbler-tab-${value}`}
@@ -102,6 +108,15 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
               <p className="mt-5 text-base font-semibold leading-7 text-black">No separate filters to juggle. Just one convenient cartridge.</p>
 
             </div>
+          </div>
+          <div className="mt-10 flex justify-center">
+            <button
+              type="button"
+              onClick={openSpecifications}
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-black px-9 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700"
+            >
+              Specifications
+            </button>
           </div>
         </section>
 
