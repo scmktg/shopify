@@ -39,16 +39,15 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
   const remaining = specs.filter((item) => !listed.has(item.label));
 
   return (
-    <div className="mt-12 border-t border-black/10 pt-7">
-      <div className="mb-7 flex flex-wrap items-end justify-between gap-3"><div><p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Explore the YL-600C</p><h2 className="mt-2 text-xl font-semibold tracking-tight text-black sm:text-2xl">Everything you need to know</h2></div><p className="text-xs text-black/45">Details, technical data &amp; documents</p></div>
-      <div role="tablist" aria-label="Product information" className="flex w-full gap-7 overflow-x-auto border-b border-black/10 sm:gap-10">
+    <div className="mt-10 border-t border-black/10 pt-2">
+      <div role="tablist" aria-label="Product information" className="flex w-full items-center justify-center gap-8 overflow-x-auto border-b border-black/10 sm:gap-16">
         {(['description', 'specifications', 'downloads'] as const).map((value) => (
           <button key={value} type="button" role="tab"
             id={`square-bubbler-tab-${value}`}
             aria-controls={`square-bubbler-panel-${value}`}
             aria-selected={activeTab === value}
             onClick={() => setActiveTab(value)}
-            className={`relative min-h-12 shrink-0 px-0 py-3 text-left text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:flex-none sm:px-0 ${activeTab === value ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}
+            className={`relative min-h-14 shrink-0 px-1 py-4 text-center text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:flex-none sm:px-0 ${activeTab === value ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}
           >{value}</button>
         ))}
       </div>
