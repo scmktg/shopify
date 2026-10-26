@@ -79,6 +79,37 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           ))}
         </section>
         <p className="mt-7 text-center text-sm text-black/55">Suitable for schools, gyms, offices and sheltered commercial facilities.</p>
+        <section className="mt-16 border-t border-black/10 pt-12 sm:mt-20 sm:pt-16" aria-labelledby="square-bubbler-filtration">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.13em] text-black/45">Integrated water filtration</p>
+            <h3 id="square-bubbler-filtration" className="mt-4 text-[clamp(1.8rem,3.4vw,3.2rem)] font-light leading-tight tracking-tight text-black">
+              Built-in filtration for<br className="hidden sm:block" /> <span className="font-semibold">cleaner, great tasting water.</span>
+            </h3>
+          </div>
+          <div className="mx-auto mt-10 grid max-w-5xl items-center gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
+            <div className="flex min-h-[320px] items-center justify-center rounded-lg bg-[#f7f8f8] p-8 sm:min-h-[420px]" aria-label="Filtered unit interior image to be added">
+              <div className="text-center">
+                <FileText className="mx-auto h-8 w-8 text-black/25" aria-hidden="true" />
+                <p className="mt-3 text-xs font-medium text-black/40">Internal filtration photo</p>
+                <p className="mt-1 text-xs text-black/35">Shopify image will appear here</p>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold tracking-tight text-black sm:text-2xl">One cartridge. Two filtration stages.</h4>
+              <p className="mt-5 text-base leading-8 text-black/65">An integrated cartridge combines sediment and activated-carbon filtration to help reduce particles and improve the taste of drinking water.</p>
+              <p className="mt-4 text-base leading-8 text-black/65">The cartridge is accessible behind the front panel, making routine filter changes more straightforward.</p>
+              <div className="mt-8 border-t border-black/10 pt-6">
+                <h5 className="text-sm font-semibold text-black">Typical replacement guide</h5>
+                <dl className="mt-4 space-y-3 text-sm text-black/65">
+                  <div className="flex flex-wrap justify-between gap-2 border-b border-black/10 pb-3"><dt>Busy, high-use facilities</dt><dd className="font-semibold text-black">Every 3 to 6 months</dd></div>
+                  <div className="flex flex-wrap justify-between gap-2 border-b border-black/10 pb-3"><dt>Quieter workplaces</dt><dd className="font-semibold text-black">Every 6 to 12 months</dd></div>
+                </dl>
+                <p className="mt-4 text-xs leading-5 text-black/45">Indicative intervals only. Actual replacement frequency depends on water quality, usage and the cartridge manufacturer's instructions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <style jsx>{`
           .ea-steel-shine {
             color: #9b9fa3;
