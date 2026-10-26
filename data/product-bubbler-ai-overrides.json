@@ -207,8 +207,16 @@
         "value": "R290"
       },
       {
+        "label": "Power",
+        "value": "200W"
+      },
+      {
+        "label": "Voltage",
+        "value": "220V-240V/50Hz"
+      },
+      {
         "label": "Chilled water temperature",
-        "value": "Approximately 8–12 °C"
+        "value": "Approximately 8 to 12 °C"
       },
       {
         "label": "Filtration",
