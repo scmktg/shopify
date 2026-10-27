@@ -9,6 +9,7 @@ import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
 import { HdpeBubblerDetails } from './HdpeBubblerDetails';
+import { RoundBubblerDetails } from './RoundBubblerDetails';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -95,7 +96,8 @@ export function ProductDetail({
   const requiresShippingQuote = product.handle === SHIPPING_QUOTE_ONLY_HANDLE;
   const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
-  const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
+  const isRoundBubbler = product.handle === 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm';
+  const isEditorialBubbler = isSquareBubbler || isHdpeBubbler || isRoundBubbler;
 
   return (
     <VariantSelectionProvider
@@ -307,6 +309,8 @@ export function ProductDetail({
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
         <HdpeBubblerDetails content={content} />
+      ) : isRoundBubbler ? (
+        <RoundBubblerDetails content={content} />
       ) : (
         <>
           <FullSpecs specs={content.fullSpecs} />
