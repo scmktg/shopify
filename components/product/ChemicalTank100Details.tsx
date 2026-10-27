@@ -47,28 +47,6 @@ export function ChemicalTank100Details({ content }: { content: ProductContent })
       </div>
 
       <div id="tank-100-panel-description" role="tabpanel" aria-labelledby="tank-100-tab-description" hidden={tab !== 'description'} className="pt-12">
-        <section className="mx-auto max-w-5xl text-center" aria-labelledby="tank-100-title">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">100 litre chemical dosing tank</p>
-          <h2 id="tank-100-title" className="mx-auto mt-6 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
-            Reliable Chemical Storage.<br className="hidden sm:block" /> <strong className="font-semibold">Simple, <span className="ea-poly-shine">Practical Design.</span></strong>
-          </h2>
-          <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-black/65">A 100L polyethylene dosing tank built for compatible liquid chemical storage in water-treatment and commercial dosing applications.</p>
-        </section>
-
-        <section className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-4 border-y border-black/10 py-8 text-center md:grid-cols-4 md:gap-8" aria-label="Key tank dimensions">
-          {[
-            ['100L', 'Tank capacity'],
-            ['PE', 'Tank material'],
-            ['460mm', 'Diameter'],
-            ['820mm', 'Overall height'],
-          ].map(([value,label]) => (
-            <div key={label} className="py-2">
-              <p className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-semibold leading-none tracking-tight text-black">{value}</p>
-              <p className="mt-3 text-xs font-medium uppercase tracking-[0.1em] text-black/50">{label}</p>
-            </div>
-          ))}
-        </section>
-
         <section className="mx-auto mt-14 max-w-4xl text-center sm:mt-20" aria-labelledby="tank-100-construction">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">Purpose-built construction</p>
           <h3 id="tank-100-construction" className="mt-4 text-[clamp(1.8rem,3.4vw,3.1rem)] font-light leading-tight tracking-tight text-black">
