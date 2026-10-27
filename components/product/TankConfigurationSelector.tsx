@@ -27,7 +27,12 @@ export function TankConfigurationSelector({
   const [index, setIndex] = useState(initialIndex);
   const [configuration, setConfiguration] = useState<Configuration>(initialConfiguration);
   const size = sizes[index];
-  const available = configuration === 'tank' || packageSizes.has(size);
+  const bundAvailable = packageSizes.has(size);
+  const available = configuration === 'tank' || bundAvailable;
+  const changeCapacity = (nextIndex: number) => {
+    setIndex(nextIndex);
+    if (!packageSizes.has(sizes[nextIndex])) setConfiguration('tank');
+  };
   const matchesPage = size === initialSize && configuration === initialConfiguration;
   const destination = available ? urlFor(size, configuration) : null;
 
@@ -49,20 +54,13 @@ export function TankConfigurationSelector({
         max={sizes.length - 1}
         step={1}
         value={index}
-        onChange={(event) => setIndex(Number(event.target.value))}
+        onChange={(event) => changeCapacity(Number(event.target.value))}
         aria-valuetext={`${size} litres`}
         className="mt-4 h-2 w-full cursor-pointer accent-black"
       />
-      <div className="mt-3 flex justify-between gap-1">
+      <div className="mt-3 flex justify-between gap-1" aria-hidden="true">
         {sizes.map((capacity, i) => (
-          <button
-            key={capacity}
-            type="button"
-            aria-label={`Select ${capacity} litre tank`}
-            aria-pressed={index === i}
-            onClick={() => setIndex(i)}
-            className={`min-h-9 rounded-md px-1 text-xs transition-colors sm:px-2 ${index === i ? 'font-semibold text-black' : 'text-black/50 hover:text-black'}`}
-          >{capacity}L</button>
+          <span key={capacity} className={`px-1 text-xs ${index === i ? 'font-semibold text-black' : 'text-black/45'}`}>{capacity}L</span>
         ))}
       </div>
 
@@ -70,19 +68,22 @@ export function TankConfigurationSelector({
         <div className="flex items-center justify-between gap-4">
           <div>
             <p className="text-sm font-semibold text-black">Add chemical bund</p>
-            <p className="mt-1 text-xs leading-5 text-black/55">Matching secondary containment for your tank.</p>
+            <p className="mt-1 text-xs leading-5 text-black/55">{bundAvailable ? 'Matching secondary containment for your tank.' : 'Not available for the 500L tank.'}</p>
           </div>
           <button
             type="button"
             role="switch"
             aria-label="Add chemical bund"
             aria-checked={configuration === 'package'}
-            onClick={() => setConfiguration((current) => current === 'tank' ? 'package' : 'tank')}
-            className={`relative h-9 w-[62px] shrink-0 rounded-full p-[3px] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black ${configuration === 'package' ? 'bg-black' : 'bg-[#d1d1d6]'}`}
+            disabled={!bundAvailable}
+            aria-describedby={!bundAvailable ? 'bund-unavailable-message' : undefined}
+            onClick={() => { if (bundAvailable) setConfiguration((current) => current === 'tank' ? 'package' : 'tank'); }}
+            className={`relative h-9 w-[62px] shrink-0 rounded-full p-[3px] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black disabled:cursor-not-allowed disabled:opacity-60 ${configuration === 'package' ? 'bg-black' : 'bg-[#d1d1d6]'}`}
           >
             <span className={`block h-[30px] w-[30px] rounded-full bg-white shadow-sm transition-transform duration-200 ${configuration === 'package' ? 'translate-x-[26px]' : 'translate-x-0'}`} />
           </button>
         </div>
+        {!bundAvailable && <p id="bund-unavailable-message" role="status" className="mt-3 rounded-lg border border-black/10 bg-white px-4 py-3 text-xs leading-5 text-black/65">The 500L tank doesn't currently have a matching tank + bund package available online. Choose another size to enable this option.</p>}
       </div>
 
       <div className="mt-6 border-t border-black/10 pt-5">
