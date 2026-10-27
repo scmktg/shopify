@@ -10,6 +10,7 @@ import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
 import { HdpeBubblerDetails } from './HdpeBubblerDetails';
 import { ChemicalTank100Details } from './ChemicalTank100Details';
+import { TankConfigurationSelector } from './TankConfigurationSelector';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -122,6 +123,7 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
+      {is100LChemicalTank && <TankConfigurationSelector initialSize={100} initialConfiguration="tank" />}
       {is100LChemicalTank && (
         <section className="mx-auto mb-12 max-w-5xl border-b border-black/10 pb-12 text-center md:mb-16 md:pb-16" aria-labelledby="tank-100-hero-heading">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">100 litre chemical dosing tank</p>
