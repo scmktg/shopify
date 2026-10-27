@@ -4,13 +4,24 @@ import { ArrowRight, ArrowUpRight, Check, MapPin, ShieldCheck, Truck } from 'luc
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { HomeReviewsSection } from '@/components/reviews/HomeReviewsSection';
+import { JsonLdScript } from '@/lib/seo/JsonLdScript';
+import { faqPageSchema } from '@/lib/seo/jsonld';
 import type { Product } from '@/types/product';
 
 export const metadata: Metadata = {
   title: 'Homepage Design Preview | Enviro Aqua',
+  description: 'Explore water filters, water filtration systems, commercial water bubblers, filtered-water taps and replacement cartridges from Enviro Aqua Australia.',
   robots: { index: false, follow: false },
 };
 export const revalidate = 60;
+
+// Preview only: preserve the production homepage's canonical, title and metadata at launch.
+// Never reuse the preview-specific robots or title metadata on the live route.
+const FAQ_ITEMS = [
+  { q: 'Which type of water filter should I choose?', a: 'An under-sink filter treats drinking and cooking water at one tap. A whole-house water filtration system treats water before it flows through the property. Choose based on the water source, your goals and installation requirements.' },
+  { q: 'Do you supply commercial water filtration systems?', a: 'Yes. Enviro Aqua supplies commercial water bubblers and other water filtration equipment for workplaces, schools and shared facilities. Check each product for specifications, installation and compliance information.' },
+  { q: 'Can I buy replacement water filter cartridges?', a: 'Yes. Browse replacement cartridges and check the cartridge size and compatibility against your existing filter system before ordering.' },
+] as const;
 
 const PRODUCTS = {
   wholeHouse: 'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
@@ -63,6 +74,7 @@ export default async function HomePagePreview() {
   ]);
   return (
     <main className="overflow-hidden bg-white text-[#292929]">
+      <JsonLdScript data={faqPageSchema([...FAQ_ITEMS])} />
       <div className="border-b border-black/10 bg-[#f5f5f4] px-4 py-2 text-center text-[11px] font-medium tracking-wide text-[#292929]/65">
         DESIGN PREVIEW · The live homepage is unchanged
       </div>
@@ -71,11 +83,12 @@ export default async function HomePagePreview() {
         <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:px-12 lg:py-20">
           <div className="max-w-2xl">
             <Eyebrow>Enviro Aqua Australia</Eyebrow>
-            <h1 id="preview-hero-heading" className="mt-6 text-[clamp(3rem,6vw,6.5rem)] font-light leading-[1.03] tracking-[-0.055em]">
-              Better water.<br/><span className="font-semibold">Beautifully simple.</span>
+            <h1 id="preview-hero-heading" className="mt-6 text-[clamp(2.65rem,5.1vw,5.7rem)] font-light leading-[1.06] tracking-[-0.05em]">
+              Water Filters &amp;<br/><span className="font-semibold">Water Filtration Systems Australia.</span>
             </h1>
+            <p className="mt-5 text-lg font-light tracking-tight text-[#292929]/75 sm:text-2xl">Better water. <strong className="font-semibold">Beautifully simple.</strong></p>
             <p className="mt-7 max-w-lg text-base leading-8 text-[#292929]/65 sm:text-lg">
-              Thoughtfully selected water filtration solutions for Australian homes, workplaces and commercial spaces.
+              Explore whole-house water filters, under-sink systems and commercial water filtration solutions for Australian homes, workplaces and shared spaces.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-5">
               <ArrowLink href="/water-filters/">Explore water filtration</ArrowLink>
@@ -115,6 +128,15 @@ export default async function HomePagePreview() {
           <ProductTile product={tap} fallback="/plumbing/ro-filter-taps/" label="Filtered-water kitchen taps" description="Beautiful everyday design, with a dedicated filtered-water supply." />
           <ProductTile product={underSink} fallback="/water-filters/under-sink/" label="Under-sink filtration" description="Convenient drinking-water filtration, right where you need it." />
         </div>
+        <div className="mt-12 grid gap-4 border-t border-black/10 pt-8 sm:grid-cols-2 lg:grid-cols-5">
+          {[
+            { href: "/water-filters/", label: "Water filter systems" },
+            { href: "/cartridges/", label: "Filter cartridges" },
+            { href: "/bubblers-and-coolers/", label: "Bubblers & coolers" },
+            { href: "/pumps-and-tanks/", label: "Pumps & tanks" },
+            { href: "/plumbing/", label: "Plumbing & taps" },
+          ].map(({ href, label }) => <Link key={href} href={href} className="flex min-h-12 items-center justify-between gap-2 border-b border-black/10 py-3 text-sm font-semibold transition-colors hover:text-[#2200CC]">{label}<ArrowUpRight size={16} aria-hidden="true"/></Link>)}
+        </div>
       </section>
 
       <section aria-labelledby="feature-heading" className="bg-[#f3f3f2]">
@@ -142,6 +164,12 @@ export default async function HomePagePreview() {
       </section>
 
       <HomeReviewsSection />
+      <section aria-labelledby="preview-faq-heading" className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-24">
+        <Eyebrow>Water filtration advice</Eyebrow>
+        <h2 id="preview-faq-heading" className="mt-3 text-3xl font-light tracking-tight sm:text-4xl">Frequently asked <strong className="font-semibold">questions.</strong></h2>
+        <div className="mt-8 divide-y divide-black/10 border-y border-black/10">{FAQ_ITEMS.map(({q,a}) => <details key={q} className="group py-5"><summary className="cursor-pointer pr-5 text-base font-semibold marker:text-[#292929]/40">{q}</summary><p className="max-w-3xl pt-3 text-sm leading-7 text-[#292929]/65">{a}</p></details>)}</div>
+        <p className="mt-6 text-sm text-[#292929]/65">For personalised advice, <Link href="/contact/" className="font-semibold underline underline-offset-4 hover:text-[#2200CC]">contact our team</Link>.</p>
+      </section>
       <section className="border-t border-black/10 px-5 py-20 text-center sm:py-24">
         <Eyebrow>We're here to help</Eyebrow><h2 className="mt-4 text-3xl font-light tracking-tight sm:text-5xl">Not sure where to start?</h2>
         <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-[#292929]/65">Explore filtration by application, or speak with our team about your water needs.</p>
