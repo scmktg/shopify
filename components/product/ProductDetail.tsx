@@ -123,7 +123,6 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      {is100LChemicalTank && <TankConfigurationSelector initialSize={100} initialConfiguration="tank" />}
       {is100LChemicalTank && (
         <section className="mx-auto mb-12 max-w-5xl border-b border-black/10 pb-12 text-center md:mb-16 md:pb-16" aria-labelledby="tank-100-hero-heading">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">100 litre chemical dosing tank</p>
@@ -148,6 +147,7 @@ export function ProductDetail({
           </div>
         </section>
       )}
+      {is100LChemicalTank && <TankConfigurationSelector initialSize={100} initialConfiguration="tank" />}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div>
           <VariantProductGallery
