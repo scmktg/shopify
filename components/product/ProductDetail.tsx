@@ -9,6 +9,7 @@ import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
 import { HdpeBubblerDetails } from './HdpeBubblerDetails';
+import { ChemicalTank100Details } from './ChemicalTank100Details';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -96,6 +97,7 @@ export function ProductDetail({
   const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
+  const is100LChemicalTank = product.handle === 'chemical-dosing-tank-bunded-100l';
 
   return (
     <VariantSelectionProvider
@@ -138,7 +140,7 @@ export function ProductDetail({
           )}
         </div>
 
-        <div className="md:sticky md:top-24">
+        <div id={is100LChemicalTank ? "tank-100-purchase" : undefined} className="md:sticky md:top-24">
           <h1 className="text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight">
             {product.title}
           </h1>
@@ -299,7 +301,7 @@ export function ProductDetail({
         </div>
       </div>
 
-      {!isEditorialBubbler && <HeadlineSpecs specs={content.headlineSpecs} />}
+      {!isEditorialBubbler && !is100LChemicalTank && <HeadlineSpecs specs={content.headlineSpecs} />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
         <ThreeWayTapSalesSections />
       )}
@@ -307,6 +309,8 @@ export function ProductDetail({
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
         <HdpeBubblerDetails content={content} />
+      ) : is100LChemicalTank ? (
+        <ChemicalTank100Details content={content} />
       ) : (
         <>
           <FullSpecs specs={content.fullSpecs} />
@@ -319,7 +323,7 @@ export function ProductDetail({
           <ComplianceSection compliance={content.compliance} />
         </>
       )}
-      {content.faq && content.faq.length > 0 && (
+      {!is100LChemicalTank && content.faq && content.faq.length > 0 && (
         isEditorialBubbler ? (
           <section className="mt-16 border-t border-black/10 pt-12 md:mt-20 md:pt-16" aria-labelledby="square-bubbler-faq-heading">
             <div className="mx-auto max-w-5xl">
