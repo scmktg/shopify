@@ -815,6 +815,21 @@ const nextConfig = {
     rules.push(...withSlashVariants(WORDPRESS_UTILITY_REDIRECTS));
     rules.push(...WORDPRESS_FALLBACK_REDIRECTS);
 
+    // Shopify Google & YouTube sends /products/<handle> links, while
+    // this headless storefront's canonical PDPs use category paths.
+    // Permanent redirects keep Merchant Center landing pages live
+    // without creating duplicate indexable pages. Next.js retains
+    // variant, country, currency, and UTM query parameters.
+    for (const handle of Object.keys(PRODUCTS_DATA)) {
+      const destination = productPathForSlug(handle);
+      if (!destination) continue;
+      rules.push({
+        source: `/products/${handle}`,
+        destination,
+        permanent: true,
+      });
+    }
+
     return rules;
   },
 };
