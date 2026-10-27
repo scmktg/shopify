@@ -732,16 +732,32 @@
     },
     "faq": [
       {
-        "q": "Why choose a rust-free drinking fountain?",
-        "a": "The YL-600P uses an HDPE cabinet rather than a metal exterior, making it a practical option where a rust-free outer cabinet is preferred."
+        "q": "What is the granite-look cabinet made from?",
+        "a": "The cabinet is made from high-density polyethylene (HDPE), a durable, non-metal material with a distinctive granite-inspired finish. It offers a modern, stone-look appearance without the weight of natural granite, making it a practical choice for commercial drinking fountains."
       },
       {
-        "q": "How much chilled water can it produce?",
-        "a": "The verified cooling capacity is 20 litres per hour, with chilled water delivered at approximately 8–12°C."
+        "q": "How is the HDPE model different from a stainless steel drinking fountain?",
+        "a": "The biggest difference is the exterior design and material. The HDPE model features a contemporary granite-look cabinet with a distinctive profile, while our stainless steel models offer a more traditional commercial appearance. Both the square stainless steel and HDPE models provide chilled, filtered water with a separate bottle-filling tap."
       },
       {
-        "q": "Is it WaterMark certified?",
-        "a": "Yes. It is WaterMark certified under licence 23484 to WMTS-105:2016."
+        "q": "Will the granite-look finish rust or corrode?",
+        "a": "The HDPE outer cabinet is made from non-metal material, so it won't rust like metal. This makes it an attractive choice for facilities that prefer a rust-free exterior. Metal components and fittings still require appropriate care."
+      },
+      {
+        "q": "Does this fountain provide chilled drinking water?",
+        "a": "Yes. The integrated cooling system provides approximately 8 to 12°C chilled water under rated conditions, with a cooling capacity of 20 litres per hour. Actual performance varies depending on water temperature, surrounding conditions and usage."
+      },
+      {
+        "q": "Can I refill water bottles as well as drink directly from the bubbler?",
+        "a": "Absolutely. The fountain combines a traditional direct-drinking bubbler with a separate filling tap, allowing users to take a quick drink or conveniently refill bottles, glasses and jugs."
+      },
+      {
+        "q": "Does the water bubbler include filtration?",
+        "a": "Yes. Built-in PP sediment and activated-carbon filtration helps reduce unwanted particles and improve the taste and odour of drinking water. Filters require periodic replacement, with servicing frequency depending on water quality and usage."
+      },
+      {
+        "q": "Does this water bubbler require professional installation?",
+        "a": "Yes. This fountain requires a mains-water supply, appropriate drainage and a suitable electrical connection for the cooling system. An appropriately licensed plumber should complete the plumbing installation and confirm the site's requirements."
       }
     ]
   },

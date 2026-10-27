@@ -64,7 +64,7 @@
       },
       {
         "label": "Chilled water temperature",
-        "value": "Approximately 8–12 °C"
+        "value": "Approximately 8 to 12 °C"
       },
       {
         "label": "Filtration",
@@ -388,7 +388,7 @@
       },
       {
         "label": "Chilled water temperature",
-        "value": "Approximately 8–12 °C"
+        "value": "Approximately 8 to 12 °C"
       },
       {
         "label": "Filtration",
@@ -452,16 +452,32 @@
     },
     "faq": [
       {
-        "q": "What is the WaterMark identity of the HDPE Enviro Aqua bubbler?",
-        "a": "Brand: Enviro Aqua. Model ID: YL-600P. WaterMark model name: Water Bubbler Grey. Certificate: 023484."
+        "q": "What is the granite-look cabinet made from?",
+        "a": "The cabinet is made from high-density polyethylene (HDPE), a durable, non-metal material with a distinctive granite-inspired finish. It offers a modern, stone-look appearance without the weight of natural granite, making it a practical choice for commercial drinking fountains."
       },
       {
-        "q": "How much chilled water can the HDPE bubbler produce?",
-        "a": "The YL-600P is rated at 20 litres per hour with chilled-water output of approximately 8–12 °C."
+        "q": "How is the HDPE model different from a stainless steel drinking fountain?",
+        "a": "The biggest difference is the exterior design and material. The HDPE model features a contemporary granite-look cabinet with a distinctive profile, while our stainless steel models offer a more traditional commercial appearance. Both the square stainless steel and HDPE models provide chilled, filtered water with a separate bottle-filling tap."
       },
       {
-        "q": "Does the HDPE model have a bottle-filling tap?",
-        "a": "Yes. The YL-600P has a direct-drinking bubbler spout plus a separate side tap for filling bottles, glasses or jugs."
+        "q": "Will the granite-look finish rust or corrode?",
+        "a": "The HDPE outer cabinet is made from non-metal material, so it won't rust like metal. This makes it an attractive choice for facilities that prefer a rust-free exterior. Metal components and fittings still require appropriate care."
+      },
+      {
+        "q": "Does this fountain provide chilled drinking water?",
+        "a": "Yes. The integrated cooling system provides approximately 8 to 12°C chilled water under rated conditions, with a cooling capacity of 20 litres per hour. Actual performance varies depending on water temperature, surrounding conditions and usage."
+      },
+      {
+        "q": "Can I refill water bottles as well as drink directly from the bubbler?",
+        "a": "Absolutely. The fountain combines a traditional direct-drinking bubbler with a separate filling tap, allowing users to take a quick drink or conveniently refill bottles, glasses and jugs."
+      },
+      {
+        "q": "Does the water bubbler include filtration?",
+        "a": "Yes. Built-in PP sediment and activated-carbon filtration helps reduce unwanted particles and improve the taste and odour of drinking water. Filters require periodic replacement, with servicing frequency depending on water quality and usage."
+      },
+      {
+        "q": "Does this water bubbler require professional installation?",
+        "a": "Yes. This fountain requires a mains-water supply, appropriate drainage and a suitable electrical connection for the cooling system. An appropriately licensed plumber should complete the plumbing installation and confirm the site's requirements."
       }
     ]
   }
