@@ -3,17 +3,26 @@
 import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 
-const GROUPS = [
-  { title: 'Performance & filtration', labels: ['Cooling capacity', 'Water temperature', 'Filtration', 'Dispensing', 'Refrigerant'] },
-  { title: 'Cabinet & installation', labels: ['Cabinet material', 'Cabinet finish', 'Dimensions', 'Installation type', 'Cooling power'] },
-  { title: 'Product details & compliance', labels: ['Model', 'Product type', 'Certification', 'Lead-free wetted components'] },
+const SPEC_GROUPS = [
+  {
+    heading: 'Performance & filtration',
+    labels: ['Cooling capacity', 'Water temperature', 'Refrigerant', 'Filtration', 'Dispensing'],
+  },
+  {
+    heading: 'Construction & installation',
+    labels: ['Cabinet material', 'Cabinet finish', 'Dimensions', 'Cooling power', 'Installation type'],
+  },
+  {
+    heading: 'Product identification & compliance',
+    labels: ['Model', 'Certification', 'Lead-free wetted components'],
+  },
 ] as const;
 
 export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
   const tabsRef = useRef<HTMLDivElement>(null);
-  const specs = content.fullSpecs ?? [];
-  const groupedLabels = new Set<string>(GROUPS.flatMap((group) => [...group.labels]));
+  const specs = (content.fullSpecs ?? []).filter((item) => !['sku', 'product type', 'watermark model name'].includes(item.label.trim().toLowerCase()));
+  const groupedLabels = new Set<string>(SPEC_GROUPS.flatMap((group) => [...group.labels]));
   const additional = specs.filter((row) => !groupedLabels.has(row.label));
   const showSpecifications = () => {
     setActiveTab('specifications');
@@ -136,18 +145,36 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
           <h2 id="hdpe-bubbler-specs-title" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
           <p className="mt-2 text-sm text-black/60">Key product details organised for easy comparison and purchasing approval.</p>
           <div className="mt-8 grid gap-x-14 gap-y-10 lg:grid-cols-2">
-            {GROUPS.map((group) => {
-              const rows = specs.filter((row) => group.labels.some((label) => label === row.label));
+            {SPEC_GROUPS.map((group) => {
+              const rows = specs.filter((item) => group.labels.some((label) => label === item.label));
               if (!rows.length) return null;
-              return <div key={group.title} className="border-t border-black/10">
-                <h3 className="border-b border-black/10 py-4 text-sm font-semibold text-black">{group.title}</h3>
-                <dl className="py-1">{rows.map((row) => <div key={row.label} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] gap-4 border-b border-black/[0.07] py-3.5 text-sm last:border-0"><dt className="text-black/60">{row.label}</dt><dd className="text-right font-medium text-black">{row.value}</dd></div>)}</dl>
-              </div>;
+              return (
+                <div key={group.heading} className="border-t border-black/10">
+                  <h3 className="border-b border-black/10 py-4 text-sm font-semibold text-black">{group.heading}</h3>
+                  <dl className="py-1">
+                    {rows.map((row) => (
+                      <div key={row.label} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] gap-4 border-b border-black/[0.07] py-3.5 text-sm last:border-0">
+                        <dt className="text-black/60">{row.label}</dt>
+                        <dd className="text-right font-medium text-black">{row.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              );
             })}
-            {additional.length > 0 && <div className="border-t border-black/10">
-              <h3 className="border-b border-black/10 py-4 text-sm font-semibold text-black">Additional details</h3>
-              <dl className="py-1">{additional.map((row) => <div key={row.label} className="grid grid-cols-2 gap-4 border-b border-black/[0.07] py-3.5 text-sm last:border-0"><dt className="text-black/60">{row.label}</dt><dd className="text-right font-medium text-black">{row.value}</dd></div>)}</dl>
-            </div>}
+            {additional.length > 0 && (
+              <div className="border-t border-black/15">
+                <h3 className="border-b border-black/10 py-4 text-sm font-semibold text-black">Additional details</h3>
+                <dl className="py-1">
+                  {additional.map((row) => (
+                    <div key={row.label} className="grid grid-cols-2 gap-4 border-b border-black/[0.07] py-3.5 text-sm last:border-0">
+                      <dt className="text-black/60">{row.label}</dt>
+                      <dd className="text-right font-medium text-black">{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
           </div>
         </section>
       </div>
