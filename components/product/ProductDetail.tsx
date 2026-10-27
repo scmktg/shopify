@@ -122,6 +122,30 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
+      {is100LChemicalTank && (
+        <section className="mx-auto mb-12 max-w-5xl border-b border-black/10 pb-12 text-center md:mb-16 md:pb-16" aria-labelledby="tank-100-hero-heading">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">100 litre chemical dosing tank</p>
+          <h2 id="tank-100-hero-heading" className="mx-auto mt-6 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
+            Reliable Chemical Storage.<br className="hidden sm:block" /> <strong className="font-semibold">Simple, Practical Design.</strong>
+          </h2>
+          <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-black/65">
+            A 100L polyethylene dosing tank built for compatible liquid chemical storage in water-treatment and commercial dosing applications.
+          </p>
+          <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 gap-6 border-t border-black/10 pt-8 sm:grid-cols-4">
+            {[
+              ['100L', 'Tank capacity'],
+              ['PE', 'Tank material'],
+              ['460mm', 'Diameter'],
+              ['820mm', 'Overall height'],
+            ].map(([value, label]) => (
+              <div key={label}>
+                <p className="text-3xl font-semibold tracking-tight text-black">{value}</p>
+                <p className="mt-2 text-xs font-medium uppercase tracking-[0.1em] text-black/50">{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
         <div>
           <VariantProductGallery
