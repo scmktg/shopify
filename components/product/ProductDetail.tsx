@@ -8,6 +8,7 @@ import { isLeadFree } from './WatermarkBadge';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
+import { HdpeBubblerDetails } from './HdpeBubblerDetails';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -93,6 +94,8 @@ export function ProductDetail({
     product.handle === SOLD_OUT_THREE_STAGE_UV_HANDLE;
   const requiresShippingQuote = product.handle === SHIPPING_QUOTE_ONLY_HANDLE;
   const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
+  const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
+  const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
 
   return (
     <VariantSelectionProvider
@@ -296,12 +299,14 @@ export function ProductDetail({
         </div>
       </div>
 
-      {!isSquareBubbler && <HeadlineSpecs specs={content.headlineSpecs} />}
+      {!isEditorialBubbler && <HeadlineSpecs specs={content.headlineSpecs} />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
         <ThreeWayTapSalesSections />
       )}
       {isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
+      ) : isHdpeBubbler ? (
+        <HdpeBubblerDetails content={content} />
       ) : (
         <>
           <FullSpecs specs={content.fullSpecs} />
@@ -315,7 +320,7 @@ export function ProductDetail({
         </>
       )}
       {content.faq && content.faq.length > 0 && (
-        isSquareBubbler ? (
+        isEditorialBubbler ? (
           <section className="mt-16 border-t border-black/10 pt-12 md:mt-20 md:pt-16" aria-labelledby="square-bubbler-faq-heading">
             <div className="mx-auto max-w-5xl">
               <div className="mb-9 text-center md:mb-12">
@@ -355,7 +360,7 @@ export function ProductDetail({
         <VariantBuyBanner
           fallbackPrice={product.priceRange.minVariantPrice}
           ctaLabel={content.ctas?.primary ?? undefined}
-          minimal={isSquareBubbler}
+          minimal={isEditorialBubbler}
         />
       )}
 
