@@ -150,7 +150,7 @@ export function ProductDetail({
             <ThreeWayTapHeroBenefits />
           )}
 
-          {content.family && familyPaths && (
+          {!is100LChemicalTank && content.family && familyPaths && (
             <FamilySelector
               family={content.family}
               currentHandle={product.handle}
