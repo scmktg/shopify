@@ -328,7 +328,7 @@ export function ProductDetail({
                 <h2 id="square-bubbler-faq-heading" className="mt-3 text-2xl font-semibold tracking-tight text-black md:text-3xl">
                   Frequently asked questions
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-black/60">Everything you need to know before choosing your water bubbler.</p>
+                <p className="mt-3 text-sm leading-7 text-black/60">{isHdpeBubbler ? 'Everything you need to know about your granite-look drinking fountain.' : 'Everything you need to know before choosing your water bubbler.'}</p>
               </div>
               <FaqAccordion items={content.faq} variant="minimal" />
             </div>
