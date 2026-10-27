@@ -97,7 +97,7 @@ export function ProductDetail({
   const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
-  const is100LChemicalTank = product.handle === 'chemical-dosing-tank-bunded-100l';
+  const is100LChemicalTank = (product.handle === 'chemical-dosing-tank-100l' || product.handle === 'chemical-dosing-tank-bunded-100l');
 
   return (
     <VariantSelectionProvider
