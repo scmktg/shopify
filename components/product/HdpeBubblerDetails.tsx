@@ -95,15 +95,20 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
         </section>
         <style jsx>{`
           .ea-granite-text {
-            color: #717278;
+            color: #596167;
             background-image:
-              repeating-linear-gradient(133deg, transparent 0px, rgba(255,255,255,.22) 1px, transparent 2px, transparent 7px, rgba(23,25,29,.15) 8px, transparent 9px, transparent 17px),
-              linear-gradient(110deg, #4c4e53 5%, #84878c 27%, #c7c8c9 46%, #696c72 61%, #a5a7aa 80%, #525459 100%);
-            background-size: 140px 100%, 230% 100%;
+              radial-gradient(circle at 18% 22%, rgba(230,234,234,.28) 0 1px, transparent 1.4px),
+              radial-gradient(circle at 74% 36%, rgba(190,199,200,.28) 0 1.2px, transparent 1.5px),
+              radial-gradient(circle at 42% 78%, rgba(222,229,230,.20) 0 1.5px, transparent 1.8px),
+              radial-gradient(circle at 63% 68%, rgba(14,20,22,.30) 0 1.5px, transparent 1.9px),
+              radial-gradient(circle at 30% 55%, rgba(28,35,38,.28) 0 1px, transparent 1.4px),
+              linear-gradient(115deg, #353c40 0%, #596267 19%, #757f83 35%, #414b50 53%, #687377 69%, #3c454a 86%, #30393d 100%);
+            background-size: 120px 120px, 140px 140px, 160px 160px, 150px 150px, 130px 130px, 220% 100%;
+            background-position: 0 0, 20px 30px, 40px 10px, 60px 50px, 10px 70px, 100% 0;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: ea-granite-sweep 9s ease-in-out infinite;
+            animation: ea-granite-sweep 10s ease-in-out infinite;
           }
           .ea-water-shine {
             color: #167bb7;
@@ -112,10 +117,17 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: ea-granite-sweep 7s ease-in-out infinite;
+            animation: ea-water-sweep 7s ease-in-out infinite;
           }
-          @keyframes ea-granite-sweep { 0%, 15% { background-position: 0 0, 100% 0; } 65%, 100% { background-position: 0 0, 0 0; } }
-          @media (prefers-reduced-motion: reduce) { .ea-granite-text, .ea-water-shine { animation: none; background-position: 0 0, 50% 0; } }
+          @keyframes ea-granite-sweep {
+            0%, 18% { background-position: 0 0, 20px 30px, 40px 10px, 60px 50px, 10px 70px, 100% 0; }
+            60%, 100% { background-position: 0 0, 20px 30px, 40px 10px, 60px 50px, 10px 70px, 0 0; }
+          }
+          @keyframes ea-water-sweep {
+            0%, 15% { background-position: 100% 0; }
+            65%, 100% { background-position: 0 0; }
+          }
+          @media (prefers-reduced-motion: reduce) { .ea-granite-text, .ea-water-shine { animation: none; } .ea-granite-text { background-position: 0 0, 20px 30px, 40px 10px, 60px 50px, 10px 70px, 50% 0; } .ea-water-shine { background-position: 50% 0; } }
         `}</style>
       </div>
 
