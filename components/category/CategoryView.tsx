@@ -95,11 +95,26 @@ export function CategoryView({
     () => new Map(defaultProductOrder.map((handle, index) => [handle, index])),
     [defaultProductOrder],
   );
+  // Under-sink products default to increasing filtration stage count.
+  // Products without a clear stage count follow the staged products.
+  const isUnderSink = categorySlug === 'water-filters' && activeSubcategory === 'under-sink';
+  const getStageCount = (product: ProductCardData): number => {
+    const match = product.title.match(/\\b(\\d{1,2})[\\s-]*stages?\\b/i)
+      ?? product.title.match(/\\b(\\d{1,2})[\\s-]*stage\\b/i);
+    return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+  };
+
   const applyDefaultOrder = (
     items: ReadonlyArray<ProductCardData>,
     nextSort: SortValue,
   ): ReadonlyArray<ProductCardData> => {
-    if (nextSort !== 'default' || defaultOrder.size === 0) return items;
+    if (nextSort !== 'default') return items;
+    if (isUnderSink) {
+      return [...items].sort((a, b) =>
+        getStageCount(a) - getStageCount(b) || a.title.localeCompare(b.title),
+      );
+    }
+    if (defaultOrder.size === 0) return items;
     return [...items].sort((a, b) => {
       const aRank = defaultOrder.get(a.handle) ?? Number.MAX_SAFE_INTEGER;
       const bRank = defaultOrder.get(b.handle) ?? Number.MAX_SAFE_INTEGER;
