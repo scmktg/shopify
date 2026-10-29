@@ -266,5 +266,124 @@
       "description": "500L polyethylene chemical dosing tank for higher-volume commercial and industrial water-treatment and chemical dosing applications.",
       "ogImage": null
     }
+  },
+  "under-sink-water-filter-4-stage-alkaline-stainless-steel-tap": {
+    "categories": [
+      "water-filters",
+      "under-sink"
+    ],
+    "tags": [
+      "under-sink",
+      "four-stage",
+      "alkaline",
+      "drinking-water",
+      "dedicated-tap"
+    ],
+    "shortDescription": "Four-stage under-sink drinking water filtration with an alkaline finishing stage and a dedicated stainless steel drinking water tap.",
+    "description": "## Filter your drinking water at the point of use\n\nA practical **four-stage under-sink water filter** for a dedicated drinking water outlet, supplied with a stainless steel tap. The filtration system is designed to fit beneath a kitchen sink, leaving the main mixer tap available for everyday use.\n\n## Four-stage filtration\n\nWater passes through four treatment stages, including an alkaline finishing stage. Individual cartridge media, contaminant reduction claims and service life depend on the exact cartridges supplied; contact our team for confirmation before selecting this system for a specific water-quality issue.\n\n## Dedicated stainless steel tap\n\nThe separate drinking-water tap keeps filtered water distinct from the main hot and cold water mixer. Confirm the available under-sink space, supply connection and installation requirements before purchase.",
+    "features": [
+      "Four-stage point-of-use filtration system",
+      "Includes an alkaline finishing stage",
+      "Dedicated stainless steel drinking water tap",
+      "Under-sink format keeps the system out of sight",
+      "Designed for a separate filtered-water outlet"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Filtration stages",
+        "value": "4"
+      },
+      {
+        "label": "Installation",
+        "value": "Under sink"
+      },
+      {
+        "label": "Finishing stage",
+        "value": "Alkaline"
+      },
+      {
+        "label": "Tap",
+        "value": "Stainless steel drinking water tap"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Product type",
+        "value": "Four-stage under-sink water filter"
+      },
+      {
+        "label": "Use",
+        "value": "Point-of-use drinking water filtration"
+      },
+      {
+        "label": "Filtration stages",
+        "value": "4"
+      },
+      {
+        "label": "Final stage",
+        "value": "Alkaline"
+      },
+      {
+        "label": "Tap included",
+        "value": "Dedicated stainless steel drinking water tap"
+      },
+      {
+        "label": "Installation location",
+        "value": "Under sink"
+      },
+      {
+        "label": "Cartridge replacement interval",
+        "value": "Dependent on supplied cartridge specifications and water quality; confirm with Enviro Aqua"
+      },
+      {
+        "label": "Connections and dimensions",
+        "value": "Confirm with Enviro Aqua before installation"
+      }
+    ],
+    "recommendedFor": [
+      "Kitchen drinking water at a separate filtered-water tap",
+      "Homes seeking an under-sink filtration arrangement",
+      "Customers who want an alkaline finishing stage"
+    ],
+    "compliance": {
+      "watermark": null,
+      "wels": null,
+      "note": "Suitability and any applicable plumbing requirements depend on the supplied components and installation. No specific certification or contaminant-reduction performance is claimed here without supporting product documentation."
+    },
+    "ctas": {
+      "primary": "Add to cart",
+      "secondary": null
+    },
+    "upsells": {
+      "boughtTogether": [],
+      "moreInCategory": "auto"
+    },
+    "faq": [
+      {
+        "question": "What does the alkaline stage do?",
+        "answer": "The alkaline finishing stage is intended to condition water after the earlier filtration stages. Actual mineral contribution and pH change depend on the cartridge and source-water chemistry; these should not be assumed without testing."
+      },
+      {
+        "question": "Does this system come with a tap?",
+        "answer": "Yes, the package includes a dedicated stainless steel drinking water tap."
+      },
+      {
+        "question": "Can I connect this directly to a water bubbler?",
+        "answer": "Potentially, depending on the bubbler plumbing, inlet pressure, flow requirements and available connections. Contact our team to confirm compatibility before ordering."
+      },
+      {
+        "question": "How often do the cartridges need replacing?",
+        "answer": "Replacement timing depends on the cartridges supplied, usage and incoming water quality. Please confirm the cartridge specifications and recommended service schedule with Enviro Aqua."
+      },
+      {
+        "question": "Will this filter remove fluoride or make untreated water safe to drink?",
+        "answer": "No fluoride-removal or microbiological safety claim is made for this product. If you need treatment for a specific contaminant or non-potable water source, contact our team for a suitable system supported by testing."
+      }
+    ],
+    "seo": {
+      "title": "4 Stage Under Sink Water Filter with Alkaline Stage & Stainless Steel Tap",
+      "description": "Four-stage under-sink drinking water filtration system with alkaline finishing stage and dedicated stainless steel tap. Shop Enviro Aqua.",
+      "ogImage": null
+    }
   }
 }
