@@ -197,7 +197,6 @@ const CATEGORY_SYSTEM_OPTIONS: Record<string, ReadonlyArray<CatalogFilterOption>
       label: 'Coolers & chillers',
       query: "tag:'sub-cat:coolers-and-chillers'",
     },
-    { value: 'parts', label: 'Parts', query: "tag:'sub-cat:parts'" },
   ],
   'pumps-and-tanks': [
     { value: 'pumps', label: 'Pumps', query: "tag:'sub-cat:pumps'" },
@@ -318,13 +317,17 @@ export function getCatalogFilterGroups(
     });
   }
 
-  groups.push({
-    id: 'price',
-    param: 'price',
-    label: 'Price',
-    multiple: false,
-    options: PRICE_OPTIONS,
-  });
+  // Fountains & Coolers has a small, focused product range; price filtering
+  // adds unnecessary clutter. Other categories retain their price filters.
+  if (category !== 'bubblers-and-coolers') {
+    groups.push({
+      id: 'price',
+      param: 'price',
+      label: 'Price',
+      multiple: false,
+      options: PRICE_OPTIONS,
+    });
+  }
 
   return groups;
 }
