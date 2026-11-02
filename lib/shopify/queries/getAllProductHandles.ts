@@ -1,3 +1,4 @@
+import { isRetiredProductHandle } from '@/lib/products/retired-products.cjs';
 import {
   shopifyClient,
   type ShopifyClientResponse,
@@ -60,7 +61,7 @@ export async function getAllProductHandles(): Promise<
     if (!data?.products) break;
 
     for (const edge of data.products.edges) {
-      all.push(edge.node);
+      if (!isRetiredProductHandle(edge.node.handle)) all.push(edge.node);
     }
 
     if (!data.products.pageInfo.hasNextPage) break;
