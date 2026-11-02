@@ -460,7 +460,7 @@ function validateCrossReferences(
           path: `upsells.boughtTogether[${i}]`,
           message: 'A product cannot recommend itself.',
         });
-      } else if (!known.has(canonicalProductHandle(h))) {
+      } else if (!known.has(h) && !known.has(canonicalProductHandle(h))) {
         errors.push({
           handle,
           path: `upsells.boughtTogether[${i}]`,
@@ -479,7 +479,7 @@ function validateCrossReferences(
           path: `upsells.moreInCategory[${i}]`,
           message: 'A product cannot recommend itself.',
         });
-      } else if (!known.has(canonicalProductHandle(h))) {
+      } else if (!known.has(h) && !known.has(canonicalProductHandle(h))) {
         errors.push({
           handle,
           path: `upsells.moreInCategory[${i}]`,
