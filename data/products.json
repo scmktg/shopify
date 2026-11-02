@@ -1032,13 +1032,13 @@
     "compliance": {
       "watermark": {
         "status": "certified",
-        "licenceNumber": null,
+        "licenceNumber": "23484",
         "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certified for plumbed-in installation in Australia. Licence number to be confirmed against supplier documentation."
+      "note": "WaterMark licence 23484 provided for this chiller; check current certification scope and installation requirements against official documentation."
     },
     "ctas": {
       "primary": "Add to cart",
