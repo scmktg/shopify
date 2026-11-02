@@ -13,6 +13,7 @@ interface ProductGalleryProps {
   preferredImage?: ProductImage | null;
   showLeadFreeBadge?: boolean;
   watermarkLicence?: string | null;
+  watermarkLeadFree?: boolean;
   cinematicVideoOverlay?: boolean;
 }
 
@@ -37,6 +38,7 @@ export function ProductGallery({
   preferredImage = null,
   showLeadFreeBadge = false,
   watermarkLicence = null,
+  watermarkLeadFree = true,
   cinematicVideoOverlay = false,
 }: ProductGalleryProps) {
   const galleryImages =
@@ -208,7 +210,7 @@ export function ProductGallery({
         className="object-contain"
       />
 
-      {!videoOpen && showLeadFreeBadge && watermarkLicence && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} />}
+      {!videoOpen && showLeadFreeBadge && watermarkLicence && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} />}
 
       {video && !videoOpen && (
         <button
