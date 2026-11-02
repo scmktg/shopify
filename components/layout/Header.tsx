@@ -6,13 +6,7 @@ import { SearchBar } from '@/components/search/SearchBar';
 import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import { MobileMenu } from './MobileMenu';
 
-// Hide the retired Pressure Tanks shopping collection without invalidating
-// historical product URL routes (including the 12L RO tank).
-const NAV_CATEGORIES = CATEGORIES.map((category) =>
-  category.slug === 'pumps-and-tanks'
-    ? { ...category, subcategories: category.subcategories.filter((sub) => sub.slug !== 'pressure-tanks' && sub.slug !== 'pumps') }
-    : category,
-);
+const NAV_CATEGORIES = CATEGORIES;
 
 export function Header() {
   return (
