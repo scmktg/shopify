@@ -10,7 +10,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
 import { PriceDisplay } from './PriceDisplay';
 import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
-import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
+import { CHILLER_WATERMARK_HANDLE, getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
 import { ColourSwatch } from './ColourSwatch';
 import { cardToAnalyticsItem, trackSelectItem } from '@/lib/analytics/client';
 
@@ -109,7 +109,7 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           )}
           {image && watermarkLicence && (
-            <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
+            <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} leadFree={product.handle !== CHILLER_WATERMARK_HANDLE} />
           )}
         </div>
       </Link>
