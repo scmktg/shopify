@@ -45,8 +45,12 @@ export async function generateMetadata({
   const shouldNoIndex = Boolean(after) || hasCatalogFilters(filters);
 
   return {
-    title: `${node.label} | Wholesale Prices`,
-    description: `Shop ${node.label.toLowerCase()} at wholesale prices. Australia-wide delivery, free delivery on selected products, and free Click & Collect from Wyong NSW. WaterMark certified options available.`,
+    title: category === 'tanks-and-bunds'
+      ? 'Chemical Dosing Tanks, Bunds & Packages | Enviro Aqua'
+      : `${node.label} | Wholesale Prices`,
+    description: category === 'tanks-and-bunds'
+      ? 'Shop polyethylene chemical dosing tanks, chemical bunds and compatible tank-and-bund packages. Compare sizes and configurations for water treatment.'
+      : `Shop ${node.label.toLowerCase()} at wholesale prices. Australia-wide delivery, free delivery on selected products, and free Click & Collect from Wyong NSW. WaterMark certified options available.`,
     alternates: {
       canonical: `/${node.slug}`,
     },
