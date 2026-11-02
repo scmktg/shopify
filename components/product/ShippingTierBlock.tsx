@@ -155,7 +155,7 @@ export function ShippingTierBlock({
           </p>
         </div>
         <p className="mt-3 border-t border-gray-200 pt-3 text-xs leading-relaxed text-black/60">
-          Remote-area freight charges may apply. If so, our team will contact you to confirm any additional cost before dispatch. To check before ordering, call{' '}
+          A shipping charge may be required for some remote areas. If so, our team will contact you to confirm any costs before fulfilment. To check before ordering, call{' '}
           <a href="tel:+61287728162" className="font-medium underline underline-offset-2 hover:text-brand-blue">(02) 8772 8162</a>.
         </p>
       </section>
