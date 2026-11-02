@@ -10,7 +10,7 @@ import { MobileMenu } from './MobileMenu';
 // historical product URL routes (including the 12L RO tank).
 const NAV_CATEGORIES = CATEGORIES.map((category) =>
   category.slug === 'pumps-and-tanks'
-    ? { ...category, subcategories: category.subcategories.filter((sub) => sub.slug !== 'pressure-tanks') }
+    ? { ...category, subcategories: category.subcategories.filter((sub) => sub.slug !== 'pressure-tanks' && sub.slug !== 'pumps') }
     : category,
 );
 
