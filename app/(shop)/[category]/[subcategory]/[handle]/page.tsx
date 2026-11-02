@@ -127,14 +127,9 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
   const familyPaths = content.family ? resolveFamilyPaths(content.family.siblings.map((s) => s.handle)) : null;
   const descriptionPlainText = await markdownToPlainText(content.description, 5000);
 
-  // This RO storage tank is merchandised under Reverse Osmosis in Shopify,
-  // but retains its established pressure-tanks URL to protect existing SEO links.
-  const isRoHoldingTank = handle === '12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free';
-  const breadcrumbCategory = isRoHoldingTank ? 'water-filters' : category;
-  const breadcrumbSubcategory = isRoHoldingTank ? 'reverse-osmosis' : subcategory;
-  const breadcrumbNode = isRoHoldingTank
-    ? findSubcategory('water-filters', 'reverse-osmosis')
-    : node;
+  const breadcrumbCategory = category;
+  const breadcrumbSubcategory = subcategory;
+  const breadcrumbNode = node;
 
   const baseProductSchema = productSchema(product, content, pathname, descriptionPlainText);
   const structuredData = [
