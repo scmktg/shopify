@@ -5,6 +5,7 @@ import { findCategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts, type ProductsPage } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero } from '@/components/category/CategoryHero';
+import { TanksAndBundsGuide } from '@/components/category/TanksAndBundsGuide';
 import { CategoryView } from '@/components/category/CategoryView';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import {
@@ -121,6 +122,7 @@ export default async function CategoryPage({
         categorySlug={node.slug}
         subcategories={node.subcategories}
       />
+      {category === 'tanks-and-bunds' && <TanksAndBundsGuide />}
       {loadFailed && (
         <div
           role="status"
