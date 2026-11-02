@@ -57,11 +57,12 @@ export const CATEGORIES: ReadonlyArray<Category> = [
     ],
   },
   {
-    slug: 'pumps-and-tanks',
-    label: 'Pumps & Tanks',
+    slug: 'tanks-and-bunds',
+    label: 'Tanks & Bunds',
     subcategories: [
-      { slug: 'dosing-tanks', label: 'Dosing Tanks & Bunds' },
-      { slug: 'pressure-tanks', label: 'Pressure Tanks' },
+      { slug: 'chemical-dosing-tanks', label: 'Chemical Dosing Tanks' },
+      { slug: 'chemical-bunds', label: 'Chemical Bunds' },
+      { slug: 'tank-and-bund-packages', label: 'Tank & Bund Packages' },
     ],
   },
   {
