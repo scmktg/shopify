@@ -10,6 +10,7 @@ interface VariantProductGalleryProps {
   title: string;
   showLeadFreeBadge?: boolean;
   watermarkLicence?: string | null;
+  watermarkLeadFree?: boolean;
   cinematicVideoOverlay?: boolean;
 }
 
@@ -19,6 +20,7 @@ export function VariantProductGallery({
   title,
   showLeadFreeBadge = false,
   watermarkLicence = null,
+  watermarkLeadFree = true,
   cinematicVideoOverlay = false,
 }: VariantProductGalleryProps) {
   const { selectedVariant } = useVariantSelection();
@@ -29,6 +31,7 @@ export function VariantProductGallery({
       title={title}
       showLeadFreeBadge={showLeadFreeBadge}
       watermarkLicence={watermarkLicence}
+      watermarkLeadFree={watermarkLeadFree}
       cinematicVideoOverlay={cinematicVideoOverlay}
       preferredImage={selectedVariant.image}
     />
