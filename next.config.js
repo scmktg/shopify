@@ -830,6 +830,16 @@ const nextConfig = {
       rules.unshift({ source: oldPath + '/', destination: roTankDestination, permanent: true });
     }
 
+    // The retained 12V caravan pump kit moved from Pumps to Plumbing Parts.
+    // Register before legacy catchalls to guarantee a one-hop permanent redirect.
+    for (const oldPath of [
+      '/pumps-and-tanks/pumps/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe',
+      '/product/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe',
+    ]) {
+      rules.unshift({ source: oldPath, destination: '/plumbing/parts/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe', permanent: true });
+      rules.unshift({ source: oldPath + '/', destination: '/plumbing/parts/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe', permanent: true });
+    }
+
     // Shopify Google & YouTube sends /products/<handle> links, while
     // this headless storefront's canonical PDPs use category paths.
     // Permanent redirects keep Merchant Center landing pages live
