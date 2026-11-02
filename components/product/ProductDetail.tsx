@@ -85,7 +85,11 @@ export function ProductDetail({
   initialVariantId = null,
   packageUpgrade = null,
 }: ProductDetailProps) {
-  const subcategoryNode = findSubcategory(category, subcategory);
+  // Merchandising breadcrumbs may differ from the stable SEO URL category.
+  const roTank = product.handle === '12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free';
+  const breadcrumbCategory = roTank ? 'water-filters' : category;
+  const breadcrumbSubcategory = roTank ? 'reverse-osmosis' : subcategory;
+  const subcategoryNode = findSubcategory(breadcrumbCategory, breadcrumbSubcategory);
   const subcategoryLabel =
     subcategoryNode?.subcategory.label ?? humaniseSlug(subcategory);
   const boughtTogether = content.upsells?.boughtTogether ?? [];
@@ -111,11 +115,11 @@ export function ProductDetail({
       />
       <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
       <div className="mb-7 md:w-[calc((100%-3rem)/2)]"><nav aria-label="Breadcrumb" className="mx-auto flex w-full max-w-[70vh] flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium sm:text-sm">
-        <Link href={`/${category}`} className="rounded-md text-black/55 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
-          {humaniseSlug(category)}
+        <Link href={`/${breadcrumbCategory}`} className="rounded-md text-black/55 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+          {subcategoryNode?.category.label ?? humaniseSlug(breadcrumbCategory)}
         </Link>
         <span aria-hidden="true" className="text-black/25">/</span>
-        <Link href={`/${category}/${subcategory}`} className="rounded-md font-semibold text-black/80 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+        <Link href={`/${breadcrumbCategory}/${breadcrumbSubcategory}`} className="rounded-md font-semibold text-black/80 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
           {subcategoryLabel}
         </Link>
       </nav></div>
