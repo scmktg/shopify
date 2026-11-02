@@ -1,6 +1,8 @@
 import type { ProductContent } from './schema';
 
 /** Explicit initial rollout; expand only when certification evidence is verified. */
+export const CHILLER_WATERMARK_HANDLE = 'stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap';
+
 const ELIGIBLE_BUBBLER_HANDLES = new Set([
   'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
   'commercial-rust-free-filtered-cold-water-bubbler-wm',
@@ -14,7 +16,7 @@ export function shouldShowWaterMarkLeadFreeBadge(
 ): boolean {
   const watermark = content.compliance?.watermark;
   return (
-    ELIGIBLE_BUBBLER_HANDLES.has(handle) &&
+    (ELIGIBLE_BUBBLER_HANDLES.has(handle) || handle === CHILLER_WATERMARK_HANDLE) &&
     watermark?.status === 'certified' &&
     Boolean(watermark.licenceNumber)
   );
@@ -22,5 +24,5 @@ export function shouldShowWaterMarkLeadFreeBadge(
 
 /** Limited initial catalogue rollout for cards, which do not receive ProductContent. */
 export function getInitialBubblerWaterMarkLicence(handle: string): string | null {
-  return ELIGIBLE_BUBBLER_HANDLES.has(handle) ? '23484' : null;
+  return ELIGIBLE_BUBBLER_HANDLES.has(handle) || handle === CHILLER_WATERMARK_HANDLE ? '23484' : null;
 }
