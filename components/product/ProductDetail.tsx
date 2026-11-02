@@ -85,11 +85,9 @@ export function ProductDetail({
   initialVariantId = null,
   packageUpgrade = null,
 }: ProductDetailProps) {
-  // Merchandising breadcrumbs may differ from the stable SEO URL category.
-  const roTank = product.handle === '12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free';
-  const breadcrumbCategory = roTank ? 'water-filters' : category;
-  const breadcrumbSubcategory = roTank ? 'reverse-osmosis' : subcategory;
-  const subcategoryNode = findSubcategory(breadcrumbCategory, breadcrumbSubcategory);
+  const breadcrumbCategory = category;
+  const breadcrumbSubcategory = subcategory;
+  const subcategoryNode = findSubcategory(category, subcategory);
   const subcategoryLabel =
     subcategoryNode?.subcategory.label ?? humaniseSlug(subcategory);
   const boughtTogether = content.upsells?.boughtTogether ?? [];
