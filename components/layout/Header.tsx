@@ -6,6 +6,14 @@ import { SearchBar } from '@/components/search/SearchBar';
 import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import { MobileMenu } from './MobileMenu';
 
+// Hide the retired Pressure Tanks shopping collection without invalidating
+// historical product URL routes (including the 12L RO tank).
+const NAV_CATEGORIES = CATEGORIES.map((category) =>
+  category.slug === 'pumps-and-tanks'
+    ? { ...category, subcategories: category.subcategories.filter((sub) => sub.slug !== 'pressure-tanks') }
+    : category,
+);
+
 export function Header() {
   return (
     <header className="bg-white text-black border-b border-gray-200">
@@ -31,7 +39,7 @@ export function Header() {
           className="hidden md:flex items-stretch h-full"
         >
           <ul className="flex items-stretch h-full gap-2">
-            {CATEGORIES.map((category) => (
+            {NAV_CATEGORIES.map((category) => (
               <li
                 key={category.slug}
                 className="relative flex items-stretch group"
@@ -81,7 +89,7 @@ export function Header() {
           />
           <SearchBar triggerClassName="inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
           <CartButton className="relative inline-flex items-center justify-center h-10 w-10 rounded text-black hover:text-brand-blue transition-colors" />
-          <MobileMenu categories={CATEGORIES} />
+          <MobileMenu categories={NAV_CATEGORIES} />
         </div>
       </div>
     </header>
