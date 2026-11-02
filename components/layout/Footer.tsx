@@ -15,7 +15,7 @@ const SHOP_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'Whole House Install Package', href: '/whole-house-installation-package/' },
   { label: 'Cartridges', href: '/cartridges/' },
   { label: 'Bubblers & Coolers', href: '/bubblers-and-coolers/' },
-  { label: 'Pumps & Tanks', href: '/pumps-and-tanks/' },
+  { label: 'Tanks & Bunds', href: '/tanks-and-bunds/' },
   { label: 'Plumbing', href: '/plumbing/' },
   { label: 'WaterMark Products', href: '/watermark-certified/' },
 ];
