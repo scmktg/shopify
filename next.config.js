@@ -515,6 +515,10 @@ const WORDPRESS_FALLBACK_REDIRECTS = [
 function withSlashVariants(tuples) {
   const out = [];
   for (const [source, rawDestination] of tuples) {
+    const legacyProductMatch = source.match(/^\/(?:bathroom\/)?product\/([^/]+)$/);
+    // Retired WordPress product URLs must reach middleware's 410 handling,
+    // not redirect to an unrelated category page.
+    if (legacyProductMatch && isRetiredProductHandle(legacyProductMatch[1])) continue;
     const destination = maybeUpgradeProductDestination(source, rawDestination);
     if (source !== destination) {
       out.push({ source, destination, permanent: true });
