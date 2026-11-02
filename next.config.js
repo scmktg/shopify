@@ -826,8 +826,8 @@ const nextConfig = {
       '/products/' + roTankOld,
       '/product/' + roTankOld,
     ]) {
-      rules.push({ source: oldPath, destination: roTankDestination, permanent: true });
-      rules.push({ source: oldPath + '/', destination: roTankDestination, permanent: true });
+      rules.unshift({ source: oldPath, destination: roTankDestination, permanent: true });
+      rules.unshift({ source: oldPath + '/', destination: roTankDestination, permanent: true });
     }
 
     // Shopify Google & YouTube sends /products/<handle> links, while
