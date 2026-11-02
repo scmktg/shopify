@@ -64,19 +64,19 @@ const GONE_EXACT = new Set([
 const LEGACY_PRODUCT_REDIRECTS = new Map<string, string>([
   [
     '/product/chemical-dosing-tank-with-bunding-available-in-50l-100l-and-200l',
-    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l',
+    '/tanks-and-bunds/tank-and-bund-packages/chemical-dosing-tank-and-bund-100l',
   ],
   [
     '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-50l',
-    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-50l',
+    '/tanks-and-bunds/tank-and-bund-packages/chemical-dosing-tank-and-bund-50l',
   ],
   [
     '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-100l',
-    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-100l',
+    '/tanks-and-bunds/tank-and-bund-packages/chemical-dosing-tank-and-bund-100l',
   ],
   [
     '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-bunded-200l',
-    '/pumps-and-tanks/dosing-tanks/chemical-dosing-tank-and-bund-200l',
+    '/tanks-and-bunds/tank-and-bund-packages/chemical-dosing-tank-and-bund-200l',
   ],
   [
     '/water-filters/whole-house/wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system-dup2',
