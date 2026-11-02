@@ -7,6 +7,7 @@ import {
 import { PRODUCT_CARD_FRAGMENT } from '../fragments';
 import { transformShopifyProductCard } from '../transformers';
 import type { ProductCardData } from '@/types/product';
+import { isRetiredProductHandle } from '@/lib/products/retired-products.cjs';
 import type { ShopifyProductCardRaw } from '@/types/shopify';
 
 const QUERY = /* GraphQL */ `
@@ -51,5 +52,6 @@ export async function searchProducts(
 
   if (!data?.predictiveSearch?.products) return [];
 
-  return data.predictiveSearch.products.map(transformShopifyProductCard);
+  return data.predictiveSearch.products.map(transformShopifyProductCard)
+    .filter((product) => !isRetiredProductHandle(product.handle));
 }
