@@ -158,8 +158,9 @@ function redirectLegacyProduct(request: NextRequest): NextResponse | null {
 function isGone(pathname: string): boolean {
   // Exact retirement matching protects unrelated products and the retained RO 12L tank.
   const parts = pathname.split('/').filter(Boolean);
+  if (parts.length === 2 && parts[0] === 'pumps-and-tanks' && parts[1] === 'pumps') return true;
   if ((parts.length === 3 || parts.length === 2) &&
-      ((parts.length === 3 && parts[0] === 'pumps-and-tanks' && parts[1] === 'pressure-tanks') ||
+      ((parts.length === 3 && parts[0] === 'pumps-and-tanks' && (parts[1] === 'pressure-tanks' || parts[1] === 'pumps')) ||
        (parts.length === 2 && parts[0] === 'products')) &&
       isRetiredProductHandle(parts[parts.length - 1])) return true;
   if (GONE_EXACT.has(pathname)) return true;
