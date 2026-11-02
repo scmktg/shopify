@@ -22,14 +22,11 @@
 // correct destination at build time so the rule list stays in
 // click-rank order (and stays auditable).
 const PRODUCTS_DATA = require('./data/products.json');
+const { productPathForSlug: canonicalProductPath } = require('./lib/products/catalog-data.cjs');
 const { isRetiredProductHandle } = require('./lib/products/retired-products.cjs');
 function productPathForSlug(slug) {
   if (isRetiredProductHandle(slug)) return null;
-  const entry = PRODUCTS_DATA[slug];
-  if (!entry || !Array.isArray(entry.categories)) return null;
-  const [cat, sub] = entry.categories;
-  if (!cat || !sub) return null;
-  return `/${cat}/${sub}/${slug}`;
+  return canonicalProductPath(slug);
 }
 function maybeUpgradeProductDestination(source, destination) {
   const m = source.match(/^\/(?:bathroom\/)?product\/([^/]+)$/);
@@ -821,12 +818,25 @@ const nextConfig = {
     rules.push(...withSlashVariants(WORDPRESS_UTILITY_REDIRECTS));
     rules.push(...WORDPRESS_FALLBACK_REDIRECTS);
 
+    // Preserve historic tank/product URLs as direct permanent redirects.
+    const roTankOld = '12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free';
+    const roTankDestination = '/water-filters/reverse-osmosis/12l-ro-water-storage-tank';
+    for (const oldPath of [
+      '/pumps-and-tanks/pressure-tanks/' + roTankOld,
+      '/products/' + roTankOld,
+      '/product/' + roTankOld,
+    ]) {
+      rules.push({ source: oldPath, destination: roTankDestination, permanent: true });
+      rules.push({ source: oldPath + '/', destination: roTankDestination, permanent: true });
+    }
+
     // Shopify Google & YouTube sends /products/<handle> links, while
     // this headless storefront's canonical PDPs use category paths.
     // Permanent redirects keep Merchant Center landing pages live
     // without creating duplicate indexable pages. Next.js retains
     // variant, country, currency, and UTM query parameters.
     for (const handle of Object.keys(PRODUCTS_DATA)) {
+      if (handle === '12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free') continue;
       if (isRetiredProductHandle(handle)) continue;
       const destination = productPathForSlug(handle);
       if (!destination) continue;
