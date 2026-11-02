@@ -1,4 +1,5 @@
 import { unstable_cache } from 'next/cache';
+import { isRetiredProductHandle } from '@/lib/products/retired-products.cjs';
 import {
   shopifyClient,
   type ShopifyClientResponse,
@@ -36,6 +37,7 @@ export async function fetchProductByHandle(
   handle: string,
 ): Promise<Product | null> {
   const canonicalHandle = canonicalProductHandle(handle);
+  if (isRetiredProductHandle(canonicalHandle)) return null;
   const result: ShopifyClientResponse<ShopifyProductByHandleResponse> =
     await shopifyClient.request<ShopifyProductByHandleResponse>(
       GET_PRODUCT_BY_HANDLE,
