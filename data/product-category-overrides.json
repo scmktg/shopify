@@ -70,5 +70,17 @@
   "chemical-dosing-tank-and-bund-300l": [
     "tanks-and-bunds",
     "tank-and-bund-packages"
+  ],
+  "chemical-dosing-tank-bunded-50l": [
+    "tanks-and-bunds",
+    "chemical-dosing-tanks"
+  ],
+  "chemical-dosing-tank-bunded-100l": [
+    "tanks-and-bunds",
+    "chemical-dosing-tanks"
+  ],
+  "chemical-dosing-tank-bunded-200l": [
+    "tanks-and-bunds",
+    "chemical-dosing-tanks"
   ]
 }
