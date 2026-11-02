@@ -840,6 +840,30 @@ const nextConfig = {
       rules.unshift({ source: oldPath + '/', destination: '/plumbing/parts/12v-self-priming-water-pump-kit-includes-tap-plus-5m-pipe', permanent: true });
     }
 
+    // Dosing range reorganisation: keep historic product backlinks in one hop.
+    const dosingProducts = [
+      'chemical-dosing-tank-50l', 'chemical-dosing-tank-100l', 'chemical-dosing-tank-200l',
+      'chemical-dosing-tank-300l', 'chemical-dosing-tank-500l',
+      '40l-chemical-dosing-tank', '60l-chemical-dosing-tank',
+      'chemical-bund-50l', 'chemical-bund-100l', 'chemical-bund-200l', 'chemical-bund-400l',
+      'chemical-dosing-tank-and-bund-50l', 'chemical-dosing-tank-and-bund-100l',
+      'chemical-dosing-tank-and-bund-200l', 'chemical-dosing-tank-and-bund-300l',
+    ];
+    for (const handle of dosingProducts) {
+      const destination = productPathForSlug(handle);
+      if (!destination) continue;
+      const oldPath = '/pumps-and-tanks/dosing-tanks/' + handle;
+      rules.unshift({ source: oldPath, destination, permanent: true });
+      rules.unshift({ source: oldPath + '/', destination, permanent: true });
+    }
+    for (const [oldPath, destination] of [
+      ['/pumps-and-tanks', '/tanks-and-bunds'],
+      ['/pumps-and-tanks/dosing-tanks', '/tanks-and-bunds'],
+    ]) {
+      rules.unshift({ source: oldPath, destination, permanent: true });
+      rules.unshift({ source: oldPath + '/', destination, permanent: true });
+    }
+
     // Shopify Google & YouTube sends /products/<handle> links, while
     // this headless storefront's canonical PDPs use category paths.
     // Permanent redirects keep Merchant Center landing pages live
