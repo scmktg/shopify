@@ -1,6 +1,7 @@
 'use server';
 
 import { unstable_cache } from 'next/cache';
+import { isRetiredProductHandle } from '@/lib/products/retired-products.cjs';
 import {
   shopifyClient,
   type ShopifyClientResponse,
@@ -128,9 +129,9 @@ async function fetchProducts(options: GetProductsOptions): Promise<ProductsPage>
       if (!data?.products) return EMPTY_PAGE;
 
       return {
-        products: data.products.edges.map((edge) =>
-          transformShopifyProductCard(edge.node),
-        ),
+        products: data.products.edges
+          .map((edge) => transformShopifyProductCard(edge.node))
+          .filter((product) => !isRetiredProductHandle(product.handle)),
         pageInfo: data.products.pageInfo,
       };
     } catch (error) {
