@@ -13,8 +13,14 @@ export const CATEGORY_INTROS: Readonly<Record<string, string>> = {
     'Replacement filter cartridges in every size and stage - sediment, carbon (CTO and GAC), reverse osmosis membranes, plus pre-built cartridge sets that match common 3-stage and 6-stage systems, and a specialty range covering alkaline, fluoride removal, post-carbon T33, ultrafiltration, and pleated washable elements. Sizes follow the Australian standard 10" × 2.5" and 20" × 4.5" housings, with micron ratings printed on every product. If you tell us which system you have, we will tell you which cartridges fit. Same wholesale price whether you replace one or twelve.',
   'bubblers-and-coolers':
     'Drinking bubblers, water coolers, and chillers for commercial sites, schools, sporting clubs, cafes, and homes. Stainless-steel bubblers are built for high-traffic public use with serviceable filtration. Coolers and chillers cover hot, cold, and room-temperature direct-connect dispensers as well as under-counter chillers paired with a feature tap. Replacement parts - bubbler heads, push-button valves, filter cartridges, taps - are stocked for every model we sell, so you are not left chasing parts when something wears out.',
-  'pumps-and-tanks':
-    'Water pumps for caravans, RVs, RO systems, bore, and rainwater. Pressure tanks and replacement bladders for common Australian systems. Chemical dosing tanks from 40L to 500L are available alongside separate chemical bunds for secondary containment. Voltage, flow rate, connection size and tank dimensions are listed clearly so you can match the product to your installation.',
+  'tanks-and-bunds':
+    'Shop polyethylene chemical dosing tanks, matching secondary-containment bunds and combined tank-and-bund packages for suitable water-treatment and industrial applications. Compare capacities, dimensions and compatible configurations before ordering.',
+  'tanks-and-bunds/chemical-dosing-tanks':
+    'Choose a standalone chemical dosing tank from 40L to 500L. Compare tank capacity, dimensions and material suitability for your intended chemical and installation.',
+  'tanks-and-bunds/chemical-bunds':
+    'Shop standalone polyethylene chemical bunds in 50L, 100L, 200L and 400L sizes. Confirm tank fit, required containment volume and chemical compatibility before purchasing.',
+  'tanks-and-bunds/tank-and-bund-packages':
+    'Buy a chemical dosing tank with its matched bund as one convenient package. Compare 50L, 100L, 200L and 300L tank configurations and check package dimensions.',
   plumbing:
     'Plumbing fixtures and installation parts that pair with our water filtration systems - kitchen taps with three-way and dedicated filtered outlets, bathroom taps, dedicated RO filter taps, toilets, complete bundles, fittings, valves, tubing, housings, and service tools. WELS ratings and WaterMark certification are shown wherever they apply. Off-mains and rainwater installations are flagged separately from mains-pressure products so you order the correct fitting first time.',
 
