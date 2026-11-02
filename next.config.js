@@ -22,7 +22,9 @@
 // correct destination at build time so the rule list stays in
 // click-rank order (and stays auditable).
 const PRODUCTS_DATA = require('./data/products.json');
+const { isRetiredProductHandle } = require('./lib/products/retired-products.cjs');
 function productPathForSlug(slug) {
+  if (isRetiredProductHandle(slug)) return null;
   const entry = PRODUCTS_DATA[slug];
   if (!entry || !Array.isArray(entry.categories)) return null;
   const [cat, sub] = entry.categories;
@@ -821,6 +823,7 @@ const nextConfig = {
     // without creating duplicate indexable pages. Next.js retains
     // variant, country, currency, and UTM query parameters.
     for (const handle of Object.keys(PRODUCTS_DATA)) {
+      if (isRetiredProductHandle(handle)) continue;
       const destination = productPathForSlug(handle);
       if (!destination) continue;
       rules.push({
