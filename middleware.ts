@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { isRetiredProductHandle } from './lib/products/retired-products.cjs';
 
 // Phase 2 (2026-05) WordPress migration: legacy URL patterns that should
 // not redirect and should not 404. Author archives, RSS feeds, WP admin
@@ -155,6 +156,12 @@ function redirectLegacyProduct(request: NextRequest): NextResponse | null {
 }
 
 function isGone(pathname: string): boolean {
+  // Exact retirement matching protects unrelated products and the retained RO 12L tank.
+  const parts = pathname.split('/').filter(Boolean);
+  if ((parts.length === 3 || parts.length === 2) &&
+      ((parts.length === 3 && parts[0] === 'pumps-and-tanks' && parts[1] === 'pressure-tanks') ||
+       (parts.length === 2 && parts[0] === 'products')) &&
+      isRetiredProductHandle(parts[parts.length - 1])) return true;
   if (GONE_EXACT.has(pathname)) return true;
   if (/\/feed\/?$/.test(pathname)) return true;
   for (const prefix of GONE_PREFIXES) {
