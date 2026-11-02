@@ -33,13 +33,7 @@ export function validateShopifyCategoryTags(
     const content = contentMap[product.handle];
     if (!content) continue;
 
-    // The 12L RO holding tank is merchandised under Reverse Osmosis while its
-    // established pressure-tanks URL stays canonical for SEO continuity.
-    // Keep this explicit exception until a separately planned URL migration.
-    const [expectedPrimary, expectedSubcategory] =
-      product.handle === '12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free'
-        ? ['water-filters', 'reverse-osmosis']
-        : content.categories;
+    const [expectedPrimary, expectedSubcategory] = content.categories;
     const primaryTags = product.tags
       .filter((tag) => tag.startsWith('primary-cat:'))
       .map((tag) => tag.slice('primary-cat:'.length));
