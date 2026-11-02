@@ -864,6 +864,16 @@ const nextConfig = {
       rules.unshift({ source: oldPath + '/', destination, permanent: true });
     }
 
+    // Move two bubbler accessories into their natural product categories.
+    for (const [handle, destination] of [
+      ['bubbler-filter-cto-plus-pp', '/cartridges/specialty-cartridges/bubbler-filter-cto-plus-pp'],
+      ['drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet', '/plumbing/parts/drinking-fountain-tap-for-bubbler-cooler-chrome-tap-faucet'],
+    ]) {
+      const oldPath = '/bubblers-and-coolers/parts/' + handle;
+      rules.unshift({ source: oldPath, destination, permanent: true });
+      rules.unshift({ source: oldPath + '/', destination, permanent: true });
+    }
+
     // Shopify Google & YouTube sends /products/<handle> links, while
     // this headless storefront's canonical PDPs use category paths.
     // Permanent redirects keep Merchant Center landing pages live
