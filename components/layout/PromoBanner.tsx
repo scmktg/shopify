@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { trackViewPromotion, trackSelectPromotion } from '@/lib/analytics/client';
 import Link from 'next/link';
+import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import {
   PROMO_ROTATING_ITEMS,
   PROMO_ROTATION_MS,
@@ -60,7 +61,7 @@ export function PromoBanner() {
 
   return (
     <div className="bg-[#000000] text-white text-[12px] sm:text-[13px]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-9 sm:h-10 flex items-center justify-center sm:justify-between gap-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between gap-3 sm:gap-4">
         {/*
           Static line — always visible. On mobile the rotating side
           is hidden, so the static line is the only thing on the
@@ -68,7 +69,7 @@ export function PromoBanner() {
           it sits to the left and the rotating side sits to its
           right via the outer `sm:justify-between`.
         */}
-        <p className="min-w-0 truncate text-center sm:text-left">
+        <p className="min-w-0 truncate text-left">
           <span className="font-semibold text-white">
             {PROMO_STATIC.primary}
           </span>{' '}
@@ -119,6 +120,7 @@ export function PromoBanner() {
             })}
           </ul>
         </div>
+        <ZipPaymentBadge location="header" className="shrink-0 rounded bg-white px-1 py-0.5 [&_img]:!h-4 sm:[&_img]:!h-5" />
       </div>
     </div>
   );
