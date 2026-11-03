@@ -18,10 +18,10 @@ export function Header() {
           <ZipPaymentBadge location="header" className="mr-1 hidden sm:inline-flex" />
           <SearchBar triggerClassName="inline-flex h-10 w-10 items-center justify-center rounded text-black transition-colors hover:text-brand-blue" />
           <CartButton className="relative inline-flex h-10 w-10 items-center justify-center rounded text-black transition-colors hover:text-brand-blue" />
-          <div className="md:hidden"><DepartmentNavigation /></div>
+          <div className="lg:hidden"><DepartmentNavigation /></div>
         </div>
       </div>
-      <div className="mx-auto hidden max-w-7xl border-t border-gray-100 px-4 sm:px-6 md:block lg:px-8">
+      <div className="mx-auto hidden max-w-7xl border-t border-gray-100 px-4 sm:px-6 lg:block lg:px-8">
         <DepartmentNavigation />
       </div>
     </header>
