@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { ArrowUpRight, Bath, ChevronDown, ChevronRight, Droplets, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import { DEPARTMENTS, departmentForPath, type DepartmentId } from '@/content/departments';
 import clsx from 'clsx';
 
@@ -13,19 +13,16 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch }: {
   onSwitch: () => void;
 }) {
   const target: DepartmentId = current === 'water' ? 'bathroom' : 'water';
-  const Icon = target === 'bathroom' ? Bath : Droplets;
   return (
     <button
       type="button"
       onClick={onSwitch}
       className={clsx(
-        'group inline-flex items-center justify-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-sky-950 shadow-sm transition-all hover:border-sky-300 hover:bg-sky-100 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
-        mobile && 'w-full min-h-12',
+        'inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-md border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:border-sky-200 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
+        mobile && 'min-h-10',
       )}
     >
-      <Icon size={17} className="shrink-0 text-sky-700" aria-hidden="true" />
-      <span>Looking for {target === 'bathroom' ? 'Bathroom Supplies' : 'Water Filters'}?</span>
-      <ArrowUpRight size={16} className="shrink-0 text-sky-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+      <span>{target === 'bathroom' ? 'Bathroom Supplies' : 'Water Filters'}</span>
     </button>
   );
 }
@@ -55,7 +52,7 @@ export function DepartmentNavigation() {
 
   return (
     <>
-      <nav aria-label="Shopping navigation" className="hidden w-full items-center justify-between gap-4 md:flex">
+      <nav aria-label="Shopping navigation" className="hidden w-full items-center justify-center gap-4 md:flex">
         <div className="flex items-center gap-1">
           {links.map((item) => (
             <div key={item.href} className="group relative">
@@ -91,7 +88,7 @@ export function DepartmentNavigation() {
           <button type="button" onClick={() => setMobileOpen(false)} aria-label="Close shopping menu" className="flex h-10 w-10 items-center justify-center"><X size={24}/></button>
         </div>
         <div className="space-y-5 px-5 py-6">
-          <DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} />
+          <div className="flex justify-end"><DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} /></div>
           <nav aria-label={DEPARTMENTS[current].label}>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Shop {DEPARTMENTS[current].label}</p>
             {links.map(item => (
