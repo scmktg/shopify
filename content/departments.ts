@@ -32,6 +32,7 @@ export const DEPARTMENTS: Record<DepartmentId, {
         { label: 'Sediment Cartridges', href: '/cartridges/sediment/' },
         { label: 'Carbon Cartridges', href: '/cartridges/carbon/' },
         { label: 'RO Membranes', href: '/cartridges/reverse-osmosis-membranes/' },
+        { label: 'Specialty Cartridges', href: '/cartridges/specialty-cartridges/' },
         { label: 'Cartridge Sets', href: '/cartridges/cartridge-sets/' },
       ] },
       { label: 'Fountains & Coolers', href: '/bubblers-and-coolers/', children: [
@@ -56,6 +57,43 @@ export const DEPARTMENTS: Record<DepartmentId, {
       { label: 'Bathroom Packages', href: '/plumbing/bundles/' },
     ],
   },
+};
+
+
+/** Presentation-only groupings. Paths remain canonical existing collection URLs. */
+export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
+  heading: string;
+  description: string;
+  links: ReadonlyArray<{ label: string; href: string }>;
+}>> = {
+  '/water-filters/': [
+    { heading: 'Home Filtration', description: 'Find the right system for your home', links: [
+      { label: 'Under Sink', href: '/water-filters/under-sink/' },
+      { label: 'Whole House', href: '/water-filters/whole-house/' },
+      { label: 'Reverse Osmosis', href: '/water-filters/reverse-osmosis/' },
+      { label: 'Bench Top', href: '/water-filters/bench-top/' },
+    ] },
+    { heading: 'Specialised Filtration', description: 'For advanced treatment needs', links: [
+      { label: 'UV Sterilisation', href: '/water-filters/uv-sterilisation/' },
+      { label: 'Commercial', href: '/water-filters/commercial/' },
+    ] },
+    { heading: 'Parts & Accessories', description: 'Maintain and install your system', links: [
+      { label: 'Parts & Fittings', href: '/plumbing/parts/' },
+    ] },
+  ],
+  '/cartridges/': [
+    { heading: 'Shop by Filter Type', description: 'Replacement media for your system', links: [
+      { label: 'Sediment Cartridges', href: '/cartridges/sediment/' },
+      { label: 'Carbon Cartridges', href: '/cartridges/carbon/' },
+      { label: 'Specialty Cartridges', href: '/cartridges/specialty-cartridges/' },
+    ] },
+    { heading: 'Reverse Osmosis', description: 'Membranes for RO filtration', links: [
+      { label: 'RO Membranes', href: '/cartridges/reverse-osmosis-membranes/' },
+    ] },
+    { heading: 'Replacement Sets', description: 'Replace multiple stages together', links: [
+      { label: 'Cartridge Sets', href: '/cartridges/cartridge-sets/' },
+    ] },
+  ],
 };
 
 /** Canonical legacy plumbing paths still belong to their proper department. */
