@@ -50,8 +50,7 @@ export function DepartmentNavigation() {
 
   return (
     <>
-      <nav aria-label="Shopping navigation" className="hidden md:flex items-center gap-4">
-        <DepartmentSwitcher current={current} />
+      <nav aria-label="Shopping navigation" className="hidden w-full items-center justify-between gap-4 md:flex">
         <div className="flex items-center gap-1">
           {links.map((item) => (
             <div key={item.href} className="group relative">
@@ -70,6 +69,7 @@ export function DepartmentNavigation() {
             </div>
           ))}
         </div>
+        <DepartmentLink current={current} />
       </nav>
 
       <button type="button" onClick={() => setMobileOpen(true)} aria-label="Open shopping menu"
