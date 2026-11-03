@@ -7,17 +7,17 @@ import { ArrowUpRight, Bath, ChevronDown, ChevronRight, Droplets, Menu, X } from
 import { DEPARTMENTS, departmentForPath, type DepartmentId } from '@/content/departments';
 import clsx from 'clsx';
 
-function DepartmentLink({ current, mobile = false, onNavigate }: {
+function DepartmentSwitchButton({ current, mobile = false, onSwitch }: {
   current: DepartmentId;
   mobile?: boolean;
-  onNavigate?: () => void;
+  onSwitch: () => void;
 }) {
   const target: DepartmentId = current === 'water' ? 'bathroom' : 'water';
   const Icon = target === 'bathroom' ? Bath : Droplets;
   return (
-    <Link
-      href={DEPARTMENTS[target].href}
-      onClick={onNavigate}
+    <button
+      type="button"
+      onClick={onSwitch}
       className={clsx(
         'group inline-flex items-center justify-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-sky-950 shadow-sm transition-all hover:border-sky-300 hover:bg-sky-100 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
         mobile && 'w-full min-h-12',
@@ -26,19 +26,24 @@ function DepartmentLink({ current, mobile = false, onNavigate }: {
       <Icon size={17} className="shrink-0 text-sky-700" aria-hidden="true" />
       <span>Looking for {target === 'bathroom' ? 'Bathroom Supplies' : 'Water Filters'}?</span>
       <ArrowUpRight size={16} className="shrink-0 text-sky-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
-    </Link>
+    </button>
   );
 }
 
-/** Navigation mode comes from the URL, so direct visits and SEO landing pages work. */
+/** Direct URL visits choose the appropriate department, and the button swaps menus in place. */
 export function DepartmentNavigation() {
   const pathname = usePathname() ?? '/';
-  const current = departmentForPath(pathname);
+  const [selectedDepartment, setSelectedDepartment] = useState<DepartmentId | null>(null);
+  const current = selectedDepartment ?? departmentForPath(pathname);
   const links = DEPARTMENTS[current].links;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
 
-  useEffect(() => { setMobileOpen(false); setExpanded(null); }, [pathname]);
+  useEffect(() => { setSelectedDepartment(null); setMobileOpen(false); setExpanded(null); }, [pathname]);
+  const switchDepartment = () => {
+    setSelectedDepartment(current === 'water' ? 'bathroom' : 'water');
+    setExpanded(null);
+  };
   useEffect(() => {
     if (!mobileOpen) return;
     const previous = document.body.style.overflow;
@@ -69,7 +74,7 @@ export function DepartmentNavigation() {
             </div>
           ))}
         </div>
-        <DepartmentLink current={current} />
+        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} />
       </nav>
 
       <button type="button" onClick={() => setMobileOpen(true)} aria-label="Open shopping menu"
@@ -86,7 +91,7 @@ export function DepartmentNavigation() {
           <button type="button" onClick={() => setMobileOpen(false)} aria-label="Close shopping menu" className="flex h-10 w-10 items-center justify-center"><X size={24}/></button>
         </div>
         <div className="space-y-5 px-5 py-6">
-          <DepartmentLink current={current} mobile onNavigate={() => setMobileOpen(false)} />
+          <DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} />
           <nav aria-label={DEPARTMENTS[current].label}>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Shop {DEPARTMENTS[current].label}</p>
             {links.map(item => (
