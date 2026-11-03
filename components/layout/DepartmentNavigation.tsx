@@ -3,34 +3,30 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Bath, ChevronDown, ChevronRight, Droplets, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Bath, ChevronDown, ChevronRight, Droplets, Menu, X } from 'lucide-react';
 import { DEPARTMENTS, departmentForPath, type DepartmentId } from '@/content/departments';
 import clsx from 'clsx';
 
-const order: DepartmentId[] = ['water', 'bathroom'];
-
-function DepartmentSwitcher({ current, mobile = false, onNavigate }: {
+function DepartmentLink({ current, mobile = false, onNavigate }: {
   current: DepartmentId;
   mobile?: boolean;
   onNavigate?: () => void;
 }) {
+  const target: DepartmentId = current === 'water' ? 'bathroom' : 'water';
+  const Icon = target === 'bathroom' ? Bath : Droplets;
   return (
-    <div className={clsx('flex gap-1 rounded-lg bg-gray-100 p-1', mobile && 'w-full')} aria-label="Shopping departments">
-      {order.map((id) => {
-        const active = current === id;
-        const Icon = id === 'water' ? Droplets : Bath;
-        return (
-          <Link key={id} href={DEPARTMENTS[id].href} onClick={onNavigate}
-            aria-current={active ? 'page' : undefined}
-            className={clsx('inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
-              mobile && 'flex-1',
-              active ? 'bg-white text-black shadow-sm' : 'text-gray-600 hover:text-black hover:bg-white/60')}>
-            <Icon size={16} aria-hidden="true" />
-            <span>{mobile ? (id === 'water' ? 'Water Filters' : 'Bathrooms') : DEPARTMENTS[id].label}</span>
-          </Link>
-        );
-      })}
-    </div>
+    <Link
+      href={DEPARTMENTS[target].href}
+      onClick={onNavigate}
+      className={clsx(
+        'group inline-flex items-center justify-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-sky-950 shadow-sm transition-all hover:border-sky-300 hover:bg-sky-100 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
+        mobile && 'w-full min-h-12',
+      )}
+    >
+      <Icon size={17} className="shrink-0 text-sky-700" aria-hidden="true" />
+      <span>Looking for {target === 'bathroom' ? 'Bathroom Supplies' : 'Water Filters'}?</span>
+      <ArrowUpRight size={16} className="shrink-0 text-sky-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+    </Link>
   );
 }
 
@@ -90,7 +86,7 @@ export function DepartmentNavigation() {
           <button type="button" onClick={() => setMobileOpen(false)} aria-label="Close shopping menu" className="flex h-10 w-10 items-center justify-center"><X size={24}/></button>
         </div>
         <div className="space-y-5 px-5 py-6">
-          <DepartmentSwitcher current={current} mobile onNavigate={() => setMobileOpen(false)} />
+          <DepartmentLink current={current} mobile onNavigate={() => setMobileOpen(false)} />
           <nav aria-label={DEPARTMENTS[current].label}>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Shop {DEPARTMENTS[current].label}</p>
             {links.map(item => (
