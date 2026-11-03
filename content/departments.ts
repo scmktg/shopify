@@ -43,9 +43,7 @@ export const DEPARTMENTS: Record<DepartmentId, {
         { label: 'Chemical Bunds', href: '/tanks-and-bunds/chemical-bunds/' },
         { label: 'Tank & Bund Packages', href: '/tanks-and-bunds/tank-and-bund-packages/' },
       ] },
-      { label: 'Taps', href: '/plumbing/ro-filter-taps/', children: [
-        { label: 'Filtered Water Taps', href: '/plumbing/ro-filter-taps/' },
-      ] },
+      { label: 'Taps', href: '/plumbing/ro-filter-taps/' },
     ],
   },
   bathroom: {
