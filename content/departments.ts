@@ -60,38 +60,56 @@ export const DEPARTMENTS: Record<DepartmentId, {
 };
 
 
-/** Presentation-only groupings. Paths remain canonical existing collection URLs. */
+/** Presentation-only groupings. All links retain their existing canonical URLs. */
 export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
   heading: string;
-  description: string;
   links: ReadonlyArray<{ label: string; href: string }>;
 }>> = {
   '/water-filters/': [
-    { heading: 'Home Filtration', description: 'Find the right system for your home', links: [
+    { heading: 'Home Filtration', links: [
       { label: 'Under Sink', href: '/water-filters/under-sink/' },
       { label: 'Whole House', href: '/water-filters/whole-house/' },
       { label: 'Reverse Osmosis', href: '/water-filters/reverse-osmosis/' },
       { label: 'Bench Top', href: '/water-filters/bench-top/' },
     ] },
-    { heading: 'Specialised Filtration', description: 'For advanced treatment needs', links: [
+    { heading: 'Specialised Filtration', links: [
       { label: 'UV Sterilisation', href: '/water-filters/uv-sterilisation/' },
       { label: 'Commercial', href: '/water-filters/commercial/' },
     ] },
-    { heading: 'Parts & Accessories', description: 'Maintain and install your system', links: [
+    { heading: 'Parts & Accessories', links: [
       { label: 'Parts & Fittings', href: '/plumbing/parts/' },
     ] },
   ],
   '/cartridges/': [
-    { heading: 'Shop by Filter Type', description: 'Replacement media for your system', links: [
-      { label: 'Sediment Cartridges', href: '/cartridges/sediment/' },
-      { label: 'Carbon Cartridges', href: '/cartridges/carbon/' },
-      { label: 'Specialty Cartridges', href: '/cartridges/specialty-cartridges/' },
+    { heading: 'Filter Cartridges', links: [
+      { label: 'Sediment', href: '/cartridges/sediment/' },
+      { label: 'Carbon', href: '/cartridges/carbon/' },
+      { label: 'Specialty', href: '/cartridges/specialty-cartridges/' },
     ] },
-    { heading: 'Reverse Osmosis', description: 'Membranes for RO filtration', links: [
+    { heading: 'Reverse Osmosis', links: [
       { label: 'RO Membranes', href: '/cartridges/reverse-osmosis-membranes/' },
     ] },
-    { heading: 'Replacement Sets', description: 'Replace multiple stages together', links: [
-      { label: 'Cartridge Sets', href: '/cartridges/cartridge-sets/' },
+    { heading: 'Cartridge Sets', links: [
+      { label: 'Replacement Sets', href: '/cartridges/cartridge-sets/' },
+    ] },
+  ],
+  '/bubblers-and-coolers/': [
+    { heading: 'Drinking Fountains', links: [
+      { label: 'Shop Drinking Fountains', href: '/bubblers-and-coolers/bubblers/' },
+    ] },
+    { heading: 'Coolers & Chillers', links: [
+      { label: 'Shop Coolers & Chillers', href: '/bubblers-and-coolers/coolers-and-chillers/' },
+    ] },
+  ],
+  '/tanks-and-bunds/': [
+    { heading: 'Dosing Tanks', links: [
+      { label: 'Chemical Dosing Tanks', href: '/tanks-and-bunds/chemical-dosing-tanks/' },
+    ] },
+    { heading: 'Bunds', links: [
+      { label: 'Chemical Bunds', href: '/tanks-and-bunds/chemical-bunds/' },
+    ] },
+    { heading: 'Packages', links: [
+      { label: 'Tank & Bund Packages', href: '/tanks-and-bunds/tank-and-bund-packages/' },
     ] },
   ],
 };
