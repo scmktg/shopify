@@ -26,23 +26,25 @@ export const DEPARTMENTS: Record<DepartmentId, {
         { label: 'UV Sterilisation', href: '/water-filters/uv-sterilisation/' },
         { label: 'Bench Top', href: '/water-filters/bench-top/' },
         { label: 'Commercial', href: '/water-filters/commercial/' },
+        { label: 'Parts & Fittings', href: '/plumbing/parts/' },
       ] },
-      { label: 'Cartridges & Parts', href: '/cartridges/', children: [
+      { label: 'Cartridges', href: '/cartridges/', children: [
         { label: 'Sediment Cartridges', href: '/cartridges/sediment/' },
         { label: 'Carbon Cartridges', href: '/cartridges/carbon/' },
         { label: 'RO Membranes', href: '/cartridges/reverse-osmosis-membranes/' },
         { label: 'Cartridge Sets', href: '/cartridges/cartridge-sets/' },
-        { label: 'RO Filter Taps', href: '/plumbing/ro-filter-taps/' },
-        { label: 'Plumbing Parts', href: '/plumbing/parts/' },
       ] },
       { label: 'Fountains & Coolers', href: '/bubblers-and-coolers/', children: [
         { label: 'Drinking Fountains', href: '/bubblers-and-coolers/bubblers/' },
         { label: 'Coolers & Chillers', href: '/bubblers-and-coolers/coolers-and-chillers/' },
       ] },
-      { label: 'Water Treatment', href: '/tanks-and-bunds/', children: [
+      { label: 'Tanks & Bunds', href: '/tanks-and-bunds/', children: [
         { label: 'Chemical Dosing Tanks', href: '/tanks-and-bunds/chemical-dosing-tanks/' },
         { label: 'Chemical Bunds', href: '/tanks-and-bunds/chemical-bunds/' },
         { label: 'Tank & Bund Packages', href: '/tanks-and-bunds/tank-and-bund-packages/' },
+      ] },
+      { label: 'Taps', href: '/plumbing/ro-filter-taps/', children: [
+        { label: 'Filtered Water Taps', href: '/plumbing/ro-filter-taps/' },
       ] },
     ],
   },
