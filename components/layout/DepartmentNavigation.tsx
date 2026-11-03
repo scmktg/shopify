@@ -21,7 +21,7 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch }: {
       onClick={onSwitch}
       aria-label={`Switch shopping menu to ${DEPARTMENTS[target].label}`}
       className={clsx(
-        'inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-600 transition-colors duration-200 hover:border-sky-200 hover:bg-sky-50 hover:text-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
+        'inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-800 transition-colors duration-200 hover:border-sky-300 hover:bg-sky-100 hover:text-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
         mobile && 'min-h-10',
       )}
     >
@@ -70,8 +70,8 @@ export function DepartmentNavigation() {
 
   return (
     <>
-      <nav aria-label="Shopping navigation" className="hidden w-full items-center justify-center gap-3 lg:flex">
-        <div className="relative h-12 w-[620px] max-w-full overflow-hidden hover:overflow-visible focus-within:overflow-visible">
+      <nav aria-label="Shopping navigation" className="hidden w-full min-w-0 items-center justify-center gap-2 xl:flex">
+        <div className="relative h-12 min-w-0 w-[620px] max-w-full overflow-hidden hover:overflow-visible focus-within:overflow-visible">
           {DEPARTMENT_ORDER.map((department) => {
             const isActive = current === department;
             const isWater = department === 'water';
@@ -129,7 +129,7 @@ export function DepartmentNavigation() {
         aria-label="Open shopping menu"
         aria-expanded={mobileOpen}
         aria-controls="department-mobile-menu"
-        className="inline-flex h-10 w-10 items-center justify-center rounded text-black lg:hidden"
+        className="inline-flex h-10 w-10 items-center justify-center rounded text-black xl:hidden"
       >
         <Menu size={24} />
       </button>
@@ -140,7 +140,7 @@ export function DepartmentNavigation() {
         aria-label="Shopping menu"
         inert={!mobileOpen}
         className={clsx(
-          'fixed inset-0 z-[60] overflow-y-auto bg-white text-black transition-transform duration-200 lg:hidden',
+          'fixed inset-0 z-[60] overflow-y-auto bg-white text-black transition-transform duration-200 xl:hidden',
           mobileOpen ? 'translate-x-0' : 'translate-x-full',
         )}
       >
