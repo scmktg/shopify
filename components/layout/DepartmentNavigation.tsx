@@ -73,7 +73,7 @@ export function DepartmentNavigation() {
 
   return (
     <>
-      <nav aria-label="Shopping navigation" className="relative hidden w-full min-w-0 items-center justify-center gap-2 xl:flex" onMouseLeave={() => setDesktopMenu(null)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setDesktopMenu(null); }}>
+      <nav aria-label="Shopping navigation" className={clsx("relative hidden w-full min-w-0 items-center justify-center gap-2 xl:flex", desktopMenu && "z-[60]")} onMouseLeave={() => setDesktopMenu(null)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setDesktopMenu(null); }}>
         <div className="relative h-12 min-w-0 w-[620px] max-w-full overflow-hidden hover:overflow-visible focus-within:overflow-visible">
           {DEPARTMENT_ORDER.map((department) => {
             const isActive = current === department;
@@ -109,58 +109,54 @@ export function DepartmentNavigation() {
           })}
         </div>
         <DepartmentSwitchButton current={current} onSwitch={switchDepartment} />
+        {desktopMenu && (
+          <button
+            type="button"
+            aria-label="Close shopping categories"
+            onClick={() => setDesktopMenu(null)}
+            className="fixed inset-x-0 bottom-0 top-[104px] z-10 cursor-default bg-slate-950/25 backdrop-blur-[2px] transition-opacity duration-200 motion-reduce:transition-none"
+          />
+        )}
         {(() => {
           const item = DEPARTMENTS[current].links.find((candidate) => candidate.href === desktopMenu);
           if (!item?.children?.length) return null;
-          const groups = MEGA_MENU_GROUPS[item.href];
+          const groups = MEGA_MENU_GROUPS[item.href] ?? [
+            { heading: item.label, links: item.children },
+          ];
           return (
             <div
-              className={clsx(
-                'absolute left-1/2 top-full z-[70] -translate-x-1/2 rounded-b-2xl border border-gray-200 bg-white text-black shadow-[0_20px_48px_rgba(0,0,0,0.12)]',
-                groups ? 'w-[min(880px,calc(100vw-3rem))] p-7' : 'w-72 p-4',
-              )}
+              className="absolute left-1/2 top-full z-30 w-[min(880px,calc(100vw-3rem))] -translate-x-1/2 rounded-b-2xl border border-gray-100 bg-white p-7 text-black shadow-[0_24px_60px_rgba(15,23,42,0.16)]"
               onMouseEnter={() => setDesktopMenu(item.href)}
             >
-              {groups ? (
-                <>
-                  <div className="mb-6 flex items-center justify-between border-b border-gray-100 pb-5">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">Explore Enviro Aqua</p>
-                      <h2 className="mt-1 text-2xl font-semibold tracking-tight">{item.label}</h2>
+              <div className="mb-6 flex items-center justify-between border-b border-gray-100 pb-5">
+                <h2 className="text-xl font-semibold tracking-tight">{item.label}</h2>
+                <Link
+                  href={item.href}
+                  onClick={() => setDesktopMenu(null)}
+                  className="rounded-lg bg-sky-50 px-4 py-2.5 text-sm font-semibold text-sky-800 transition-colors hover:bg-sky-100"
+                >
+                  Shop All <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+              <div className="grid grid-cols-3 gap-7">
+                {groups.map((group) => (
+                  <div key={group.heading} className="min-w-0">
+                    <h3 className="mb-3 border-b border-gray-100 pb-3 text-sm font-semibold text-gray-950">{group.heading}</h3>
+                    <div className="space-y-1">
+                      {group.links.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setDesktopMenu(null)}
+                          className="block rounded-lg px-3 py-2.5 text-sm text-gray-700 transition-colors hover:bg-sky-50 hover:text-sky-800 focus-visible:bg-sky-50"
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
                     </div>
-                    <Link href={item.href} onClick={() => setDesktopMenu(null)} className="rounded-lg bg-sky-50 px-4 py-2.5 text-sm font-semibold text-sky-800 transition-colors hover:bg-sky-100">
-                      Shop all {item.label} <span aria-hidden="true">→</span>
-                    </Link>
                   </div>
-                  <div className="grid grid-cols-3 gap-7">
-                    {groups.map((group) => (
-                      <div key={group.heading} className="min-w-0">
-                        <h3 className="text-sm font-semibold text-gray-950">{group.heading}</h3>
-                        <p className="mt-1 min-h-9 text-xs leading-5 text-gray-500">{group.description}</p>
-                        <div className="mt-3 space-y-1">
-                          {group.links.map((link) => (
-                            <Link key={link.href} href={link.href} onClick={() => setDesktopMenu(null)}
-                              className="block rounded-lg px-3 py-2.5 text-sm text-gray-700 transition-colors hover:bg-sky-50 hover:text-sky-800 focus-visible:bg-sky-50">
-                              {link.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <>
-                  <p className="px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">{item.label}</p>
-                  {item.children.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={() => setDesktopMenu(null)}
-                      className="block rounded-lg px-3 py-2.5 text-sm text-gray-700 hover:bg-sky-50 hover:text-sky-800">{link.label}</Link>
-                  ))}
-                  <Link href={item.href} onClick={() => setDesktopMenu(null)} className="mt-2 block border-t border-gray-100 px-3 pt-3 text-sm font-semibold text-sky-800">
-                    Shop all {item.label} →
-                  </Link>
-                </>
-              )}
+                ))}
+              </div>
             </div>
           );
         })()}
