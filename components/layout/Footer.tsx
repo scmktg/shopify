@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
 import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
@@ -6,6 +5,7 @@ import { CATEGORIES } from '@/content/categories';
 import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import { CookiePreferencesButton } from '@/components/analytics/ConsentBanner';
 import { FooterDepartmentSwitch } from './FooterDepartmentSwitch';
+import { DepartmentLogo } from './DepartmentLogo';
 
 interface FooterLink {
   label: string;
@@ -65,20 +65,9 @@ export function Footer() {
     <footer className="bg-[#000000] text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <Link
-            href="/"
-            aria-label="Enviro Aqua - home"
-            className="relative z-10 inline-block shrink-0 cursor-pointer"
-          >
-            <Image
-              src="/logo.webp"
-              alt="Enviro Aqua"
-              width={160}
-              height={40}
-              loading="lazy"
-              className="pointer-events-none select-none h-10 w-auto"
-            />
-          </Link>
+          <div className="inline-flex rounded-md bg-white px-2 py-1">
+            <DepartmentLogo />
+          </div>
           <div className="flex items-center gap-6">
             <FooterDepartmentSwitch />
             <div className="flex items-center gap-3 text-xs text-white/70">
