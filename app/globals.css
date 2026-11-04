@@ -112,3 +112,22 @@ h6 {
     background-position: 50% 0;
   }
 }
+
+
+/* Light, icy-blue shimmer for the dark three-way tap homepage feature. */
+.tap-ice-blue-shine {
+  color: #93d7f4;
+  background: linear-gradient(105deg, #63b6e2 0%, #a6dcf6 24%, #eefaff 46%, #8ecfec 68%, #54aadb 100%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: water-flow-sweep 7s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tap-ice-blue-shine {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
