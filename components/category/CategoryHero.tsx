@@ -12,24 +12,14 @@ interface CategoryHeroProps {
  * Compact shared category heading. Catalogue controls are visually aligned
  * to its right on wide screens; all category copy stays in the HTML below.
  */
-export function CategoryHero({ title, categorySlug }: CategoryHeroProps) {
-  const descriptions: Record<string, string> = {
-    'water-filters': 'Filtration solutions for your home, business and projects.',
-    'cartridges': 'Find the right replacement cartridges for your system.',
-    'bubblers-and-coolers': 'Drinking water solutions for commercial and shared spaces.',
-    'tanks-and-bunds': 'Practical tanks, bunds and water-treatment storage.',
-    'plumbing': 'Fixtures and fittings for every space.',
-  };
+export function CategoryHero({ title }: CategoryHeroProps) {
 
   return (
     <header className="bg-white">
-      <div className="mx-auto flex max-w-7xl flex-col justify-center px-4 pb-4 pt-7 sm:px-6 lg:px-8 xl:h-[112px] xl:py-4 xl:pr-[455px]">
+      <div className="mx-auto flex max-w-7xl flex-col justify-center px-4 pb-4 pt-6 sm:px-6 lg:px-8 xl:h-[88px] xl:py-3 xl:pr-[455px]">
         <h1 className="text-[clamp(1.85rem,3vw,2.25rem)] font-semibold leading-[1.12] tracking-[-0.04em] text-slate-950">
           {title}
         </h1>
-        <p className="mt-2 max-w-2xl text-sm leading-5 text-slate-500">
-          {descriptions[categorySlug] ?? 'Explore our range and find the right product.'}
-        </p>
       </div>
     </header>
   );
