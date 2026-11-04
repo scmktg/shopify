@@ -40,7 +40,7 @@ export function DepartmentLogo({ priority = false, onClick }: DepartmentLogoProp
           <span className="ml-[5px] text-[#0788e8]">AQUA</span>
         </span>
         <span
-          className={`flex h-[19px] items-center justify-center rounded-none px-2 text-[10px] font-extrabold uppercase leading-none tracking-[0.12em] text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] sm:h-[21px] sm:text-[10px] ${isBathroom ? 'bg-[#1f1f1f]' : 'bg-[#0759cd]'}`}
+          className={`flex h-[19px] items-center justify-center rounded-none px-2 text-[10px] font-extrabold uppercase leading-none tracking-[0.12em] shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] sm:h-[21px] sm:text-[10px] ${isBathroom ? 'bg-white text-[#1f1f1f] ring-1 ring-inset ring-slate-200' : 'bg-[#0759cd] text-white'}`}
         >
           {isBathroom ? 'BATHROOM SUPPLIES' : 'WATER FILTERS'}
         </span>
