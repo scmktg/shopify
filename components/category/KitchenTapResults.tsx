@@ -40,9 +40,9 @@ export function KitchenTapResults({ products, selectedType }: Props) {
 
   return (
     <section aria-label="Browse kitchen taps">
-      <div className="relative z-20 border-b border-slate-200 bg-white xl:-mt-[88px] xl:h-[88px] xl:border-b-0 xl:bg-transparent">
+      <div className="relative z-20 border-b border-slate-200 bg-white xl:-mt-[88px] xl:h-[88px] xl:border-b-0 xl:bg-transparent xl:pointer-events-none">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:h-full xl:justify-end xl:py-0">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2 xl:pointer-events-auto">
             <details ref={typeRef} className="group/type relative">
               <summary className={TRIGGER_CLASS} aria-label={`Type: ${selectedLabel ?? 'All Kitchen Taps'}`}>
                 <span>Type<span className="hidden text-slate-400 sm:inline">{selectedLabel ? `: ${selectedLabel}` : ''}</span></span>
