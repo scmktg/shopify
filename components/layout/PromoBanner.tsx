@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { trackViewPromotion, trackSelectPromotion } from '@/lib/analytics/client';
 import Link from 'next/link';
+import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import {
   PROMO_ROTATING_ITEMS,
   PROMO_ROTATION_MS,
@@ -18,8 +19,8 @@ import {
  *     auto-advancing every `PROMO_ROTATION_MS`. Each item is a real
  *     <a> for keyboard nav and crawl visibility.
  *
- * On mobile (`<sm`) only the rotating side renders, centred, so the
- * strip stays a single line.
+ * On mobile (`<sm`) show the Zip badge followed by the wholesale-price
+ * promise, centred as a group. Rotating promotions remain desktop-only.
  *
  * Implementation notes:
  *   - All four rotating items are rendered absolutely-stacked. The
@@ -60,31 +61,32 @@ export function PromoBanner() {
 
   return (
     <div className="bg-[#000000] text-white text-[12px] sm:text-[13px]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-9 sm:h-10 flex items-center justify-center sm:justify-between gap-4">
-        {/*
-          Static line — always visible. On mobile the rotating side
-          is hidden, so the static line is the only thing on the
-          row; we centre it via the outer `justify-center`. On sm+
-          it sits to the left and the rotating side sits to its
-          right via the outer `sm:justify-between`.
-        */}
-        <p className="min-w-0 truncate text-center sm:text-left">
+      <div className="mx-auto flex h-10 max-w-7xl items-center justify-center gap-3 px-4 sm:justify-between sm:px-6 lg:px-8">
+        {/* Mobile: centred Zip + the same wholesale pricing promise as desktop. */}
+        <div className="flex min-w-0 items-center justify-center gap-2.5 sm:hidden">
+          <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4" />
+          <span className="min-w-0 text-center text-[11px] font-semibold leading-tight text-white">
+            {PROMO_STATIC.primary}
+          </span>
+        </div>
+
+        {/* Desktop: wholesale promise left, Zip + rotating offers right. */}
+        <p className="hidden min-w-0 truncate text-left sm:block">
           <span className="font-semibold text-white">
             {PROMO_STATIC.primary}
           </span>{' '}
           <span className="text-white/60">{PROMO_STATIC.secondary}</span>
         </p>
 
+        <div className="hidden h-full min-w-0 items-center gap-4 sm:ml-auto sm:flex sm:w-auto sm:shrink-0">
+          <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4 sm:[&_img]:!h-5" />
+
         {/*
-          Rotating side — hidden on mobile, sm+ only. `flex-1` lets
-          the column take whatever row space is left after the
-          static line; absolutely-stacked items inside fill that
-          column (so it must NOT be flex-initial / w-auto, otherwise
-          there's no box for them to render into). The active link
-          is right-aligned via `justify-end`.
+          Rotating promotion — desktop only; mobile displays the stable
+          wholesale pricing promise instead.
         */}
         <div
-          className="hidden sm:block relative flex-1 h-full"
+          className="relative h-full w-[310px] min-w-0 md:w-[390px]"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
@@ -118,6 +120,7 @@ export function PromoBanner() {
               );
             })}
           </ul>
+        </div>
         </div>
       </div>
     </div>

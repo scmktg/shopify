@@ -472,11 +472,8 @@ const WORDPRESS_UTILITY_REDIRECTS = [
   // /contact would be a chained hop). Without this rule, middleware.ts
   // would 410 the URL — for 5 clicks of likely user intent, a 301 wins.
   ['/author/steve', '/about'],
-  // /bathroom was the legacy section landing — map to the closest new
-  // section. /bathroom/<unknown-path> (other than the /bathroom/product
-  // slug mappings handled above) falls through to middleware 410, since
-  // a category-level catch-all there would soft-404 (Fix 8).
-  ['/bathroom', '/plumbing'],
+  // /bathroom is now the live bathroom range landing page.
+  // Legacy /bathroom/product/* redirects are still handled separately.
 ];
 
 // Pattern catch-alls. These run LAST, after every explicit rule above

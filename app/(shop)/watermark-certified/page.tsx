@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Info } from 'lucide-react';
+import { CategoryHero } from '@/components/category/CategoryHero';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryView } from '@/components/category/CategoryView';
+import { CategorySeoCopy } from '@/components/category/CategoryHero';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema, collectionSchema } from '@/lib/seo/jsonld';
 
@@ -39,14 +41,18 @@ export default async function WatermarkCertifiedPage() {
           breadcrumbSchema(breadcrumbs),
         ]}
       />
-      <section className="border-b border-black/10 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            {TITLE}
-          </h1>
-          <p className="mt-3 max-w-3xl text-sm sm:text-base text-black/70">
-            {INTRO}
-          </p>
+      <CategoryHero title={TITLE} intro={INTRO} categorySlug="watermark-certified" subcategories={[]} />
+      <div>
+        <CategoryView
+          initialProducts={page.products}
+          initialPageInfo={page.pageInfo}
+          query={WATERMARK_QUERY}
+          categorySlug="watermark-certified"
+          pageSize={PAGE_SIZE}
+        />
+      </div>
+      <CategorySeoCopy title={TITLE} intro={INTRO} />
+      <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
           <div
             role="note"
             className="mt-6 flex gap-3 rounded-md border border-black/15 bg-black/[0.03] p-4 text-sm text-black/75"
@@ -69,15 +75,6 @@ export default async function WatermarkCertifiedPage() {
               to understand how to tell them apart.
             </p>
           </div>
-        </div>
-      </section>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        <CategoryView
-          initialProducts={page.products}
-          initialPageInfo={page.pageInfo}
-          query={WATERMARK_QUERY}
-          pageSize={PAGE_SIZE}
-        />
       </div>
     </>
   );

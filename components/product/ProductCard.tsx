@@ -16,6 +16,7 @@ import { cardToAnalyticsItem, trackSelectItem } from '@/lib/analytics/client';
 
 interface ProductCardProps {
   product: ProductCardData;
+  editorial?: boolean;
 }
 
 interface ColourChoice {
@@ -23,7 +24,7 @@ interface ColourChoice {
   variant: ProductCardVariant;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, editorial = false }: ProductCardProps) {
   const baseHref = getProductUrl(product.handle);
   const watermarkLicence = getInitialBubblerWaterMarkLicence(product.handle);
   const { addItem, isMutating, isReady } = useCart();
@@ -90,9 +91,9 @@ export function ProductCard({ product }: ProductCardProps) {
       <Link
         href={href}
         onClick={trackSelection}
-        className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded"
+        className="block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
       >
-        <div className="relative aspect-square overflow-hidden rounded border border-gray-200 bg-white">
+        <div className={editorial ? "relative aspect-square overflow-hidden rounded-2xl bg-white ring-1 ring-gray-100/70" : "relative aspect-square overflow-hidden rounded border border-gray-200 bg-white"}>
           {image ? (
             <Image
               key={image.url}
@@ -100,7 +101,7 @@ export function ProductCard({ product }: ProductCardProps) {
               alt={imageAlt}
               fill
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-              className="object-contain p-2 transition-opacity group-hover:opacity-90"
+              className={editorial ? "object-contain p-5 sm:p-7 transition-transform duration-500 group-hover:scale-[1.035]" : "object-contain p-2 transition-opacity group-hover:opacity-90"}
             />
           ) : (
             <div
@@ -114,20 +115,20 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
 
-      <div className="mt-3 flex flex-1 flex-col">
+      <div className={editorial ? "mt-4 flex flex-1 flex-col px-0.5" : "mt-3 flex flex-1 flex-col"}>
         <Link
           href={href}
           onClick={trackSelection}
           className="block rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
         >
-          <h3 className="text-sm font-medium text-black line-clamp-2 group-hover:underline underline-offset-4">
+          <h3 className={editorial ? "line-clamp-2 text-sm font-semibold leading-snug text-gray-950 sm:text-base group-hover:text-brand-blue" : "text-sm font-medium text-black line-clamp-2 group-hover:underline underline-offset-4"}>
             {product.title}
           </h3>
         </Link>
 
         <PriceDisplay
           money={product.price}
-          className="mt-1 block text-sm font-semibold text-black"
+          className={editorial ? "mt-2 block text-sm font-medium text-gray-600" : "mt-1 block text-sm font-semibold text-black"}
         />
 
         {colourChoices.length > 1 && (
@@ -168,13 +169,13 @@ export function ProductCard({ product }: ProductCardProps) {
           {purchaseVariant?.availableForSale ? (
             <button type="button" onClick={() => void purchase()}
               disabled={!isReady || isMutating || pendingAction !== null}
-              className="inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-lg bg-brand-blue px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+              className={editorial ? "inline-flex min-h-11 w-full min-w-0 items-center justify-center gap-2 rounded-xl bg-gray-950 px-3 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:opacity-60" : "inline-flex min-h-12 w-full min-w-0 items-center justify-center gap-2 rounded-lg bg-brand-blue px-3 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-blue-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"}>
               <ShoppingCart size={17} aria-hidden="true" />
               {pendingAction === 'cart' ? 'Adding…' : 'Add to cart'}
             </button>
           ) : (
             <Link href={href} onClick={trackSelection}
-              className="inline-flex min-h-12 w-full min-w-0 items-center justify-center rounded-lg border border-gray-300 bg-white px-3 py-3 text-sm font-semibold text-black transition-colors hover:border-gray-500 hover:bg-gray-50">
+              className={editorial ? "inline-flex min-h-11 w-full min-w-0 items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium text-gray-900 transition-colors hover:border-gray-400 hover:bg-gray-50" : "inline-flex min-h-12 w-full min-w-0 items-center justify-center rounded-lg border border-gray-300 bg-white px-3 py-3 text-sm font-semibold text-black transition-colors hover:border-gray-500 hover:bg-gray-50"}>
               {purchaseVariant ? 'View availability' : 'Choose options'}
               <ArrowUpRight size={16} className="ml-1.5" aria-hidden="true" />
             </Link>

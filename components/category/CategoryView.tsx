@@ -1,7 +1,9 @@
 'use client';
 
-import { useMemo, useState, useTransition } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
+import Link from 'next/link';
+import { Check, ChevronDown } from 'lucide-react';
+import { CATEGORIES, findCategory } from '@/content/categories';
 import {
   getProducts,
   type ProductSortKey,
@@ -9,22 +11,14 @@ import {
 import type { ProductCardData } from '@/types/product';
 import type { ShopifyPageInfo } from '@/types/shopify';
 import { ProductGrid } from '@/components/product/ProductGrid';
-import { SizeFilter } from './SizeFilter';
-import {
-  getProductCartridgeSize,
-  type CartridgeSize,
-} from '@/lib/utils/cartridgeSize';
-import {
-  ActiveFilterChips,
-  CatalogFilters,
-} from './CatalogFilters';
+import { ActiveFilterChips } from './CatalogFilters';
 import {
   buildCatalogQuery,
   getCatalogFilterGroups,
   type CatalogFilterState,
 } from '@/lib/catalog/filters';
 
-type SortValue =
+export type SortValue =
   | 'default'
   | 'newest'
   | 'best-selling'
@@ -128,7 +122,6 @@ export function CategoryView({
   const [pageInfo, setPageInfo] = useState<ShopifyPageInfo>(initialPageInfo);
   const [filters, setFilters] = useState<CatalogFilterState>(initialFilters);
   const [sort, setSort] = useState<SortValue>('default');
-  const [size, setSize] = useState<CartridgeSize | null>(null);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
@@ -183,7 +176,6 @@ export function CategoryView({
 
   const handleFiltersChange = (next: CatalogFilterState) => {
     setFilters(next);
-    setSize(null);
     syncFilterUrl(next);
     fetchFirstPage(next);
   };
@@ -220,58 +212,19 @@ export function CategoryView({
     });
   };
 
-  const sizeCounts = useMemo(() => {
-    if (!enableSizeFilter) return undefined;
-    const counts: Record<CartridgeSize, number> = {
-      '10x2': 0,
-      '10x2.5': 0,
-      '10x4.5': 0,
-      '20x2.5': 0,
-      '20x4.5': 0,
-    };
-    for (const product of products) {
-      const detected = getProductCartridgeSize(product);
-      if (detected) counts[detected] += 1;
-    }
-    return counts;
-  }, [enableSizeFilter, products]);
-
-  const visibleProducts = useMemo(() => {
-    if (!enableSizeFilter || !size) return products;
-    return products.filter(
-      (product) => getProductCartridgeSize(product) === size,
-    );
-  }, [enableSizeFilter, size, products]);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 mb-4 md:mb-6">
-        {enableSizeFilter ? (
-          <SizeFilter
-            value={size}
-            onChange={setSize}
-            counts={sizeCounts}
-          />
-        ) : (
-          <span />
-        )}
-
-        <div className="flex items-center gap-3 ml-auto">
-          <p className="hidden text-xs text-black/60 tabular-nums whitespace-nowrap lg:block">
-            {visibleProducts.length}
-            {pageInfo.hasNextPage ? '+' : ''}{' '}
-            {visibleProducts.length === 1 && !pageInfo.hasNextPage
-              ? 'product'
-              : 'products'}
-          </p>
-          <SortDropdown
-            value={sort}
-            onChange={handleSortChange}
-            disabled={isPending}
-          />
+    <section aria-label="Browse products">
+      <div className="relative z-20 border-b border-slate-200 bg-white xl:-mt-[88px] xl:h-[88px] xl:border-b-0 xl:bg-transparent xl:pointer-events-none">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:h-full xl:justify-end xl:py-0">
+          <div className="flex flex-wrap items-center gap-2 xl:pointer-events-auto">
+            {categorySlug && <TypeDropdown categorySlug={categorySlug} activeSubcategory={activeSubcategory} />}
+            <SortDropdown value={sort} onChange={handleSortChange} disabled={isPending} />
+          </div>
         </div>
       </div>
 
+      <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 md:pt-10 lg:px-8">
       <ActiveFilterChips
         groups={groups}
         value={filters}
@@ -279,32 +232,10 @@ export function CategoryView({
         disabled={isPending}
       />
 
-      <div className="lg:flex lg:items-start lg:gap-8">
-        <CatalogFilters
-          groups={groups}
-          value={filters}
-          onChange={handleFiltersChange}
-          resultCount={visibleProducts.length}
-          hasMore={pageInfo.hasNextPage}
-          disabled={isPending}
-        />
+      <div className="min-w-0">
 
-        <div className="min-w-0 flex-1">
-          <ProductGrid products={visibleProducts} />
+          <ProductGrid products={products} editorial />
 
-          {visibleProducts.length === 0 && size !== null && (
-            <p className="mt-8 text-center text-sm text-black/70">
-              No products in this size on the current page.{' '}
-              <button
-                type="button"
-                onClick={() => setSize(null)}
-                className="text-brand-blue underline underline-offset-4 hover:text-brand-blue-hover"
-              >
-                Clear size filter
-              </button>
-              .
-            </p>
-          )}
 
           {error && (
             <p role="alert" className="mt-6 text-sm text-red-600">
@@ -324,9 +255,79 @@ export function CategoryView({
               </button>
             </div>
           )}
-        </div>
       </div>
-    </div>
+      </div>
+    </section>
+  );
+}
+
+const menuTriggerClass = 'inline-flex min-h-11 items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-900 transition-colors hover:border-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30';
+
+function useCloseDropdown(ref: React.RefObject<HTMLDetailsElement | null>) {
+  useEffect(() => {
+    const onPointerDown = (event: PointerEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) ref.current.open = false;
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && ref.current?.open) {
+        ref.current.open = false;
+        ref.current.querySelector('summary')?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [ref]);
+}
+
+export function TypeDropdown({ categorySlug, activeSubcategory }: {
+  categorySlug: string;
+  activeSubcategory: string | null;
+}) {
+  const category = findCategory(categorySlug);
+  const menuRef = useRef<HTMLDetailsElement>(null);
+  useCloseDropdown(menuRef);
+  const options = category?.subcategories.map((sub) => ({
+    ...sub,
+    href: `/${categorySlug}/${sub.slug}/`,
+  })) ?? (categorySlug === 'pumps-and-tanks'
+    ? [
+        { slug: 'pumps', label: 'Pumps', href: '/pumps-and-tanks/pumps/' },
+        { slug: 'dosing-tanks', label: 'Dosing Tanks', href: '/pumps-and-tanks/dosing-tanks/' },
+        { slug: 'chemical-dosing-tanks', label: 'Chemical Dosing Tanks', href: '/tanks-and-bunds/chemical-dosing-tanks/' },
+      ]
+    : categorySlug === 'watermark-certified'
+      ? CATEGORIES.map((item) => ({ slug: item.slug, label: item.label, href: `/${item.slug}/` }))
+      : []);
+  if (options.length === 0) return null;
+  const baseHref = categorySlug === 'pumps-and-tanks' ? '/tanks-and-bunds/' : `/${categorySlug}/`;
+  const selected = options.find((sub) => sub.slug === activeSubcategory);
+  return (
+    <details ref={menuRef} className="group/type relative">
+      <summary className={`${menuTriggerClass} min-w-32 cursor-pointer list-none [&::-webkit-details-marker]:hidden`}
+        aria-label={`Type: ${selected?.label ?? 'All products'}`}>
+        <span>Type<span className="hidden text-gray-400 sm:inline">{selected ? `: ${selected.label}` : ''}</span></span>
+        <ChevronDown size={16} className="shrink-0 text-gray-500 transition-transform group-open/type:rotate-180" aria-hidden="true" />
+      </summary>
+      <nav aria-label="Choose product type" className="absolute left-0 top-full z-30 mt-2 w-64 max-w-[calc(100vw-2rem)] rounded-2xl border border-gray-100 bg-white p-2 shadow-[0_16px_48px_rgba(15,23,42,0.14)]">
+        <Link href={baseHref} aria-current={!selected ? 'page' : undefined}
+          className={`flex min-h-10 items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${!selected ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
+          All products
+          {!selected && <Check size={16} aria-hidden="true" />}
+        </Link>
+        {options.map((sub) => (
+          <Link key={sub.slug} href={sub.href}
+            aria-current={sub.slug === activeSubcategory ? 'page' : undefined}
+            className={`flex min-h-10 items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${sub.slug === activeSubcategory ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
+            {sub.label}
+            {sub.slug === activeSubcategory && <Check size={16} aria-hidden="true" />}
+          </Link>
+        ))}
+      </nav>
+    </details>
   );
 }
 
@@ -334,34 +335,31 @@ interface SortDropdownProps {
   value: SortValue;
   onChange: (value: SortValue) => void;
   disabled: boolean;
+  allowedValues?: ReadonlyArray<SortValue>;
 }
 
-function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
+export function SortDropdown({ value, onChange, disabled, allowedValues }: SortDropdownProps) {
+  const menuRef = useRef<HTMLDetailsElement>(null);
+  useCloseDropdown(menuRef);
+  const selected = SORT_OPTIONS.find((option) => option.value === value);
   return (
-    <div className="relative inline-flex items-center">
-      <span
-        id="sort-by-label"
-        className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-semibold uppercase tracking-wider text-black/55 pointer-events-none"
-      >
-        Sort
-      </span>
-      <select
-        value={value}
-        onChange={(event) => onChange(event.target.value as SortValue)}
-        disabled={disabled}
-        aria-labelledby="sort-by-label"
-        className="appearance-none bg-white border border-gray-300 hover:border-black focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 rounded-full pl-12 pr-8 py-1 text-xs font-medium text-black cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
-      >
-        {SORT_OPTIONS.map((option) => (
-          <option key={option.value} value={option.value}>
+    <details ref={menuRef} className="group/sort relative">
+      <summary aria-label={`Sort by: ${selected?.label ?? 'Featured'}`}
+        className={`${menuTriggerClass} min-w-32 cursor-pointer list-none [&::-webkit-details-marker]:hidden`}>
+        <span>Sort <span className="hidden text-gray-400 sm:inline">· {selected?.label}</span></span>
+        <ChevronDown size={16} className="shrink-0 text-gray-500 transition-transform group-open/sort:rotate-180" aria-hidden="true" />
+      </summary>
+      <div className="absolute right-0 top-full z-30 mt-2 w-56 rounded-2xl border border-gray-100 bg-white p-2 shadow-[0_16px_48px_rgba(15,23,42,0.14)]" role="group" aria-label="Sort products">
+        {SORT_OPTIONS.filter((option) => !allowedValues || allowedValues.includes(option.value)).map((option) => (
+          <button key={option.value} type="button" disabled={disabled}
+            onClick={() => { onChange(option.value); if (menuRef.current) menuRef.current.open = false; }}
+            aria-pressed={value === option.value}
+            className={`flex min-h-10 w-full items-center justify-between gap-3 rounded-xl px-3 py-2 text-left text-sm transition-colors disabled:opacity-50 ${value === option.value ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
             {option.label}
-          </option>
+            {value === option.value && <Check size={16} aria-hidden="true" />}
+          </button>
         ))}
-      </select>
-      <ChevronDown
-        className="pointer-events-none absolute right-2.5 h-3.5 w-3.5 text-black/60"
-        aria-hidden="true"
-      />
-    </div>
+      </div>
+    </details>
   );
 }

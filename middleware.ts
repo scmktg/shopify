@@ -39,7 +39,7 @@ const GONE_PREFIXES = [
   // mappings in next.config.js fire before middleware, so this only
   // catches genuinely-removed products. The previous narrower entries
   // for `/bathroom/elements` and `/bathroom/featured_item_category`
-  // are subsumed by the broader `/bathroom` rule.
+  // are subsumed by the broader `/bathroom` rule. The landing page itself is live.
   '/product',
   '/bathroom',
 ];
@@ -167,6 +167,8 @@ function isGone(pathname: string): boolean {
   if (/\/feed\/?$/.test(pathname)) return true;
   for (const prefix of GONE_PREFIXES) {
     const bare = prefix.endsWith('/') ? prefix.slice(0, -1) : prefix;
+    // The new Bathroom storefront lives at /bathroom; only old descendants are gone.
+    if (bare === '/bathroom' && (pathname === '/bathroom' || pathname === '/bathroom/')) continue;
     if (pathname === bare || pathname.startsWith(`${bare}/`)) return true;
   }
   return false;

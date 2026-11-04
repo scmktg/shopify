@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import clsx from 'clsx';
-import type { Subcategory } from '@/content/categories';
+import { findCategory, type Subcategory } from '@/content/categories';
 
 interface CategoryHeroProps {
   title: string;
@@ -8,76 +7,44 @@ interface CategoryHeroProps {
   categorySlug: string;
   subcategories: ReadonlyArray<Subcategory>;
   activeSubSlug?: string | null;
+  parentLabel?: string | null;
 }
 
 /**
- * Compact category header. Tight vertical padding, single-line
- * intro at smaller sizes, and a compact pill row for subcategory
- * navigation. The category page below this header carries its own
- * filter strip (size + sort + count), so the hero deliberately
- * keeps its real-estate use small to leave more room for the grid.
+ * Compact shared category heading. Catalogue controls are visually aligned
+ * to its right on wide screens; all category copy stays in the HTML below.
  */
-export function CategoryHero({
-  title,
-  intro,
-  categorySlug,
-  subcategories,
-  activeSubSlug = null,
-}: CategoryHeroProps) {
-  const pillBase =
-    'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-colors';
-  const pillActive = 'bg-black text-white border border-black';
-  const pillIdle =
-    'bg-white border border-gray-300 text-black hover:border-black';
+export function CategoryHero({ title, categorySlug, activeSubSlug, parentLabel }: CategoryHeroProps) {
+  const categoryLabel = parentLabel ?? (activeSubSlug ? findCategory(categorySlug)?.label : null);
 
   return (
-    <header className="border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-        <h1 className="text-3xl md:text-4xl font-semibold text-black tracking-tight">
+    <header className="bg-white">
+      <div className="mx-auto flex max-w-7xl flex-col justify-center px-4 pb-4 pt-6 sm:px-6 lg:px-8 xl:h-[88px] xl:py-3 xl:pr-[455px]">
+        {categoryLabel && (
+          <Link
+            href={`/${categorySlug}/`}
+            className="mb-1 w-fit text-xs font-medium tracking-wide text-slate-500 transition-colors hover:text-brand-blue hover:underline hover:underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+          >
+            {categoryLabel}
+          </Link>
+        )}
+        <h1 className="text-[clamp(1.85rem,3vw,2.25rem)] font-semibold leading-[1.12] tracking-[-0.04em] text-slate-950">
           {title}
         </h1>
-        {intro && (
-          <p className="mt-2 max-w-3xl text-sm md:text-base text-black/70 leading-snug">
-            {intro}
-          </p>
-        )}
-
-        {subcategories.length > 0 && (
-          <nav aria-label="Subcategories" className="mt-4">
-            <ul role="list" className="flex flex-wrap gap-1.5">
-              <li>
-                <Link
-                  href={`/${categorySlug}/`}
-                  aria-current={activeSubSlug === null ? 'page' : undefined}
-                  className={clsx(
-                    pillBase,
-                    activeSubSlug === null ? pillActive : pillIdle,
-                  )}
-                >
-                  All
-                </Link>
-              </li>
-              {subcategories.map((sub) => {
-                const active = sub.slug === activeSubSlug;
-                return (
-                  <li key={sub.slug}>
-                    <Link
-                      href={`/${categorySlug}/${sub.slug}/`}
-                      aria-current={active ? 'page' : undefined}
-                      className={clsx(
-                        pillBase,
-                        active ? pillActive : pillIdle,
-                      )}
-                    >
-                      {sub.label}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        )}
       </div>
     </header>
+  );
+}
+
+/** Retains descriptive SEO content in the initial HTML, below the catalogue. */
+export function CategorySeoCopy({ title, intro }: { title: string; intro: string | null }) {
+  if (!intro) return null;
+  return (
+    <section aria-label={`About ${title}`} className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 lg:px-8">
+      <div className="max-w-3xl border-t border-gray-200 pt-8">
+        <h2 className="text-lg font-semibold tracking-tight text-gray-900">About {title}</h2>
+        <p className="mt-3 whitespace-pre-line text-sm leading-7 text-gray-600">{intro}</p>
+      </div>
+    </section>
   );
 }

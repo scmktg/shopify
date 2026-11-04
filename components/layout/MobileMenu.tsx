@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   Menu,
@@ -18,6 +17,7 @@ import {
 import clsx from 'clsx';
 import type { Category } from '@/content/categories';
 import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
+import { DepartmentLogo } from './DepartmentLogo';
 
 interface NavItem {
   label: string;
@@ -291,20 +291,7 @@ export function MobileMenu({ categories }: MobileMenuProps) {
         )}
       >
         <div className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-white/10 bg-black px-4">
-          <Link
-            href="/"
-            aria-label="Enviro Aqua - home"
-            onClick={close}
-            className="relative z-10 inline-flex shrink-0 cursor-pointer items-center"
-          >
-            <Image
-              src="/logo.webp"
-              alt="Enviro Aqua"
-              width={160}
-              height={40}
-              className="pointer-events-none h-9 w-auto select-none"
-            />
-          </Link>
+          <DepartmentLogo onClick={close} />
           <button
             type="button"
             aria-label="Close menu"

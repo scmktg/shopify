@@ -1,13 +1,7 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Check, Droplet, ShieldCheck } from 'lucide-react';
-import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
+import { ShieldCheck } from 'lucide-react';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
-import { WatermarkBadge, LeadFreeBadge } from '@/components/product/WatermarkBadge';
-import { PriceDisplay } from '@/components/product/PriceDisplay';
-import { WaterMarkLeadFreeOverlay } from '@/components/product/WaterMarkLeadFreeOverlay';
-import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
@@ -17,7 +11,11 @@ import {
   faqPageSchema,
   productListSchema,
 } from '@/lib/seo/jsonld';
-import type { Product } from '@/types/product';
+import type { Product, ProductCardData } from '@/types/product';
+import { ProductGrid } from '@/components/product/ProductGrid';
+import { CategoryHero } from '@/components/category/CategoryHero';
+import { CommercialBubblerToolbar } from '@/components/category/CommercialBubblerToolbar';
+import type { SortValue } from '@/components/category/CategoryView';
 
 export const revalidate = 3600;
 
@@ -121,10 +119,31 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function CommercialBubblersPage() {
+interface CommercialBubblersPageProps {
+  searchParams?: Promise<{ cabinet?: string; sort?: string }>;
+}
+
+export default async function CommercialBubblersPage({ searchParams }: CommercialBubblersPageProps) {
+  const params = (await searchParams) ?? {};
+  const selectedCabinets = (params.cabinet ?? '')
+    .split(',')
+    .filter((value) => CABINETS.some((cabinet) => cabinet.key === value));
+  const sort: SortValue = params.sort === 'price-asc' || params.sort === 'price-desc'
+    ? params.sort
+    : 'default';
   const products = await Promise.all(
     CABINETS.map((cabinet) => getProductByHandle(cabinet.handle)),
   );
+
+  const models = CABINETS.map((cabinet, index) => ({ cabinet, product: products[index] }));
+  const visibleModels = models
+    .filter(({ cabinet }) => selectedCabinets.length === 0 || selectedCabinets.includes(cabinet.key))
+    .sort((a, b) => {
+      if (sort === 'default') return 0;
+      const aPrice = Number(a.product?.priceRange.minVariantPrice.amount ?? 0);
+      const bPrice = Number(b.product?.priceRange.minVariantPrice.amount ?? 0);
+      return (aPrice - bPrice) * (sort === 'price-desc' ? -1 : 1);
+    });
 
   const breadcrumbs = [
     { name: 'Home', href: '/' },
@@ -151,8 +170,32 @@ export default async function CommercialBubblersPage() {
       />
 
       <article className="bg-white">
-        <Hero breadcrumbs={breadcrumbs} products={products} />
-        <RangeSection products={products} />
+        <CategoryHero
+          title="Drinking Fountains"
+          intro={null}
+          categorySlug="bubblers-and-coolers"
+          subcategories={[]}
+        />
+        <CommercialBubblerToolbar
+          selectedCabinets={selectedCabinets}
+          sort={sort}
+          count={visibleModels.length}
+        />
+        <RangeSection models={visibleModels} />
+        <section aria-label="About commercial drinking fountains" className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-semibold tracking-tight text-gray-950">About our commercial water bubblers</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-gray-600">
+            Cooling performance is consistent across the range. Choose mainly by cabinet,
+            installation environment and whether a separate bottle-fill side tap is needed.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-gray-600">
+            Three Enviro Aqua commercial models for schools, offices, factories,
+            warehouses, gyms and public facilities. Every model is rated at{' '}
+            <strong>20 L/hr</strong>, delivers chilled water at approximately{' '}
+            <strong>8–12 °C</strong> and is WaterMark certified under{' '}
+            <strong>Certificate 023484</strong>.
+          </p>
+        </section>
         <ComparisonSection />
         <WaterMarkIdentitySection />
         <ApplicationSection />
@@ -162,136 +205,41 @@ export default async function CommercialBubblersPage() {
   );
 }
 
-function Hero({
-  breadcrumbs,
-  products,
+/** Use the exact same product cards, purchase controls and tracking as every catalogue. */
+function toProductCard(product: Product): ProductCardData {
+  return {
+    id: product.id,
+    handle: product.handle,
+    title: product.title,
+    productType: product.productType,
+    tags: product.tags,
+    featuredImage: product.featuredImage,
+    price: product.priceRange.minVariantPrice,
+    housingSize: product.metafields.housing_size,
+    variants: product.variants.map((variant) => ({
+      id: variant.id,
+      sku: variant.sku,
+      title: variant.title,
+      price: variant.price,
+      availableForSale: variant.availableForSale,
+      image: variant.image,
+      selectedOptions: variant.selectedOptions,
+    })),
+  };
+}
+
+function RangeSection({
+  models,
 }: {
-  breadcrumbs: ReadonlyArray<{ name: string; href: string }>;
-  products: ReadonlyArray<Product | null>;
+  models: ReadonlyArray<{ cabinet: CabinetSpec; product: Product | null }>;
 }) {
-  const prices = products
-    .filter((product): product is Product => Boolean(product))
-    .map((product) => product.priceRange.minVariantPrice);
-  const minPrice = prices[0] ?? null;
-
+  const cards = models.flatMap(({ product }) => product ? [toProductCard(product)] : []);
   return (
-    <section className="bg-gray-50 border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-        <Breadcrumbs items={breadcrumbs} />
-        <div className="mt-6 max-w-4xl">
-          <span className="inline-flex bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
-            Commercial drinking water
-          </span>
-          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-            Commercial water bubblers & drinking fountains
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-black/75 max-w-3xl">
-            Three Enviro Aqua commercial models for schools, offices, factories,
-            warehouses, gyms and public facilities. Every model is rated at{' '}
-            <strong>20 L/hr</strong>, delivers chilled water at approximately{' '}
-            <strong>8–12 °C</strong> and is WaterMark certified under{' '}
-            <strong>Certificate 023484</strong>.
-          </p>
-          <div className="mt-5 flex flex-wrap items-center gap-4">
-            {minPrice && (
-              <p className="text-base text-black/80">
-                <span className="font-semibold">From </span>
-                <PriceDisplay money={minPrice} className="font-semibold text-black" />
-                <span className="text-black/60"> inc GST</span>
-              </p>
-            )}
-            <WatermarkBadge href="/watermark-certified/" />
-            <LeadFreeBadge />
-          </div>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a href="#range" className="inline-flex bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors">
-              Shop all three models
-            </a>
-            <a href="#compare" className="inline-flex bg-white border border-black hover:bg-gray-100 text-black font-semibold px-6 py-3 rounded transition-colors">
-              Compare specifications
-            </a>
-          </div>
-        </div>
+    <section id="range" aria-label="Shop commercial water bubblers" className="scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 md:pt-10 lg:px-8">
+        <ProductGrid products={cards} editorial />
       </div>
     </section>
-  );
-}
-
-function RangeSection({ products }: { products: ReadonlyArray<Product | null> }) {
-  return (
-    <section id="range" className="border-b border-gray-200 scroll-mt-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-          Choose your commercial water bubbler
-        </h2>
-        <p className="mt-3 max-w-3xl text-black/70">
-          Cooling performance is consistent across the range. Choose mainly by cabinet,
-          installation environment and whether a separate bottle-fill side tap is needed.
-        </p>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
-          {CABINETS.map((cabinet, index) => (
-            <ProductCard key={cabinet.key} cabinet={cabinet} product={products[index]} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Product | null }) {
-  const href = product ? getProductUrl(product.handle) : `/${cabinet.handle}`;
-  const image = product?.featuredImage ?? null;
-  const price = product?.priceRange.minVariantPrice ?? null;
-  const watermarkLicence = getInitialBubblerWaterMarkLicence(cabinet.handle);
-
-  return (
-    <div className="border border-gray-200 rounded overflow-hidden flex flex-col">
-      <Link href={href} className="relative aspect-square bg-gray-50 border-b border-gray-200 block">
-        {image ? (
-          <Image
-            src={image.url}
-            alt={image.altText ?? `${cabinet.shortName} commercial water bubbler`}
-            fill
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-contain p-5"
-          />
-        ) : (
-          <span className="absolute inset-0 grid place-items-center text-black/20">
-            <Droplet size={48} strokeWidth={1.25} aria-hidden="true" />
-          </span>
-        )}
-        {image && watermarkLicence && (
-          <div className="pointer-events-none absolute left-[7%] top-[7%] z-10 h-[30%] w-[30%]">
-            <div className="relative h-full w-full">
-              <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
-            </div>
-          </div>
-        )}
-        <span className="absolute top-3 right-3 bg-black text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded">
-          {cabinet.badge}
-        </span>
-      </Link>
-      <div className="p-5 flex flex-col flex-1">
-        <p className="text-xs font-semibold uppercase tracking-wider text-brand-blue">{cabinet.shortName}</p>
-        <h3 className="mt-1 text-xl font-semibold text-black">{cabinet.displayName}</h3>
-        <p className="mt-1 text-sm font-mono text-black/60">{cabinet.modelId}</p>
-        <p className="mt-3 text-sm text-black/70 leading-relaxed">{cabinet.tagline}</p>
-        <ul className="mt-4 space-y-2 text-sm text-black/75">
-          {cabinet.highlights.map((item) => (
-            <li key={item} className="flex gap-2">
-              <Check size={15} className="mt-0.5 text-brand-blue flex-shrink-0" aria-hidden="true" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-auto pt-5 flex items-center justify-between gap-3">
-          {price ? <PriceDisplay money={price} className="font-semibold text-black" /> : <span />}
-          <Link href={href} className="bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold text-sm px-4 py-2.5 rounded">
-            View product
-          </Link>
-        </div>
-      </div>
-    </div>
   );
 }
 
