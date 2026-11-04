@@ -178,21 +178,21 @@ function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -left-48 top-0 h-[36rem] w-[36rem] rounded-full bg-sky-100/60 blur-3xl"
       />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-10 pt-12 sm:gap-12 sm:px-6 sm:pb-14 sm:pt-16 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8 lg:py-16">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-7 px-5 pb-9 pt-9 sm:gap-12 sm:px-6 sm:pb-14 sm:pt-16 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8 lg:py-16">
         <div className="relative z-10 max-w-xl">
-          <p className="text-[clamp(2.65rem,5vw,4.5rem)] font-bold leading-[1.06] tracking-[-0.045em] text-slate-950">
+          <p className="text-[clamp(2.25rem,9.3vw,4.5rem)] font-bold leading-[1.08] sm:leading-[1.06] tracking-[-0.045em] text-slate-950">
             Healthier water
             <span className="block text-brand-blue">starts here.</span>
           </p>
-          <h1 className="mt-6 text-base font-semibold leading-snug tracking-tight text-slate-800 sm:text-lg">
+          <h1 className="mt-4 text-sm font-semibold leading-relaxed tracking-tight text-slate-800 sm:mt-6 sm:text-lg">
             The Best Water Filters for Australian Homes &amp; Businesses
           </h1>
-          <p className="mt-3 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mt-3 max-w-lg text-[0.9375rem] leading-relaxed text-slate-600 sm:text-lg">
             Explore water filters and filtration systems for your home or
             business. Expert solutions, Australian stock and wholesale-style
             prices for everyone.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-6 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:items-center sm:gap-3">
             <Link
               href="/water-filters/"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
@@ -207,20 +207,20 @@ function Hero() {
               Find the right filter
             </Link>
           </div>
-          <p className="mt-7 text-sm font-medium text-slate-500">
+          <p className="mt-5 text-xs font-medium leading-relaxed text-slate-500 sm:mt-7 sm:text-sm">
             Quality filtration. Fair prices. Australia-wide delivery.
           </p>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[580px] lg:max-w-none">
-          <div aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-[2rem] bg-[#DCEFEA] sm:-bottom-5 sm:-right-5" />
-          <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-white shadow-[0_24px_70px_-35px_rgba(15,23,42,0.35)] sm:rounded-[2rem]">
+        <div className="relative mx-auto w-full max-w-[580px] pb-3 pr-3 sm:pb-5 sm:pr-5 lg:max-w-none">
+          <div aria-hidden="true" className="absolute bottom-0 right-0 top-3 left-3 rounded-[1.5rem] bg-[#DCEFEA] sm:top-5 sm:left-5 sm:rounded-[2rem]" />
+          <div className="relative aspect-square overflow-hidden rounded-[1.25rem] bg-white shadow-[0_24px_70px_-35px_rgba(15,23,42,0.35)] sm:rounded-[2rem]">
             <Image
               src="/Enviro%20Aqua%20Water%20Filter%20Showroom%20Specialist.png"
               alt="Enviro Aqua water filtration showroom showcasing water filter systems and specialist solutions"
               fill
               priority
-              sizes="(max-width: 1023px) 100vw, (max-width: 1280px) 46vw, 580px"
+              sizes="(max-width: 639px) calc(100vw - 52px), (max-width: 1023px) calc(100vw - 72px), (max-width: 1280px) 46vw, 580px"
               className="object-cover"
             />
           </div>
