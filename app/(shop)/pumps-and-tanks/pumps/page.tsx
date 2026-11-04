@@ -26,7 +26,7 @@ const TYPE_OPTIONS: ReadonlyArray<{value:string|null;label:string}> = [
 ];
 
 const TYPE_LABELS: Record<string, string> = Object.fromEntries(
-  TYPE_OPTIONS.filter((o): o is FilterPillOption & { value: string } =>
+  TYPE_OPTIONS.filter((o): o is { value: string; label: string } =>
     o.value !== null,
   ).map((o) => [o.value, o.label]),
 );
