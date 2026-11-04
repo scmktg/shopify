@@ -11,62 +11,51 @@ interface CategoryHeroProps {
 }
 
 /**
- * Compact category header. Tight vertical padding, single-line
- * intro at smaller sizes, and a compact pill row for subcategory
- * navigation. The category page below this header carries its own
- * filter strip (size + sort + count), so the hero deliberately
- * keeps its real-estate use small to leave more room for the grid.
+ * A compact, customer-first category heading. Descriptive catalogue copy
+ * remains on the page in CategorySeoCopy, below the product listing.
+ * All subcategory links are normal server-rendered anchors for crawlability.
  */
 export function CategoryHero({
   title,
-  intro,
   categorySlug,
   subcategories,
   activeSubSlug = null,
 }: CategoryHeroProps) {
-  const pillBase =
-    'inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-colors';
-  const pillActive = 'bg-black text-white border border-black';
-  const pillIdle =
-    'bg-white border border-gray-300 text-black hover:border-black';
-
   return (
-    <header className="border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-        <h1 className="text-3xl md:text-4xl font-semibold text-black tracking-tight">
+    <header className="border-b border-gray-100 bg-slate-50/70">
+      <div className="mx-auto max-w-7xl px-4 pb-5 pt-7 sm:px-6 md:pb-6 md:pt-10 lg:px-8">
+        <h1 className="text-3xl font-semibold tracking-tight text-gray-950 md:text-4xl">
           {title}
         </h1>
-        {intro && (
-          <p className="mt-2 max-w-3xl text-sm md:text-base text-black/70 leading-snug">
-            {intro}
-          </p>
-        )}
-
         {subcategories.length > 0 && (
-          <nav aria-label="Subcategories" className="mt-4">
-            <ul role="list" className="flex flex-wrap gap-1.5">
-              <li>
+          <nav aria-label="Browse subcategories" className="mt-6">
+            <ul role="list" className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 sm:flex-wrap">
+              <li className="shrink-0">
                 <Link
                   href={`/${categorySlug}/`}
                   aria-current={activeSubSlug === null ? 'page' : undefined}
                   className={clsx(
-                    pillBase,
-                    activeSubSlug === null ? pillActive : pillIdle,
+                    'inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium transition-colors',
+                    activeSubSlug === null
+                      ? 'border-gray-900 bg-gray-900 text-white'
+                      : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400 hover:text-gray-950',
                   )}
                 >
-                  All
+                  All products
                 </Link>
               </li>
               {subcategories.map((sub) => {
                 const active = sub.slug === activeSubSlug;
                 return (
-                  <li key={sub.slug}>
+                  <li key={sub.slug} className="shrink-0">
                     <Link
                       href={`/${categorySlug}/${sub.slug}/`}
                       aria-current={active ? 'page' : undefined}
                       className={clsx(
-                        pillBase,
-                        active ? pillActive : pillIdle,
+                        'inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium transition-colors',
+                        active
+                          ? 'border-gray-900 bg-gray-900 text-white'
+                          : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400 hover:text-gray-950',
                       )}
                     >
                       {sub.label}
@@ -79,5 +68,18 @@ export function CategoryHero({
         )}
       </div>
     </header>
+  );
+}
+
+/** Retains descriptive SEO content in the initial HTML, below the catalogue. */
+export function CategorySeoCopy({ title, intro }: { title: string; intro: string | null }) {
+  if (!intro) return null;
+  return (
+    <section aria-label={`About ${title}`} className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 lg:px-8">
+      <div className="max-w-3xl border-t border-gray-200 pt-8">
+        <h2 className="text-lg font-semibold tracking-tight text-gray-900">About {title}</h2>
+        <p className="mt-3 whitespace-pre-line text-sm leading-7 text-gray-600">{intro}</p>
+      </div>
+    </section>
   );
 }
