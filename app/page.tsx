@@ -305,8 +305,8 @@ function ThreeWayTapShowcase({ product }: ThreeWayTapShowcaseProps) {
             <span className="block text-[clamp(1.75rem,3vw,2.9rem)] font-light leading-[1.2] tracking-[-0.035em] text-white">
               Hot, Cold &amp; Filtered.
             </span>
-            <span className="mt-2 block text-[clamp(2.5rem,4.5vw,4.5rem)] font-semibold leading-[1.12] tracking-[-0.045em] water-flow-shine">
-              All From One Tap.
+            <span className="mt-2 block text-[clamp(2.3rem,4.15vw,4.15rem)] font-semibold leading-[1.12] tracking-[-0.045em] tap-ice-blue-shine">
+              All From One Sleek Tap.
             </span>
           </h2>
           <p className="mt-6 max-w-xl text-base leading-7 text-white/70">
