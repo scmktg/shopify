@@ -230,7 +230,7 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
                 href={getProductUrl(product.handle)}
                 className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-black px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-black/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:w-auto"
               >
-                View now
+                Shop now
                 <ChevronRight size={18} aria-hidden="true" />
               </Link>
             </div>
@@ -323,7 +323,7 @@ function ThreeWayTapShowcase({ product }: ThreeWayTapShowcaseProps) {
                 href={getProductUrl(product.handle)}
                 className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-[#161616] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
               >
-                View now
+                Shop now
                 <ChevronRight size={18} aria-hidden="true" />
               </Link>
             </div>
