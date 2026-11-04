@@ -162,6 +162,7 @@ export default async function SubcategoryPage({
         </div>
       )}
       <CategoryView
+        key={`${category}/${subcategory}/${JSON.stringify(initialFilters)}`}
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
         query={baseQuery}
