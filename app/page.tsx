@@ -4,11 +4,6 @@ import Image from 'next/image';
 import {
   ChevronDown,
   ChevronRight,
-  DollarSign,
-  MapPin,
-  ShieldCheck,
-  Truck,
-  type LucideIcon,
 } from 'lucide-react';
 import { CATEGORIES } from '@/content/categories';
 import { ProductCard } from '@/components/product/ProductCard';
@@ -17,6 +12,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { faqPageSchema } from '@/lib/seo/jsonld';
 import { HomeReviewsSection } from '@/components/reviews/HomeReviewsSection';
+import { HomeTrustBar } from '@/components/home/HomeTrustBar';
 import type { Product, ProductCardData } from '@/types/product';
 
 const FEATURED = {
@@ -86,7 +82,7 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <TrustStrip />
+      <HomeTrustBar />
 
       <ProductSpotlight
         product={wholeHouse}
@@ -190,7 +186,7 @@ function Hero() {
           <p className="mt-4 max-w-lg text-[0.9375rem] leading-relaxed text-slate-600 sm:text-lg">
             Whether you&apos;re after a whole house water filter, a drinking
             fountain or a dosing tank, we&apos;ve got a comprehensive range of
-            solutions. Australian stocked, at wholesale prices for all customers.
+            solutions. Australian stocked, at wholesale prices for everyone.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-3">
             <Link
@@ -225,54 +221,6 @@ function Hero() {
             />
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function TrustStrip() {
-  const items: Array<{ icon: LucideIcon; title: string; body: string }> = [
-    {
-      icon: DollarSign,
-      title: 'Wholesale-style pricing',
-      body: 'The same public pricing for homeowners, tradies and commercial customers.',
-    },
-    {
-      icon: Truck,
-      title: 'Australian stock',
-      body: 'Most stocked parcel orders placed before 12pm AEST dispatch the same business day.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Compliance made clear',
-      body: 'WaterMark, WELS and other compliance information is shown where applicable.',
-    },
-    {
-      icon: MapPin,
-      title: 'Filtration specialists',
-      body: 'Australian owned and based in Wyong on the Central Coast NSW.',
-    },
-  ];
-
-  return (
-    <section className="bg-white border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
-          {items.map((item) => (
-            <li key={item.title} className="flex gap-3">
-              <item.icon
-                size={24}
-                strokeWidth={1.75}
-                aria-hidden="true"
-                className="flex-shrink-0 text-brand-blue mt-0.5"
-              />
-              <div>
-                <h2 className="font-semibold text-black">{item.title}</h2>
-                <p className="mt-1 text-sm text-black/70">{item.body}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );
