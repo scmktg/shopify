@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { findSubcategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
-import { CategoryHero } from '@/components/category/CategoryHero';
+import { CategoryHero, CategorySeoCopy } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
 import {
   FilterPills,
@@ -118,6 +118,7 @@ export default async function PumpsPage({ searchParams }: PumpsPageProps) {
         activeSubcategory={SUBCATEGORY}
         pageSize={PAGE_SIZE}
       />
+      <CategorySeoCopy title={title} intro={intro} />
     </>
   );
 }
