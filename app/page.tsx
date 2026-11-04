@@ -180,11 +180,7 @@ function Hero() {
       />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-10 pt-12 sm:gap-12 sm:px-6 sm:pb-14 sm:pt-16 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8 lg:py-16">
         <div className="relative z-10 max-w-xl">
-          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-sky-700 sm:text-sm">
-            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-blue" />
-            Australian water filtration specialists
-          </p>
-          <p className="mt-5 text-[clamp(2.65rem,5vw,4.5rem)] font-bold leading-[1.06] tracking-[-0.045em] text-slate-950">
+          <p className="text-[clamp(2.65rem,5vw,4.5rem)] font-bold leading-[1.06] tracking-[-0.045em] text-slate-950">
             Better water
             <span className="block text-brand-blue">starts here.</span>
           </p>
