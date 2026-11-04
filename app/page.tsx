@@ -185,7 +185,7 @@ function Hero() {
             <span className="block text-brand-blue">starts here.</span>
           </p>
           <h1 className="mt-6 text-base font-semibold leading-snug tracking-tight text-slate-800 sm:text-lg">
-            Water Filters &amp; Water Filtration Systems Australia
+            Water Filters for Homes &amp; Businesses in Australia
           </h1>
           <p className="mt-3 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
             Explore water filters and filtration systems for your home or
