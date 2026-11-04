@@ -140,7 +140,7 @@ export function CatalogFilters({
         onClick={() => setMobileOpen(true)}
         disabled={disabled}
         aria-expanded={mobileOpen}
-        className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 hover:border-gray-400 disabled:opacity-60"
+        className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:border-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30 disabled:opacity-60"
       >
         <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
         Filter
