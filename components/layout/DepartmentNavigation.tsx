@@ -1,36 +1,52 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
+import { ArrowLeftRight, ChevronDown, ChevronRight, Droplets, Menu, ShowerHead, X } from 'lucide-react';
 import clsx from 'clsx';
 import { DEPARTMENTS, MEGA_MENU_GROUPS, departmentForPath, type DepartmentId } from '@/content/departments';
 
 const DEPARTMENT_ORDER: DepartmentId[] = ['water', 'bathroom'];
 
-function DepartmentSwitchButton({ current, mobile = false, onSwitch }: {
+function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = false }: {
   current: DepartmentId;
   mobile?: boolean;
   onSwitch: () => void;
+  disabled?: boolean;
 }) {
   const target: DepartmentId = current === 'water' ? 'bathroom' : 'water';
+  const isBathroom = target === 'bathroom';
   return (
     <button
       type="button"
       onClick={onSwitch}
-      aria-label={`Switch shopping menu to ${DEPARTMENTS[target].label}`}
+      disabled={disabled}
+      aria-label={`Switch to ${DEPARTMENTS[target].label} range`}
       className={clsx(
-        'inline-flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-medium text-sky-800 transition-colors duration-200 hover:border-sky-300 hover:bg-sky-100 hover:text-sky-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
-        mobile && 'min-h-10',
+        'group/switch inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap rounded-xl border px-3.5 py-2 text-left shadow-sm transition-[background-color,border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue disabled:cursor-wait disabled:opacity-60 motion-reduce:transform-none',
+        isBathroom
+          ? 'border-stone-200 bg-stone-50 text-stone-900 hover:border-stone-300 hover:bg-stone-100'
+          : 'border-sky-200 bg-sky-50 text-sky-950 hover:border-sky-300 hover:bg-sky-100',
+        mobile && 'min-h-12',
       )}
     >
-      <span>{target === 'bathroom' ? 'Bathroom Supplies' : 'Water Filters'}</span>
-      <ArrowUpRight size={13} strokeWidth={1.75} aria-hidden="true" />
+      <span className={clsx(
+        'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg',
+        isBathroom ? 'bg-stone-200/70' : 'bg-sky-100',
+      )}>
+        {isBathroom ? <ShowerHead size={18} strokeWidth={1.8} aria-hidden="true" /> : <Droplets size={18} strokeWidth={1.8} aria-hidden="true" />}
+      </span>
+      <span className="flex flex-col leading-tight">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.1em] opacity-60">Switch range</span>
+        <span className="mt-0.5 text-xs font-semibold">{DEPARTMENTS[target].label}</span>
+      </span>
+      <ArrowLeftRight size={16} strokeWidth={1.8} className="ml-1 opacity-65 transition-transform group-hover/switch:rotate-180 motion-reduce:transition-none" aria-hidden="true" />
     </button>
   );
 }
+
 
 /**
  * Desktop and mobile render both departments to animate outgoing and incoming
@@ -39,6 +55,7 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch }: {
  */
 export function DepartmentNavigation() {
   const pathname = usePathname() ?? '/';
+  const router = useRouter();
   const [selectedDepartment, setSelectedDepartment] = useState<DepartmentId | null>(null);
   const current = selectedDepartment ?? departmentForPath(pathname);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,6 +65,9 @@ export function DepartmentNavigation() {
   const [portalReady, setPortalReady] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
   const closeTimer = useRef<number | null>(null);
+  const switchTimers = useRef<number[]>([]);
+  const [switchingTo, setSwitchingTo] = useState<DepartmentId | null>(null);
+  const [switchLeaving, setSwitchLeaving] = useState(false);
   const [headerBottom, setHeaderBottom] = useState(104);
 
   const cancelClose = () => {
@@ -76,10 +96,36 @@ export function DepartmentNavigation() {
   }, [pathname]);
 
   const switchDepartment = () => {
-    setSelectedDepartment(current === 'water' ? 'bathroom' : 'water');
+    if (switchingTo) return;
+    const target = current === 'water' ? 'bathroom' : 'water';
+    const destination = target === 'bathroom' ? '/bathroom/' : '/water-filters/';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setSwitchingTo(target);
+    setSwitchLeaving(false);
     setExpanded(null);
-    setDesktopMenu(null);
+    closeMenu();
+
+    // Navigate through Next.js, not a document reload. The handoff overlaps
+    // the header menu animation and exits even if the destination is delayed.
+    const navigate = () => {
+      setSelectedDepartment(target);
+      router.push(destination);
+    };
+    if (reduceMotion) {
+      navigate();
+      switchTimers.current.push(window.setTimeout(() => setSwitchingTo(null), 120));
+    } else {
+      switchTimers.current.push(window.setTimeout(navigate, 240));
+      switchTimers.current.push(window.setTimeout(() => setSwitchLeaving(true), 610));
+      switchTimers.current.push(window.setTimeout(() => setSwitchingTo(null), 1020));
+    }
   };
+
+  useEffect(() => {
+    return () => {
+      switchTimers.current.forEach((id) => window.clearTimeout(id));
+    };
+  }, []);
 
   useEffect(() => {
     setPortalReady(true);
@@ -173,7 +219,7 @@ export function DepartmentNavigation() {
             );
           })}
         </div>
-        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} />
+        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
         {portalReady && renderedMenu && createPortal(
           <>
             <button
@@ -238,6 +284,34 @@ export function DepartmentNavigation() {
         )}
       </nav>
 
+      {portalReady && switchingTo && createPortal(
+        <div
+          role="status"
+          aria-live="polite"
+          aria-label={`Switching to ${DEPARTMENTS[switchingTo].label}`}
+          className={clsx(
+            'pointer-events-none fixed inset-0 z-[150] flex items-center justify-center overflow-hidden transition-opacity duration-300 ease-out motion-reduce:transition-none',
+            switchingTo === 'bathroom'
+              ? 'bg-[radial-gradient(ellipse_at_center,_#faf7f2_0%,_#e8dfd3_100%)] text-stone-900'
+              : 'bg-[radial-gradient(ellipse_at_center,_#f2faff_0%,_#dcecfb_100%)] text-sky-950',
+            switchLeaving ? 'opacity-0' : 'opacity-100',
+          )}
+        >
+          <div className={clsx(
+            'flex flex-col items-center gap-4 px-6 text-center transition-all duration-500 ease-out motion-reduce:transition-none',
+            switchLeaving ? 'translate-y-2 scale-95 opacity-0' : 'translate-y-0 scale-100 opacity-100',
+          )}>
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-current/10 bg-white/70 shadow-lg shadow-black/5">
+              {switchingTo === 'bathroom' ? <ShowerHead size={32} strokeWidth={1.5} aria-hidden="true" /> : <Droplets size={32} strokeWidth={1.5} aria-hidden="true" />}
+            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] opacity-55">Enviro Aqua</p>
+            <p className="text-3xl font-semibold tracking-tight sm:text-4xl">{DEPARTMENTS[switchingTo].label}</p>
+            <p className="text-sm opacity-60">Switching your shopping range</p>
+          </div>
+        </div>,
+        document.body,
+      )}
+
       <button
         type="button"
         onClick={() => setMobileOpen(true)}
@@ -267,7 +341,7 @@ export function DepartmentNavigation() {
         </div>
         <div className="space-y-5 px-5 py-6">
           <div className="flex justify-end">
-            <DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} />
+            <DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
           </div>
           <div className="relative overflow-hidden">
             {DEPARTMENT_ORDER.map((department) => {
