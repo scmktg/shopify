@@ -215,12 +215,9 @@ export function CategoryView({
 
   return (
     <section aria-label="Browse products">
-      <div className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p className="text-sm text-slate-500" aria-live="polite">
-            <span className="font-semibold text-slate-900">{products.length}{pageInfo.hasNextPage ? '+' : ''}</span> {products.length === 1 && !pageInfo.hasNextPage ? 'product' : 'products'}
-          </p>
-          <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:justify-end">
+      <div className="relative z-20 border-b border-slate-200 bg-white xl:-mt-[112px] xl:h-[112px] xl:border-b-0 xl:bg-transparent">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:h-full xl:justify-end xl:py-0">
+          <div className="flex flex-wrap items-center gap-2">
             {categorySlug && <TypeDropdown categorySlug={categorySlug} activeSubcategory={activeSubcategory} />}
             <SortDropdown value={sort} onChange={handleSortChange} disabled={isPending} />
           </div>
