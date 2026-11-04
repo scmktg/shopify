@@ -9,10 +9,9 @@ interface DepartmentLogoProps {
   /** Use the original artwork at every viewport; only the typography is HTML/CSS. */
   priority?: boolean;
   onClick?: () => void;
-  footer?: boolean;
 }
 
-export function DepartmentLogo({ priority = false, onClick, footer = false }: DepartmentLogoProps) {
+export function DepartmentLogo({ priority = false, onClick }: DepartmentLogoProps) {
   const pathname = usePathname() ?? '/';
   const isBathroom = departmentForPath(pathname) === 'bathroom';
 
@@ -41,7 +40,7 @@ export function DepartmentLogo({ priority = false, onClick, footer = false }: De
           <span className="ml-[5px] text-[#0788e8]">AQUA</span>
         </span>
         <span
-          className={`flex h-[19px] items-center justify-center rounded-none px-2 text-[10px] font-extrabold uppercase leading-none tracking-[0.12em] shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] sm:h-[21px] sm:text-[10px] ${isBathroom ? (footer ? 'bg-white text-[#1f1f1f]' : 'bg-[#1f1f1f] text-white') : 'bg-[#0759cd] text-white'}`}
+          className={`flex h-[19px] items-center justify-center rounded-none px-2 text-[10px] font-extrabold uppercase leading-none tracking-[0.12em] sm:h-[21px] sm:text-[10px] ${isBathroom ? 'bg-[#1f1f1f] text-white' : 'bg-[#0759cd] text-white'}`}
         >
           {isBathroom ? 'BATHROOM SUPPLIES' : 'WATER FILTERS'}
         </span>
