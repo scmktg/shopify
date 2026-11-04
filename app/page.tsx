@@ -12,7 +12,6 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { faqPageSchema } from '@/lib/seo/jsonld';
 import { HomeReviewsSection } from '@/components/reviews/HomeReviewsSection';
-import { HomeTrustBar } from '@/components/home/HomeTrustBar';
 import type { Product, ProductCardData } from '@/types/product';
 
 const FEATURED = {
@@ -82,7 +81,6 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <HomeTrustBar />
 
       <ProductSpotlight
         product={wholeHouse}
