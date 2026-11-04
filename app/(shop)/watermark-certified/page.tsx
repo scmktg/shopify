@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Info } from 'lucide-react';
+import { CategoryHero } from '@/components/category/CategoryHero';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryView } from '@/components/category/CategoryView';
 import { CategorySeoCopy } from '@/components/category/CategoryHero';
@@ -40,19 +41,13 @@ export default async function WatermarkCertifiedPage() {
           breadcrumbSchema(breadcrumbs),
         ]}
       />
-      <section className="border-b border-black/10 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-            {TITLE}
-          </h1>
-
-        </div>
-      </section>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <CategoryHero title={TITLE} intro={INTRO} categorySlug="watermark-certified" subcategories={[]} />
+      <div>
         <CategoryView
           initialProducts={page.products}
           initialPageInfo={page.pageInfo}
           query={WATERMARK_QUERY}
+          categorySlug="watermark-certified"
           pageSize={PAGE_SIZE}
         />
       </div>
