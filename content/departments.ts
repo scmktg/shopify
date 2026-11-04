@@ -23,7 +23,7 @@ export const DEPARTMENTS: Record<DepartmentId, {
         { label: 'Under Sink', href: '/water-filters/under-sink/' },
         { label: 'Whole House', href: '/water-filters/whole-house/' },
         { label: 'Reverse Osmosis', href: '/water-filters/reverse-osmosis/' },
-        { label: 'UV Sterilisation', href: '/water-filters/uv-sterilisation/' },
+        { label: 'Ultraviolet (UV)', href: '/water-filters/uv-sterilisation/' },
         { label: 'Bench Top', href: '/water-filters/bench-top/' },
         { label: 'Commercial', href: '/water-filters/commercial/' },
         { label: 'Parts & Fittings', href: '/plumbing/parts/' },
@@ -73,7 +73,7 @@ export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
     ] },
     { heading: 'Specialised Filtration', links: [
       { label: 'Reverse Osmosis', href: '/water-filters/reverse-osmosis/' },
-      { label: 'UV Sterilisation', href: '/water-filters/uv-sterilisation/' },
+      { label: 'Ultraviolet (UV)', href: '/water-filters/uv-sterilisation/' },
       { label: 'Commercial', href: '/water-filters/commercial/' },
     ] },
     { heading: 'Parts & Accessories', links: [
@@ -88,10 +88,10 @@ export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
       { label: 'Specialty', href: '/cartridges/specialty-cartridges/' },
     ] },
     { heading: 'By Size', links: [
-      { label: '10″ Standard', href: '/search/?q=10%20inch%20cartridge' },
-      { label: '20″ Standard', href: '/search/?q=20%20inch%20cartridge' },
-      { label: '10″ Big Blue', href: '/search/?q=10%20inch%20big%20blue%20cartridge' },
-      { label: '20″ Big Blue', href: '/search/?q=20%20inch%20big%20blue%20cartridge' },
+      { label: '10″ × 2.5″', href: '/search/?q=10%22%20x%202.5%22' },
+      { label: '10″ × 4.5″', href: '/search/?q=10%22%20x%204.5%22' },
+      { label: '20″ × 2.5″', href: '/search/?q=20%22%20x%202.5%22' },
+      { label: '20″ × 4.5″', href: '/search/?q=20%22%20x%204.5%22' },
     ] },
     { heading: 'By Sets', links: [
       { label: 'Cartridge Sets', href: '/cartridges/cartridge-sets/' },
