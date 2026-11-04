@@ -252,7 +252,7 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
         </div>
 
         <div className="relative mx-auto w-full max-w-[580px]">
-          <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-[#f6f7f8]">
+          <div className="relative aspect-square overflow-hidden bg-transparent">
             {product?.featuredImage ? (
               <Image
                 src={product.featuredImage.url}
