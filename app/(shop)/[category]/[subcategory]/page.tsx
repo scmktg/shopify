@@ -126,7 +126,9 @@ export default async function SubcategoryPage({
   const title =
     category === 'bubblers-and-coolers' && subcategory === 'bubblers'
       ? 'Commercial Water Bubblers & Drinking Fountains'
-      : `${node.subcategory.label} ${node.category.label}`;
+      : category === 'bubblers-and-coolers' && subcategory === 'coolers-and-chillers'
+        ? 'Coolers & Chillers'
+        : `${node.subcategory.label} ${node.category.label}`;
   const intro = getCategoryIntro(`${category}/${subcategory}`);
   const isWholeHouse = category === 'water-filters' && subcategory === 'whole-house';
 
