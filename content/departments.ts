@@ -28,7 +28,11 @@ export const DEPARTMENTS: Record<DepartmentId, {
         { label: 'Commercial', href: '/water-filters/commercial/' },
         { label: 'Parts & Fittings', href: '/plumbing/parts/' },
       ] },
-      { label: 'Kitchen Taps', href: '/plumbing/kitchen-taps/' },
+      { label: 'Kitchen Taps', href: '/plumbing/kitchen-taps/', children: [
+        { label: 'Three Way Filter Mixers', href: '/plumbing/kitchen-taps/?type=three-way-filter-mixers' },
+        { label: 'Pull Down & Spray Taps', href: '/plumbing/kitchen-taps/?type=pull-down-spray-taps' },
+        { label: 'Dedicated Filter Taps', href: '/plumbing/kitchen-taps/?type=dedicated-filter-taps' },
+      ] },
       { label: 'Cartridges', href: '/cartridges/', children: [
         { label: 'Sediment Cartridges', href: '/cartridges/sediment/' },
         { label: 'Carbon Cartridges', href: '/cartridges/carbon/' },
@@ -78,6 +82,17 @@ export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
     ] },
     { heading: 'Parts & Accessories', links: [
       { label: 'Parts & Fittings', href: '/plumbing/parts/' },
+    ] },
+  ],
+  '/plumbing/kitchen-taps/': [
+    { heading: 'Filtered Mixers', links: [
+      { label: 'Three Way Filter Mixers', href: '/plumbing/kitchen-taps/?type=three-way-filter-mixers' },
+    ] },
+    { heading: 'Spray & Pull-Down', links: [
+      { label: 'Pull Down & Spray Taps', href: '/plumbing/kitchen-taps/?type=pull-down-spray-taps' },
+    ] },
+    { heading: 'Filter Taps', links: [
+      { label: 'Dedicated Filter Taps', href: '/plumbing/kitchen-taps/?type=dedicated-filter-taps' },
     ] },
   ],
   '/cartridges/': [
