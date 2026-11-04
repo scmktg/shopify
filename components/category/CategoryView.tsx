@@ -11,10 +11,7 @@ import {
 import type { ProductCardData } from '@/types/product';
 import type { ShopifyPageInfo } from '@/types/shopify';
 import { ProductGrid } from '@/components/product/ProductGrid';
-import {
-  ActiveFilterChips,
-  CatalogFilters,
-} from './CatalogFilters';
+import { ActiveFilterChips } from './CatalogFilters';
 import {
   buildCatalogQuery,
   getCatalogFilterGroups,
@@ -222,16 +219,6 @@ export function CategoryView({
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-end gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center gap-2">
           {categorySlug && <TypeDropdown categorySlug={categorySlug} activeSubcategory={activeSubcategory} />}
-          {groups.length > 0 && (
-            <CatalogFilters
-              groups={groups}
-              value={filters}
-              onChange={handleFiltersChange}
-              resultCount={products.length}
-              hasMore={pageInfo.hasNextPage}
-              disabled={isPending}
-            />
-          )}
           <SortDropdown value={sort} onChange={handleSortChange} disabled={isPending} />
         </div>
         </div>
