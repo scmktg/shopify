@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import Link from 'next/link';
 import { Check, ChevronDown } from 'lucide-react';
-import { findCategory } from '@/content/categories';
+import { CATEGORIES, findCategory } from '@/content/categories';
 import {
   getProducts,
   type ProductSortKey,
@@ -306,9 +306,21 @@ export function TypeDropdown({ categorySlug, activeSubcategory }: {
   const category = findCategory(categorySlug);
   const menuRef = useRef<HTMLDetailsElement>(null);
   useCloseDropdown(menuRef);
-  if (!category || category.subcategories.length === 0) return null;
-
-  const selected = category.subcategories.find((sub) => sub.slug === activeSubcategory);
+  const options = category?.subcategories.map((sub) => ({
+    ...sub,
+    href: `/${categorySlug}/${sub.slug}/`,
+  })) ?? (categorySlug === 'pumps-and-tanks'
+    ? [
+        { slug: 'pumps', label: 'Pumps', href: '/pumps-and-tanks/pumps/' },
+        { slug: 'dosing-tanks', label: 'Dosing Tanks', href: '/pumps-and-tanks/dosing-tanks/' },
+        { slug: 'chemical-dosing-tanks', label: 'Chemical Dosing Tanks', href: '/tanks-and-bunds/chemical-dosing-tanks/' },
+      ]
+    : categorySlug === 'watermark-certified'
+      ? CATEGORIES.map((item) => ({ slug: item.slug, label: item.label, href: `/${item.slug}/` }))
+      : []);
+  if (options.length === 0) return null;
+  const baseHref = categorySlug === 'pumps-and-tanks' ? '/tanks-and-bunds/' : `/${categorySlug}/`;
+  const selected = options.find((sub) => sub.slug === activeSubcategory);
   return (
     <details ref={menuRef} className="group/type relative">
       <summary className={`${menuTriggerClass} min-w-32 cursor-pointer list-none [&::-webkit-details-marker]:hidden`}
@@ -317,13 +329,13 @@ export function TypeDropdown({ categorySlug, activeSubcategory }: {
         <ChevronDown size={16} className="shrink-0 text-gray-500 transition-transform group-open/type:rotate-180" aria-hidden="true" />
       </summary>
       <nav aria-label="Choose product type" className="absolute left-0 top-full z-30 mt-2 w-64 max-w-[calc(100vw-2rem)] rounded-2xl border border-gray-100 bg-white p-2 shadow-[0_16px_48px_rgba(15,23,42,0.14)]">
-        <Link href={`/${categorySlug}/`} aria-current={!selected ? 'page' : undefined}
+        <Link href={baseHref} aria-current={!selected ? 'page' : undefined}
           className={`flex min-h-10 items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${!selected ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
           All products
           {!selected && <Check size={16} aria-hidden="true" />}
         </Link>
-        {category.subcategories.map((sub) => (
-          <Link key={sub.slug} href={`/${categorySlug}/${sub.slug}/`}
+        {options.map((sub) => (
+          <Link key={sub.slug} href={sub.href}
             aria-current={sub.slug === activeSubcategory ? 'page' : undefined}
             className={`flex min-h-10 items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${sub.slug === activeSubcategory ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
             {sub.label}
