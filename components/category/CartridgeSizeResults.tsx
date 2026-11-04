@@ -60,7 +60,6 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
 
   const filtered = useMemo(() => {
     const list = products.filter((product) => matchesFilters(product, filters));
-    if (sort === 'newest') return [...list].reverse(); // API default is generally most recent first.
     if (sort === 'price-asc') return [...list].sort((a, b) => Number(a.price.amount) - Number(b.price.amount));
     if (sort === 'price-desc') return [...list].sort((a, b) => Number(b.price.amount) - Number(a.price.amount));
     return list;
@@ -105,7 +104,7 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
           <CatalogFilters
             groups={refinementGroups}
             value={filters}
-            onChange={(next) => setFilters((previous) => ({ ...previous, ...next, system: previous.system ?? [] }))}
+            onChange={(next) => setFilters((previous) => ({ ...next, system: previous.system ?? [] }))}
             resultCount={filtered.length}
             disabled={loadFailed}
           />
