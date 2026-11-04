@@ -237,6 +237,30 @@ export function getCatalogFilterGroups(
   category: string,
   activeSubcategory?: string | null,
 ): ReadonlyArray<CatalogFilterGroup> {
+  if (category === 'pumps-and-tanks' && activeSubcategory === 'pumps') {
+    return [
+      {
+        id: 'pumpType',
+        param: 'pump',
+        label: 'Pump type',
+        multiple: false,
+        options: [
+          { value: '12v', label: '12V', query: "tag:'tech:12v'" },
+          { value: 'ro-booster', label: 'RO Booster', query: "tag:'tech:ro-booster'" },
+          { value: 'pressure', label: 'Pressure', query: "tag:'tech:pressure'" },
+          { value: 'solar', label: 'Solar', query: "tag:'tech:solar'" },
+          { value: 'submersible', label: 'Submersible', query: "tag:'tech:submersible'" },
+        ],
+      },
+      {
+        id: 'price',
+        param: 'price',
+        label: 'Price',
+        multiple: false,
+        options: PRICE_OPTIONS,
+      },
+    ];
+  }
   if (category === 'pumps-and-tanks' && activeSubcategory === 'dosing-tanks') {
     return [
       {
