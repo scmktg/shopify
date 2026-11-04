@@ -28,6 +28,7 @@ export const DEPARTMENTS: Record<DepartmentId, {
         { label: 'Commercial', href: '/water-filters/commercial/' },
         { label: 'Parts & Fittings', href: '/plumbing/parts/' },
       ] },
+      { label: 'Kitchen Taps', href: '/plumbing/kitchen-taps/' },
       { label: 'Cartridges', href: '/cartridges/', children: [
         { label: 'Sediment Cartridges', href: '/cartridges/sediment/' },
         { label: 'Carbon Cartridges', href: '/cartridges/carbon/' },
@@ -44,7 +45,6 @@ export const DEPARTMENTS: Record<DepartmentId, {
         { label: 'Chemical Bunds', href: '/tanks-and-bunds/chemical-bunds/' },
         { label: 'Tank & Bund Packages', href: '/tanks-and-bunds/tank-and-bund-packages/' },
       ] },
-      { label: 'Taps', href: '/plumbing/ro-filter-taps/' },
     ],
   },
   bathroom: {
@@ -125,7 +125,6 @@ export function departmentForPath(pathname: string): DepartmentId {
   if (
     path.startsWith('/plumbing/toilets') ||
     path.startsWith('/plumbing/bathroom-taps') ||
-    path.startsWith('/plumbing/kitchen-taps') ||
     path.startsWith('/plumbing/bundles')
   ) return 'bathroom';
   return 'water';
