@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import clsx from 'clsx';
 import { DEPARTMENTS, MEGA_MENU_GROUPS, departmentForPath, type DepartmentId } from '@/content/departments';
@@ -43,6 +44,8 @@ export function DepartmentNavigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [desktopMenu, setDesktopMenu] = useState<string | null>(null);
+  const [renderedMenu, setRenderedMenu] = useState<string | null>(null);
+  const [portalReady, setPortalReady] = useState(false);
 
   useEffect(() => {
     setSelectedDepartment(null);
@@ -56,6 +59,27 @@ export function DepartmentNavigation() {
     setExpanded(null);
     setDesktopMenu(null);
   };
+
+  useEffect(() => { setPortalReady(true); }, []);
+
+  // Keep the panel mounted briefly on exit so both it and the backdrop fade out.
+  useEffect(() => {
+    if (desktopMenu) {
+      setRenderedMenu(desktopMenu);
+      return;
+    }
+    const timeout = window.setTimeout(() => setRenderedMenu(null), 180);
+    return () => window.clearTimeout(timeout);
+  }, [desktopMenu]);
+
+  useEffect(() => {
+    if (!desktopMenu) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setDesktopMenu(null);
+    };
+    window.addEventListener('keydown', onEscape);
+    return () => window.removeEventListener('keydown', onEscape);
+  }, [desktopMenu]);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -73,7 +97,7 @@ export function DepartmentNavigation() {
 
   return (
     <>
-      <nav aria-label="Shopping navigation" className={clsx("relative hidden w-full min-w-0 items-center justify-center gap-2 xl:flex", desktopMenu && "z-[60]")} onMouseLeave={() => setDesktopMenu(null)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setDesktopMenu(null); }}>
+      <nav aria-label="Shopping navigation" className="relative hidden w-full min-w-0 items-center justify-center gap-2 xl:flex" onMouseLeave={() => setDesktopMenu(null)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setDesktopMenu(null); }}>
         <div className="relative h-12 min-w-0 w-[620px] max-w-full overflow-hidden hover:overflow-visible focus-within:overflow-visible">
           {DEPARTMENT_ORDER.map((department) => {
             const isActive = current === department;
@@ -109,23 +133,32 @@ export function DepartmentNavigation() {
           })}
         </div>
         <DepartmentSwitchButton current={current} onSwitch={switchDepartment} />
-        {desktopMenu && (
+        {/* The header is 64px high; the 8px bridge keeps hover continuous. */}
+        {renderedMenu && <div aria-hidden="true" className="absolute inset-x-0 top-full h-2" />}
+        {portalReady && renderedMenu && createPortal(
           <button
             type="button"
             aria-label="Close shopping categories"
             onClick={() => setDesktopMenu(null)}
-            className="fixed inset-x-0 bottom-0 top-[104px] z-10 cursor-default bg-slate-950/25 backdrop-blur-[2px] transition-opacity duration-200 motion-reduce:transition-none"
-          />
+            className={clsx(
+              'fixed inset-x-0 bottom-0 top-[104px] z-40 cursor-default bg-slate-950/25 backdrop-blur-[2px] transition-opacity duration-180 ease-out motion-reduce:transition-none',
+              desktopMenu ? 'opacity-100' : 'pointer-events-none opacity-0',
+            )}
+          />,
+          document.body,
         )}
         {(() => {
-          const item = DEPARTMENTS[current].links.find((candidate) => candidate.href === desktopMenu);
+          const item = DEPARTMENTS[current].links.find((candidate) => candidate.href === renderedMenu);
           if (!item?.children?.length) return null;
           const groups = MEGA_MENU_GROUPS[item.href] ?? [
             { heading: item.label, links: item.children },
           ];
           return (
             <div
-              className="absolute left-1/2 top-full z-30 w-[min(880px,calc(100vw-3rem))] -translate-x-1/2 rounded-b-2xl border border-gray-100 bg-white p-7 text-black shadow-[0_24px_60px_rgba(15,23,42,0.16)]"
+              className={clsx(
+                "absolute left-1/2 top-[calc(100%+8px)] z-30 w-[min(880px,calc(100vw-3rem))] -translate-x-1/2 rounded-b-2xl border-x border-b border-gray-100 bg-white p-7 text-black shadow-[0_24px_60px_rgba(15,23,42,0.16)] transition-[opacity,transform] duration-180 ease-out motion-reduce:transition-none",
+                desktopMenu ? "translate-y-0 opacity-100" : "-translate-y-1 pointer-events-none opacity-0",
+              )}
               onMouseEnter={() => setDesktopMenu(item.href)}
             >
               <div className="mb-6 flex items-center justify-between border-b border-gray-100 pb-5">
