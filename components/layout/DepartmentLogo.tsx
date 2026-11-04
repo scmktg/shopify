@@ -19,7 +19,7 @@ export function DepartmentLogo({ priority = false, onClick }: DepartmentLogoProp
     <Link
       href={isBathroom ? '/bathroom/' : '/'}
       onClick={onClick}
-      aria-label={isBathroom ? 'Enviro Aqua Bathrooms – home' : 'Enviro Aqua Water Filters – home'}
+      aria-label={isBathroom ? 'Enviro Aqua Bathroom Supplies – home' : 'Enviro Aqua Water Filters – home'}
       className="inline-flex max-w-full shrink-0 items-center gap-[5px] rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue sm:gap-1.5"
     >
       <span className="relative block h-[52px] w-[52px] shrink-0 sm:h-[58px] sm:w-[58px]">
@@ -35,14 +35,14 @@ export function DepartmentLogo({ priority = false, onClick }: DepartmentLogoProp
         />
       </span>
       <span className="flex min-w-0 flex-col justify-center gap-[3px]">
-        <span className="whitespace-nowrap text-[19px] font-extrabold leading-none tracking-[-0.07em] sm:text-[22px] xl:text-[20px] 2xl:text-[23px]">
+        <span className="whitespace-nowrap text-[19px] font-extrabold leading-none tracking-[-0.025em] sm:text-[22px] xl:text-[20px] 2xl:text-[23px]">
           <span className="text-[#13833b]">ENVIRO</span>
           <span className="ml-[5px] text-[#0788e8]">AQUA</span>
         </span>
         <span
-          className={`flex h-[19px] items-center justify-center rounded-full px-3 text-[10px] font-extrabold uppercase leading-none tracking-[0.18em] text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] sm:h-[21px] sm:text-[11px] ${isBathroom ? 'bg-[#188b36]' : 'bg-[#0759cd]'}`}
+          className={`flex h-[19px] items-center justify-center rounded-none px-2 text-[10px] font-extrabold uppercase leading-none tracking-[0.12em] text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)] sm:h-[21px] sm:text-[10px] ${isBathroom ? 'bg-[#188b36]' : 'bg-[#0759cd]'}`}
         >
-          {isBathroom ? 'BATHROOMS' : 'WATER FILTERS'}
+          {isBathroom ? 'BATHROOM SUPPLIES' : 'WATER FILTERS'}
         </span>
       </span>
     </Link>
