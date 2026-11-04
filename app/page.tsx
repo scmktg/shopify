@@ -213,14 +213,14 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-black/55">
-            Premium whole-house water filtration
-          </p>
           <h2
             id="whole-house-showcase-title"
-            className="mt-5 text-[clamp(2.25rem,4.5vw,4.5rem)] font-light leading-[1.12] tracking-tight text-black"
+            className="text-[clamp(2.1rem,4.2vw,4.25rem)] font-light leading-[1.14] tracking-tight text-black"
           >
-            Every Tap. Every Shower. <span className="font-semibold stainless-steel-shine">Filtered Water</span> Throughout Your Home.
+            <span className="block">Every Tap.</span>
+            <span className="block">Every Shower.</span>
+            <span className="block font-semibold water-flow-shine">Filtered Water.</span>
+            <span className="mt-2 block font-bold">Throughout Your Entire Home.</span>
           </h2>
           <p className="mt-6 text-lg font-medium leading-7 text-black">
             Why filter just one tap when you can filter your entire home?
