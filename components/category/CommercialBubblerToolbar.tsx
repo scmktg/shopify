@@ -41,10 +41,7 @@ export function CommercialBubblerToolbar({
 
   return (
     <div className="border-b border-gray-200 bg-slate-50/70">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <p className="text-sm font-medium tabular-nums text-gray-600">
-          {count} {count === 1 ? 'product' : 'products'}
-        </p>
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-end gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center gap-2">
           <TypeDropdown categorySlug="bubblers-and-coolers" activeSubcategory="bubblers" />
           <CatalogFilters
