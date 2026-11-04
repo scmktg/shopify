@@ -297,14 +297,10 @@ export function MobileMenu({ categories }: MobileMenuProps) {
             onClick={close}
             className="relative z-10 inline-flex shrink-0 cursor-pointer items-center"
           >
-            <Image
-              src="/Enviro-Aqua-Logo.webp"
-              alt="Enviro Aqua"
-              width={320}
-              height={105}
-              unoptimized
-              className="pointer-events-none h-12 w-auto max-w-[220px] object-contain select-none"
-            />
+            <span className="relative block h-[52px] w-[210px]">
+              <Image src="/Enviro-Aqua-Logo.webp" alt="Enviro Aqua" fill unoptimized sizes="210px"
+                className="pointer-events-none object-contain object-left select-none" />
+            </span>
           </Link>
           <button
             type="button"
