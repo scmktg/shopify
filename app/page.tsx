@@ -194,6 +194,13 @@ function Hero() {
               Shop water filters
               <ChevronRight size={18} aria-hidden="true" />
             </Link>
+            <Link
+              href="/cartridges/"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950"
+            >
+              Shop cartridges
+              <ChevronRight size={18} aria-hidden="true" />
+            </Link>
           </div>
           <p className="mt-6 text-xs font-medium leading-relaxed text-slate-500 sm:mt-7 sm:text-sm">
             Quality filtration. Fair prices. Australia-wide delivery.
