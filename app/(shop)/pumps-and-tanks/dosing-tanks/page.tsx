@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CategoryHero } from '@/components/category/CategoryHero';
+import { CategoryHero, CategorySeoCopy } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
 import { CATEGORIES } from '@/content/categories';
 import {
@@ -184,6 +184,8 @@ export default async function DosingCategoryPage({
         pageSize={PAGE_SIZE}
         defaultProductOrder={DEFAULT_PRODUCT_ORDER}
       />
+
+      <CategorySeoCopy title={TITLE} intro={INTRO} />
 
       {!hasCatalogFilters(initialFilters) && !after && (
         <section className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8">
