@@ -82,35 +82,7 @@ export default async function HomePage() {
     <>
       <Hero />
 
-      <ProductSpotlight
-        product={wholeHouse}
-        eyebrow="Whole-house filtration"
-        title="Stainless-steel whole-house water filtration"
-        body="Our stainless-steel whole-house system is the premium starting point for customers who want filtration across the property rather than at a single tap. It is designed for mains-connected whole-home filtration and gives buyers a clear path into the wider whole-house range if they need a different size, stage configuration or installation option."
-        bullets={[
-          'Premium stainless-steel whole-house configuration',
-          'Designed for filtration before water is distributed through the home',
-          'A strong fit for customers comparing higher-spec whole-house systems',
-        ]}
-        rangeHref="/water-filters/whole-house/"
-        rangeLabel="Explore all whole-house water filters"
-        tone="light"
-      />
-
-      <ProductSpotlight
-        product={bubbler}
-        eyebrow="Commercial drinking water"
-        title="Square stainless-steel commercial water bubbler"
-        body="This square stainless-steel design is the commercial bubbler we want customers to see first: a clean, durable option for schools, workplaces, factories, gyms and other high-use environments. Customers can go straight to this model or compare the wider bubbler range if they need a different footprint or format."
-        bullets={[
-          'Commercial stainless-steel construction',
-          'Filtered chilled drinking-water solution',
-          'Suitable for high-use commercial and institutional settings',
-        ]}
-        rangeHref="/commercial-water-bubblers/"
-        rangeLabel="Explore all commercial water bubblers"
-        tone="white"
-      />
+      <StainlessSteelShowcase wholeHouse={wholeHouse} bubbler={bubbler} />
 
       <ProductSpotlight
         product={threeWayTap}
@@ -218,6 +190,93 @@ function Hero() {
               sizes="(max-width: 639px) calc(100vw - 68px), (max-width: 1023px) calc(100vw - 72px), (max-width: 1280px) 46vw, 580px"
               className="object-cover"
             />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+interface StainlessSteelShowcaseProps {
+  wholeHouse: ProductCardData | null;
+  bubbler: ProductCardData | null;
+}
+
+/**
+ * Editorial homepage feature. Uses live Shopify imagery and keeps product
+ * destinations canonical. The metallic title treatment is shared via CSS.
+ */
+function StainlessSteelShowcase({ wholeHouse, bubbler }: StainlessSteelShowcaseProps) {
+  return (
+    <section aria-labelledby="stainless-showcase-title" className="overflow-hidden border-b border-gray-200 bg-white">
+      <div className="mx-auto max-w-7xl px-4 pb-8 pt-16 sm:px-6 md:pt-24 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-black/50">
+            Discover our featured solutions
+          </p>
+          <h2 id="stainless-showcase-title" className="mt-4 text-[clamp(2.25rem,5.4vw,4.5rem)] font-light leading-[1.1] tracking-tight text-black">
+            Designed for <span className="font-semibold">better water.</span>
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-black/65">
+            From refreshing chilled drinking water to protecting the water supplied throughout your home.
+          </p>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl space-y-8 px-4 pb-16 sm:px-6 md:space-y-12 md:pb-24 lg:px-8">
+        <div className="grid items-center gap-8 rounded-[1.5rem] bg-[#f6f7f8] px-5 py-9 sm:px-9 md:grid-cols-2 md:gap-12 md:px-12 md:py-14">
+          <div className="order-2 md:order-1">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/50">Commercial drinking water</p>
+            <h3 className="mt-4 text-[clamp(2rem,3.7vw,3.65rem)] font-light leading-[1.13] tracking-tight text-black">
+              Drink or refill.<br />All from one <span className="font-semibold stainless-steel-shine">Sleek Stainless Steel Fountain.</span>
+            </h3>
+            <p className="mt-5 max-w-lg text-base leading-7 text-black/65">
+              Chilled, filtered drinking water with a convenient bottle-filling tap, designed for busy commercial spaces.
+            </p>
+            {bubbler ? (
+              <Link href={getProductUrl(bubbler.handle)} className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-lg bg-black px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-black/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+                Explore the fountain <ChevronRight size={17} aria-hidden="true" />
+              </Link>
+            ) : (
+              <p className="mt-7 text-sm text-black/55">This product is temporarily unavailable.</p>
+            )}
+          </div>
+          <div className="order-1 md:order-2">
+            <div className="relative mx-auto aspect-[5/4] w-full max-w-xl overflow-hidden rounded-xl bg-white">
+              {bubbler?.featuredImage ? (
+                <Image src={bubbler.featuredImage.url} alt={bubbler.featuredImage.altText || bubbler.title} fill sizes="(max-width: 767px) 90vw, 45vw" className="object-contain p-5 sm:p-8" />
+              ) : (
+                <div className="flex h-full items-center justify-center px-6 text-center text-sm text-black/50">Stainless steel drinking fountain</div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="grid items-center gap-8 rounded-[1.5rem] bg-[#f6f7f8] px-5 py-9 sm:px-9 md:grid-cols-2 md:gap-12 md:px-12 md:py-14">
+          <div>
+            <div className="relative mx-auto aspect-[5/4] w-full max-w-xl overflow-hidden rounded-xl bg-white">
+              {wholeHouse?.featuredImage ? (
+                <Image src={wholeHouse.featuredImage.url} alt={wholeHouse.featuredImage.altText || wholeHouse.title} fill sizes="(max-width: 767px) 90vw, 45vw" className="object-contain p-5 sm:p-8" />
+              ) : (
+                <div className="flex h-full items-center justify-center px-6 text-center text-sm text-black/50">Whole-house water filtration system</div>
+              )}
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/50">Whole-house water filtration</p>
+            <h3 className="mt-4 text-[clamp(2rem,3.7vw,3.65rem)] font-light leading-[1.13] tracking-tight text-black">
+              Better water.<br />Throughout your <span className="font-semibold stainless-steel-shine">Whole House.</span>
+            </h3>
+            <p className="mt-5 max-w-lg text-base leading-7 text-black/65">
+              Bring filtration to your entire property with our three-stage whole-house water filter system.
+            </p>
+            {wholeHouse ? (
+              <Link href={getProductUrl(wholeHouse.handle)} className="mt-7 inline-flex min-h-12 items-center gap-3 rounded-lg bg-black px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-black/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+                Explore the whole-house filter <ChevronRight size={17} aria-hidden="true" />
+              </Link>
+            ) : (
+              <p className="mt-7 text-sm text-black/55">This product is temporarily unavailable.</p>
+            )}
           </div>
         </div>
       </div>
