@@ -185,54 +185,44 @@ function Hero({
   const minPrice = prices[0] ?? null;
 
   return (
-    <section className="bg-gray-50 border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <header className="border-b border-gray-100 bg-slate-50/70">
+      <div className="mx-auto max-w-7xl px-4 pb-7 pt-7 sm:px-6 md:pb-8 md:pt-10 lg:px-8">
         <Breadcrumbs items={breadcrumbs} />
-        <div className="mt-6 max-w-4xl">
-          <span className="inline-flex bg-brand-blue text-white text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded">
-            Commercial drinking water
-          </span>
-          <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
-            Commercial water bubblers & drinking fountains
-          </h1>
-
-          <div className="mt-5 flex flex-wrap items-center gap-4">
-            {minPrice && (
-              <p className="text-base text-black/80">
-                <span className="font-semibold">From </span>
-                <PriceDisplay money={minPrice} className="font-semibold text-black" />
-                <span className="text-black/60"> inc GST</span>
-              </p>
-            )}
-            <WatermarkBadge href="/watermark-certified/" />
-            <LeadFreeBadge />
-          </div>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <a href="#range" className="inline-flex bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors">
-              Shop all three models
-            </a>
-            <a href="#compare" className="inline-flex bg-white border border-black hover:bg-gray-100 text-black font-semibold px-6 py-3 rounded transition-colors">
-              Compare specifications
-            </a>
-          </div>
+        <p className="mb-2 mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
+          Enviro Aqua / Fountains & Coolers
+        </p>
+        <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-gray-950 md:text-5xl">
+          Commercial water bubblers & drinking fountains
+        </h1>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-500 sm:text-base">
+          Three certified designs. Find the right fit for your space.
+        </p>
+        <div className="mt-5 flex flex-wrap items-center gap-3">
+          {minPrice && (
+            <p className="mr-2 text-sm text-gray-600">
+              From <PriceDisplay money={minPrice} className="font-semibold text-gray-900" />
+              <span className="text-gray-500"> inc GST</span>
+            </p>
+          )}
+          <WatermarkBadge href="/watermark-certified/" />
+          <LeadFreeBadge />
         </div>
       </div>
-    </section>
+    </header>
   );
 }
 
 function RangeSection({ products }: { products: ReadonlyArray<Product | null> }) {
   return (
-    <section id="range" className="border-b border-gray-200 scroll-mt-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-          Choose your commercial water bubbler
-        </h2>
-        <p className="mt-3 max-w-3xl text-black/70">
-          Cooling performance is consistent across the range. Choose mainly by cabinet,
-          installation environment and whether a separate bottle-fill side tap is needed.
-        </p>
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-5">
+    <section id="range" aria-label="Shop commercial water bubblers" className="scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-4 pb-12 pt-5 sm:px-6 md:pt-8 lg:px-8">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4">
+          <p className="text-sm font-medium text-gray-600">3 products</p>
+          <a href="#compare" className="text-sm font-medium text-gray-700 underline-offset-4 hover:text-brand-blue hover:underline">
+            Compare specifications →
+          </a>
+        </div>
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
           {CABINETS.map((cabinet, index) => (
             <ProductCard key={cabinet.key} cabinet={cabinet} product={products[index]} />
           ))}
@@ -249,53 +239,59 @@ function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Prod
   const watermarkLicence = getInitialBubblerWaterMarkLicence(cabinet.handle);
 
   return (
-    <div className="border border-gray-200 rounded overflow-hidden flex flex-col">
-      <Link href={href} className="relative aspect-square bg-gray-50 border-b border-gray-200 block">
-        {image ? (
-          <Image
-            src={image.url}
-            alt={image.altText ?? `${cabinet.shortName} commercial water bubbler`}
-            fill
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-contain p-5"
-          />
-        ) : (
-          <span className="absolute inset-0 grid place-items-center text-black/20">
-            <Droplet size={48} strokeWidth={1.25} aria-hidden="true" />
-          </span>
-        )}
-        {image && watermarkLicence && (
-          <div className="pointer-events-none absolute left-[7%] top-[7%] z-10 h-[30%] w-[30%]">
-            <div className="relative h-full w-full">
-              <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
+    <article className="group flex h-full flex-col">
+      <Link href={href} className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+        <div className="relative aspect-square overflow-hidden rounded-2xl bg-white ring-1 ring-gray-100/70">
+          {image ? (
+            <Image
+              src={image.url}
+              alt={image.altText ?? `${cabinet.shortName} commercial water bubbler`}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.035] sm:p-7"
+            />
+          ) : (
+            <span className="absolute inset-0 grid place-items-center text-gray-300">
+              <Droplet size={48} strokeWidth={1.25} aria-hidden="true" />
+            </span>
+          )}
+          {image && watermarkLicence && (
+            <div className="pointer-events-none absolute left-[7%] top-[7%] z-10 h-[30%] w-[30%]">
+              <div className="relative h-full w-full">
+                <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
+              </div>
             </div>
-          </div>
-        )}
-        <span className="absolute top-3 right-3 bg-black text-white text-[10px] font-semibold uppercase tracking-wider px-2 py-1 rounded">
-          {cabinet.badge}
-        </span>
+          )}
+          <span className="absolute right-3 top-3 rounded-full bg-gray-950 px-3 py-1.5 text-[10px] font-medium tracking-wide text-white">
+            {cabinet.badge}
+          </span>
+        </div>
       </Link>
-      <div className="p-5 flex flex-col flex-1">
-        <p className="text-xs font-semibold uppercase tracking-wider text-brand-blue">{cabinet.shortName}</p>
-        <h3 className="mt-1 text-xl font-semibold text-black">{cabinet.displayName}</h3>
-        <p className="mt-1 text-sm font-mono text-black/60">{cabinet.modelId}</p>
-        <p className="mt-3 text-sm text-black/70 leading-relaxed">{cabinet.tagline}</p>
-        <ul className="mt-4 space-y-2 text-sm text-black/75">
+      <div className="mt-4 flex flex-1 flex-col px-0.5">
+        <p className="text-xs font-medium text-gray-500">{cabinet.shortName}</p>
+        <Link href={href} className="mt-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+          <h2 className="text-base font-semibold leading-snug text-gray-950 group-hover:text-brand-blue">
+            {cabinet.displayName}
+          </h2>
+        </Link>
+        <p className="mt-1 text-xs font-medium text-gray-500">{cabinet.modelId}</p>
+        <p className="mt-3 text-sm leading-6 text-gray-600">{cabinet.tagline}</p>
+        <ul className="mt-4 space-y-2 text-sm text-gray-600">
           {cabinet.highlights.map((item) => (
-            <li key={item} className="flex gap-2">
-              <Check size={15} className="mt-0.5 text-brand-blue flex-shrink-0" aria-hidden="true" />
+            <li key={item} className="flex items-start gap-2">
+              <Check size={15} className="mt-0.5 shrink-0 text-brand-blue" aria-hidden="true" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
-        <div className="mt-auto pt-5 flex items-center justify-between gap-3">
-          {price ? <PriceDisplay money={price} className="font-semibold text-black" /> : <span />}
-          <Link href={href} className="bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold text-sm px-4 py-2.5 rounded">
+        <div className="mt-auto pt-5">
+          {price && <PriceDisplay money={price} className="mb-3 block text-sm font-medium text-gray-700" />}
+          <Link href={href} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-gray-950 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
             View product
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
