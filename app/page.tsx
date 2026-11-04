@@ -1,13 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ChevronDown,
   ChevronRight,
-  DollarSign,
-  MapPin,
-  ShieldCheck,
-  Truck,
-  type LucideIcon,
 } from 'lucide-react';
 import { CATEGORIES } from '@/content/categories';
 import { ProductCard } from '@/components/product/ProductCard';
@@ -85,7 +81,6 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <TrustStrip />
 
       <ProductSpotlight
         product={wholeHouse}
@@ -172,80 +167,52 @@ export default async function HomePage() {
 
 function Hero() {
   return (
-    <section className="bg-gray-50 border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
-          EnviroAqua Australia
-        </p>
-        <h1 className="mt-3 mx-auto max-w-5xl text-4xl sm:text-5xl md:text-6xl font-bold text-black tracking-tight leading-tight">
-          Water Filters &amp; Water Filtration Systems Australia
-        </h1>
-        <p className="mt-5 mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-black/70">
-          Start with one of our key filtration products below, or explore the
-          wider range when you need a different system, format or application.
-        </p>
-        <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-          <Link
-            href="/water-filters/"
-            className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
-          >
-            Shop water filters
-          </Link>
-          <Link
-            href="/use/"
-            className="inline-flex items-center justify-center border border-gray-300 bg-white hover:bg-gray-50 text-black font-semibold px-6 py-3 rounded transition-colors"
-          >
-            Find the right filter
-          </Link>
+    <section className="relative isolate overflow-hidden border-b border-slate-200 bg-[#f5f8fa]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-48 top-0 h-[36rem] w-[36rem] rounded-full bg-sky-100/60 blur-3xl"
+      />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-7 pb-12 pt-12 sm:gap-12 sm:px-6 sm:pb-14 sm:pt-16 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8 lg:py-16">
+        <div className="relative z-10 max-w-xl">
+          <p className="text-[clamp(2.25rem,9.3vw,4.5rem)] font-bold leading-[1.08] sm:leading-[1.06] tracking-[-0.045em] text-slate-950">
+            Healthier water
+            <span className="block text-brand-blue">starts here.</span>
+          </p>
+          <h1 className="mt-5 text-sm font-semibold leading-relaxed tracking-tight text-slate-800 sm:mt-6 sm:text-lg">
+            The Best Water Filters for Australian Homes &amp; Businesses
+          </h1>
+          <p className="mt-4 max-w-lg text-[0.9375rem] leading-relaxed text-slate-600 sm:text-lg">
+            Whether you&apos;re after a whole house water filter, a drinking
+            fountain or a dosing tank, we&apos;ve got a comprehensive range of
+            solutions. Australian stocked, at wholesale prices for everyone.
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-3">
+            <Link
+              href="/water-filters/"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+            >
+              Shop water filters
+              <ChevronRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+          <p className="mt-6 text-xs font-medium leading-relaxed text-slate-500 sm:mt-7 sm:text-sm">
+            Quality filtration. Fair prices. Australia-wide delivery.
+          </p>
         </div>
-      </div>
-    </section>
-  );
-}
 
-function TrustStrip() {
-  const items: Array<{ icon: LucideIcon; title: string; body: string }> = [
-    {
-      icon: DollarSign,
-      title: 'Wholesale-style pricing',
-      body: 'The same public pricing for homeowners, tradies and commercial customers.',
-    },
-    {
-      icon: Truck,
-      title: 'Australian stock',
-      body: 'Most stocked parcel orders placed before 12pm AEST dispatch the same business day.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Compliance made clear',
-      body: 'WaterMark, WELS and other compliance information is shown where applicable.',
-    },
-    {
-      icon: MapPin,
-      title: 'Filtration specialists',
-      body: 'Australian owned and based in Wyong on the Central Coast NSW.',
-    },
-  ];
-
-  return (
-    <section className="bg-white border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
-          {items.map((item) => (
-            <li key={item.title} className="flex gap-3">
-              <item.icon
-                size={24}
-                strokeWidth={1.75}
-                aria-hidden="true"
-                className="flex-shrink-0 text-brand-blue mt-0.5"
-              />
-              <div>
-                <h2 className="font-semibold text-black">{item.title}</h2>
-                <p className="mt-1 text-sm text-black/70">{item.body}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="relative mx-auto w-full max-w-[580px] pb-3 pr-3 sm:pb-5 sm:pr-5 lg:max-w-none">
+          <div aria-hidden="true" className="absolute bottom-0 right-0 top-3 left-3 rounded-[1.5rem] bg-[#DCEFEA] sm:top-5 sm:left-5 sm:rounded-[2rem]" />
+          <div className="relative aspect-square overflow-hidden rounded-[1.25rem] bg-white shadow-[0_24px_70px_-35px_rgba(15,23,42,0.35)] sm:rounded-[2rem]">
+            <Image
+              src="/Enviro%20Aqua%20Water%20Filter%20Showroom%20Specialist.png"
+              alt="Enviro Aqua water filtration showroom showcasing water filter systems and specialist solutions"
+              fill
+              priority
+              sizes="(max-width: 639px) calc(100vw - 68px), (max-width: 1023px) calc(100vw - 72px), (max-width: 1280px) 46vw, 580px"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
