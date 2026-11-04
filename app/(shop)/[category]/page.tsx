@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { findCategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts, type ProductsPage } from '@/lib/shopify/queries/getProducts';
+import { FOUNTAINS_AND_COOLERS_ORDER } from '@/content/merchandising';
 import { CategoryHero, CategorySeoCopy } from '@/components/category/CategoryHero';
 import { TanksAndBundsGuide } from '@/components/category/TanksAndBundsGuide';
 import { CategoryView } from '@/components/category/CategoryView';
@@ -29,6 +30,7 @@ interface CategoryPageProps {
 }
 
 const PAGE_SIZE = 24;
+const FOUNTAINS_PAGE_SIZE = 100;
 
 export async function generateMetadata({
   params,
@@ -87,7 +89,11 @@ export default async function CategoryPage({
   let loadFailed = false;
   let page: ProductsPage;
   try {
-    page = await getProducts({ query, first: PAGE_SIZE, after });
+    page = await getProducts({
+      query,
+      first: category === 'bubblers-and-coolers' ? FOUNTAINS_PAGE_SIZE : PAGE_SIZE,
+      after,
+    });
   } catch (error) {
     loadFailed = true;
     console.error('[category] Failed to load category products', {
@@ -141,7 +147,8 @@ export default async function CategoryPage({
         query={baseQuery}
         categorySlug={category}
         initialFilters={initialFilters}
-        pageSize={PAGE_SIZE}
+        pageSize={category === 'bubblers-and-coolers' ? FOUNTAINS_PAGE_SIZE : PAGE_SIZE}
+        defaultProductOrder={category === 'bubblers-and-coolers' ? FOUNTAINS_AND_COOLERS_ORDER : []}
         enableSizeFilter={category === 'cartridges'}
       />
       {page.pageInfo.hasNextPage &&
