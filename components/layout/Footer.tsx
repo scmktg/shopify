@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram } from 'lucide-react';
 import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
+import { CATEGORIES } from '@/content/categories';
 import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import { CookiePreferencesButton } from '@/components/analytics/ConsentBanner';
 
@@ -12,6 +13,7 @@ interface FooterLink {
 
 const SHOP_LINKS: ReadonlyArray<FooterLink> = [
   { label: 'Water Filters', href: '/water-filters/' },
+  { label: 'Bathroom Supplies', href: '/bathroom/' },
   { label: 'Whole House Install Package', href: '/whole-house-installation-package/' },
   { label: 'Cartridges', href: '/cartridges/' },
   { label: 'Fountains & Coolers', href: '/bubblers-and-coolers/' },
@@ -132,6 +134,31 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+
+        {/* Crawlable, server-rendered catalogue links: preserve established category
+            paths while navigation is split between shopping departments. */}
+        <nav aria-label="Browse all product categories" className="mt-12 border-t border-white/20 pt-8">
+          <h2 className="text-sm font-semibold uppercase tracking-wider">Explore product categories</h2>
+          <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+            {CATEGORIES.map((category) => (
+              <div key={category.slug}>
+                <Link href={`/${category.slug}/`} className="text-sm font-semibold hover:underline underline-offset-4">
+                  {category.label}
+                </Link>
+                <ul className="mt-3 space-y-2 text-sm text-white/75">
+                  {category.subcategories.map((subcategory) => (
+                    <li key={subcategory.slug}>
+                      <Link href={`/${category.slug}/${subcategory.slug}/`} className="hover:text-white hover:underline underline-offset-4">
+                        {subcategory.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </nav>
 
         <div className="mt-12 pt-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-white/80">
           <div>
