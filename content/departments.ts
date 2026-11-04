@@ -81,16 +81,20 @@ export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
     ] },
   ],
   '/cartridges/': [
-    { heading: 'Filter Cartridges', links: [
+    { heading: 'By Type', links: [
       { label: 'Sediment', href: '/cartridges/sediment/' },
       { label: 'Carbon', href: '/cartridges/carbon/' },
+      { label: 'RO Membranes', href: '/cartridges/reverse-osmosis-membranes/' },
       { label: 'Specialty', href: '/cartridges/specialty-cartridges/' },
     ] },
-    { heading: 'Reverse Osmosis', links: [
-      { label: 'RO Membranes', href: '/cartridges/reverse-osmosis-membranes/' },
+    { heading: 'By Size', links: [
+      { label: '10″ Standard', href: '/search/?q=10%20inch%20cartridge' },
+      { label: '20″ Standard', href: '/search/?q=20%20inch%20cartridge' },
+      { label: '10″ Big Blue', href: '/search/?q=10%20inch%20big%20blue%20cartridge' },
+      { label: '20″ Big Blue', href: '/search/?q=20%20inch%20big%20blue%20cartridge' },
     ] },
-    { heading: 'Cartridge Sets', links: [
-      { label: 'Replacement Sets', href: '/cartridges/cartridge-sets/' },
+    { heading: 'By Sets', links: [
+      { label: 'Cartridge Sets', href: '/cartridges/cartridge-sets/' },
     ] },
   ],
   '/bubblers-and-coolers/': [
