@@ -16,8 +16,6 @@ import type { Product, ProductCardData } from '@/types/product';
 
 const FEATURED = {
   wholeHouse: 'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
-  bubbler:
-    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
   threeWayTap:
     '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
   underSink: 'under-sink-water-filter-2-stage-sediment-carbon',
@@ -69,10 +67,9 @@ async function loadFeaturedProduct(handle: string): Promise<ProductCardData | nu
 }
 
 export default async function HomePage() {
-  const [wholeHouse, bubbler, threeWayTap, underSink, premiumPair] =
+  const [wholeHouse, threeWayTap, underSink, premiumPair] =
     await Promise.all([
       loadFeaturedProduct(FEATURED.wholeHouse),
-      loadFeaturedProduct(FEATURED.bubbler),
       loadFeaturedProduct(FEATURED.threeWayTap),
       loadFeaturedProduct(FEATURED.underSink),
       loadFeaturedProduct(FEATURED.premiumPair),
@@ -82,50 +79,9 @@ export default async function HomePage() {
     <>
       <Hero />
 
-      <ProductSpotlight
-        product={wholeHouse}
-        eyebrow="Whole-house filtration"
-        title="Stainless-steel whole-house water filtration"
-        body="Our stainless-steel whole-house system is the premium starting point for customers who want filtration across the property rather than at a single tap. It is designed for mains-connected whole-home filtration and gives buyers a clear path into the wider whole-house range if they need a different size, stage configuration or installation option."
-        bullets={[
-          'Premium stainless-steel whole-house configuration',
-          'Designed for filtration before water is distributed through the home',
-          'A strong fit for customers comparing higher-spec whole-house systems',
-        ]}
-        rangeHref="/water-filters/whole-house/"
-        rangeLabel="Explore all whole-house water filters"
-        tone="light"
-      />
+      <WholeHouseShowcase product={wholeHouse} />
 
-      <ProductSpotlight
-        product={bubbler}
-        eyebrow="Commercial drinking water"
-        title="Square stainless-steel commercial water bubbler"
-        body="This square stainless-steel design is the commercial bubbler we want customers to see first: a clean, durable option for schools, workplaces, factories, gyms and other high-use environments. Customers can go straight to this model or compare the wider bubbler range if they need a different footprint or format."
-        bullets={[
-          'Commercial stainless-steel construction',
-          'Filtered chilled drinking-water solution',
-          'Suitable for high-use commercial and institutional settings',
-        ]}
-        rangeHref="/commercial-water-bubblers/"
-        rangeLabel="Explore all commercial water bubblers"
-        tone="white"
-      />
-
-      <ProductSpotlight
-        product={threeWayTap}
-        eyebrow="Filtered-water kitchen tap"
-        title="3-way filtered kitchen mixer tap"
-        body="Replace a separate drinking-water faucet with one streamlined kitchen mixer. This 3-way tap keeps filtered drinking water separate from normal hot and cold supply while giving customers a choice of finishes from the same product. Use the colour swatches on the product card to preview the available variants before opening the product page."
-        bullets={[
-          'Hot, cold and filtered water from one mixer',
-          'Colour variants available from the same product',
-          'Designed to pair with compatible under-sink and reverse-osmosis systems',
-        ]}
-        rangeHref="/plumbing/ro-filter-taps/"
-        rangeLabel="Explore all filtered-water taps"
-        tone="dark"
-      />
+      <ThreeWayTapShowcase product={threeWayTap} />
 
       <ProductSpotlight
         product={underSink}
@@ -219,6 +175,161 @@ function Hero() {
               className="object-cover"
             />
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+interface WholeHouseShowcaseProps {
+  product: ProductCardData | null;
+}
+
+function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
+  const price = product
+    ? new Intl.NumberFormat('en-AU', {
+        style: 'currency',
+        currency: product.price.currencyCode,
+      }).format(Number(product.price.amount))
+    : null;
+
+  return (
+    <section
+      aria-labelledby="whole-house-showcase-title"
+      className="overflow-hidden border-b border-gray-200 bg-white"
+    >
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
+        <div className="max-w-2xl">
+          <h2
+            id="whole-house-showcase-title"
+            className="flex flex-col items-start tracking-[-0.035em] text-black"
+          >
+            <span className="block text-[clamp(1.4rem,2.7vw,2.5rem)] font-light leading-[1.22] whitespace-nowrap">
+              Every Tap. Every Shower.
+            </span>
+            <span className="mt-1 block text-[clamp(3rem,5.2vw,5rem)] font-semibold leading-[1.07] tracking-[-0.045em] water-flow-shine">
+              Filtered Water.
+            </span>
+            <span className="mt-3 block whitespace-nowrap text-[clamp(0.98rem,2.45vw,2.2rem)] font-bold leading-[1.15] tracking-[-0.05em]">
+              Throughout Your Entire Home.
+            </span>
+          </h2>
+          <p className="mt-6 max-w-xl text-base leading-7 text-black/65">
+            Why filter just one tap when you can filter your entire home? Purchase the sleek stainless steel system to take care of all of your filtration needs.
+          </p>
+          {product && (
+            <div className="mt-8">
+              <p className="text-2xl font-semibold tracking-tight text-black">
+                {price}
+                <span className="ml-3 text-sm font-medium text-black/60">inc GST</span>
+              </p>
+              <p className="mt-1 text-sm font-semibold text-black/75">
+                Free Australia-wide delivery
+              </p>
+              <Link
+                href={getProductUrl(product.handle)}
+                className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-black px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-black/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:w-auto"
+              >
+                Shop now
+                <ChevronRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
+          )}
+          {!product && <p className="mt-8 text-sm text-black/60">This system is temporarily unavailable.</p>}
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[580px]">
+          <div className="relative aspect-square overflow-hidden bg-transparent">
+            {product?.featuredImage ? (
+              <Image
+                src={product.featuredImage.url}
+                alt={product.featuredImage.altText || product.title}
+                fill
+                sizes="(max-width: 1023px) 92vw, 44vw"
+                className="object-contain p-6 sm:p-10"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center px-8 text-center text-sm text-black/55">
+                Whole-house filtration system
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+interface ThreeWayTapShowcaseProps {
+  product: ProductCardData | null;
+}
+
+/** Dark editorial counterpart to the whole-house homepage showcase. */
+function ThreeWayTapShowcase({ product }: ThreeWayTapShowcaseProps) {
+  const price = product
+    ? new Intl.NumberFormat('en-AU', {
+        style: 'currency',
+        currency: product.price.currencyCode,
+      }).format(Number(product.price.amount))
+    : null;
+
+  return (
+    <section
+      aria-labelledby="three-way-tap-showcase-title"
+      className="overflow-hidden border-b border-white/10 bg-[#161616] text-white"
+    >
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
+        <div className="relative mx-auto w-full max-w-[580px]">
+          <div className="relative aspect-square overflow-hidden bg-transparent">
+            {product?.featuredImage ? (
+              <Image
+                src={product.featuredImage.url}
+                alt={product.featuredImage.altText || product.title}
+                fill
+                sizes="(max-width: 1023px) 92vw, 44vw"
+                className="object-contain p-6 sm:p-10"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center px-8 text-center text-sm text-white/60">
+                Three-way filtered kitchen tap
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="max-w-2xl">
+          <h2
+            id="three-way-tap-showcase-title"
+            className="flex flex-col items-start tracking-[-0.035em]"
+          >
+            <span className="block text-[clamp(1.75rem,3vw,2.9rem)] font-light leading-[1.2] tracking-[-0.035em] text-white">
+              Hot, Cold &amp; Filtered.
+            </span>
+            <span className="mt-2 block text-[clamp(2.3rem,4.15vw,4.15rem)] font-semibold leading-[1.12] tracking-[-0.045em] tap-ice-blue-shine">
+              All From One Sleek Tap.
+            </span>
+          </h2>
+          <p className="mt-6 max-w-xl text-base leading-7 text-white/70">
+            Enjoy hot, cold and filtered drinking water from one streamlined kitchen mixer. Three convenient water options, without the need for a separate filtered-water tap.
+          </p>
+
+          {product ? (
+            <div className="mt-8">
+              <p className="text-2xl font-semibold tracking-tight text-white">
+                {price}
+                <span className="ml-3 text-sm font-medium text-white/60">inc GST</span>
+              </p>
+              <Link
+                href={getProductUrl(product.handle)}
+                className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-[#161616] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+              >
+                Shop now
+                <ChevronRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
+          ) : (
+            <p className="mt-8 text-sm text-white/65">This product is temporarily unavailable.</p>
+          )}
         </div>
       </div>
     </section>
