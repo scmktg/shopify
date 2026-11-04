@@ -21,7 +21,7 @@ import {
   type CatalogFilterState,
 } from '@/lib/catalog/filters';
 
-type SortValue =
+export type SortValue =
   | 'default'
   | 'newest'
   | 'best-selling'
@@ -299,7 +299,7 @@ function useCloseDropdown(ref: React.RefObject<HTMLDetailsElement | null>) {
   }, [ref]);
 }
 
-function TypeDropdown({ categorySlug, activeSubcategory }: {
+export function TypeDropdown({ categorySlug, activeSubcategory }: {
   categorySlug: string;
   activeSubcategory: string | null;
 }) {
@@ -341,7 +341,7 @@ interface SortDropdownProps {
   disabled: boolean;
 }
 
-function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
+export function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
   const menuRef = useRef<HTMLDetailsElement>(null);
   useCloseDropdown(menuRef);
   const selected = SORT_OPTIONS.find((option) => option.value === value);
