@@ -13,7 +13,7 @@ export function Header() {
           aria-label="Enviro Aqua - home"
           className="relative z-10 inline-flex shrink-0 items-center xl:mr-3"
         >
-          <Image src="/enviro-aqua-logo.png" alt="Enviro Aqua" width={320} height={105} unoptimized
+          <Image src="/Enviro-Aqua-Logo.webp" alt="Enviro Aqua" width={320} height={105} unoptimized
             priority fetchPriority="high"
             className="pointer-events-none h-12 w-auto max-w-[220px] object-contain select-none sm:h-14 sm:max-w-[250px]" />
         </Link>
