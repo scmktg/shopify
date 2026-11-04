@@ -175,6 +175,7 @@ export default async function DosingCategoryPage({
       )}
 
       <CategoryView
+        key={`${CATEGORY}/${SUBCATEGORY}/${JSON.stringify(initialFilters)}`}
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
         query={baseQuery}
