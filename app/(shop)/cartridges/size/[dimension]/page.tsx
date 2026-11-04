@@ -109,9 +109,10 @@ export default async function CartridgeSizePage({ params }: PageProps) {
   return (
     <>
       <CategoryHero
-        title={`${size.label} Filter Cartridges`}
+        title={size.label}
         intro={null}
         categorySlug="cartridges"
+        parentLabel="Cartridges"
         subcategories={findCategory('cartridges')?.subcategories ?? []}
       />
       <CartridgeSizeResults
