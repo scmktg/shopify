@@ -16,8 +16,6 @@ import type { Product, ProductCardData } from '@/types/product';
 
 const FEATURED = {
   wholeHouse: 'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system',
-  bubbler:
-    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
   threeWayTap:
     '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
   underSink: 'under-sink-water-filter-2-stage-sediment-carbon',
