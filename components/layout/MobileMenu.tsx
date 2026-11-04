@@ -298,7 +298,7 @@ export function MobileMenu({ categories }: MobileMenuProps) {
             className="relative z-10 inline-flex shrink-0 cursor-pointer items-center"
           >
             <Image
-              src="/enviro-aqua-logo.png"
+              src="/Enviro-Aqua-Logo.webp"
               alt="Enviro Aqua"
               width={320}
               height={105}
