@@ -35,7 +35,7 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
         disabled && 'pointer-events-none opacity-60',
       )}
     >
-      <span>{target === 'bathroom' ? 'Explore bathrooms' : 'Explore water filters'}</span>
+      <span>{target === 'bathroom' ? 'Explore Bathroom Range' : 'Explore Filtration Range'}</span>
       <ArrowLeftRight size={14} strokeWidth={1.8} className="shrink-0 text-slate-400 transition-colors duration-200 group-hover/switch:text-slate-700" aria-hidden="true" />
     </Link>
   );
@@ -187,8 +187,7 @@ export function DepartmentNavigation() {
 
   return (
     <>
-      <nav ref={navRef} aria-label="Shopping navigation" className="relative hidden w-full min-w-0 items-center justify-between gap-3 xl:flex" onMouseLeave={scheduleClose} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) scheduleClose(); }}>
-        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
+      <nav ref={navRef} aria-label="Shopping navigation" className="relative hidden w-full min-w-0 items-center justify-center gap-3 xl:flex" onMouseLeave={scheduleClose} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) scheduleClose(); }}>
         <div className="relative h-12 min-w-0 w-[620px] max-w-full flex-1 overflow-hidden hover:overflow-visible focus-within:overflow-visible">
           {DEPARTMENT_ORDER.map((department) => {
             const isActive = current === department;
@@ -223,6 +222,7 @@ export function DepartmentNavigation() {
             );
           })}
         </div>
+        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
         {portalReady && renderedMenu && createPortal(
           <>
             <button
