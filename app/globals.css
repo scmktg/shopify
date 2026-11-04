@@ -64,3 +64,27 @@ h6 {
     background-color: var(--color-brand-blue-pressed);
   }
 }
+
+
+/* Editorial metallic highlight shared with the stainless-steel bubbler PDP. */
+.stainless-steel-shine {
+  color: #9b9fa3;
+  background: linear-gradient(105deg, #868a8f 10%, #b9bdc1 38%, #f5f6f7 49%, #969ba1 60%, #72777b 88%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: stainless-steel-sweep 6s ease-in-out infinite;
+}
+
+@keyframes stainless-steel-sweep {
+  0%, 18% { background-position: 100% 0; }
+  55%, 100% { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stainless-steel-shine {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
