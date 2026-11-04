@@ -156,6 +156,10 @@ export default async function CommercialBubblersPage() {
         <section aria-label="About commercial drinking fountains" className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold tracking-tight text-gray-950">About our commercial water bubblers</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-gray-600">
+            Cooling performance is consistent across the range. Choose mainly by cabinet,
+            installation environment and whether a separate bottle-fill side tap is needed.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-gray-600">
             Three Enviro Aqua commercial models for schools, offices, factories,
             warehouses, gyms and public facilities. Every model is rated at{' '}
             <strong>20 L/hr</strong>, delivers chilled water at approximately{' '}
