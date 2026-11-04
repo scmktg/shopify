@@ -67,12 +67,12 @@ export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
 }>> = {
   '/water-filters/': [
     { heading: 'Home Filtration', links: [
-      { label: 'Under Sink', href: '/water-filters/under-sink/' },
       { label: 'Whole House', href: '/water-filters/whole-house/' },
-      { label: 'Reverse Osmosis', href: '/water-filters/reverse-osmosis/' },
+      { label: 'Under Sink', href: '/water-filters/under-sink/' },
       { label: 'Bench Top', href: '/water-filters/bench-top/' },
     ] },
     { heading: 'Specialised Filtration', links: [
+      { label: 'Reverse Osmosis', href: '/water-filters/reverse-osmosis/' },
       { label: 'UV Sterilisation', href: '/water-filters/uv-sterilisation/' },
       { label: 'Commercial', href: '/water-filters/commercial/' },
     ] },
