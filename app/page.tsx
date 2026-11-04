@@ -184,11 +184,14 @@ function Hero() {
             <span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-blue" />
             Australian water filtration specialists
           </p>
-          <h1 className="mt-5 text-[clamp(2.65rem,5vw,4.5rem)] font-bold leading-[1.06] tracking-[-0.045em] text-slate-950">
+          <p className="mt-5 text-[clamp(2.65rem,5vw,4.5rem)] font-bold leading-[1.06] tracking-[-0.045em] text-slate-950">
             Better water
             <span className="block text-brand-blue">starts here.</span>
+          </p>
+          <h1 className="mt-6 text-base font-semibold leading-snug tracking-tight text-slate-800 sm:text-lg">
+            Water Filters &amp; Water Filtration Systems Australia
           </h1>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mt-3 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
             Explore water filters and filtration systems for your home or
             business. Expert solutions, Australian stock and wholesale-style
             prices for everyone.
