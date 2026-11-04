@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ChevronDown,
   ChevronRight,
@@ -172,31 +173,58 @@ export default async function HomePage() {
 
 function Hero() {
   return (
-    <section className="bg-gray-50 border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 text-center">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
-          EnviroAqua Australia
-        </p>
-        <h1 className="mt-3 mx-auto max-w-5xl text-4xl sm:text-5xl md:text-6xl font-bold text-black tracking-tight leading-tight">
-          Water Filters &amp; Water Filtration Systems Australia
-        </h1>
-        <p className="mt-5 mx-auto max-w-3xl text-base sm:text-lg md:text-xl text-black/70">
-          Start with one of our key filtration products below, or explore the
-          wider range when you need a different system, format or application.
-        </p>
-        <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-          <Link
-            href="/water-filters/"
-            className="inline-flex items-center justify-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold px-6 py-3 rounded transition-colors"
-          >
-            Shop water filters
-          </Link>
-          <Link
-            href="/use/"
-            className="inline-flex items-center justify-center border border-gray-300 bg-white hover:bg-gray-50 text-black font-semibold px-6 py-3 rounded transition-colors"
-          >
-            Find the right filter
-          </Link>
+    <section className="relative isolate overflow-hidden border-b border-slate-200 bg-[#f5f8fa]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-48 top-0 h-[36rem] w-[36rem] rounded-full bg-sky-100/60 blur-3xl"
+      />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-10 pt-12 sm:gap-12 sm:px-6 sm:pb-14 sm:pt-16 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8 lg:py-16">
+        <div className="relative z-10 max-w-xl">
+          <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-sky-700 sm:text-sm">
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-blue" />
+            Australian water filtration specialists
+          </p>
+          <h1 className="mt-5 text-[clamp(2.65rem,5vw,4.5rem)] font-bold leading-[1.06] tracking-[-0.045em] text-slate-950">
+            Better water
+            <span className="block text-brand-blue">starts here.</span>
+          </h1>
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
+            Explore water filters and filtration systems for your home or
+            business. Expert solutions, Australian stock and wholesale-style
+            prices for everyone.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/water-filters/"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+            >
+              Shop water filters
+              <ChevronRight size={18} aria-hidden="true" />
+            </Link>
+            <Link
+              href="/use/"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-900 transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+            >
+              Find the right filter
+            </Link>
+          </div>
+          <p className="mt-7 text-sm font-medium text-slate-500">
+            Quality filtration. Fair prices. Australia-wide delivery.
+          </p>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[580px] lg:max-w-none">
+          <div aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-[2rem] border border-sky-200 bg-sky-100/65 sm:-bottom-5 sm:-right-5" />
+          <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-white shadow-[0_24px_70px_-35px_rgba(15,23,42,0.35)] sm:rounded-[2rem]">
+            <Image
+              src="/Enviro%20Aqua%20Water%20Filter%20Showroom%20Specialist.png"
+              alt="Enviro Aqua water filtration showroom showcasing water filter systems and specialist solutions"
+              fill
+              priority
+              sizes="(max-width: 1023px) 100vw, (max-width: 1280px) 46vw, 580px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>
