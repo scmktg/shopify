@@ -61,7 +61,7 @@ export function PromoBanner() {
 
   return (
     <div className="bg-[#000000] text-white text-[12px] sm:text-[13px]">
-      <div className="mx-auto grid h-10 max-w-7xl grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-10 max-w-7xl items-center justify-center gap-3 px-4 sm:justify-between sm:px-6 lg:px-8">
         {/*
           Static line — always visible. On mobile the rotating side
           is hidden, so the static line is the only thing on the
@@ -76,9 +76,8 @@ export function PromoBanner() {
           <span className="text-white/60">{PROMO_STATIC.secondary}</span>
         </p>
 
-        <div className="col-start-2 row-start-1 flex items-center justify-center">
+        <div className="flex h-full shrink-0 items-center gap-4 sm:ml-auto">
           <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4 sm:[&_img]:!h-5" />
-        </div>
 
         {/*
           Rotating side — hidden on mobile, sm+ only. `flex-1` lets
@@ -89,7 +88,7 @@ export function PromoBanner() {
           is right-aligned via `justify-end`.
         */}
         <div
-          className="relative col-start-3 hidden h-full min-w-0 sm:block"
+          className="relative hidden h-full w-[310px] min-w-0 md:w-[390px] sm:block"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
@@ -123,6 +122,7 @@ export function PromoBanner() {
               );
             })}
           </ul>
+        </div>
         </div>
       </div>
     </div>
