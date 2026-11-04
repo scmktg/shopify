@@ -42,7 +42,7 @@ function matchesFilters(product: ProductCardData, filters: CatalogFilterState): 
   });
 }
 
-const triggerClass = 'inline-flex min-h-11 min-w-28 items-center justify-between gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:border-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30';
+const triggerClass = 'inline-flex min-h-11 min-w-28 items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-900 transition-colors hover:border-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30';
 const menuClass = 'absolute left-0 top-full z-30 mt-2 w-64 max-w-[calc(100vw-2rem)] rounded-2xl border border-gray-100 bg-white p-2 shadow-[0_16px_48px_rgba(15,23,42,0.14)]';
 
 export function CartridgeSizeResults({ products, dimension, truncated, loadFailed }: {
@@ -67,8 +67,12 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
 
   return (
     <section aria-label="Browse cartridges">
-      <div className="border-b border-gray-200 bg-slate-50/70">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-end gap-2 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="border-b border-slate-200 bg-white">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <p className="text-sm text-slate-500" aria-live="polite">
+            <span className="font-semibold text-slate-900">{filtered.length}</span> {filtered.length === 1 ? 'product' : 'products'}
+          </p>
+          <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:justify-end">
           <details ref={typeRef} className="group/type relative">
             <summary className={`${triggerClass} cursor-pointer list-none [&::-webkit-details-marker]:hidden`} aria-label={`Type: ${selectedType?.label ?? 'All types'}`}>
               <span>Type<span className="hidden text-gray-400 sm:inline">{selectedType ? `: ${selectedType.label}` : ''}</span></span>
@@ -100,6 +104,7 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
             </nav>
           </details>
           <SortDropdown value={sort} onChange={setSort} disabled={loadFailed} allowedValues={['default', 'price-asc', 'price-desc']} />
+          </div>
         </div>
       </div>
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 md:pt-10 lg:px-8">
@@ -107,7 +112,6 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
           <p role="alert" className="rounded-lg bg-amber-50 p-5 text-sm text-amber-900">Products are temporarily unavailable. Please try again.</p>
         ) : (
           <>
-            <p className="mb-6 text-sm text-gray-600">{filtered.length} matching {filtered.length === 1 ? 'product' : 'products'}</p>
             {filtered.length > 0 ? <ProductGrid products={filtered} editorial /> : (
               <div className="rounded-xl border border-gray-200 p-7">
                 <h2 className="text-lg font-semibold text-gray-950">No matching cartridges found</h2>
