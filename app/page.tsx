@@ -211,7 +211,7 @@ function Hero() {
           <div aria-hidden="true" className="absolute bottom-0 right-0 top-3 left-3 rounded-[1.5rem] bg-[#DCEFEA] sm:top-5 sm:left-5 sm:rounded-[2rem]" />
           <div className="relative aspect-square overflow-hidden rounded-[1.25rem] bg-white shadow-[0_24px_70px_-35px_rgba(15,23,42,0.35)] sm:rounded-[2rem]">
             <Image
-              src="/Enviro%20Aqua%20Water%20Filter%20Showroom%20Specialist.png"
+              src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Enviro_Aqua_Water_Filter_Showroom_Specialist.png?v=1793771538"
               alt="Enviro Aqua water filtration showroom showcasing water filter systems and specialist solutions"
               fill
               priority
