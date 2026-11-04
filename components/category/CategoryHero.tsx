@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { findCategory, type Subcategory } from '@/content/categories';
 
 interface CategoryHeroProps {
@@ -20,9 +21,12 @@ export function CategoryHero({ title, categorySlug, activeSubSlug, parentLabel }
     <header className="bg-white">
       <div className="mx-auto flex max-w-7xl flex-col justify-center px-4 pb-4 pt-6 sm:px-6 lg:px-8 xl:h-[88px] xl:py-3 xl:pr-[455px]">
         {categoryLabel && (
-          <p className="mb-1 text-xs font-medium tracking-wide text-slate-500">
+          <Link
+            href={`/${categorySlug}/`}
+            className="mb-1 w-fit text-xs font-medium tracking-wide text-slate-500 transition-colors hover:text-brand-blue hover:underline hover:underline-offset-2 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+          >
             {categoryLabel}
-          </p>
+          </Link>
         )}
         <h1 className="text-[clamp(1.85rem,3vw,2.25rem)] font-semibold leading-[1.12] tracking-[-0.04em] text-slate-950">
           {title}
