@@ -188,9 +188,9 @@ function Hero() {
             The Best Water Filters for Australian Homes &amp; Businesses
           </h1>
           <p className="mt-4 max-w-lg text-[0.9375rem] leading-relaxed text-slate-600 sm:text-lg">
-            Explore water filters and filtration systems for your home or
-            business. Expert solutions, Australian stock and wholesale-style
-            prices for everyone.
+            Whether you&apos;re after a whole house water filter, a drinking
+            fountain or a dosing tank, we&apos;ve got a comprehensive range of
+            solutions. Australian stocked, at wholesale prices for all customers.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-3">
             <Link
