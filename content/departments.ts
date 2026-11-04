@@ -56,8 +56,7 @@ export const DEPARTMENTS: Record<DepartmentId, {
     href: '/bathroom/',
     links: [
       { label: 'Toilets', href: '/plumbing/toilets/' },
-      { label: 'Bathroom Tapware', href: '/plumbing/bathroom-taps/' },
-      { label: 'Kitchen Tapware', href: '/plumbing/kitchen-taps/' },
+      { label: 'Bathroom Taps', href: '/plumbing/bathroom-taps/' },
       { label: 'Bathroom Packages', href: '/plumbing/bundles/' },
     ],
   },
