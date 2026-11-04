@@ -120,7 +120,7 @@ export function PromoBanner() {
             })}
           </ul>
         </div>
-        <ZipPaymentBadge location="header" className="shrink-0 rounded bg-white px-1 py-0.5 [&_img]:!h-4 sm:[&_img]:!h-5" />
+        <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4 sm:[&_img]:!h-5" />
       </div>
     </div>
   );
