@@ -6,7 +6,7 @@ import { DepartmentNavigation } from './DepartmentNavigation';
 
 export function Header() {
   return (
-    <header className="border-b border-gray-200 bg-white text-black">
+    <header className="relative z-50 bg-white text-black">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 xl:gap-4 lg:px-8">
         <Link
           href="/"
