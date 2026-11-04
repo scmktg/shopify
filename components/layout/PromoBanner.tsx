@@ -19,8 +19,8 @@ import {
  *     auto-advancing every `PROMO_ROTATION_MS`. Each item is a real
  *     <a> for keyboard nav and crawl visibility.
  *
- * On mobile (`<sm`) the Zip badge and rotating message share the strip;
- * the static brand promise is hidden to preserve a single line.
+ * On mobile (`<sm`) show the Zip badge followed by the wholesale-price
+ * promise, centred as a group. Rotating promotions remain desktop-only.
  *
  * Implementation notes:
  *   - All four rotating items are rendered absolutely-stacked. The
@@ -54,7 +54,7 @@ export function PromoBanner() {
 
   useEffect(() => {
     const item = PROMO_ROTATING_ITEMS[index];
-    if (item && !paused && document.visibilityState === 'visible' ) {
+    if (item && !paused && document.visibilityState === 'visible' && window.matchMedia('(min-width: 640px)').matches) {
       trackViewPromotion(item.href, item.text);
     }
   }, [index, paused]);
@@ -62,10 +62,15 @@ export function PromoBanner() {
   return (
     <div className="bg-[#000000] text-white text-[12px] sm:text-[13px]">
       <div className="mx-auto flex h-10 max-w-7xl items-center justify-center gap-3 px-4 sm:justify-between sm:px-6 lg:px-8">
-        {/*
-          Static line — shown at sm+ to leave room for Zip and the rotating
-          promotion on small screens.
-        */}
+        {/* Mobile: centred Zip + the same wholesale pricing promise as desktop. */}
+        <div className="flex min-w-0 items-center justify-center gap-2.5 sm:hidden">
+          <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4" />
+          <span className="min-w-0 text-center text-[11px] font-semibold leading-tight text-white">
+            {PROMO_STATIC.primary}
+          </span>
+        </div>
+
+        {/* Desktop: wholesale promise left, Zip + rotating offers right. */}
         <p className="hidden min-w-0 truncate text-left sm:block">
           <span className="font-semibold text-white">
             {PROMO_STATIC.primary}
@@ -73,16 +78,15 @@ export function PromoBanner() {
           <span className="text-white/60">{PROMO_STATIC.secondary}</span>
         </p>
 
-        <div className="flex h-full w-full min-w-0 items-center gap-2 sm:ml-auto sm:w-auto sm:shrink-0 sm:gap-4">
+        <div className="hidden h-full min-w-0 items-center gap-4 sm:ml-auto sm:flex sm:w-auto sm:shrink-0">
           <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4 sm:[&_img]:!h-5" />
 
         {/*
-          Rotating promotion — takes the remaining width on mobile so the
-          message can truncate without pushing the Zip badge offscreen.
-          Desktop keeps its fixed right-side width.
+          Rotating promotion — desktop only; mobile displays the stable
+          wholesale pricing promise instead.
         */}
         <div
-          className="relative h-full min-w-0 flex-1 sm:w-[310px] sm:flex-none md:w-[390px]"
+          className="relative h-full w-[310px] min-w-0 md:w-[390px]"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
