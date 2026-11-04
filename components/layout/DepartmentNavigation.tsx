@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowLeftRight, ChevronDown, ChevronRight, Droplets, Menu, ShowerHead, X } from 'lucide-react';
+import { ArrowLeftRight, ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import clsx from 'clsx';
-import { DepartmentLogo } from './DepartmentLogo';
 import { DEPARTMENTS, MEGA_MENU_GROUPS, departmentForPath, type DepartmentId } from '@/content/departments';
 
 const DEPARTMENT_ORDER: DepartmentId[] = ['water', 'bathroom'];
@@ -32,7 +31,7 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
       tabIndex={disabled ? -1 : undefined}
       className={clsx(
         'group/switch inline-flex shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-slate-200 bg-slate-100 px-4 py-2.5 text-sm font-medium text-slate-800 transition-[background-color,border-color,transform] duration-200 hover:border-slate-300 hover:bg-slate-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
-        mobile && 'min-h-11 w-full',
+        mobile && 'min-h-11',
         disabled && 'pointer-events-none opacity-60',
       )}
     >
@@ -58,6 +57,8 @@ export function DepartmentNavigation() {
   const [renderedMenu, setRenderedMenu] = useState<string | null>(null);
   const [portalReady, setPortalReady] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
+  const mobileButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [mobilePanelTop, setMobilePanelTop] = useState(76);
   const closeTimer = useRef<number | null>(null);
   const switchTimers = useRef<number[]>([]);
   const [switchingTo, setSwitchingTo] = useState<DepartmentId | null>(null);
@@ -154,6 +155,21 @@ export function DepartmentNavigation() {
     window.addEventListener('keydown', onEscape);
     return () => window.removeEventListener('keydown', onEscape);
   }, [desktopMenu]);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const positionPanel = () => {
+      const header = mobileButtonRef.current?.closest('header');
+      if (header) setMobilePanelTop(header.getBoundingClientRect().bottom);
+    };
+    positionPanel();
+    window.addEventListener('resize', positionPanel);
+    window.addEventListener('scroll', positionPanel, true);
+    return () => {
+      window.removeEventListener('resize', positionPanel);
+      window.removeEventListener('scroll', positionPanel, true);
+    };
+  }, [mobileOpen]);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -283,34 +299,36 @@ export function DepartmentNavigation() {
       )}
 
       <button
+        ref={mobileButtonRef}
         type="button"
-        onClick={() => setMobileOpen(true)}
-        aria-label="Open shopping menu"
+        onClick={() => {
+          const header = mobileButtonRef.current?.closest('header');
+          if (header) setMobilePanelTop(header.getBoundingClientRect().bottom);
+          setMobileOpen((open) => !open);
+        }}
+        aria-label={mobileOpen ? 'Close shopping menu' : 'Open shopping menu'}
         aria-expanded={mobileOpen}
         aria-controls="department-mobile-menu"
-        className="inline-flex h-10 w-10 items-center justify-center rounded text-black xl:hidden"
+        className="relative z-10 inline-flex h-10 w-10 items-center justify-center rounded text-black transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue xl:hidden"
       >
-        <Menu size={24} />
+        {mobileOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
       </button>
       <div
         id="department-mobile-menu"
-        role="dialog"
-        aria-modal="true"
+        role="region"
         aria-label="Shopping menu"
+        aria-hidden={!mobileOpen}
         inert={!mobileOpen}
+        style={{ top: mobilePanelTop }}
         className={clsx(
-          'fixed inset-0 z-[60] overflow-y-auto bg-white text-black transition-transform duration-200 xl:hidden',
-          mobileOpen ? 'translate-x-0' : 'translate-x-full',
+          'fixed inset-x-0 bottom-0 z-[60] overflow-y-auto overscroll-contain border-t border-gray-100 bg-white text-black shadow-[0_18px_38px_rgba(15,23,42,0.08)] transition-[opacity,transform,visibility] duration-200 ease-out motion-reduce:transition-none xl:hidden',
+          mobileOpen
+            ? 'visible translate-y-0 opacity-100'
+            : 'invisible pointer-events-none -translate-y-3 opacity-0',
         )}
       >
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 bg-white px-5 py-4">
-          <DepartmentLogo onClick={() => setMobileOpen(false)} />
-          <button type="button" onClick={() => setMobileOpen(false)} aria-label="Close shopping menu" className="flex h-10 w-10 items-center justify-center">
-            <X size={24} />
-          </button>
-        </div>
-        <div className="space-y-5 px-5 py-6">
-          <div className="flex justify-end">
+        <div className="mx-auto w-full max-w-xl space-y-7 px-6 pb-12 pt-7 sm:px-8">
+          <div className="flex justify-start">
             <DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
           </div>
           <div className="relative overflow-hidden">
