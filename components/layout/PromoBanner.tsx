@@ -61,7 +61,7 @@ export function PromoBanner() {
 
   return (
     <div className="bg-[#000000] text-white text-[12px] sm:text-[13px]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between gap-3 sm:gap-4">
+      <div className="mx-auto grid h-10 max-w-7xl grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-3 px-4 sm:px-6 lg:px-8">
         {/*
           Static line — always visible. On mobile the rotating side
           is hidden, so the static line is the only thing on the
@@ -69,12 +69,16 @@ export function PromoBanner() {
           it sits to the left and the rotating side sits to its
           right via the outer `sm:justify-between`.
         */}
-        <p className="min-w-0 truncate text-left">
+        <p className="hidden min-w-0 truncate text-left sm:block">
           <span className="font-semibold text-white">
             {PROMO_STATIC.primary}
           </span>{' '}
           <span className="text-white/60">{PROMO_STATIC.secondary}</span>
         </p>
+
+        <div className="col-start-2 row-start-1 flex items-center justify-center">
+          <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4 sm:[&_img]:!h-5" />
+        </div>
 
         {/*
           Rotating side — hidden on mobile, sm+ only. `flex-1` lets
@@ -85,7 +89,7 @@ export function PromoBanner() {
           is right-aligned via `justify-end`.
         */}
         <div
-          className="hidden sm:block relative flex-1 h-full"
+          className="relative col-start-3 hidden h-full min-w-0 sm:block"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
@@ -120,7 +124,6 @@ export function PromoBanner() {
             })}
           </ul>
         </div>
-        <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4 sm:[&_img]:!h-5" />
       </div>
     </div>
   );
