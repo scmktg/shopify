@@ -88,3 +88,27 @@ h6 {
     background-position: 50% 0;
   }
 }
+
+
+/* Water-inspired headline effect, matching the bubbler editorial animation. */
+.water-flow-shine {
+  color: #167bb7;
+  background: linear-gradient(105deg, #085e9f 0%, #1788c6 24%, #75d1eb 46%, #168bc9 65%, #075b9b 100%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: water-flow-sweep 7s ease-in-out infinite;
+}
+
+@keyframes water-flow-sweep {
+  0%, 15% { background-position: 100% 0; }
+  65%, 100% { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-flow-shine {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
