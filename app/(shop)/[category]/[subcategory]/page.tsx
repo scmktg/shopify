@@ -142,12 +142,13 @@ export default async function SubcategoryPage({
   }
 
   const pathname = `/${category}/${subcategory}`;
+  // Category landing pages show the parent category name; subcategory pages
+  // show only their own label. SEO metadata and breadcrumb schema still
+  // retain the parent context without duplicating it in the visible H1.
   const title =
     category === 'bubblers-and-coolers' && subcategory === 'bubblers'
       ? 'Commercial Water Bubblers & Drinking Fountains'
-      : category === 'bubblers-and-coolers' && subcategory === 'coolers-and-chillers'
-        ? 'Coolers & Chillers'
-        : `${node.subcategory.label} ${node.category.label}`;
+      : node.subcategory.label;
   const intro = getCategoryIntro(`${category}/${subcategory}`);
   const isWholeHouse = category === 'water-filters' && subcategory === 'whole-house';
 
