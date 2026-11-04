@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import { Check, Droplet, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
-import { PriceDisplay } from '@/components/product/PriceDisplay';
-import { WaterMarkLeadFreeOverlay } from '@/components/product/WaterMarkLeadFreeOverlay';
-import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
@@ -15,7 +11,8 @@ import {
   faqPageSchema,
   productListSchema,
 } from '@/lib/seo/jsonld';
-import type { Product } from '@/types/product';
+import type { Product, ProductCardData } from '@/types/product';
+import { ProductGrid } from '@/components/product/ProductGrid';
 import { CategoryHero } from '@/components/category/CategoryHero';
 import { CommercialBubblerToolbar } from '@/components/category/CommercialBubblerToolbar';
 import type { SortValue } from '@/components/category/CategoryView';
@@ -208,80 +205,41 @@ export default async function CommercialBubblersPage({ searchParams }: Commercia
   );
 }
 
-function RangeSection({ models }: { models: ReadonlyArray<{ cabinet: CabinetSpec; product: Product | null }> }) {
-  return (
-    <section id="range" aria-label="Shop commercial water bubblers" className="scroll-mt-24">
-      <div className="mx-auto max-w-7xl px-4 pb-12 pt-5 sm:px-6 md:pt-8 lg:px-8">
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
-          {models.map(({ cabinet, product }) => (
-            <ProductCard key={cabinet.key} cabinet={cabinet} product={product} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+/** Use the exact same product cards, purchase controls and tracking as every catalogue. */
+function toProductCard(product: Product): ProductCardData {
+  return {
+    id: product.id,
+    handle: product.handle,
+    title: product.title,
+    productType: product.productType,
+    tags: product.tags,
+    featuredImage: product.featuredImage,
+    price: product.priceRange.minVariantPrice,
+    housingSize: product.metafields.housing_size,
+    variants: product.variants.map((variant) => ({
+      id: variant.id,
+      sku: variant.sku,
+      title: variant.title,
+      price: variant.price,
+      availableForSale: variant.availableForSale,
+      image: variant.image,
+      selectedOptions: variant.selectedOptions,
+    })),
+  };
 }
 
-function ProductCard({ cabinet, product }: { cabinet: CabinetSpec; product: Product | null }) {
-  const href = product ? getProductUrl(product.handle) : `/${cabinet.handle}`;
-  const image = product?.featuredImage ?? null;
-  const price = product?.priceRange.minVariantPrice ?? null;
-  const watermarkLicence = getInitialBubblerWaterMarkLicence(cabinet.handle);
-
+function RangeSection({
+  models,
+}: {
+  models: ReadonlyArray<{ cabinet: CabinetSpec; product: Product | null }>;
+}) {
+  const cards = models.flatMap(({ product }) => product ? [toProductCard(product)] : []);
   return (
-    <article className="group flex h-full flex-col">
-      <Link href={href} className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
-        <div className="relative aspect-square overflow-hidden rounded-2xl bg-white ring-1 ring-gray-100/70">
-          {image ? (
-            <Image
-              src={image.url}
-              alt={image.altText ?? `${cabinet.shortName} commercial water bubbler`}
-              fill
-              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.035] sm:p-7"
-            />
-          ) : (
-            <span className="absolute inset-0 grid place-items-center text-gray-300">
-              <Droplet size={48} strokeWidth={1.25} aria-hidden="true" />
-            </span>
-          )}
-          {image && watermarkLicence && (
-            <div className="pointer-events-none absolute left-[7%] top-[7%] z-10 h-[30%] w-[30%]">
-              <div className="relative h-full w-full">
-                <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
-              </div>
-            </div>
-          )}
-          <span className="absolute right-3 top-3 rounded-full bg-gray-950 px-3 py-1.5 text-[10px] font-medium tracking-wide text-white">
-            {cabinet.badge}
-          </span>
-        </div>
-      </Link>
-      <div className="mt-4 flex flex-1 flex-col px-0.5">
-        <p className="text-xs font-medium text-gray-500">{cabinet.shortName}</p>
-        <Link href={href} className="mt-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
-          <h2 className="text-base font-semibold leading-snug text-gray-950 group-hover:text-brand-blue">
-            {cabinet.displayName}
-          </h2>
-        </Link>
-        <p className="mt-1 text-xs font-medium text-gray-500">{cabinet.modelId}</p>
-        <p className="mt-3 text-sm leading-6 text-gray-600">{cabinet.tagline}</p>
-        <ul className="mt-4 space-y-2 text-sm text-gray-600">
-          {cabinet.highlights.map((item) => (
-            <li key={item} className="flex items-start gap-2">
-              <Check size={15} className="mt-0.5 shrink-0 text-brand-blue" aria-hidden="true" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-auto pt-5">
-          {price && <PriceDisplay money={price} className="mb-3 block text-sm font-medium text-gray-700" />}
-          <Link href={href} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-gray-950 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
-            View product
-          </Link>
-        </div>
+    <section id="range" aria-label="Shop commercial water bubblers" className="scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 md:pt-10 lg:px-8">
+        <ProductGrid products={cards} editorial />
       </div>
-    </article>
+    </section>
   );
 }
 
