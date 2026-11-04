@@ -35,7 +35,7 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
         disabled && 'pointer-events-none opacity-60',
       )}
     >
-      <span>Switch to {target === 'bathroom' ? 'Bathroom' : 'Water Filtration'}</span>
+      <span>{target === 'bathroom' ? 'Bathroom Range' : 'Filtration Range'}</span>
       <ArrowLeftRight size={16} strokeWidth={1.9} className="text-slate-500 transition-transform duration-300 group-hover/switch:rotate-180 motion-reduce:transition-none" aria-hidden="true" />
     </Link>
   );
