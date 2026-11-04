@@ -67,12 +67,9 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
 
   return (
     <section aria-label="Browse cartridges">
-      <div className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-          <p className="text-sm text-slate-500" aria-live="polite">
-            <span className="font-semibold text-slate-900">{filtered.length}</span> {filtered.length === 1 ? 'product' : 'products'}
-          </p>
-          <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:justify-end">
+      <div className="relative z-20 border-b border-slate-200 bg-white xl:-mt-[112px] xl:h-[112px] xl:border-b-0 xl:bg-transparent">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:h-full xl:justify-end xl:py-0">
+          <div className="flex flex-wrap items-center gap-2">
           <details ref={typeRef} className="group/type relative">
             <summary className={`${triggerClass} cursor-pointer list-none [&::-webkit-details-marker]:hidden`} aria-label={`Type: ${selectedType?.label ?? 'All types'}`}>
               <span>Type<span className="hidden text-gray-400 sm:inline">{selectedType ? `: ${selectedType.label}` : ''}</span></span>
