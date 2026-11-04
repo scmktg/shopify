@@ -16,6 +16,9 @@ import {
   productListSchema,
 } from '@/lib/seo/jsonld';
 import type { Product } from '@/types/product';
+import { CategoryHero } from '@/components/category/CategoryHero';
+import { CommercialBubblerToolbar } from '@/components/category/CommercialBubblerToolbar';
+import type { SortValue } from '@/components/category/CategoryView';
 
 export const revalidate = 3600;
 
@@ -119,10 +122,31 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function CommercialBubblersPage() {
+interface CommercialBubblersPageProps {
+  searchParams?: Promise<{ cabinet?: string; sort?: string }>;
+}
+
+export default async function CommercialBubblersPage({ searchParams }: CommercialBubblersPageProps) {
+  const params = (await searchParams) ?? {};
+  const selectedCabinets = (params.cabinet ?? '')
+    .split(',')
+    .filter((value) => CABINETS.some((cabinet) => cabinet.key === value));
+  const sort: SortValue = params.sort === 'price-asc' || params.sort === 'price-desc'
+    ? params.sort
+    : 'default';
   const products = await Promise.all(
     CABINETS.map((cabinet) => getProductByHandle(cabinet.handle)),
   );
+
+  const models = CABINETS.map((cabinet, index) => ({ cabinet, product: products[index] }));
+  const visibleModels = models
+    .filter(({ cabinet }) => selectedCabinets.length === 0 || selectedCabinets.includes(cabinet.key))
+    .sort((a, b) => {
+      if (sort === 'default') return 0;
+      const aPrice = Number(a.product?.priceRange.minVariantPrice.amount ?? 0);
+      const bPrice = Number(b.product?.priceRange.minVariantPrice.amount ?? 0);
+      return (aPrice - bPrice) * (sort === 'price-desc' ? -1 : 1);
+    });
 
   const breadcrumbs = [
     { name: 'Home', href: '/' },
@@ -149,8 +173,18 @@ export default async function CommercialBubblersPage() {
       />
 
       <article className="bg-white">
-        <Hero />
-        <RangeSection products={products} />
+        <CategoryHero
+          title="Drinking Fountains"
+          intro={null}
+          categorySlug="bubblers-and-coolers"
+          subcategories={[]}
+        />
+        <CommercialBubblerToolbar
+          selectedCabinets={selectedCabinets}
+          sort={sort}
+          count={visibleModels.length}
+        />
+        <RangeSection models={visibleModels} />
         <section aria-label="About commercial drinking fountains" className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold tracking-tight text-gray-950">About our commercial water bubblers</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-gray-600">
@@ -174,37 +208,13 @@ export default async function CommercialBubblersPage() {
   );
 }
 
-function Hero() {
-  return (
-    <header className="border-b border-gray-100 bg-slate-50/70">
-      <div className="mx-auto max-w-7xl px-4 pb-5 pt-7 sm:px-6 md:pb-6 md:pt-10 lg:px-8">
-        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
-          Enviro Aqua / Shop
-        </p>
-        <h1 className="text-4xl font-semibold tracking-tight text-gray-950 md:text-5xl">
-          Drinking Fountains
-        </h1>
-        <p className="mt-2 text-sm leading-relaxed text-gray-500 sm:text-base">
-          Reliable hydration for every space.
-        </p>
-      </div>
-    </header>
-  );
-}
-
-function RangeSection({ products }: { products: ReadonlyArray<Product | null> }) {
+function RangeSection({ models }: { models: ReadonlyArray<{ cabinet: CabinetSpec; product: Product | null }> }) {
   return (
     <section id="range" aria-label="Shop commercial water bubblers" className="scroll-mt-24">
       <div className="mx-auto max-w-7xl px-4 pb-12 pt-5 sm:px-6 md:pt-8 lg:px-8">
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4">
-          <p className="text-sm font-medium text-gray-600">3 products</p>
-          <a href="#compare" className="text-sm font-medium text-gray-700 underline-offset-4 hover:text-brand-blue hover:underline">
-            Compare specifications →
-          </a>
-        </div>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
-          {CABINETS.map((cabinet, index) => (
-            <ProductCard key={cabinet.key} cabinet={cabinet} product={products[index]} />
+          {models.map(({ cabinet, product }) => (
+            <ProductCard key={cabinet.key} cabinet={cabinet} product={product} />
           ))}
         </div>
       </div>
