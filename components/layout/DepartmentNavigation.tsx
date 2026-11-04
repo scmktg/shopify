@@ -222,7 +222,6 @@ export function DepartmentNavigation() {
             );
           })}
         </div>
-        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
         {portalReady && renderedMenu && createPortal(
           <>
             <button
@@ -328,9 +327,6 @@ export function DepartmentNavigation() {
         )}
       >
         <div className="mx-auto w-full max-w-xl space-y-7 px-6 pb-12 pt-7 sm:px-8">
-          <div className="flex justify-start">
-            <DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
-          </div>
           <div className="relative overflow-hidden">
             {DEPARTMENT_ORDER.map((department) => {
               const isActive = current === department;
@@ -411,6 +407,9 @@ export function DepartmentNavigation() {
             <Link href="/help/" onClick={() => setMobileOpen(false)} className="block py-2">Help & Guides</Link>
             <Link href="/about/" onClick={() => setMobileOpen(false)} className="block py-2">About Us</Link>
             <Link href="/shipping/" onClick={() => setMobileOpen(false)} className="block py-2">Shipping & Delivery</Link>
+          </div>
+          <div className="border-t border-gray-200 pt-5">
+            <DepartmentSwitchButton current={current} mobile onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
           </div>
         </div>
       </div>
