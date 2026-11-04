@@ -351,23 +351,36 @@ export function DepartmentNavigation() {
                   {DEPARTMENTS[department].links.map((item) => (
                     <div key={item.href} className="border-b border-gray-200">
                       <div className="flex min-h-14 items-center">
-                        <Link href={item.href} onClick={() => setMobileOpen(false)} className="flex-1 py-4 text-base font-semibold">
-                          {item.label}
-                        </Link>
-                        {!!item.children?.length && (
+                        {!!item.children?.length ? (
                           <button
                             type="button"
-                            className="flex h-12 w-12 items-center justify-center"
-                            aria-label={expanded === item.href ? 'Collapse ' + item.label : 'Expand ' + item.label}
+                            className="flex min-h-14 w-full items-center justify-between gap-4 py-4 text-left text-base font-semibold focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-brand-blue"
                             aria-expanded={expanded === item.href}
+                            aria-controls={`mobile-department-category-${department}-${item.href.replace(/[^a-z0-9]/gi, '-')}`}
                             onClick={() => setExpanded(expanded === item.href ? null : item.href)}
                           >
-                            <ChevronRight size={20} className={clsx('transition-transform', expanded === item.href && 'rotate-90')} />
+                            <span>{item.label}</span>
+                            <ChevronRight size={20} aria-hidden="true" className={clsx('shrink-0 transition-transform duration-200', expanded === item.href && 'rotate-90')} />
                           </button>
+                        ) : (
+                          <Link href={item.href} onClick={() => setMobileOpen(false)} className="flex min-h-14 w-full items-center py-4 text-base font-semibold">
+                            {item.label}
+                          </Link>
                         )}
                       </div>
                       {expanded === item.href && !!item.children?.length && (
-                        <div className="space-y-3 rounded-lg bg-gray-50 px-4 py-3">
+                        <div
+                          id={`mobile-department-category-${department}-${item.href.replace(/[^a-z0-9]/gi, '-')}`}
+                          className="space-y-3 rounded-lg bg-gray-50 px-4 py-3"
+                        >
+                          <Link
+                            href={item.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="flex min-h-11 items-center justify-between border-b border-gray-200 pb-3 text-sm font-semibold text-sky-800"
+                          >
+                            Shop all {item.label}
+                            <ChevronRight size={16} aria-hidden="true" />
+                          </Link>
                           {MEGA_MENU_GROUPS[item.href] ? (
                             <>
                               {MEGA_MENU_GROUPS[item.href].map((group) => (
@@ -386,9 +399,6 @@ export function DepartmentNavigation() {
                               {child.label}
                             </Link>
                           ))}
-                          <Link href={item.href} onClick={() => setMobileOpen(false)} className="block border-t border-gray-200 pt-3 text-sm font-semibold text-sky-800">
-                            Shop all {item.label} →
-                          </Link>
                         </div>
                       )}
                     </div>
