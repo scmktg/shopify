@@ -54,7 +54,7 @@ export function CommercialBubblerToolbar({
             resultCount={count}
             disabled={pending}
           />
-          <SortDropdown value={sort} onChange={(next) => change(selectedCabinets, next)} disabled={pending} />
+          <SortDropdown value={sort} onChange={(next) => change(selectedCabinets, next)} disabled={pending} allowedValues={['default', 'price-asc', 'price-desc']} />
         </div>
       </div>
     </div>
