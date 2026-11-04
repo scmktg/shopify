@@ -219,10 +219,7 @@ export function CategoryView({
   return (
     <section aria-label="Browse products">
       <div className="border-b border-gray-200 bg-slate-50/70">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <p className="text-sm font-medium tabular-nums text-gray-600">
-          {products.length}{pageInfo.hasNextPage ? '+' : ''} {products.length === 1 && !pageInfo.hasNextPage ? 'product' : 'products'}
-        </p>
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-end gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center gap-2">
           {categorySlug && <TypeDropdown categorySlug={categorySlug} activeSubcategory={activeSubcategory} />}
           {groups.length > 0 && (
