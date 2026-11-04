@@ -30,13 +30,13 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
       aria-disabled={disabled}
       tabIndex={disabled ? -1 : undefined}
       className={clsx(
-        'group/switch inline-flex shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-gray-950 bg-gray-950 px-4 py-2.5 text-sm font-medium text-white transition-[background-color,border-color,transform] duration-200 hover:border-gray-800 hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
+        'group/switch inline-flex shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-slate-200 bg-slate-100 px-4 py-2.5 text-sm font-medium text-slate-800 transition-[background-color,border-color,transform] duration-200 hover:border-slate-300 hover:bg-slate-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
         mobile && 'min-h-11 w-full',
         disabled && 'pointer-events-none opacity-60',
       )}
     >
       <span>Switch to {target === 'bathroom' ? 'Bathroom' : 'Water Filtration'}</span>
-      <ArrowLeftRight size={16} strokeWidth={1.9} className="text-white/80 transition-transform duration-300 group-hover/switch:rotate-180 motion-reduce:transition-none" aria-hidden="true" />
+      <ArrowLeftRight size={16} strokeWidth={1.9} className="text-slate-500 transition-transform duration-300 group-hover/switch:rotate-180 motion-reduce:transition-none" aria-hidden="true" />
     </Link>
   );
 }
