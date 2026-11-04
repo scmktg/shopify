@@ -181,11 +181,11 @@ function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-10 pt-12 sm:gap-12 sm:px-6 sm:pb-14 sm:pt-16 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8 lg:py-16">
         <div className="relative z-10 max-w-xl">
           <p className="text-[clamp(2.65rem,5vw,4.5rem)] font-bold leading-[1.06] tracking-[-0.045em] text-slate-950">
-            Better water
+            Healthier water
             <span className="block text-brand-blue">starts here.</span>
           </p>
           <h1 className="mt-6 text-base font-semibold leading-snug tracking-tight text-slate-800 sm:text-lg">
-            Water Filters for Homes &amp; Businesses in Australia
+            The Best Water Filters for Australian Homes &amp; Businesses
           </h1>
           <p className="mt-3 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg">
             Explore water filters and filtration systems for your home or
