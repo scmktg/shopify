@@ -7,7 +7,7 @@ import {
   getSubcategoryMetaDescription,
 } from '@/content/category-intros';
 import { getProducts, type ProductsPage } from '@/lib/shopify/queries/getProducts';
-import { CategoryHero } from '@/components/category/CategoryHero';
+import { CategoryHero, CategorySeoCopy } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
 import { WaterFilterStageGuide } from '@/components/category/WaterFilterStageGuide';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
@@ -199,6 +199,7 @@ export default async function SubcategoryPage({
           </Link>
         </div>
       )}
+      <CategorySeoCopy title={title} intro={intro} />
     </>
   );
 }
