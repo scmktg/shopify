@@ -300,9 +300,10 @@ export function MobileMenu({ categories }: MobileMenuProps) {
             <Image
               src="/enviro-aqua-logo.png"
               alt="Enviro Aqua"
-              width={220}
-              height={72}
-              className="pointer-events-none h-9 w-auto max-w-[175px] object-contain select-none"
+              width={320}
+              height={105}
+              unoptimized
+              className="pointer-events-none h-12 w-auto max-w-[220px] object-contain select-none"
             />
           </Link>
           <button
