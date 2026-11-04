@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -303,7 +304,9 @@ export function DepartmentNavigation() {
         )}
       >
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 bg-white px-5 py-4">
-          <Link href="/" onClick={() => setMobileOpen(false)} className="font-bold tracking-wide">ENVIRO AQUA</Link>
+          <Link href="/" onClick={() => setMobileOpen(false)} aria-label="Enviro Aqua - home" className="inline-flex shrink-0 items-center">
+            <Image src="/enviro-aqua-logo.png" alt="Enviro Aqua" width={220} height={72} className="h-9 w-auto max-w-[175px] object-contain" />
+          </Link>
           <button type="button" onClick={() => setMobileOpen(false)} aria-label="Close shopping menu" className="flex h-10 w-10 items-center justify-center">
             <X size={24} />
           </button>
