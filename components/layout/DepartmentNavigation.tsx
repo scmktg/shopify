@@ -93,16 +93,18 @@ export function DepartmentNavigation() {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     switchTimers.current.forEach((id) => window.clearTimeout(id));
     switchTimers.current = [];
-    setSwitchingTo(target);
-    setSwitchLeaving(false);
     setExpanded(null);
     setMobileOpen(false);
     closeMenu();
 
-    // The Link navigates immediately to the destination route. The overlay is
-    // presentation only; it never delays or intercepts the actual navigation.
-    switchTimers.current.push(window.setTimeout(() => setSwitchLeaving(true), reduceMotion ? 0 : 560));
-    switchTimers.current.push(window.setTimeout(() => setSwitchingTo(null), reduceMotion ? 100 : 960));
+    // The real Next.js link navigates immediately. This is a brief,
+    // non-blocking visual crossfade, not a loading screen.
+    if (!reduceMotion) {
+      setSwitchingTo(target);
+      setSwitchLeaving(false);
+      switchTimers.current.push(window.setTimeout(() => setSwitchLeaving(true), 80));
+      switchTimers.current.push(window.setTimeout(() => setSwitchingTo(null), 430));
+    }
   };
 
   useEffect(() => {
@@ -270,29 +272,12 @@ export function DepartmentNavigation() {
 
       {portalReady && switchingTo && createPortal(
         <div
-          role="status"
-          aria-live="polite"
-          aria-label={`Switching to ${DEPARTMENTS[switchingTo].label}`}
+          aria-hidden="true"
           className={clsx(
-            'pointer-events-none fixed inset-0 z-[150] flex items-center justify-center overflow-hidden transition-opacity duration-300 ease-out motion-reduce:transition-none',
-            switchingTo === 'bathroom'
-              ? 'bg-[radial-gradient(ellipse_at_center,_#faf7f2_0%,_#e8dfd3_100%)] text-stone-900'
-              : 'bg-[radial-gradient(ellipse_at_center,_#f2faff_0%,_#dcecfb_100%)] text-sky-950',
+            'pointer-events-none fixed inset-0 z-[150] bg-white/85 transition-opacity duration-300 ease-out',
             switchLeaving ? 'opacity-0' : 'opacity-100',
           )}
-        >
-          <div className={clsx(
-            'flex flex-col items-center gap-4 px-6 text-center transition-all duration-500 ease-out motion-reduce:transition-none',
-            switchLeaving ? 'translate-y-2 scale-95 opacity-0' : 'translate-y-0 scale-100 opacity-100',
-          )}>
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-current/10 bg-white/70 shadow-lg shadow-black/5">
-              {switchingTo === 'bathroom' ? <ShowerHead size={32} strokeWidth={1.5} aria-hidden="true" /> : <Droplets size={32} strokeWidth={1.5} aria-hidden="true" />}
-            </div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] opacity-55">Enviro Aqua</p>
-            <p className="text-3xl font-semibold tracking-tight sm:text-4xl">{DEPARTMENTS[switchingTo].label}</p>
-            <p className="text-sm opacity-60">Switching your shopping range</p>
-          </div>
-        </div>,
+        />,
         document.body,
       )}
 
