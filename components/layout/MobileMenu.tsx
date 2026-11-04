@@ -298,11 +298,11 @@ export function MobileMenu({ categories }: MobileMenuProps) {
             className="relative z-10 inline-flex shrink-0 cursor-pointer items-center"
           >
             <Image
-              src="/logo.webp"
+              src="/enviro-aqua-logo.png"
               alt="Enviro Aqua"
-              width={160}
-              height={40}
-              className="pointer-events-none h-9 w-auto select-none"
+              width={220}
+              height={72}
+              className="pointer-events-none h-9 w-auto max-w-[175px] object-contain select-none"
             />
           </Link>
           <button
