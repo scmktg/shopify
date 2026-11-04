@@ -126,7 +126,6 @@ export default async function CategoryPage({
         categorySlug={node.slug}
         subcategories={node.subcategories}
       />
-      {category === 'tanks-and-bunds' && <TanksAndBundsGuide />}
       {loadFailed && (
         <div
           role="status"
@@ -158,6 +157,7 @@ export default async function CategoryPage({
           </div>
         )}
       <CategorySeoCopy title={node.label} intro={intro} />
+      {category === 'tanks-and-bunds' && <TanksAndBundsGuide />}
     </>
   );
 }
