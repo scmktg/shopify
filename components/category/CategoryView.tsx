@@ -1,7 +1,9 @@
 'use client';
 
-import { useMemo, useState, useTransition } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
+import Link from 'next/link';
+import { Check, ChevronDown } from 'lucide-react';
+import { findCategory } from '@/content/categories';
 import {
   getProducts,
   type ProductSortKey,
@@ -213,13 +215,6 @@ export function CategoryView({
     });
   };
 
-  // Keep the catalogue focused: on-demand filters for larger collections,
-  // simple category navigation and sorting for small ranges.
-  const showAdvancedFilters = groups.length > 0 && (
-    (initialPageInfo.hasNextPage && initialProducts.length >= pageSize) ||
-    Object.values(filters).some((selected) => selected.length > 0)
-  );
-
 
   return (
     <section aria-label="Browse products">
@@ -228,8 +223,9 @@ export function CategoryView({
         <p className="text-sm font-medium tabular-nums text-gray-600">
           {products.length}{pageInfo.hasNextPage ? '+' : ''} {products.length === 1 && !pageInfo.hasNextPage ? 'product' : 'products'}
         </p>
-        <div className="flex items-center gap-3">
-          {showAdvancedFilters && (
+        <div className="flex flex-wrap items-center gap-2">
+          {categorySlug && <TypeDropdown categorySlug={categorySlug} activeSubcategory={activeSubcategory} />}
+          {groups.length > 0 && (
             <CatalogFilters
               groups={groups}
               value={filters}
@@ -281,6 +277,64 @@ export function CategoryView({
   );
 }
 
+const menuTriggerClass = 'inline-flex min-h-11 items-center justify-between gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-900 shadow-sm transition-colors hover:border-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30';
+
+function useCloseDropdown(ref: React.RefObject<HTMLDetailsElement | null>) {
+  useEffect(() => {
+    const onPointerDown = (event: PointerEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) ref.current.open = false;
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && ref.current?.open) {
+        ref.current.open = false;
+        ref.current.querySelector('summary')?.focus();
+      }
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [ref]);
+}
+
+function TypeDropdown({ categorySlug, activeSubcategory }: {
+  categorySlug: string;
+  activeSubcategory: string | null;
+}) {
+  const category = findCategory(categorySlug);
+  const menuRef = useRef<HTMLDetailsElement>(null);
+  useCloseDropdown(menuRef);
+  if (!category || category.subcategories.length === 0) return null;
+
+  const selected = category.subcategories.find((sub) => sub.slug === activeSubcategory);
+  return (
+    <details ref={menuRef} className="group/type relative">
+      <summary className={`${menuTriggerClass} min-w-32 cursor-pointer list-none [&::-webkit-details-marker]:hidden`}
+        aria-label={`Type: ${selected?.label ?? 'All products'}`}>
+        <span>Type<span className="hidden text-gray-400 sm:inline">{selected ? `: ${selected.label}` : ''}</span></span>
+        <ChevronDown size={16} className="shrink-0 text-gray-500 transition-transform group-open/type:rotate-180" aria-hidden="true" />
+      </summary>
+      <nav aria-label="Choose product type" className="absolute left-0 top-full z-30 mt-2 w-64 max-w-[calc(100vw-2rem)] rounded-2xl border border-gray-100 bg-white p-2 shadow-[0_16px_48px_rgba(15,23,42,0.14)]">
+        <Link href={`/${categorySlug}/`} aria-current={!selected ? 'page' : undefined}
+          className={`flex min-h-10 items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${!selected ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
+          All products
+          {!selected && <Check size={16} aria-hidden="true" />}
+        </Link>
+        {category.subcategories.map((sub) => (
+          <Link key={sub.slug} href={`/${categorySlug}/${sub.slug}/`}
+            aria-current={sub.slug === activeSubcategory ? 'page' : undefined}
+            className={`flex min-h-10 items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm transition-colors ${sub.slug === activeSubcategory ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
+            {sub.label}
+            {sub.slug === activeSubcategory && <Check size={16} aria-hidden="true" />}
+          </Link>
+        ))}
+      </nav>
+    </details>
+  );
+}
+
 interface SortDropdownProps {
   value: SortValue;
   onChange: (value: SortValue) => void;
@@ -288,31 +342,27 @@ interface SortDropdownProps {
 }
 
 function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
+  const menuRef = useRef<HTMLDetailsElement>(null);
+  useCloseDropdown(menuRef);
+  const selected = SORT_OPTIONS.find((option) => option.value === value);
   return (
-    <div className="relative inline-flex items-center">
-      <span
-        id="sort-by-label"
-        className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[11px] font-semibold uppercase tracking-wide text-gray-500"
-      >
-        Sort
-      </span>
-      <select
-        value={value}
-        onChange={(event) => onChange(event.target.value as SortValue)}
-        disabled={disabled}
-        aria-labelledby="sort-by-label"
-        className="min-h-10 appearance-none rounded-xl border border-gray-200 bg-white py-2 pl-12 pr-9 text-sm font-medium text-gray-900 transition-colors hover:border-gray-400 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 disabled:cursor-not-allowed disabled:opacity-60"
-      >
+    <details ref={menuRef} className="group/sort relative">
+      <summary aria-label={`Sort by: ${selected?.label ?? 'Featured'}`}
+        className={`${menuTriggerClass} min-w-32 cursor-pointer list-none [&::-webkit-details-marker]:hidden`}>
+        <span>Sort <span className="hidden text-gray-400 sm:inline">· {selected?.label}</span></span>
+        <ChevronDown size={16} className="shrink-0 text-gray-500 transition-transform group-open/sort:rotate-180" aria-hidden="true" />
+      </summary>
+      <div className="absolute right-0 top-full z-30 mt-2 w-56 rounded-2xl border border-gray-100 bg-white p-2 shadow-[0_16px_48px_rgba(15,23,42,0.14)]" role="group" aria-label="Sort products">
         {SORT_OPTIONS.map((option) => (
-          <option key={option.value} value={option.value}>
+          <button key={option.value} type="button" disabled={disabled}
+            onClick={() => { onChange(option.value); if (menuRef.current) menuRef.current.open = false; }}
+            aria-pressed={value === option.value}
+            className={`flex min-h-10 w-full items-center justify-between gap-3 rounded-xl px-3 py-2 text-left text-sm transition-colors disabled:opacity-50 ${value === option.value ? 'bg-gray-100 font-semibold text-gray-950' : 'text-gray-700 hover:bg-gray-50'}`}>
             {option.label}
-          </option>
+            {value === option.value && <Check size={16} aria-hidden="true" />}
+          </button>
         ))}
-      </select>
-      <ChevronDown
-        className="pointer-events-none absolute right-2.5 h-3.5 w-3.5 text-black/60"
-        aria-hidden="true"
-      />
-    </div>
+      </div>
+    </details>
   );
 }
