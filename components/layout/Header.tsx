@@ -13,9 +13,11 @@ export function Header() {
           aria-label="Enviro Aqua - home"
           className="relative z-10 inline-flex shrink-0 items-center xl:mr-3"
         >
-          <Image src="/Enviro-Aqua-Logo.webp" alt="Enviro Aqua" width={320} height={105} unoptimized
-            priority fetchPriority="high"
-            className="pointer-events-none h-12 w-auto max-w-[220px] object-contain select-none sm:h-14 sm:max-w-[250px]" />
+          <span className="relative block h-[54px] w-[210px] sm:h-[60px] sm:w-[248px]">
+            <Image src="/Enviro-Aqua-Logo.webp" alt="Enviro Aqua" fill unoptimized priority
+              sizes="(min-width: 640px) 248px, 210px"
+              className="pointer-events-none object-contain object-left select-none" />
+          </span>
         </Link>
         <div className="hidden min-w-0 flex-1 xl:flex xl:justify-center">
           <DepartmentNavigation />
