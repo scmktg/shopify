@@ -58,12 +58,11 @@ function FilterGroups({
 }: Pick<CatalogFiltersProps, 'groups' | 'value' | 'onChange' | 'disabled'>) {
   return (
     <div className="divide-y divide-gray-100">
-      {groups.map((group, index) => {
+      {groups.map((group) => {
         const selectedCount = (value[group.id] ?? []).length;
         return (
           <details
             key={group.id}
-            defaultOpen={index === 0 || selectedCount > 0}
             className="group/filter py-1"
           >
             <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 py-3 text-sm font-semibold text-gray-900 marker:hidden [&::-webkit-details-marker]:hidden">
