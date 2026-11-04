@@ -6,7 +6,6 @@ import Link from 'next/link';
 import type { ProductCardData } from '@/types/product';
 import { ProductGrid } from '@/components/product/ProductGrid';
 import { SortDropdown, type SortValue } from '@/components/category/CategoryView';
-import { ActiveFilterChips, CatalogFilters } from '@/components/category/CatalogFilters';
 import { getCatalogFilterGroups, type CatalogFilterGroup, type CatalogFilterState } from '@/lib/catalog/filters';
 
 const SIZES = [
@@ -18,7 +17,6 @@ const SIZES = [
 
 const groups = getCatalogFilterGroups('cartridges');
 const typeGroup = groups.find((group) => group.id === 'system');
-const refinementGroups = groups.filter((group) => group.id !== 'system');
 
 function matchesOption(product: ProductCardData, option: CatalogFilterGroup['options'][number]): boolean {
   const tags = option.query.match(/tag:'([^']+)'/g);
@@ -101,18 +99,10 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
               ))}
             </nav>
           </details>
-          <CatalogFilters
-            groups={refinementGroups}
-            value={filters}
-            onChange={(next) => setFilters((previous) => ({ ...next, system: previous.system ?? [] }))}
-            resultCount={filtered.length}
-            disabled={loadFailed}
-          />
           <SortDropdown value={sort} onChange={setSort} disabled={loadFailed} allowedValues={['default', 'price-asc', 'price-desc']} />
         </div>
       </div>
       <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 md:pt-10 lg:px-8">
-        <ActiveFilterChips groups={groups} value={filters} onChange={setFilters} disabled={loadFailed} />
         {loadFailed ? (
           <p role="alert" className="rounded-lg bg-amber-50 p-5 text-sm text-amber-900">Products are temporarily unavailable. Please try again.</p>
         ) : (
@@ -121,8 +111,8 @@ export function CartridgeSizeResults({ products, dimension, truncated, loadFaile
             {filtered.length > 0 ? <ProductGrid products={filtered} editorial /> : (
               <div className="rounded-xl border border-gray-200 p-7">
                 <h2 className="text-lg font-semibold text-gray-950">No matching cartridges found</h2>
-                <p className="mt-2 text-sm text-gray-600">Try clearing the filters, selecting another size, or browsing the full cartridge range.</p>
-                <button type="button" onClick={() => setFilters({})} className="mt-4 text-sm font-semibold text-sky-700 hover:underline">Clear filters</button>
+                <p className="mt-2 text-sm text-gray-600">Try another cartridge type or size, or browse the full cartridge range.</p>
+                <button type="button" onClick={() => setFilters({})} className="mt-4 text-sm font-semibold text-sky-700 hover:underline">Clear type</button>
                 <Link href="/cartridges/" className="ml-5 text-sm font-semibold text-sky-700 hover:underline">View all cartridges</Link>
               </div>
             )}
