@@ -112,3 +112,32 @@ h6 {
     background-position: 50% 0;
   }
 }
+
+
+/* Three-way tap: contrasting hot and cold water highlights. */
+.warm-flow-shine,
+.cool-flow-shine {
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: water-flow-sweep 7s ease-in-out infinite;
+}
+
+.warm-flow-shine {
+  color: #d75b52;
+  background-image: linear-gradient(105deg, #8f1f14 0%, #cf4638 24%, #ff9b7b 46%, #d53b2a 65%, #8d170f 100%);
+}
+
+.cool-flow-shine {
+  color: #49a8d9;
+  background-image: linear-gradient(105deg, #0f5d92 0%, #2b84c0 24%, #9adfff 46%, #2f8dcc 65%, #114f84 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .warm-flow-shine,
+  .cool-flow-shine {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
