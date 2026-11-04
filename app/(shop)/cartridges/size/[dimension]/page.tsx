@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
-import { ProductGrid } from '@/components/product/ProductGrid';
+import { CategoryHero } from '@/components/category/CategoryHero';
+import { CartridgeSizeResults } from '@/components/category/CartridgeSizeResults';
+import { findCategory } from '@/content/categories';
 import type { ProductCardData } from '@/types/product';
 
 const SIZES = {
@@ -107,50 +108,18 @@ export default async function CartridgeSizePage({ params }: PageProps) {
 
   return (
     <>
-      <section className="border-b border-gray-200 bg-slate-50/70">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <nav aria-label="Breadcrumb" className="mb-5 text-sm text-gray-500">
-            <Link href="/cartridges/" className="hover:text-gray-950 hover:underline">Cartridges</Link>
-            <span className="mx-2" aria-hidden="true">/</span>
-            <span aria-current="page">{size.label}</span>
-          </nav>
-          <h1 className="text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">{size.label} Filter Cartridges</h1>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-gray-600">
-            Replacement cartridges matching this size. Check your existing cartridge dimensions and filter compatibility before ordering.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {Object.entries(SIZES).map(([key, option]) => (
-              <Link
-                key={key}
-                href={`/cartridges/size/${key}/`}
-                aria-current={key === dimension ? 'page' : undefined}
-                className={`rounded-full border px-3.5 py-2 text-xs font-medium transition-colors ${key === dimension ? 'border-gray-950 bg-gray-950 text-white' : 'border-gray-200 bg-white text-gray-700 hover:border-gray-400'}`}
-              >
-                {option.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        {loadFailed ? (
-          <p role="alert" className="rounded-lg bg-amber-50 p-5 text-sm text-amber-900">Products are temporarily unavailable. Please try again.</p>
-        ) : (
-          <>
-            <p className="mb-6 text-sm text-gray-600">{products.length} matching {products.length === 1 ? 'product' : 'products'}</p>
-            {products.length ? (
-              <ProductGrid products={products} editorial />
-            ) : (
-              <div className="rounded-xl border border-gray-200 p-7">
-                <h2 className="text-lg font-semibold text-gray-950">No matching cartridges found</h2>
-                <p className="mt-2 text-sm text-gray-600">Browse the full cartridge range or choose another size.</p>
-                <Link href="/cartridges/" className="mt-4 inline-block text-sm font-semibold text-sky-700 hover:underline">View all cartridges</Link>
-              </div>
-            )}
-            {truncated && <p className="mt-6 text-sm text-amber-800">Additional catalogue products may not be shown. Browse all cartridges if you cannot find your replacement.</p>}
-          </>
-        )}
-      </section>
+      <CategoryHero
+        title={`${size.label} Filter Cartridges`}
+        intro={null}
+        categorySlug="cartridges"
+        subcategories={findCategory('cartridges')?.subcategories ?? []}
+      />
+      <CartridgeSizeResults
+        products={products}
+        dimension={dimension}
+        truncated={truncated}
+        loadFailed={loadFailed}
+      />
     </>
   );
 }
