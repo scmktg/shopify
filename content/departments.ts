@@ -88,10 +88,10 @@ export const MEGA_MENU_GROUPS: Record<string, ReadonlyArray<{
       { label: 'Specialty', href: '/cartridges/specialty-cartridges/' },
     ] },
     { heading: 'By Size', links: [
-      { label: '10″ × 2.5″', href: '/search/?q=10%22%20x%202.5%22' },
-      { label: '10″ × 4.5″', href: '/search/?q=10%22%20x%204.5%22' },
-      { label: '20″ × 2.5″', href: '/search/?q=20%22%20x%202.5%22' },
-      { label: '20″ × 4.5″', href: '/search/?q=20%22%20x%204.5%22' },
+      { label: '10″ × 2.5″', href: '/cartridges/size/10-x-2-5/' },
+      { label: '10″ × 4.5″', href: '/cartridges/size/10-x-4-5/' },
+      { label: '20″ × 2.5″', href: '/cartridges/size/20-x-2-5/' },
+      { label: '20″ × 4.5″', href: '/cartridges/size/20-x-4-5/' },
     ] },
     { heading: 'By Sets', links: [
       { label: 'Cartridge Sets', href: '/cartridges/cartridge-sets/' },
