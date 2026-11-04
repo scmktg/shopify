@@ -9,11 +9,6 @@ import {
 import type { ProductCardData } from '@/types/product';
 import type { ShopifyPageInfo } from '@/types/shopify';
 import { ProductGrid } from '@/components/product/ProductGrid';
-import { SizeFilter } from './SizeFilter';
-import {
-  getProductCartridgeSize,
-  type CartridgeSize,
-} from '@/lib/utils/cartridgeSize';
 import {
   ActiveFilterChips,
   CatalogFilters,
@@ -128,7 +123,6 @@ export function CategoryView({
   const [pageInfo, setPageInfo] = useState<ShopifyPageInfo>(initialPageInfo);
   const [filters, setFilters] = useState<CatalogFilterState>(initialFilters);
   const [sort, setSort] = useState<SortValue>('default');
-  const [size, setSize] = useState<CartridgeSize | null>(null);
   const [isPending, startTransition] = useTransition();
   const [error, setError] = useState<string | null>(null);
 
@@ -183,7 +177,6 @@ export function CategoryView({
 
   const handleFiltersChange = (next: CatalogFilterState) => {
     setFilters(next);
-    setSize(null);
     syncFilterUrl(next);
     fetchFirstPage(next);
   };
@@ -220,55 +213,33 @@ export function CategoryView({
     });
   };
 
-  const sizeCounts = useMemo(() => {
-    if (!enableSizeFilter) return undefined;
-    const counts: Record<CartridgeSize, number> = {
-      '10x2': 0,
-      '10x2.5': 0,
-      '10x4.5': 0,
-      '20x2.5': 0,
-      '20x4.5': 0,
-    };
-    for (const product of products) {
-      const detected = getProductCartridgeSize(product);
-      if (detected) counts[detected] += 1;
-    }
-    return counts;
-  }, [enableSizeFilter, products]);
+  // Keep the catalogue focused: on-demand filters for larger collections,
+  // simple category navigation and sorting for small ranges.
+  const showAdvancedFilters = groups.length > 0 && (
+    initialPageInfo.hasNextPage ||
+    initialProducts.length > pageSize ||
+    Object.values(filters).some((selected) => selected.length > 0)
+  );
 
-  const visibleProducts = useMemo(() => {
-    if (!enableSizeFilter || !size) return products;
-    return products.filter(
-      (product) => getProductCartridgeSize(product) === size,
-    );
-  }, [enableSizeFilter, size, products]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-      <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 mb-4 md:mb-6">
-        {enableSizeFilter ? (
-          <SizeFilter
-            value={size}
-            onChange={setSize}
-            counts={sizeCounts}
-          />
-        ) : (
-          <span />
-        )}
-
-        <div className="flex items-center gap-3 ml-auto">
-          <p className="hidden text-xs text-black/60 tabular-nums whitespace-nowrap lg:block">
-            {visibleProducts.length}
-            {pageInfo.hasNextPage ? '+' : ''}{' '}
-            {visibleProducts.length === 1 && !pageInfo.hasNextPage
-              ? 'product'
-              : 'products'}
-          </p>
-          <SortDropdown
-            value={sort}
-            onChange={handleSortChange}
-            disabled={isPending}
-          />
+      <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4">
+        <p className="text-sm tabular-nums text-gray-500">
+          {products.length}{pageInfo.hasNextPage ? '+' : ''} {products.length === 1 && !pageInfo.hasNextPage ? 'product' : 'products'}
+        </p>
+        <div className="flex items-center gap-3">
+          {showAdvancedFilters && (
+            <CatalogFilters
+              groups={groups}
+              value={filters}
+              onChange={handleFiltersChange}
+              resultCount={products.length}
+              hasMore={pageInfo.hasNextPage}
+              disabled={isPending}
+            />
+          )}
+          <SortDropdown value={sort} onChange={handleSortChange} disabled={isPending} />
         </div>
       </div>
 
@@ -279,32 +250,10 @@ export function CategoryView({
         disabled={isPending}
       />
 
-      <div className="lg:flex lg:items-start lg:gap-8">
-        <CatalogFilters
-          groups={groups}
-          value={filters}
-          onChange={handleFiltersChange}
-          resultCount={visibleProducts.length}
-          hasMore={pageInfo.hasNextPage}
-          disabled={isPending}
-        />
+      <div className="min-w-0">
 
-        <div className="min-w-0 flex-1">
-          <ProductGrid products={visibleProducts} />
+          <ProductGrid products={products} />
 
-          {visibleProducts.length === 0 && size !== null && (
-            <p className="mt-8 text-center text-sm text-black/70">
-              No products in this size on the current page.{' '}
-              <button
-                type="button"
-                onClick={() => setSize(null)}
-                className="text-brand-blue underline underline-offset-4 hover:text-brand-blue-hover"
-              >
-                Clear size filter
-              </button>
-              .
-            </p>
-          )}
 
           {error && (
             <p role="alert" className="mt-6 text-sm text-red-600">
@@ -324,7 +273,6 @@ export function CategoryView({
               </button>
             </div>
           )}
-        </div>
       </div>
     </div>
   );
