@@ -213,7 +213,7 @@ function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-[580px] lg:max-w-none">
-          <div aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-[2rem] border border-sky-200 bg-sky-100/65 sm:-bottom-5 sm:-right-5" />
+          <div aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-[2rem] bg-[#DCEFEA] sm:-bottom-5 sm:-right-5" />
           <div className="relative aspect-square overflow-hidden rounded-[1.5rem] bg-white shadow-[0_24px_70px_-35px_rgba(15,23,42,0.35)] sm:rounded-[2rem]">
             <Image
               src="/Enviro%20Aqua%20Water%20Filter%20Showroom%20Specialist.png"
