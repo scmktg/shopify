@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ArrowRight, ChevronDown, ChevronRight, Droplets, Menu, ShowerHead, X } from 'lucide-react';
+import { ArrowLeftRight, ChevronDown, ChevronRight, Droplets, Menu, ShowerHead, X } from 'lucide-react';
 import clsx from 'clsx';
 import { DEPARTMENTS, MEGA_MENU_GROUPS, departmentForPath, type DepartmentId } from '@/content/departments';
 
@@ -30,13 +30,13 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
       aria-disabled={disabled}
       tabIndex={disabled ? -1 : undefined}
       className={clsx(
-        'group/switch inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-800 transition-[background-color,border-color,color] duration-200 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
+        'group/switch inline-flex shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-gray-950 bg-gray-950 px-4 py-2.5 text-sm font-medium text-white transition-[background-color,border-color,transform] duration-200 hover:border-gray-800 hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
         mobile && 'min-h-11 w-full',
         disabled && 'pointer-events-none opacity-60',
       )}
     >
       <span>Switch to {target === 'bathroom' ? 'Bathroom' : 'Water Filtration'}</span>
-      <ArrowRight size={15} strokeWidth={1.8} className="text-gray-500 transition-transform duration-200 group-hover/switch:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
+      <ArrowLeftRight size={16} strokeWidth={1.9} className="text-white/80 transition-transform duration-300 group-hover/switch:rotate-180 motion-reduce:transition-none" aria-hidden="true" />
     </Link>
   );
 }
@@ -49,8 +49,8 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
  */
 export function DepartmentNavigation() {
   const pathname = usePathname() ?? '/';
-  const [selectedDepartment, setSelectedDepartment] = useState<DepartmentId | null>(null);
-  const current = selectedDepartment ?? departmentForPath(pathname);
+  // Derive the menu from the actual URL, never a stale optimistic toggle.
+  const current = departmentForPath(pathname);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [desktopMenu, setDesktopMenu] = useState<string | null>(null);
@@ -82,7 +82,6 @@ export function DepartmentNavigation() {
   };
 
   useEffect(() => {
-    setSelectedDepartment(null);
     setMobileOpen(false);
     setExpanded(null);
     setDesktopMenu(null);
@@ -96,7 +95,6 @@ export function DepartmentNavigation() {
     switchTimers.current = [];
     setSwitchingTo(target);
     setSwitchLeaving(false);
-    setSelectedDepartment(target);
     setExpanded(null);
     setMobileOpen(false);
     closeMenu();
