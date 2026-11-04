@@ -81,20 +81,7 @@ export default async function HomePage() {
 
       <WholeHouseShowcase product={wholeHouse} />
 
-      <ProductSpotlight
-        product={threeWayTap}
-        eyebrow="Filtered-water kitchen tap"
-        title="3-way filtered kitchen mixer tap"
-        body="Replace a separate drinking-water faucet with one streamlined kitchen mixer. This 3-way tap keeps filtered drinking water separate from normal hot and cold supply while giving customers a choice of finishes from the same product. Use the colour swatches on the product card to preview the available variants before opening the product page."
-        bullets={[
-          'Hot, cold and filtered water from one mixer',
-          'Colour variants available from the same product',
-          'Designed to pair with compatible under-sink and reverse-osmosis systems',
-        ]}
-        rangeHref="/plumbing/ro-filter-taps/"
-        rangeLabel="Explore all filtered-water taps"
-        tone="dark"
-      />
+      <ThreeWayTapShowcase product={threeWayTap} />
 
       <ProductSpotlight
         product={underSink}
@@ -267,6 +254,85 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
               </div>
             )}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+interface ThreeWayTapShowcaseProps {
+  product: ProductCardData | null;
+}
+
+/** Dark editorial counterpart to the whole-house homepage showcase. */
+function ThreeWayTapShowcase({ product }: ThreeWayTapShowcaseProps) {
+  const price = product
+    ? new Intl.NumberFormat('en-AU', {
+        style: 'currency',
+        currency: product.price.currencyCode,
+      }).format(Number(product.price.amount))
+    : null;
+
+  return (
+    <section
+      aria-labelledby="three-way-tap-showcase-title"
+      className="overflow-hidden border-b border-white/10 bg-[#161616] text-white"
+    >
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
+        <div className="relative mx-auto w-full max-w-[580px]">
+          <div className="relative aspect-square overflow-hidden bg-transparent">
+            {product?.featuredImage ? (
+              <Image
+                src={product.featuredImage.url}
+                alt={product.featuredImage.altText || product.title}
+                fill
+                sizes="(max-width: 1023px) 92vw, 44vw"
+                className="object-contain p-6 sm:p-10"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center px-8 text-center text-sm text-white/60">
+                Three-way filtered kitchen tap
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="max-w-2xl">
+          <h2
+            id="three-way-tap-showcase-title"
+            className="flex flex-col items-start tracking-[-0.035em]"
+          >
+            <span className="block text-[clamp(1.5rem,2.7vw,2.5rem)] font-light leading-[1.22]">
+              Hot. Cold.
+            </span>
+            <span className="mt-1 block text-[clamp(3rem,5.2vw,5rem)] font-semibold leading-[1.07] tracking-[-0.045em] water-flow-shine">
+              Filtered Water.
+            </span>
+            <span className="mt-3 block text-[clamp(2rem,3.6vw,3.5rem)] font-bold leading-[1.13] tracking-[-0.04em]">
+              All From One Tap.
+            </span>
+          </h2>
+          <p className="mt-6 max-w-xl text-base leading-7 text-white/70">
+            Enjoy hot, cold and filtered drinking water from one streamlined kitchen mixer. Three convenient water options, without the need for a separate filtered-water tap.
+          </p>
+
+          {product ? (
+            <div className="mt-8">
+              <p className="text-2xl font-semibold tracking-tight text-white">
+                {price}
+                <span className="ml-3 text-sm font-medium text-white/60">inc GST</span>
+              </p>
+              <Link
+                href={getProductUrl(product.handle)}
+                className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-[#161616] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
+              >
+                View now
+                <ChevronRight size={18} aria-hidden="true" />
+              </Link>
+            </div>
+          ) : (
+            <p className="mt-8 text-sm text-white/65">This product is temporarily unavailable.</p>
+          )}
         </div>
       </div>
     </section>
