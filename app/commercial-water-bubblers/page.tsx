@@ -2,9 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Check, Droplet, ShieldCheck } from 'lucide-react';
-import { Breadcrumbs } from '@/components/editorial/Breadcrumbs';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
-import { WatermarkBadge, LeadFreeBadge } from '@/components/product/WatermarkBadge';
 import { PriceDisplay } from '@/components/product/PriceDisplay';
 import { WaterMarkLeadFreeOverlay } from '@/components/product/WaterMarkLeadFreeOverlay';
 import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
@@ -151,7 +149,7 @@ export default async function CommercialBubblersPage() {
       />
 
       <article className="bg-white">
-        <Hero breadcrumbs={breadcrumbs} products={products} />
+        <Hero />
         <RangeSection products={products} />
         <section aria-label="About commercial drinking fountains" className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
           <h2 className="text-xl font-semibold tracking-tight text-gray-950">About our commercial water bubblers</h2>
@@ -176,41 +174,19 @@ export default async function CommercialBubblersPage() {
   );
 }
 
-function Hero({
-  breadcrumbs,
-  products,
-}: {
-  breadcrumbs: ReadonlyArray<{ name: string; href: string }>;
-  products: ReadonlyArray<Product | null>;
-}) {
-  const prices = products
-    .filter((product): product is Product => Boolean(product))
-    .map((product) => product.priceRange.minVariantPrice);
-  const minPrice = prices[0] ?? null;
-
+function Hero() {
   return (
     <header className="border-b border-gray-100 bg-slate-50/70">
-      <div className="mx-auto max-w-7xl px-4 pb-7 pt-7 sm:px-6 md:pb-8 md:pt-10 lg:px-8">
-        <Breadcrumbs items={breadcrumbs} />
-        <p className="mb-2 mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
-          Enviro Aqua / Fountains & Coolers
+      <div className="mx-auto max-w-7xl px-4 pb-5 pt-7 sm:px-6 md:pb-6 md:pt-10 lg:px-8">
+        <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
+          Enviro Aqua / Shop
         </p>
-        <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-gray-950 md:text-5xl">
-          Commercial water bubblers & drinking fountains
+        <h1 className="text-4xl font-semibold tracking-tight text-gray-950 md:text-5xl">
+          Drinking Fountains
         </h1>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-500 sm:text-base">
-          Three certified designs. Find the right fit for your space.
+        <p className="mt-2 text-sm leading-relaxed text-gray-500 sm:text-base">
+          Reliable hydration for every space.
         </p>
-        <div className="mt-5 flex flex-wrap items-center gap-3">
-          {minPrice && (
-            <p className="mr-2 text-sm text-gray-600">
-              From <PriceDisplay money={minPrice} className="font-semibold text-gray-900" />
-              <span className="text-gray-500"> inc GST</span>
-            </p>
-          )}
-          <WatermarkBadge href="/watermark-certified/" />
-          <LeadFreeBadge />
-        </div>
       </div>
     </header>
   );
