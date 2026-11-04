@@ -223,28 +223,13 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
             <span className="mt-1 block text-[clamp(3rem,5.2vw,5rem)] font-semibold leading-[1.07] tracking-[-0.045em] water-flow-shine">
               Filtered Water.
             </span>
-            <span className="mt-3 block max-w-2xl text-[clamp(1.85rem,3.25vw,3.15rem)] font-bold leading-[1.15] tracking-[-0.04em]">
+            <span className="mt-3 block whitespace-nowrap text-[clamp(0.98rem,2.45vw,2.2rem)] font-bold leading-[1.15] tracking-[-0.05em]">
               Throughout Your Entire Home.
             </span>
           </h2>
-          <p className="mt-6 text-lg font-medium leading-7 text-black">
-            Why filter just one tap when you can filter your entire home?
+          <p className="mt-6 max-w-xl text-base leading-7 text-black/65">
+            Why filter just one tap when you can filter your entire home? Purchase the sleek stainless steel system to take care of all of your filtration needs.
           </p>
-          <p className="mt-4 max-w-xl text-base leading-7 text-black/65">
-            Upgrade to Enviro Aqua&apos;s premium stainless steel 3-stage whole-house water filtration system. Designed to reduce sediment, chlorine, and unwanted tastes and odours before water reaches your taps.
-          </p>
-          <ul className="mt-7 space-y-3 text-sm font-semibold text-black sm:text-base">
-            {[
-              'Premium Stainless Steel Quality',
-              'WaterMark Certified',
-              '3-Stage Whole-House Filtration',
-            ].map((benefit) => (
-              <li key={benefit} className="flex items-center gap-3">
-                <span aria-hidden="true" className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black text-xs text-white">✓</span>
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
           {product && (
             <div className="mt-8">
               <p className="text-2xl font-semibold tracking-tight text-black">
@@ -258,7 +243,7 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
                 href={getProductUrl(product.handle)}
                 className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-black px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-white transition-colors hover:bg-black/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:w-auto"
               >
-                Shop the whole-house system
+                View now
                 <ChevronRight size={18} aria-hidden="true" />
               </Link>
             </div>
