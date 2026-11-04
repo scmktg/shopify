@@ -153,6 +153,16 @@ export default async function CommercialBubblersPage() {
       <article className="bg-white">
         <Hero breadcrumbs={breadcrumbs} products={products} />
         <RangeSection products={products} />
+        <section aria-label="About commercial drinking fountains" className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-semibold tracking-tight text-gray-950">About our commercial water bubblers</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-gray-600">
+            Three Enviro Aqua commercial models for schools, offices, factories,
+            warehouses, gyms and public facilities. Every model is rated at{' '}
+            <strong>20 L/hr</strong>, delivers chilled water at approximately{' '}
+            <strong>8–12 °C</strong> and is WaterMark certified under{' '}
+            <strong>Certificate 023484</strong>.
+          </p>
+        </section>
         <ComparisonSection />
         <WaterMarkIdentitySection />
         <ApplicationSection />
@@ -185,13 +195,7 @@ function Hero({
           <h1 className="mt-4 text-4xl md:text-5xl font-bold text-black tracking-tight leading-tight">
             Commercial water bubblers & drinking fountains
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-black/75 max-w-3xl">
-            Three Enviro Aqua commercial models for schools, offices, factories,
-            warehouses, gyms and public facilities. Every model is rated at{' '}
-            <strong>20 L/hr</strong>, delivers chilled water at approximately{' '}
-            <strong>8–12 °C</strong> and is WaterMark certified under{' '}
-            <strong>Certificate 023484</strong>.
-          </p>
+
           <div className="mt-5 flex flex-wrap items-center gap-4">
             {minPrice && (
               <p className="text-base text-black/80">
