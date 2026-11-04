@@ -18,7 +18,7 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
   disabled?: boolean;
 }) {
   const target: DepartmentId = current === 'water' ? 'bathroom' : 'water';
-  const href = target === 'bathroom' ? '/bathroom/' : '/water-filters/';
+  const href = target === 'bathroom' ? '/bathroom/' : '/';
   return (
     <Link
       href={href}
