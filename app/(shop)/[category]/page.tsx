@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { findCategory } from '@/content/categories';
 import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts, type ProductsPage } from '@/lib/shopify/queries/getProducts';
-import { CategoryHero } from '@/components/category/CategoryHero';
+import { CategoryHero, CategorySeoCopy } from '@/components/category/CategoryHero';
 import { TanksAndBundsGuide } from '@/components/category/TanksAndBundsGuide';
 import { CategoryView } from '@/components/category/CategoryView';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
@@ -157,6 +157,7 @@ export default async function CategoryPage({
             </Link>
           </div>
         )}
+      <CategorySeoCopy title={node.label} intro={intro} />
     </>
   );
 }
