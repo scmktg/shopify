@@ -156,27 +156,6 @@ export default async function SubcategoryPage({
         activeSubSlug={node.subcategory.slug}
       />
 
-      {isWholeHouse && (
-        <section className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-lg border border-brand-blue/20 bg-brand-blue-light p-6 md:flex md:items-center md:justify-between md:gap-8">
-            <div className="max-w-2xl">
-              <h2 className="text-2xl font-semibold text-black">Need your whole-house filter installed?</h2>
-              <p className="mt-2 text-black/75">
-                Complete whole-house water filter installation is available across eligible Sydney and NSW Central Coast properties for <strong>$2,399 + GST supplied and installed</strong>, subject to standard installation conditions.
-              </p>
-            </div>
-            <div className="mt-5 flex flex-wrap gap-3 md:mt-0 md:shrink-0">
-              <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation</Link>
-              <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-white">Sydney installation</Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {category === 'water-filters' &&
-        (subcategory === 'under-sink' || subcategory === 'reverse-osmosis') && (
-          <WaterFilterStageGuide subcategory={subcategory} />
-        )}
       {loadFailed && (
         <div role="status" className="mx-auto mt-6 max-w-7xl rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-black">
           Products are temporarily unavailable. Please refresh the page to try again.
@@ -200,6 +179,28 @@ export default async function SubcategoryPage({
         </div>
       )}
       <CategorySeoCopy title={title} intro={intro} />
+      {isWholeHouse && (
+        <section className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-lg border border-brand-blue/20 bg-brand-blue-light p-6 md:flex md:items-center md:justify-between md:gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-2xl font-semibold text-black">Need your whole-house filter installed?</h2>
+              <p className="mt-2 text-black/75">
+                Complete whole-house water filter installation is available across eligible Sydney and NSW Central Coast properties for <strong>$2,399 + GST supplied and installed</strong>, subject to standard installation conditions.
+              </p>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3 md:mt-0 md:shrink-0">
+              <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation</Link>
+              <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-white">Sydney installation</Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {category === 'water-filters' &&
+        (subcategory === 'under-sink' || subcategory === 'reverse-osmosis') && (
+          <WaterFilterStageGuide subcategory={subcategory} />
+        )}
+
     </>
   );
 }
