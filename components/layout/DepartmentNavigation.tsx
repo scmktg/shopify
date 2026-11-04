@@ -47,7 +47,7 @@ export function DepartmentNavigation() {
   const [renderedMenu, setRenderedMenu] = useState<string | null>(null);
   const [portalReady, setPortalReady] = useState(false);
   const navRef = useRef<HTMLElement | null>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const closeTimer = useRef<number | null>(null);
   const [headerBottom, setHeaderBottom] = useState(104);
 
   const cancelClose = () => {
