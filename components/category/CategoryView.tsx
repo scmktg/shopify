@@ -223,9 +223,10 @@ export function CategoryView({
 
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-      <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 pb-4">
-        <p className="text-sm tabular-nums text-gray-500">
+    <section aria-label="Browse products">
+      <div className="border-b border-gray-200 bg-slate-50/70">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <p className="text-sm font-medium tabular-nums text-gray-600">
           {products.length}{pageInfo.hasNextPage ? '+' : ''} {products.length === 1 && !pageInfo.hasNextPage ? 'product' : 'products'}
         </p>
         <div className="flex items-center gap-3">
@@ -241,8 +242,10 @@ export function CategoryView({
           )}
           <SortDropdown value={sort} onChange={handleSortChange} disabled={isPending} />
         </div>
+        </div>
       </div>
 
+      <div className="mx-auto max-w-7xl px-4 pb-8 pt-6 sm:px-6 lg:px-8">
       <ActiveFilterChips
         groups={groups}
         value={filters}
@@ -274,7 +277,8 @@ export function CategoryView({
             </div>
           )}
       </div>
-    </div>
+      </div>
+    </section>
   );
 }
 
@@ -289,7 +293,7 @@ function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
     <div className="relative inline-flex items-center">
       <span
         id="sort-by-label"
-        className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-semibold uppercase tracking-wider text-black/55 pointer-events-none"
+        className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[11px] font-semibold uppercase tracking-wide text-gray-500"
       >
         Sort
       </span>
@@ -298,7 +302,7 @@ function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
         onChange={(event) => onChange(event.target.value as SortValue)}
         disabled={disabled}
         aria-labelledby="sort-by-label"
-        className="appearance-none bg-white border border-gray-300 hover:border-black focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 rounded-full pl-12 pr-8 py-1 text-xs font-medium text-black cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+        className="min-h-10 appearance-none rounded-xl border border-gray-200 bg-white py-2 pl-12 pr-9 text-sm font-medium text-gray-900 transition-colors hover:border-gray-400 focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/30 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {SORT_OPTIONS.map((option) => (
           <option key={option.value} value={option.value}>
