@@ -339,9 +339,10 @@ interface SortDropdownProps {
   value: SortValue;
   onChange: (value: SortValue) => void;
   disabled: boolean;
+  allowedValues?: ReadonlyArray<SortValue>;
 }
 
-export function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
+export function SortDropdown({ value, onChange, disabled, allowedValues }: SortDropdownProps) {
   const menuRef = useRef<HTMLDetailsElement>(null);
   useCloseDropdown(menuRef);
   const selected = SORT_OPTIONS.find((option) => option.value === value);
@@ -353,7 +354,7 @@ export function SortDropdown({ value, onChange, disabled }: SortDropdownProps) {
         <ChevronDown size={16} className="shrink-0 text-gray-500 transition-transform group-open/sort:rotate-180" aria-hidden="true" />
       </summary>
       <div className="absolute right-0 top-full z-30 mt-2 w-56 rounded-2xl border border-gray-100 bg-white p-2 shadow-[0_16px_48px_rgba(15,23,42,0.14)]" role="group" aria-label="Sort products">
-        {SORT_OPTIONS.map((option) => (
+        {SORT_OPTIONS.filter((option) => !allowedValues || allowedValues.includes(option.value)).map((option) => (
           <button key={option.value} type="button" disabled={disabled}
             onClick={() => { onChange(option.value); if (menuRef.current) menuRef.current.open = false; }}
             aria-pressed={value === option.value}
