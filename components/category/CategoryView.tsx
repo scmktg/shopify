@@ -216,8 +216,7 @@ export function CategoryView({
   // Keep the catalogue focused: on-demand filters for larger collections,
   // simple category navigation and sorting for small ranges.
   const showAdvancedFilters = groups.length > 0 && (
-    initialPageInfo.hasNextPage ||
-    initialProducts.length > pageSize ||
+    (initialPageInfo.hasNextPage && initialProducts.length >= pageSize) ||
     Object.values(filters).some((selected) => selected.length > 0)
   );
 
@@ -245,7 +244,7 @@ export function CategoryView({
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 pb-8 pt-6 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pb-10 pt-8 sm:px-6 md:pt-10 lg:px-8">
       <ActiveFilterChips
         groups={groups}
         value={filters}
@@ -255,7 +254,7 @@ export function CategoryView({
 
       <div className="min-w-0">
 
-          <ProductGrid products={products} />
+          <ProductGrid products={products} editorial />
 
 
           {error && (
