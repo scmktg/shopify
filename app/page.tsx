@@ -194,12 +194,6 @@ function Hero() {
               Shop water filters
               <ChevronRight size={18} aria-hidden="true" />
             </Link>
-            <Link
-              href="/use/"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-900 transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
-            >
-              Find the right filter
-            </Link>
           </div>
           <p className="mt-6 text-xs font-medium leading-relaxed text-slate-500 sm:mt-7 sm:text-sm">
             Quality filtration. Fair prices. Australia-wide delivery.
