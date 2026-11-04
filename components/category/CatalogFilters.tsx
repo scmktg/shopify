@@ -136,56 +136,24 @@ export function CatalogFilters({
 
   return (
     <>
-      <div className="mb-5 flex items-center justify-between gap-3 lg:hidden">
-        <button
-          type="button"
-          onClick={() => setMobileOpen(true)}
-          className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:border-gray-400"
-        >
-          <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
-          Filters
-          {activeCount > 0 && (
-            <span className="inline-flex min-w-5 items-center justify-center rounded-full bg-black px-1.5 py-0.5 text-[11px] text-white">
-              {activeCount}
-            </span>
-          )}
-        </button>
-        <span className="text-xs tabular-nums text-black/60">
-          {resultCount}{hasMore ? '+' : ''} {resultCount === 1 && !hasMore ? 'product' : 'products'}
-        </span>
-      </div>
-
-      <aside className="hidden lg:block lg:w-64 lg:flex-none">
-        <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto rounded-2xl border border-gray-200 bg-white px-5 py-5 shadow-sm">
-          <div className="mb-4 flex items-center justify-between gap-3">
-            <div>
-              <h2 className="flex items-center gap-2 text-base font-semibold text-gray-900"><SlidersHorizontal className="h-4 w-4" aria-hidden="true" /> Refine results</h2>
-              <p className="mt-0.5 text-xs text-black/55">
-                {resultCount}{hasMore ? '+' : ''} {resultCount === 1 && !hasMore ? 'product' : 'products'}
-              </p>
-            </div>
-            {activeCount > 0 && (
-              <button
-                type="button"
-                onClick={clearAll}
-                disabled={disabled}
-                className="text-xs font-medium text-brand-blue hover:underline disabled:opacity-50"
-              >
-                Clear all
-              </button>
-            )}
-          </div>
-          <FilterGroups
-            groups={groups}
-            value={value}
-            onChange={onChange}
-            disabled={disabled}
-          />
-        </div>
-      </aside>
+      <button
+        type="button"
+        onClick={() => setMobileOpen(true)}
+        disabled={disabled}
+        aria-expanded={mobileOpen}
+        className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-800 hover:border-gray-400 disabled:opacity-60"
+      >
+        <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
+        Filter
+        {activeCount > 0 && (
+          <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-sky-100 px-1 text-xs text-sky-800">
+            {activeCount}
+          </span>
+        )}
+      </button>
 
       {mobileOpen && (
-        <div className="fixed inset-0 z-[70] lg:hidden">
+        <div className="fixed inset-0 z-[70]">
           <button
             type="button"
             aria-label="Close filters"
