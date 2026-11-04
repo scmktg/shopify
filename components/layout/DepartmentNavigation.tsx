@@ -30,13 +30,20 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
       aria-disabled={disabled}
       tabIndex={disabled ? -1 : undefined}
       className={clsx(
-        'group/switch inline-flex shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-slate-200 bg-slate-100 px-4 py-2.5 text-sm font-medium text-slate-800 transition-[background-color,border-color,transform] duration-200 hover:border-slate-300 hover:bg-slate-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
-        mobile && 'min-h-11',
+        'group/switch inline-flex shrink-0 items-center gap-2 rounded-md text-left text-slate-600 transition-colors duration-200 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
+        mobile
+          ? 'min-h-11 border border-slate-200 bg-slate-50 px-3 py-2.5'
+          : 'border-l border-slate-200 py-1 pl-3',
         disabled && 'pointer-events-none opacity-60',
       )}
     >
-      <span>{target === 'bathroom' ? 'Bathroom Range' : 'Filtration Range'}</span>
-      <ArrowLeftRight size={16} strokeWidth={1.9} className="text-slate-500 transition-transform duration-300 group-hover/switch:rotate-180 motion-reduce:transition-none" aria-hidden="true" />
+      <span className="flex flex-col gap-0.5">
+        <span className="text-[10px] font-medium leading-tight text-slate-400">Looking for</span>
+        <span className="whitespace-nowrap text-xs font-semibold leading-tight">
+          {target === 'bathroom' ? 'Bathroom supplies?' : 'Water filters?'}
+        </span>
+      </span>
+      <ArrowLeftRight size={15} strokeWidth={1.8} className="shrink-0 text-slate-400 transition-transform duration-300 group-hover/switch:rotate-180 group-hover/switch:text-slate-700 motion-reduce:transition-none" aria-hidden="true" />
     </Link>
   );
 }
@@ -187,8 +194,9 @@ export function DepartmentNavigation() {
 
   return (
     <>
-      <nav ref={navRef} aria-label="Shopping navigation" className="relative hidden w-full min-w-0 items-center justify-center gap-2 xl:flex" onMouseLeave={scheduleClose} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) scheduleClose(); }}>
-        <div className="relative h-12 min-w-0 w-[620px] max-w-full overflow-hidden hover:overflow-visible focus-within:overflow-visible">
+      <nav ref={navRef} aria-label="Shopping navigation" className="relative hidden w-full min-w-0 items-center justify-between gap-3 xl:flex" onMouseLeave={scheduleClose} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) scheduleClose(); }}>
+        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
+        <div className="relative h-12 min-w-0 w-[620px] max-w-full flex-1 overflow-hidden hover:overflow-visible focus-within:overflow-visible">
           {DEPARTMENT_ORDER.map((department) => {
             const isActive = current === department;
             const isWater = department === 'water';
@@ -222,7 +230,6 @@ export function DepartmentNavigation() {
             );
           })}
         </div>
-        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
         {portalReady && renderedMenu && createPortal(
           <>
             <button
