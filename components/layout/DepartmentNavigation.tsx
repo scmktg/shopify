@@ -30,20 +30,13 @@ function DepartmentSwitchButton({ current, mobile = false, onSwitch, disabled = 
       aria-disabled={disabled}
       tabIndex={disabled ? -1 : undefined}
       className={clsx(
-        'group/switch inline-flex shrink-0 items-center gap-2 rounded-md text-left text-slate-600 transition-colors duration-200 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
-        mobile
-          ? 'min-h-11 border border-slate-200 bg-slate-50 px-3 py-2.5'
-          : 'border-l border-slate-200 py-1 pl-3',
+        'group/switch inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap text-[12px] font-medium text-slate-500 transition-colors duration-200 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue',
+        mobile ? 'min-h-11 py-2' : 'py-2',
         disabled && 'pointer-events-none opacity-60',
       )}
     >
-      <span className="flex flex-col gap-0.5">
-        <span className="text-[10px] font-medium leading-tight text-slate-400">Looking for</span>
-        <span className="whitespace-nowrap text-xs font-semibold leading-tight">
-          {target === 'bathroom' ? 'Bathroom supplies?' : 'Water filters?'}
-        </span>
-      </span>
-      <ArrowLeftRight size={15} strokeWidth={1.8} className="shrink-0 text-slate-400 transition-transform duration-300 group-hover/switch:rotate-180 group-hover/switch:text-slate-700 motion-reduce:transition-none" aria-hidden="true" />
+      <span>{target === 'bathroom' ? 'Explore bathrooms' : 'Explore water filters'}</span>
+      <ArrowLeftRight size={14} strokeWidth={1.8} className="shrink-0 text-slate-400 transition-colors duration-200 group-hover/switch:text-slate-700" aria-hidden="true" />
     </Link>
   );
 }
