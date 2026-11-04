@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { Subcategory } from '@/content/categories';
 
 interface CategoryHeroProps {
@@ -10,55 +9,27 @@ interface CategoryHeroProps {
 }
 
 /**
- * Shared category heading for all catalogue levels, including size pages.
- * One compact hierarchy, prominent H1 and readable supporting copy.
+ * Compact shared category heading. Catalogue controls are visually aligned
+ * to its right on wide screens; all category copy stays in the HTML below.
  */
-export function CategoryHero({
-  title,
-  categorySlug,
-}: CategoryHeroProps) {
-  const categoryNames: Record<string, string> = {
-    'water-filters': 'Water Filters',
-    'cartridges': 'Filter Cartridges',
-    'bubblers-and-coolers': 'Fountains & Coolers',
-    'tanks-and-bunds': 'Tanks & Bunds',
-    'plumbing': 'Plumbing',
-  };
+export function CategoryHero({ title, categorySlug }: CategoryHeroProps) {
   const descriptions: Record<string, string> = {
-    'water-filters': 'Find the right filtration solution for your home, business or project.',
-    'cartridges': 'Explore replacement cartridges for clear, great-tasting water.',
-    'bubblers-and-coolers': 'Reliable drinking water solutions for shared and commercial spaces.',
-    'tanks-and-bunds': 'Practical storage and containment solutions for water treatment.',
-    'plumbing': 'Discover reliable fixtures and fittings for everyday spaces.',
+    'water-filters': 'Filtration solutions for your home, business and projects.',
+    'cartridges': 'Find the right replacement cartridges for your system.',
+    'bubblers-and-coolers': 'Drinking water solutions for commercial and shared spaces.',
+    'tanks-and-bunds': 'Practical tanks, bunds and water-treatment storage.',
+    'plumbing': 'Fixtures and fittings for every space.',
   };
-  const categoryName = categoryNames[categorySlug] ?? 'Shop';
-  const isCategoryHome = title.toLowerCase() === categoryName.toLowerCase()
-    || (categorySlug === 'cartridges' && title.toLowerCase() === 'cartridges');
 
   return (
-    <header className="border-b border-slate-200 bg-gradient-to-b from-[#f6f9fc] to-white">
-      <div className="mx-auto max-w-7xl px-4 pb-9 pt-7 sm:px-6 sm:pb-11 sm:pt-9 lg:px-8 lg:pb-12">
-        <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-slate-500">
-          <Link href="/" className="transition-colors hover:text-slate-950">Home</Link>
-          <span aria-hidden="true" className="text-slate-300">/</span>
-          {isCategoryHome ? (
-            <span aria-current="page" className="text-slate-700">{categoryName}</span>
-          ) : (
-            <>
-              <Link href={`/${categorySlug}/`} className="transition-colors hover:text-slate-950">{categoryName}</Link>
-              <span aria-hidden="true" className="text-slate-300">/</span>
-              <span aria-current="page" className="text-slate-700">{title}</span>
-            </>
-          )}
-        </nav>
-        <div className="mt-7 max-w-3xl">
-          <h1 className="text-[clamp(2rem,4.6vw,3.25rem)] font-semibold leading-[1.12] tracking-[-0.045em] text-slate-950">
-            {title}
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-            {descriptions[categorySlug] ?? 'Explore our range and find the right product for your needs.'}
-          </p>
-        </div>
+    <header className="bg-white">
+      <div className="mx-auto flex max-w-7xl flex-col justify-center px-4 pb-4 pt-7 sm:px-6 lg:px-8 xl:h-[112px] xl:py-4 xl:pr-[455px]">
+        <h1 className="text-[clamp(1.85rem,3vw,2.25rem)] font-semibold leading-[1.12] tracking-[-0.04em] text-slate-950">
+          {title}
+        </h1>
+        <p className="mt-2 max-w-2xl text-sm leading-5 text-slate-500">
+          {descriptions[categorySlug] ?? 'Explore our range and find the right product.'}
+        </p>
       </div>
     </header>
   );
