@@ -93,7 +93,7 @@ export function ProductCard({ product, editorial = false }: ProductCardProps) {
         onClick={trackSelection}
         className="block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
       >
-        <div className={editorial ? "relative aspect-square overflow-hidden rounded-2xl bg-[#F7F8FA] ring-1 ring-gray-100/70" : "relative aspect-square overflow-hidden rounded border border-gray-200 bg-white"}>
+        <div className={editorial ? "relative aspect-square overflow-hidden rounded-2xl bg-white ring-1 ring-gray-100/70" : "relative aspect-square overflow-hidden rounded border border-gray-200 bg-white"}>
           {image ? (
             <Image
               key={image.url}
