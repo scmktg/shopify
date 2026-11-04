@@ -302,14 +302,10 @@ function ThreeWayTapShowcase({ product }: ThreeWayTapShowcaseProps) {
             id="three-way-tap-showcase-title"
             className="flex flex-col items-start tracking-[-0.035em]"
           >
-            <span className="block text-[clamp(2rem,3.4vw,3.35rem)] font-semibold leading-[1.15] tracking-[-0.045em]">
-              <span className="warm-flow-shine">Hot</span>
-              <span className="text-white">, </span>
-              <span className="cool-flow-shine">Cold</span>
-              <span className="text-white"> &amp; </span>
-              <span className="water-flow-shine">Filtered.</span>
+            <span className="block text-[clamp(1.75rem,3vw,2.9rem)] font-light leading-[1.2] tracking-[-0.035em] text-white">
+              Hot, Cold &amp; Filtered.
             </span>
-            <span className="mt-3 block text-[clamp(2rem,3.6vw,3.5rem)] font-bold leading-[1.13] tracking-[-0.04em] text-white">
+            <span className="mt-2 block text-[clamp(2.5rem,4.5vw,4.5rem)] font-semibold leading-[1.12] tracking-[-0.045em] water-flow-shine">
               All From One Tap.
             </span>
           </h2>
