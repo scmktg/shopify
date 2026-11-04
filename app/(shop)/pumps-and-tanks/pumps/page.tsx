@@ -5,10 +5,6 @@ import { getCategoryIntro } from '@/content/category-intros';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { CategoryHero, CategorySeoCopy } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
-import {
-  FilterPills,
-  type FilterPillOption,
-} from '@/components/category/FilterPills';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { breadcrumbSchema, collectionSchema } from '@/lib/seo/jsonld';
 
@@ -20,7 +16,7 @@ const CATEGORY = 'pumps-and-tanks';
 const SUBCATEGORY = 'pumps';
 const PAGE_SIZE = 24;
 
-const TYPE_OPTIONS: ReadonlyArray<FilterPillOption> = [
+const TYPE_OPTIONS: ReadonlyArray<{value:string|null;label:string}> = [
   { value: null, label: 'All' },
   { value: '12v', label: '12V' },
   { value: 'ro-booster', label: 'RO Booster' },
@@ -103,14 +99,8 @@ export default async function PumpsPage({ searchParams }: PumpsPageProps) {
         subcategories={node.category.subcategories}
         activeSubSlug={node.subcategory.slug}
       />
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-6">
-        <FilterPills
-          options={TYPE_OPTIONS}
-          paramName="type"
-          label="Pump type"
-        />
-      </div>
       <CategoryView
+        key={`${CATEGORY}/${SUBCATEGORY}/${filterType ?? "all"}`}
         initialProducts={page.products}
         initialPageInfo={page.pageInfo}
         query={query}
