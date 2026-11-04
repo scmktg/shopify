@@ -114,10 +114,10 @@ h6 {
 }
 
 
-/* Light, icy-blue shimmer for the dark three-way tap homepage feature. */
+/* Soft pearlescent white shimmer for the dark three-way tap homepage feature. */
 .tap-ice-blue-shine {
-  color: #93d7f4;
-  background: linear-gradient(105deg, #63b6e2 0%, #a6dcf6 24%, #eefaff 46%, #8ecfec 68%, #54aadb 100%);
+  color: #eef3f7;
+  background: linear-gradient(105deg, #cbd6df 0%, #f5f8fb 24%, #ffffff 46%, #e9f1f7 68%, #bccfdd 100%);
   background-size: 240% 100%;
   -webkit-background-clip: text;
   background-clip: text;
