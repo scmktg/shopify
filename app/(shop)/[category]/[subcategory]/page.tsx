@@ -10,6 +10,8 @@ import { getProducts, type ProductsPage } from '@/lib/shopify/queries/getProduct
 import { FOUNTAINS_AND_COOLERS_ORDER } from '@/content/merchandising';
 import { CategoryHero, CategorySeoCopy } from '@/components/category/CategoryHero';
 import { CategoryView } from '@/components/category/CategoryView';
+import { KitchenTapResults } from '@/components/category/KitchenTapResults';
+import { isKitchenTapGroup, getKitchenTapGroupLabel } from '@/content/kitchen-tap-groups';
 import { WaterFilterStageGuide } from '@/components/category/WaterFilterStageGuide';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import {
@@ -50,12 +52,18 @@ export async function generateMetadata({
   const description =
     getSubcategoryMetaDescription(category, subcategory) ??
     `${node.subcategory.label} in our ${node.category.label.toLowerCase()} range - wholesale prices, Australia-wide delivery, and free Click & Collect from Wyong NSW.`;
-  const shouldNoIndex = Boolean(after) || hasCatalogFilters(filters);
+  const chosenKitchenType = category === 'plumbing' && subcategory === 'kitchen-taps'
+    && typeof paramsValue.type === 'string' && isKitchenTapGroup(paramsValue.type)
+    ? paramsValue.type
+    : null;
+  const shouldNoIndex = Boolean(after) || hasCatalogFilters(filters) || Boolean(chosenKitchenType);
 
   const seoTitle =
     category === 'bubblers-and-coolers' && subcategory === 'bubblers'
       ? 'Commercial Water Bubblers & Drinking Fountains'
-      : `${node.subcategory.label} | ${node.category.label}`;
+      : chosenKitchenType
+        ? `${getKitchenTapGroupLabel(chosenKitchenType)} | Enviro Aqua`
+        : `${node.subcategory.label} | ${node.category.label}`;
 
   return {
     title: seoTitle,
@@ -97,8 +105,13 @@ export default async function SubcategoryPage({
       ? cartridgeFacetBySubcategory[subcategory]
       : undefined;
 
+  const isKitchenTaps = category === 'plumbing' && subcategory === 'kitchen-taps';
+  const selectedKitchenType = isKitchenTaps && typeof paramsValue.type === 'string' && isKitchenTapGroup(paramsValue.type)
+    ? paramsValue.type
+    : undefined;
+
   const baseQuery =
-    category === 'plumbing' && subcategory === 'kitchen-taps'
+    isKitchenTaps
       ? "tag:'primary-cat:plumbing' AND (tag:'sub-cat:kitchen-taps' OR tag:'sub-cat:ro-filter-taps')"
       : cartridgeFacet
         ? `tag:'primary-cat:cartridges' AND tag:'${cartridgeFacet}'`
@@ -112,7 +125,7 @@ export default async function SubcategoryPage({
   try {
     page = await getProducts({
       query,
-      first: category === 'bubblers-and-coolers' ? FOUNTAINS_PAGE_SIZE : PAGE_SIZE,
+      first: category === 'bubblers-and-coolers' || isKitchenTaps ? FOUNTAINS_PAGE_SIZE : PAGE_SIZE,
       after,
     });
   } catch (error) {
@@ -169,6 +182,9 @@ export default async function SubcategoryPage({
           Products are temporarily unavailable. Please refresh the page to try again.
         </div>
       )}
+      {isKitchenTaps ? (
+        <KitchenTapResults products={page.products} selectedType={selectedKitchenType} />
+      ) : (
       <CategoryView
         key={`${category}/${subcategory}/${JSON.stringify(initialFilters)}`}
         initialProducts={page.products}
@@ -181,7 +197,8 @@ export default async function SubcategoryPage({
         defaultProductOrder={category === 'bubblers-and-coolers' ? FOUNTAINS_AND_COOLERS_ORDER : []}
         enableSizeFilter={category === 'cartridges'}
       />
-      {page.pageInfo.hasNextPage && page.pageInfo.endCursor && !hasCatalogFilters(initialFilters) && (
+      )}
+      {page.pageInfo.hasNextPage && page.pageInfo.endCursor && !isKitchenTaps && !hasCatalogFilters(initialFilters) && (
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 text-center">
           <Link href={`${pathname}?after=${encodeURIComponent(page.pageInfo.endCursor)}`} rel="next" className="text-sm font-medium text-brand-blue hover:underline underline-offset-4">
             Next catalogue page
