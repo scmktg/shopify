@@ -8,8 +8,8 @@
 // the enviroaqua.com.au DNS cutover. Phase 1 (BLOG_MIGRATION_REDIRECTS,
 // below) was merged earlier and is untouched.
 
-// products.json provides the source-of-truth (category, subcategory)
-// tuple for every Shopify handle. We use it below to auto-upgrade any
+// The merged product catalogue provides the source-of-truth category tuple
+// for every active Shopify handle, including newly added tank products. We use it below to auto-upgrade any
 // /product/<slug>/ or /bathroom/product/<slug>/ redirect whose
 // destination is currently a category PLP — if the slug exists as a
 // real product, we rewrite the destination to the specific product
@@ -21,8 +21,7 @@
 // site. Rather than hand-edit every entry, this helper recomputes the
 // correct destination at build time so the rule list stays in
 // click-rank order (and stays auditable).
-const PRODUCTS_DATA = require('./data/products.json');
-const { productPathForSlug: canonicalProductPath } = require('./lib/products/catalog-data.cjs');
+const { productCatalog, productPathForSlug: canonicalProductPath } = require('./lib/products/catalog-data.cjs');
 const { isRetiredProductHandle } = require('./lib/products/retired-products.cjs');
 function productPathForSlug(slug) {
   if (isRetiredProductHandle(slug)) return null;
@@ -873,10 +872,12 @@ const nextConfig = {
 
     // Shopify Google & YouTube sends /products/<handle> links, while
     // this headless storefront's canonical PDPs use category paths.
+    // Use the complete merged catalogue rather than products.json alone;
+    // otherwise newer tanks, bundles and other additions get 404s.
     // Permanent redirects keep Merchant Center landing pages live
     // without creating duplicate indexable pages. Next.js retains
     // variant, country, currency, and UTM query parameters.
-    for (const handle of Object.keys(PRODUCTS_DATA)) {
+    for (const handle of Object.keys(productCatalog)) {
       if (handle === '12-litre-reverse-osmosis-water-holding-tank-ro-3-2g-plastic-rust-free') continue;
       if (isRetiredProductHandle(handle)) continue;
       const destination = productPathForSlug(handle);
