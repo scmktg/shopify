@@ -9,15 +9,17 @@ export function WaterMarkLeadFreeOverlay({
   compact = false,
   showLicence = true,
   leadFree = true,
+  position = 'left',
 }: {
   licenceNumber?: string | null;
   compact?: boolean;
   showLicence?: boolean;
   leadFree?: boolean;
+  position?: 'left' | 'right';
 }) {
   return (
     <div
-      className={`pointer-events-none absolute left-2 top-2 z-10 flex flex-col items-center text-center text-black ${compact ? 'w-[clamp(58px,26%,82px)]' : 'w-[clamp(94px,25%,136px)] sm:left-3 sm:top-3'}`}
+      className={`pointer-events-none absolute top-2 ${position === 'right' ? 'right-2 sm:right-3' : 'left-2 sm:left-3'} z-10 flex flex-col items-center text-center text-black ${compact ? 'w-[clamp(58px,26%,82px)]' : 'w-[clamp(94px,25%,136px)] sm:top-3'}`}
       role="img"
       aria-label={`WaterMark${leadFree ? ' Lead Free' : ''}${showLicence && licenceNumber ? `, licence ${licenceNumber}` : ""}`}
     >
