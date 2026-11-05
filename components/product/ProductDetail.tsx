@@ -30,7 +30,7 @@ import { ThreeWayTapHeroBenefits } from './ThreeWayTapHeroBenefits';
 import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
-import { shouldShowWaterMarkLeadFreeBadge } from '@/lib/products/watermarkLeadFreeBadge';
+import { shouldShowWaterMarkLeadFreeBadge, shouldShowWaterMarkOnlyTapBadge } from '@/lib/products/watermarkLeadFreeBadge';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const SHIPPING_QUOTE_ONLY_HANDLE = 'commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment';
@@ -129,8 +129,9 @@ export function ProductDetail({
             videos={subcategory === 'bubblers' ? product.videos : []}
             cinematicVideoOverlay={subcategory === 'bubblers'}
             title={product.title}
-            showLeadFreeBadge={shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            showLeadFreeBadge={shouldShowWaterMarkLeadFreeBadge(product.handle, content) || shouldShowWaterMarkOnlyTapBadge(product.handle)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
+            watermarkLeadFree={!shouldShowWaterMarkOnlyTapBadge(product.handle)}
           />
           {subcategory === 'bubblers' && content.compliance?.watermark?.status === 'certified' && (
             <WaterMarkCertificationBanner
