@@ -10,7 +10,7 @@ export function WaterMarkLeadFreeOverlay({
   showLicence = true,
   leadFree = true,
 }: {
-  licenceNumber: string;
+  licenceNumber?: string | null;
   compact?: boolean;
   showLicence?: boolean;
   leadFree?: boolean;
@@ -19,7 +19,7 @@ export function WaterMarkLeadFreeOverlay({
     <div
       className={`pointer-events-none absolute left-2 top-2 z-10 flex flex-col items-center text-center text-black ${compact ? 'w-[clamp(58px,26%,82px)]' : 'w-[clamp(94px,25%,136px)] sm:left-3 sm:top-3'}`}
       role="img"
-      aria-label={`WaterMark${leadFree ? ' Lead Free' : ''}${showLicence ? `, licence ${licenceNumber}` : ""}`}
+      aria-label={`WaterMark${leadFree ? ' Lead Free' : ''}${showLicence && licenceNumber ? `, licence ${licenceNumber}` : ""}`}
     >
       <Image
         src="/watermark-icon.png"
@@ -35,7 +35,7 @@ export function WaterMarkLeadFreeOverlay({
       {leadFree && <span aria-hidden="true" className={`block whitespace-nowrap font-bold tracking-normal antialiased ${compact ? 'text-[9px] leading-[1.1] sm:text-[10px]' : 'text-sm leading-tight sm:text-base'}`}>
         Lead Free
       </span>}
-      {showLicence && (
+      {showLicence && licenceNumber && (
         <span aria-hidden="true" className={`mt-1 block whitespace-nowrap rounded bg-white px-1 py-0.5 font-medium leading-tight ${compact ? 'text-[8px] sm:text-[9px]' : 'text-[10px] sm:text-[11px]'}`}>
           Licence {licenceNumber}
         </span>
