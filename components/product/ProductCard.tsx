@@ -10,7 +10,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
 import { PriceDisplay } from './PriceDisplay';
 import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
-import { getInitialBubblerWaterMarkLicence } from '@/lib/products/watermarkLeadFreeBadge';
+import { getInitialBubblerWaterMarkLicence, shouldShowWaterMarkOnlyTapBadge } from '@/lib/products/watermarkLeadFreeBadge';
 import { ColourSwatch } from './ColourSwatch';
 import { cardToAnalyticsItem, trackSelectItem } from '@/lib/analytics/client';
 
@@ -27,6 +27,7 @@ interface ColourChoice {
 export function ProductCard({ product, editorial = false }: ProductCardProps) {
   const baseHref = getProductUrl(product.handle);
   const watermarkLicence = getInitialBubblerWaterMarkLicence(product.handle);
+  const waterMarkOnlyTap = shouldShowWaterMarkOnlyTapBadge(product.handle);
   const { addItem, isMutating, isReady } = useCart();
   const [pendingAction, setPendingAction] = useState<'cart' | null>(null);
 
@@ -109,8 +110,8 @@ export function ProductCard({ product, editorial = false }: ProductCardProps) {
               className="absolute inset-0 bg-gray-100"
             />
           )}
-          {image && watermarkLicence && (
-            <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} />
+          {image && (watermarkLicence || waterMarkOnlyTap) && (
+            <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} compact showLicence={false} leadFree={!waterMarkOnlyTap} />
           )}
         </div>
       </Link>
