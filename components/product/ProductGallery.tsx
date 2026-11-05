@@ -210,7 +210,7 @@ export function ProductGallery({
         className="object-contain"
       />
 
-      {!videoOpen && showLeadFreeBadge && watermarkLicence && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} />}
+      {!videoOpen && showLeadFreeBadge && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} />}
 
       {video && !videoOpen && (
         <button
