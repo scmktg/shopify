@@ -26,3 +26,17 @@ export function shouldShowWaterMarkLeadFreeBadge(
 export function getInitialBubblerWaterMarkLicence(handle: string): string | null {
   return ELIGIBLE_BUBBLER_HANDLES.has(handle) || handle === CHILLER_WATERMARK_HANDLE ? '23484' : null;
 }
+
+/**
+ * Preview-only WaterMark-only badges for two kitchen mixer taps.
+ * No licence or Lead Free statement is asserted until documentary evidence
+ * for each tap has been supplied and checked.
+ */
+const WATERMARK_ONLY_TAP_HANDLES = new Set([
+  '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
+  'sembowell-pull-out-3way-kitchen-mixer-wels-rated-watermark-certified-aus',
+]);
+
+export function shouldShowWaterMarkOnlyTapBadge(handle: string): boolean {
+  return WATERMARK_ONLY_TAP_HANDLES.has(handle);
+}
