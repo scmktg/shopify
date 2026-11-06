@@ -104,6 +104,12 @@ export function ProductDetail({
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
   const isBubbler = subcategory === 'bubblers';
   const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
+  // Keep a single semantic title; split only the visual presentation for bubbler headings.
+  const bubblerDisplayTitle = ({
+    'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain – Bubbler',
+    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain – Bubbler + Tap',
+    'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain – Bubbler + Tap',
+  } as Record<string, string>)[product.handle] ?? product.title.replace(/\s*\|\s*Chilled\s*&\s*Filtered\s*\|\s*20\s*L\s*\/\s*hr\s*$/i, '');
 
   return (
     <VariantSelectionProvider
@@ -169,11 +175,9 @@ export function ProductDetail({
             {isKitchenTap
               ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '')
               : isBubbler
-                ? ({
-                    'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain – Bubbler',
-                    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain – Bubbler + Tap',
-                    'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain – Bubbler + Tap',
-                  } as Record<string, string>)[product.handle] ?? product.title.replace(/\s*\|\s*Chilled\s*&\s*Filtered\s*\|\s*20\s*L\s*\/\s*hr\s*$/i, '')
+                ? bubblerDisplayTitle.includes(' – ')
+                  ? <>{bubblerDisplayTitle.split(' – ')[0]}<span className="block">{bubblerDisplayTitle.split(' – ').slice(1).join(' – ')}</span></>
+                  : bubblerDisplayTitle
                 : product.title}
           </h1>
 
