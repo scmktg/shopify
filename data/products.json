@@ -6816,13 +6816,13 @@
     "compliance": {
       "watermark": {
         "status": "certified",
-        "licenceNumber": null,
+        "licenceNumber": "032200",
         "specificationNumber": "AS/NZS 3718",
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark certified to AS/NZS 3718 (Plumbing fittings - General requirements). WELS rated 4 stars at 7.5 L/min under AS/NZS 6400:2016 - WELS registration T40393. Specific WaterMark licence number to be confirmed against supplier documentation."
+      "note": "WaterMark licence 032200 supplied for this tap. Confirm current certification scope and Lead Free designation against the applicable certificate before publishing compliance claims."
     },
     "ctas": {
       "primary": "Add selected finish to cart",
@@ -18717,7 +18717,18 @@
     "categories": [
       "plumbing",
       "kitchen-taps"
-    ]
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": "032200",
+        "specificationNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark licence 032200 supplied for this tap. Confirm current certification scope and Lead Free designation against the applicable certificate before publishing compliance claims."
+    }
   },
   "20-x-4-5-whole-house-rain-tank-water-filter-system-5mic-pp-steel-bracket": {
     "categories": [
