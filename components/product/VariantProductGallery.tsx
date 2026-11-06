@@ -13,6 +13,7 @@ interface VariantProductGalleryProps {
   watermarkLeadFree?: boolean;
   watermarkPosition?: 'left' | 'right';
   cinematicVideoOverlay?: boolean;
+  showChilledFilteredBadges?: boolean;
 }
 
 export function VariantProductGallery({
@@ -24,6 +25,7 @@ export function VariantProductGallery({
   watermarkLeadFree = true,
   watermarkPosition = 'left',
   cinematicVideoOverlay = false,
+  showChilledFilteredBadges = false,
 }: VariantProductGalleryProps) {
   const { selectedVariant } = useVariantSelection();
   return (
@@ -36,6 +38,7 @@ export function VariantProductGallery({
       watermarkLeadFree={watermarkLeadFree}
       watermarkPosition={watermarkPosition}
       cinematicVideoOverlay={cinematicVideoOverlay}
+      showChilledFilteredBadges={showChilledFilteredBadges}
       preferredImage={selectedVariant.image}
     />
   );
