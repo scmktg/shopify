@@ -160,7 +160,7 @@ export function ShippingTierBlock({
           <span className="text-neutral-600">Wyong NSW</span>
         </div>
         <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">
-          Remote-area shipping charges may apply. We&apos;ll confirm any extra cost before fulfilment.
+          Shipping charges may apply for remote areas. We&apos;ll confirm any cost with you before fulfilment.
         </p>
       </section>
     );
