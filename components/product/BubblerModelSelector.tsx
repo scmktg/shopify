@@ -27,9 +27,8 @@ export function BubblerModelSelector({ currentHandle }: { currentHandle: string 
   return (
     <fieldset className="mt-5">
       <legend className="w-full text-sm text-neutral-900">
-        <span className="font-semibold">Available in 3 designs.</span>{' '}
         <span className="text-neutral-600">
-          Currently viewing: <strong className="font-semibold text-neutral-900">{selected.label}</strong>
+          Currently viewing model: <strong className="font-semibold text-neutral-900">{selected.label}</strong>
         </span>
       </legend>
       <div className="mt-2.5 grid max-w-[350px] grid-cols-3 gap-2">
