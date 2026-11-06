@@ -15,7 +15,7 @@ const MODELS = [
   },
   {
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    label: 'HDPE Bubbler + Tap',
+    label: 'Granite Bubbler + Tap',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600p-hdpe-drinking-fountain-water-bubbler-with-tap-front.png?v=1792231482',
   },
 ] as const;
