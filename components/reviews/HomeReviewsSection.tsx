@@ -28,7 +28,7 @@ export function HomeReviewsSection() {
         >
           {featured.map((r) => (
             <li key={r.id}>
-              <ReviewCard review={r} />
+              <ReviewCard review={r} className="text-center md:text-left" />
             </li>
           ))}
         </ul>
