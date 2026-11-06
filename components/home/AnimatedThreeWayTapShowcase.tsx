@@ -457,18 +457,23 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
           <p className="mt-4 max-w-md text-base leading-7 text-white/65">
             Hot, cold and filtered drinking water in one streamlined mixer, with no separate drinking-water tap.
           </p>
-          {formattedPrice && (
-            <p className="mt-3 text-2xl font-semibold tracking-tight">
-              {formattedPrice}<span className="ml-2 text-sm font-medium text-white/50">inc GST</span>
-            </p>
-          )}
-          {activeProduct ? (
-            <Link href={getProductUrl(activeProduct.handle)} className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[.04em] text-[#141516] transition-colors hover:bg-white/90 sm:w-auto">
-              Shop now <ArrowUpRight size={18} aria-hidden="true" />
-            </Link>
-          ) : (
-            <p className="mt-7 text-sm text-white/60">This product is temporarily unavailable.</p>
-          )}
+          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+            {formattedPrice && (
+              <p className="whitespace-nowrap text-2xl font-semibold tracking-tight">
+                {formattedPrice}<span className="ml-2 text-sm font-medium text-white/50">inc GST</span>
+              </p>
+            )}
+            {activeProduct ? (
+              <Link
+                href={getProductUrl(activeProduct.handle)}
+                className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[.045em] text-[#141516] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Shop now <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            ) : (
+              <p className="text-sm text-white/60">This product is temporarily unavailable.</p>
+            )}
+          </div>
         </div>
       </div>
       <style>{`
