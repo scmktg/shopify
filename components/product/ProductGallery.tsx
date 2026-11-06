@@ -215,14 +215,19 @@ export function ProductGallery({
       />
 
       {showChilledFilteredBadges && !videoOpen && (
-        <div className="pointer-events-none absolute right-3 top-3 z-10 flex flex-wrap justify-end gap-1.5 sm:right-4 sm:top-4" aria-label="Chilled and filtered drinking water">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
-            <Snowflake aria-hidden="true" className="h-3.5 w-3.5" />
-            Chilled
-          </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
-            <Droplets aria-hidden="true" className="h-3.5 w-3.5" />
-            Filtered
+        <div className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-1.5 sm:right-4 sm:top-4" aria-label="Chilled and filtered drinking water, 20 litres per hour">
+          <div className="flex flex-wrap justify-end gap-1.5">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
+              <Snowflake aria-hidden="true" className="h-3.5 w-3.5" />
+              Chilled
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
+              <Droplets aria-hidden="true" className="h-3.5 w-3.5" />
+              Filtered
+            </span>
+          </div>
+          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-100 bg-white/95 text-[10px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm" aria-label="20 litres per hour cooling capacity">
+            20L/hr
           </span>
         </div>
       )}
