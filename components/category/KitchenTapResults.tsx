@@ -17,6 +17,35 @@ const MENU_CLASS =
 const TRIGGER_CLASS =
   'inline-flex min-h-11 min-w-32 cursor-pointer list-none items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-900 transition-colors hover:border-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30 [&::-webkit-details-marker]:hidden';
 
+
+// Recognise finishes from variant options first, then fall back to product metadata.
+const COLOURS = [
+  { value: 'matte-black', label: 'Matte Black', pattern: /\\b(?:matte\\s+black|black)\\b/i },
+  { value: 'brushed-nickel', label: 'Brushed Nickel', pattern: /\\b(?:brushed\\s+nickel|nickel)\\b/i },
+  { value: 'polished-chrome', label: 'Polished Chrome', pattern: /\\b(?:polished\\s+chrome|chrome)\\b/i },
+  { value: 'brushed-gold', label: 'Brushed Gold', pattern: /\\b(?:brushed\\s+gold|gold)\\b/i },
+  { value: 'stainless-steel', label: 'Stainless Steel', pattern: /\\b(?:stainless[\\s-]+steel|silver)\\b/i },
+  { value: 'white', label: 'White', pattern: /\\bwhite\\b/i },
+] as const;
+
+function productColours(product: ProductCardData): string[] {
+  const finishOptions = product.variants.flatMap((variant) =>
+    variant.selectedOptions
+      .filter((option) => /^(?:colou?r|finish)$/i.test(option.name))
+      .map((option) => option.value),
+  );
+  const sources = finishOptions.length > 0
+    ? finishOptions
+    : product.variants
+        .map((variant) => variant.title)
+        .filter((title) => title && title !== 'Default Title');
+  const descriptors = sources.length > 0
+    ? sources
+    : [product.title, ...product.tags, product.handle];
+  return COLOURS.filter((colour) => descriptors.some((value) => colour.pattern.test(value)))
+    .map((colour) => colour.value);
+}
+
 interface Props {
   products: ReadonlyArray<ProductCardData>;
   selectedType?: string;
@@ -25,16 +54,24 @@ interface Props {
 export function KitchenTapResults({ products, selectedType }: Props) {
   const chosen = isKitchenTapGroup(selectedType) ? selectedType : null;
   const [sort, setSort] = useState<SortValue>('default');
+  const [colour, setColour] = useState<string | null>(null);
   const typeRef = useRef<HTMLDetailsElement>(null);
+  const colourRef = useRef<HTMLDetailsElement>(null);
+
+  const availableColours = useMemo(() =>
+    COLOURS.filter((option) => products.some((product) => productColours(product).includes(option.value))),
+    [products],
+  );
 
   const displayed = useMemo(() => {
     const handles = chosen ? new Set(KITCHEN_TAP_GROUP_HANDLES[chosen]) : null;
-    const list = handles ? products.filter((product) => handles.has(product.handle)) : [...products];
+    const byType = handles ? products.filter((product) => handles.has(product.handle)) : [...products];
+    const list = colour ? byType.filter((product) => productColours(product).includes(colour)) : byType;
 
     if (sort === 'price-asc') return list.sort((a, b) => Number(a.price.amount) - Number(b.price.amount));
     if (sort === 'price-desc') return list.sort((a, b) => Number(b.price.amount) - Number(a.price.amount));
     return list;
-  }, [products, chosen, sort]);
+  }, [products, chosen, colour, sort]);
 
   const selectedLabel = KITCHEN_TAP_GROUPS.find((group) => group.value === chosen)?.label;
 
@@ -62,6 +99,24 @@ export function KitchenTapResults({ products, selectedType }: Props) {
                 ))}
               </nav>
             </details>
+            {availableColours.length > 0 && (
+              <details ref={colourRef} className="group/colour relative">
+                <summary className={TRIGGER_CLASS} aria-label={`Colour: ${COLOURS.find((option) => option.value === colour)?.label ?? 'All colours'}`}>
+                  <span>Colour<span className="hidden text-slate-400 sm:inline">{colour ? `: ${COLOURS.find((option) => option.value === colour)?.label}` : ''}</span></span>
+                  <ChevronDown size={16} aria-hidden="true" className="shrink-0 text-slate-500 transition-transform group-open/colour:rotate-180" />
+                </summary>
+                <div role="group" aria-label="Filter by tap colour" className={MENU_CLASS}>
+                  {[{ value: null, label: 'All colours' }, ...availableColours].map((option) => (
+                    <button key={option.value ?? 'all'} type="button" aria-pressed={colour === option.value}
+                      onClick={() => { setColour(option.value); if (colourRef.current) colourRef.current.open = false; }}
+                      className={`flex min-h-10 w-full items-center justify-between gap-3 rounded-xl px-3 py-2 text-left text-sm hover:bg-slate-50 ${colour === option.value ? 'bg-slate-100 font-semibold text-slate-950' : 'text-slate-700'}`}>
+                      {option.label}
+                      {colour === option.value && <Check size={16} aria-hidden="true" />}
+                    </button>
+                  ))}
+                </div>
+              </details>
+            )}
             <SortDropdown
               value={sort}
               onChange={setSort}
@@ -75,7 +130,7 @@ export function KitchenTapResults({ products, selectedType }: Props) {
         <ProductGrid products={displayed} editorial />
         {displayed.length === 0 && (
           <div className="rounded-xl border border-gray-200 p-6 text-sm text-slate-700">
-            No products found in this type. <Link href="/plumbing/kitchen-taps/" className="font-semibold text-sky-700 hover:underline">Browse all Kitchen Taps</Link>.
+            No kitchen taps match these filters. <Link href="/plumbing/kitchen-taps/" className="font-semibold text-sky-700 hover:underline">Browse all Kitchen Taps</Link>.
           </div>
         )}
       </div>
