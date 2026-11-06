@@ -57,7 +57,6 @@ export function BuyBanner({
               money={price}
               className={minimal ? "text-3xl md:text-4xl font-bold text-white tracking-tight" : "text-2xl md:text-3xl font-bold text-black tracking-tight"}
             />
-            <span className={minimal ? "text-sm text-white/60" : "text-sm text-black/50"}>inc GST</span>
             {!minimal && <span className="text-sm text-black/50">· Same price retail or trade</span>}
           </div>
         </div>
