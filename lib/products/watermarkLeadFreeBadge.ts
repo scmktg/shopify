@@ -31,6 +31,10 @@ export function getInitialBubblerWaterMarkLicence(handle: string): string | null
 const WATERMARK_TAP_HANDLES = new Set([
   '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c',
   'sembowell-pull-out-3way-kitchen-mixer-wels-rated-watermark-certified-aus',
+  '3-way-filtered-kitchen-mixer-tap-matte-black-watermark-wels',
+  '3-way-filtered-kitchen-mixer-tap-stainless-steel-watermark-wels',
+  '3-way-filtered-kitchen-mixer-tap-polished-chrome-watermark-wels',
+  '3-way-filtered-kitchen-mixer-tap-brushed-gold-watermark-wels',
 ]);
 
 export function shouldShowWaterMarkTapBadge(handle: string): boolean {
