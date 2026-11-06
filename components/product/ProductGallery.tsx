@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X, Snowflake, Droplets } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X, Snowflake, Droplets, Gauge } from 'lucide-react';
 import type { ProductImage, ProductVideo } from '@/types/product';
 import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
 
@@ -215,18 +215,20 @@ export function ProductGallery({
       />
 
       {showChilledFilteredBadges && !videoOpen && (
-        <div className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-1.5 sm:right-4 sm:top-4" aria-label="Chilled and filtered drinking water, 20 litres per hour">
-          <div className="flex flex-wrap justify-end gap-1.5">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
-              <Snowflake aria-hidden="true" className="h-3.5 w-3.5" />
-              Chilled
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
-              <Droplets aria-hidden="true" className="h-3.5 w-3.5" />
-              Filtered
-            </span>
-          </div>
-          <span className="inline-flex items-center justify-center rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm" aria-label="20 litres per hour cooling capacity">
+        <div
+          className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-1.5 sm:right-4 sm:top-4"
+          aria-label="Chilled, filtered drinking water with 20 litres per hour cooling capacity"
+        >
+          <span className="inline-flex h-8 w-[112px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-3 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
+            <Snowflake aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+            Chilled
+          </span>
+          <span className="inline-flex h-8 w-[112px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-3 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
+            <Droplets aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+            Filtered
+          </span>
+          <span className="inline-flex h-8 w-[112px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-3 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm" aria-label="20 litres per hour cooling capacity">
+            <Gauge aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
             20L/hr
           </span>
         </div>
