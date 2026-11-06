@@ -4,18 +4,18 @@ import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, ChevronRight } from 'lucide-react';
-import type { ProductCardData, ProductCardVariant } from '@/types/product';
+import type { ProductCardData } from '@/types/product';
 import { getProductUrl } from '@/lib/utils/productUrl';
 
 interface Props {
-  product: ProductCardData | null;
+  products: ReadonlyArray<ProductCardData | null>;
 }
 
 type Finish = {
   label: string;
-  image: NonNullable<ProductCardVariant['image']>;
-  variantId: string;
-  price: ProductCardVariant['price'];
+  image: NonNullable<ProductCardData['featuredImage']>;
+  handle: string;
+  price: ProductCardData['price'];
 };
 
 const PREFERRED_FINISHES = [
@@ -25,11 +25,13 @@ const PREFERRED_FINISHES = [
   'polished chrome',
 ];
 
-function finishName(variant: ProductCardVariant): string {
-  const option = variant.selectedOptions.find(({ name }) =>
-    /colou?r|finish|style/i.test(name),
-  );
-  return (option?.value || variant.title).trim();
+function finishName(product: ProductCardData): string {
+  const title = product.title;
+  if (/matte black/i.test(title)) return 'Matte Black';
+  if (/brushed gold/i.test(title)) return 'Brushed Gold';
+  if (/stainless steel|brushed nickel/i.test(title)) return 'Brushed Nickel';
+  if (/polished chrome/i.test(title)) return 'Polished Chrome';
+  return title.replace(/^3 way filtered kitchen mixer tap in /i, '');
 }
 
 function finishRank(name: string) {
@@ -43,17 +45,16 @@ function finishRank(name: string) {
  * A small editorial animation, powered by the product's real Shopify variant
  * images. We don't hardcode asset URLs, so image replacements stay in sync.
  */
-export function AnimatedThreeWayTapShowcase({ product }: Props) {
+export function AnimatedThreeWayTapShowcase({ products }: Props) {
   const finishes = useMemo(() => {
-    if (!product) return [];
     const seen = new Set<string>();
-    return product.variants
-      .filter((variant) => Boolean(variant.image?.url))
-      .map((variant) => ({
-        label: finishName(variant),
-        image: variant.image!,
-        variantId: variant.id,
-        price: variant.price,
+    return products
+      .filter((product): product is ProductCardData => Boolean(product?.featuredImage?.url))
+      .map((product) => ({
+        label: finishName(product),
+        image: product.featuredImage!,
+        handle: product.handle,
+        price: product.price,
       }))
       .filter((finish) => {
         const key = finish.label.toLowerCase();
@@ -62,14 +63,14 @@ export function AnimatedThreeWayTapShowcase({ product }: Props) {
         return true;
       })
       .sort((a, b) => finishRank(a.label) - finishRank(b.label));
-  }, [product]);
+  }, [products]);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [interacted, setInteracted] = useState(false);
   const active = finishes[activeIndex % Math.max(finishes.length, 1)];
-  const image = active?.image ?? product?.featuredImage;
-  const price = active?.price ?? product?.price;
+  const image = active?.image;
+  const price = active?.price;
 
   useEffect(() => {
     if (paused || interacted || finishes.length < 2) return;
@@ -110,7 +111,7 @@ export function AnimatedThreeWayTapShowcase({ product }: Props) {
               <div key={image.url} className="tap-showcase-enter absolute inset-0">
                 <Image
                   src={image.url}
-                  alt={image.altText || (active ? `3 way filtered kitchen mixer tap in ${active.label}` : product?.title || 'Three way filtered kitchen mixer tap')}
+                  alt={image.altText || (active ? `3 way filtered kitchen mixer tap in ${active.label}` : 'Three way filtered kitchen mixer tap')}
                   fill
                   sizes="(max-width: 1023px) 92vw, 54vw"
                   className="object-contain p-1 drop-shadow-[0_24px_24px_rgba(0,0,0,.28)] sm:p-5"
@@ -125,7 +126,7 @@ export function AnimatedThreeWayTapShowcase({ product }: Props) {
           <div className="relative -mt-2 flex min-h-16 flex-wrap items-center justify-center gap-2 sm:gap-3">
             {finishes.length > 1 ? finishes.map((finish, index) => (
               <button
-                key={finish.variantId}
+                key={finish.handle}
                 type="button"
                 onClick={() => {
                   setActiveIndex(index);
@@ -168,9 +169,9 @@ export function AnimatedThreeWayTapShowcase({ product }: Props) {
               <span className="ml-2 text-sm font-medium text-white/50">inc GST</span>
             </p>
           )}
-          {product ? (
+          {active ? (
             <Link
-              href={getProductUrl(product.handle)}
+              href={getProductUrl(active.handle)}
               className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[.04em] text-[#121416] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
             >
               Shop now <ArrowUpRight size={18} aria-hidden="true" />
