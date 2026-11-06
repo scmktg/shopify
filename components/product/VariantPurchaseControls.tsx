@@ -22,6 +22,7 @@ interface VariantPurchaseControlsProps {
   offerInstallationAssistance?: boolean;
   showDispatchCountdown?: boolean;
   hideWholeDollarCents?: boolean;
+  sleek?: boolean;
 }
 
 export function VariantPurchaseControls({
@@ -32,6 +33,7 @@ export function VariantPurchaseControls({
   offerInstallationAssistance = false,
   showDispatchCountdown = true,
   hideWholeDollarCents = false,
+  sleek = false,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -48,12 +50,12 @@ export function VariantPurchaseControls({
 
   return (
     <>
-      <div className="mt-4 flex items-baseline justify-between gap-4 flex-wrap">
+      <div className={sleek ? "mt-6 flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t border-neutral-200 pt-5" : "mt-4 flex items-baseline justify-between gap-4 flex-wrap"}>
         <div className="flex items-baseline gap-2 flex-wrap">
           <PriceDisplay
             money={price}
             hideWholeDollarCents={hideWholeDollarCents}
-            className="text-3xl md:text-4xl font-bold text-black tracking-tight"
+            className={sleek ? "text-[2.5rem] font-semibold leading-none tracking-[-0.045em] text-neutral-900" : "text-3xl md:text-4xl font-bold text-black tracking-tight"}
           />
           <span className="text-sm text-black/50">inc GST</span>
           {compareAt && (
@@ -162,7 +164,7 @@ export function VariantPurchaseControls({
         </div>
       )}
 
-      <div className="mt-6">
+      <div className={sleek ? "mt-5" : "mt-6"}>
         <AddToCartButton
           variantId={selectedVariant.id}
           available={selectedVariant.availableForSale}
