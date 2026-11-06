@@ -3,7 +3,6 @@ import type { Product, Money, ProductImage } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
 import { CertificationSlot } from './CertificationSlot';
-import { WaterMarkCertificationBanner } from './WaterMarkCertificationBanner';
 import { isLeadFree } from './WatermarkBadge';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
@@ -22,6 +21,7 @@ import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { ShippingTierBlock } from './ShippingTierBlock';
 import { KitchenTapShippingRates } from './KitchenTapShippingRates';
 import { KitchenTapCertificationStrip } from './KitchenTapCertificationStrip';
+import { BubblerCertificationStrip } from './BubblerCertificationStrip';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
 import { VariantPurchaseControls } from './VariantPurchaseControls';
@@ -101,6 +101,8 @@ export function ProductDetail({
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
+  const isBubbler = subcategory === 'bubblers';
+  const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
 
   return (
     <VariantSelectionProvider
@@ -125,35 +127,40 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className={isKitchenTap ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
+      <div className={useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
             videos={subcategory === 'bubblers' ? product.videos : []}
             cinematicVideoOverlay={subcategory === 'bubblers'}
             title={product.title}
-            showLeadFreeBadge={!isKitchenTap && shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            showLeadFreeBadge={!useRefinedPurchaseLayout && shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
             watermarkLeadFree
             watermarkPosition={shouldShowWaterMarkTapBadge(product.handle) ? 'right' : 'left'}
           />
           {isKitchenTap && <KitchenTapCertificationStrip licenceNumber={content.compliance?.watermark?.licenceNumber} />}
-          {subcategory === 'bubblers' && content.compliance?.watermark?.status === 'certified' && (
-            <WaterMarkCertificationBanner
+          {isBubbler && content.compliance?.watermark?.status === 'certified' && (
+            <BubblerCertificationStrip
               licenceNumber={content.compliance?.watermark?.licenceNumber}
-              leadFree={isLeadFree(content) || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+              leadFree={isLeadFree(content)}
             />
           )}
         </div>
 
-        <div className={isKitchenTap ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+        <div className={useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
               HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
             </p>
           )}
-          <h1 className={isKitchenTap
-            ? "max-w-[22ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
+          {isBubbler && (
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
+              COMMERCIAL DRINKING FOUNTAINS
+            </p>
+          )}
+          <h1 className={useRefinedPurchaseLayout
+            ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
             : "text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight"}>
             {isKitchenTap ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '') : product.title}
           </h1>
@@ -163,7 +170,7 @@ export function ProductDetail({
               family={content.family}
               currentHandle={product.handle}
               paths={familyPaths}
-              sleek={isKitchenTap}
+              sleek={useRefinedPurchaseLayout}
             />
           )}
 
@@ -174,7 +181,7 @@ export function ProductDetail({
               ctaLabel={content.ctas?.primary ?? undefined}
               offerInstallationAssistance={subcategory === 'bubblers'}
               hideWholeDollarCents={subcategory === 'bubblers'}
-              showDispatchCountdown={!isKitchenTap && !(subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5')}
+              showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
               sleek={isKitchenTap}
             />
           )}
@@ -281,9 +288,14 @@ export function ProductDetail({
             </div>
           )}
 
-          {!shouldShowWaterMarkTapBadge(product.handle) && (
+          {!isKitchenTap && !isBubbler && (
             <div className="mt-4">
-              <CertificationSlot content={content} hideCertifiedBadge={subcategory === 'bubblers'} />
+              <CertificationSlot content={content} />
+            </div>
+          )}
+          {isBubbler && content.compliance?.watermark?.status !== 'certified' && (
+            <div className="mt-4">
+              <CertificationSlot content={content} />
             </div>
           )}
 
@@ -300,7 +312,7 @@ export function ProductDetail({
             )
           )}
 
-          <VariantProductTrustBlock productId={product.id} className={isKitchenTap ? '!mt-4 text-xs text-neutral-500' : undefined} />
+          <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
 
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
