@@ -315,7 +315,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     <link rel="preload" as="image" href={BACKGROUND} />
     {finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
     <section ref={sectionRef} aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.18fr_.82fr] lg:gap-12 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-center gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-8">
         <div className="order-2 min-w-0 lg:order-1">
           <div
             ref={sceneRef}
@@ -446,16 +446,13 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
             </div>
           </div>
         </div>
-        <div className="order-1 max-w-xl lg:order-2">
-          <p className="mb-6 text-xs font-semibold uppercase tracking-[.19em] text-white/50">
-            Find your finish
-          </p>
+        <div className="order-1 min-w-0 w-full lg:order-2">
           <h2 id="three-way-tap-showcase-title" className="tracking-[-.05em]">
             <span className="block text-[clamp(2.2rem,4.3vw,4.75rem)] font-light leading-[1.06]">Hot. Cold.</span>
             <span className="tap-ice-blue-shine mt-1 block text-[clamp(2.5rem,5.2vw,5.5rem)] font-semibold leading-[1.08]">Filtered.</span>
           </h2>
-          <p className="mt-6 text-[clamp(1.1rem,2vw,1.5rem)] font-medium tracking-[-.025em]">
-            All from one sleek tap.
+          <p className="mt-7 max-w-[16ch] text-[clamp(1.8rem,3.1vw,3.25rem)] font-medium leading-[1.12] tracking-[-.045em] text-white">
+            All from one <span className="font-semibold text-[#d9ecf6]">sleek tap.</span>
           </p>
           <p className="mt-4 max-w-md text-base leading-7 text-white/65">
             Explore four premium finishes in the same kitchen. Hot, cold and filtered drinking water in one streamlined mixer, with no separate drinking-water tap.
