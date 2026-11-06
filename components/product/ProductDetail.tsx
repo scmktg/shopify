@@ -176,7 +176,6 @@ export function ProductDetail({
               currentHandle={product.handle}
               paths={familyPaths}
               sleek={useRefinedPurchaseLayout}
-              compactLayout={isBubbler}
             />
           )}
 
@@ -188,6 +187,7 @@ export function ProductDetail({
               hideWholeDollarCents={subcategory === 'bubblers'}
               showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
               sleek={useRefinedPurchaseLayout}
+              compactLayout={isBubbler}
             />
           )}
 
