@@ -145,6 +145,8 @@ function kitchenTapFinishImage(finish: string): string | null {
   switch (finish.toLowerCase()) {
     case 'matte black':
       return 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/MatteBlackMirroredGooseneckTap.png?v=1793923266';
+    case 'brushed nickel':
+      return 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Brushed_Nickel_Gooseneck_Faucet.png?v=1793956713';
     case 'stainless steel':
       return 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/BrushedStainlessSteelKitchenFaucet.png?v=1793923667';
     case 'polished chrome':
@@ -160,6 +162,8 @@ function kitchenTapFinishSwatch(finish: string): string | null {
   switch (finish.toLowerCase()) {
     case 'matte black':
       return 'border-neutral-800 bg-neutral-950';
+    case 'brushed nickel':
+      return 'border-neutral-400 bg-[#aaa8a2]';
     case 'stainless steel':
       return 'border-neutral-400 bg-[#a7afb4]';
     case 'polished chrome':
