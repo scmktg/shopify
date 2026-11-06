@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MapPin, Truck } from 'lucide-react';
+import { Truck } from 'lucide-react';
 import type { ShippingTier } from '@/types/product';
 import { VariantShippingEstimator } from './VariantShippingEstimator';
 import { VariantDispatchCountdown } from './VariantDispatchCountdown';
@@ -155,8 +155,7 @@ export function ShippingTierBlock({
         <div className="space-y-3 border-t border-neutral-100 px-4 py-3">
           <VariantDispatchCountdown minimal />
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
-            <MapPin aria-hidden="true" className="h-4 w-4 shrink-0 text-neutral-500" />
-            <span className="font-medium">Free Click &amp; Collect</span>
+            <span className="font-semibold text-black">Free Click &amp; Collect</span>
             <span className="text-neutral-300" aria-hidden="true">/</span>
             <span className="text-neutral-600">Wyong NSW</span>
           </div>
