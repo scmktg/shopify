@@ -249,6 +249,9 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     : null;
 
   return (
+    <>
+    <link rel="preload" as="image" href={BACKGROUND} />
+    {finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
     <section aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
       <div className="mx-auto grid max-w-7xl items-center gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.18fr_.82fr] lg:gap-12 lg:px-8">
         <div className="order-2 min-w-0 lg:order-1">
@@ -370,5 +373,6 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
         </div>
       </div>
     </section>
+    </>
   );
 }
