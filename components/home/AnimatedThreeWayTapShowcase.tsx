@@ -310,6 +310,27 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     }).format(Number(activeProduct.price.amount))
     : null;
 
+  const purchaseRow = (
+    <>
+            {formattedPrice && (
+              <p className="whitespace-nowrap text-[1.55rem] font-semibold tracking-tight sm:text-2xl">
+                {formattedPrice}<span className="ml-1.5 text-xs font-medium text-white/50 sm:ml-2 sm:text-sm">inc GST</span>
+              </p>
+            )}
+            {activeProduct ? (
+              <Link
+                href={getProductUrl(activeProduct.handle)}
+                className="inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[.045em] text-[#141516] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:gap-2 sm:px-5 sm:text-xs"
+              >
+                Shop now <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            ) : (
+              <p className="text-sm text-white/60">This product is temporarily unavailable.</p>
+            )}
+    </>
+  );
+
+
   return (
     <>
     <link rel="preload" as="image" href={BACKGROUND} />
@@ -445,6 +466,9 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
               })}
             </div>
           </div>
+          <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:hidden">
+            {purchaseRow}
+          </div>
         </div>
         <div className="order-1 flex min-w-0 w-full flex-col items-center justify-center text-center lg:order-2 lg:items-start lg:text-left">
           <h2 id="three-way-tap-showcase-title" className="tracking-[-.055em] sm:tracking-[-.05em]">
@@ -457,22 +481,8 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
           <p className="mt-3 max-w-[34ch] text-[15px] leading-[1.65] text-white/65 sm:mt-4 sm:max-w-md sm:text-base sm:leading-7">
             Hot, cold and filtered drinking water in one streamlined mixer, with no separate drinking-water tap.
           </p>
-          <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-white/10 pt-5 sm:mt-7 sm:gap-x-6 sm:gap-y-4 sm:border-0 sm:pt-0 lg:justify-start">
-            {formattedPrice && (
-              <p className="whitespace-nowrap text-[1.55rem] font-semibold tracking-tight sm:text-2xl">
-                {formattedPrice}<span className="ml-1.5 text-xs font-medium text-white/50 sm:ml-2 sm:text-sm">inc GST</span>
-              </p>
-            )}
-            {activeProduct ? (
-              <Link
-                href={getProductUrl(activeProduct.handle)}
-                className="inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[.045em] text-[#141516] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:gap-2 sm:px-5 sm:text-xs"
-              >
-                Shop now <ArrowUpRight size={16} aria-hidden="true" />
-              </Link>
-            ) : (
-              <p className="text-sm text-white/60">This product is temporarily unavailable.</p>
-            )}
+          <div className="mt-7 hidden w-full flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:flex lg:justify-start">
+            {purchaseRow}
           </div>
         </div>
       </div>
