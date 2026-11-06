@@ -229,7 +229,6 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
             <div className="mt-8 text-center lg:text-left">
               <p className="text-2xl font-semibold tracking-tight text-black">
                 {price}
-                <span className="ml-3 text-sm font-medium text-black/60">inc GST</span>
               </p>
               <p className="mt-1 text-sm font-semibold text-black/75">
                 Free Australia-wide delivery
