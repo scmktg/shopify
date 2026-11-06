@@ -446,7 +446,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
             </div>
           </div>
         </div>
-        <div className="order-1 flex min-w-0 w-full flex-col justify-center lg:order-2">
+        <div className="order-1 flex min-w-0 w-full flex-col items-center justify-center text-center lg:order-2 lg:items-start lg:text-left">
           <h2 id="three-way-tap-showcase-title" className="tracking-[-.055em] sm:tracking-[-.05em]">
             <span className="block text-[clamp(2.55rem,10vw,3.2rem)] font-light leading-[1.02] sm:text-[clamp(2.2rem,4.3vw,4.75rem)] sm:leading-[1.06]">Hot. Cold.</span>
             <span className="tap-ice-blue-shine mt-1 block text-[clamp(3rem,11.5vw,3.7rem)] font-semibold leading-[1.02] sm:text-[clamp(2.5rem,5.2vw,5.5rem)] sm:leading-[1.08]">Filtered.</span>
@@ -457,7 +457,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
           <p className="mt-3 max-w-[34ch] text-[15px] leading-[1.65] text-white/65 sm:mt-4 sm:max-w-md sm:text-base sm:leading-7">
             Hot, cold and filtered drinking water in one streamlined mixer, with no separate drinking-water tap.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-white/10 pt-5 sm:mt-7 sm:gap-x-6 sm:gap-y-4 sm:border-0 sm:pt-0">
+          <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-3 border-t border-white/10 pt-5 sm:mt-7 sm:gap-x-6 sm:gap-y-4 sm:border-0 sm:pt-0 lg:justify-start">
             {formattedPrice && (
               <p className="whitespace-nowrap text-[1.55rem] font-semibold tracking-tight sm:text-2xl">
                 {formattedPrice}<span className="ml-1.5 text-xs font-medium text-white/50 sm:ml-2 sm:text-sm">inc GST</span>
