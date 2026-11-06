@@ -4,18 +4,18 @@ import { clsx } from 'clsx';
 /** Alternative commercial drinking fountains, matched to active Shopify products. */
 const MODELS = [
   {
-    handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
-    label: 'Square stainless steel',
-    image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/stainless-steel-fountain-bubbler-tap.png?v=1793009157',
-  },
-  {
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
-    label: 'Round stainless steel',
+    label: 'Steel Bubbler',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600r-round-stainless-steel-drinking-fountain-water-bubbler-front-angle.png?v=1792231320',
   },
   {
+    handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
+    label: 'Steel Bubbler + Tap',
+    image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/stainless-steel-fountain-bubbler-tap.png?v=1793009157',
+  },
+  {
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    label: 'Granite-look HDPE',
+    label: 'HDPE Bubbler + Tap',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600p-hdpe-drinking-fountain-water-bubbler-with-tap-front.png?v=1792231482',
   },
 ] as const;
