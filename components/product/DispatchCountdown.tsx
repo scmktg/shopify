@@ -6,7 +6,6 @@ import { ORDER_CUTOFF, ORDER_CUTOFF_DISPLAY } from '@/lib/site-config';
 
 interface DispatchState {
   headline: string;
-  detail: string;
   urgent: boolean;
 }
 
@@ -28,8 +27,7 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
 
   const current =
     state ?? {
-      headline: `Order before ${ORDER_CUTOFF_DISPLAY}`,
-      detail: 'for same-day dispatch from Wyong NSW',
+      headline: `Order before ${ORDER_CUTOFF_DISPLAY} for same-day dispatch from NSW`,
       urgent: false,
     };
 
@@ -59,7 +57,6 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
         {!inStock && <Truck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />}
         <div className="min-w-0">
           <p className="text-sm font-semibold text-black tabular-nums">{dispatchHeadline}</p>
-          <p className="mt-0.5 text-xs leading-relaxed text-black/65">{current.detail}</p>
         </div>
       </div>
     );
@@ -92,14 +89,8 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
           <p className="text-sm font-bold text-black tabular-nums">
             {dispatchHeadline}
           </p>
-          <p className="mt-0.5 text-xs text-black/65">{current.detail}</p>
         </div>
 
-        {current.urgent && (
-          <span className="ml-auto flex-none rounded-full bg-brand-blue px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
-            Ships today
-          </span>
-        )}
       </div>
     </div>
   );
@@ -112,8 +103,7 @@ function buildDispatchState(now: Date): DispatchState {
 
   if (isSaturday || isSunday) {
     return {
-      headline: 'Order now for Monday dispatch',
-      detail: 'Your order will be queued for the next business-day dispatch from Wyong NSW.',
+      headline: 'Order now for Monday dispatch from NSW',
       urgent: false,
     };
   }
@@ -126,8 +116,7 @@ function buildDispatchState(now: Date): DispatchState {
 
   if (!beforeCutoff) {
     return {
-      headline: 'Order now for next-business-day dispatch',
-      detail: `Same-day dispatch cutoff is ${ORDER_CUTOFF_DISPLAY} AEST/AEDT from Wyong NSW.`,
+      headline: 'Order now for next-business-day dispatch from NSW',
       urgent: false,
     };
   }
@@ -144,8 +133,7 @@ function buildDispatchState(now: Date): DispatchState {
         : `${Math.max(seconds, 1)}s`;
 
   return {
-    headline: `Order within ${remaining}`,
-    detail: 'Complete your order before the cutoff for same-day dispatch from Wyong NSW.',
+    headline: `Order within ${remaining} for same-day dispatch from NSW`,
     urgent: true,
   };
 }
