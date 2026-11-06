@@ -36,7 +36,8 @@ const VISIBLE_REFERENCE = { width: 486, height: 693 };
 const FINISH_ORDER: FinishName[] = ['Polished Chrome', 'Matte Black', 'Brushed Nickel', 'Brushed Gold'];
 const HOLD_MS = 3000;
 const MANUAL_PAUSE_MS = 8000;
-const TRANSITION_MS = 760;
+const TRANSITION_MS = 680;
+const FADE_OUT_MS = 170;
 const SWATCHES: Record<FinishName, string> = {
   'Polished Chrome': 'linear-gradient(125deg, #717a83 0%, #f9fbfc 28%, #8c979f 48%, #f9fafb 70%, #59636d 100%)',
   'Matte Black': 'linear-gradient(135deg, #55585c 0%, #202226 55%, #111316 100%)',
@@ -144,8 +145,8 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
       : [];
   }), [products]);
   const [selected, setSelected] = useState<FinishName>('Polished Chrome');
-  const [outgoing, setOutgoing] = useState<FinishName | null>(null);
-  const [swapSequence, setSwapSequence] = useState(0);
+  const [displayed, setDisplayed] = useState<FinishName>('Polished Chrome');
+  const [swapPhase, setSwapPhase] = useState<'stable' | 'exiting' | 'entering'>('stable');
   const [geometry, setGeometry] = useState<Record<string, Geometry>>({});
   const [viewport, setViewport] = useState({ width: SCENE.width, height: SCENE.height });
   const [manualAt, setManualAt] = useState(0);
@@ -160,17 +161,35 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
 
   function changeFinish(next: FinishName) {
     if (next === selected) return;
-    setOutgoing(selected);
     setSelected(next);
-    setSwapSequence((sequence) => sequence + 1);
   }
 
-  // Only retain the exiting image for the duration of its fade.
+  // Two distinct phases: the existing tap disappears first, then the next
+  // arrives from beyond the right-hand side. Never show two taps at once.
+  // Selecting another finish mid-transition cancels the pending timers.
   useEffect(() => {
-    if (!outgoing) return;
-    const timeout = window.setTimeout(() => setOutgoing(null), TRANSITION_MS + 60);
-    return () => window.clearTimeout(timeout);
-  }, [outgoing, swapSequence]);
+    if (selected === displayed) return;
+    if (reducedMotion) {
+      setDisplayed(selected);
+      setSwapPhase('stable');
+      return;
+    }
+    setSwapPhase('exiting');
+    const exitTimer = window.setTimeout(() => {
+      setDisplayed(selected);
+      setSwapPhase('entering');
+    }, FADE_OUT_MS);
+    const enterTimer = window.setTimeout(() => {
+      setSwapPhase('stable');
+    }, FADE_OUT_MS + TRANSITION_MS);
+    return () => {
+      window.clearTimeout(exitTimer);
+      window.clearTimeout(enterTimer);
+    };
+    // displayed is intentionally excluded: its update is part of this
+    // transition, not a signal to restart the effect.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected, reducedMotion]);
 
   useEffect(() => {
     const el = sceneRef.current;
@@ -265,7 +284,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
   }, [finishes]);
 
   useEffect(() => {
-    if (finishes.length < 2 || reducedMotion || paused || !imageReady || !enteredView) return;
+    if (finishes.length < 2 || reducedMotion || paused || !imageReady || !enteredView || swapPhase !== 'stable') return;
     const pauseRemaining = Math.max(0, MANUAL_PAUSE_MS - (Date.now() - manualAt));
     const timeout = window.setTimeout(() => {
       const index = finishes.findIndex((finish) => finish.name === selected);
@@ -273,7 +292,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
       if (next && geometry[next.url]) changeFinish(next.name);
     }, Math.max(HOLD_MS, pauseRemaining));
     return () => window.clearTimeout(timeout);
-  }, [selected, manualAt, paused, reducedMotion, finishes, imageReady, enteredView]);
+  }, [selected, manualAt, paused, reducedMotion, finishes, imageReady, enteredView, swapPhase, geometry]);
 
   const scale = Math.max(viewport.width / SCENE.width, viewport.height / SCENE.height);
   // On narrow viewports, keep the installation point visible and leave enough
@@ -347,18 +366,15 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
                 }}
               />
               {finishes.map((finish) => {
+                if (finish.name !== displayed) return null;
                 const measured = geometry[finish.url];
                 if (!measured) return null;
                 const bounds = layoutTap(measured);
-                const isActive = finish.name === (active?.name ?? 'Polished Chrome');
-                const isExiting = finish.name === outgoing && !isActive;
-                if (!isActive && !isExiting) return null;
                 return (
                   <img
-                    key={`${finish.name}-${swapSequence}-${isActive ? 'in' : 'out'}`}
+                    key={finish.url}
                     src={finish.url}
-                    alt={isActive ? `${finish.name} filtered kitchen mixer tap installed on a kitchen bench` : ''}
-                    aria-hidden={!isActive}
+                    alt={`${finish.name} filtered kitchen mixer tap installed on a kitchen bench`}
                     width={measured.naturalWidth}
                     height={measured.naturalHeight}
                     decoding="async"
@@ -367,11 +383,11 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
                       left: bounds.left, top: bounds.top,
                       width: bounds.width, height: bounds.height,
                       maxWidth: 'none',
-                      opacity: reducedMotion ? (isActive ? 1 : 0) : undefined,
-                      animation: reducedMotion ? 'none' : isActive
-                        ? swapSequence === 0 ? 'none' : `tap-finish-arrive ${TRANSITION_MS}ms cubic-bezier(.22,.72,.2,1) both`
-                        : `tap-finish-depart ${TRANSITION_MS}ms ease-in-out both`,
-                      zIndex: isActive ? 20 : 19,
+                      opacity: swapPhase === 'exiting' ? 0 : 1,
+                      transition: reducedMotion ? 'none' : `opacity ${FADE_OUT_MS}ms ease-in`,
+                      animation: reducedMotion || swapPhase !== 'entering'
+                        ? 'none'
+                        : `tap-finish-arrive ${TRANSITION_MS}ms cubic-bezier(.22,.75,.2,1) both`,
                     }}
                   />
                 );
@@ -385,10 +401,6 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
             )}
           </div>
           <div className="mx-auto mt-6 w-full max-w-[560px]">
-            <div className="mb-3 flex items-center justify-between gap-3 px-1">
-              <p className="text-[11px] font-semibold uppercase tracking-[.16em] text-white/50">Choose your finish</p>
-              <p className="text-xs text-white/45">04 finishes</p>
-            </div>
             <div
               className="grid grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-white/[.045] p-2 backdrop-blur-sm sm:grid-cols-4"
               role="group"
@@ -467,12 +479,8 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
       </div>
       <style>{`
         @keyframes tap-finish-arrive {
-          from { opacity: 0; transform: translate3d(138px, 0, 0); }
+          from { opacity: 1; transform: translate3d(1750px, 0, 0); }
           to { opacity: 1; transform: translate3d(0, 0, 0); }
-        }
-        @keyframes tap-finish-depart {
-          from { opacity: 1; }
-          to { opacity: 0; }
         }
         @media (prefers-reduced-motion: reduce) {
           .tap-finish-motion { animation: none !important; }
