@@ -21,7 +21,7 @@ export function WaterMarkLeadFreeOverlay({
 }) {
   return (
     <div
-      className={`pointer-events-none absolute ${belowPills ? 'top-[90px] sm:top-[92px]' : 'top-2'} ${position === 'right' ? 'right-2 sm:right-3' : 'left-2 sm:left-3'} z-10 flex flex-col items-center text-center text-black ${compact ? 'w-[clamp(58px,26%,82px)]' : `w-[clamp(94px,25%,136px)] ${belowPills ? '' : 'sm:top-3'}`}`}
+      className={`pointer-events-none absolute ${belowPills ? 'top-[90px] sm:top-[92px]' : 'top-2'} ${position === 'right' ? 'right-2 sm:right-3' : 'left-2 sm:left-3'} z-10 flex flex-col items-center text-center text-black ${compact ? 'w-[clamp(72px,26%,96px)]' : `w-[clamp(94px,25%,136px)] ${belowPills ? '' : 'sm:top-3'}`}`}
       role="img"
       aria-label={`WaterMark${leadFree ? ' Lead Free' : ''}${showLicence && licenceNumber ? `, licence ${licenceNumber}` : ""}`}
     >
@@ -31,12 +31,12 @@ export function WaterMarkLeadFreeOverlay({
         width={112}
         height={112}
         sizes={compact ? '112px' : '136px'}
-        className={`h-auto object-contain ${compact ? 'w-10 sm:w-12' : 'w-20 sm:w-24'}`}
+        className={`h-auto object-contain ${compact ? 'w-12 sm:w-14' : 'w-20 sm:w-24'}`}
       />
-      <span aria-hidden="true" className={`-mt-2 block whitespace-nowrap font-bold tracking-normal antialiased ${compact ? 'text-[9px] leading-[1.1] sm:text-[10px]' : 'text-sm leading-tight sm:text-base'}`}>
+      <span aria-hidden="true" className={`-mt-2 block whitespace-nowrap font-bold tracking-normal antialiased ${compact ? 'text-[11px] leading-[1.15] sm:text-[12px]' : 'text-sm leading-tight sm:text-base'}`}>
         WaterMark
       </span>
-      {leadFree && <span aria-hidden="true" className={`block whitespace-nowrap font-bold tracking-normal antialiased ${compact ? 'text-[9px] leading-[1.1] sm:text-[10px]' : 'text-sm leading-tight sm:text-base'}`}>
+      {leadFree && <span aria-hidden="true" className={`block whitespace-nowrap font-bold tracking-normal antialiased ${compact ? 'text-[11px] leading-[1.15] sm:text-[12px]' : 'text-sm leading-tight sm:text-base'}`}>
         Lead Free
       </span>}
       {showLicence && licenceNumber && (
