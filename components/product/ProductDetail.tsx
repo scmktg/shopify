@@ -20,8 +20,6 @@ import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { ShippingTierBlock } from './ShippingTierBlock';
 import { KitchenTapShippingRates } from './KitchenTapShippingRates';
-import { KitchenTapCertificationStrip } from './KitchenTapCertificationStrip';
-import { BubblerCertificationStrip } from './BubblerCertificationStrip';
 import { BubblerModelSelector } from './BubblerModelSelector';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
@@ -142,18 +140,11 @@ export function ProductDetail({
             cinematicVideoOverlay={subcategory === 'bubblers'}
             showChilledFilteredBadges={isBubbler}
             title={product.title}
-            showLeadFreeBadge={!useRefinedPurchaseLayout && shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            showLeadFreeBadge={isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
-            watermarkLeadFree
-            watermarkPosition={shouldShowWaterMarkTapBadge(product.handle) ? 'right' : 'left'}
+            watermarkLeadFree={isBubbler ? isLeadFree(content) : true}
+            watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
           />
-          {isKitchenTap && <KitchenTapCertificationStrip licenceNumber={content.compliance?.watermark?.licenceNumber} />}
-          {isBubbler && content.compliance?.watermark?.status === 'certified' && (
-            <BubblerCertificationStrip
-              licenceNumber={content.compliance?.watermark?.licenceNumber}
-              leadFree={isLeadFree(content)}
-            />
-          )}
         </div>
 
         <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
