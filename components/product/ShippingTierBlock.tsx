@@ -143,21 +143,27 @@ export function ShippingTierBlock({
 
   if (combinedBubblerShipping && resolvedTier === 'T5') {
     return (
-      <section aria-label="Delivery and dispatch information" className="mt-4 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-black">
-        <VariantDispatchCountdown compact />
-        <div className="mt-3 border-t border-gray-200 pt-3">
-          <div className="flex items-center gap-2 font-semibold">
-            <Truck aria-hidden="true" className="h-4 w-4 shrink-0 text-brand-blue" />
-            <span>Free delivery Australia-wide</span>
-          </div>
-          <p className="mt-1.5 text-xs leading-relaxed text-black/70">
-            Same-day dispatch applies to in-stock items ordered before 12pm Sydney time on business days. Click &amp; Collect is available from our Central Coast showroom.
-          </p>
+      <section
+        aria-label="Availability, shipping and collection"
+        className="mt-5 border-y border-neutral-200 py-3 text-sm text-neutral-800"
+      >
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+          <Truck aria-hidden="true" fill="currentColor" className="h-4 w-4 shrink-0 text-emerald-700" />
+          <span className="font-semibold text-emerald-700">FREE SHIPPING</span>
+          <span aria-hidden="true" className="text-neutral-300">/</span>
+          <span className="text-neutral-600">Australia-wide</span>
         </div>
-        <p className="mt-3 border-t border-gray-200 pt-3 text-xs leading-relaxed text-black/60">
-          A shipping charge may be required for some remote areas. If so, our team will contact you to confirm any costs before fulfilment. To check before ordering, call{' '}
-          <a href="tel:+61287728162" className="font-medium underline underline-offset-2 hover:text-brand-blue">(02) 8772 8162</a>.
+        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+          <span className="font-semibold text-black">Free Click &amp; Collect</span>
+          <span aria-hidden="true" className="text-neutral-300">/</span>
+          <span className="text-neutral-600">Wyong NSW</span>
+        </div>
+        <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">
+          Shipping charges may apply for remote areas. We&apos;ll confirm any cost with you before fulfilment.
         </p>
+        <div className="mt-3 border-t border-neutral-100 pt-3">
+          <VariantDispatchCountdown minimal />
+        </div>
       </section>
     );
   }

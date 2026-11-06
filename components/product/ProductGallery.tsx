@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X, Snowflake, Droplets } from 'lucide-react';
 import type { ProductImage, ProductVideo } from '@/types/product';
 import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
 
@@ -16,6 +16,7 @@ interface ProductGalleryProps {
   watermarkLeadFree?: boolean;
   watermarkPosition?: 'left' | 'right';
   cinematicVideoOverlay?: boolean;
+  showChilledFilteredBadges?: boolean;
 }
 
 /**
@@ -42,6 +43,7 @@ export function ProductGallery({
   watermarkLeadFree = true,
   watermarkPosition = 'left',
   cinematicVideoOverlay = false,
+  showChilledFilteredBadges = false,
 }: ProductGalleryProps) {
   const galleryImages =
     preferredImage && !images.some((image) => image.url === preferredImage.url)
@@ -212,7 +214,27 @@ export function ProductGallery({
         className="object-contain"
       />
 
-      {!videoOpen && showLeadFreeBadge && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} position={watermarkPosition} />}
+      {showChilledFilteredBadges && !videoOpen && (
+        <div
+          className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-2 sm:right-4 sm:top-4"
+          aria-label="Chilled and filtered drinking water"
+        >
+          <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-2.5 py-1 text-white shadow-sm">
+            <span className="flex skew-x-12 items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em]">
+              <Snowflake aria-hidden="true" className="h-3 w-3 shrink-0" />
+              Chilled
+            </span>
+          </span>
+          <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-2.5 py-1 text-white shadow-sm">
+            <span className="flex skew-x-12 items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em]">
+              <Droplets aria-hidden="true" className="h-3 w-3 shrink-0" />
+              Filtered
+            </span>
+          </span>
+        </div>
+      )}
+
+      {!videoOpen && showLeadFreeBadge && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} position={watermarkPosition} compact={showChilledFilteredBadges || watermarkPosition === 'right'} showLicence={false} belowPills={showChilledFilteredBadges} />}
 
       {video && !videoOpen && (
         <button

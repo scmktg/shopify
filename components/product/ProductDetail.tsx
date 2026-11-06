@@ -3,8 +3,6 @@ import type { Product, Money, ProductImage } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
 import { CertificationSlot } from './CertificationSlot';
-import { WaterMarkCertificationBanner } from './WaterMarkCertificationBanner';
-import { isLeadFree } from './WatermarkBadge';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
@@ -21,6 +19,7 @@ import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { ShippingTierBlock } from './ShippingTierBlock';
 import { KitchenTapShippingRates } from './KitchenTapShippingRates';
+import { BubblerModelSelector } from './BubblerModelSelector';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
 import { VariantPurchaseControls } from './VariantPurchaseControls';
@@ -99,6 +98,15 @@ export function ProductDetail({
   const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
+  const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
+  const isBubbler = subcategory === 'bubblers';
+  const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
+  // Use natural wrapping for a single customer-facing bubbler heading.
+  const bubblerDisplayTitle = ({
+    'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler',
+    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain with Bubbler & Tap',
+    'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain with Bubbler & Tap',
+  } as Record<string, string>)[product.handle] ?? product.title.replace(/\s*\|\s*Chilled\s*&\s*Filtered\s*\|\s*20\s*L\s*\/\s*hr\s*$/i, '');
 
   return (
     <VariantSelectionProvider
@@ -123,37 +131,51 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
             videos={subcategory === 'bubblers' ? product.videos : []}
             cinematicVideoOverlay={subcategory === 'bubblers'}
+            showChilledFilteredBadges={isBubbler}
             title={product.title}
-            showLeadFreeBadge={shouldShowWaterMarkLeadFreeBadge(product.handle, content) || shouldShowWaterMarkTapBadge(product.handle)}
+            showLeadFreeBadge={isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
             watermarkLeadFree
-            watermarkPosition={shouldShowWaterMarkTapBadge(product.handle) ? 'right' : 'left'}
+            watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
           />
-          {(subcategory === 'bubblers' || shouldShowWaterMarkTapBadge(product.handle)) &&
-            content.compliance?.watermark?.status === 'certified' && (
-              <WaterMarkCertificationBanner
-                licenceNumber={content.compliance?.watermark?.licenceNumber}
-                leadFree={shouldShowWaterMarkTapBadge(product.handle) || isLeadFree(content) || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
-              />
-            )}
         </div>
 
-        <div className="md:sticky md:top-24">
-          <h1 className="text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight">
-            {product.title}
+        <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+          {isKitchenTap && (
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
+              HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
+            </p>
+          )}
+          {isBubbler && (
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-[11px]">
+              DRINKING WATER FOUNTAINS
+            </p>
+          )}
+          <h1 className={isBubbler
+            ? "text-[1.65rem] font-semibold leading-[1.18] tracking-[-0.03em] text-neutral-900 sm:text-[1.9rem] lg:text-[2.05rem]"
+            : useRefinedPurchaseLayout
+              ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
+              : "text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight"}>
+            {isKitchenTap
+              ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '')
+              : isBubbler
+                ? bubblerDisplayTitle
+                : product.title}
           </h1>
 
-          {content.family && familyPaths && (
+          {isBubbler && <BubblerModelSelector currentHandle={product.handle} />}
+          {content.family && familyPaths && !isBubbler && (
             <FamilySelector
               family={content.family}
               currentHandle={product.handle}
               paths={familyPaths}
+              sleek={useRefinedPurchaseLayout}
             />
           )}
 
@@ -162,9 +184,10 @@ export function ProductDetail({
               fallbackPrice={product.priceRange.minVariantPrice}
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
-              offerInstallationAssistance={subcategory === 'bubblers'}
               hideWholeDollarCents={subcategory === 'bubblers'}
-              showDispatchCountdown={!shouldShowWaterMarkTapBadge(product.handle) && !(subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5')}
+              showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
+              sleek={useRefinedPurchaseLayout}
+              compactLayout={isBubbler}
             />
           )}
 
@@ -270,15 +293,20 @@ export function ProductDetail({
             </div>
           )}
 
-          {!shouldShowWaterMarkTapBadge(product.handle) && (
+          {!isKitchenTap && !isBubbler && (
             <div className="mt-4">
-              <CertificationSlot content={content} hideCertifiedBadge={subcategory === 'bubblers'} />
+              <CertificationSlot content={content} />
+            </div>
+          )}
+          {isBubbler && content.compliance?.watermark?.status !== 'certified' && (
+            <div className="mt-4">
+              <CertificationSlot content={content} />
             </div>
           )}
 
 
           {!requiresShippingQuote && (
-            shouldShowWaterMarkTapBadge(product.handle) ? (
+            isKitchenTap ? (
               <KitchenTapShippingRates />
             ) : (
               <ShippingTierBlock
@@ -289,7 +317,7 @@ export function ProductDetail({
             )
           )}
 
-          <VariantProductTrustBlock productId={product.id} />
+          <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
 
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">

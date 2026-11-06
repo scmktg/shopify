@@ -71,7 +71,7 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
           </div>
           <div className="mx-auto mt-10 grid max-w-5xl gap-8 sm:grid-cols-3">
             <div className="border-t border-black/10 pt-5">
-              <h4 className="text-base font-semibold text-black">Rust-free HDPE cabinet</h4>
+              <h4 className="text-base font-semibold text-black">Granite-inspired HDPE cabinet</h4>
               <p className="mt-3 text-sm leading-7 text-black/65">A corrosion-resistant exterior with a distinctive granite-stone appearance.</p>
             </div>
             <div className="border-t border-black/10 pt-5">

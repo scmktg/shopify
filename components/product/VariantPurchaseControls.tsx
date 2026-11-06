@@ -22,6 +22,8 @@ interface VariantPurchaseControlsProps {
   offerInstallationAssistance?: boolean;
   showDispatchCountdown?: boolean;
   hideWholeDollarCents?: boolean;
+  sleek?: boolean;
+  compactLayout?: boolean;
 }
 
 export function VariantPurchaseControls({
@@ -32,6 +34,8 @@ export function VariantPurchaseControls({
   offerInstallationAssistance = false,
   showDispatchCountdown = true,
   hideWholeDollarCents = false,
+  sleek = false,
+  compactLayout = false,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -48,12 +52,12 @@ export function VariantPurchaseControls({
 
   return (
     <>
-      <div className="mt-4 flex items-baseline justify-between gap-4 flex-wrap">
+      <div className={compactLayout ? "mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-neutral-200 pt-4" : sleek ? "mt-6 flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t border-neutral-200 pt-5" : "mt-4 flex items-baseline justify-between gap-4 flex-wrap"}>
         <div className="flex items-baseline gap-2 flex-wrap">
           <PriceDisplay
             money={price}
             hideWholeDollarCents={hideWholeDollarCents}
-            className="text-3xl md:text-4xl font-bold text-black tracking-tight"
+            className={compactLayout ? "text-[2.2rem] font-semibold leading-none tracking-[-0.04em] text-neutral-900" : sleek ? "text-[2.5rem] font-semibold leading-none tracking-[-0.045em] text-neutral-900" : "text-3xl md:text-4xl font-bold text-black tracking-tight"}
           />
           <span className="text-sm text-black/50">inc GST</span>
           {compareAt && (
@@ -67,7 +71,7 @@ export function VariantPurchaseControls({
             </span>
           )}
         </div>
-        <ZipMessaging money={price} className="shrink-0 self-center" />
+        <ZipMessaging money={price} className={compactLayout ? "shrink-0 self-center [zoom:0.85]" : "shrink-0 self-center"} />
       </div>
 
       {singleFinish && variants.length === 1 && optionNames.length === 0 && (
@@ -162,7 +166,7 @@ export function VariantPurchaseControls({
         </div>
       )}
 
-      <div className="mt-6">
+      <div className={compactLayout ? "mt-4" : sleek ? "mt-5" : "mt-6"}>
         <AddToCartButton
           variantId={selectedVariant.id}
           available={selectedVariant.availableForSale}

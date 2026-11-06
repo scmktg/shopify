@@ -7,6 +7,7 @@ import { ORDER_CUTOFF, ORDER_CUTOFF_DISPLAY } from '@/lib/site-config';
 interface DispatchState {
   headline: string;
   urgent: boolean;
+  remaining?: string;
 }
 
 /**
@@ -15,7 +16,7 @@ interface DispatchState {
  * so it remains accurate for the Wyong dispatch cutoff regardless of
  * the shopper's own device timezone.
  */
-export function DispatchCountdown({ compact = false, inStock = false, backorder = false }: { compact?: boolean; inStock?: boolean; backorder?: boolean } = {}) {
+export function DispatchCountdown({ compact = false, minimal = false, inStock = false, backorder = false }: { compact?: boolean; minimal?: boolean; inStock?: boolean; backorder?: boolean } = {}) {
   const [state, setState] = useState<DispatchState | null>(null);
 
   useEffect(() => {
@@ -36,6 +37,28 @@ export function DispatchCountdown({ compact = false, inStock = false, backorder 
       <div role="status" className={compact ? 'flex flex-wrap items-center gap-2.5' : 'mt-3 flex flex-wrap items-center gap-2.5 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3'}>
         <span className="inline-flex shrink-0 items-center rounded-full bg-amber-100 px-2.5 py-1 text-xs font-semibold text-amber-900">On backorder</span>
         <span className="text-sm font-medium text-amber-900">Delivery may take up to 4 weeks. Dispatch countdown does not apply.</span>
+      </div>
+    );
+  }
+
+  if (minimal) {
+    return (
+      <div role="status" className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-5">
+        <span className="shrink-0 font-semibold text-black">
+          {inStock ? 'In stock' : 'Out of stock'}
+        </span>
+        {inStock && (
+          <>
+            <span aria-hidden="true" className="text-neutral-300">/</span>
+            <span className="text-neutral-600">
+              {current.remaining ? (
+                <>
+                  Order in <strong className="whitespace-nowrap font-semibold tabular-nums text-neutral-900">{current.remaining}</strong> for same-day dispatch from NSW
+                </>
+              ) : current.headline}
+            </span>
+          </>
+        )}
       </div>
     );
   }
@@ -135,6 +158,7 @@ function buildDispatchState(now: Date): DispatchState {
   return {
     headline: `Order within ${remaining} for same-day dispatch from NSW`,
     urgent: true,
+    remaining,
   };
 }
 
