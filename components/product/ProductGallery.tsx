@@ -217,7 +217,7 @@ export function ProductGallery({
       {showChilledFilteredBadges && !videoOpen && (
         <div
           className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-1.5 sm:right-4 sm:top-4"
-          aria-label="Chilled, filtered drinking water with 20 litres per hour cooling capacity"
+          aria-label="Chilled and filtered drinking water"
         >
           <span className="inline-flex h-8 w-[104px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-2 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
             <Snowflake aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
@@ -227,14 +227,7 @@ export function ProductGallery({
             <Droplets aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
             Filtered
           </span>
-          <span className="inline-flex h-8 w-[104px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-2 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm" aria-label="20 litres per hour cooling capacity">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5 shrink-0">
-              <path d="M10 2h4v4h-4z" />
-              <path d="M10 6v2c0 1.2-1.4 1.8-2 3.2-.6 1.2-.8 2.2-.8 3.6v5.3c0 1.1.9 1.9 2 1.9h5.6c1.1 0 2-.8 2-1.9v-5.3c0-1.4-.2-2.4-.8-3.6-.6-1.4-2-2-2-3.2V6" />
-              <path d="M7.2 15h9.6" />
-            </svg>
-            20L/hr
-          </span>
+
         </div>
       )}
 
