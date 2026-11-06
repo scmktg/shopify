@@ -315,7 +315,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     <link rel="preload" as="image" href={BACKGROUND} />
     {finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
     <section ref={sectionRef} aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
-      <div className="mx-auto grid max-w-7xl items-stretch gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-stretch gap-7 px-5 pb-12 pt-10 min-[380px]:px-6 sm:gap-9 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-8">
         <div className="order-2 flex min-w-0 flex-col justify-center lg:order-1">
           <div
             ref={sceneRef}
@@ -447,26 +447,26 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
           </div>
         </div>
         <div className="order-1 flex min-w-0 w-full flex-col justify-center lg:order-2">
-          <h2 id="three-way-tap-showcase-title" className="tracking-[-.05em]">
-            <span className="block text-[clamp(2.2rem,4.3vw,4.75rem)] font-light leading-[1.06]">Hot. Cold.</span>
-            <span className="tap-ice-blue-shine mt-1 block text-[clamp(2.5rem,5.2vw,5.5rem)] font-semibold leading-[1.08]">Filtered.</span>
+          <h2 id="three-way-tap-showcase-title" className="tracking-[-.055em] sm:tracking-[-.05em]">
+            <span className="block text-[clamp(2.55rem,10vw,3.2rem)] font-light leading-[1.02] sm:text-[clamp(2.2rem,4.3vw,4.75rem)] sm:leading-[1.06]">Hot. Cold.</span>
+            <span className="tap-ice-blue-shine mt-1 block text-[clamp(3rem,11.5vw,3.7rem)] font-semibold leading-[1.02] sm:text-[clamp(2.5rem,5.2vw,5.5rem)] sm:leading-[1.08]">Filtered.</span>
           </h2>
-          <p className="mt-7 max-w-[16ch] text-[clamp(1.8rem,3.1vw,3.25rem)] font-medium leading-[1.12] tracking-[-.045em] text-white">
+          <p className="mt-5 max-w-[23ch] text-[clamp(1.4rem,5.5vw,1.75rem)] font-medium leading-[1.2] tracking-[-.035em] text-white sm:mt-7 sm:max-w-[16ch] sm:text-[clamp(1.8rem,3.1vw,3.25rem)] sm:leading-[1.12] sm:tracking-[-.045em]">
             All from one <span className="font-semibold text-[#d9ecf6]">sleek tap.</span>
           </p>
-          <p className="mt-4 max-w-md text-base leading-7 text-white/65">
+          <p className="mt-3 max-w-[34ch] text-[15px] leading-[1.65] text-white/65 sm:mt-4 sm:max-w-md sm:text-base sm:leading-7">
             Hot, cold and filtered drinking water in one streamlined mixer, with no separate drinking-water tap.
           </p>
-          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-white/10 pt-5 sm:mt-7 sm:gap-x-6 sm:gap-y-4 sm:border-0 sm:pt-0">
             {formattedPrice && (
-              <p className="whitespace-nowrap text-2xl font-semibold tracking-tight">
-                {formattedPrice}<span className="ml-2 text-sm font-medium text-white/50">inc GST</span>
+              <p className="whitespace-nowrap text-[1.55rem] font-semibold tracking-tight sm:text-2xl">
+                {formattedPrice}<span className="ml-1.5 text-xs font-medium text-white/50 sm:ml-2 sm:text-sm">inc GST</span>
               </p>
             )}
             {activeProduct ? (
               <Link
                 href={getProductUrl(activeProduct.handle)}
-                className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-xs font-semibold uppercase tracking-[.045em] text-[#141516] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="inline-flex min-h-10 shrink-0 items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[.045em] text-[#141516] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:gap-2 sm:px-5 sm:text-xs"
               >
                 Shop now <ArrowUpRight size={16} aria-hidden="true" />
               </Link>
