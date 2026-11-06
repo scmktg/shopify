@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import type { ProductCardData } from '@/types/product';
 import { getProductUrl } from '@/lib/utils/productUrl';
 
@@ -36,7 +36,13 @@ const VISIBLE_REFERENCE = { width: 486, height: 693 };
 const FINISH_ORDER: FinishName[] = ['Polished Chrome', 'Matte Black', 'Brushed Nickel', 'Brushed Gold'];
 const HOLD_MS = 3000;
 const MANUAL_PAUSE_MS = 8000;
-const TRANSITION_MS = 720;
+const TRANSITION_MS = 760;
+const SWATCHES: Record<FinishName, string> = {
+  'Polished Chrome': 'linear-gradient(125deg, #717a83 0%, #f9fbfc 28%, #8c979f 48%, #f9fafb 70%, #59636d 100%)',
+  'Matte Black': 'linear-gradient(135deg, #55585c 0%, #202226 55%, #111316 100%)',
+  'Brushed Nickel': 'repeating-linear-gradient(100deg, #cdd0cc 0px, #9fa5a4 2px, #d4d7d4 4px, #9da5a5 6px)',
+  'Brushed Gold': 'linear-gradient(135deg, #f3dba3 0%, #bb9856 36%, #d8b979 65%, #9f7b40 100%)',
+};
 
 function identifyFinish(title: string): FinishName | null {
   if (/polished chrome/i.test(title)) return 'Polished Chrome';
@@ -138,6 +144,8 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
       : [];
   }), [products]);
   const [selected, setSelected] = useState<FinishName>('Polished Chrome');
+  const [outgoing, setOutgoing] = useState<FinishName | null>(null);
+  const [swapSequence, setSwapSequence] = useState(0);
   const [geometry, setGeometry] = useState<Record<string, Geometry>>({});
   const [viewport, setViewport] = useState({ width: SCENE.width, height: SCENE.height });
   const [manualAt, setManualAt] = useState(0);
@@ -149,6 +157,20 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
   const imageReady = finishes.some((finish) => Boolean(geometry[finish.url]));
   const active = finishes.find((finish) => finish.name === selected) ?? finishes[0];
   const activeProduct = active?.product;
+
+  function changeFinish(next: FinishName) {
+    if (next === selected) return;
+    setOutgoing(selected);
+    setSelected(next);
+    setSwapSequence((sequence) => sequence + 1);
+  }
+
+  // Only retain the exiting image for the duration of its fade.
+  useEffect(() => {
+    if (!outgoing) return;
+    const timeout = window.setTimeout(() => setOutgoing(null), TRANSITION_MS + 60);
+    return () => window.clearTimeout(timeout);
+  }, [outgoing, swapSequence]);
 
   useEffect(() => {
     const el = sceneRef.current;
@@ -246,10 +268,9 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     if (finishes.length < 2 || reducedMotion || paused || !imageReady || !enteredView) return;
     const pauseRemaining = Math.max(0, MANUAL_PAUSE_MS - (Date.now() - manualAt));
     const timeout = window.setTimeout(() => {
-      setSelected((current) => {
-        const index = finishes.findIndex((finish) => finish.name === current);
-        return finishes[(index + 1) % finishes.length].name;
-      });
+      const index = finishes.findIndex((finish) => finish.name === selected);
+      const next = finishes[(index + 1) % finishes.length];
+      if (next && geometry[next.url]) changeFinish(next.name);
     }, Math.max(HOLD_MS, pauseRemaining));
     return () => window.clearTimeout(timeout);
   }, [selected, manualAt, paused, reducedMotion, finishes, imageReady, enteredView]);
@@ -330,9 +351,11 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
                 if (!measured) return null;
                 const bounds = layoutTap(measured);
                 const isActive = finish.name === (active?.name ?? 'Polished Chrome');
+                const isExiting = finish.name === outgoing && !isActive;
+                if (!isActive && !isExiting) return null;
                 return (
                   <img
-                    key={finish.url}
+                    key={`${finish.name}-${swapSequence}-${isActive ? 'in' : 'out'}`}
                     src={finish.url}
                     alt={isActive ? `${finish.name} filtered kitchen mixer tap installed on a kitchen bench` : ''}
                     aria-hidden={!isActive}
@@ -344,9 +367,11 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
                       left: bounds.left, top: bounds.top,
                       width: bounds.width, height: bounds.height,
                       maxWidth: 'none',
-                      opacity: isActive ? 1 : 0,
-                      transition: reducedMotion ? 'none' : `opacity ${TRANSITION_MS}ms ease-in-out`,
-                      willChange: 'opacity',
+                      opacity: reducedMotion ? (isActive ? 1 : 0) : undefined,
+                      animation: reducedMotion ? 'none' : isActive
+                        ? swapSequence === 0 ? 'none' : `tap-finish-arrive ${TRANSITION_MS}ms cubic-bezier(.22,.72,.2,1) both`
+                        : `tap-finish-depart ${TRANSITION_MS}ms ease-in-out both`,
+                      zIndex: isActive ? 20 : 19,
                     }}
                   />
                 );
@@ -359,25 +384,54 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
               </div>
             )}
           </div>
-          <div className="mt-5 flex flex-wrap justify-center gap-2" role="group" aria-label="Choose tap finish">
-            {finishes.map((finish) => (
-              <button
-                key={finish.name}
-                type="button"
-                aria-pressed={active?.name === finish.name}
-                onClick={() => {
-                  setSelected(finish.name);
-                  setManualAt(Date.now());
-                }}
-                onMouseEnter={() => setPaused(true)}
-                onMouseLeave={() => setPaused(false)}
-                onFocus={() => setPaused(true)}
-                onBlur={() => setPaused(false)}
-                className={`min-h-11 rounded-full border px-4 py-2 text-xs font-medium transition-colors sm:text-sm ${active?.name === finish.name ? 'border-white bg-white text-[#141516]' : 'border-white/30 text-white/80 hover:border-white/75 hover:text-white'}`}
-              >
-                {finish.name}
-              </button>
-            ))}
+          <div className="mx-auto mt-6 w-full max-w-[560px]">
+            <div className="mb-3 flex items-center justify-between gap-3 px-1">
+              <p className="text-[11px] font-semibold uppercase tracking-[.16em] text-white/50">Choose your finish</p>
+              <p className="text-xs text-white/45">04 finishes</p>
+            </div>
+            <div
+              className="grid grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-white/[.045] p-2 backdrop-blur-sm sm:grid-cols-4"
+              role="group"
+              aria-label="Choose tap finish"
+            >
+              {finishes.map((finish) => {
+                const chosen = active?.name === finish.name;
+                return (
+                  <button
+                    key={finish.name}
+                    type="button"
+                    aria-pressed={chosen}
+                    onClick={() => {
+                      changeFinish(finish.name);
+                      setManualAt(Date.now());
+                    }}
+                    onMouseEnter={() => setPaused(true)}
+                    onMouseLeave={() => setPaused(false)}
+                    onFocus={() => setPaused(true)}
+                    onBlur={() => setPaused(false)}
+                    className={`group relative flex min-h-[76px] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3 text-center transition-[background,border-color,box-shadow] duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${chosen ? 'border-white/65 bg-white/[.14] shadow-[inset_0_1px_0_rgba(255,255,255,.1)]' : 'border-transparent bg-transparent hover:border-white/20 hover:bg-white/[.07]'}`}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`relative block h-7 w-7 rounded-full border border-white/25 shadow-[inset_0_1px_2px_rgba(255,255,255,.28),0_2px_8px_rgba(0,0,0,.3)] transition-transform duration-300 group-hover:scale-110 ${chosen ? 'ring-2 ring-white/90 ring-offset-[3px] ring-offset-[#262729]' : ''}`}
+                      style={{ background: SWATCHES[finish.name] }}
+                    >
+                      {chosen && (
+                        <Check
+                          size={13}
+                          aria-hidden="true"
+                          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-sm ${finish.name === 'Matte Black' ? 'text-white' : 'text-[#242424]'}`}
+                          strokeWidth={3}
+                        />
+                      )}
+                    </span>
+                    <span className={`text-[11px] font-medium leading-tight sm:text-xs ${chosen ? 'text-white' : 'text-white/60 group-hover:text-white/90'}`}>
+                      {finish.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div className="order-1 max-w-xl lg:order-2">
@@ -411,6 +465,19 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
           )}
         </div>
       </div>
+      <style>{`
+        @keyframes tap-finish-arrive {
+          from { opacity: 0; transform: translate3d(138px, 0, 0); }
+          to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        @keyframes tap-finish-depart {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .tap-finish-motion { animation: none !important; }
+        }
+      `}</style>
     </section>
     </>
   );
