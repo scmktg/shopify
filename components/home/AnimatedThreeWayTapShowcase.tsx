@@ -286,7 +286,11 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
         >
           <div
             ref={sceneRef}
-            className="relative isolate aspect-[4/3] w-full overflow-hidden bg-transparent sm:aspect-[1671/941]"\n            style={{\n              WebkitMaskImage: 'radial-gradient(ellipse 77% 79% at 51% 50%, #000 47%, rgba(0,0,0,.96) 64%, rgba(0,0,0,.7) 78%, transparent 100%)',\n              maskImage: 'radial-gradient(ellipse 77% 79% at 51% 50%, #000 47%, rgba(0,0,0,.96) 64%, rgba(0,0,0,.7) 78%, transparent 100%)',\n            }}
+            className="relative isolate aspect-[4/3] w-full overflow-hidden bg-transparent sm:aspect-[1671/941]"
+            style={{
+              WebkitMaskImage: 'radial-gradient(ellipse 77% 79% at 51% 50%, #000 47%, rgba(0,0,0,.96) 64%, rgba(0,0,0,.7) 78%, transparent 100%)',
+              maskImage: 'radial-gradient(ellipse 77% 79% at 51% 50%, #000 47%, rgba(0,0,0,.96) 64%, rgba(0,0,0,.7) 78%, transparent 100%)',
+            }}
             aria-label={`Kitchen sink with a ${active?.name ?? 'three way'} filtered kitchen mixer installed`}
           >
             {/* A single 1671 × 941 scene matrix is scaled and cropped as a unit. */}
