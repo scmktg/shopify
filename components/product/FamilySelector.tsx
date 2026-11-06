@@ -24,8 +24,85 @@ export function FamilySelector({
   paths,
   sleek = false,
 }: FamilySelectorProps) {
+  if (sleek) {
+    const selected = family.siblings.find(
+      (sibling) => canonicalProductHandle(sibling.handle) === currentHandle,
+    );
+
+    return (
+      <fieldset className="mt-7">
+        <legend className="w-full text-sm font-semibold text-neutral-900">
+          Available in {family.siblings.length} finishes
+        </legend>
+        <p className="mt-1 text-xs text-neutral-500">
+          Select a finish to view its own photos and product details.
+        </p>
+        <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {family.siblings.map((sibling) => {
+            const isActive = canonicalProductHandle(sibling.handle) === currentHandle;
+            const href = paths.get(sibling.handle);
+            const image = kitchenTapFinishImage(sibling.label);
+            const cardClass = clsx(
+              'group flex min-w-0 flex-col items-center gap-2 rounded-lg border px-2 py-3 text-center transition-colors',
+              isActive
+                ? 'border-neutral-900 bg-neutral-50 ring-1 ring-inset ring-neutral-900'
+                : href
+                  ? 'border-neutral-200 bg-white hover:border-neutral-500 hover:bg-neutral-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900'
+                  : 'cursor-not-allowed border-neutral-200 bg-neutral-50 opacity-50',
+            );
+            const details = (
+              <>
+                <span className="flex h-16 w-full items-center justify-center">
+                  {image ? (
+                    <img
+                      src={image}
+                      alt=""
+                      width={60}
+                      height={60}
+                      loading="lazy"
+                      className="h-16 w-16 object-contain mix-blend-multiply"
+                    />
+                  ) : (
+                    <span className={clsx('h-7 w-7 rounded-full border', kitchenTapFinishSwatch(sibling.label))} />
+                  )}
+                </span>
+                <span className={clsx('text-xs font-medium leading-4', isActive ? 'text-neutral-950' : 'text-neutral-700')}>
+                  {sibling.label}
+                </span>
+                {isActive && (
+                  <span className="text-[10px] font-semibold uppercase tracking-wide text-neutral-500">
+                    Selected
+                  </span>
+                )}
+              </>
+            );
+
+            if (isActive || !href) {
+              return (
+                <span key={sibling.handle} aria-current={isActive ? 'page' : undefined} className={cardClass}>
+                  {details}
+                </span>
+              );
+            }
+
+            return (
+              <Link key={sibling.handle} href={href} aria-label={`View ${sibling.label} finish`} className={cardClass}>
+                {details}
+              </Link>
+            );
+          })}
+        </div>
+        {selected && (
+          <p className="mt-2 text-xs text-neutral-500">
+            Currently viewing: <strong className="font-medium text-neutral-800">{selected.label}</strong>
+          </p>
+        )}
+      </fieldset>
+    );
+  }
+
   return (
-    <fieldset className={sleek ? "mt-7" : "mt-6"}>
+    <fieldset className="mt-6">
       <legend className={sleek ? "text-xs font-semibold uppercase tracking-[0.11em] text-neutral-600" : "text-sm font-semibold text-black"}>
         {family.label}
       </legend>
@@ -70,6 +147,21 @@ export function FamilySelector({
       </div>
     </fieldset>
   );
+}
+
+function kitchenTapFinishImage(finish: string): string | null {
+  switch (finish.toLowerCase()) {
+    case 'matte black':
+      return 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/MatteBlackMirroredGooseneckTap.png?v=1793923266';
+    case 'stainless steel':
+      return 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/BrushedStainlessSteelKitchenFaucet.png?v=1793923667';
+    case 'polished chrome':
+      return 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/PolishedChromeGooseneckFaucet.png?v=1793923915';
+    case 'brushed gold':
+      return 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/BrushedGoldDual-LeverKitchenFaucet.png?v=1793923557';
+    default:
+      return null;
+  }
 }
 
 function kitchenTapFinishSwatch(finish: string): string | null {
