@@ -27,7 +27,7 @@ import { VariantPurchaseControls } from './VariantPurchaseControls';
 import { VariantProductTrustBlock } from './VariantProductTrustBlock';
 import { VariantBuyBanner } from './VariantBuyBanner';
 import { VariantMobileStickyBuyBar } from './VariantMobileStickyBuyBar';
-import { ThreeWayTapHeroBenefits } from './ThreeWayTapHeroBenefits';
+
 import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
@@ -149,10 +149,6 @@ export function ProductDetail({
             {product.title}
           </h1>
 
-          {(product.handle === THREE_WAY_TAP_HANDLE || shouldShowWaterMarkTapBadge(product.handle)) && (
-            <ThreeWayTapHeroBenefits />
-          )}
-
           {content.family && familyPaths && (
             <FamilySelector
               family={content.family}
@@ -168,7 +164,7 @@ export function ProductDetail({
               ctaLabel={content.ctas?.primary ?? undefined}
               offerInstallationAssistance={subcategory === 'bubblers'}
               hideWholeDollarCents={subcategory === 'bubblers'}
-              showDispatchCountdown={!(subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5')}
+              showDispatchCountdown={!shouldShowWaterMarkTapBadge(product.handle) && !(subcategory === 'bubblers' && product.metafields.shipping_tier === 'T5')}
             />
           )}
 
