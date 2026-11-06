@@ -3,7 +3,6 @@ import type { Product, Money, ProductImage } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
 import { CertificationSlot } from './CertificationSlot';
-import { isLeadFree } from './WatermarkBadge';
 import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
@@ -142,7 +141,7 @@ export function ProductDetail({
             title={product.title}
             showLeadFreeBadge={isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
-            watermarkLeadFree={isBubbler ? isLeadFree(content) : true}
+            watermarkLeadFree
             watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
           />
         </div>
