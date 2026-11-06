@@ -135,12 +135,13 @@ export function ProductDetail({
             watermarkLeadFree
             watermarkPosition={shouldShowWaterMarkTapBadge(product.handle) ? 'right' : 'left'}
           />
-          {subcategory === 'bubblers' && content.compliance?.watermark?.status === 'certified' && (
-            <WaterMarkCertificationBanner
-              licenceNumber={content.compliance?.watermark?.licenceNumber}
-              leadFree={isLeadFree(content) || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
-            />
-          )}
+          {(subcategory === 'bubblers' || shouldShowWaterMarkTapBadge(product.handle)) &&
+            content.compliance?.watermark?.status === 'certified' && (
+              <WaterMarkCertificationBanner
+                licenceNumber={content.compliance?.watermark?.licenceNumber}
+                leadFree={shouldShowWaterMarkTapBadge(product.handle) || isLeadFree(content) || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+              />
+            )}
         </div>
 
         <div className="md:sticky md:top-24">
@@ -273,9 +274,11 @@ export function ProductDetail({
             </div>
           )}
 
-          <div className="mt-4">
-            <CertificationSlot content={content} hideCertifiedBadge={subcategory === 'bubblers'} />
-          </div>
+          {!shouldShowWaterMarkTapBadge(product.handle) && (
+            <div className="mt-4">
+              <CertificationSlot content={content} hideCertifiedBadge={subcategory === 'bubblers'} />
+            </div>
+          )}
 
 
           {!requiresShippingQuote && (
