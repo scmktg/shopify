@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X, Snowflake, Droplets } from 'lucide-react';
 import type { ProductImage, ProductVideo } from '@/types/product';
 import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
 
@@ -16,6 +16,7 @@ interface ProductGalleryProps {
   watermarkLeadFree?: boolean;
   watermarkPosition?: 'left' | 'right';
   cinematicVideoOverlay?: boolean;
+  showChilledFilteredBadges?: boolean;
 }
 
 /**
@@ -42,6 +43,7 @@ export function ProductGallery({
   watermarkLeadFree = true,
   watermarkPosition = 'left',
   cinematicVideoOverlay = false,
+  showChilledFilteredBadges = false,
 }: ProductGalleryProps) {
   const galleryImages =
     preferredImage && !images.some((image) => image.url === preferredImage.url)
@@ -212,7 +214,20 @@ export function ProductGallery({
         className="object-contain"
       />
 
-      {!videoOpen && showLeadFreeBadge && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} position={watermarkPosition} />}
+      {showChilledFilteredBadges && !videoOpen && (
+        <div className="pointer-events-none absolute right-3 top-3 z-10 flex flex-wrap justify-end gap-1.5 sm:right-4 sm:top-4" aria-label="Chilled and filtered drinking water">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
+            <Snowflake aria-hidden="true" className="h-3.5 w-3.5" />
+            Chilled
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
+            <Droplets aria-hidden="true" className="h-3.5 w-3.5" />
+            Filtered
+          </span>
+        </div>
+      )}
+
+      {!videoOpen && showLeadFreeBadge && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} position={watermarkPosition} />
 
       {video && !videoOpen && (
         <button
