@@ -36,6 +36,13 @@ export const metadata: Metadata = {
 
 export const revalidate = 60;
 
+const TAP_FINISH_HANDLES = [
+  FEATURED.threeWayTap,
+  '3-way-filtered-kitchen-mixer-tap-brushed-gold-watermark-wels',
+  '3-way-filtered-kitchen-mixer-tap-stainless-steel-watermark-wels',
+  '3-way-filtered-kitchen-mixer-tap-polished-chrome-watermark-wels',
+] as const;
+
 const CATEGORY_BLURBS: Record<string, string> = {
   'water-filters':
     'Under-sink, whole-house, reverse osmosis, UV, bench-top and commercial systems.',
@@ -68,10 +75,10 @@ async function loadFeaturedProduct(handle: string): Promise<ProductCardData | nu
 }
 
 export default async function HomePage() {
-  const [wholeHouse, threeWayTap, underSink, premiumPair] =
+  const [wholeHouse, tapFinishes, underSink, premiumPair] =
     await Promise.all([
       loadFeaturedProduct(FEATURED.wholeHouse),
-      loadFeaturedProduct(FEATURED.threeWayTap),
+      Promise.all(TAP_FINISH_HANDLES.map(loadFeaturedProduct)),
       loadFeaturedProduct(FEATURED.underSink),
       loadFeaturedProduct(FEATURED.premiumPair),
     ]);
@@ -82,7 +89,7 @@ export default async function HomePage() {
 
       <WholeHouseShowcase product={wholeHouse} />
 
-      <AnimatedThreeWayTapShowcase product={threeWayTap} />
+      <AnimatedThreeWayTapShowcase products={tapFinishes} />
 
       <ProductSpotlight
         product={underSink}
