@@ -134,6 +134,7 @@ export function ProductDetail({
             images={product.images}
             videos={subcategory === 'bubblers' ? product.videos : []}
             cinematicVideoOverlay={subcategory === 'bubblers'}
+            showChilledFilteredBadges={isBubbler}
             title={product.title}
             showLeadFreeBadge={!useRefinedPurchaseLayout && shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
