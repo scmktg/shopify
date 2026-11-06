@@ -20,6 +20,7 @@ import { BrandTrustStrip } from './BrandTrustStrip';
 import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { ShippingTierBlock } from './ShippingTierBlock';
+import { KitchenTapShippingRates } from './KitchenTapShippingRates';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
 import { VariantPurchaseControls } from './VariantPurchaseControls';
@@ -278,11 +279,15 @@ export function ProductDetail({
 
 
           {!requiresShippingQuote && (
-            <ShippingTierBlock
-              tier={product.metafields.shipping_tier}
-              productHandle={product.handle}
-              combinedBubblerShipping={subcategory === 'bubblers'}
-            />
+            shouldShowWaterMarkTapBadge(product.handle) ? (
+              <KitchenTapShippingRates />
+            ) : (
+              <ShippingTierBlock
+                tier={product.metafields.shipping_tier}
+                productHandle={product.handle}
+                combinedBubblerShipping={subcategory === 'bubblers'}
+              />
+            )
           )}
 
           <VariantProductTrustBlock productId={product.id} />
