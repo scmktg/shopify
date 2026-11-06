@@ -227,7 +227,7 @@ export function ProductGallery({
         </div>
       )}
 
-      {!videoOpen && showLeadFreeBadge && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} position={watermarkPosition} />
+      {!videoOpen && showLeadFreeBadge && <WaterMarkLeadFreeOverlay licenceNumber={watermarkLicence} leadFree={watermarkLeadFree} position={watermarkPosition} />}
 
       {video && !videoOpen && (
         <button
