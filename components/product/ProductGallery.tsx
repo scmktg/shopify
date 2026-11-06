@@ -219,13 +219,13 @@ export function ProductGallery({
           className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-2 sm:right-4 sm:top-4"
           aria-label="Chilled and filtered drinking water"
         >
-          <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-gradient-to-r from-zinc-300 via-zinc-100 to-zinc-300 px-2.5 py-1 text-zinc-900 shadow-sm">
+          <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-2.5 py-1 text-white shadow-sm">
             <span className="flex skew-x-12 items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em]">
               <Snowflake aria-hidden="true" className="h-3 w-3 shrink-0" />
               Chilled
             </span>
           </span>
-          <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-gradient-to-r from-zinc-300 via-zinc-100 to-zinc-300 px-2.5 py-1 text-zinc-900 shadow-sm">
+          <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-2.5 py-1 text-white shadow-sm">
             <span className="flex skew-x-12 items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em]">
               <Droplets aria-hidden="true" className="h-3 w-3 shrink-0" />
               Filtered
