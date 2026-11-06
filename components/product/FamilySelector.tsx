@@ -30,20 +30,20 @@ export function FamilySelector({
     );
 
     return (
-      <fieldset className="mt-7">
+      <fieldset className="mt-6">
         <legend className="w-full text-sm font-semibold text-neutral-900">
           Available in {family.siblings.length} finishes
         </legend>
         <p className="mt-1 text-xs text-neutral-500">
           Select a finish to view its own photos and product details.
         </p>
-        <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+        <div className="mt-2.5 grid grid-cols-2 gap-2 sm:grid-cols-4">
           {family.siblings.map((sibling) => {
             const isActive = canonicalProductHandle(sibling.handle) === currentHandle;
             const href = paths.get(sibling.handle);
             const image = kitchenTapFinishImage(sibling.label);
             const cardClass = clsx(
-              'group flex min-w-0 flex-col items-center gap-2 rounded-lg border px-2 py-3 text-center transition-colors',
+              'group flex min-w-0 flex-col items-center gap-1.5 rounded-lg border px-2 py-2 text-center transition-colors',
               isActive
                 ? 'border-neutral-900 bg-neutral-50 ring-1 ring-inset ring-neutral-900'
                 : href
@@ -52,15 +52,15 @@ export function FamilySelector({
             );
             const details = (
               <>
-                <span className="flex h-16 w-full items-center justify-center">
+                <span className="flex h-12 w-full items-center justify-center">
                   {image ? (
                     <img
                       src={image}
                       alt=""
-                      width={60}
-                      height={60}
+                      width={48}
+                      height={48}
                       loading="lazy"
-                      className="h-16 w-16 object-contain mix-blend-multiply"
+                      className="h-12 w-12 object-contain mix-blend-multiply"
                     />
                   ) : (
                     <span className={clsx('h-7 w-7 rounded-full border', kitchenTapFinishSwatch(sibling.label))} />
@@ -69,11 +69,6 @@ export function FamilySelector({
                 <span className={clsx('text-xs font-medium leading-4', isActive ? 'text-neutral-950' : 'text-neutral-700')}>
                   {sibling.label}
                 </span>
-                {isActive && (
-                  <span className="text-[10px] font-semibold uppercase tracking-wide text-neutral-500">
-                    Selected
-                  </span>
-                )}
               </>
             );
 
