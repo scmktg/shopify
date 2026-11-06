@@ -10,8 +10,7 @@ export function KitchenTapShippingRates() {
       aria-label="Availability and delivery"
       className="mt-5 border-y border-neutral-200 py-3.5 text-sm text-neutral-800"
     >
-      <VariantDispatchCountdown minimal />
-      <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-neutral-100 pt-3 text-[13px]">
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
         <Truck aria-hidden="true" className="h-4 w-4 shrink-0 text-neutral-500" />
         <span className="font-medium">Australia-wide delivery</span>
         <span aria-hidden="true" className="text-neutral-300">/</span>
@@ -22,6 +21,9 @@ export function KitchenTapShippingRates() {
       <p className="mt-2 pl-6 text-xs leading-relaxed text-neutral-500">
         Tap-only shipping. Mixed orders calculated at checkout.
       </p>
+      <div className="mt-3 border-t border-neutral-100 pt-3">
+        <VariantDispatchCountdown minimal />
+      </div>
     </section>
   );
 }
