@@ -20,12 +20,12 @@ const TRIGGER_CLASS =
 
 // Recognise finishes from variant options first, then fall back to product metadata.
 const COLOURS = [
-  { value: 'matte-black', label: 'Matte Black', pattern: /\\b(?:matte\\s+black|black)\\b/i },
-  { value: 'brushed-nickel', label: 'Brushed Nickel', pattern: /\\b(?:brushed\\s+nickel|nickel)\\b/i },
-  { value: 'polished-chrome', label: 'Polished Chrome', pattern: /\\b(?:polished\\s+chrome|chrome)\\b/i },
-  { value: 'brushed-gold', label: 'Brushed Gold', pattern: /\\b(?:brushed\\s+gold|gold)\\b/i },
-  { value: 'stainless-steel', label: 'Stainless Steel', pattern: /\\b(?:stainless[\\s-]+steel|silver)\\b/i },
-  { value: 'white', label: 'White', pattern: /\\bwhite\\b/i },
+  { value: 'matte-black', label: 'Matte Black', pattern: /\b(?:matte\s+black|black)\b/i },
+  { value: 'brushed-nickel', label: 'Brushed Nickel', pattern: /\b(?:brushed\s+nickel|nickel)\b/i },
+  { value: 'polished-chrome', label: 'Polished Chrome', pattern: /\b(?:polished\s+chrome|chrome)\b/i },
+  { value: 'brushed-gold', label: 'Brushed Gold', pattern: /\b(?:brushed\s+gold|gold)\b/i },
+  { value: 'stainless-steel', label: 'Stainless Steel', pattern: /\b(?:stainless[\s-]+steel|silver)\b/i },
+  { value: 'white', label: 'White', pattern: /\bwhite\b/i },
 ] as const;
 
 function productColours(product: ProductCardData): string[] {
