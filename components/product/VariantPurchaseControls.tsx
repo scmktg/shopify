@@ -59,7 +59,6 @@ export function VariantPurchaseControls({
             hideWholeDollarCents={hideWholeDollarCents}
             className={compactLayout ? "text-[2.2rem] font-semibold leading-none tracking-[-0.04em] text-neutral-900" : sleek ? "text-[2.5rem] font-semibold leading-none tracking-[-0.045em] text-neutral-900" : "text-3xl md:text-4xl font-bold text-black tracking-tight"}
           />
-          <span className="text-sm text-black/50">inc GST</span>
           {compareAt && (
             <s className="ml-2 text-base text-black/60">
               <PriceDisplay money={compareAt} hideWholeDollarCents={hideWholeDollarCents} />
