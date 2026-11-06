@@ -216,18 +216,21 @@ export function ProductGallery({
 
       {showChilledFilteredBadges && !videoOpen && (
         <div
-          className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-1.5 sm:right-4 sm:top-4"
+          className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-2 sm:right-4 sm:top-4"
           aria-label="Chilled and filtered drinking water"
         >
-          <span className="inline-flex h-8 w-[104px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-2 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
-            <Snowflake aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
-            Chilled
+          <span className="inline-flex min-h-[34px] w-[118px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-3 py-1.5 text-white shadow-md">
+            <span className="flex skew-x-12 items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em]">
+              <Snowflake aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+              Chilled
+            </span>
           </span>
-          <span className="inline-flex h-8 w-[104px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-2 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm">
-            <Droplets aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
-            Filtered
+          <span className="inline-flex min-h-[34px] w-[118px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-3 py-1.5 text-white shadow-md">
+            <span className="flex skew-x-12 items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.08em]">
+              <Droplets aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+              Filtered
+            </span>
           </span>
-
         </div>
       )}
 
