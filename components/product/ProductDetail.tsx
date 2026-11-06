@@ -158,7 +158,7 @@ export function ProductDetail({
           )}
           {isBubbler && (
             <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-[11px]">
-              COMMERCIAL DRINKING FOUNTAINS
+              DRINKING WATER FOUNTAINS
             </p>
           )}
           <h1 className={isBubbler
