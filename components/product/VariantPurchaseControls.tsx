@@ -71,7 +71,7 @@ export function VariantPurchaseControls({
             </span>
           )}
         </div>
-        <ZipMessaging money={price} className="shrink-0 self-center" />
+        <ZipMessaging money={price} className={compactLayout ? "shrink-0 self-center [zoom:0.85]" : "shrink-0 self-center"} />
       </div>
 
       {singleFinish && variants.length === 1 && optionNames.length === 0 && (
