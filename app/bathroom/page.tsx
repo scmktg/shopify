@@ -22,28 +22,24 @@ const categories = [
     title: 'Showers',
     subtitle: 'Make every day feel a little better.',
     href: '/search?q=bathroom%20shower',
-    term: 'shower',
     number: '01',
   },
   {
     title: 'Toilets',
     subtitle: 'Clean lines. Everyday practicality.',
     href: '/plumbing/toilets/',
-    term: 'toilets',
     number: '02',
   },
   {
     title: 'Bathroom Taps',
     subtitle: 'The finishing touch to your space.',
     href: '/plumbing/bathroom-taps/',
-    term: 'bathroom-taps',
     number: '03',
   },
   {
     title: 'Complete Packages',
     subtitle: 'A matching look, made simple.',
     href: '/plumbing/bundles/',
-    term: 'bundles',
     number: '04',
   },
 ] as const;
@@ -103,7 +99,7 @@ export default async function BathroomLandingPage() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Link href="/plumbing/bundles/" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#292929] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#474747] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
-                Shop bathroom packages 
+                Shop bathroom packages
               </Link>
               <Link href="#bathroom-collections" className="inline-flex min-h-12 items-center justify-center rounded-lg border border-stone-400 px-6 py-3 text-sm font-semibold text-[#292929] transition-colors hover:border-stone-700 hover:bg-white/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
                 Explore the range
@@ -135,7 +131,6 @@ export default async function BathroomLandingPage() {
                   <p className="text-[10px] font-semibold uppercase tracking-[0.13em] text-stone-500">Explore the package range</p>
                   <p className="mt-1 truncate text-sm font-semibold text-gray-950">{heroProduct.title}</p>
                 </div>
-                
               </Link>
             )}
           </div>
@@ -156,7 +151,7 @@ export default async function BathroomLandingPage() {
               </p>
             </div>
             <Link href="/plumbing/bundles/" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-gray-950 underline-offset-4 hover:underline">
-              View all packages 
+              View all packages
             </Link>
           </div>
           {featuredPackages.length > 0 ? (
@@ -168,7 +163,7 @@ export default async function BathroomLandingPage() {
                 Shop matching fixtures and practical bathroom essentials for your next project.
               </p>
               <Link href="/plumbing/bundles/" className="mt-5 inline-flex min-h-12 items-center gap-2 rounded-lg bg-[#292929] px-5 py-3 text-sm font-semibold text-white hover:bg-[#474747]">
-                Shop packages 
+                Shop packages
               </Link>
             </div>
           )}
@@ -203,7 +198,6 @@ export default async function BathroomLandingPage() {
                       <h3 className="text-base font-semibold tracking-tight text-gray-950 sm:text-xl">{category.title}</h3>
                       <p className="mt-1 text-xs leading-5 text-stone-600 sm:text-sm">{category.subtitle}</p>
                     </div>
-                    
                   </div>
                 </Link>
               );
@@ -228,9 +222,6 @@ export default async function BathroomLandingPage() {
           </div>
         </div>
       </section>
-
-
-
 
       <section className="border-t border-stone-200 bg-[#F8F7F5]">
         <div className="mx-auto flex max-w-7xl flex-col items-center px-4 py-14 text-center sm:px-6 md:py-18 lg:px-8">
