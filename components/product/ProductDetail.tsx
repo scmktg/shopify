@@ -147,7 +147,6 @@ export function ProductDetail({
               leadFree={isLeadFree(content)}
             />
           )}
-          {isBubbler && <VariantProductTrustBlock productId={product.id} className="!mt-4 text-xs text-neutral-500" />}
         </div>
 
         <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
@@ -317,9 +316,7 @@ export function ProductDetail({
             )
           )}
 
-          {!isBubbler && (
-            <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
-          )}
+          <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
 
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
