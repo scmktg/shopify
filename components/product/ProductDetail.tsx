@@ -22,6 +22,7 @@ import { ShippingTierBlock } from './ShippingTierBlock';
 import { KitchenTapShippingRates } from './KitchenTapShippingRates';
 import { KitchenTapCertificationStrip } from './KitchenTapCertificationStrip';
 import { BubblerCertificationStrip } from './BubblerCertificationStrip';
+import { BubblerModelSelector } from './BubblerModelSelector';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
 import { VariantPurchaseControls } from './VariantPurchaseControls';
@@ -165,7 +166,8 @@ export function ProductDetail({
             {isKitchenTap ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '') : product.title}
           </h1>
 
-          {content.family && familyPaths && (
+          {isBubbler && <BubblerModelSelector currentHandle={product.handle} />}
+          {content.family && familyPaths && !isBubbler && (
             <FamilySelector
               family={content.family}
               currentHandle={product.handle}
