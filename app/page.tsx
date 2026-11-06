@@ -150,20 +150,20 @@ function Hero() {
             fountain or a dosing tank, we&apos;ve got a comprehensive range of
             solutions. Australian stocked, at wholesale prices for everyone.
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:justify-center sm:gap-3 lg:justify-start">
+          <div className="mt-7 grid grid-cols-2 gap-2 sm:mt-8 sm:flex sm:flex-row sm:items-center sm:justify-center sm:gap-3 lg:justify-start">
             <Link
               href="/water-filters/"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
+              className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1 rounded-xl bg-brand-blue px-2 py-3 text-[12px] font-semibold min-[380px]:text-[13px] sm:min-h-12 sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base text-white shadow-sm transition-colors hover:bg-brand-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
             >
               Shop water filters
-              <ChevronRight size={18} aria-hidden="true" />
+              <ChevronRight size={16} className="shrink-0 sm:h-[18px] sm:w-[18px]" aria-hidden="true" />
             </Link>
             <Link
               href="/cartridges/"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950"
+              className="inline-flex min-h-11 min-w-0 items-center justify-center gap-1 rounded-xl bg-slate-950 px-2 py-3 text-[12px] font-semibold min-[380px]:text-[13px] sm:min-h-12 sm:gap-2 sm:px-6 sm:py-3.5 sm:text-base text-white shadow-sm transition-colors hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-950"
             >
               Shop cartridges
-              <ChevronRight size={18} aria-hidden="true" />
+              <ChevronRight size={16} className="shrink-0 sm:h-[18px] sm:w-[18px]" aria-hidden="true" />
             </Link>
           </div>
           <p className="mt-6 text-xs font-medium leading-relaxed text-slate-500 sm:mt-7 sm:text-sm">
