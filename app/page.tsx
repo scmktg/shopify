@@ -12,6 +12,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { faqPageSchema } from '@/lib/seo/jsonld';
 import { HomeReviewsSection } from '@/components/reviews/HomeReviewsSection';
+import { AnimatedThreeWayTapShowcase } from '@/components/home/AnimatedThreeWayTapShowcase';
 import type { Product, ProductCardData } from '@/types/product';
 
 const FEATURED = {
@@ -81,7 +82,7 @@ export default async function HomePage() {
 
       <WholeHouseShowcase product={wholeHouse} />
 
-      <ThreeWayTapShowcase product={threeWayTap} />
+      <AnimatedThreeWayTapShowcase product={threeWayTap} />
 
       <ProductSpotlight
         product={underSink}
@@ -254,82 +255,6 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
               </div>
             )}
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-interface ThreeWayTapShowcaseProps {
-  product: ProductCardData | null;
-}
-
-/** Dark editorial counterpart to the whole-house homepage showcase. */
-function ThreeWayTapShowcase({ product }: ThreeWayTapShowcaseProps) {
-  const price = product
-    ? new Intl.NumberFormat('en-AU', {
-        style: 'currency',
-        currency: product.price.currencyCode,
-      }).format(Number(product.price.amount))
-    : null;
-
-  return (
-    <section
-      aria-labelledby="three-way-tap-showcase-title"
-      className="overflow-hidden border-b border-white/10 bg-[#161616] text-white"
-    >
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
-        <div className="relative mx-auto w-full max-w-[580px]">
-          <div className="relative aspect-square overflow-hidden bg-transparent">
-            {product?.featuredImage ? (
-              <Image
-                src={product.featuredImage.url}
-                alt={product.featuredImage.altText || product.title}
-                fill
-                sizes="(max-width: 1023px) 92vw, 44vw"
-                className="object-contain p-6 sm:p-10"
-              />
-            ) : (
-              <div className="flex h-full items-center justify-center px-8 text-center text-sm text-white/60">
-                Three-way filtered kitchen tap
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="max-w-2xl">
-          <h2
-            id="three-way-tap-showcase-title"
-            className="flex flex-col items-start tracking-[-0.035em]"
-          >
-            <span className="block text-[clamp(1.75rem,3vw,2.9rem)] font-light leading-[1.2] tracking-[-0.035em] text-white">
-              Hot, Cold &amp; Filtered.
-            </span>
-            <span className="mt-2 block text-[clamp(2.3rem,4.15vw,4.15rem)] font-semibold leading-[1.12] tracking-[-0.045em] tap-ice-blue-shine">
-              All From One Sleek Tap.
-            </span>
-          </h2>
-          <p className="mt-6 max-w-xl text-base leading-7 text-white/70">
-            Enjoy hot, cold and filtered drinking water from one streamlined kitchen mixer. Three convenient water options, without the need for a separate filtered-water tap.
-          </p>
-
-          {product ? (
-            <div className="mt-8">
-              <p className="text-2xl font-semibold tracking-tight text-white">
-                {price}
-                <span className="ml-3 text-sm font-medium text-white/60">inc GST</span>
-              </p>
-              <Link
-                href={getProductUrl(product.handle)}
-                className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.04em] text-[#161616] transition-colors hover:bg-white/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:w-auto"
-              >
-                Shop now
-                <ChevronRight size={18} aria-hidden="true" />
-              </Link>
-            </div>
-          ) : (
-            <p className="mt-8 text-sm text-white/65">This product is temporarily unavailable.</p>
-          )}
         </div>
       </div>
     </section>
