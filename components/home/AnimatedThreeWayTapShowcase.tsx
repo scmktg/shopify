@@ -315,8 +315,8 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     <link rel="preload" as="image" href={BACKGROUND} />
     {finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
     <section ref={sectionRef} aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-8">
-        <div className="order-2 min-w-0 lg:order-1">
+      <div className="mx-auto grid max-w-7xl items-stretch gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-8">
+        <div className="order-2 flex min-w-0 flex-col justify-center lg:order-1">
           <div
             ref={sceneRef}
             className="relative isolate aspect-[4/3] w-full overflow-hidden bg-transparent sm:aspect-[1671/941]"
@@ -446,7 +446,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
             </div>
           </div>
         </div>
-        <div className="order-1 min-w-0 w-full lg:order-2">
+        <div className="order-1 flex min-w-0 w-full flex-col justify-center lg:order-2">
           <h2 id="three-way-tap-showcase-title" className="tracking-[-.05em]">
             <span className="block text-[clamp(2.2rem,4.3vw,4.75rem)] font-light leading-[1.06]">Hot. Cold.</span>
             <span className="tap-ice-blue-shine mt-1 block text-[clamp(2.5rem,5.2vw,5.5rem)] font-semibold leading-[1.08]">Filtered.</span>
@@ -455,10 +455,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
             All from one <span className="font-semibold text-[#d9ecf6]">sleek tap.</span>
           </p>
           <p className="mt-4 max-w-md text-base leading-7 text-white/65">
-            Explore four premium finishes in the same kitchen. Hot, cold and filtered drinking water in one streamlined mixer, with no separate drinking-water tap.
-          </p>
-          <p className="mt-6 text-sm font-medium text-white/80" aria-live="off">
-            Currently viewing: <span className="text-white">{active?.name ?? 'Polished Chrome'}</span>
+            Hot, cold and filtered drinking water in one streamlined mixer, with no separate drinking-water tap.
           </p>
           {formattedPrice && (
             <p className="mt-3 text-2xl font-semibold tracking-tight">
