@@ -145,14 +145,14 @@ export function ShippingTierBlock({
     return (
       <section
         aria-label="Delivery, availability and collection"
-        className="mt-5 overflow-hidden rounded-lg border border-neutral-200 bg-white text-sm text-neutral-900"
+        className="mt-3 overflow-hidden rounded-lg border border-neutral-200 bg-white text-sm text-neutral-900"
       >
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 py-3.5">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 px-3.5 py-2.5 sm:px-4">
           <Truck aria-hidden="true" fill="currentColor" className="h-5 w-5 shrink-0 text-emerald-700" />
           <strong className="text-[15px] font-bold tracking-tight text-emerald-700">FREE SHIPPING</strong>
           <span className="text-[13px] text-neutral-500">Australia-wide</span>
         </div>
-        <div className="space-y-3 border-t border-neutral-100 px-4 py-3">
+        <div className="space-y-2 border-t border-neutral-100 px-3.5 py-2.5 sm:px-4">
           <VariantDispatchCountdown minimal />
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
             <span className="font-semibold text-black">Free Click &amp; Collect</span>
@@ -160,7 +160,7 @@ export function ShippingTierBlock({
             <span className="text-neutral-600">Wyong NSW</span>
           </div>
         </div>
-        <p className="border-t border-neutral-100 bg-neutral-50 px-4 py-2 text-[11px] leading-relaxed text-neutral-500">
+        <p className="border-t border-neutral-100 bg-neutral-50 px-3.5 py-2 text-[11px] leading-relaxed text-neutral-500 sm:px-4">
           Some remote areas may incur a shipping charge; we&apos;ll confirm any cost before fulfilment.
           {' '}<a href="tel:+61287728162" className="font-medium underline underline-offset-2 hover:text-neutral-900">Questions? (02) 8772 8162</a>
         </p>
