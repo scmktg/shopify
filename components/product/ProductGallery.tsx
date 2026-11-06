@@ -226,7 +226,7 @@ export function ProductGallery({
               Filtered
             </span>
           </div>
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-100 bg-white/95 text-[10px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm" aria-label="20 litres per hour cooling capacity">
+          <span className="inline-flex items-center justify-center rounded-full border border-sky-100 bg-white/95 px-2.5 py-1.5 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm" aria-label="20 litres per hour cooling capacity">
             20L/hr
           </span>
         </div>
