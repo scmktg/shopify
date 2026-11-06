@@ -43,21 +43,23 @@ export function DispatchCountdown({ compact = false, minimal = false, inStock = 
 
   if (minimal) {
     return (
-      <div role="status" className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px]">
-        <span className={inStock
-          ? "inline-flex shrink-0 items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 font-semibold text-emerald-800"
-          : "inline-flex shrink-0 items-center gap-1.5 rounded-full bg-neutral-100 px-2.5 py-1 font-semibold text-neutral-700"
-        }>
-          <span aria-hidden="true" className={inStock ? "h-1.5 w-1.5 rounded-full bg-emerald-600" : "h-1.5 w-1.5 rounded-full bg-neutral-400"} />
-          {inStock ? 'In stock' : 'Availability'}
+      <div role="status" className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-5">
+        <span className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-neutral-900">
+          <span aria-hidden="true" className={inStock ? "h-2 w-2 rounded-full bg-emerald-600" : "h-2 w-2 rounded-full bg-neutral-400"} />
+          {inStock ? 'In stock' : 'Out of stock'}
         </span>
-        <span className="min-w-0 leading-5 text-neutral-700">
-          {current.remaining ? (
-            <>
-              Order within <strong className="whitespace-nowrap font-semibold tabular-nums text-neutral-950">{current.remaining}</strong> for same-day dispatch from NSW
-            </>
-          ) : current.headline}
-        </span>
+        {inStock && (
+          <>
+            <span aria-hidden="true" className="mx-0.5 text-neutral-300">·</span>
+            <span className="text-neutral-600">
+              {current.remaining ? (
+                <>
+                  Order in <strong className="whitespace-nowrap font-semibold tabular-nums text-neutral-900">{current.remaining}</strong> for same-day dispatch from NSW
+                </>
+              ) : current.headline}
+            </span>
+          </>
+        )}
       </div>
     );
   }
