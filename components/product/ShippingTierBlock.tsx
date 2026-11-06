@@ -147,8 +147,7 @@ export function ShippingTierBlock({
         aria-label="Availability, shipping and collection"
         className="mt-5 border-y border-neutral-200 py-3 text-sm text-neutral-800"
       >
-        <VariantDispatchCountdown minimal />
-        <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-neutral-100 pt-3 text-[13px]">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
           <Truck aria-hidden="true" fill="currentColor" className="h-4 w-4 shrink-0 text-emerald-700" />
           <span className="font-semibold text-emerald-700">FREE SHIPPING</span>
           <span aria-hidden="true" className="text-neutral-300">/</span>
@@ -162,6 +161,9 @@ export function ShippingTierBlock({
         <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">
           Shipping charges may apply for remote areas. We&apos;ll confirm any cost with you before fulfilment.
         </p>
+        <div className="mt-3 border-t border-neutral-100 pt-3">
+          <VariantDispatchCountdown minimal />
+        </div>
       </section>
     );
   }
