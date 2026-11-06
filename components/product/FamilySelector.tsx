@@ -31,12 +31,14 @@ export function FamilySelector({
 
     return (
       <fieldset className="mt-6">
-        <legend className="w-full text-sm font-semibold text-neutral-900">
-          Available in {family.siblings.length} finishes
+        <legend className="w-full text-sm text-neutral-900">
+          <span className="font-semibold">Available in {family.siblings.length} finishes.</span>
+          {selected && (
+            <span className="ml-1.5 text-neutral-600">
+              Currently viewing: <strong className="font-semibold text-neutral-900">{selected.label}</strong>
+            </span>
+          )}
         </legend>
-        <p className="mt-1 text-xs text-neutral-500">
-          Select a finish to view its own photos and product details.
-        </p>
         <div className="mt-2.5 grid grid-cols-4 gap-1.5 sm:gap-2">
           {family.siblings.map((sibling) => {
             const isActive = canonicalProductHandle(sibling.handle) === currentHandle;
@@ -87,11 +89,6 @@ export function FamilySelector({
             );
           })}
         </div>
-        {selected && (
-          <p className="mt-2 text-xs text-neutral-500">
-            Currently viewing: <strong className="font-medium text-neutral-800">{selected.label}</strong>
-          </p>
-        )}
       </fieldset>
     );
   }
