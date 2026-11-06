@@ -148,8 +148,8 @@ export function ShippingTierBlock({
         className="mt-5 overflow-hidden rounded-lg border border-neutral-200 bg-white text-sm text-neutral-900"
       >
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 px-4 py-3.5">
-          <Truck aria-hidden="true" className="h-5 w-5 shrink-0 text-emerald-700" />
-          <strong className="text-[15px] font-bold tracking-tight text-neutral-950">FREE SHIPPING</strong>
+          <Truck aria-hidden="true" fill="currentColor" className="h-5 w-5 shrink-0 text-emerald-700" />
+          <strong className="text-[15px] font-bold tracking-tight text-emerald-700">FREE SHIPPING</strong>
           <span className="text-[13px] text-neutral-500">Australia-wide</span>
         </div>
         <div className="space-y-3 border-t border-neutral-100 px-4 py-3">
