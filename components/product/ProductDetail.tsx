@@ -166,7 +166,7 @@ export function ProductDetail({
             : useRefinedPurchaseLayout
               ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
               : "text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight"}>
-            {isKitchenTap ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '') : product.title}
+            {isKitchenTap ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '') : isBubbler ? product.title.replace(/\s*\|\s*Chilled\s*&\s*Filtered\s*\|\s*20\s*L\s*\/\s*hr\s*$/i, '') : product.title}
           </h1>
 
           {isBubbler && <BubblerModelSelector currentHandle={product.handle} />}
