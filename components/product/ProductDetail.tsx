@@ -128,7 +128,7 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className={useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
+      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
@@ -149,20 +149,22 @@ export function ProductDetail({
           )}
         </div>
 
-        <div className={useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+        <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
               HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
             </p>
           )}
           {isBubbler && (
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-[11px]">
               COMMERCIAL DRINKING FOUNTAINS
             </p>
           )}
-          <h1 className={useRefinedPurchaseLayout
-            ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
-            : "text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight"}>
+          <h1 className={isBubbler
+            ? "text-[1.65rem] font-semibold leading-[1.18] tracking-[-0.03em] text-neutral-900 sm:text-[1.9rem] lg:text-[2.05rem]"
+            : useRefinedPurchaseLayout
+              ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
+              : "text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight"}>
             {isKitchenTap ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '') : product.title}
           </h1>
 
@@ -183,7 +185,7 @@ export function ProductDetail({
               ctaLabel={content.ctas?.primary ?? undefined}
               hideWholeDollarCents={subcategory === 'bubblers'}
               showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
-              sleek={isKitchenTap}
+              sleek={useRefinedPurchaseLayout}
             />
           )}
 
