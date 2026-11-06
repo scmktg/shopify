@@ -149,7 +149,7 @@ export function ProductDetail({
         <div className={isKitchenTap ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
-              Hot · Cold · Filtered
+              HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
             </p>
           )}
           <h1 className={isKitchenTap
