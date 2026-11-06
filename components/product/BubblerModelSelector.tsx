@@ -47,7 +47,12 @@ export function BubblerModelSelector({ currentHandle }: { currentHandle: string 
                 <img src={model.image} alt="" width={36} height={36} loading="lazy" className="h-8 w-8 object-contain mix-blend-multiply" />
               </span>
               <span className={clsx('text-[11px] font-medium leading-tight', active ? 'text-neutral-950' : 'text-neutral-700')}>
-                {model.label}
+                {model.label.includes(' + Tap') ? (
+                  <>
+                    {model.label.replace(' + Tap', '')}
+                    <span className="block">+ Tap</span>
+                  </>
+                ) : model.label}
               </span>
             </>
           );
