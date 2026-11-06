@@ -107,8 +107,8 @@ export function ProductDetail({
   // Use natural wrapping for a single customer-facing bubbler heading.
   const bubblerDisplayTitle = ({
     'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler',
-    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain with Bubbler + Tap',
-    'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain with Bubbler + Tap',
+    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain with Bubbler & Tap',
+    'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain with Bubbler & Tap',
   } as Record<string, string>)[product.handle] ?? product.title.replace(/\s*\|\s*Chilled\s*&\s*Filtered\s*\|\s*20\s*L\s*\/\s*hr\s*$/i, '');
 
   return (
