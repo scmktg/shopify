@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X, Snowflake, Droplets, BottleWater } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, X, Snowflake, Droplets } from 'lucide-react';
 import type { ProductImage, ProductVideo } from '@/types/product';
 import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
 
@@ -228,7 +228,11 @@ export function ProductGallery({
             Filtered
           </span>
           <span className="inline-flex h-8 w-[104px] items-center gap-2 whitespace-nowrap rounded-full border border-sky-100 bg-white/95 px-2 text-[11px] font-semibold text-sky-800 shadow-sm backdrop-blur-sm" aria-label="20 litres per hour cooling capacity">
-            <BottleWater aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-3.5 w-3.5 shrink-0">
+              <path d="M10 2h4v4h-4z" />
+              <path d="M10 6v2c0 1.2-1.4 1.8-2 3.2-.6 1.2-.8 2.2-.8 3.6v5.3c0 1.1.9 1.9 2 1.9h5.6c1.1 0 2-.8 2-1.9v-5.3c0-1.4-.2-2.4-.8-3.6-.6-1.4-2-2-2-3.2V6" />
+              <path d="M7.2 15h9.6" />
+            </svg>
             20L/hr
           </span>
         </div>
