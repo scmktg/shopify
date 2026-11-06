@@ -195,7 +195,7 @@ export function ProductDetail({
             <div className="mt-5 rounded-lg border border-brand-blue/25 bg-brand-blue-light/40 p-5">
               <p className="text-sm font-semibold text-black">SKU: EA-WF-RO-13</p>
               <p className="mt-3 text-3xl font-bold text-black">{formatMoney(product.priceRange.minVariantPrice)}</p>
-              <p className="mt-1 text-sm text-black/60">inc GST · Shipping quoted separately</p>
+              <p className="mt-1 text-sm text-black/60">Shipping quoted separately</p>
               <h2 className="mt-5 text-lg font-semibold text-black">Contact us for a shipping quote to purchase</h2>
               <p className="mt-2 text-sm leading-6 text-black/75">
                 Our team will review your delivery location and freight requirements and provide a shipping quote before you purchase this system.
