@@ -5,17 +5,17 @@ import { clsx } from 'clsx';
 const MODELS = [
   {
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
-    label: 'Steel Bubbler',
+    label: 'Stainless Steel – Bubbler',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600r-round-stainless-steel-drinking-fountain-water-bubbler-front-angle.png?v=1792231320',
   },
   {
     handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
-    label: 'Steel Bubbler + Tap',
+    label: 'Stainless Steel – Bubbler + Tap',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/stainless-steel-fountain-bubbler-tap.png?v=1793009157',
   },
   {
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    label: 'Granite Bubbler + Tap',
+    label: 'Granite Inspired – Bubbler + Tap',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600p-hdpe-drinking-fountain-water-bubbler-with-tap-front.png?v=1792231482',
   },
 ] as const;
@@ -46,12 +46,8 @@ export function BubblerModelSelector({ currentHandle }: { currentHandle: string 
                 <img src={model.image} alt="" width={36} height={36} loading="lazy" className="h-8 w-8 object-contain mix-blend-multiply" />
               </span>
               <span className={clsx('text-[11px] font-medium leading-tight', active ? 'text-neutral-950' : 'text-neutral-700')}>
-                {model.label.includes(' + Tap') ? (
-                  <>
-                    {model.label.replace(' + Tap', '')}
-                    <span className="block">+ Tap</span>
-                  </>
-                ) : model.label}
+                {model.label.split(' – ')[0]}
+                <span className="block">{model.label.split(' – ')[1]}</span>
               </span>
             </>
           );
