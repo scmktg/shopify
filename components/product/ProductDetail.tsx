@@ -181,7 +181,6 @@ export function ProductDetail({
               fallbackPrice={product.priceRange.minVariantPrice}
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
-              offerInstallationAssistance={subcategory === 'bubblers'}
               hideWholeDollarCents={subcategory === 'bubblers'}
               showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
               sleek={isKitchenTap}
