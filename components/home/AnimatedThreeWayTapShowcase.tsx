@@ -314,7 +314,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     <>
             {formattedPrice && (
               <p className="whitespace-nowrap text-[1.55rem] font-semibold tracking-tight sm:text-2xl">
-                {formattedPrice}<span className="ml-1.5 text-xs font-medium text-white/50 sm:ml-2 sm:text-sm">inc GST</span>
+                {formattedPrice}
               </p>
             )}
             {activeProduct ? (
