@@ -143,6 +143,8 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
   const [manualAt, setManualAt] = useState(0);
   const [paused, setPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [enteredView, setEnteredView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
   const sceneRef = useRef<HTMLDivElement>(null);
   const imageReady = finishes.some((finish) => Boolean(geometry[finish.url]));
   const active = finishes.find((finish) => finish.name === selected) ?? finishes[0];
@@ -165,6 +167,26 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     update();
     media.addEventListener('change', update);
     return () => media.removeEventListener('change', update);
+  }, []);
+
+  // Reveal the kitchen once when it enters view. This translates the entire
+  // composition, not an individual tap, so the mounting anchor never shifts.
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+        !('IntersectionObserver' in window)) {
+      setEnteredView(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setEnteredView(true);
+        observer.disconnect();
+      }
+    }, { threshold: 0.16, rootMargin: '0px 0px -5% 0px' });
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -252,12 +274,19 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     <>
     <link rel="preload" as="image" href={BACKGROUND} />
     {finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
-    <section aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
+    <section ref={sectionRef} aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
       <div className="mx-auto grid max-w-7xl items-center gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.18fr_.82fr] lg:gap-12 lg:px-8">
-        <div className="order-2 min-w-0 lg:order-1">
+        <div
+          className="order-2 min-w-0 lg:order-1"
+          style={{
+            opacity: enteredView ? 1 : 0,
+            transform: enteredView ? 'translate3d(0,0,0)' : 'translate3d(-48px,0,0)',
+            transition: reducedMotion ? 'none' : 'opacity 1100ms ease-out, transform 1100ms cubic-bezier(.2,.75,.2,1)',
+          }}
+        >
           <div
             ref={sceneRef}
-            className="relative isolate aspect-[4/3] w-full overflow-hidden rounded-lg bg-[#dedcd6] sm:aspect-[1671/941]"
+            className="relative isolate aspect-[4/3] w-full overflow-hidden bg-transparent sm:aspect-[1671/941]"\n            style={{\n              WebkitMaskImage: 'radial-gradient(ellipse 77% 79% at 51% 50%, #000 47%, rgba(0,0,0,.96) 64%, rgba(0,0,0,.7) 78%, transparent 100%)',\n              maskImage: 'radial-gradient(ellipse 77% 79% at 51% 50%, #000 47%, rgba(0,0,0,.96) 64%, rgba(0,0,0,.7) 78%, transparent 100%)',\n            }}
             aria-label={`Kitchen sink with a ${active?.name ?? 'three way'} filtered kitchen mixer installed`}
           >
             {/* A single 1671 × 941 scene matrix is scaled and cropped as a unit. */}
