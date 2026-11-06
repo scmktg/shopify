@@ -125,5 +125,125 @@
     "ctas": {"primary":"Add to cart","secondary":null},
     "upsells": {"boughtTogether":["chemical-dosing-tank-300l"],"moreInCategory":"auto"},
     "seo": {"title":"400L Chemical Bund | Secondary Containment","description":"400L Chemical Bund for the 300L Chemical Dosing Tank. 945 mm top OD × 790 mm bottom OD × 743 mm high.","ogImage":null}
+  },
+  "sembowell-pull-out-3way-kitchen-mixer-wels-rated-watermark-certified-aus": {
+    "shortDescription": "Enjoy hot, cold and filtered drinking water from one kitchen tap. This brushed nickel 3-way mixer features a convenient pull-out spray, 360° swivel spout and durable stainless steel construction.",
+    "description": "Enjoy **hot, cold and filtered drinking water from one sleek kitchen tap**. With a brushed nickel finish, a convenient pull-out spray head and a 360° swivel spout, this 3-way mixer makes everyday rinsing, washing and filling easier.\n\n- Hot, cold and filtered drinking water from one tap\n- Pull-out spray head for flexible cleaning and rinsing\n- 360° swivel spout\n- 304 stainless steel construction with a brushed nickel finish\n- Ceramic cartridge and single-hole deck installation\n- WELS 5 Star rated at 6.0 L/min (registration T46861)\n- WaterMark certified (licence 032200)",
+    "features": [
+      "Hot, cold and filtered drinking water from one mixer",
+      "Pull-out spray head for easier rinsing and cleaning",
+      "360° swivel spout",
+      "304 stainless steel construction and brushed nickel finish",
+      "Ceramic cartridge",
+      "WELS 5 Star, 6.0 L/min (T46861)",
+      "WaterMark certified (032200)"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Waterways",
+        "value": "Hot / cold / filtered"
+      },
+      {
+        "label": "Finish",
+        "value": "Brushed Nickel"
+      },
+      {
+        "label": "Height",
+        "value": "430 mm"
+      },
+      {
+        "label": "WELS rating",
+        "value": "5 Star · 6.0 L/min"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Model",
+        "value": "205.20"
+      },
+      {
+        "label": "Type",
+        "value": "3-way pull-out filtered kitchen mixer tap"
+      },
+      {
+        "label": "Material",
+        "value": "304 stainless steel"
+      },
+      {
+        "label": "Finish",
+        "value": "Brushed Nickel"
+      },
+      {
+        "label": "Operation",
+        "value": "Hot, cold and filtered drinking water"
+      },
+      {
+        "label": "Spray head",
+        "value": "Pull-out spray"
+      },
+      {
+        "label": "Spout rotation",
+        "value": "360°"
+      },
+      {
+        "label": "Overall height",
+        "value": "430 mm"
+      },
+      {
+        "label": "Spout reach",
+        "value": "220 mm"
+      },
+      {
+        "label": "Spout outlet height",
+        "value": "230 mm"
+      },
+      {
+        "label": "Valve",
+        "value": "Ceramic cartridge"
+      },
+      {
+        "label": "Installation",
+        "value": "Single-hole deck mount"
+      },
+      {
+        "label": "WELS rating",
+        "value": "5 stars"
+      },
+      {
+        "label": "WELS flow rate",
+        "value": "6.0 L/min"
+      },
+      {
+        "label": "WELS registration",
+        "value": "T46861"
+      },
+      {
+        "label": "WaterMark certified",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark licence",
+        "value": "032200"
+      },
+      {
+        "label": "Package contents",
+        "value": "Tap, hot/cold/filtered inlet hoses, mounting hardware and installation instructions"
+      }
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": "032200",
+        "specificationNumber": null,
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark certified (licence 032200). WELS 5 Star rated at 6.0 L/min; registration T46861."
+    },
+    "seo": {
+      "title": "3 Way Pull-Out Filtered Kitchen Mixer Tap in Brushed Nickel",
+      "description": "Brushed nickel 3-way pull-out kitchen mixer tap with hot, cold and filtered water. 360° swivel, WELS 5 Star (T46861) and WaterMark 032200."
+    }
   }
 }
