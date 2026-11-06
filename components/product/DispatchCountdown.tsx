@@ -50,7 +50,7 @@ export function DispatchCountdown({ compact = false, minimal = false, inStock = 
         </span>
         {inStock && (
           <>
-            <span aria-hidden="true" className="mx-0.5 text-neutral-300">·</span>
+            <span aria-hidden="true" className="text-neutral-300">/</span>
             <span className="text-neutral-600">
               {current.remaining ? (
                 <>
