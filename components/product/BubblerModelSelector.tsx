@@ -1,0 +1,70 @@
+import Link from 'next/link';
+import { clsx } from 'clsx';
+
+/** Alternative commercial drinking fountains, matched to active Shopify products. */
+const MODELS = [
+  {
+    handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
+    label: 'Square stainless steel',
+    image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/stainless-steel-fountain-bubbler-tap.png?v=1793009157',
+  },
+  {
+    handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
+    label: 'Round stainless steel',
+    image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600r-round-stainless-steel-drinking-fountain-water-bubbler-front-angle.png?v=1792231320',
+  },
+  {
+    handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
+    label: 'Granite-look HDPE',
+    image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600p-hdpe-drinking-fountain-water-bubbler-with-tap-front.png?v=1792231482',
+  },
+] as const;
+
+export function BubblerModelSelector({ currentHandle }: { currentHandle: string }) {
+  const selected = MODELS.find((model) => model.handle === currentHandle);
+  if (!selected) return null;
+
+  return (
+    <fieldset className="mt-6">
+      <legend className="w-full text-sm text-neutral-900">
+        <span className="font-semibold">Available in 3 designs.</span>{' '}
+        <span className="text-neutral-600">
+          Currently viewing: <strong className="font-semibold text-neutral-900">{selected.label}</strong>
+        </span>
+      </legend>
+      <div className="mt-2.5 grid grid-cols-3 gap-1.5 sm:gap-2">
+        {MODELS.map((model) => {
+          const active = model.handle === currentHandle;
+          const className = clsx(
+            'flex min-w-0 flex-col items-center gap-1 rounded-lg border px-1 py-2 text-center transition-colors sm:gap-1.5 sm:px-2',
+            active
+              ? 'border-neutral-900 bg-neutral-50 ring-1 ring-inset ring-neutral-900'
+              : 'border-neutral-200 bg-white hover:border-neutral-500 hover:bg-neutral-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900',
+          );
+          const body = (
+            <>
+              <span className="flex h-10 w-full items-center justify-center sm:h-12">
+                <img src={model.image} alt="" width={48} height={48} loading="lazy" className="h-10 w-10 object-contain mix-blend-multiply sm:h-12 sm:w-12" />
+              </span>
+              <span className={clsx('text-[11px] font-medium leading-tight sm:text-xs', active ? 'text-neutral-950' : 'text-neutral-700')}>
+                {model.label}
+              </span>
+            </>
+          );
+          return active ? (
+            <span key={model.handle} aria-current="page" className={className}>{body}</span>
+          ) : (
+            <Link
+              key={model.handle}
+              href={`/bubblers-and-coolers/bubblers/${model.handle}`}
+              aria-label={`View ${model.label} drinking fountain`}
+              className={className}
+            >
+              {body}
+            </Link>
+          );
+        })}
+      </div>
+    </fieldset>
+  );
+}
