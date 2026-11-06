@@ -137,7 +137,7 @@ function Hero() {
         className="pointer-events-none absolute -left-48 top-0 h-[36rem] w-[36rem] rounded-full bg-sky-100/60 blur-3xl"
       />
       <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-7 pb-12 pt-12 sm:gap-12 sm:px-6 sm:pb-14 sm:pt-16 lg:min-h-[620px] lg:grid-cols-[1.02fr_0.98fr] lg:gap-16 lg:px-8 lg:py-16">
-        <div className="relative z-10 max-w-xl">
+        <div className="relative z-10 mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
           <p className="text-[clamp(2.25rem,9.3vw,4.5rem)] font-bold leading-[1.08] sm:leading-[1.06] tracking-[-0.045em] text-slate-950">
             Healthier water
             <span className="block text-brand-blue">starts here.</span>
@@ -145,12 +145,12 @@ function Hero() {
           <h1 className="mt-5 text-sm font-semibold leading-relaxed tracking-tight text-slate-800 sm:mt-6 sm:text-lg">
             The Best Water Filters for Australian Homes &amp; Businesses
           </h1>
-          <p className="mt-4 max-w-lg text-[0.9375rem] leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-lg text-[0.9375rem] leading-relaxed text-slate-600 sm:text-lg lg:mx-0">
             Whether you&apos;re after a whole house water filter, a drinking
             fountain or a dosing tank, we&apos;ve got a comprehensive range of
             solutions. Australian stocked, at wholesale prices for everyone.
           </p>
-          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-3">
+          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:justify-center sm:gap-3 lg:justify-start">
             <Link
               href="/water-filters/"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-blue px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-blue-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
@@ -207,10 +207,10 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
       className="overflow-hidden border-b border-gray-200 bg-white"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:text-left">
           <h2
             id="whole-house-showcase-title"
-            className="flex flex-col items-start tracking-[-0.035em] text-black"
+            className="flex flex-col items-center tracking-[-0.035em] text-black lg:items-start"
           >
             <span className="block text-[clamp(1.4rem,2.7vw,2.5rem)] font-light leading-[1.22] whitespace-nowrap">
               Every Tap. Every Shower.
@@ -222,11 +222,11 @@ function WholeHouseShowcase({ product }: WholeHouseShowcaseProps) {
               Throughout Your Entire Home.
             </span>
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-7 text-black/65">
+          <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-black/65 lg:mx-0">
             Why filter just one tap when you can filter your entire home? Purchase the sleek stainless steel system to take care of all of your filtration needs.
           </p>
           {product && (
-            <div className="mt-8">
+            <div className="mt-8 text-center lg:text-left">
               <p className="text-2xl font-semibold tracking-tight text-black">
                 {price}
                 <span className="ml-3 text-sm font-medium text-black/60">inc GST</span>
@@ -305,7 +305,7 @@ function ProductSpotlight({
     <section className={sectionClass}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
-          <div className={dark ? 'lg:order-2' : ''}>
+          <div className={`text-center lg:text-left ${dark ? 'lg:order-2' : ''}`}>
             <p
               className={`text-sm font-semibold uppercase tracking-wider ${dark ? 'text-white/60' : 'text-brand-blue'}`}
             >
@@ -317,19 +317,19 @@ function ProductSpotlight({
             <p className={`mt-4 text-base md:text-lg leading-relaxed ${bodyClass}`}>
               {body}
             </p>
-            <ul className={`mt-6 space-y-3 text-sm md:text-base ${bodyClass}`}>
+            <ul className={`mx-auto mt-6 max-w-lg space-y-3 text-sm md:text-base lg:mx-0 ${bodyClass}`}>
               {bullets.map((bullet) => (
-                <li key={bullet} className="flex gap-3">
+                <li key={bullet} className="flex items-start justify-center gap-2 lg:justify-start lg:gap-3">
                   <span
                     aria-hidden="true"
-                    className={`mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0 ${dark ? 'bg-white' : 'bg-brand-blue'}`}
+                    className={`mt-2 hidden h-1.5 w-1.5 rounded-full flex-shrink-0 lg:block ${dark ? 'bg-white' : 'bg-brand-blue'}`}
                   />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
               {product ? (
                 <Link
                   href={getProductUrl(product.handle)}
@@ -377,7 +377,7 @@ function CategoryGrid() {
   return (
     <section className="border-b border-gray-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="max-w-2xl mb-8 md:mb-10">
+        <div className="mx-auto mb-8 max-w-2xl text-center md:mb-10 lg:mx-0 lg:text-left">
           <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
             Explore the full range
           </h2>
@@ -395,7 +395,7 @@ function CategoryGrid() {
             <li key={category.slug} className="bg-white">
               <Link
                 href={`/${category.slug}/`}
-                className="group flex flex-col h-full p-6 hover:bg-gray-50 transition-colors"
+                className="group flex h-full flex-col items-center p-6 text-center transition-colors hover:bg-gray-50 lg:items-start lg:text-left"
               >
                 <h3 className="text-lg font-semibold text-black">
                   {category.label}
@@ -403,7 +403,7 @@ function CategoryGrid() {
                 <p className="mt-2 text-sm text-black/70 flex-1">
                   {CATEGORY_BLURBS[category.slug] ?? category.label}
                 </p>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-blue">
+                <span className="mt-5 inline-flex items-center justify-center gap-1 text-sm font-semibold text-brand-blue lg:justify-start">
                   Shop {category.label.toLowerCase()}
                   <ChevronRight size={16} aria-hidden="true" />
                 </span>
@@ -420,7 +420,7 @@ function WhyEnviroAqua() {
   return (
     <section className="border-b border-gray-200 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-14">
+        <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-[1fr_1.4fr] lg:gap-14 lg:text-left">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
               Why EnviroAqua
@@ -516,10 +516,11 @@ function Faq() {
   return (
     <section className="bg-white">
       <JsonLdScript data={faqPageSchema(FAQ_ITEMS)} />
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
-          Water filter FAQ
-        </p>
+      <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <div className="text-center lg:text-left">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-blue">
+            Water filter FAQ
+          </p>
         <h2 className="mt-2 text-2xl md:text-3xl font-semibold text-black tracking-tight">
           Water filtration buying questions
         </h2>
@@ -528,6 +529,7 @@ function Faq() {
           guides go deeper into system sizing, contaminants, installation and
           product-specific requirements.
         </p>
+        </div>
         <div className="mt-6 border-t border-gray-200">
           {FAQ_ITEMS.map((item) => (
             <details key={item.q} className="group border-b border-gray-200">
