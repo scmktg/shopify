@@ -128,7 +128,7 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
+      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
@@ -147,6 +147,7 @@ export function ProductDetail({
               leadFree={isLeadFree(content)}
             />
           )}
+          {isBubbler && <VariantProductTrustBlock productId={product.id} className="!mt-4 text-xs text-neutral-500" />}
         </div>
 
         <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
@@ -175,6 +176,7 @@ export function ProductDetail({
               currentHandle={product.handle}
               paths={familyPaths}
               sleek={useRefinedPurchaseLayout}
+              compactLayout={isBubbler}
             />
           )}
 
@@ -315,7 +317,9 @@ export function ProductDetail({
             )
           )}
 
-          <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
+          {!isBubbler && (
+            <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
+          )}
 
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
