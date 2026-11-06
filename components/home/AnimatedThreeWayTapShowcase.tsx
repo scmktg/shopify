@@ -189,7 +189,21 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
         }
         setGeometry((previous) => ({ ...previous, [finish.url]: measured }));
       };
-      img.onerror = () => console.warn('[tap-scene] Could not load Shopify tap image', finish.name);
+      img.onerror = () => {
+        if (cancelled) return;
+        // Some CDN configurations do not permit cross-origin pixel reading.
+        // Retry as a normal displayable image and use the explicit fallback.
+        const backup = new window.Image();
+        pending.push(backup);
+        backup.onload = () => {
+          if (!cancelled) setGeometry((previous) => ({
+            ...previous, [finish.url]: fallbackGeometry(backup),
+          }));
+          console.warn('[tap-scene] Alpha inspection blocked by CORS; alignment requires manual review', finish.name);
+        };
+        backup.onerror = () => console.warn('[tap-scene] Could not load Shopify tap image', finish.name);
+        backup.src = finish.url;
+      };
       // Chrome is loaded immediately; others follow after the critical image.
       if (index === 0) img.src = finish.url;
       else {
@@ -222,7 +236,11 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
   // On narrow viewports, keep the installation point visible and leave enough
   // room to see the spout extending to the left over the sink.
   const cropFocusX = viewport.width / viewport.height < 1.1 ? 0.59 : 0.5;
-  const offsetX = viewport.width * cropFocusX - SCENE.anchorX * scale;
+  const centeredOffsetX = (viewport.width - SCENE.width * scale) / 2;
+  const focusedOffsetX = viewport.width * cropFocusX - SCENE.anchorX * scale;
+  const offsetX = viewport.width / viewport.height < 1.1
+    ? Math.max(viewport.width - SCENE.width * scale, Math.min(0, focusedOffsetX))
+    : centeredOffsetX;
   const offsetY = (viewport.height - SCENE.height * scale) / 2;
   const formattedPrice = activeProduct
     ? new Intl.NumberFormat('en-AU', {
