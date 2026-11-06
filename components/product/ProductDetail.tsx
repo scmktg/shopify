@@ -147,7 +147,7 @@ export function ProductDetail({
             {product.title}
           </h1>
 
-          {product.handle === THREE_WAY_TAP_HANDLE && (
+          {(product.handle === THREE_WAY_TAP_HANDLE || shouldShowWaterMarkTapBadge(product.handle)) && (
             <ThreeWayTapHeroBenefits />
           )}
 
