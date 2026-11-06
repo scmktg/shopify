@@ -169,8 +169,8 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     return () => media.removeEventListener('change', update);
   }, []);
 
-  // Reveal the kitchen once when it enters view. This translates the entire
-  // composition, not an individual tap, so the mounting anchor never shifts.
+  // Trigger the TAP entrance once the kitchen scrolls into view.
+  // The kitchen background and its crop are always stationary.
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -243,7 +243,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
   }, [finishes]);
 
   useEffect(() => {
-    if (finishes.length < 2 || reducedMotion || paused || !imageReady) return;
+    if (finishes.length < 2 || reducedMotion || paused || !imageReady || !enteredView) return;
     const pauseRemaining = Math.max(0, MANUAL_PAUSE_MS - (Date.now() - manualAt));
     const timeout = window.setTimeout(() => {
       setSelected((current) => {
@@ -252,7 +252,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
       });
     }, Math.max(HOLD_MS, pauseRemaining));
     return () => window.clearTimeout(timeout);
-  }, [selected, manualAt, paused, reducedMotion, finishes, imageReady]);
+  }, [selected, manualAt, paused, reducedMotion, finishes, imageReady, enteredView]);
 
   const scale = Math.max(viewport.width / SCENE.width, viewport.height / SCENE.height);
   // On narrow viewports, keep the installation point visible and leave enough
@@ -276,14 +276,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
     {finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
     <section ref={sectionRef} aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
       <div className="mx-auto grid max-w-7xl items-center gap-9 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.18fr_.82fr] lg:gap-12 lg:px-8">
-        <div
-          className="order-2 min-w-0 lg:order-1"
-          style={{
-            opacity: enteredView ? 1 : 0,
-            transform: enteredView ? 'translate3d(0,0,0)' : 'translate3d(-48px,0,0)',
-            transition: reducedMotion ? 'none' : 'opacity 1100ms ease-out, transform 1100ms cubic-bezier(.2,.75,.2,1)',
-          }}
-        >
+        <div className="order-2 min-w-0 lg:order-1">
           <div
             ref={sceneRef}
             className="relative isolate aspect-[4/3] w-full overflow-hidden bg-transparent sm:aspect-[1671/941]"
@@ -311,6 +304,18 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
                 decoding="async"
                 className="absolute inset-0 h-full w-full object-fill"
               />
+              {/* The entire tap group slides in from the RIGHT, clipped by the
+                  scene edge and its charcoal feather. The kitchen never moves.
+                  All finishes share this transform, preserving installation alignment. */}
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  transform: enteredView && imageReady
+                    ? 'translate3d(0,0,0)'
+                    : 'translate3d(1750px,0,0)',
+                  transition: reducedMotion ? 'none' : 'transform 1200ms cubic-bezier(.22,1,.36,1)',
+                }}
+              >
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute z-10 rounded-full bg-black/20 blur-[7px]"
@@ -346,6 +351,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
                   />
                 );
               })}
+              </div>
             </div>
             {!imageReady && (
               <div className="pointer-events-none absolute bottom-3 left-3 rounded-md bg-white/85 px-3 py-2 text-xs text-[#292929]">
