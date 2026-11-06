@@ -44,8 +44,7 @@ export function DispatchCountdown({ compact = false, minimal = false, inStock = 
   if (minimal) {
     return (
       <div role="status" className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-5">
-        <span className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-neutral-900">
-          <span aria-hidden="true" className={inStock ? "h-2 w-2 rounded-full bg-emerald-600" : "h-2 w-2 rounded-full bg-neutral-400"} />
+        <span className="shrink-0 font-semibold text-black">
           {inStock ? 'In stock' : 'Out of stock'}
         </span>
         {inStock && (
