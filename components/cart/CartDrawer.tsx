@@ -11,7 +11,7 @@ import { CartLineRow } from './CartLineRow';
 import { trackViewCart } from '@/lib/analytics/client';
 
 export function CartDrawer() {
-  const { cart, isOpen, closeDrawer, error, checkout } = useCart();
+  const { cart, isOpen, closeDrawer, isMutating, error, checkout, orderNote, setOrderNote } = useCart();
   const wasOpen = useRef(false);
 
   useEffect(() => {
@@ -113,15 +113,31 @@ export function CartDrawer() {
                 />
               </div>
               <ZipMessaging money={cart.subtotalAmount} className="mb-3" />
+              <label htmlFor="drawer-order-notes" className="block text-sm font-medium text-black">
+                Order notes <span className="font-normal text-black/60">(optional)</span>
+              </label>
+              <textarea
+                id="drawer-order-notes"
+                value={orderNote}
+                onChange={(event) => setOrderNote(event.target.value)}
+                maxLength={1000}
+                rows={2}
+                placeholder="Special delivery instructions or requests?"
+                className="mt-2 mb-2 block w-full resize-y rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black placeholder:text-black/50 focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+              />
+              <p className="text-xs text-black/60 mb-3">
+                For deliveries to multiple addresses, our team will confirm any additional freight costs before dispatch.
+              </p>
               <p className="text-xs text-black/60 mb-3">
                 Shipping and taxes calculated at checkout.
               </p>
               <a
                 href={cart.checkoutUrl}
                 onClick={(event) => { event.preventDefault(); void checkout(); }}
-                className="block w-full text-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors"
+                aria-disabled={isMutating}
+                className="block w-full text-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors aria-disabled:opacity-60 aria-disabled:pointer-events-none"
               >
-                Checkout
+                {isMutating ? 'Preparing checkout…' : 'Checkout'}
               </a>
               <Link
                 href="/cart/"
