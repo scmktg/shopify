@@ -9,7 +9,7 @@ import { useCart } from './CartProvider';
 import { CartLineRow } from './CartLineRow';
 
 export function CartPageView() {
-  const { cart, isReady, error, checkout } = useCart();
+  const { cart, isReady, isMutating, error, checkout, orderNote, setOrderNote } = useCart();
   const viewedCart = useRef<string | null>(null);
   useEffect(() => {
     if (!cart || cart.lines.length === 0 || viewedCart.current === cart.id) return;
@@ -69,6 +69,23 @@ export function CartPageView() {
           <p className="mt-2 text-xs text-black/60">
             Shipping and taxes calculated at checkout.
           </p>
+          <div className="mt-5">
+            <label htmlFor="cart-order-notes" className="block text-sm font-medium text-black">
+              Order notes <span className="font-normal text-black/60">(optional)</span>
+            </label>
+            <textarea
+              id="cart-order-notes"
+              value={orderNote}
+              onChange={(event) => setOrderNote(event.target.value)}
+              maxLength={1000}
+              rows={3}
+              placeholder="Special delivery instructions or requests? Let us know here."
+              className="mt-2 block w-full resize-y rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black placeholder:text-black/50 focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
+            />
+            <p className="mt-2 text-xs text-black/60">
+              For deliveries to multiple addresses, our team will confirm any additional freight costs before dispatch.
+            </p>
+          </div>
           {error && (
             <p role="alert" className="mt-3 text-sm text-red-600">
               {error}
@@ -77,9 +94,10 @@ export function CartPageView() {
           <a
             href={cart.checkoutUrl}
             onClick={(event) => { event.preventDefault(); void checkout(); }}
-            className="mt-5 block w-full text-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors"
+            aria-disabled={isMutating}
+            className="mt-5 block w-full text-center bg-brand-blue hover:bg-brand-blue-hover text-white font-semibold py-3 px-6 rounded transition-colors aria-disabled:opacity-60 aria-disabled:pointer-events-none"
           >
-            Checkout
+            {isMutating ? 'Preparing checkout…' : 'Checkout'}
           </a>
           <Link
             href="/water-filters/"
