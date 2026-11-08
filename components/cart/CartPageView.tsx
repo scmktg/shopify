@@ -82,9 +82,6 @@ export function CartPageView() {
               placeholder="Special delivery instructions or requests? Let us know here."
               className="mt-2 block w-full resize-y rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black placeholder:text-black/50 focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
             />
-            <p className="mt-2 text-xs text-black/60">
-              For deliveries to multiple addresses, our team will confirm any additional freight costs before dispatch.
-            </p>
           </div>
           {error && (
             <p role="alert" className="mt-3 text-sm text-red-600">

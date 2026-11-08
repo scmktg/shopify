@@ -126,9 +126,6 @@ export function CartDrawer() {
                 className="mt-2 mb-2 block w-full resize-y rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black placeholder:text-black/50 focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue"
               />
               <p className="text-xs text-black/60 mb-3">
-                For deliveries to multiple addresses, our team will confirm any additional freight costs before dispatch.
-              </p>
-              <p className="text-xs text-black/60 mb-3">
                 Shipping and taxes calculated at checkout.
               </p>
               <a
