@@ -247,10 +247,9 @@ export function CartProvider({ children }: CartProviderProps) {
     try {
       // Save the note before checkout, even if the customer never blurs the field.
       // Run sequentially so attribution updates cannot overwrite the order note.
-      await Promise.race([
-        syncAttribution(cart.id),
-        new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
-      ]);
+      // Finish any attribution write before saving the customer note so concurrent
+      // cartAttributesUpdate mutations cannot overwrite one another.
+      await syncAttribution(cart.id);
       const updated = await updateCartOrderNote(cart.id, orderNote);
       setCart(updated);
       trackBeginCheckout(updated);
