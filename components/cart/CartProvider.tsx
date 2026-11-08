@@ -17,6 +17,7 @@ import {
   syncCartAcquisition,
   removeCartLine,
   updateCartLine,
+  updateCartOrderNote,
 } from '@/lib/shopify/cart';
 import {
   addMultipleToCart,
@@ -49,6 +50,8 @@ interface CartContextValue {
   buyNow: (variantId: string, quantity?: number) => Promise<void>;
   buyNowItems: (items: ReadonlyArray<CartItemInput>) => Promise<void>;
   checkout: () => Promise<void>;
+  orderNote: string;
+  setOrderNote: (note: string) => void;
   updateItem: (lineId: string, quantity: number) => Promise<void>;
   removeItem: (lineId: string) => Promise<void>;
   openDrawer: () => void;
@@ -64,6 +67,7 @@ interface CartProviderProps {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [cart, setCart] = useState<Cart | null>(null);
+  const [orderNote, setOrderNote] = useState('');
   const [isReady, setIsReady] = useState(false);
   const [isMutating, setIsMutating] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -98,6 +102,7 @@ export function CartProvider({ children }: CartProviderProps) {
         if (cancelled) return;
         if (fetched) {
           setCart(fetched);
+          setOrderNote(fetched.attributes.find(attribute => attribute.key === 'Order notes')?.value ?? '');
           void syncAttribution(fetched.id);
         } else {
           clearStoredCartId();
@@ -237,13 +242,24 @@ export function CartProvider({ children }: CartProviderProps) {
 
   const checkout = useCallback(async () => {
     if (!cart) return;
-    await Promise.race([
-      syncAttribution(cart.id),
-      new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
-    ]);
-    trackBeginCheckout(cart);
-    if (typeof window !== 'undefined') window.location.assign(cart.checkoutUrl);
-  }, [cart, syncAttribution]);
+    setError(null);
+    setIsMutating(true);
+    try {
+      // Save the note before checkout, even if the customer never blurs the field.
+      // Run sequentially so attribution updates cannot overwrite the order note.
+      await Promise.race([
+        syncAttribution(cart.id),
+        new Promise<null>(resolve => setTimeout(() => resolve(null), 2500)),
+      ]);
+      const updated = await updateCartOrderNote(cart.id, orderNote);
+      setCart(updated);
+      trackBeginCheckout(updated);
+      if (typeof window !== 'undefined') window.location.assign(updated.checkoutUrl);
+    } catch (caught) {
+      setError(extractMessage(caught, 'Could not save order notes. Please try again.'));
+      setIsMutating(false);
+    }
+  }, [cart, orderNote, syncAttribution]);
 
   const updateItem = useCallback(
     async (lineId: string, quantity: number) => {
@@ -304,6 +320,8 @@ export function CartProvider({ children }: CartProviderProps) {
       buyNow,
       buyNowItems,
       checkout,
+      orderNote,
+      setOrderNote,
       updateItem,
       removeItem,
       openDrawer,
@@ -321,6 +339,8 @@ export function CartProvider({ children }: CartProviderProps) {
       buyNow,
       buyNowItems,
       checkout,
+      orderNote,
+      setOrderNote,
       updateItem,
       removeItem,
       openDrawer,
