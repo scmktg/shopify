@@ -294,6 +294,30 @@ export async function syncCartAcquisition(
   return transformCart(result.data.cartAttributesUpdate.cart);
 }
 
+/** Save a customer's optional order instructions without removing attribution or other cart attributes. */
+export async function updateCartOrderNote(cartId: string, note: string): Promise<Cart> {
+  const current = await getCart(cartId);
+  if (!current) throw new Error('Cart no longer exists');
+  const trimmed = note.trim().slice(0, 1000);
+  const existing = current.attributes.filter(attribute => attribute.key !== 'Order notes');
+  const attributes = trimmed ? [...existing, { key: 'Order notes', value: trimmed }] : existing;
+  const unchanged = attributes.length === current.attributes.length &&
+    attributes.every((attribute, index) =>
+      attribute.key === current.attributes[index]?.key &&
+      attribute.value === current.attributes[index]?.value);
+  if (unchanged) return current;
+  type Data = { cartAttributesUpdate: {
+    cart: RawCart | null; userErrors: ReadonlyArray<UserError>
+  } };
+  const result: ShopifyClientResponse<Data> = await shopifyClient.request<Data>(
+    CART_ATTRIBUTES_UPDATE_MUTATION, { variables: { cartId, attributes } },
+  );
+  if (result.errors) throw new Error('Could not save order notes');
+  throwOnUserErrors('cartAttributesUpdate', result.data?.cartAttributesUpdate.userErrors ?? []);
+  if (!result.data?.cartAttributesUpdate.cart) throw new Error('No updated cart returned');
+  return transformCart(result.data.cartAttributesUpdate.cart);
+}
+
 export async function createCart(): Promise<Cart> {
   type CartCreateData = {
     cartCreate: { cart: RawCart | null; userErrors: ReadonlyArray<UserError> };
