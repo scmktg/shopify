@@ -5,9 +5,18 @@ import type { ReactNode } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 import { VariantSkuSpec } from './VariantSkuSpec';
 
-export function ThreeWayTapSalesSections({ content, finishShowcase, dimensionsShowcase }: { content: ProductContent; finishShowcase?: ReactNode; dimensionsShowcase?: ReactNode }) {
+const DIMENSION_IMAGES = [
+  { name: 'Matte Black', src: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Matte_Black_Gooseneck_Tap_Dimensions.png?v=1794219288' },
+  { name: 'Brushed Gold', src: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Brushed_Gold_Faucet_Measurement_Diagram.png?v=1794219466' },
+  { name: 'Polished Chrome', src: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Chrome_Faucet_Dimensions_Infographic.png?v=1794219586' },
+  { name: 'Brushed Nickel', src: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Brushed_Nickel_Faucet_Dimensions.png?v=1794219640' },
+] as const;
+
+export function ThreeWayTapSalesSections({ content, finishShowcase }: { content: ProductContent; finishShowcase?: ReactNode }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
   const tabsRef = useRef<HTMLDivElement>(null);
+  const [dimensionFinish, setDimensionFinish] = useState<(typeof DIMENSION_IMAGES)[number]['name']>('Matte Black');
+  const selectedDiagram = DIMENSION_IMAGES.find((image) => image.name === dimensionFinish) ?? DIMENSION_IMAGES[0];
 
   const showSpecifications = () => {
     setActiveTab('specifications');
@@ -84,7 +93,7 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, dimensionsSh
 
       {finishShowcase}
 
-      <section className="mx-auto mt-14 max-w-4xl text-center md:mt-20" aria-labelledby="three-way-tap-compatibility-title">
+      <section className="mx-auto mt-14 max-w-5xl text-center md:mt-20" aria-labelledby="three-way-tap-compatibility-title">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">
           Standard filtration compatability
         </p>
@@ -94,19 +103,47 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, dimensionsSh
         >
           A simple, standard connection <span className="font-semibold">for Australian homes.</span>
         </h3>
-        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-8 text-black/65">
-          <p>
-            Our 3 way tap uses a standard 1/4” connection, which means it will
-            suit standard under-sink and reverse osmosis systems.
-          </p>
-          <p>
-            You do not need to purchase an Enviro Aqua system, and you are not
-            locked in to a peculiar size. This is a simple, straightforward
-            connection which can be handled by any licensed plumber.
-          </p>
+        <div className="mx-auto mt-10 grid max-w-5xl items-center gap-8 text-left md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:gap-12">
+          <div className="space-y-5 text-base leading-8 text-black/65">
+            <p>
+              Our 3 way tap uses a standard 1/4” connection, which means it will
+              suit standard under-sink and reverse osmosis systems.
+            </p>
+            <p>
+              You do not need to purchase an Enviro Aqua system, and you are not
+              locked in to a peculiar size. This is a simple, straightforward
+              connection which can be handled by any licensed plumber.
+            </p>
+          </div>
+          <div className="min-w-0">
+            <div className="overflow-hidden rounded-xl border border-black/5 bg-white">
+              <img
+                key={selectedDiagram.src}
+                src={selectedDiagram.src}
+                alt={`${selectedDiagram.name} three way filtered kitchen mixer tap technical dimension drawing`}
+                loading="lazy"
+                decoding="async"
+                width={1080}
+                height={1080}
+                className="aspect-square h-auto w-full object-contain"
+              />
+            </div>
+            <div className="mt-4 flex flex-wrap justify-center gap-2" role="group" aria-label="Choose a tap finish for the dimension drawing">
+              {DIMENSION_IMAGES.map((diagram) => (
+                <button
+                  key={diagram.name}
+                  type="button"
+                  aria-pressed={dimensionFinish === diagram.name}
+                  onClick={() => setDimensionFinish(diagram.name)}
+                  className={`min-h-10 rounded-full border px-3 py-2 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black ${dimensionFinish === diagram.name ? 'border-black bg-black text-white' : 'border-black/15 text-black/60 hover:border-black/50 hover:text-black'}`}
+                >
+                  {diagram.name}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
-        {dimensionsShowcase}
 
         <div className="mt-12 flex justify-center">
           <button type="button" onClick={showSpecifications}
