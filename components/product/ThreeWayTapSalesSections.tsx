@@ -37,16 +37,32 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
   };
 
   const dimensionLabels = new Set<string>(SHARED_DIMENSIONS.map((row) => row.label.toLowerCase()));
-  const specs = (content.fullSpecs ?? [])
-    .filter((row) => !['sku', 'body material', 'material', 'tap mounting hole size', 'system requirement', ...dimensionLabels].includes(row.label.trim().toLowerCase()))
-    .map((row) => {
-      switch (row.label.trim().toLowerCase()) {
-        case 'operation': return { ...row, value: 'Hot, Cold, Filtered' };
-        case 'ro compatibility': return { ...row, value: 'Standard 1/4"' };
-        case 'installation fittings': return { ...row, value: 'Included' };
-        default: return row;
-      }
-    });
+  const excludedLabels = new Set([
+    'sku', 'body material', 'material', 'tap mounting hole', 'tap mounting hole size',
+    'system requirement', 'watermark certified', 'watermark licence',
+    'watermark licence number', 'lead free', ...dimensionLabels,
+  ]);
+  const specs = [
+    { label: 'Body material', value: 'Brass' },
+    { label: 'Tap mounting hole', value: '34 mm' },
+    ...(content.fullSpecs ?? [])
+      .filter((row) => !excludedLabels.has(row.label.trim().toLowerCase()))
+      .map((row) => {
+        switch (row.label.trim().toLowerCase()) {
+          case 'operation': return { ...row, value: 'Hot, Cold, Filtered' };
+          case 'ro compatibility': return { ...row, value: 'Standard 1/4"' };
+          case 'installation fittings': return { ...row, value: 'Included' };
+          default: return row;
+        }
+      }),
+    { label: 'WaterMark Certified', value: 'Yes' },
+    { label: 'Lead Free', value: 'Yes' },
+    { label: 'WaterMark Licence', value: '032200' },
+  ];
+
+  const specRowClass = 'grid min-h-14 grid-cols-2 items-center gap-4 border-b border-black/10 py-4 text-sm leading-6';
+  const specLabelClass = 'min-w-0 font-normal text-black/60';
+  const specValueClass = 'min-w-0 text-right font-medium text-black';
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
       <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex items-center justify-center gap-8 border-b border-black/10 sm:gap-16">
@@ -167,31 +183,26 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
         <section className="mx-auto max-w-5xl" aria-labelledby="matte-tap-specifications-title">
           <h2 id="matte-tap-specifications-title" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
           <p className="mt-2 text-sm leading-7 text-black/60">Product details, fittings and installation information for your kitchen.</p>
-          <dl className="mt-7 grid gap-x-14 md:grid-cols-2">
-            <div className="flex items-center justify-between gap-5 border-b border-black/10 py-4 text-sm"><dt className="text-black/60">Body material</dt><dd className="font-semibold text-black">Brass</dd></div>
-            <div className="flex items-center justify-between gap-5 border-b border-black/10 py-4 text-sm"><dt className="text-black/60">Tap mounting hole</dt><dd className="font-semibold text-black">34 mm</dd></div>
-          </dl>
-          <dl className="mt-8 grid gap-x-14 md:grid-cols-2">
+          <dl className="mt-7 grid gap-x-10 md:grid-cols-2">
             {specs.map((row) => (
-              <div key={row.label} className="flex items-start justify-between gap-5 border-b border-black/10 py-4 text-sm">
-                <dt className="text-black/60">{row.label}</dt>
-                <dd className="max-w-[60%] text-right font-medium text-black">{row.value}</dd>
+              <div key={row.label} className={specRowClass}>
+                <dt className={specLabelClass}>{row.label}</dt>
+                <dd className={specValueClass}>{row.value}</dd>
               </div>
             ))}
           </dl>
           <div className="mt-10 border-t border-black/10 pt-8">
             <h3 className="text-lg font-semibold tracking-tight text-black">Dimensions</h3>
             <p className="mt-2 text-sm leading-6 text-black/60">The same dimensions apply to all four finishes.</p>
-            <dl className="mt-5 grid gap-x-14 md:grid-cols-2">
+            <dl className="mt-5 grid gap-x-10 md:grid-cols-2">
               {SHARED_DIMENSIONS.map((row) => (
-                <div key={row.label} className="flex items-start justify-between gap-5 border-b border-black/10 py-4 text-sm">
-                  <dt className="text-black/60">{row.label}</dt>
-                  <dd className="text-right font-medium text-black">{row.value}</dd>
+                <div key={row.label} className={specRowClass}>
+                  <dt className={specLabelClass}>{row.label}</dt>
+                  <dd className={specValueClass}>{row.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          {content.compliance?.note && <p className="mt-8 text-sm leading-7 text-black/55">{content.compliance.note}</p>}
         </section>
       </div>
     </div>
