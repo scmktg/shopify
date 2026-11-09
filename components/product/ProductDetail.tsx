@@ -28,6 +28,7 @@ import { VariantBuyBanner } from './VariantBuyBanner';
 import { VariantMobileStickyBuyBar } from './VariantMobileStickyBuyBar';
 
 import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
+import { ThreeWayTapFinishEditorial } from './ThreeWayTapFinishEditorial';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
 import { shouldShowWaterMarkLeadFreeBadge, shouldShowWaterMarkTapBadge } from '@/lib/products/watermarkLeadFreeBadge';
@@ -337,7 +338,7 @@ export function ProductDetail({
 
       {!isEditorialBubbler && product.handle !== THREE_WAY_TAP_HANDLE && <HeadlineSpecs specs={content.headlineSpecs} />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
-        <ThreeWayTapSalesSections content={content} />
+        <ThreeWayTapSalesSections content={content} finishShowcase={<ThreeWayTapFinishEditorial />} />
       )}
       {isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
