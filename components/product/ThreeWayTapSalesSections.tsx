@@ -21,6 +21,7 @@ const SHARED_DIMENSIONS = [
   { label: 'Handle span', value: '14 cm' },
   { label: 'Handle height', value: '11 cm' },
   { label: 'Small handle height', value: '5 cm' },
+  { label: 'Tap mounting hole size', value: '34 mm' },
 ] as const;
 
 export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { content: ProductContent; finishShowcase?: ReactNode; finish: TapFinish }) {
