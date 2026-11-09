@@ -342,14 +342,14 @@ export function ProductDetail({
       </div>
 
       {!isEditorialBubbler && !editorialTapFinish && <HeadlineSpecs specs={content.headlineSpecs} />}
-      {Boolean(editorialTapFinish) && (
+      {editorialTapFinish && (
         <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
       )}
       {isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
         <HdpeBubblerDetails content={content} />
-      ) : Boolean(editorialTapFinish) ? null : (
+      ) : editorialTapFinish ? null : (
         <>
           <FullSpecs specs={content.fullSpecs} />
           <ProductOverview
