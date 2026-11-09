@@ -112,7 +112,7 @@ export function ThreeWayTapDimensions({ products }: Props) {
             {/* Measured positions follow the supplied matte-black dimension drawing.
                 The transparent catalogue render is illustrative, not an installation template. */}
             <foreignObject x="307" y="102" width="515" height="602">
-              <div xmlns="http://www.w3.org/1999/xhtml" className="flex h-full w-full items-center justify-center">
+              <div className="flex h-full w-full items-center justify-center">
                 <img key={selectedFinish.image} src={selectedFinish.image}
                   alt="" loading="lazy" decoding="async"
                   className={entered ? 'ea-tap-dimension-image h-full w-full object-contain' : 'h-full w-full object-contain opacity-0'}
@@ -151,7 +151,7 @@ export function ThreeWayTapDimensions({ products }: Props) {
         Dimensions are based on the supplied product drawing. Confirm sink clearance and installation requirements with your licensed plumber.
       </p>
 
-      <style jsx>{`
+      <style>{`
         .ea-tap-dimension-image { animation: ea-tap-appear 850ms cubic-bezier(.2,.75,.2,1) both; }
         .ea-measure { opacity: 0; }
         .ea-measure-visible { animation: ea-label-appear 480ms ease-out both; }
