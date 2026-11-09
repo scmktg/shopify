@@ -9,7 +9,7 @@ export function ThreeWayTapSalesSections() {
           id="three-way-tap-editorial-title"
           className="mx-auto mt-5 max-w-4xl text-[clamp(2.1rem,4.5vw,4rem)] font-light leading-[1.12] tracking-tight text-black"
         >
-          Complete the look of <span className="font-semibold">your kitchen.</span>
+          Your new benchtop deserves <span className="font-semibold">a beautiful tap.</span>
         </h2>
         <div className="mx-auto mt-7 max-w-3xl space-y-4 text-base leading-8 text-black/65">
           <p>
@@ -37,7 +37,7 @@ export function ThreeWayTapSalesSections() {
             id="three-way-tap-stone-title"
             className="mt-4 text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-tight tracking-tight text-black"
           >
-            Your beautiful stone benchtop deserves <span className="font-semibold">fewer holes.</span>
+            Hot, Cold &amp; Filtered. <span className="font-semibold">All from one sleek tap.</span>
           </h3>
         </div>
         <div className="space-y-4 text-base leading-8 text-black/65">
