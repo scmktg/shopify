@@ -38,7 +38,7 @@ export function ThreeWayTapSalesSections({ content }: { content: ProductContent 
           id="three-way-tap-editorial-title"
           className="mx-auto mt-5 max-w-4xl text-[clamp(2.1rem,4.5vw,4rem)] font-light leading-[1.12] tracking-tight text-black"
         >
-          Hot, Cold &amp; Filtered. <span className="font-semibold">All from one sleek tap.</span>
+          <span className="block sm:whitespace-nowrap">Hot, Cold &amp; Filtered.</span> <span className="block font-semibold">All from one sleek tap.</span>
         </h2>
         <div className="mx-auto mt-7 max-w-3xl space-y-4 text-base leading-8 text-black/65">
           <p>
@@ -94,7 +94,7 @@ export function ThreeWayTapSalesSections({ content }: { content: ProductContent 
           id="three-way-tap-compatibility-title"
           className="mx-auto mt-4 max-w-3xl text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-tight tracking-tight text-black"
         >
-          Already have a water filter? <span className="font-semibold">Keep it.</span>
+          Your filtration system. <span className="font-semibold">Your choice.</span>
         </h3>
         <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-8 text-black/65">
           <p>
