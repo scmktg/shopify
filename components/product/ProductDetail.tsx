@@ -338,7 +338,7 @@ export function ProductDetail({
 
       {!isEditorialBubbler && product.handle !== THREE_WAY_TAP_HANDLE && <HeadlineSpecs specs={content.headlineSpecs} />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
-        <ThreeWayTapSalesSections content={content} finishShowcase={<ThreeWayTapFinishEditorial />} />
+        <ThreeWayTapSalesSections content={content} finishShowcase={<ThreeWayTapFinishEditorial />} dimensionsShowcase={<ThreeWayTapFinishEditorial mode="dimensions" />} />
       )}
       {isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
