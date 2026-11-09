@@ -396,7 +396,8 @@ export function ProductDetail({
         <VariantBuyBanner
           fallbackPrice={product.priceRange.minVariantPrice}
           ctaLabel={content.ctas?.primary ?? undefined}
-          minimal={isEditorialBubbler}
+          minimal={isEditorialBubbler || product.handle === THREE_WAY_TAP_HANDLE}
+          heading={product.handle === THREE_WAY_TAP_HANDLE ? "Complete your kitchen with one sleek tap." : undefined}
         />
       )}
 
