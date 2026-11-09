@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
-import { VariantSkuSpec } from './VariantSkuSpec';
 
 const DIMENSION_IMAGES = [
   { name: 'Matte Black', src: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Matte_Black_Gooseneck_Tap_Dimensions.png?v=1794219288' },
@@ -38,7 +37,16 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
   };
 
   const dimensionLabels = new Set<string>(SHARED_DIMENSIONS.map((row) => row.label.toLowerCase()));
-  const specs = (content.fullSpecs ?? []).filter((row) => !['sku', 'body material', 'material', 'tap mounting hole size', ...dimensionLabels].includes(row.label.trim().toLowerCase()));
+  const specs = (content.fullSpecs ?? [])
+    .filter((row) => !['sku', 'body material', 'material', 'tap mounting hole size', 'system requirement', ...dimensionLabels].includes(row.label.trim().toLowerCase()))
+    .map((row) => {
+      switch (row.label.trim().toLowerCase()) {
+        case 'operation': return { ...row, value: 'Hot, Cold, Filtered' };
+        case 'ro compatibility': return { ...row, value: 'Standard 1/4"' };
+        case 'installation fittings': return { ...row, value: 'Included' };
+        default: return row;
+      }
+    });
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
       <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex items-center justify-center gap-8 border-b border-black/10 sm:gap-16">
@@ -164,7 +172,6 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
             <div className="flex items-center justify-between gap-5 border-b border-black/10 py-4 text-sm"><dt className="text-black/60">Tap mounting hole</dt><dd className="font-semibold text-black">34 mm</dd></div>
           </dl>
           <dl className="mt-8 grid gap-x-14 md:grid-cols-2">
-            <VariantSkuSpec />
             {specs.map((row) => (
               <div key={row.label} className="flex items-start justify-between gap-5 border-b border-black/10 py-4 text-sm">
                 <dt className="text-black/60">{row.label}</dt>
