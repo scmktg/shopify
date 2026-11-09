@@ -75,6 +75,14 @@
         "value": "Yes"
       },
       {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
+      },
+      {
         "label": "WaterMark standard",
         "value": "AS/NZS 3718"
       },
@@ -224,6 +232,14 @@
       {
         "label": "WaterMark certified",
         "value": "Yes"
+      },
+      {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
       },
       {
         "label": "WaterMark standard",
@@ -377,6 +393,14 @@
         "value": "Yes"
       },
       {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
+      },
+      {
         "label": "WaterMark standard",
         "value": "AS/NZS 3718"
       },
@@ -526,6 +550,14 @@
       {
         "label": "WaterMark certified",
         "value": "Yes"
+      },
+      {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
       },
       {
         "label": "WaterMark standard",
