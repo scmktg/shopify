@@ -21,7 +21,6 @@ const SHARED_DIMENSIONS = [
   { label: 'Handle span', value: '14 cm' },
   { label: 'Handle height', value: '11 cm' },
   { label: 'Small handle height', value: '5 cm' },
-  { label: 'Tap mounting hole size', value: '34 mm' },
 ] as const;
 
 export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { content: ProductContent; finishShowcase?: ReactNode; finish: TapFinish }) {
@@ -39,7 +38,7 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
   };
 
   const dimensionLabels = new Set<string>(SHARED_DIMENSIONS.map((row) => row.label.toLowerCase()));
-  const specs = (content.fullSpecs ?? []).filter((row) => row.label.trim().toLowerCase() !== 'sku' && !dimensionLabels.has(row.label.trim().toLowerCase()));
+  const specs = (content.fullSpecs ?? []).filter((row) => !['sku', 'body material', 'material', 'tap mounting hole size', ...dimensionLabels].includes(row.label.trim().toLowerCase()));
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
       <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex items-center justify-center gap-8 border-b border-black/10 sm:gap-16">
@@ -160,6 +159,10 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
         <section className="mx-auto max-w-5xl" aria-labelledby="matte-tap-specifications-title">
           <h2 id="matte-tap-specifications-title" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
           <p className="mt-2 text-sm leading-7 text-black/60">Product details, fittings and installation information for your kitchen.</p>
+          <dl className="mt-7 grid gap-x-14 md:grid-cols-2">
+            <div className="flex items-center justify-between gap-5 border-b border-black/10 py-4 text-sm"><dt className="text-black/60">Body material</dt><dd className="font-semibold text-black">Brass</dd></div>
+            <div className="flex items-center justify-between gap-5 border-b border-black/10 py-4 text-sm"><dt className="text-black/60">Tap mounting hole</dt><dd className="font-semibold text-black">34 mm</dd></div>
+          </dl>
           <dl className="mt-8 grid gap-x-14 md:grid-cols-2">
             <VariantSkuSpec />
             {specs.map((row) => (
