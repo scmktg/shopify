@@ -5,7 +5,7 @@ import type { ReactNode } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 import { VariantSkuSpec } from './VariantSkuSpec';
 
-export function ThreeWayTapSalesSections({ content, finishShowcase }: { content: ProductContent; finishShowcase?: ReactNode }) {
+export function ThreeWayTapSalesSections({ content, finishShowcase, dimensionsShowcase }: { content: ProductContent; finishShowcase?: ReactNode; dimensionsShowcase?: ReactNode }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
   const tabsRef = useRef<HTMLDivElement>(null);
 
@@ -106,6 +106,8 @@ export function ThreeWayTapSalesSections({ content, finishShowcase }: { content:
           </p>
         </div>
       </section>
+        {dimensionsShowcase}
+
         <div className="mt-12 flex justify-center">
           <button type="button" onClick={showSpecifications}
             className="inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
