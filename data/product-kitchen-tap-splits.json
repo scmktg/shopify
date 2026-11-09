@@ -11,7 +11,7 @@
       "watermark-certified",
       "wels-4-star",
       "t40393",
-      "stainless-steel",
+      "brass",
       "brushed-nickel"
     ],
     "shortDescription": "Brushed Nickel 3-way kitchen mixer delivering hot, cold and filtered water from one tap. Compatible with standard 1/4\" filter connections. WaterMark licence 032200 and WELS 4 Star.",
@@ -52,27 +52,35 @@
       },
       {
         "label": "Operation",
-        "value": "3-way function (hot, cold, RO-filtered)"
+        "value": "Hot, Cold, Filtered"
       },
       {
         "label": "Finish",
         "value": "Brushed Nickel"
       },
       {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
         "label": "RO compatibility",
-        "value": "Standard 1/4\" filtered-water connection; suits compatible RO and under-sink filtration systems"
+        "value": "Standard 1/4\""
       },
       {
         "label": "Installation fittings",
-        "value": "Included for a standard installation"
-      },
-      {
-        "label": "System requirement",
-        "value": "Compatible filtered-water system with standard 1/4\" outlet; Enviro Aqua system not required"
+        "value": "Included"
       },
       {
         "label": "WaterMark certified",
         "value": "Yes"
+      },
+      {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
       },
       {
         "label": "WaterMark standard",
@@ -162,7 +170,7 @@
       "watermark-certified",
       "wels-4-star",
       "t40393",
-      "stainless-steel",
+      "brass",
       "polished-chrome"
     ],
     "shortDescription": "Polished Chrome 3-way kitchen mixer delivering hot, cold and filtered water from one tap. Compatible with standard 1/4\" filter connections. WaterMark licence 032200 and WELS 4 Star.",
@@ -203,27 +211,35 @@
       },
       {
         "label": "Operation",
-        "value": "3-way function (hot, cold, RO-filtered)"
+        "value": "Hot, Cold, Filtered"
       },
       {
         "label": "Finish",
         "value": "Polished Chrome"
       },
       {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
         "label": "RO compatibility",
-        "value": "Standard 1/4\" filtered-water connection; suits compatible RO and under-sink filtration systems"
+        "value": "Standard 1/4\""
       },
       {
         "label": "Installation fittings",
-        "value": "Included for a standard installation"
-      },
-      {
-        "label": "System requirement",
-        "value": "Compatible filtered-water system with standard 1/4\" outlet; Enviro Aqua system not required"
+        "value": "Included"
       },
       {
         "label": "WaterMark certified",
         "value": "Yes"
+      },
+      {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
       },
       {
         "label": "WaterMark standard",
@@ -313,7 +329,7 @@
       "watermark-certified",
       "wels-4-star",
       "t40393",
-      "stainless-steel",
+      "brass",
       "brushed-gold"
     ],
     "shortDescription": "Brushed Gold 3-way kitchen mixer delivering hot, cold and filtered water from one tap. Compatible with standard 1/4\" filter connections. WaterMark licence 032200 and WELS 4 Star.",
@@ -354,27 +370,35 @@
       },
       {
         "label": "Operation",
-        "value": "3-way function (hot, cold, RO-filtered)"
+        "value": "Hot, Cold, Filtered"
       },
       {
         "label": "Finish",
         "value": "Brushed Gold"
       },
       {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
         "label": "RO compatibility",
-        "value": "Standard 1/4\" filtered-water connection; suits compatible RO and under-sink filtration systems"
+        "value": "Standard 1/4\""
       },
       {
         "label": "Installation fittings",
-        "value": "Included for a standard installation"
-      },
-      {
-        "label": "System requirement",
-        "value": "Compatible filtered-water system with standard 1/4\" outlet; Enviro Aqua system not required"
+        "value": "Included"
       },
       {
         "label": "WaterMark certified",
         "value": "Yes"
+      },
+      {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
       },
       {
         "label": "WaterMark standard",
@@ -464,7 +488,7 @@
       "watermark-certified",
       "wels-4-star",
       "t40393",
-      "stainless-steel",
+      "brass",
       "matte-black"
     ],
     "shortDescription": "Matte Black 3-way kitchen mixer delivering hot, cold and filtered water from one tap. Compatible with standard 1/4\" filter connections. WaterMark licence 032200 and WELS 4 Star.",
@@ -505,27 +529,35 @@
       },
       {
         "label": "Operation",
-        "value": "3-way function (hot, cold, RO-filtered)"
+        "value": "Hot, Cold, Filtered"
       },
       {
         "label": "Finish",
         "value": "Matte Black"
       },
       {
+        "label": "Body material",
+        "value": "Brass"
+      },
+      {
         "label": "RO compatibility",
-        "value": "Standard 1/4\" filtered-water connection; suits compatible RO and under-sink filtration systems"
+        "value": "Standard 1/4\""
       },
       {
         "label": "Installation fittings",
-        "value": "Included for a standard installation"
-      },
-      {
-        "label": "System requirement",
-        "value": "Compatible filtered-water system with standard 1/4\" outlet; Enviro Aqua system not required"
+        "value": "Included"
       },
       {
         "label": "WaterMark certified",
         "value": "Yes"
+      },
+      {
+        "label": "Lead Free",
+        "value": "Yes"
+      },
+      {
+        "label": "WaterMark Licence",
+        "value": "032200"
       },
       {
         "label": "WaterMark standard",

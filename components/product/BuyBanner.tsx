@@ -11,6 +11,7 @@ interface BuyBannerProps {
   /** Label override from `products.json[handle].ctas.primary`. */
   ctaLabel?: string;
   minimal?: boolean;
+  heading?: string;
 }
 
 /**
@@ -30,6 +31,7 @@ export function BuyBanner({
   price,
   ctaLabel,
   minimal = false,
+  heading,
 }: BuyBannerProps) {
   return (
     <section
@@ -39,7 +41,7 @@ export function BuyBanner({
       <div className={minimal ? "grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-center lg:gap-12" : "grid gap-6 md:grid-cols-2 md:items-center"}>
         <div>
           <h2 className={minimal ? "text-2xl md:text-3xl font-semibold text-white tracking-tight" : "text-2xl md:text-3xl font-semibold text-black tracking-tight"}>
-            {minimal ? "Bring cold, filtered water to your space." : "Ready to order?"}
+            {heading ?? (minimal ? "Bring cold, filtered water to your space." : "Ready to order?")}
           </h2>
           <p className={minimal ? "mt-3 text-sm leading-6 text-white/65" : "mt-2 text-sm text-black/70"}>
             Order before {ORDER_CUTOFF_DISPLAY} on a business day for

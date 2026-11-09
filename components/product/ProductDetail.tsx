@@ -28,6 +28,7 @@ import { VariantBuyBanner } from './VariantBuyBanner';
 import { VariantMobileStickyBuyBar } from './VariantMobileStickyBuyBar';
 
 import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
+import { ThreeWayTapFinishEditorial } from './ThreeWayTapFinishEditorial';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
 import { shouldShowWaterMarkLeadFreeBadge, shouldShowWaterMarkTapBadge } from '@/lib/products/watermarkLeadFreeBadge';
@@ -36,8 +37,12 @@ const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const SHIPPING_QUOTE_ONLY_HANDLE = 'commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment';
 const BRUSHED_GOLD_RO_TAP_HANDLE =
   'premium-ro-filter-tap-sus304-nsf-approved-in-black-nickel-and-gold';
-const THREE_WAY_TAP_HANDLE =
-  '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c';
+const THREE_WAY_TAP_FINISHES: Record<string, 'Matte Black' | 'Brushed Gold' | 'Polished Chrome' | 'Brushed Nickel'> = {
+  '3-way-filtered-kitchen-tap-for-ro-water-filters-mixer-in-black-nickel-gold-and-c': 'Matte Black',
+  '3-way-filtered-kitchen-mixer-tap-brushed-gold-watermark-wels': 'Brushed Gold',
+  '3-way-filtered-kitchen-mixer-tap-polished-chrome-watermark-wels': 'Polished Chrome',
+  '3-way-filtered-kitchen-mixer-tap-stainless-steel-watermark-wels': 'Brushed Nickel',
+};
 const SOLD_OUT_THREE_STAGE_UV_HANDLE =
   '3-stages-whole-house-water-filter-and-uv-ultraviolet-sterilization-system';
 const FOUR_STAGE_UV_PATH =
@@ -99,6 +104,7 @@ export function ProductDetail({
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
+  const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
   const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
   // Use natural wrapping for a single customer-facing bubbler heading.
@@ -335,15 +341,15 @@ export function ProductDetail({
         </div>
       </div>
 
-      {!isEditorialBubbler && <HeadlineSpecs specs={content.headlineSpecs} />}
-      {product.handle === THREE_WAY_TAP_HANDLE && (
-        <ThreeWayTapSalesSections />
+      {!isEditorialBubbler && !editorialTapFinish && <HeadlineSpecs specs={content.headlineSpecs} />}
+      {editorialTapFinish && (
+        <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
       )}
       {isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
         <HdpeBubblerDetails content={content} />
-      ) : (
+      ) : editorialTapFinish ? null : (
         <>
           <FullSpecs specs={content.fullSpecs} />
           <ProductOverview
@@ -396,7 +402,8 @@ export function ProductDetail({
         <VariantBuyBanner
           fallbackPrice={product.priceRange.minVariantPrice}
           ctaLabel={content.ctas?.primary ?? undefined}
-          minimal={isEditorialBubbler}
+          minimal={isEditorialBubbler || Boolean(editorialTapFinish)}
+          heading={Boolean(editorialTapFinish) ? "Complete your kitchen with one sleek tap." : undefined}
         />
       )}
 

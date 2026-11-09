@@ -8,6 +8,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 
 interface Props {
   products: ReadonlyArray<ProductCardData | null>;
+  mode?: 'home' | 'product';
 }
 
 type FinishName = 'Polished Chrome' | 'Matte Black' | 'Brushed Nickel' | 'Brushed Gold';
@@ -137,7 +138,8 @@ function layoutTap(g: Geometry) {
   };
 }
 
-export function AnimatedThreeWayTapShowcase({ products }: Props) {
+export function AnimatedThreeWayTapShowcase({ products, mode = 'home' }: Props) {
+  const isProduct = mode === 'product';
   const finishes = useMemo(() => FINISH_ORDER.flatMap((name) => {
     const product = products.find((candidate) => candidate && identifyFinish(candidate.title) === name);
     return product?.featuredImage?.url
@@ -333,10 +335,10 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
 
   return (
     <>
-    <link rel="preload" as="image" href={BACKGROUND} />
-    {finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
-    <section ref={sectionRef} aria-labelledby="three-way-tap-showcase-title" className="overflow-hidden border-b border-white/10 bg-[#141516] text-white">
-      <div className="mx-auto grid max-w-7xl items-stretch gap-7 px-5 pb-12 pt-10 min-[380px]:px-6 sm:gap-9 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-8">
+    {!isProduct && <link rel="preload" as="image" href={BACKGROUND} />}
+    {!isProduct && finishes[0] && <link rel="preload" as="image" href={finishes[0].url} />}
+    <section ref={sectionRef} aria-labelledby={isProduct ? "tap-finishes-product-title" : "three-way-tap-showcase-title"} className={isProduct ? "mt-14 overflow-hidden rounded-2xl bg-[#141516] text-white md:mt-20" : "overflow-hidden border-b border-white/10 bg-[#141516] text-white"}>
+      <div className={isProduct ? "mx-auto grid max-w-6xl items-stretch gap-7 px-5 pb-10 pt-9 min-[380px]:px-6 sm:gap-9 sm:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10 lg:px-10" : "mx-auto grid max-w-7xl items-stretch gap-7 px-5 pb-12 pt-10 min-[380px]:px-6 sm:gap-9 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-8"}>
         <div className="order-2 flex min-w-0 flex-col justify-center lg:order-1">
           <div
             ref={sceneRef}
@@ -466,12 +468,21 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
               })}
             </div>
           </div>
-          <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:hidden">
+          {!isProduct && <div className="mt-6 flex w-full flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:hidden">
             {purchaseRow}
-          </div>
+          </div>}
         </div>
         <div className="order-1 flex min-w-0 w-full flex-col items-center justify-center text-center lg:order-2 lg:items-start lg:text-left">
-          <h2 id="three-way-tap-showcase-title" className="tracking-[-.055em] sm:tracking-[-.05em]">
+          {isProduct ? (
+            <>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">Four Beautiful Finishes.</p>
+              <h2 id="tap-finishes-product-title" className="mt-4 text-[clamp(2rem,4vw,3.7rem)] font-light leading-[1.1] tracking-tight">Find the perfect finish <span className="font-semibold">for your kitchen.</span></h2>
+              <p className="mt-5 max-w-md text-base leading-7 text-white/65">
+                Every kitchen is unique and we have four beautiful finishes to complement your design.
+                All mixers are built from high quality brass, with WaterMark certification and a four star WELS rating.
+              </p>
+            </>
+          ) : <><h2 id="three-way-tap-showcase-title" className="tracking-[-.055em] sm:tracking-[-.05em]">
             <span className="block text-[clamp(2.55rem,10vw,3.2rem)] font-light leading-[1.02] sm:text-[clamp(2.2rem,4.3vw,4.75rem)] sm:leading-[1.06]">Hot. Cold.</span>
             <span className="tap-ice-blue-shine mt-1 block text-[clamp(3rem,11.5vw,3.7rem)] font-semibold leading-[1.02] sm:text-[clamp(2.5rem,5.2vw,5.5rem)] sm:leading-[1.08]">Filtered.</span>
           </h2>
@@ -483,7 +494,7 @@ export function AnimatedThreeWayTapShowcase({ products }: Props) {
           </p>
           <div className="mt-7 hidden w-full flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:flex lg:justify-start">
             {purchaseRow}
-          </div>
+          </div></>}
         </div>
       </div>
       <style>{`
