@@ -38,7 +38,7 @@ export function ThreeWayTapSalesSections({ content }: { content: ProductContent 
           id="three-way-tap-editorial-title"
           className="mx-auto mt-5 max-w-4xl text-[clamp(2.1rem,4.5vw,4rem)] font-light leading-[1.12] tracking-tight text-black"
         >
-          Your new benchtop deserves <span className="font-semibold">a beautiful tap.</span>
+          Hot, Cold &amp; Filtered. <span className="font-semibold">All from one sleek tap.</span>
         </h2>
         <div className="mx-auto mt-7 max-w-3xl space-y-4 text-base leading-8 text-black/65">
           <p>
@@ -66,7 +66,7 @@ export function ThreeWayTapSalesSections({ content }: { content: ProductContent 
             id="three-way-tap-stone-title"
             className="mt-4 text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-tight tracking-tight text-black"
           >
-            Hot, Cold &amp; Filtered. <span className="font-semibold">All from one sleek tap.</span>
+            Your new benchtop deserves <span className="font-semibold">a beautiful tap.</span>
           </h3>
         </div>
         <div className="space-y-4 text-base leading-8 text-black/65">
@@ -86,48 +86,31 @@ export function ThreeWayTapSalesSections({ content }: { content: ProductContent 
         </div>
       </section>
 
-      <section className="mx-auto mt-14 max-w-5xl md:mt-20" aria-labelledby="three-way-tap-benefits-title">
-        <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">
-            Thoughtfully practical
-          </p>
-          <h3
-            id="three-way-tap-benefits-title"
-            className="mt-4 text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-tight tracking-tight text-black"
-          >
-            Three ways to use water. <span className="font-semibold">One sleek tap.</span>
-          </h3>
-        </div>
-        <div className="mt-10 grid gap-8 sm:grid-cols-3 sm:gap-10">
-          {[
-            {
-              number: '01',
-              title: 'Hot & cold',
-              description: 'All the everyday convenience of a kitchen mixer, exactly where you need it.',
-            },
-            {
-              number: '02',
-              title: 'Filtered drinking water',
-              description: 'A dedicated filtered-water pathway connects to a compatible under-sink filter or RO system.',
-            },
-            {
-              number: '03',
-              title: 'Matte black finish',
-              description: 'A bold, refined finishing touch for contemporary kitchens and coordinated fixtures.',
-            },
-          ].map((item) => (
-            <div key={item.number} className="border-t border-black/15 pt-5">
-              <span className="text-xs font-medium tracking-widest text-black/40">{item.number}</span>
-              <h4 className="mt-5 text-lg font-semibold tracking-tight text-black">{item.title}</h4>
-              <p className="mt-2 text-sm leading-7 text-black/60">{item.description}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mx-auto mt-12 max-w-3xl text-center text-sm leading-7 text-black/55">
-          Planning a new kitchen or replacing an existing mixer? Ask your licensed plumber
-          to confirm your benchtop opening, fittings and filtration compatibility before installation.
-          A filtration system is required for filtered-water delivery.
+      <section className="mx-auto mt-14 max-w-4xl text-center md:mt-20" aria-labelledby="three-way-tap-compatibility-title">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">
+          Easy filtration compatibility
         </p>
+        <h3
+          id="three-way-tap-compatibility-title"
+          className="mx-auto mt-4 max-w-3xl text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-tight tracking-tight text-black"
+        >
+          Already have a water filter? <span className="font-semibold">Keep it.</span>
+        </h3>
+        <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-8 text-black/65">
+          <p>
+            The dedicated filtered-water inlet uses a standard 1/4-inch connection,
+            designed to work with compatible under-sink filtration and reverse osmosis systems.
+          </p>
+          <p>
+            There is no need to purchase an Enviro Aqua filtration system.
+            Whether you already have a compatible filter installed or are choosing
+            one for your new kitchen, this tap gives you the freedom to use the system that suits you.
+          </p>
+          <p className="text-sm leading-7 text-black/55">
+            A filtration system is required to supply filtered water. Have your licensed plumber
+            confirm connection fittings and compatibility before installation.
+          </p>
+        </div>
       </section>
         <div className="mt-12 flex justify-center">
           <button type="button" onClick={showSpecifications}
