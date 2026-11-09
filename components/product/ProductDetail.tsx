@@ -335,15 +335,15 @@ export function ProductDetail({
         </div>
       </div>
 
-      {!isEditorialBubbler && <HeadlineSpecs specs={content.headlineSpecs} />}
+      {!isEditorialBubbler && product.handle !== THREE_WAY_TAP_HANDLE && <HeadlineSpecs specs={content.headlineSpecs} />}
       {product.handle === THREE_WAY_TAP_HANDLE && (
-        <ThreeWayTapSalesSections />
+        <ThreeWayTapSalesSections content={content} />
       )}
       {isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
         <HdpeBubblerDetails content={content} />
-      ) : (
+      ) : product.handle === THREE_WAY_TAP_HANDLE ? null : (
         <>
           <FullSpecs specs={content.fullSpecs} />
           <ProductOverview
