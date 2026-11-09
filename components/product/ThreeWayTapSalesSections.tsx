@@ -1,10 +1,11 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 import { VariantSkuSpec } from './VariantSkuSpec';
 
-export function ThreeWayTapSalesSections({ content }: { content: ProductContent }) {
+export function ThreeWayTapSalesSections({ content, finishShowcase }: { content: ProductContent; finishShowcase?: ReactNode }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
   const tabsRef = useRef<HTMLDivElement>(null);
 
@@ -85,6 +86,8 @@ export function ThreeWayTapSalesSections({ content }: { content: ProductContent 
           </p>
         </div>
       </section>
+
+      {finishShowcase}
 
       <section className="mx-auto mt-14 max-w-4xl text-center md:mt-20" aria-labelledby="three-way-tap-compatibility-title">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">
