@@ -14,6 +14,15 @@ const DIMENSION_IMAGES = [
 
 type TapFinish = (typeof DIMENSION_IMAGES)[number]['name'];
 
+const SHARED_DIMENSIONS = [
+  { label: 'Overall height', value: '41.5 cm' },
+  { label: 'Spout reach', value: '23.5 cm' },
+  { label: 'Outlet height', value: '28 cm' },
+  { label: 'Handle span', value: '14 cm' },
+  { label: 'Handle height', value: '11 cm' },
+  { label: 'Small handle height', value: '5 cm' },
+] as const;
+
 export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { content: ProductContent; finishShowcase?: ReactNode; finish: TapFinish }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -28,7 +37,8 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
     }
   };
 
-  const specs = (content.fullSpecs ?? []).filter((row) => row.label.trim().toLowerCase() !== 'sku');
+  const dimensionLabels = new Set<string>(SHARED_DIMENSIONS.map((row) => row.label.toLowerCase()));
+  const specs = (content.fullSpecs ?? []).filter((row) => row.label.trim().toLowerCase() !== 'sku' && !dimensionLabels.has(row.label.trim().toLowerCase()));
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
       <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex items-center justify-center gap-8 border-b border-black/10 sm:gap-16">
@@ -158,6 +168,18 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
               </div>
             ))}
           </dl>
+          <div className="mt-10 border-t border-black/10 pt-8">
+            <h3 className="text-lg font-semibold tracking-tight text-black">Dimensions</h3>
+            <p className="mt-2 text-sm leading-6 text-black/60">The same dimensions apply to all four finishes.</p>
+            <dl className="mt-5 grid gap-x-14 md:grid-cols-2">
+              {SHARED_DIMENSIONS.map((row) => (
+                <div key={row.label} className="flex items-start justify-between gap-5 border-b border-black/10 py-4 text-sm">
+                  <dt className="text-black/60">{row.label}</dt>
+                  <dd className="text-right font-medium text-black">{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
           {content.compliance?.note && <p className="mt-8 text-sm leading-7 text-black/55">{content.compliance.note}</p>}
         </section>
       </div>
