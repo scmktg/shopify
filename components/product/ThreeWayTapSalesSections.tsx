@@ -12,11 +12,12 @@ const DIMENSION_IMAGES = [
   { name: 'Brushed Nickel', src: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Brushed_Nickel_Faucet_Dimensions.png?v=1794219640' },
 ] as const;
 
-export function ThreeWayTapSalesSections({ content, finishShowcase }: { content: ProductContent; finishShowcase?: ReactNode }) {
+type TapFinish = (typeof DIMENSION_IMAGES)[number]['name'];
+
+export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { content: ProductContent; finishShowcase?: ReactNode; finish: TapFinish }) {
   const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
   const tabsRef = useRef<HTMLDivElement>(null);
-  const [dimensionFinish, setDimensionFinish] = useState<(typeof DIMENSION_IMAGES)[number]['name']>('Matte Black');
-  const selectedDiagram = DIMENSION_IMAGES.find((image) => image.name === dimensionFinish) ?? DIMENSION_IMAGES[0];
+  const selectedDiagram = DIMENSION_IMAGES.find((image) => image.name === finish) ?? DIMENSION_IMAGES[0];
 
   const showSpecifications = () => {
     setActiveTab('specifications');
@@ -127,19 +128,6 @@ export function ThreeWayTapSalesSections({ content, finishShowcase }: { content:
                 height={1080}
                 className="aspect-square h-auto w-full object-contain"
               />
-            </div>
-            <div className="mt-4 flex flex-wrap justify-center gap-2" role="group" aria-label="Choose a tap finish for the dimension drawing">
-              {DIMENSION_IMAGES.map((diagram) => (
-                <button
-                  key={diagram.name}
-                  type="button"
-                  aria-pressed={dimensionFinish === diagram.name}
-                  onClick={() => setDimensionFinish(diagram.name)}
-                  className={`min-h-10 rounded-full border px-3 py-2 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black ${dimensionFinish === diagram.name ? 'border-black bg-black text-white' : 'border-black/15 text-black/60 hover:border-black/50 hover:text-black'}`}
-                >
-                  {diagram.name}
-                </button>
-              ))}
             </div>
           </div>
         </div>
