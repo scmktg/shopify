@@ -39,18 +39,14 @@ export function ThreeWayTapSalesSections({ content, finishShowcase }: { content:
           id="three-way-tap-editorial-title"
           className="mx-auto mt-5 max-w-4xl text-[clamp(2.1rem,4.5vw,4rem)] font-light leading-[1.12] tracking-tight text-black"
         >
-          <span className="block sm:whitespace-nowrap">Hot, Cold &amp; Filtered.</span> <span className="block font-semibold">All from one sleek tap.</span>
+          <span className="block sm:whitespace-nowrap">Hot, Cold &amp; Filtered.</span>
+          <span className="block font-semibold">All from one sleek tap.</span>
         </h2>
-        <div className="mx-auto mt-7 max-w-3xl space-y-4 text-base leading-8 text-black/65">
+        <div className="mx-auto mt-7 max-w-3xl text-base leading-8 text-black/65">
           <p>
-            A beautiful new kitchen deserves a tap that feels just as considered.
-            With its sleek matte black finish and understated profile, this
-            3-way mixer brings a sophisticated finishing touch to your sink.
-          </p>
-          <p>
+            Your kitchen deserves the best. Available in four sleek finishes,
+            our 3 way mixer brings a sophisticated touch to your space.
             Enjoy hot, cold and filtered drinking water from one elegant tap.
-            No separate drinking-water faucet competing for space or disrupting
-            the clean lines of your benchtop.
           </p>
         </div>
       </section>
@@ -61,7 +57,7 @@ export function ThreeWayTapSalesSections({ content, finishShowcase }: { content:
       >
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">
-            One tap. One clean benchtop.
+            One Tap. One Clean Benchtop.
           </p>
           <h3
             id="three-way-tap-stone-title"
@@ -72,17 +68,16 @@ export function ThreeWayTapSalesSections({ content, finishShowcase }: { content:
         </div>
         <div className="space-y-4 text-base leading-8 text-black/65">
           <p>
-            When you have invested in stone, porcelain or another premium
-            benchtop material, the last thing you want is an unnecessary second
-            tap and another hole drilled beside your sink.
+            When you’ve invested in stone, porcelain, or another premium material,
+            the last thing you want is another hole drilled into your bench.
           </p>
           <p>
-            This 3-way mixer combines your everyday hot and cold water with a
-            dedicated connection for filtered drinking water, so a compatible
-            under-sink filtration system can use the same tap fixture.
+            This 3 way tap combines your everyday hot and cold water with a
+            dedicated connection for filtered drinking water.
+            No standalone filter tap needed.
           </p>
           <p className="font-medium text-black">
-            A cleaner look, less clutter and one beautifully coordinated finish.
+            A cleaner look with less clutter.
           </p>
         </div>
       </section>
@@ -91,27 +86,23 @@ export function ThreeWayTapSalesSections({ content, finishShowcase }: { content:
 
       <section className="mx-auto mt-14 max-w-4xl text-center md:mt-20" aria-labelledby="three-way-tap-compatibility-title">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">
-          Easy filtration compatibility
+          Standard filtration compatability
         </p>
         <h3
           id="three-way-tap-compatibility-title"
           className="mx-auto mt-4 max-w-3xl text-[clamp(1.75rem,3vw,2.75rem)] font-light leading-tight tracking-tight text-black"
         >
-          Your filtration system. <span className="font-semibold">Your choice.</span>
+          A simple, standard connection <span className="font-semibold">for Australian homes.</span>
         </h3>
         <div className="mx-auto mt-6 max-w-3xl space-y-4 text-base leading-8 text-black/65">
           <p>
-            The dedicated filtered-water inlet uses a standard 1/4-inch connection,
-            designed to work with compatible under-sink filtration and reverse osmosis systems.
+            Our 3 way tap uses a standard 1/4” connection, which means it will
+            suit standard under-sink and reverse osmosis systems.
           </p>
           <p>
-            There is no need to purchase an Enviro Aqua filtration system.
-            Whether you already have a compatible filter installed or are choosing
-            one for your new kitchen, this tap gives you the freedom to use the system that suits you.
-          </p>
-          <p className="text-sm leading-7 text-black/55">
-            A filtration system is required to supply filtered water. Have your licensed plumber
-            confirm connection fittings and compatibility before installation.
+            You do not need to purchase an Enviro Aqua system, and you are not
+            locked in to a peculiar size. This is a simple, straightforward
+            connection which can be handled by any licensed plumber.
           </p>
         </div>
       </section>
