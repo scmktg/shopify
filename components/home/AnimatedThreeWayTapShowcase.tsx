@@ -475,10 +475,12 @@ export function AnimatedThreeWayTapShowcase({ products, mode = 'home' }: Props) 
         <div className="order-1 flex min-w-0 w-full flex-col items-center justify-center text-center lg:order-2 lg:items-start lg:text-left">
           {isProduct ? (
             <>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">Four beautiful finishes</p>
-              <h2 id="tap-finishes-product-title" className="mt-4 text-[clamp(2rem,4vw,3.7rem)] font-light leading-[1.1] tracking-tight">Find the finish <span className="font-semibold">for your kitchen.</span></h2>
-              <p className="mt-5 max-w-md text-base leading-7 text-white/65">From timeless Polished Chrome and understated Brushed Nickel to statement Matte Black and warm Brushed Gold, explore four distinct finishes in the same kitchen.</p>
-              <p className="mt-4 max-w-md text-sm leading-7 text-white/55">Choose a colour below to see how it complements your space.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/50">Four Beautiful Finishes.</p>
+              <h2 id="tap-finishes-product-title" className="mt-4 text-[clamp(2rem,4vw,3.7rem)] font-light leading-[1.1] tracking-tight">Find the perfect finish <span className="font-semibold">for your kitchen.</span></h2>
+              <p className="mt-5 max-w-md text-base leading-7 text-white/65">
+                Every kitchen is unique and we have four beautiful finishes to complement your design.
+                All mixers are built from high quality brass, with WaterMark certification and a four star WELS rating.
+              </p>
             </>
           ) : <><h2 id="three-way-tap-showcase-title" className="tracking-[-.055em] sm:tracking-[-.05em]">
             <span className="block text-[clamp(2.55rem,10vw,3.2rem)] font-light leading-[1.02] sm:text-[clamp(2.2rem,4.3vw,4.75rem)] sm:leading-[1.06]">Hot. Cold.</span>
