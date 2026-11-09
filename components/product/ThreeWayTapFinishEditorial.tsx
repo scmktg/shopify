@@ -1,4 +1,5 @@
 import { AnimatedThreeWayTapShowcase } from '@/components/home/AnimatedThreeWayTapShowcase';
+import { ThreeWayTapDimensions } from './ThreeWayTapDimensions';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
 import type { Product, ProductCardData } from '@/types/product';
 
@@ -23,7 +24,7 @@ function toCardData(product: Product): ProductCardData {
   };
 }
 
-export async function ThreeWayTapFinishEditorial() {
+export async function ThreeWayTapFinishEditorial({ mode = 'finishes' }: { mode?: 'finishes' | 'dimensions' }) {
   const products = await Promise.all(FINISH_HANDLES.map(async (handle) => {
     const product = await getProductByHandle(handle);
     return product ? toCardData(product) : null;
@@ -32,5 +33,7 @@ export async function ThreeWayTapFinishEditorial() {
   // Avoid an empty animation if Shopify's finish images are unavailable.
   if (!products.some((product) => product?.featuredImage?.url)) return null;
 
-  return <AnimatedThreeWayTapShowcase products={products} mode="product" />;
+  return mode === 'dimensions'
+    ? <ThreeWayTapDimensions products={products} />
+    : <AnimatedThreeWayTapShowcase products={products} mode="product" />;
 }
