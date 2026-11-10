@@ -85,11 +85,13 @@ export default async function BathroomLandingPage() {
               </h1>
             </div>
             <div className="relative min-h-[320px] bg-[#E8E2D9] sm:min-h-[420px] md:min-h-full">
-              <ProductPhoto
-                product={packages[0] || bathroomTaps[0] || toilets[0]}
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Warm_Beige_Spa_Bathroom_with_Garden_Views.png?v=1794304367"
+                alt="Warm beige spa bathroom with garden views"
+                fill
                 priority
-                sizes="(min-width:768px) 50vw, 100vw"
-                className="object-contain p-8 sm:p-12 lg:p-16"
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
               />
             </div>
           </div>
