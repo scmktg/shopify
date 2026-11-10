@@ -93,9 +93,14 @@ export default async function BathroomLandingPage() {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
               />
-              <span className="absolute left-4 top-4 z-10 max-w-[calc(100%-2rem)] rounded-md bg-white/95 px-4 py-2.5 text-xs font-semibold tracking-[-0.01em] text-[#292929] shadow-sm backdrop-blur-sm sm:left-6 sm:top-6 sm:px-5 sm:py-3 sm:text-sm">
-                Complete packages from only $999
-              </span>
+              <div className="absolute bottom-4 right-4 z-10 rounded-xl border border-white/70 bg-white/95 px-5 py-4 text-[#292929] shadow-[0_8px_30px_rgba(0,0,0,0.09)] backdrop-blur-md sm:bottom-7 sm:right-7 sm:px-6 sm:py-5">
+                <span className="block text-[11px] font-medium tracking-[0.02em] text-stone-600 sm:text-xs">
+                  Complete packages from only
+                </span>
+                <span className="mt-1 block text-3xl font-bold leading-none tracking-[-0.055em] sm:text-4xl">
+                  $999
+                </span>
+              </div>
             </div>
           </div>
         </section>
