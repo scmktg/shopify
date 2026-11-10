@@ -93,13 +93,18 @@ export default async function BathroomLandingPage() {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute bottom-4 right-4 z-10 rounded-xl border border-white/70 bg-white/95 px-5 py-4 text-[#292929] shadow-[0_8px_30px_rgba(0,0,0,0.09)] backdrop-blur-md sm:bottom-7 sm:right-7 sm:px-6 sm:py-5">
-                <span className="block text-[11px] font-medium tracking-[0.02em] text-stone-600 sm:text-xs">
-                  Complete packages from only
+              <div className="absolute bottom-4 right-4 z-10 rounded-[20px] border border-white/70 bg-white/80 px-5 py-4 text-[#292929] shadow-[0_8px_32px_rgba(0,0,0,0.07)] ring-1 ring-black/[0.035] backdrop-blur-xl sm:bottom-7 sm:right-7 sm:rounded-[24px] sm:px-6 sm:py-5">
+                <span className="block text-xs font-medium tracking-[-0.01em] text-[#525252] sm:text-sm">
+                  Complete packages
                 </span>
-                <span className="mt-1 block text-3xl font-bold leading-none tracking-[-0.055em] sm:text-4xl">
-                  $999
-                </span>
+                <div className="mt-1 flex items-baseline gap-2">
+                  <span className="text-sm font-normal tracking-[-0.02em] text-[#525252] sm:text-base">
+                    From only
+                  </span>
+                  <span className="text-[2rem] font-semibold leading-none tracking-[-0.055em] text-[#1D1D1F] sm:text-[2.5rem]">
+                    $999
+                  </span>
+                </div>
               </div>
             </div>
           </div>
