@@ -55,12 +55,11 @@ export const DEPARTMENTS: Record<DepartmentId, {
     label: 'Bathroom Supplies',
     href: '/bathroom/',
     links: [
-      { label: 'Complete Packages', href: '/plumbing/bundles/' },
-      { label: 'Toilets', href: '/plumbing/toilets/' },
-      { label: 'Bathroom Tapware', href: '/plumbing/bathroom-taps/' },
-      { label: 'Kitchen Tapware', href: '/plumbing/kitchen-taps/' },
-      { label: 'Showers', href: '/plumbing/showers/' },
       { label: 'Accessories', href: '/plumbing/accessories/' },
+      { label: 'Bathroom Tapware', href: '/plumbing/bathroom-taps/' },
+      { label: 'Complete Packages', href: '/plumbing/bundles/' },
+      { label: 'Showers', href: '/plumbing/showers/' },
+      { label: 'Toilets', href: '/plumbing/toilets/' },
     ],
   },
 };
