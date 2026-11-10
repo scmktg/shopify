@@ -212,7 +212,7 @@ export function DepartmentNavigation() {
                       href={item.href}
                       className={clsx(
                         'inline-flex items-center gap-1 whitespace-nowrap py-3 font-medium text-black transition-colors hover:text-brand-blue focus-visible:underline',
-                        department === 'bathroom' ? 'px-2 text-sm' : 'px-2 text-sm',
+                        'px-2 text-sm',
                       )}
                     >
                       {item.label}
