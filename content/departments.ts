@@ -55,9 +55,12 @@ export const DEPARTMENTS: Record<DepartmentId, {
     label: 'Bathroom Supplies',
     href: '/bathroom/',
     links: [
+      { label: 'Complete Packages', href: '/plumbing/bundles/' },
       { label: 'Toilets', href: '/plumbing/toilets/' },
-      { label: 'Bathroom Taps', href: '/plumbing/bathroom-taps/' },
-      { label: 'Bathroom Packages', href: '/plumbing/bundles/' },
+      { label: 'Bathroom Tapware', href: '/plumbing/bathroom-taps/' },
+      { label: 'Kitchen Tapware', href: '/plumbing/kitchen-taps/' },
+      { label: 'Showers', href: '/plumbing/showers/' },
+      { label: 'Accessories', href: '/plumbing/accessories/' },
     ],
   },
 };
@@ -139,7 +142,9 @@ export function departmentForPath(pathname: string): DepartmentId {
   if (
     path.startsWith('/plumbing/toilets') ||
     path.startsWith('/plumbing/bathroom-taps') ||
-    path.startsWith('/plumbing/bundles')
+    path.startsWith('/plumbing/bundles') ||
+    path.startsWith('/plumbing/showers') ||
+    path.startsWith('/plumbing/accessories')
   ) return 'bathroom';
   return 'water';
 }
