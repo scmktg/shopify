@@ -80,8 +80,8 @@ export default async function BathroomLandingPage() {
         <section className="px-4 pt-6 sm:px-6 sm:pt-10 lg:px-8">
           <div className="mx-auto grid max-w-[1440px] overflow-hidden rounded-2xl bg-[#F7F5F1] md:min-h-[510px] md:grid-cols-[1fr_1fr] lg:min-h-[580px]">
             <div className="flex items-center px-7 py-14 sm:px-12 md:py-16 lg:px-20">
-              <h1 className="max-w-[650px] text-[clamp(2.9rem,5.1vw,5.65rem)] font-semibold leading-[1.06] tracking-[-0.055em] text-[#292929]">
-                Your dream bathroom. <span className="block mt-2 font-medium text-stone-600">For less.</span>
+              <h1 className="max-w-[650px] text-[clamp(2.9rem,5.1vw,5.65rem)] font-normal leading-[1.06] tracking-[-0.055em] text-[#292929]">
+                Your dream bathroom. <span className="mt-2 block font-bold text-[#292929]">For less.</span>
               </h1>
             </div>
             <div className="relative min-h-[320px] bg-[#E8E2D9] sm:min-h-[420px] md:min-h-full">
