@@ -19,7 +19,7 @@ export const revalidate = 60;
 const categories = [
   { label: 'Accessories', description: 'The finishing touches for your bathroom.', href: '/plumbing/accessories/', tag: 'accessories' },
   { label: 'Bathroom Tapware', description: 'The details that bring a room together.', href: '/plumbing/bathroom-taps/', tag: 'bathroom-taps' },
-  { label: 'Complete Packages', description: 'The complete look, made simple.', href: '/plumbing/bundles/', tag: 'bundles' },
+  { label: 'Packages', description: 'The complete look, made simple.', href: '/plumbing/bundles/', tag: 'bundles' },
   { label: 'Showers', description: 'Shower fittings for modern bathrooms.', href: '/plumbing/showers/', tag: 'showers' },
   { label: 'Toilets', description: 'Clean lines for modern spaces.', href: '/plumbing/toilets/', tag: 'toilets' },
 ] as const;
