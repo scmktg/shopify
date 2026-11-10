@@ -17,12 +17,11 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 const categories = [
-  { label: 'Complete Packages', description: 'The complete look, made simple.', href: '/plumbing/bundles/', tag: 'bundles' },
-  { label: 'Toilets', description: 'Clean lines for modern spaces.', href: '/plumbing/toilets/', tag: 'toilets' },
-  { label: 'Bathroom Tapware', description: 'The details that bring a room together.', href: '/plumbing/bathroom-taps/', tag: 'bathroom-taps' },
-  { label: 'Kitchen Tapware', description: 'Everyday design, beautifully considered.', href: '/plumbing/kitchen-taps/', tag: 'kitchen-taps' },
-  { label: 'Showers', description: 'Shower fittings for modern bathrooms.', href: '/plumbing/showers/', tag: 'showers' },
   { label: 'Accessories', description: 'The finishing touches for your bathroom.', href: '/plumbing/accessories/', tag: 'accessories' },
+  { label: 'Bathroom Tapware', description: 'The details that bring a room together.', href: '/plumbing/bathroom-taps/', tag: 'bathroom-taps' },
+  { label: 'Complete Packages', description: 'The complete look, made simple.', href: '/plumbing/bundles/', tag: 'bundles' },
+  { label: 'Showers', description: 'Shower fittings for modern bathrooms.', href: '/plumbing/showers/', tag: 'showers' },
+  { label: 'Toilets', description: 'Clean lines for modern spaces.', href: '/plumbing/toilets/', tag: 'toilets' },
 ] as const;
 
 function ProductPhoto({ product, className, sizes, priority = false }: {
@@ -61,7 +60,9 @@ export default async function BathroomLandingPage() {
     }),
   );
 
-  const [packages, toilets, bathroomTaps, kitchenTaps] = results;
+  const packages = results[2];
+  const toilets = results[4];
+  const bathroomTaps = results[1];
   const categoryImages = results.map((products) => products[0]);
   const featured = [...packages.slice(0, 6), ...toilets.slice(0, 2), ...bathroomTaps.slice(0, 2)];
   const packageStartingPrice = packages.length
@@ -122,11 +123,11 @@ export default async function BathroomLandingPage() {
             <h2 id="bathroom-categories-title" className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-stone-950 sm:text-5xl">Everything for a beautiful bathroom.</h2>
             <p className="mt-4 text-base text-stone-600">Discover your next bathroom upgrade, from a single finishing touch to a complete coordinated space.</p>
           </div>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-3 lg:grid-cols-6 md:gap-6">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-3 lg:grid-cols-5 md:gap-6">
             {categories.map((category, index) => (
               <Link key={category.href} href={category.href} className="group block rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue">
                 <div className="relative aspect-[4/5] overflow-hidden bg-[#F4F1ED]">
-                  <ProductPhoto product={categoryImages[index]} sizes="(min-width:1024px) 15vw, (min-width:640px) 30vw, 50vw" className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.045] sm:p-7" />
+                  <ProductPhoto product={categoryImages[index]} sizes="(min-width:1024px) 18vw, (min-width:640px) 30vw, 50vw" className="object-contain p-5 transition-transform duration-500 group-hover:scale-[1.045] sm:p-7" />
                 </div>
                 <div className="mt-4 flex items-start justify-between gap-2">
                   <div>
