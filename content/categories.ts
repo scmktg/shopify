@@ -74,7 +74,7 @@ export const CATEGORIES: ReadonlyArray<Category> = [
       { slug: 'toilets', label: 'Toilets' },
       { slug: 'showers', label: 'Showers' },
       { slug: 'accessories', label: 'Accessories' },
-      { slug: 'bundles', label: 'Complete Packages' },
+      { slug: 'bundles', label: 'Packages' },
       { slug: 'parts', label: 'Parts' },
     ],
   },
