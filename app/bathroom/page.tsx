@@ -93,6 +93,9 @@ export default async function BathroomLandingPage() {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
               />
+              <span className="absolute left-4 top-4 z-10 max-w-[calc(100%-2rem)] rounded-md bg-white/95 px-4 py-2.5 text-xs font-semibold tracking-[-0.01em] text-[#292929] shadow-sm backdrop-blur-sm sm:left-6 sm:top-6 sm:px-5 sm:py-3 sm:text-sm">
+                Complete packages from only $999
+              </span>
             </div>
           </div>
         </section>
