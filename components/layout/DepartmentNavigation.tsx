@@ -198,7 +198,7 @@ export function DepartmentNavigation() {
                 aria-hidden={!isActive}
                 inert={!isActive}
                 className={clsx(
-                  'absolute inset-0 flex items-center justify-center gap-1 whitespace-nowrap transition-[transform,opacity,visibility] duration-350 ease-in-out motion-reduce:transition-none',
+                  'absolute inset-0 flex items-center justify-center gap-3 whitespace-nowrap transition-[transform,opacity,visibility] duration-350 ease-in-out motion-reduce:transition-none',
                   isActive
                     ? 'visible translate-x-0 opacity-100'
                     : isWater
@@ -212,7 +212,7 @@ export function DepartmentNavigation() {
                       href={item.href}
                       className={clsx(
                         'inline-flex items-center gap-1 whitespace-nowrap py-3 font-medium text-black transition-colors hover:text-brand-blue focus-visible:underline',
-                        department === 'bathroom' ? 'px-1.5 text-xs 2xl:px-2 2xl:text-sm' : 'px-2 text-sm',
+                        department === 'bathroom' ? 'px-2 text-sm' : 'px-2 text-sm',
                       )}
                     >
                       {item.label}
