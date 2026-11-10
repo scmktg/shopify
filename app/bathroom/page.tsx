@@ -77,39 +77,20 @@ export default async function BathroomLandingPage() {
       ]} />
 
       <main>
-        <section className="bg-[#F7F5F1]">
-          <div className="mx-auto grid max-w-[1440px] items-center gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14 lg:px-12 lg:py-20">
-            <div className="max-w-[630px]">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-stone-600">Enviro Aqua / Bathrooms</p>
-              <h1 className="mt-6 text-[clamp(2.8rem,5.2vw,5.8rem)] font-semibold leading-[1.03] tracking-[-0.055em] text-[#292929]">
-                Your dream bathroom. <span className="text-stone-500">Without the showroom price.</span>
+        <section className="px-4 pt-6 sm:px-6 sm:pt-10 lg:px-8">
+          <div className="mx-auto grid max-w-[1440px] overflow-hidden rounded-2xl bg-[#F7F5F1] md:min-h-[510px] md:grid-cols-[1fr_1fr] lg:min-h-[580px]">
+            <div className="flex items-center px-7 py-14 sm:px-12 md:py-16 lg:px-20">
+              <h1 className="max-w-[650px] text-[clamp(2.7rem,5vw,5.5rem)] font-semibold leading-[1.05] tracking-[-0.055em] text-[#292929]">
+                Your dream bathroom. <span className="text-stone-500">Without the expensive price tag.</span>
               </h1>
-              <p className="mt-7 max-w-lg text-base leading-8 text-stone-700 sm:text-lg">
-                Beautifully coordinated bathroom packages, contemporary tapware and toilets. Modern design and great value, all in one place.
-              </p>
-              <div className="mt-9 flex flex-wrap items-center gap-5">
-                <Link href="/plumbing/bundles/" className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-[#292929] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-stone-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
-                  Shop bathroom packages <ArrowUpRight size={17} aria-hidden="true" />
-                </Link>
-                <Link href="#bathroom-collections" className="inline-flex min-h-12 items-center gap-1 text-sm font-semibold text-stone-800 underline underline-offset-4 hover:text-brand-blue">
-                  Explore the range <ArrowUpRight size={16} aria-hidden="true" />
-                </Link>
-              </div>
-              {formattedStartingPrice && <p className="mt-7 text-sm text-stone-600">Bathroom packages from <strong className="text-stone-950">{formattedStartingPrice}</strong></p>}
             </div>
-            <div className="grid min-h-[380px] grid-cols-[1.15fr_0.85fr] gap-3 sm:min-h-[540px] sm:gap-4" aria-label="Selected Enviro Aqua bathroom products">
-              <div className="relative overflow-hidden rounded-[4px] bg-white">
-                <ProductPhoto product={packages[0] || bathroomTaps[0]} priority sizes="(min-width:1024px) 33vw, 55vw" className="object-contain p-5 transition-transform duration-700 hover:scale-[1.025] sm:p-10" />
-                <span className="absolute bottom-4 left-4 bg-white/90 px-3 py-2 text-[11px] font-medium text-stone-700 backdrop-blur-sm sm:bottom-6 sm:left-6">Coordinated bathroom packages</span>
-              </div>
-              <div className="grid grid-rows-2 gap-3 sm:gap-4">
-                <div className="relative overflow-hidden rounded-[4px] bg-[#E8E2D9]">
-                  <ProductPhoto product={bathroomTaps[0] || packages[1]} sizes="(min-width:1024px) 18vw, 35vw" className="object-contain p-4 sm:p-8" />
-                </div>
-                <div className="relative overflow-hidden rounded-[4px] bg-[#EDEAE5]">
-                  <ProductPhoto product={toilets[0] || packages[2]} sizes="(min-width:1024px) 18vw, 35vw" className="object-contain p-4 sm:p-8" />
-                </div>
-              </div>
+            <div className="relative min-h-[320px] bg-[#E8E2D9] sm:min-h-[420px] md:min-h-full">
+              <ProductPhoto
+                product={packages[0] || bathroomTaps[0] || toilets[0]}
+                priority
+                sizes="(min-width:768px) 50vw, 100vw"
+                className="object-contain p-8 sm:p-12 lg:p-16"
+              />
             </div>
           </div>
         </section>
