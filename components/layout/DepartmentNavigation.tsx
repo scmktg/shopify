@@ -210,7 +210,10 @@ export function DepartmentNavigation() {
                   <div key={item.href} className="group relative" onMouseEnter={() => showMenu(item.children?.length ? item.href : null)} onFocus={() => showMenu(item.children?.length ? item.href : null)}>
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-1 px-2 py-3 text-sm font-medium text-black transition-colors hover:text-brand-blue focus-visible:underline"
+                      className={clsx(
+                        'inline-flex items-center gap-1 whitespace-nowrap py-3 font-medium text-black transition-colors hover:text-brand-blue focus-visible:underline',
+                        department === 'bathroom' ? 'px-1.5 text-xs 2xl:px-2 2xl:text-sm' : 'px-2 text-sm',
+                      )}
                     >
                       {item.label}
                       {!!item.children?.length && <ChevronDown size={14} aria-hidden="true" />}
