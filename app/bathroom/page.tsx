@@ -76,12 +76,12 @@ export default async function BathroomLandingPage() {
         breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Bathroom Supplies', path: '/bathroom/' }]),
       ]} />
 
-      <main>
+      <main style={{ fontFamily: '"Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif' }}>
         <section className="px-4 pt-6 sm:px-6 sm:pt-10 lg:px-8">
           <div className="mx-auto grid max-w-[1440px] overflow-hidden rounded-2xl bg-[#F7F5F1] md:min-h-[510px] md:grid-cols-[1fr_1fr] lg:min-h-[580px]">
             <div className="flex items-center px-7 py-14 sm:px-12 md:py-16 lg:px-20">
-              <h1 className="max-w-[650px] text-[clamp(2.7rem,5vw,5.5rem)] font-semibold leading-[1.05] tracking-[-0.055em] text-[#292929]">
-                Your dream bathroom. <span className="text-stone-500">Without the expensive price tag.</span>
+              <h1 className="max-w-[650px] text-[clamp(3rem,5.3vw,6rem)] font-normal leading-[1.04] tracking-[-0.045em] text-[#292929]" style={{ fontFamily: '"Iowan Old Style", Baskerville, Georgia, serif' }}>
+                Your dream bathroom. <span className="block mt-3 text-stone-600">For less.</span>
               </h1>
             </div>
             <div className="relative min-h-[320px] bg-[#E8E2D9] sm:min-h-[420px] md:min-h-full">
@@ -100,7 +100,7 @@ export default async function BathroomLandingPage() {
         <section id="bathroom-collections" aria-labelledby="bathroom-categories-title" className="mx-auto max-w-[1440px] px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
           <div className="mb-9 max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Explore the collection</p>
-            <h2 id="bathroom-categories-title" className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-stone-950 sm:text-5xl">Everything for a beautiful bathroom.</h2>
+            <h2 id="bathroom-categories-title" className="mt-3 text-3xl font-normal tracking-[-0.035em] text-stone-950 sm:text-5xl" style={{ fontFamily: '"Iowan Old Style", Baskerville, Georgia, serif' }}>Everything for a beautiful bathroom.</h2>
             <p className="mt-4 text-base text-stone-600">Discover your next bathroom upgrade, from a single finishing touch to a complete coordinated space.</p>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-9 md:grid-cols-4 md:gap-6">
@@ -128,7 +128,7 @@ export default async function BathroomLandingPage() {
             </div>
             <div className="max-w-lg">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">The smarter way to renovate</p>
-              <h2 id="bathroom-package-title" className="mt-4 text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-stone-950 sm:text-5xl">A complete look. One simple price.</h2>
+              <h2 id="bathroom-package-title" className="mt-4 text-4xl font-normal leading-[1.08] tracking-[-0.045em] text-stone-950 sm:text-5xl" style={{ fontFamily: '"Iowan Old Style", Baskerville, Georgia, serif' }}>A complete look. One simple price.</h2>
               <p className="mt-6 text-base leading-8 text-stone-700">Take the guesswork out of choosing fixtures. Explore coordinated bathroom packages that make it easier to create a considered, consistent look.</p>
               {formattedStartingPrice && <p className="mt-6 text-2xl font-semibold tracking-tight text-stone-950">Packages from {formattedStartingPrice}</p>}
               <Link href="/plumbing/bundles/" className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-lg bg-[#292929] px-6 py-3 text-sm font-semibold text-white hover:bg-stone-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
@@ -144,7 +144,7 @@ export default async function BathroomLandingPage() {
             <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Discover your favourites</p>
-                <h2 id="bathroom-featured-heading" className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-stone-950 sm:text-5xl">Shop the bathroom collection.</h2>
+                <h2 id="bathroom-featured-heading" className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-stone-950 sm:text-5xl" style={{ fontFamily: '"Iowan Old Style", Baskerville, Georgia, serif' }}>Shop the bathroom collection.</h2>
               </div>
               <Link href="/plumbing/bundles/" className="inline-flex items-center gap-1 text-sm font-semibold text-stone-800 underline underline-offset-4 hover:text-brand-blue">
                 View bathroom packages <ArrowUpRight size={16} aria-hidden="true" />
