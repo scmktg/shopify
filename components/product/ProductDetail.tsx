@@ -31,7 +31,7 @@ import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
 import { ThreeWayTapFinishEditorial } from './ThreeWayTapFinishEditorial';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
-import { shouldShowWaterMarkLeadFreeBadge, shouldShowWaterMarkTapBadge } from '@/lib/products/watermarkLeadFreeBadge';
+import { shouldShowWaterMarkLeadFreeBadge, shouldShowWaterMarkTapBadge, shouldShowWaterMarkToiletBadge } from '@/lib/products/watermarkLeadFreeBadge';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const SHIPPING_QUOTE_ONLY_HANDLE = 'commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment';
@@ -104,7 +104,7 @@ export function ProductDetail({
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
-  const isRev03Toilet = product.handle === 'rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce';
+  const isWaterMarkToilet = shouldShowWaterMarkToiletBadge(product.handle) && content.compliance?.watermark?.status === 'certified';
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
   const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
@@ -146,10 +146,10 @@ export function ProductDetail({
             cinematicVideoOverlay={subcategory === 'bubblers'}
             showChilledFilteredBadges={isBubbler}
             title={product.title}
-            showLeadFreeBadge={isRev03Toilet || isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            showLeadFreeBadge={isWaterMarkToilet || isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
-            watermarkLeadFree={!isRev03Toilet}
-            watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
+            watermarkLeadFree={!isWaterMarkToilet}
+            watermarkPosition={isWaterMarkToilet || isKitchenTap || isBubbler ? 'right' : 'left'}
           />
         </div>
 
