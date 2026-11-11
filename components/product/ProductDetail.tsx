@@ -106,10 +106,11 @@ export function ProductDetail({
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
   const isWaterMarkToilet = shouldShowWaterMarkToiletBadge(product.handle) && content.compliance?.watermark?.status === 'certified';
-  const isRev03Toilet = product.handle === 'rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce';
+  const isRegionalDeliveryToilet = product.handle === 'rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce' ||
+    product.handle === 'rimless-watermark-wash-down-toilet-soft-close-seat-wels-rated-local-pickup-centr';
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
-  const useRefinedPurchaseLayout = isKitchenTap || isBubbler || isRev03Toilet;
+  const useRefinedPurchaseLayout = isKitchenTap || isBubbler || isRegionalDeliveryToilet;
   // Use natural wrapping for a single customer-facing bubbler heading.
   const bubblerDisplayTitle = ({
     'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler',
@@ -140,7 +141,7 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className={isBubbler || isRev03Toilet ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
+      <div className={isBubbler || isRegionalDeliveryToilet ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
@@ -155,13 +156,13 @@ export function ProductDetail({
           />
         </div>
 
-        <div className={isBubbler || isRev03Toilet ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+        <div className={isBubbler || isRegionalDeliveryToilet ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
               HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
             </p>
           )}
-          {isRev03Toilet && (
+          {isRegionalDeliveryToilet && (
             <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-[11px]">
               RIMLESS TOILET SUITES
             </p>
@@ -171,7 +172,7 @@ export function ProductDetail({
               DRINKING WATER FOUNTAINS
             </p>
           )}
-          <h1 className={isBubbler || isRev03Toilet
+          <h1 className={isBubbler || isRegionalDeliveryToilet
             ? "text-[1.65rem] font-semibold leading-[1.18] tracking-[-0.03em] text-neutral-900 sm:text-[1.9rem] lg:text-[2.05rem]"
             : useRefinedPurchaseLayout
               ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
@@ -198,10 +199,10 @@ export function ProductDetail({
               fallbackPrice={product.priceRange.minVariantPrice}
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
-              hideWholeDollarCents={subcategory === 'bubblers' || isRev03Toilet}
-              showDispatchCountdown={!isKitchenTap && !isRev03Toilet && !(isBubbler && product.metafields.shipping_tier === 'T5')}
+              hideWholeDollarCents={subcategory === 'bubblers' || isRegionalDeliveryToilet}
+              showDispatchCountdown={!isKitchenTap && !isRegionalDeliveryToilet && !(isBubbler && product.metafields.shipping_tier === 'T5')}
               sleek={useRefinedPurchaseLayout}
-              compactLayout={isBubbler || isRev03Toilet}
+              compactLayout={isBubbler || isRegionalDeliveryToilet}
             />
           )}
 
@@ -320,7 +321,7 @@ export function ProductDetail({
 
 
           {!requiresShippingQuote && (
-            isRev03Toilet ? (
+            isRegionalDeliveryToilet ? (
               <section aria-label="Delivery and collection" className="mt-5 border-y border-neutral-200 py-3 text-sm text-neutral-800">
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
                   <Truck aria-hidden="true" className="h-4 w-4 shrink-0 text-emerald-700" />
