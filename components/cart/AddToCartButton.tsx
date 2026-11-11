@@ -41,6 +41,8 @@ interface AddToCartButtonProps {
   enableBuyNow?: boolean;
   /** Only commercial bubbler PDPs offer free installation referral assistance. */
   offerInstallationAssistance?: boolean;
+  /** Available for commercial bubbler PDPs only. */
+  instantQuoteProductHandle?: string;
 }
 
 const MAX_QTY = 99;
@@ -55,6 +57,7 @@ export function AddToCartButton({
   integratedStockStatus = false,
   enableBuyNow = false,
   offerInstallationAssistance = false,
+  instantQuoteProductHandle,
 }: AddToCartButtonProps) {
   const { addItem, addItems, buyNow, buyNowItems, isMutating } = useCart();
   const [busy, setBusy] = useState(false);
@@ -562,6 +565,23 @@ export function AddToCartButton({
           </button>
         )}
       </div>
+      {instantQuoteProductHandle && (
+        <div className="rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-4">
+          <p className="text-sm font-semibold text-neutral-900">Buying for a school, business or organisation?</p>
+          <p className="mt-1 text-xs leading-5 text-neutral-600">Use your selected quantity to create an instant downloadable quote. Convert it to an invoice and pay securely when ready.</p>
+          <button
+            type="button"
+            disabled={actionsUnavailable || anyBusy}
+            onClick={() => {
+              const query = new URLSearchParams({product: instantQuoteProductHandle, variant: variantId, quantity: String(quantity)});
+              window.location.assign('/quotes?' + query.toString());
+            }}
+            className="mt-3 w-full rounded-lg border border-neutral-900 bg-white px-4 py-3 text-sm font-semibold text-neutral-900 transition-colors hover:bg-neutral-100 disabled:cursor-not-allowed disabled:border-neutral-300 disabled:text-neutral-400"
+          >
+            Instant Quote · {quantity} {quantity === 1 ? 'unit' : 'units'}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
