@@ -112,9 +112,9 @@ export function ProductDetail({
   // Use natural wrapping for a single customer-facing bubbler heading.
   const bubblerDisplayTitle = ({
     'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler',
-    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain with Bubbler & Tap',
-    'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain with Bubbler & Tap',
-  } as Record<string, string>)[product.handle] ?? product.title.replace(/\s*\|\s*Chilled\s*&\s*Filtered\s*\|\s*20\s*L\s*\/\s*hr\s*$/i, '');
+    'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain with Bubbler & Tap | 20 L/hr',
+    'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain with Bubbler & Tap | 20 L/hr',
+  } as Record<string, string>)[product.handle] ?? product.title;
 
   return (
     <VariantSelectionProvider
@@ -160,7 +160,7 @@ export function ProductDetail({
           )}
         </div>
 
-        <div className={isBubbler ? "min-w-0 md:flex md:self-stretch md:flex-col md:justify-between md:gap-3" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+        <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
               HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
