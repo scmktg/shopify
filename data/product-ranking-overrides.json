@@ -541,17 +541,10 @@
       "watermark": {
         "status": "certified",
         "licenceNumber": null,
-        "specificationNumber": null,
         "certifier": null,
         "validUntil": null
       },
-      "wels": {
-        "rating": 4,
-        "registrationNumber": "L07489",
-        "averageFlushLitres": 3.5,
-        "fullFlushLitres": 4.5,
-        "halfFlushLitres": 3
-      },
+      "wels": null,
       "note": "WaterMark certified. WELS 4-star rated, registration L07489; 3.5 L average flush (4.5 L full / 3 L half)."
     },
     "seo": {
