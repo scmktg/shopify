@@ -57,6 +57,7 @@ export type QuoteItem = {
   variant: string;
   quantity: number;
   unit_price_cents: number;
+  address_2_quantity?: number;
 };
 
 export type SavedQuote = {
@@ -78,6 +79,8 @@ export type SavedQuote = {
   access_token_digest?: string | null;
   delivery_address?: {street:string;address_line_2?:string|null;business_name?:string|null;site_contact?:string|null;suburb:string;state:string;postcode:string;abn?:string} | null;
   shipping_selection?: {title:string;deliveryMethodType:string;costCents:number}|null;
+  second_delivery_address?: {street:string;address_line_2?:string|null;business_name?:string|null;site_contact?:string|null;suburb:string;state:string;postcode:string}|null;
+  second_shipping_selection?: {title:string;deliveryMethodType:string;costCents:number}|null;
   freight_cents?: number | null;
   included_gst_cents?: number | null;
   invoice_reference?: string | null;
