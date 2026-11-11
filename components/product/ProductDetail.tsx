@@ -194,6 +194,7 @@ export function ProductDetail({
               showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
               sleek={useRefinedPurchaseLayout}
               compactLayout={isBubbler}
+              instantQuoteProductHandle={isBubbler ? product.handle : undefined}
             />
           )}
 
