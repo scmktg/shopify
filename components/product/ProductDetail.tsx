@@ -337,7 +337,7 @@ export function ProductDetail({
                   <span className="text-neutral-600">Wyong NSW 2259</span>
                 </div>
                 <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">
-                  We cannot ship to any other regions. Please confirm your address is within an eligible delivery area before ordering.
+                  At this time, we cannot ship this product to other regions. Please confirm your address is eligible before ordering.
                 </p>
               </section>
             ) : isKitchenTap ? (
