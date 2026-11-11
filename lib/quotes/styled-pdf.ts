@@ -40,11 +40,14 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  line(q.organisation,L,top+19,10,true);
  line(q.contact_name,L,top+37,9);
  line(q.customer_email,L,top+52,9);
- let cy=top+69;
+ const leftBottom=top+68;
  const a=q.delivery_address;
- if(a){line('DELIVERY TO',L,cy+10,9,true,grey);cy+=27;for(const row of [...(a.business_name?[a.business_name]:[]),...(a.site_contact?['Site contact: '+a.site_contact]:[]),a.street,...(a.address_line_2?[a.address_line_2]:[]),a.suburb+' '+a.state+' '+a.postcode,...(a.abn?['Customer ABN: '+a.abn]:[])]){for(const part of wrap(row,260)){line(part,L,cy,9);cy+=14;}}}
- if(q.shopify_order_name)line('Shopify order: '+q.shopify_order_name,340,top,8.5,false,grey,{right:R});
- top=Math.max(cy+16,290);
+ const deliveryX=320;
+ line('DELIVERY TO',deliveryX,top,9,true,grey);
+ let cy=top+19;
+ if(a){for(const row of [...(a.business_name?[a.business_name]:[]),...(a.site_contact?['Site contact: '+a.site_contact]:[]),a.street,...(a.address_line_2?[a.address_line_2]:[]),a.suburb+' '+a.state+' '+a.postcode,...(a.abn?['Customer ABN: '+a.abn]:[])]){for(const part of wrap(row,R-deliveryX,9)){line(part,deliveryX,cy,9);cy+=14;}}}
+ if(q.shopify_order_name){line('Shopify order: '+q.shopify_order_name,deliveryX,cy+5,8,false,grey);cy+=17;}
+ top=Math.max(leftBottom,cy)+16;
  const tableHeader=()=>{
   line('PRODUCT',L,top,9,true);line('QTY',348,top,9,true);line('UNIT',424,top,9,true);line('TOTAL',R-38,top,9,true);
   hline(top+18,L,R,1.6,black);top+=29;
