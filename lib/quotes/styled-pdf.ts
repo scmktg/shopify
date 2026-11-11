@@ -31,7 +31,7 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
   line('Reference: '+(q.invoice_reference||q.reference),R-250,72,8.5,false,grey,{right:R});
   line('Issued: '+date(q.invoice_created_at||q.created_at),R-250,89,8.5,false,grey,{right:R});
   if(!q.invoice_reference)line('Valid until: '+date(q.expires_at),R-250,106,8.5,false,grey,{right:R});
-  if(q.invoice_reference)line(q.invoice_status==='cancelled'?'CANCELLED':q.invoice_status==='refunded'?'REFUNDED':q.invoice_status==='paid'?'PAID':'UNPAID',R-110,92,10,true,q.invoice_status==='paid'?rgb(.09,.48,.21):rgb(.6,.12,.12),{right:R});
+  if(q.invoice_reference)line(q.invoice_status==='cancelled'?'CANCELLED':q.invoice_status==='refunded'?'REFUNDED':q.invoice_status==='paid'?'PAID':'UNPAID',R-110,123,10,true,q.invoice_status==='paid'?rgb(.09,.48,.21):rgb(.6,.12,.12),{right:R});
   hline(154,L,R,1.5,black);
  };
  const next=()=>{page=doc.addPage([W,H]);header();return 179;};
