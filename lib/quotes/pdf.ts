@@ -31,7 +31,7 @@ export function quotePdf(quote: SavedQuote, onlineUrl?: string): Buffer {
   const invoice=Boolean(quote.invoice_reference);
   line('ENVIRO AQUA',20,true,25);
   line('6/45 Amsterdam Circuit, Wyong NSW 2259',9,false,13);
-  line('(02) 8772 8162  |  info@enviroaqua.com.au  |  www.enviroaqua.com.au',9,false,13);
+  line('(02) 8772 8162  .  info@enviroaqua.com.au',9,false,13);
   line('ABN: 24 638 197 734',9,false,26);
   line(invoice?'INVOICE':'QUOTATION',17,true,24);
   line('Reference: '+(quote.invoice_reference||quote.reference),10,true,17);

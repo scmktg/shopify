@@ -4,7 +4,7 @@ import type { SavedQuote } from './server';
 const money=(n:number)=>new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD'}).format(n/100);
 const date=(v:string)=>new Date(v).toLocaleDateString('en-AU',{timeZone:'Australia/Sydney'});
 const black=rgb(.09,.09,.11),grey=rgb(.34,.34,.38),light=rgb(.86,.86,.88),white=rgb(1,1,1);
-const plain=(s:unknown)=>String(s??'').normalize('NFKD').replace(/[^\x20-\x7E]/g,'?');
+const plain=(s:unknown)=>String(s??'').replace(/·/g,'.').normalize('NFKD').replace(/[^\x20-\x7E]/g,'?');
 export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Promise<Uint8Array>{
  const doc=await PDFDocument.create();
  doc.setTitle((q.invoice_reference?'Invoice ':'Quotation ')+(q.invoice_reference||q.reference));doc.setAuthor('Enviro Aqua');
@@ -26,7 +26,7 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  const header=()=>{
   const logoSize=logo.scaleToFit(160,48);
   page.drawImage(logo,{x:L,y:H-46-logoSize.height,width:logoSize.width,height:logoSize.height});
-  ['6/45 Amsterdam Circuit, Wyong NSW 2259','(02) 8772 8162','info@enviroaqua.com.au','www.enviroaqua.com.au','ABN: 24 638 197 734'].forEach((t,i)=>line(t,L,105+i*12,8.5,false,grey));
+  ['6/45 Amsterdam Circuit, Wyong NSW 2259','(02) 8772 8162  ·  info@enviroaqua.com.au','ABN: 24 638 197 734'].forEach((t,i)=>line(t,L,105+i*12,8.5,false,grey));
   line(q.invoice_reference?'INVOICE':'QUOTATION',R-185,49,12,true,black,{right:R});
   line(q.invoice_reference||q.reference,R-250,72,8.5,false,grey,{right:R});
   if(q.invoice_reference)line(q.invoice_status==='cancelled'?'CANCELLED':q.invoice_status==='refunded'?'REFUNDED':q.invoice_status==='paid'?'PAID':'UNPAID',R-110,92,10,true,q.invoice_status==='paid'?rgb(.09,.48,.21):rgb(.6,.12,.12),{right:R});
