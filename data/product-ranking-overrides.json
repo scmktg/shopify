@@ -632,5 +632,104 @@
       "description": "Rimless wash-down toilet with soft-close seat. WaterMark certified, WELS 4-star, registration L07487. Free delivery to Newcastle, Central Coast, Sydney and Wollongong only.",
       "ogImage": null
     }
+  },
+  "toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels": {
+    "shortDescription": "Two-piece rimless ceramic toilet with P-trap - R&T fittings, UF soft-close toilet seat, 640×370×800mm. WaterMark certified, WELS rated. The standard mid-range residential toilet suite. Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only, or pickup in Wyong NSW.",
+    "description": "A **two-piece rimless ceramic toilet suite** built around standard R&T fittings and a UF (urea-formaldehyde) soft-close seat - the mid-range residential toilet that ticks every conventional buying-decision box: rimless hygiene, certified, water-efficient, soft-close, and built from high-temperature kiln-fired ceramic.\n\n## Two-Piece Construction\n\nThe two-piece format separates the cistern from the bowl, joined at install with a flange and gasket. Two practical advantages over single-piece designs:\n\n- **Easier to transport and install** - two manageable pieces rather than one heavy assembly\n- **Cheaper replacement** if either the cistern or bowl is damaged independently\n- **Standard R&T fittings** - the most widely-stocked Australian valve and inlet brand, so replacement parts are available everywhere\n\n## Material and Construction\n\nThe toilet bodies are kiln-fired in a computer-controlled kiln at temperatures above **1,260°C** - the high-temperature process produces ceramic with low porosity and consistent dimensions. Low-porosity ceramic resists staining, doesn't absorb cleaning chemicals over time, and maintains its surface finish for the life of the toilet.\n\n## Rimless Hygiene\n\nNo hidden under-rim cavity. Water enters the bowl from a visible flow channel - every wettable surface accessible for cleaning.\n\n## UF Soft-Close Seat\n\nThe seat is **urea-formaldehyde (UF) plastic** with a soft-close hinge. UF is the standard premium seat material - stable in dimension over years, doesn't yellow under bathroom lighting, and survives standard cleaning chemicals without surface degradation. Soft-close prevents slam damage and noise.\n\n## Dimensions and Plumbing\n\n- **Overall:** 640 × 370 × 800 mm\n- **P-trap:** 180 mm centre height (wall-exit)\n- **S-trap:** 100 / 250 mm centre offset (floor-exit)\n- **Item No:** 8305\n\nIncludes connector pipe between bowl and cistern.\n\n## Compliance\n\n**WaterMark certified** and **WELS rated** per supplier specification. Your licensed plumber can install this on a mains supply line and issue a certificate of compliance. WaterMark certification confirmed. WELS registration: **L07488**.\n\n## Delivery & pickup\n\n**Free delivery is available to Newcastle, Central Coast, Sydney and Wollongong regions only.** At this time, we cannot ship this product to other regions. Please confirm your address is eligible before ordering.\n\nLocal pickup is also available from **Wyong NSW 2259**.",
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Two-piece rimless ceramic toilet suite"
+      },
+      {
+        "label": "Item No",
+        "value": "8305"
+      },
+      {
+        "label": "Dimensions",
+        "value": "640 × 370 × 800 mm"
+      },
+      {
+        "label": "P-trap",
+        "value": "180 mm centre height (wall exit)"
+      },
+      {
+        "label": "S-trap",
+        "value": "100 / 250 mm centre offset (floor exit)"
+      },
+      {
+        "label": "Flushing system",
+        "value": "Rimless"
+      },
+      {
+        "label": "Toilet seat",
+        "value": "UF (urea-formaldehyde), soft-close"
+      },
+      {
+        "label": "Fittings",
+        "value": "R&T valves and inlet"
+      },
+      {
+        "label": "Connector pipe",
+        "value": "Included"
+      },
+      {
+        "label": "Material",
+        "value": "Kiln-fired ceramic, 1,260°C+"
+      },
+      {
+        "label": "Installation",
+        "value": "Floor mount, two-piece assembly"
+      },
+      {
+        "label": "WaterMark certified",
+        "value": "Yes"
+      },
+      {
+        "label": "WELS rated",
+        "value": "Yes"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
+      },
+      {
+        "label": "WELS registration",
+        "value": "L07488"
+      }
+    ],
+    "features": [
+      "Two-piece rimless ceramic construction",
+      "Standard R&T fittings - widely-stocked Australian valves and inlet",
+      "UF soft-close toilet seat - stable, non-yellowing premium plastic",
+      "Kiln-fired ceramic at over 1,260°C - low-porosity stain-resistant body",
+      "P-trap 180 mm and S-trap 100/250 mm - wall or floor exit plumbing",
+      "640 × 370 × 800 mm footprint",
+      "Includes connector pipe",
+      "WaterMark certified and WELS rated",
+      "Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only, or pickup in Wyong"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": null,
+        "specificationNumber": "AS/NZS 6400",
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark certified and WELS rated per supplier specification, under AS/NZS 6400:2016. WELS registration L07488. WaterMark licence number and WELS star rating to be confirmed against supplier documentation."
+    },
+    "recommendedFor": [
+      "Standard residential bathroom renovations and replacements",
+      "Owners wanting R&T fittings for ease of future servicing",
+      "Mid-range new build installations with WaterMark and WELS requirements",
+      "Trade buyers needing a reliable two-piece toilet at competitive pricing"
+    ],
+    "seo": {
+      "title": "Two-Piece Rimless Ceramic Toilet - P-Trap, WaterMark, WELS",
+      "description": "Two-piece rimless ceramic toilet suite with R&T fittings and UF soft-close seat. WaterMark certified, WELS registration L07488. Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only.",
+      "ogImage": null
+    }
   }
 }
