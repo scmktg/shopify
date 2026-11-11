@@ -542,5 +542,95 @@
     "seo": {
       "description": "Rimless back-to-wall toilet suite, 4-star WELS L07489 and WaterMark certified. Soft-close seat, 605 × 380 × 800 mm. Free delivery in Newcastle, Central Coast, Sydney and Wollongong regions only."
     }
+  },
+  "rimless-watermark-wash-down-toilet-soft-close-seat-wels-rated-local-pickup-centr": {
+    "shortDescription": "Rimless wash-down toilet with soft-close seat - WaterMark certified, WELS 4★ dual flush at 4.5L/3L. Powerful wash-down flush for efficient waste removal. 640×370×810mm. Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only, or pickup in Wyong NSW.",
+    "description": "A rimless wash-down toilet - combining the **hygienic rimless bowl** design with a **wash-down flush system** that uses direct water pressure for powerful, efficient waste removal. The right choice when you want rimless cleanliness combined with strong flush performance.\n\n## Wash-Down vs Siphonic - What's the Difference\n\nToilets divide broadly into two flush mechanisms:\n\n- **Wash-down (this toilet):** water pressure from the cistern pushes waste down through the trap by direct force. Simpler mechanism, more reliable, less prone to blockages. Generally quieter and faster to refill.\n- **Siphonic:** uses suction to pull waste down - quieter flush, less splashing during use, but more prone to bowl-line buildup and can be slower to refill.\n\nFor most Australian residential installations, **wash-down is the preferred flush type** - fewer moving parts to fail, stronger flush against partial blockages, and lower long-term maintenance.\n\n## Rimless Design\n\nNo hidden under-rim cavity to harbour bacteria. Water enters the bowl from a visible flow channel along the top of the bowl wall - every wettable surface is accessible to a brush or cloth. Easier cleaning, better long-term hygiene, no aggressive chemicals needed to keep the bowl fresh.\n\n## Soft-Close Seat\n\nThe seat lowers silently when released. No slamming, no pinched fingers, no porcelain damage from years of dropped seats.\n\n## Water Efficiency\n\n**WELS 4-star rated**, **dual-flush 4.5 L / 3 L** system. Well below older 9 L single-flush standards with no compromise on the wash-down flush performance.\n\n## Dimensions and Plumbing\n\n- **Overall:** 640 mm L × 370 mm W × 810 mm H\n- **P-trap:** 180 mm centre height (wall-exit plumbing)\n- **S-trap:** 100 / 250 mm centre offset (floor-exit plumbing)\n\nSuits either wall-exit or floor-exit plumbing - confirm your existing waste outlet position before purchase.\n\n## WaterMark Certified\n\nWaterMark certified for Australian plumbed-in installation. **WELS registration: L07487**. Licensed plumber can install and issue a certificate of compliance.\n\n## Delivery & pickup\n\n**Free delivery is available to Newcastle, Central Coast, Sydney and Wollongong regions only.** At this time, we cannot ship this product to other regions. Please confirm your address is eligible before ordering.\n\nLocal pickup is also available from **Wyong NSW 2259**.",
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Rimless wash-down toilet"
+      },
+      {
+        "label": "Flushing system",
+        "value": "Rimless wash-down"
+      },
+      {
+        "label": "Dimensions",
+        "value": "640 mm × 370 mm × 810 mm (L × W × H)"
+      },
+      {
+        "label": "P-trap",
+        "value": "180 mm centre height (wall exit)"
+      },
+      {
+        "label": "S-trap",
+        "value": "100 / 250 mm centre offset (floor exit)"
+      },
+      {
+        "label": "Toilet seat",
+        "value": "Soft-close"
+      },
+      {
+        "label": "Flush volume",
+        "value": "4.5 L full / 3 L half"
+      },
+      {
+        "label": "WaterMark certified",
+        "value": "Yes"
+      },
+      {
+        "label": "WELS rating",
+        "value": "4 stars"
+      },
+      {
+        "label": "WELS flush",
+        "value": "4.5 / 3 L"
+      },
+      {
+        "label": "Pickup",
+        "value": "Local pickup available - Central Coast NSW"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
+      },
+      {
+        "label": "WELS registration",
+        "value": "L07487"
+      }
+    ],
+    "features": [
+      "Rimless bowl design - hygienic, easy to clean, no hidden cavities",
+      "Wash-down flush system - powerful direct-pressure waste removal",
+      "Soft-close seat for silent operation and porcelain protection",
+      "Dual-flush 4.5L / 3L - WELS 4-star water efficiency",
+      "WaterMark certified for Australian installation",
+      "P-trap 180 mm and S-trap 100/250 mm - wall or floor exit plumbing",
+      "640 × 370 × 810 mm footprint",
+      "Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only, or pickup in Wyong"
+    ],
+    "recommendedFor": [
+      "Renovations choosing a powerful flush system",
+      "Properties on softer water where siphonic toilets struggle",
+      "Replacement of older 9-litre flush toilets with a water-efficient design",
+      "Customers in the Newcastle, Central Coast, Sydney and Wollongong delivery regions, or collecting from Wyong"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": null,
+        "specificationNumber": "AS/NZS 6400",
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark certified per supplier specification. WELS 4-star rated, 4.5/3 L dual flush; registration L07487."
+    },
+    "seo": {
+      "title": "Rimless Wash-Down Toilet - Soft-Close, WaterMark, WELS 4★",
+      "description": "Rimless wash-down toilet with soft-close seat. WaterMark certified, WELS 4-star, registration L07487. Free delivery to Newcastle, Central Coast, Sydney and Wollongong only.",
+      "ogImage": null
+    }
   }
 }
