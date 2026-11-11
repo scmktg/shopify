@@ -108,7 +108,8 @@ export function ProductDetail({
   const isWaterMarkToilet = shouldShowWaterMarkToiletBadge(product.handle) && content.compliance?.watermark?.status === 'certified';
   const isRegionalDeliveryToilet = product.handle === 'rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce' ||
     product.handle === 'rimless-watermark-wash-down-toilet-soft-close-seat-wels-rated-local-pickup-centr' ||
-    product.handle === 'toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels';
+    product.handle === 'toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels' ||
+    product.handle === 'back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels';
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
   const useRefinedPurchaseLayout = isKitchenTap || isBubbler || isRegionalDeliveryToilet;
