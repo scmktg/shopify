@@ -111,7 +111,7 @@ export function ProductDetail({
   const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
   // Use natural wrapping for a single customer-facing bubbler heading.
   const bubblerDisplayTitle = ({
-    'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler',
+    'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler | 20 L/hr',
     'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des': 'Stainless Steel Water Fountain with Bubbler & Tap | 20 L/hr',
     'commercial-rust-free-filtered-cold-water-bubbler-wm': 'Granite Inspired Water Fountain with Bubbler & Tap | 20 L/hr',
   } as Record<string, string>)[product.handle] ?? product.title;
