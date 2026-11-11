@@ -568,86 +568,31 @@ export function AddToCartButton({
         )}
       </div>
       {instantQuoteProductHandle && (
-        <section
-          aria-labelledby="instant-quote-heading"
-          className="relative isolate overflow-hidden rounded-[22px] border border-[#303033] bg-[#171719] px-5 py-5 text-white shadow-[0_12px_36px_-24px_rgba(0,0,0,0.75)] sm:px-6 sm:py-6"
-        >
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.065),transparent_58%)]" />
+        <section aria-labelledby="instant-quote-heading" className="rounded-2xl border border-[#303034] bg-[#19191b] p-4 text-white shadow-[0_8px_24px_-20px_rgba(0,0,0,0.65)] sm:p-5">
           <div className="flex items-start gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[13px] border border-white/10 bg-white/[0.075]">
-              <FileText aria-hidden="true" className="h-[19px] w-[19px] text-white/90" strokeWidth={1.7} />
-            </span>
-            <div className="min-w-0 pt-0.5">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">
-                For organisations
-              </p>
-              <h2 id="instant-quote-heading" className="mt-1 text-[19px] font-semibold leading-tight tracking-[-0.035em] text-white">
-                Need a formal quote?
-              </h2>
-              <p className="mt-2 max-w-[42ch] text-[13px] leading-[1.65] text-white/60">
-                Download a quotation instantly. Convert it to an invoice and pay securely when you’re ready.
-              </p>
+            <FileText aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-white/65" strokeWidth={1.8} />
+            <div className="min-w-0">
+              <h2 id="instant-quote-heading" className="text-sm font-semibold tracking-[-0.02em]">Instant quote for organisations</h2>
+              <p className="mt-1 text-xs leading-relaxed text-white/60">Download a PDF quote, convert to invoice and pay online.</p>
             </div>
           </div>
-          <div className="mt-5 border-t border-white/[0.11] pt-4">
-            <label htmlFor="instant-quote-quantity" className="mb-2.5 block text-[12px] font-medium text-white/75">
-              Quantity to quote
-            </label>
-            <div className="flex items-center gap-3">
-              <div className="flex h-12 w-[136px] shrink-0 items-center overflow-hidden rounded-xl border border-white/20 bg-white/[0.075]">
-                <button
-                  type="button"
-                  aria-label="Decrease quote quantity"
-                  onClick={() => setQuoteQuantity(q => Math.max(1, q - 1))}
-                  disabled={quoteQuantity <= 1 || !available}
-                  className="flex h-full w-10 shrink-0 items-center justify-center text-white/80 transition-colors hover:bg-white/10 disabled:cursor-not-allowed disabled:text-white/20"
-                >
-                  <Minus className="h-4 w-4" aria-hidden="true" />
-                </button>
-                <input
-                  id="instant-quote-quantity"
-                  type="number"
-                  min={1}
-                  max={MAX_QTY}
-                  inputMode="numeric"
-                  value={quoteQuantity}
-                  onChange={event => {
-                    const parsed = Number.parseInt(event.target.value, 10);
-                    setQuoteQuantity(Number.isFinite(parsed) ? Math.min(MAX_QTY, Math.max(1, parsed)) : 1);
-                  }}
-                  disabled={!available}
-                  className="h-full min-w-0 flex-1 bg-transparent text-center text-sm font-semibold tabular-nums text-white outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/70 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                />
-                <button
-                  type="button"
-                  aria-label="Increase quote quantity"
-                  onClick={() => setQuoteQuantity(q => Math.min(MAX_QTY, q + 1))}
-                  disabled={quoteQuantity >= MAX_QTY || !available}
-                  className="flex h-full w-10 shrink-0 items-center justify-center text-white/80 transition-colors hover:bg-white/10 disabled:cursor-not-allowed disabled:text-white/20"
-                >
-                  <Plus className="h-4 w-4" aria-hidden="true" />
-                </button>
-              </div>
-              <button
-                type="button"
-                disabled={!available || anyBusy}
-                onClick={() => {
-                  const query = new URLSearchParams({
-                    product: instantQuoteProductHandle,
-                    variant: variantId,
-                    quantity: String(quoteQuantity),
-                  });
-                  window.location.assign('/quotes?' + query.toString());
-                }}
-                className="group flex h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-white px-3 text-[13px] font-semibold tracking-[-0.01em] text-[#171719] transition-all hover:bg-[#e9e9e9] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm"
-              >
-                <span>Instant Quote</span>
-                <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.9} />
+          <div className="mt-4 flex items-center gap-2.5">
+            <div className="flex h-11 w-[118px] shrink-0 items-center overflow-hidden rounded-xl border border-white/15 bg-white/[0.07]">
+              <button type="button" aria-label="Decrease quote quantity" onClick={() => setQuoteQuantity(q => Math.max(1, q - 1))} disabled={quoteQuantity <= 1 || !available} className="flex h-full w-9 shrink-0 items-center justify-center text-white/80 hover:bg-white/10 disabled:cursor-not-allowed disabled:text-white/20">
+                <Minus aria-hidden="true" className="h-3.5 w-3.5" />
+              </button>
+              <input id="instant-quote-quantity" aria-label="Quote quantity" type="number" min={1} max={MAX_QTY} inputMode="numeric" value={quoteQuantity} onChange={event => { const number = Number.parseInt(event.target.value, 10); setQuoteQuantity(Number.isFinite(number) ? Math.min(MAX_QTY, Math.max(1, number)) : 1); }} disabled={!available} className="h-full min-w-0 flex-1 bg-transparent text-center text-sm font-semibold tabular-nums text-white outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-white/60 [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none" />
+              <button type="button" aria-label="Increase quote quantity" onClick={() => setQuoteQuantity(q => Math.min(MAX_QTY, q + 1))} disabled={quoteQuantity >= MAX_QTY || !available} className="flex h-full w-9 shrink-0 items-center justify-center text-white/80 hover:bg-white/10 disabled:cursor-not-allowed disabled:text-white/20">
+                <Plus aria-hidden="true" className="h-3.5 w-3.5" />
               </button>
             </div>
-            <p className="mt-3 text-[11px] leading-relaxed text-white/40">
-              Your selected bubbler and quantity will be added automatically. No account required.
-            </p>
+            <button type="button" disabled={!available || anyBusy} onClick={() => {
+              const query = new URLSearchParams({ product: instantQuoteProductHandle, variant: variantId, quantity: String(quoteQuantity) });
+              window.location.assign('/quotes?' + query.toString());
+            }} className="group flex h-11 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-xl bg-white px-3 text-sm font-semibold text-[#19191b] transition-colors hover:bg-neutral-200 disabled:cursor-not-allowed disabled:opacity-40">
+              <span>Get instant quote</span>
+              <ArrowUpRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={1.8} />
+            </button>
           </div>
         </section>
       )}
