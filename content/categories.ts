@@ -70,6 +70,8 @@ export const CATEGORIES: ReadonlyArray<Category> = [
     subcategories: [
       { slug: 'kitchen-taps', label: 'Kitchen Taps' },
       { slug: 'bathroom-taps', label: 'Bathroom Taps' },
+      { slug: 'showers', label: 'Showers' },
+      { slug: 'accessories', label: 'Accessories' },
       { slug: 'ro-filter-taps', label: 'RO Filter Taps' },
       { slug: 'toilets', label: 'Toilets' },
       { slug: 'bundles', label: 'Bundles' },
