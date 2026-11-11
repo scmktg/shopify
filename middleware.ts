@@ -187,6 +187,17 @@ function isAdminRoute(pathname: string): boolean {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Pause the quotation portal on the live storefront until freight rules are finalised.
+  // Keep preview deployments available for testing; preserve all saved quote records.
+  if (process.env.VERCEL_ENV === 'production' &&
+      (pathname === '/quotes' || pathname.startsWith('/quotes/') ||
+       pathname === '/api/quotes' || pathname.startsWith('/api/quotes/'))) {
+    return new NextResponse(null, {
+      status: 404,
+      headers: { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' },
+    });
+  }
+
   const legacyProductRedirect = redirectLegacyProduct(request);
   if (legacyProductRedirect) return legacyProductRedirect;
 
@@ -222,5 +233,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico|api/).*)'],
+  matcher: ['/((?!_next/static|_next/image|favicon.ico|api/).*)', '/api/quotes/:path*'],
 };
