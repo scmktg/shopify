@@ -731,5 +731,100 @@
       "description": "Two-piece rimless ceramic toilet suite with R&T fittings and UF soft-close seat. WaterMark certified, WELS registration L07488. Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only.",
       "ogImage": null
     }
+  },
+  "back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels": {
+    "shortDescription": "Back-to-wall rimless ceramic toilet suite with soft-close seat - vitreous china construction, P-trap 180mm rough-in, 3L/4.5L dual flush. WaterMark certified and WELS rated. 650×385×830mm. Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only, or pickup in Wyong NSW.",
+    "description": "A back-to-wall rimless ceramic toilet suite in vitreous china - combining the **flush-fit modern look** of back-to-wall installation with the hygienic rimless bowl design and a dual-flush water-saving cistern. Floor mounted with P-trap rough-in for wall-exit plumbing.\n\n## Vitreous China vs Standard Ceramic\n\nVitreous china is a specific high-temperature ceramic formulation defined by:\n\n- **Very low water absorption** - typically under 0.5% by mass\n- **Glass-like surface vitrification** that resists staining and chemical attack\n- **Dimensional stability** through repeated thermal cycling\n\nFor a toilet, that translates to a body that doesn't absorb staining, doesn't soak up cleaning chemicals over years, and maintains its surface gloss without degradation. It's the premium ceramic specification - most mid-range toilets use it.\n\n## Back-to-Wall Design\n\nThe toilet sits flush against the wall - plumbing connections route inside the wall cavity rather than exposed behind the bowl. Cleaner visual line, easier cleaning around the base, contemporary aesthetic.\n\n## Rimless Bowl\n\nNo hidden cavity under the rim. Visible flow channel for water entry. Every wettable surface accessible for cleaning. Standard hygiene benefit over traditional rim designs.\n\n## Dual-Flush\n\n**3 L / 4.5 L wash-down/gravity dual flush** - gives you the option of a smaller flush for liquid waste and a stronger full flush for solids. The 3 L half-flush is meaningfully below conventional half-flush volumes, contributing to water-bill savings over years of use.\n\n## Soft-Close Seat\n\nThe seat closes silently. No slamming, no pinched fingers, no porcelain damage from dropped seats over years.\n\n## Dimensions\n\n- **Overall:** 650 × 385 × 830 mm\n- **P-trap:** 180 mm centre height rough-in (wall exit)\n- **Material:** vitreous china ceramic\n- **Installation:** floor mounted, back-to-wall\n- **Model:** 2131A\n\nIncludes cistern, flush push button, and soft-close toilet seat.\n\n## Compliance\n\n**WaterMark certified** and **WELS rated** per supplier specification. Your licensed plumber can install this on a mains supply line and issue a certificate of compliance.\n\n**WELS registration: L07443.**\n\n## Delivery & pickup\n\n**Free delivery is available to Newcastle, Central Coast, Sydney and Wollongong regions only.** At this time, we cannot ship this product to other regions. Please confirm your address is eligible before ordering.\n\nLocal pickup is also available from **Wyong NSW 2259**.",
+    "fullSpecs": [
+      {
+        "label": "Type",
+        "value": "Back-to-wall rimless toilet suite"
+      },
+      {
+        "label": "Model",
+        "value": "2131A"
+      },
+      {
+        "label": "Material",
+        "value": "Vitreous china ceramic"
+      },
+      {
+        "label": "Dimensions",
+        "value": "650 × 385 × 830 mm"
+      },
+      {
+        "label": "P-trap rough-in",
+        "value": "180 mm (wall exit)"
+      },
+      {
+        "label": "Flushing method",
+        "value": "Wash-down / gravity dual flush"
+      },
+      {
+        "label": "Flush volume",
+        "value": "3 L half / 4.5 L full"
+      },
+      {
+        "label": "Toilet seat",
+        "value": "PP/UF soft-close"
+      },
+      {
+        "label": "Installation",
+        "value": "Floor mounted, back-to-wall"
+      },
+      {
+        "label": "Includes",
+        "value": "Cistern, flush push button, soft-close seat"
+      },
+      {
+        "label": "WaterMark certified",
+        "value": "Yes"
+      },
+      {
+        "label": "WELS rated",
+        "value": "Yes"
+      },
+      {
+        "label": "WELS standard",
+        "value": "AS/NZS 6400:2016"
+      },
+      {
+        "label": "WELS registration",
+        "value": "L07443"
+      }
+    ],
+    "features": [
+      "Back-to-wall installation with concealed plumbing",
+      "Rimless bowl - no hidden cavities, easy cleaning",
+      "Vitreous china - low-porosity, stain and chemical resistant",
+      "3L / 4.5L wash-down dual flush - water-efficient operation",
+      "Soft-close seat - silent operation, porcelain protection",
+      "P-trap 180mm rough-in for wall-exit plumbing",
+      "Floor mounted installation",
+      "WaterMark certified and WELS rated",
+      "Free delivery to Newcastle, Central Coast, Sydney and Wollongong regions only, or pickup in Wyong"
+    ],
+    "recommendedFor": [
+      "Modern bathroom renovations choosing back-to-wall aesthetics",
+      "New builds requiring P-trap wall-exit plumbing configuration",
+      "Owners wanting vitreous china durability for long-term install",
+      "Mid-range residential and light-commercial installations"
+    ],
+    "compliance": {
+      "watermark": {
+        "status": "certified",
+        "licenceNumber": null,
+        "specificationNumber": "AS/NZS 6400",
+        "certifier": null,
+        "validUntil": null
+      },
+      "wels": null,
+      "note": "WaterMark certified per supplier specification. WELS rated with 3/4.5 L dual flush under AS/NZS 6400:2016. WELS registration L07443. WaterMark licence number and WELS star rating remain unconfirmed."
+    },
+    "seo": {
+      "title": "Back-to-Wall Rimless Toilet Suite - Vitreous China, P-Trap, WELS",
+      "description": "Back-to-wall rimless toilet suite in vitreous china. P-trap 180mm, 3L/4.5L dual flush, soft-close seat. WaterMark certified, WELS registration L07443. Free delivery in Newcastle, Central Coast, Sydney and Wollongong regions only.",
+      "ogImage": null
+    }
   }
 }
