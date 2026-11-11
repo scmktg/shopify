@@ -160,7 +160,7 @@ export function ProductDetail({
           )}
         </div>
 
-        <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+        <div className={isBubbler ? "min-w-0 md:flex md:self-stretch md:flex-col md:justify-between md:gap-3" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
               HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
