@@ -24,6 +24,8 @@ interface VariantPurchaseControlsProps {
   hideWholeDollarCents?: boolean;
   sleek?: boolean;
   compactLayout?: boolean;
+  /** Preview-only bubbler flow: reuse the selected product and quantity in the quote builder. */
+  instantQuoteProductHandle?: string;
 }
 
 export function VariantPurchaseControls({
@@ -36,6 +38,7 @@ export function VariantPurchaseControls({
   hideWholeDollarCents = false,
   sleek = false,
   compactLayout = false,
+  instantQuoteProductHandle,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -176,6 +179,7 @@ export function VariantPurchaseControls({
           label={ctaLabel}
           enableBuyNow
           offerInstallationAssistance={offerInstallationAssistance}
+          instantQuoteProductHandle={instantQuoteProductHandle}
         />
         {selectedVariant.availableForSale &&
           showDispatchCountdown && <VariantDispatchCountdown hasBackorder={hasBackorder} />}
