@@ -326,10 +326,10 @@ export function ProductDetail({
                   <Truck aria-hidden="true" className="h-4 w-4 shrink-0 text-emerald-700" />
                   <span className="font-semibold text-emerald-700">FREE DELIVERY</span>
                   <span aria-hidden="true" className="text-neutral-300">/</span>
-                  <span className="text-neutral-600">Eligible NSW metro areas</span>
+                  <span className="text-neutral-600">Newcastle, Central Coast, Sydney & Wollongong</span>
                 </div>
                 <p className="mt-2 text-[12px] leading-relaxed text-neutral-600">
-                  Sydney Metro, Central Coast, Wollongong Metro and Blue Mountains Metro.
+                  Shipping is available to Newcastle, Central Coast, Sydney and Wollongong regions only.
                 </p>
                 <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
                   <span className="font-semibold text-black">Local pickup</span>
@@ -337,7 +337,7 @@ export function ProductDetail({
                   <span className="text-neutral-600">Wyong NSW 2259</span>
                 </div>
                 <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">
-                  Delivery eligibility is confirmed at checkout. Please check your delivery address before ordering.
+                  We cannot ship to any other regions. Please confirm your address is within an eligible delivery area before ordering.
                 </p>
               </section>
             ) : isKitchenTap ? (
