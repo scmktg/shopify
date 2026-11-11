@@ -28,12 +28,14 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
   page.drawImage(logo,{x:L,y:H-46-logoSize.height,width:logoSize.width,height:logoSize.height});
   ['6/45 Amsterdam Circuit, Wyong NSW 2259','(02) 8772 8162  ·  info@enviroaqua.com.au','ABN: 24 638 197 734'].forEach((t,i)=>line(t,L,105+i*12,8.5,false,grey));
   line(q.invoice_reference?'INVOICE':'QUOTATION',R-185,49,12,true,black,{right:R});
-  line(q.invoice_reference||q.reference,R-250,72,8.5,false,grey,{right:R});
-  if(q.invoice_reference)line(q.invoice_status==='cancelled'?'CANCELLED':q.invoice_status==='refunded'?'REFUNDED':q.invoice_status==='paid'?'PAID':'UNPAID',R-110,92,10,true,q.invoice_status==='paid'?rgb(.09,.48,.21):rgb(.6,.12,.12),{right:R});
-  hline(186,L,R,1.5,black);
+  line('Reference: '+(q.invoice_reference||q.reference),R-250,72,8.5,false,grey,{right:R});
+  line('Issued: '+date(q.invoice_created_at||q.created_at),R-250,89,8.5,false,grey,{right:R});
+  if(!q.invoice_reference)line('Valid until: '+date(q.expires_at),R-250,106,8.5,false,grey,{right:R});
+  if(q.invoice_reference)line(q.invoice_status==='cancelled'?'CANCELLED':q.invoice_status==='refunded'?'REFUNDED':q.invoice_status==='paid'?'PAID':'UNPAID',R-110,123,10,true,q.invoice_status==='paid'?rgb(.09,.48,.21):rgb(.6,.12,.12),{right:R});
+  hline(154,L,R,1.5,black);
  };
- const next=()=>{page=doc.addPage([W,H]);header();return 218;};
- header();let top=209;
+ const next=()=>{page=doc.addPage([W,H]);header();return 179;};
+ header();let top=177;
  line('PREPARED FOR',L,top,9,true,grey);
  line(q.organisation,L,top+19,10,true);
  line(q.contact_name,L,top+37,9);
@@ -41,14 +43,11 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  let cy=top+69;
  const a=q.delivery_address;
  if(a){line('DELIVERY TO',L,cy+10,9,true,grey);cy+=27;for(const row of [...(a.business_name?[a.business_name]:[]),...(a.site_contact?['Site contact: '+a.site_contact]:[]),a.street,...(a.address_line_2?[a.address_line_2]:[]),a.suburb+' '+a.state+' '+a.postcode,...(a.abn?['Customer ABN: '+a.abn]:[])]){for(const part of wrap(row,260)){line(part,L,cy,9);cy+=14;}}}
- line('Reference: '+q.reference,340,top,8.5,false,grey,{right:R});
- if(q.shopify_order_name)line('Shopify order: '+q.shopify_order_name,340,top+51,8.5,false,grey,{right:R});
- line('Issued: '+date(q.invoice_created_at||q.created_at),340,top+17,8.5,false,grey,{right:R});
- if(!q.invoice_reference)line('Valid until: '+date(q.expires_at),340,top+34,8.5,false,grey,{right:R});
- top=Math.max(cy+29,357);
+ if(q.shopify_order_name)line('Shopify order: '+q.shopify_order_name,340,top,8.5,false,grey,{right:R});
+ top=Math.max(cy+16,290);
  const tableHeader=()=>{
   line('PRODUCT',L,top,9,true);line('QTY',348,top,9,true);line('UNIT',424,top,9,true);line('TOTAL',R-38,top,9,true);
-  hline(top+23,L,R,1.6,black);top+=36;
+  hline(top+18,L,R,1.6,black);top+=29;
  };
  tableHeader();
  for(const item of q.items){
