@@ -104,6 +104,7 @@ export function ProductDetail({
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
+  const isRev03Toilet = product.handle === 'rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce';
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
   const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
@@ -145,9 +146,9 @@ export function ProductDetail({
             cinematicVideoOverlay={subcategory === 'bubblers'}
             showChilledFilteredBadges={isBubbler}
             title={product.title}
-            showLeadFreeBadge={isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            showLeadFreeBadge={isRev03Toilet || isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
-            watermarkLeadFree
+            watermarkLeadFree={!isRev03Toilet}
             watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
           />
         </div>
