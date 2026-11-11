@@ -87,11 +87,11 @@ export async function PUT(_request:NextRequest,{params}:{params:Promise<{token:s
   let checkoutUrl=cart.checkoutUrl;
   const address=quote.delivery_address;
   if(address?.street&&address?.suburb&&address?.state&&address?.postcode){
-   const names=quote.contact_name.trim().split(/\s+/);
+   const names=(address.site_contact||quote.contact_name).trim().split(/\s+/);
    const firstName=names.shift()||'',lastName=names.join(' ');
    const updated=await shopifyClient.request<AddressResult>(ADD_ADDRESS,{variables:{cartId:cart.id,addresses:[{
     selected:true,oneTimeUse:true,validationStrategy:'COUNTRY_CODE_ONLY',
-    address:{deliveryAddress:{firstName,lastName,company:quote.organisation,address1:address.street,city:address.suburb,provinceCode:address.state,zip:address.postcode,countryCode:'AU'}},
+    address:{deliveryAddress:{firstName,lastName,company:address.business_name||quote.organisation,address1:address.street,address2:address.address_line_2||undefined,city:address.suburb,provinceCode:address.state,zip:address.postcode,countryCode:'AU'}},
    }]}});
    const delivery=updated.data?.cartDeliveryAddressesAdd;
    if(updated.errors||!delivery?.cart||delivery.userErrors?.length)return fail('Shopify could not prefill the delivery address. Please try again.',503);

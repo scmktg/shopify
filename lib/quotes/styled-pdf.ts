@@ -40,7 +40,7 @@ export async function styledQuotePdf(q:SavedQuote,link:string,logoPng:Buffer):Pr
  line(q.customer_email,L,top+52,9);
  let cy=top+69;
  const a=q.delivery_address;
- if(a){line('DELIVERY TO',L,cy+10,9,true,grey);cy+=27;for(const row of [a.street,a.suburb+' '+a.state+' '+a.postcode,...(a.abn?['Customer ABN: '+a.abn]:[])]){for(const part of wrap(row,260)){line(part,L,cy,9);cy+=14;}}}
+ if(a){line('DELIVERY TO',L,cy+10,9,true,grey);cy+=27;for(const row of [...(a.business_name?[a.business_name]:[]),...(a.site_contact?['Site contact: '+a.site_contact]:[]),a.street,...(a.address_line_2?[a.address_line_2]:[]),a.suburb+' '+a.state+' '+a.postcode,...(a.abn?['Customer ABN: '+a.abn]:[])]){for(const part of wrap(row,260)){line(part,L,cy,9);cy+=14;}}}
  line('Reference: '+q.reference,340,top,8.5,false,grey,{right:R});
  if(q.shopify_order_name)line('Shopify order: '+q.shopify_order_name,340,top+51,8.5,false,grey,{right:R});
  line('Issued: '+date(q.invoice_created_at||q.created_at),340,top+17,8.5,false,grey,{right:R});

@@ -19,7 +19,11 @@ export async function POST(request:NextRequest){
  const state=String(body.state||'').trim();
  const postcode=String(body.postcode||'').trim();
  const abn=String(body.abn||'').replace(/\s/g,'');
+ const deliveryBusiness=String(body.deliveryBusiness||'').trim();
+ const siteContact=String(body.siteContact||'').trim();
+ const addressLine2=String(body.addressLine2||'').trim();
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||email.length>160||!organisation||organisation.length>120||!contact||contact.length>100||street.length<3||street.length>180||suburb.length<2||suburb.length>90||!['NSW','ACT','VIC','QLD','SA','WA','TAS','NT'].includes(state)||!/^\d{4}$/.test(postcode)||Boolean(abn&&!/^\d{11}$/.test(abn)))return fail('Please complete all required customer and delivery fields.');
+ if(deliveryBusiness.length>120||siteContact.length>120||addressLine2.length>180)return fail('Additional delivery details are too long.');
  if(!Array.isArray(body.items)||body.items.length<1||body.items.length>20)return fail('Choose between 1 and 20 products.');
  const selected: {handle:string;variantId:string;quantity:number}[]=[];
  for(const raw of body.items){
@@ -58,7 +62,7 @@ export async function POST(request:NextRequest){
   const token=newAccessToken(),reference=await newQuoteReference();
   const rows=await quoteDb<{id:string}[]>('quotes','POST','select=id',[{
    reference,access_token_digest:tokenDigest(token),customer_email:email,organisation,contact_name:contact,postcode,items,
-   delivery_address:{street,suburb,state,postcode,abn:abn||null},shipping_selection:shippingSelection,product_total_cents:total,freight_cents:freight,included_gst_cents:Math.round(total/11)+(Math.round(freight/11)),
+   delivery_address:{street,address_line_2:addressLine2||null,business_name:deliveryBusiness||null,site_contact:siteContact||null,suburb,state,postcode,abn:abn||null},shipping_selection:shippingSelection,product_total_cents:total,freight_cents:freight,included_gst_cents:Math.round(total/11)+(Math.round(freight/11)),
    freight_status:'confirmed',status:'issued',
   }],'return=representation');
   if(!rows[0])throw new Error('Save failed');
