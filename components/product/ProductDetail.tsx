@@ -19,6 +19,8 @@ import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { ShippingTierBlock } from './ShippingTierBlock';
 import { KitchenTapShippingRates } from './KitchenTapShippingRates';
+import { BubblerCertificationStrip } from './BubblerCertificationStrip';
+import { isLeadFree } from './WatermarkBadge';
 import { BubblerModelSelector } from './BubblerModelSelector';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
@@ -150,6 +152,12 @@ export function ProductDetail({
             watermarkLeadFree
             watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
           />
+          {isBubbler && content.compliance?.watermark?.status === 'certified' && (
+            <BubblerCertificationStrip
+              licenceNumber={content.compliance.watermark.licenceNumber}
+              leadFree={isLeadFree(content)}
+            />
+          )}
         </div>
 
         <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
