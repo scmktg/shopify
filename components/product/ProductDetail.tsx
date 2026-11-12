@@ -105,6 +105,9 @@ export function ProductDetail({
   const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
+  const isCertifiedWholeHouseFilter =
+    product.handle === 'wm-3-stages-20-x-4-5-triple-big-blue-whole-house-water-filter-system' &&
+    content.compliance?.watermark?.status === 'certified';
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
@@ -147,7 +150,7 @@ export function ProductDetail({
             cinematicVideoOverlay={subcategory === 'bubblers'}
             showChilledFilteredBadges={isBubbler}
             title={product.title}
-            showLeadFreeBadge={isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            showLeadFreeBadge={isCertifiedWholeHouseFilter || isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
             watermarkLeadFree
             watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
