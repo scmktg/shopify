@@ -10,7 +10,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { isColourOptionName } from '@/lib/products/colourSwatches';
 import { PriceDisplay } from './PriceDisplay';
 import { WaterMarkLeadFreeOverlay } from './WaterMarkLeadFreeOverlay';
-import { getInitialBubblerWaterMarkLicence, shouldShowWaterMarkTapBadge } from '@/lib/products/watermarkLeadFreeBadge';
+import { getInitialBubblerWaterMarkLicence, shouldShowWaterMarkTapBadge, shouldShowWaterMarkToiletBadge } from '@/lib/products/watermarkLeadFreeBadge';
 import { ColourSwatch } from './ColourSwatch';
 import { cardToAnalyticsItem, trackSelectItem } from '@/lib/analytics/client';
 
@@ -28,6 +28,7 @@ export function ProductCard({ product, editorial = false }: ProductCardProps) {
   const baseHref = getProductUrl(product.handle);
   const watermarkLicence = getInitialBubblerWaterMarkLicence(product.handle);
   const waterMarkTap = shouldShowWaterMarkTapBadge(product.handle);
+  const waterMarkToilet = shouldShowWaterMarkToiletBadge(product.handle);
   const { addItem, isMutating, isReady } = useCart();
   const [pendingAction, setPendingAction] = useState<'cart' | null>(null);
 
@@ -110,8 +111,14 @@ export function ProductCard({ product, editorial = false }: ProductCardProps) {
               className="absolute inset-0 bg-gray-100"
             />
           )}
-          {image && (watermarkLicence || waterMarkTap) && (
-            <WaterMarkLeadFreeOverlay licenceNumber={waterMarkTap ? '032200' : watermarkLicence} compact showLicence={false} position={waterMarkTap ? 'right' : 'left'} />
+          {image && (watermarkLicence || waterMarkTap || waterMarkToilet) && (
+            <WaterMarkLeadFreeOverlay
+              licenceNumber={waterMarkTap ? '032200' : watermarkLicence}
+              compact
+              showLicence={false}
+              leadFree={!waterMarkToilet}
+              position={waterMarkToilet || waterMarkTap ? 'right' : 'left'}
+            />
           )}
         </div>
       </Link>

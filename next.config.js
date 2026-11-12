@@ -602,7 +602,6 @@ const nextConfig = {
         '/pumps-and-tanks/replacement-bladders',
         '/pumps-and-tanks/pressure-tanks',
       ],
-      ['/plumbing/showers', '/plumbing/bathroom-taps'],
     ];
 
     // 2026-05 bubblers restructure: `/bubblers/` becomes
