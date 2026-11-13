@@ -1,6 +1,6 @@
 ---
 title: "Shipping & Delivery"
-description: "Australia-wide parcel delivery, selected free delivery, bulky freight by region, and free Click & Collect from our Wyong NSW showroom."
+description: "Australia-wide parcel delivery, flat-rate standalone chemical dosing tank shipping, regional bulky freight, and free Click & Collect from Wyong NSW."
 relatedLinks:
   - { label: "Returns & warranty", href: "/returns/" }
   - { label: "Contact us", href: "/contact/" }
@@ -8,7 +8,7 @@ faq:
   - q: "When will my order ship?"
     a: "Orders placed before 12pm AEST on a business day are normally dispatched the same business day. Orders placed after 12pm, on weekends, or on Australian public holidays are normally dispatched the next business day. Tracking is sent when the carrier collects your order."
   - q: "How much is delivery?"
-    a: "Delivery depends on the product, its packed weight, and the delivery destination. Standard parcel products are calculated at checkout using the rate table on this page. Selected products include free delivery. Large products use bulky-freight rates by destination. Shopify checkout is the source of truth for the final delivery charge."
+    a: "Delivery depends on the product, its packed weight, and the delivery destination. Standard parcel products are calculated at checkout using the rate table on this page. Selected products include free delivery. Standalone chemical dosing tanks have flat delivery rates from $49 in eligible states; other large products use bulky-freight rates by destination. Shopify checkout is the source of truth for the final delivery charge."
   - q: "Do you ship Australia-wide?"
     a: "Yes, for most products. Standard parcel products ship throughout Australia. Selected products include free delivery Australia-wide. Bulky freight is available to NSW, ACT, VIC, QLD, SA, WA, and TAS at the rates shown below. Northern Territory bulky-freight orders require a freight quote. Selected fragile bathroom products are Click & Collect only from Wyong NSW."
   - q: "Do you ship internationally?"
@@ -45,11 +45,25 @@ Products marked **Free delivery** will show a **$0 delivery option** at Shopify 
 
 Free Click & Collect is also available where local pickup is enabled.
 
+## Standalone chemical dosing tanks
+
+Standalone chemical dosing tanks have flat-rate delivery to NSW, ACT, VIC, QLD, SA, WA and Tasmania:
+
+| Tank capacity | Delivery charge |
+|---|---:|
+| 40L, 50L, 60L and 100L | $49 |
+| 200L | $59 |
+| 300L and 500L | $119 |
+
+Northern Territory deliveries require a freight quote before ordering. These prices are for the standalone dosing tanks; chemical bunds and tank-and-bund packages may have different delivery rates. Mixed carts can combine shipping charges from multiple Shopify shipping profiles; the final charge is displayed at checkout.
+
+Free Click & Collect from Wyong is available where local pickup is enabled.
+
 ## Bulky freight
 
-Large, heavy, or awkward products such as commercial treatment equipment, large tanks, dosing tanks, and selected heavy water-cooling equipment travel by bulky freight.
+Other large, heavy, or awkward products such as commercial treatment equipment and selected heavy water-cooling equipment use the following regional bulky-freight rates. Standalone chemical dosing tanks use the separate flat-rate table above.
 
-Current bulky-freight rates are:
+Regional bulky-freight rates for those other products are:
 
 | Destination | Freight rate |
 |---|---:|
