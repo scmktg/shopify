@@ -4,7 +4,6 @@ import { BUSINESS_INFO, fullAddress } from '@/content/business-info';
 import { CATEGORIES } from '@/content/categories';
 import { ZipPaymentBadge } from '@/components/payments/ZipPaymentBadge';
 import { CookiePreferencesButton } from '@/components/analytics/ConsentBanner';
-import { FooterDepartmentSwitch } from './FooterDepartmentSwitch';
 import { DepartmentLogo } from './DepartmentLogo';
 
 interface FooterLink {
@@ -67,7 +66,6 @@ export function Footer() {
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <DepartmentLogo />
           <div className="flex items-center gap-6">
-            <FooterDepartmentSwitch />
             <div className="flex items-center gap-3 text-xs text-white/70">
               <span>Pay with</span>
             <ZipPaymentBadge location="footer" className="ring-offset-black" />
