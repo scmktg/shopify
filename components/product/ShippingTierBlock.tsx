@@ -118,11 +118,47 @@ const TIER_COPY: Record<ShippingTier, TierCopy> = {
   },
 };
 
+// Standalone chemical dosing tanks use dedicated Shopify flat-rate shipping profiles.
+// These amounts apply to NSW, ACT, VIC, QLD, SA, WA and TAS; NT requires a quote.
+const DOSING_TANK_DELIVERY: Readonly<Record<string, number>> = {
+  '40l-chemical-dosing-tank': 49,
+  'chemical-dosing-tank-50l': 49,
+  '60l-chemical-dosing-tank': 49,
+  'chemical-dosing-tank-100l': 49,
+  'chemical-dosing-tank-200l': 59,
+  'chemical-dosing-tank-300l': 119,
+  'chemical-dosing-tank-500l': 119,
+};
+
 export function ShippingTierBlock({
   tier,
   productHandle,
   combinedBubblerShipping = false,
 }: ShippingTierBlockProps) {
+  const tankDelivery = DOSING_TANK_DELIVERY[productHandle];
+  if (tankDelivery !== undefined) {
+    return (
+      <details className="group mt-4 overflow-hidden rounded border border-gray-200 bg-gray-50 text-sm text-black">
+        <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2.5 font-semibold hover:bg-gray-100 [&::-webkit-details-marker]:hidden">
+          <span className="flex items-center gap-2">
+            <Truck className="h-4 w-4 flex-shrink-0 text-black/70" aria-hidden="true" />
+            Flat-rate tank delivery — ${tankDelivery}
+          </span>
+          <span aria-hidden="true" className="text-lg font-normal leading-none text-black/50 transition-transform group-open:rotate-45">+</span>
+        </summary>
+        <div className="border-t border-gray-200 px-4 py-3">
+          <p><strong className="font-semibold">${tankDelivery} flat-rate delivery</strong> to NSW, ACT, VIC, QLD, SA, WA and TAS. Northern Territory delivery requires a freight quote.</p>
+          <p className="mt-2">Free Click &amp; Collect from our Wyong NSW showroom where available.</p>
+          <p className="mt-2 text-xs text-black/60">Delivery charges for mixed orders are confirmed at checkout.</p>
+          <VariantShippingEstimator tier="T6" />
+          <p className="mt-2 text-xs text-black/60">
+            <Link href="/shipping/" className="underline underline-offset-4 hover:text-brand-blue">See full shipping details</Link>
+          </p>
+        </div>
+      </details>
+    );
+  }
+
   const resolvedTier: ShippingTier | null = tier;
   if (resolvedTier === null) {
     console.error(
