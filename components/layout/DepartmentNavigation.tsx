@@ -222,6 +222,7 @@ export function DepartmentNavigation() {
             );
           })}
         </div>
+        <DepartmentSwitchButton current={current} onSwitch={switchDepartment} disabled={Boolean(switchingTo)} />
         {portalReady && renderedMenu && createPortal(
           <>
             <button
