@@ -9,6 +9,7 @@ import { CartProvider } from '@/components/cart/CartProvider';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics';
+import { PhoneClickTracker } from '@/components/analytics/PhoneClickTracker';
 import { ConsentBanner } from '@/components/analytics/ConsentBanner';
 import {
   localBusinessSchema,
@@ -71,6 +72,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
                "gtag('consent','default',{analytics_storage:allowed?'granted':'denied',ad_storage:allowed?'granted':'denied',ad_user_data:allowed?'granted':'denied',ad_personalization:allowed?'granted':'denied',wait_for_update:500});"}
             </Script>
             <GoogleAnalytics />
+            <PhoneClickTracker />
             <ConsentBanner />
             <JsonLdScript
               data={[
