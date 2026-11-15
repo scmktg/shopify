@@ -135,6 +135,20 @@ export function flushPendingAnalytics(): void {
   }
 }
 
+
+/**
+ * Record a user-initiated click on a telephone link. This represents intent
+ * to call, not confirmation that a telephone call connected.
+ * No telephone number or other personal data is sent to GA4.
+ */
+export function trackPhoneClick(linkLocation: string, pagePath: string): void {
+  emit('phone_click', {
+    link_type: 'phone',
+    link_location: linkLocation,
+    page_path: pagePath,
+  });
+}
+
 export function trackPageView(url: string, title?: string): void {
   // Variant and marketing parameters alone must not create a new page view.
   let key = url;
