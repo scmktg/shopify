@@ -77,20 +77,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const shopifyByHandle = new Map(shopifyProducts.map((product) => [product.handle, product] as const));
   const productContent = getAllProductContent();
 
-  const productEntries: MetadataRoute.Sitemap = Object.entries(productContent)
-    .map(([handle, content]) => {
-      const shopifyProduct = shopifyByHandle.get(handle);
-      if (!shopifyProduct) return null;
-      const [category, subcategory] = content.categories;
-      if (!category || !subcategory) return null;
+  const productEntries: MetadataRoute.Sitemap = shopifyProducts
+    .map((shopifyProduct) => {
+      const content = productContent[shopifyProduct.handle];
+      const route = content
+        ? `/${content.categories[0]}/${content.categories[1]}/${shopifyProduct.handle}`
+        : `/products/${shopifyProduct.handle}`;
       return {
-        url: `${base}/${category}/${subcategory}/${handle}`,
+        url: `${base}${route}`,
         lastModified: new Date(shopifyProduct.updatedAt),
         changeFrequency: 'weekly' as const,
         priority: 0.6,
       };
     })
-    .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
     .sort((a, b) => a.url.localeCompare(b.url));
 
   return [...staticEntries, ...categoryEntries, ...editorialEntries, ...productEntries];
