@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Truck } from 'lucide-react';
 import type { Product, Money, ProductImage } from '@/types/product';
 import { findSubcategory } from '@/content/categories';
 import type { ProductContent } from '@/lib/products/schema';
@@ -33,7 +34,7 @@ import { ThreeWayTapSalesSections } from './ThreeWayTapSalesSections';
 import { ThreeWayTapFinishEditorial } from './ThreeWayTapFinishEditorial';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { DosingTankComparison } from '@/components/category/DosingTankComparison';
-import { shouldShowWaterMarkLeadFreeBadge, shouldShowWaterMarkTapBadge } from '@/lib/products/watermarkLeadFreeBadge';
+import { shouldShowWaterMarkLeadFreeBadge, shouldShowWaterMarkTapBadge, shouldShowWaterMarkToiletBadge } from '@/lib/products/watermarkLeadFreeBadge';
 
 const INSTALL_PACKAGE_TAG = 'offer:install-package';
 const SHIPPING_QUOTE_ONLY_HANDLE = 'commercial-reverses-osmosis-ro-500lph-water-treatment-machinery-equipment';
@@ -106,9 +107,14 @@ export function ProductDetail({
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
+  const isWaterMarkToilet = shouldShowWaterMarkToiletBadge(product.handle) && content.compliance?.watermark?.status === 'certified';
+  const isRegionalDeliveryToilet = product.handle === 'rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce' ||
+    product.handle === 'rimless-watermark-wash-down-toilet-soft-close-seat-wels-rated-local-pickup-centr' ||
+    product.handle === 'toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels' ||
+    product.handle === 'back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels';
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
-  const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
+  const useRefinedPurchaseLayout = isKitchenTap || isBubbler || isRegionalDeliveryToilet;
   // Use natural wrapping for a single customer-facing bubbler heading.
   const bubblerDisplayTitle = ({
     'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler | 20 L/hr',
@@ -139,7 +145,7 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
+      <div className={isBubbler || isRegionalDeliveryToilet ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
@@ -147,10 +153,10 @@ export function ProductDetail({
             cinematicVideoOverlay={subcategory === 'bubblers'}
             showChilledFilteredBadges={isBubbler}
             title={product.title}
-            showLeadFreeBadge={isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
+            showLeadFreeBadge={isWaterMarkToilet || isKitchenTap || (isBubbler && content.compliance?.watermark?.status === 'certified') || shouldShowWaterMarkLeadFreeBadge(product.handle, content)}
             watermarkLicence={content.compliance?.watermark?.licenceNumber}
-            watermarkLeadFree
-            watermarkPosition={isKitchenTap || isBubbler ? 'right' : 'left'}
+            watermarkLeadFree={!isWaterMarkToilet}
+            watermarkPosition={isWaterMarkToilet || isKitchenTap || isBubbler ? 'right' : 'left'}
           />
           {isBubbler && content.compliance?.watermark?.status === 'certified' && (
             <WaterMarkCertificationBanner
@@ -160,10 +166,15 @@ export function ProductDetail({
           )}
         </div>
 
-        <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+        <div className={isBubbler || isRegionalDeliveryToilet ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
               HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
+            </p>
+          )}
+          {isRegionalDeliveryToilet && (
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-[11px]">
+              RIMLESS TOILET SUITES
             </p>
           )}
           {isBubbler && (
@@ -171,7 +182,7 @@ export function ProductDetail({
               DRINKING WATER FOUNTAINS
             </p>
           )}
-          <h1 className={isBubbler
+          <h1 className={isBubbler || isRegionalDeliveryToilet
             ? "text-[1.65rem] font-semibold leading-[1.18] tracking-[-0.03em] text-neutral-900 sm:text-[1.9rem] lg:text-[2.05rem]"
             : useRefinedPurchaseLayout
               ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
@@ -198,10 +209,10 @@ export function ProductDetail({
               fallbackPrice={product.priceRange.minVariantPrice}
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
-              hideWholeDollarCents={subcategory === 'bubblers'}
-              showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
+              hideWholeDollarCents={subcategory === 'bubblers' || isRegionalDeliveryToilet}
+              showDispatchCountdown={!isKitchenTap && !isRegionalDeliveryToilet && !(isBubbler && product.metafields.shipping_tier === 'T5')}
               sleek={useRefinedPurchaseLayout}
-              compactLayout={isBubbler}
+              compactLayout={isBubbler || isRegionalDeliveryToilet}
             />
           )}
 
@@ -320,7 +331,27 @@ export function ProductDetail({
 
 
           {!requiresShippingQuote && (
-            isKitchenTap ? (
+            isRegionalDeliveryToilet ? (
+              <section aria-label="Delivery and collection" className="mt-5 border-y border-neutral-200 py-3 text-sm text-neutral-800">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+                  <Truck aria-hidden="true" className="h-4 w-4 shrink-0 text-emerald-700" />
+                  <span className="font-semibold text-emerald-700">FREE DELIVERY</span>
+                  <span aria-hidden="true" className="text-neutral-300">/</span>
+                  <span className="text-neutral-600">Newcastle, Central Coast, Sydney & Wollongong</span>
+                </div>
+                <p className="mt-2 text-[12px] leading-relaxed text-neutral-600">
+                  Shipping is available to Newcastle, Central Coast, Sydney and Wollongong regions only.
+                </p>
+                <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-[13px]">
+                  <span className="font-semibold text-black">Local pickup</span>
+                  <span aria-hidden="true" className="text-neutral-300">/</span>
+                  <span className="text-neutral-600">Wyong NSW 2259</span>
+                </div>
+                <p className="mt-2 text-[11px] leading-relaxed text-neutral-500">
+                  At this time, we cannot ship this product to other regions. Please confirm your address is eligible before ordering.
+                </p>
+              </section>
+            ) : isKitchenTap ? (
               <KitchenTapShippingRates />
             ) : (
               <ShippingTierBlock

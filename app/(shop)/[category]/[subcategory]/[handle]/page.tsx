@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { ProductDetail } from '@/components/product/ProductDetail';
 import { findSubcategory } from '@/content/categories';
 import { getProductByHandle } from '@/lib/shopify/queries/getProductByHandle';
@@ -93,7 +93,9 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
   const content = getProductContent(handle);
   if (!content) notFound();
 
-  if (content.categories[0] !== category || content.categories[1] !== subcategory) notFound();
+  if (content.categories[0] !== category || content.categories[1] !== subcategory) {
+    permanentRedirect(`/${content.categories[0]}/${content.categories[1]}/${canonicalProductHandle(handle)}`);
+  }
 
   const packageConfig = DOSING_PACKAGES[handle] ?? null;
   const [packageProduct, componentProduct] = packageConfig

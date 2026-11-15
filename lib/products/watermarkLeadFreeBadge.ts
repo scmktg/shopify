@@ -40,3 +40,20 @@ const WATERMARK_TAP_HANDLES = new Set([
 export function shouldShowWaterMarkTapBadge(handle: string): boolean {
   return WATERMARK_TAP_HANDLES.has(handle);
 }
+
+/**
+ * Toilet suites explicitly identified as WaterMark certified in the
+ * storefront catalogue. Excludes flush-button accessories.
+ * Their gallery badges say WaterMark only (not Lead Free).
+ */
+const WATERMARK_TOILET_HANDLES = new Set([
+  'rimless-watermark-back-to-wall-toilet-soft-close-seat-wels-rated-local-pickup-ce',
+  'rimless-watermark-wash-down-toilet-soft-close-seat-wels-rated-local-pickup-centr',
+  'toilet-rimless-modern-watermark-ceramic-p-trap-commode-modern-2piece-toilet-wels',
+  'back-to-wall-rimless-dual-flush-ceramic-toilet-suite-soft-close-seat-p-trap-wels',
+  'in-wall-concealed-cistern-toilet-rimless-floor-mount-pan-chrome-buttons-wels',
+]);
+
+export function shouldShowWaterMarkToiletBadge(handle: string): boolean {
+  return WATERMARK_TOILET_HANDLES.has(handle);
+}

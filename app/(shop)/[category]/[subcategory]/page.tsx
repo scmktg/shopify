@@ -174,7 +174,11 @@ export default async function SubcategoryPage({
         title={title}
         intro={intro}
         categorySlug={node.category.slug}
-        subcategories={node.category.subcategories}
+        subcategories={category === 'plumbing' && ['accessories', 'bathroom-taps', 'bundles', 'showers', 'toilets'].includes(subcategory)
+          ? node.category.subcategories
+              .filter((item) => ['accessories', 'bathroom-taps', 'bundles', 'showers', 'toilets'].includes(item.slug))
+              .sort((a, b) => a.label.localeCompare(b.label))
+          : node.category.subcategories}
         activeSubSlug={node.subcategory.slug}
       />
 
