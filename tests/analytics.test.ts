@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { flushPendingAnalytics, getAnalyticsConsent, setAnalyticsConsent, trackAddToCart, trackBeginCheckout, trackPageView, trackRemoveFromCart, trackSearch, trackSelectItem, trackSelectPromotion, trackViewCart, trackViewItem, trackViewItemList, trackViewPromotion } from '../lib/analytics/client';
+import { flushPendingAnalytics, getAnalyticsConsent, setAnalyticsConsent, trackAddToCart, trackBeginCheckout, trackPageView, trackPhoneClick, trackRemoveFromCart, trackSearch, trackSelectItem, trackSelectPromotion, trackViewCart, trackViewItem, trackViewItemList, trackViewPromotion } from '../lib/analytics/client';
 import {
   buildRefundParameters,
   cardToAnalyticsItem,
@@ -224,4 +224,25 @@ test('Australian visitors receive measurement without the banner, while opt-outs
     if (previousDocument === undefined) Reflect.deleteProperty(globalThis, 'document');
     else Object.assign(globalThis, {document: previousDocument});
   }
+});
+
+test('phone clicks report page context without transmitting phone numbers', () => {
+  setAnalyticsConsent(true);
+  calls.length = 0;
+  trackPhoneClick('footer', '/bubblers-and-coolers/example/');
+  const emitted = events('phone_click');
+  assert.equal(emitted.length, 1);
+  assert.deepEqual(emitted[0][2], {
+    link_type: 'phone',
+    link_location: 'footer',
+    page_path: '/bubblers-and-coolers/example/',
+  });
+  assert.equal(JSON.stringify(emitted).includes('+61287728162'), false);
+});
+test('phone clicks obey analytics consent', () => {
+  setAnalyticsConsent(false);
+  trackPhoneClick('contact', '/contact/');
+  assert.equal(events('phone_click').length, 0);
+  setAnalyticsConsent(true);
+  calls.length = 0;
 });
