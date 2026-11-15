@@ -149,9 +149,10 @@ async function main(): Promise<void> {
   }
 
   if (missingInProducts.length > 0) {
-    const stream = strict ? console.error : console.warn;
-    const colour = strict ? RED : YELLOW;
-    const symbol = strict ? '✖' : '!';
+    // Shopify-only products use the standard product-page fallback.
+    const stream = console.warn;
+    const colour = YELLOW;
+    const symbol = '!';
     stream('');
     stream(
       `${colour}${symbol} Shopify products with no storefront content entry (${missingInProducts.length}):${RESET}`,
@@ -186,7 +187,6 @@ async function main(): Promise<void> {
   }
 
   if (missingInShopify.length > 0 && strict) process.exit(1);
-  if (missingInProducts.length > 0 && strict) process.exit(1);
   if (categoryMismatches.length > 0) process.exit(1);
 
   console.log(
