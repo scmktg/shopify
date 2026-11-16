@@ -13,7 +13,7 @@ faq:
   - q: "What should I look for when buying a commercial water bubbler?"
     a: "Start with the installation environment, peak demand and how people will drink from the station. Then compare cabinet material, chilled-water capacity, bottle-filling capability, filtration, WaterMark status, plumbing and drainage requirements, power, service access and replacement-filter availability."
   - q: "How much cooling capacity does a commercial water bubbler need?"
-    a: "Choose for peak demand rather than daily headcount alone. All three Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8–12 °C. Unusually high peak demand may be better handled with more than one station."
+    a: "Choose for peak demand rather than daily headcount alone. All three Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8 - 12 °C. Unusually high peak demand may be better handled with more than one station."
   - q: "Should I choose a water bubbler with a bottle-filling tap?"
     a: "Choose bottle filling where users commonly carry reusable bottles, jugs or drink containers. The square stainless and HDPE Enviro Aqua models include a side tap. The round stainless model is the simpler direct-drinking option."
   - q: "Do commercial water bubblers need WaterMark certification in Australia?"
@@ -39,7 +39,7 @@ If you already know those answers, compare the three current models on the [comm
 
 ## Enviro Aqua commercial bubbler specifications and WaterMark identities
 
-All three current models share the same cooling specification: **20 L/hr chilled-water capacity with approximately 8–12 °C water output**.
+All three current models share the same cooling specification: **20 L/hr chilled-water capacity with approximately 8 - 12 °C water output**.
 
 | Brand name | Model ID | WaterMark model name | Certificate | Cabinet / format |
 |---|---|---|---|---|
@@ -55,7 +55,7 @@ These exact model IDs and model names are the WaterMark identities for the curre
 - **Indoor or sheltered location where bottle filling matters:** start with the [square stainless commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des), **YL-600C / Water Bubbler Square**.
 - **Non-metal cabinet with a bottle-filling tap:** consider the [HDPE commercial water bubbler](/bubblers-and-coolers/bubblers/commercial-rust-free-filtered-cold-water-bubbler-wm), **YL-600P / Water Bubbler Grey**.
 
-All three current models are rated at **20 L/hr with approximately 8–12 °C chilled-water output** and are WaterMark certified under **Certificate 023484**. The biggest buying differences are cabinet material, dispensing format and filtration configuration.
+All three current models are rated at **20 L/hr with approximately 8 - 12 °C chilled-water output** and are WaterMark certified under **Certificate 023484**. The biggest buying differences are cabinet material, dispensing format and filtration configuration.
 
 ## 1. Compare cabinet materials
 
@@ -74,7 +74,7 @@ For a deeper comparison, see [water bubbler vs water cooler](/help/bubblers-vs-c
 
 Commercial bubbler capacity is commonly expressed in **litres per hour of chilled output**. Do not convert that into a simplistic rule such as “one bubbler per X people”. Two sites with the same number of users can have very different demand patterns.
 
-All three Enviro Aqua commercial bubblers are rated at **20 L/hr chilled output at approximately 8–12 °C**. If a site has unusually high simultaneous demand, multiple stations can be a better design response than relying on one central unit.
+All three Enviro Aqua commercial bubblers are rated at **20 L/hr chilled output at approximately 8 - 12 °C**. If a site has unusually high simultaneous demand, multiple stations can be a better design response than relying on one central unit.
 
 ## 4. Choose chilled, filtered or both
 
@@ -90,9 +90,9 @@ For an Australian commercial plumbing project, certification should be checked a
 
 The current Enviro Aqua commercial bubbler models are:
 
-- **Enviro Aqua YL-600C — Water Bubbler Square — Certificate 023484**
-- **Enviro Aqua YL-600R — Water Bubbler Round — Certificate 023484**
-- **Enviro Aqua YL-600P — Water Bubbler Grey — Certificate 023484**
+- **Enviro Aqua YL-600C  -  Water Bubbler Square  -  Certificate 023484**
+- **Enviro Aqua YL-600R  -  Water Bubbler Round  -  Certificate 023484**
+- **Enviro Aqua YL-600P  -  Water Bubbler Grey  -  Certificate 023484**
 
 For more detail on the scheme, see [WaterMark certification explained](/help/watermark-certification-explained/).
 

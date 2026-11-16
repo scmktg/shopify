@@ -49,7 +49,7 @@ In Australia, **bubbler** and **drinking fountain** are often used for the same 
 
 Commercial bubblers are common in schools, gyms and sporting facilities, factories and warehouses, public buildings and workplaces with high shared usage.
 
-Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) uses filtered, chilled mains water. **All three cabinet styles are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.**
+Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) uses filtered, chilled mains water. **All three cabinet styles are rated at 20 L/hr and deliver chilled water at approximately 8 - 12 °C.**
 
 ## Enviro Aqua WaterMark identities
 

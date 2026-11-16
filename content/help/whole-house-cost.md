@@ -2,9 +2,9 @@
 title: "Whole House Water Filter Installation Cost - Australia"
 description: "What affects whole-house water filter installation cost in Australia, what a standard install includes, and Enviro Aqua's $2,399 + GST supplied-and-installed package for eligible Sydney and Central Coast homes."
 relatedLinks:
-  - { label: "Whole-house installation NSW — $2,399 + GST", href: "/whole-house-installation-package" }
-  - { label: "Central Coast installation — $2,399 + GST", href: "/locations/central-coast-nsw/whole-house-water-filter-installation" }
-  - { label: "Sydney installation — $2,399 + GST", href: "/locations/sydney-nsw/whole-house-water-filter-installation" }
+  - { label: "Whole-house installation NSW  -  $2,399 + GST", href: "/whole-house-installation-package" }
+  - { label: "Central Coast installation  -  $2,399 + GST", href: "/locations/central-coast-nsw/whole-house-water-filter-installation" }
+  - { label: "Sydney installation  -  $2,399 + GST", href: "/locations/sydney-nsw/whole-house-water-filter-installation" }
   - { label: "Whole-house water filters", href: "/water-filters/whole-house" }
 faq:
   - q: "How much is Enviro Aqua's standard whole-house installation package?"

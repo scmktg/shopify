@@ -4,7 +4,7 @@
  * Anywhere the site renders a phone number, address, ABN, ACN, social
  * link, opening hours, or returns/shipping policy reference should
  * import from here rather than re-hardcoding the value. Markdown
- * editorial content cannot import TS — those files have the values
+ * editorial content cannot import TS  -  those files have the values
  * baked in by hand at the time of last update; when something here
  * changes, search the repo for the old value and update both.
  */
@@ -47,7 +47,7 @@ export const BUSINESS_INFO = {
     timeZone: 'Australia/Sydney',
   },
   /**
-   * Phone-support window — narrower than the showroom hours.
+   * Phone-support window  -  narrower than the showroom hours.
    * Surfaced under the Add to cart "Questions?" line.
    */
   phoneSupportHours: 'Mon-Thu 9am-3pm · Fri 9am-1pm',
@@ -60,7 +60,7 @@ export const BUSINESS_INFO = {
   clickAndCollectPickupWindow: 'usually ready within 1 hour',
   /**
    * Three short copy items for the brand trust strip rendered below
-   * every product page. Single line each, no card boxes — see
+   * every product page. Single line each, no card boxes  -  see
    * components/product/BrandTrustStrip.tsx. Edit copy here, never
    * in the component.
    */
@@ -86,7 +86,7 @@ export const BUSINESS_INFO = {
   returns: {
     /** Days from delivery during which a return can be requested. */
     windowDays: 14,
-    /** What's eligible — damaged/faulty only, not change-of-mind. */
+    /** What's eligible  -  damaged/faulty only, not change-of-mind. */
     scope: 'damaged-or-faulty',
     defaultWarrantyMonths: 12,
   },
@@ -94,7 +94,7 @@ export const BUSINESS_INFO = {
     facebook: 'https://www.facebook.com/EnviroAqua.com.au/',
     instagram: 'https://www.instagram.com/enviro_aqua/',
     // Canonical Google Business Profile URL. Leave empty until the
-    // exact g.page / maps profile URL is confirmed — emitting a Maps
+    // exact g.page / maps profile URL is confirmed  -  emitting a Maps
     // search URL as sameAs is weaker than a true profile link and
     // Google may ignore it. Filtered out of sameAs when empty.
     googleBusiness: '',
