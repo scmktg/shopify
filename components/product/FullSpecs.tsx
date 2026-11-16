@@ -7,7 +7,7 @@ interface FullSpecsProps {
 
 /**
  * Full specifications table. Free-form {label, value} rows from the
- * products.json `fullSpecs` array — no typed metafield formatters.
+ * products.json `fullSpecs` array  -  no typed metafield formatters.
  *
  * Per clarification #10, spec values are not tabular-nums; numeric
  * alignment in tables comes from layout, not from numeral metrics.

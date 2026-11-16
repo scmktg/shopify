@@ -16,7 +16,7 @@ interface MoreInCategoryProps {
 
 /**
  * "More in this category" rail. Each card is image + title + price +
- * link only — no Add to cart (that's the BoughtTogether rail's job).
+ * link only  -  no Add to cart (that's the BoughtTogether rail's job).
  *
  * Two source modes:
  *   - 'auto'  → look up products.json for handles in the same

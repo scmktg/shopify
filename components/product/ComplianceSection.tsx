@@ -7,7 +7,7 @@ interface ComplianceSectionProps {
 
 /**
  * "Compliance & certification" page section. Renders only when a
- * `compliance.note` is set — the badge in the buy box covers the
+ * `compliance.note` is set  -  the badge in the buy box covers the
  * status itself. Note is markdown (same renderer as `description`)
  * so a merchant can drop a link to the ABCB database, AS/NZS
  * standard reference, etc.
