@@ -17,12 +17,12 @@ interface BuyBannerProps {
 /**
  * Re-engagement CTA panel rendered after the long-form persuasion
  * sections (description, features, recommended-for). The buyer who
- * read all the way through has signalled intent — give them a way
+ * read all the way through has signalled intent  -  give them a way
  * to act without scrolling back to the top of the page.
  *
  * Reuses the same AddToCartButton component as the top buy box, so
  * the quantity stepper + Add to cart + Buy now treatment is
- * consistent. Each instance owns its own qty state — that's
+ * consistent. Each instance owns its own qty state  -  that's
  * intentional, the user is acting on what they see in this banner.
  */
 export function BuyBanner({

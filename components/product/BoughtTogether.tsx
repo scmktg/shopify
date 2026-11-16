@@ -31,7 +31,7 @@ interface BoughtTogetherCard {
  * Hides the rail entirely when `handles` is empty (an empty
  * cross-sell is worse than no cross-sell). Cards for handles that
  * don't resolve in Shopify are silently skipped in production with
- * a dev warning logged — a missing card is less bad than a broken
+ * a dev warning logged  -  a missing card is less bad than a broken
  * one.
  */
 export async function BoughtTogether({ handles }: BoughtTogetherProps) {

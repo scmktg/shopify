@@ -27,7 +27,7 @@ import {
  *     active item is opacity-100, the others opacity-0 + pointer-
  *     events-none + tabIndex=-1, so only one item is clickable /
  *     focusable at a time. Switching index between two items
- *     crossfades over 500ms — smoother than a key-based remount and
+ *     crossfades over 500ms  -  smoother than a key-based remount and
  *     keeps the DOM stable for hydration / CLS.
  *   - aria-live="polite" + aria-hidden on inactive items lets
  *     screen readers announce the active message without re-reading
@@ -82,7 +82,7 @@ export function PromoBanner() {
           <ZipPaymentBadge location="header" className="shrink-0 bg-transparent p-0 [&_img]:!h-4 sm:[&_img]:!h-5" />
 
         {/*
-          Rotating promotion — desktop only; mobile displays the stable
+          Rotating promotion  -  desktop only; mobile displays the stable
           wholesale pricing promise instead.
         */}
         <div

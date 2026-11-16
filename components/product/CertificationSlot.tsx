@@ -21,7 +21,7 @@ interface CertificationSlotProps {
  *   - watermark.status === 'pending'   → amber WaterMark pending pill
  *                                        (replaces the certified pill)
  *
- * Both compliance signals are independent — a product may carry
+ * Both compliance signals are independent  -  a product may carry
  * either, both, or neither. Nothing here implies that WMK
  * certification means lead-free, or vice versa.
  */
