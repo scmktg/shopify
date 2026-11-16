@@ -7,11 +7,11 @@
  * build rather than crashing in front of a customer.
  *
  * Two passes:
- *   1. `validateProducts()` — synchronous, pure. Checks the JSON
+ *   1. `validateProducts()`  -  synchronous, pure. Checks the JSON
  *      shape, the cross-references between handles (boughtTogether,
  *      explicit moreInCategory), and the [category, subcategory]
  *      tuple against `content/categories.ts`. Always runs.
- *   2. `validateAgainstShopify()` — async, optional. Calls the
+ *   2. `validateAgainstShopify()`  -  async, optional. Calls the
  *      Shopify Storefront API to confirm every handle in
  *      `products.json` resolves to a real product, and that every
  *      Shopify product has a corresponding products.json entry.
@@ -79,7 +79,7 @@ export function validateProducts(input: unknown): ValidationResult {
 
   const map = input as Record<string, unknown>;
   // Top-level keys prefixed with `__` are file metadata (e.g.
-  // `__placeholders`), not product entries. Skip them entirely —
+  // `__placeholders`), not product entries. Skip them entirely  - 
   // shape, cross-reference, and cross-Shopify checks all ignore them.
   const handles = Object.keys(map).filter((k) => !isFileMetaKey(k));
 
@@ -96,7 +96,7 @@ export function validateProducts(input: unknown): ValidationResult {
     validateEntry(handle, entry as Record<string, unknown>, errors, warnings);
   }
 
-  // Cross-handle pass — only run when the per-entry shape passed for
+  // Cross-handle pass  -  only run when the per-entry shape passed for
   // the handles we'd be referencing.
   for (const handle of handles) {
     const entry = map[handle];
@@ -129,7 +129,7 @@ function validateEntry(
     warnings.push({ handle, path, message });
   };
 
-  // categories — required, exactly 2 strings, both must resolve.
+  // categories  -  required, exactly 2 strings, both must resolve.
   const categories = entry['categories'];
   if (!Array.isArray(categories) || categories.length !== 2) {
     push(
@@ -165,7 +165,7 @@ function validateEntry(
     ) {
       push(
         'headlineSpecs',
-        `Capped at ${HEADLINE_SPECS_LIMIT} — got ${entry['headlineSpecs'].length}. The renderer will drop the extras; trim the JSON to silence this warning.`,
+        `Capped at ${HEADLINE_SPECS_LIMIT}  -  got ${entry['headlineSpecs'].length}. The renderer will drop the extras; trim the JSON to silence this warning.`,
       );
     }
   }
@@ -206,7 +206,7 @@ function validateFamily(
   if (!Array.isArray(siblings) || siblings.length < 2) {
     push(
       'family.siblings',
-      'Must be an array of two or more {handle, label} entries — a family of one is just a standalone product.',
+      'Must be an array of two or more {handle, label} entries  -  a family of one is just a standalone product.',
     );
     return;
   }
@@ -295,7 +295,7 @@ function validateCompliance(
   if ('wels' in compliance && compliance['wels'] !== null) {
     push(
       'compliance.wels',
-      'Reserved for future use — must be null today (the WELS shape will be widened when rendering lands).',
+      'Reserved for future use  -  must be null today (the WELS shape will be widened when rendering lands).',
     );
   }
   if (
@@ -346,7 +346,7 @@ function validateWatermark(
   }
 
   // Launch-blocker hand-off check (clarification #11). Emitted as a
-  // *warning* — the build still passes — because licences often
+  // *warning*  -  the build still passes  -  because licences often
   // arrive from the supplier after the engineer has populated the
   // rest of the entry. The audit script (`npm run audit:watermark`)
   // is the gate that should fail before launch; this warning keeps
@@ -464,7 +464,7 @@ function validateCrossReferences(
         errors.push({
           handle,
           path: `upsells.boughtTogether[${i}]`,
-          message: `Unknown handle '${h}' — no entry in products.json.`,
+          message: `Unknown handle '${h}'  -  no entry in products.json.`,
         });
       }
     });
@@ -483,7 +483,7 @@ function validateCrossReferences(
         errors.push({
           handle,
           path: `upsells.moreInCategory[${i}]`,
-          message: `Unknown handle '${h}' — no entry in products.json.`,
+          message: `Unknown handle '${h}'  -  no entry in products.json.`,
         });
       }
     });
@@ -495,7 +495,7 @@ function validateCrossReferences(
  * `products.json` resolves to a Shopify product, and every Shopify
  * handle has a corresponding `products.json` entry.
  *
- * Skipped when Shopify env vars are absent — the CLI prints a
+ * Skipped when Shopify env vars are absent  -  the CLI prints a
  * notice in that case so it's obvious nothing was checked.
  *
  * Handles prefixed with `_` are treated as schema scaffolding

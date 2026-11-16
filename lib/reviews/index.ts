@@ -11,7 +11,7 @@ export function sortByDateDesc(input: ReadonlyArray<Review>): ReadonlyArray<Revi
 /**
  * Reviews marked `featured: true`, sorted most-recent-first. Used on
  * the homepage carousel and the PDP slot. Falls back to all reviews
- * (still date-sorted) if curation hasn't been done — guards against
+ * (still date-sorted) if curation hasn't been done  -  guards against
  * an empty section on a fresh deploy.
  */
 export function getFeaturedReviews(limit?: number): ReadonlyArray<Review> {
@@ -40,7 +40,7 @@ function hashString(input: string): number {
 /**
  * Two featured reviews bucketed by the product handle. Same product
  * shows the same pair on every visit, but different products show
- * different pairs — so a shopper browsing several PDPs sees variety
+ * different pairs  -  so a shopper browsing several PDPs sees variety
  * across the catalogue without us having to curate per product.
  *
  * If fewer than `count` featured reviews exist, returns whatever is
