@@ -12,7 +12,7 @@ interface ProductErrorPageProps {
  * Route-scoped error boundary for the product page.
  *
  * Without this, an uncaught error in the [handle] subtree bubbles to
- * the global error.tsx — and Vercel can occasionally surface that
+ * the global error.tsx  -  and Vercel can occasionally surface that
  * crash as an opaque 401 instead of a 500. With this boundary in
  * place, we always render a real product-page error UI plus the
  * Vercel digest, which lets us cross-reference the runtime log on

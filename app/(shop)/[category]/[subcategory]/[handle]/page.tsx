@@ -45,7 +45,7 @@ const DOSING_PACKAGES: Readonly<Record<string, DosingPackageConfig>> = {
   'chemical-bund-400l': { packageHandle: 'chemical-dosing-tank-and-bund-300l', componentHandle: 'chemical-dosing-tank-300l', discountAmount: '49.00' },
 };
 
-const BRAND_SUFFIX_RE = /\s*[\|—–-]\s*Enviro\s*Aqua\s*$/i;
+const BRAND_SUFFIX_RE = /\s*[\| -  - -]\s*Enviro\s*Aqua\s*$/i;
 
 function stripBrandSuffix(title: string): string {
   let out = title;
@@ -167,8 +167,8 @@ export default async function ProductPage({ params, searchParams }: ProductPageP
                 The standard package is <strong>$2,399 + GST supplied and installed</strong> for eligible Sydney and NSW Central Coast properties, subject to standard installation conditions.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation — $2,399 + GST</Link>
-                <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-brand-blue-light">Sydney installation — $2,399 + GST</Link>
+                <Link href="/locations/central-coast-nsw/whole-house-water-filter-installation" className="rounded bg-brand-blue px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-blue-hover">Central Coast installation  -  $2,399 + GST</Link>
+                <Link href="/locations/sydney-nsw/whole-house-water-filter-installation" className="rounded border border-brand-blue px-4 py-2.5 text-sm font-semibold text-brand-blue hover:bg-brand-blue-light">Sydney installation  -  $2,399 + GST</Link>
               </div>
             </div>
           </div>
