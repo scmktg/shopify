@@ -1,11 +1,11 @@
 const TANKS = [
-  { capacity: '40L', shape: 'Square', dimensions: '340 × 380 × 390 mm high', bund: '—' },
-  { capacity: '60L', shape: 'Square', dimensions: '340 × 380 × 550 mm high', bund: '—' },
+  { capacity: '40L', shape: 'Square', dimensions: '340 × 380 × 390 mm high', bund: ' - ' },
+  { capacity: '60L', shape: 'Square', dimensions: '340 × 380 × 550 mm high', bund: ' - ' },
   { capacity: '50L', shape: 'Round', dimensions: 'Ø390 × 460 mm high', bund: '50L Chemical Bund' },
   { capacity: '100L', shape: 'Round', dimensions: 'Ø460 × 820 mm high', bund: '100L Chemical Bund' },
   { capacity: '200L', shape: 'Round', dimensions: 'Ø560 × 950 mm high', bund: '200L Chemical Bund' },
   { capacity: '300L', shape: 'Round', dimensions: 'Ø710 × 960 mm high', bund: '400L Chemical Bund' },
-  { capacity: '500L', shape: 'Round', dimensions: 'Ø840 × 1060 mm high', bund: '—' },
+  { capacity: '500L', shape: 'Round', dimensions: 'Ø840 × 1060 mm high', bund: ' - ' },
 ] as const;
 
 const BUNDS = [

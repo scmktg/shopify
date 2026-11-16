@@ -15,7 +15,7 @@ interface SizeFilterProps {
 }
 
 /**
- * Cartridge-size pill filter. Compact — shares a single horizontal
+ * Cartridge-size pill filter. Compact  -  shares a single horizontal
  * filter strip with the count and the sort dropdown rather than
  * occupying its own labelled fieldset row.
  *
@@ -26,7 +26,7 @@ interface SizeFilterProps {
  */
 export function SizeFilter({ value, onChange, counts }: SizeFilterProps) {
   // When counts are supplied, omit sizes that have zero matches
-  // entirely rather than rendering them disabled — a category with
+  // entirely rather than rendering them disabled  -  a category with
   // no 4.5" cartridges shouldn't even hint that the option exists.
   const visibleOptions = counts
     ? CARTRIDGE_SIZE_OPTIONS.filter((opt) => (counts[opt.value] ?? 0) > 0)

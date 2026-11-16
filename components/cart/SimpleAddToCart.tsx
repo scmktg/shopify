@@ -10,7 +10,7 @@ interface SimpleAddToCartProps {
 
 /**
  * Compact one-click "Add to cart" button used inside the
- * Frequently-Bought-Together rail. No quantity stepper — the rail
+ * Frequently-Bought-Together rail. No quantity stepper  -  the rail
  * is a basket-builder, the assumption is one of each. The full
  * AddToCartButton with stepper stays on the main product page.
  */
