@@ -124,14 +124,14 @@
     }
   },
   "uv-water-filter-ultraviolet-sterilisation-0-5-1-gpm-6w-220v": {
-    "shortDescription": "6W UV water steriliser with Philips TUV 6W G6 T5 UV-C lamp, stainless steel chamber and 220–240V AC power supply. Designed for compact 1 GPM point-of-use water filtration systems.",
-    "description": "The **6W UV Water Steriliser with Philips UV-C Lamp** is a compact ultraviolet water treatment system for point-of-use drinking water filtration. Powered by a **220–240V AC supply**, it features a Philips TUV 6W G6 T5 lamp and stainless steel treatment chamber.\n\n**Key features:**\n- Philips TUV 6W G6 T5 germicidal UV-C lamp\n- 220–240V AC system power supply\n- 1 GPM flow rate\n- Stainless steel UV chamber\n- Compact design for point-of-use filtration\n\n**Philips lamp specifications:**\n- **Lamp power:** 6W\n- **UV-C output:** 1.9W at 100 hours\n- **Peak UV-C wavelength:** approximately 253.7 nm\n- **Rated useful life:** 9,000 hours\n- **Lamp base and format:** G5 / T5\n\n**Applications:** Designed for compact drinking water filtration systems, including suitable under-sink installations. Use with appropriate pre-filtration for best system performance.\n\n**UV safety:** Never look directly at an operating UV-C lamp; UV-C light can injure eyes and skin.",
+    "shortDescription": "6W UV water steriliser with Philips TUV 6W G6 T5 UV-C lamp, stainless steel chamber and 220 - 240V AC power supply. Designed for compact 1 GPM point-of-use water filtration systems.",
+    "description": "The **6W UV Water Steriliser with Philips UV-C Lamp** is a compact ultraviolet water treatment system for point-of-use drinking water filtration. Powered by a **220 - 240V AC supply**, it features a Philips TUV 6W G6 T5 lamp and stainless steel treatment chamber.\n\n**Key features:**\n- Philips TUV 6W G6 T5 germicidal UV-C lamp\n- 220 - 240V AC system power supply\n- 1 GPM flow rate\n- Stainless steel UV chamber\n- Compact design for point-of-use filtration\n\n**Philips lamp specifications:**\n- **Lamp power:** 6W\n- **UV-C output:** 1.9W at 100 hours\n- **Peak UV-C wavelength:** approximately 253.7 nm\n- **Rated useful life:** 9,000 hours\n- **Lamp base and format:** G5 / T5\n\n**Applications:** Designed for compact drinking water filtration systems, including suitable under-sink installations. Use with appropriate pre-filtration for best system performance.\n\n**UV safety:** Never look directly at an operating UV-C lamp; UV-C light can injure eyes and skin.",
     "features": [
       "Philips TUV 6W G6 T5 UV-C lamp",
       "6W lamp power and 1.9W UV-C output at 100 hours",
       "Approximately 253.7 nm UV-C wavelength",
       "9,000-hour rated useful lamp life",
-      "220–240V AC system supply",
+      "220 - 240V AC system supply",
       "1 GPM flow rate",
       "Stainless steel treatment chamber"
     ],
@@ -146,7 +146,7 @@
       },
       {
         "label": "Power supply",
-        "value": "220–240V AC"
+        "value": "220 - 240V AC"
       },
       {
         "label": "Flow rate",
@@ -208,7 +208,7 @@
       },
       {
         "label": "System power supply / ballast",
-        "value": "220–240V AC"
+        "value": "220 - 240V AC"
       },
       {
         "label": "Flow rate",
@@ -226,7 +226,7 @@
       },
       {
         "q": "What power supply does this system use?",
-        "a": "This model uses a 220–240V AC power supply."
+        "a": "This model uses a 220 - 240V AC power supply."
       },
       {
         "q": "Which Philips UV lamp does it use?",
@@ -239,7 +239,7 @@
     ],
     "seo": {
       "title": "6W UV Water Steriliser | Philips TUV Lamp | 240V",
-      "description": "6W UV water steriliser with Philips TUV 6W G6 T5 lamp, stainless steel chamber, 1 GPM flow rate and 220–240V AC power for point-of-use filtration."
+      "description": "6W UV water steriliser with Philips TUV 6W G6 T5 lamp, stainless steel chamber, 1 GPM flow rate and 220 - 240V AC power for point-of-use filtration."
     },
     "compliance": {
       "watermark": null,
@@ -248,13 +248,13 @@
     }
   },
   "uv-0-5-1-gpm-11w-filters-uv-water-sterilizer-filter-220v-phillip-lamp": {
-    "shortDescription": "11W UV water steriliser kit with Philips TUV 11W UV-C lamp, stainless steel chamber, quartz sleeve and 200–240V AC electronic ballast. Australian plug and fittings included.",
-    "description": "A compact **11W UV water steriliser kit** for point-of-use water filtration systems. Featuring a **Philips TUV 11W UV-C lamp** and stainless steel treatment chamber, this kit is ideal for integration with appropriately pre-filtered drinking water systems.\n\n**Kit includes:**\n- Philips TUV 11W UV-C lamp\n- Stainless steel UV chamber\n- Quartz glass lamp sleeve\n- 11W electronic ballast with Australian mains plug and lamp connector\n- Two push-fit elbow fittings\n- Two mounting clips\n\n**Specifications:**\n- **UV lamp:** Philips TUV 11W\n- **Lamp power:** 11W\n- **Power input:** 200–240V AC, 50/60Hz\n- **Flow rate:** 0.5–1 GPM\n- **Chamber:** Stainless steel\n- **Connections:** 1/4-inch fittings\n\n**Applications:** Compact under-sink and other point-of-use water filtration systems. Install downstream of suitable pre-filtration to help maintain effective UV treatment.\n\n**UV safety:** Never look directly at an operating UV-C lamp; UV-C light can injure eyes and skin.",
+    "shortDescription": "11W UV water steriliser kit with Philips TUV 11W UV-C lamp, stainless steel chamber, quartz sleeve and 200 - 240V AC electronic ballast. Australian plug and fittings included.",
+    "description": "A compact **11W UV water steriliser kit** for point-of-use water filtration systems. Featuring a **Philips TUV 11W UV-C lamp** and stainless steel treatment chamber, this kit is ideal for integration with appropriately pre-filtered drinking water systems.\n\n**Kit includes:**\n- Philips TUV 11W UV-C lamp\n- Stainless steel UV chamber\n- Quartz glass lamp sleeve\n- 11W electronic ballast with Australian mains plug and lamp connector\n- Two push-fit elbow fittings\n- Two mounting clips\n\n**Specifications:**\n- **UV lamp:** Philips TUV 11W\n- **Lamp power:** 11W\n- **Power input:** 200 - 240V AC, 50/60Hz\n- **Flow rate:** 0.5 - 1 GPM\n- **Chamber:** Stainless steel\n- **Connections:** 1/4-inch fittings\n\n**Applications:** Compact under-sink and other point-of-use water filtration systems. Install downstream of suitable pre-filtration to help maintain effective UV treatment.\n\n**UV safety:** Never look directly at an operating UV-C lamp; UV-C light can injure eyes and skin.",
     "features": [
       "Philips TUV 11W UV-C lamp",
       "Stainless steel UV treatment chamber and quartz sleeve",
-      "200–240V AC, 50/60Hz electronic ballast",
-      "0.5–1 GPM flow rate",
+      "200 - 240V AC, 50/60Hz electronic ballast",
+      "0.5 - 1 GPM flow rate",
       "Australian mains plug and lamp connector",
       "Two push-fit elbows and two mounting clips included"
     ],
@@ -269,7 +269,7 @@
       },
       {
         "label": "Ballast input",
-        "value": "200–240V AC, 50/60Hz"
+        "value": "200 - 240V AC, 50/60Hz"
       },
       {
         "label": "Chamber",
@@ -295,7 +295,7 @@
       },
       {
         "label": "Input",
-        "value": "200–240V AC"
+        "value": "200 - 240V AC"
       },
       {
         "label": "Frequency",
@@ -319,7 +319,7 @@
       },
       {
         "label": "Flow rate",
-        "value": "0.5–1 GPM"
+        "value": "0.5 - 1 GPM"
       },
       {
         "label": "Connections",
@@ -346,11 +346,11 @@
       },
       {
         "q": "What is the flow rate?",
-        "a": "The system is rated at 0.5–1 GPM."
+        "a": "The system is rated at 0.5 - 1 GPM."
       },
       {
         "q": "What power supply does it use?",
-        "a": "The electronic ballast is designed for 200–240V AC, 50/60Hz."
+        "a": "The electronic ballast is designed for 200 - 240V AC, 50/60Hz."
       },
       {
         "q": "Where can this UV steriliser be installed?",
@@ -359,7 +359,7 @@
     ],
     "seo": {
       "title": "11W UV Water Steriliser | Philips TUV Lamp | 240V",
-      "description": "11W UV water steriliser kit with Philips TUV UV-C lamp, stainless chamber, quartz sleeve and 200–240V ballast. Australian plug and fittings included."
+      "description": "11W UV water steriliser kit with Philips TUV UV-C lamp, stainless chamber, quartz sleeve and 200 - 240V ballast. Australian plug and fittings included."
     }
   }
 }
