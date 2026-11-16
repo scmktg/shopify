@@ -25,7 +25,7 @@ Office drinking-water systems are usually chosen around **how staff and visitors
 
 A traditional bubbler provides direct drinking from an upward spout. A water cooler usually dispenses water into a cup or bottle. Some commercial units combine the two functions. The separate question is whether the water supply is **plumbed** or **bottled**. See [water bubbler vs water cooler](/help/bubblers-vs-coolers/) for that terminology in more detail.
 
-For offices that want a simple floor-standing drinking station, Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes three filtered, chilled mains-connected models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.** The [round stainless model](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) is the simplest direct-drinking option, while the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) adds a separate side tap for bottles or glasses.
+For offices that want a simple floor-standing drinking station, Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes three filtered, chilled mains-connected models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8 - 12 °C.** The [round stainless model](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) is the simplest direct-drinking option, while the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) adds a separate side tap for bottles or glasses.
 
 ## WaterMark identity of the range
 
@@ -61,10 +61,10 @@ For many offices, chilled filtered drinking water is all that is needed. Hot or 
 
 For indoor or sheltered office spaces, the two stainless models are the most relevant:
 
-- **[Round stainless bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm) — YL-600R / Water Bubbler Round:** compact, direct-drinking format for offices, foyers and staff areas.
-- **[Square stainless bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) — YL-600C / Water Bubbler Square:** separate side tap for bottles or glasses.
+- **[Round stainless bubbler](/bubblers-and-coolers/bubblers/commercial-stainless-steel-filtered-cold-water-bubbler-round-wm)  -  YL-600R / Water Bubbler Round:** compact, direct-drinking format for offices, foyers and staff areas.
+- **[Square stainless bubbler](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des)  -  YL-600C / Water Bubbler Square:** separate side tap for bottles or glasses.
 
-Both, along with the HDPE model, are rated at **20 L/hr** with chilled-water output of approximately **8–12 °C**.
+Both, along with the HDPE model, are rated at **20 L/hr** with chilled-water output of approximately **8 - 12 °C**.
 
 
 ## Placement in an office

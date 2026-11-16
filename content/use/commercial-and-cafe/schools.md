@@ -11,7 +11,7 @@ faq:
   - q: "What type of water bubbler is best for a school?"
     a: "The round stainless steel model is a straightforward direct-drinking option. The square stainless steel and HDPE models add a separate side tap for filling bottles."
   - q: "How much cooling capacity does a school water bubbler need?"
-    a: "Size the system for peak break-time demand rather than enrolment alone. All three Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8–12 °C. Larger schools or high-traffic zones may be better served by multiple drinking points rather than relying on one unit."
+    a: "Size the system for peak break-time demand rather than enrolment alone. All three Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8 - 12 °C. Larger schools or high-traffic zones may be better served by multiple drinking points rather than relying on one unit."
   - q: "Do school water bubblers need WaterMark certification?"
     a: "WaterMark requirements depend on the product type and plumbing application. Products listed on the WaterMark Schedule of Products must be certified for regulated plumbing installations. All three commercial bubbler models in this Enviro Aqua range are WaterMark certified under Certificate 023484."
   - q: "Should a school choose a bubbler with a bottle-fill tap?"
@@ -24,7 +24,7 @@ A **school water bubbler** is a mains-connected drinking-water station designed 
 
 For most schools, the choice comes down to four questions: **where will it be installed, how many students will use it at peak times, does it need bottle filling, and what plumbing/compliance requirements apply?**
 
-Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) has three filtered, chilled models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.** All three are WaterMark certified under **Certificate 023484**.
+Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) has three filtered, chilled models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8 - 12 °C.** All three are WaterMark certified under **Certificate 023484**.
 
 ## WaterMark identity of the Enviro Aqua commercial bubbler range
 
@@ -61,7 +61,7 @@ The stainless models are better suited to indoor or sheltered positions.
 
 Cooling capacity is normally stated in **litres per hour**. The important number is peak demand, because school usage is concentrated around recess, lunch and sport rather than spread evenly through the day.
 
-All three Enviro Aqua commercial bubblers are rated at **20 L/hr** and deliver chilled water at approximately **8–12 °C**. That gives buyers a consistent cooling specification across the range; the cabinet and dispensing format are what change.
+All three Enviro Aqua commercial bubblers are rated at **20 L/hr** and deliver chilled water at approximately **8 - 12 °C**. That gives buyers a consistent cooling specification across the range; the cabinet and dispensing format are what change.
 
 For a large school, adding drinking points near different student zones can be more effective than expecting one central unit to serve everyone during a short break.
 

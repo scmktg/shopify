@@ -10,7 +10,7 @@ relatedLinks:
   - { label: "Water bubblers for factories and warehouses", href: "/use/commercial-and-cafe/factories-and-warehouses/" }
 faq:
   - q: "What cooling capacity should a gym water bubbler have?"
-    a: "Size a gym drinking station around peak demand rather than total membership. All three Enviro Aqua commercial bubbler models are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C. Larger or unusually busy facilities should consider whether more than one station is appropriate for peak periods."
+    a: "Size a gym drinking station around peak demand rather than total membership. All three Enviro Aqua commercial bubbler models are rated at 20 L/hr and deliver chilled water at approximately 8 - 12 °C. Larger or unusually busy facilities should consider whether more than one station is appropriate for peak periods."
   - q: "Should a gym have a bubbler and a bottle-fill tap?"
     a: "A bottle-fill outlet is useful where members normally carry reusable bottles, while a bubbler spout remains convenient for direct drinking. The square stainless and HDPE Enviro Aqua models include a separate side tap; the round stainless model is the simpler direct-drinking option."
   - q: "Where should gym water bubblers be installed?"
@@ -23,7 +23,7 @@ faq:
 
 Gyms and fitness centres often create **short periods of high drinking-water demand** before classes, between sessions and during busy training periods. A suitable gym water bubbler therefore needs to be chosen around peak use, bottle-filling behaviour, cabinet location and ease of servicing rather than membership numbers alone.
 
-Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes three filtered, chilled models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8–12 °C.** For gyms, the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) is a useful starting point because it combines a bubbler spout with a separate side tap for bottles.
+Enviro Aqua's [commercial water bubbler range](/commercial-water-bubblers) includes three filtered, chilled models. **All three are rated at 20 L/hr and deliver chilled water at approximately 8 - 12 °C.** For gyms, the [square stainless model](/bubblers-and-coolers/bubblers/commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des) is a useful starting point because it combines a bubbler spout with a separate side tap for bottles.
 
 ## WaterMark identity of the Enviro Aqua commercial bubbler range
 
@@ -43,7 +43,7 @@ Cooling capacity tells you how much chilled water a unit can produce over time. 
 
 A boutique studio with staggered classes can have very different demand from a large fitness centre where many members refill bottles at the same time.
 
-All three Enviro Aqua commercial models are rated at **20 L/hr with approximately 8–12 °C chilled-water output**. When assessing whether that is enough, consider the busiest training or class period, how many people refill bottles within the same short window, whether one central station serves the whole facility or several zones, and whether a second station would improve access and reduce queues.
+All three Enviro Aqua commercial models are rated at **20 L/hr with approximately 8 - 12 °C chilled-water output**. When assessing whether that is enough, consider the busiest training or class period, how many people refill bottles within the same short window, whether one central station serves the whole facility or several zones, and whether a second station would improve access and reduce queues.
 
 ## Bubbler only or bubbler plus bottle filling?
 
