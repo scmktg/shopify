@@ -7,16 +7,16 @@ import { getSiteUrl } from '@/lib/seo/siteUrl';
 // stronger affirmative signal than the catch-all wildcard rule).
 //
 // Sources:
-// - GPTBot, ChatGPT-User, OAI-SearchBot — OpenAI
-// - ClaudeBot, Claude-Web, anthropic-ai — Anthropic
-// - PerplexityBot, Perplexity-User — Perplexity
-// - Google-Extended — Google's Gemini training opt-in
-// - CCBot — Common Crawl, used as training corpus by many LLMs
-// - Bytespider — ByteDance (Doubao, Coze, etc.)
-// - Applebot-Extended — Apple Intelligence training opt-in
-// - Meta-ExternalAgent, FacebookBot — Meta's LLaMA family training
-// - Amazonbot — Alexa+ retrieval
-// - YouBot, cohere-ai, DuckAssistBot — assistant retrievers
+// - GPTBot, ChatGPT-User, OAI-SearchBot  -  OpenAI
+// - ClaudeBot, Claude-Web, anthropic-ai  -  Anthropic
+// - PerplexityBot, Perplexity-User  -  Perplexity
+// - Google-Extended  -  Google's Gemini training opt-in
+// - CCBot  -  Common Crawl, used as training corpus by many LLMs
+// - Bytespider  -  ByteDance (Doubao, Coze, etc.)
+// - Applebot-Extended  -  Apple Intelligence training opt-in
+// - Meta-ExternalAgent, FacebookBot  -  Meta's LLaMA family training
+// - Amazonbot  -  Alexa+ retrieval
+// - YouBot, cohere-ai, DuckAssistBot  -  assistant retrievers
 const AI_USER_AGENTS = [
   'GPTBot',
   'ChatGPT-User',
