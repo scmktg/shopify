@@ -138,9 +138,11 @@ async function main(): Promise<void> {
   );
 
   if (missingInShopify.length > 0) {
-    const stream = strict ? console.error : console.warn;
-    const colour = strict ? RED : YELLOW;
-    const symbol = strict ? '✖' : '!';
+    // Archived Shopify products can retain historical editorial entries.
+    // These entries should not block deployments of unrelated storefront copy.
+    const stream = console.warn;
+    const colour = YELLOW;
+    const symbol = '!';
     stream('');
     stream(
       `${colour}${symbol} base product content references Shopify handles that don't exist (${missingInShopify.length}):${RESET}`,
@@ -186,7 +188,6 @@ async function main(): Promise<void> {
     );
   }
 
-  if (missingInShopify.length > 0 && strict) process.exit(1);
   if (categoryMismatches.length > 0) process.exit(1);
 
   console.log(
