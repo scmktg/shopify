@@ -14,7 +14,7 @@ export interface InstallationLead {
   propertyType: 'House' | 'Townhouse' | 'Apartment' | 'Other';
   preferredTime: string;
   notes: string;
-  /** Honeypot — must be empty for a real submission. */
+  /** Honeypot  -  must be empty for a real submission. */
   company: string;
 }
 
@@ -72,7 +72,7 @@ export function validateInstallationLead(
     errors.postcode = 'Postcode must be a 4-digit number.';
   } else if (!isEligiblePostcode(postcode)) {
     errors.postcode =
-      'Sorry — this package is currently NSW Central Coast only.';
+      'Sorry  -  this package is currently NSW Central Coast only.';
   }
 
   const propertyType = (raw.propertyType ?? '').toString();

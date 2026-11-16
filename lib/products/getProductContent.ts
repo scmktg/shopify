@@ -27,7 +27,7 @@ export function getAllProductContent(): ProductContentMap {
  *      (categories[0] only) and dedupe.
  *
  * Excludes `excludeHandle` exactly AND any handle that starts with
- * `${excludeHandle}-` — this catches Shopify-side legacy duplicates
+ * `${excludeHandle}-`  -  this catches Shopify-side legacy duplicates
  * like `<handle>-dup2` / `<handle>-old` that share the canonical stem.
  *
  * Returns at most `limit` handles.

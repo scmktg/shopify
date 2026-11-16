@@ -91,17 +91,17 @@ const PRICE_OPTIONS: ReadonlyArray<CatalogFilterOption> = [
   },
   {
     value: '100-250',
-    label: '$100–$250',
+    label: '$100 - $250',
     query: 'variants.price:>=100 AND variants.price:<=250',
   },
   {
     value: '250-500',
-    label: '$250–$500',
+    label: '$250 - $500',
     query: 'variants.price:>250 AND variants.price:<=500',
   },
   {
     value: '500-1000',
-    label: '$500–$1,000',
+    label: '$500 - $1,000',
     query: 'variants.price:>500 AND variants.price:<=1000',
   },
   {

@@ -129,7 +129,7 @@ export interface MarkdownPageSummary {
 }
 
 /**
- * Lightweight listing for hub pages — reads frontmatter only,
+ * Lightweight listing for hub pages  -  reads frontmatter only,
  * skips body rendering. Returns one entry per `*.md` file in the
  * section directory (excluding index.md).
  */

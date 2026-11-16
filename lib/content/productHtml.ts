@@ -5,12 +5,12 @@
  * Shopify products imported from the legacy WordPress site carry
  * three classes of debris that render badly:
  *
- *   1. Real HTML comments — `<!-- Product > Description tab -->`,
+ *   1. Real HTML comments  -  `<!-- Product > Description tab -->`,
  *      `<!-- =================== -->` separators. These don't render
  *      in the browser as visible text, but they leak into meta
  *      descriptions and Open Graph tags (Bug 5).
  *
- *   2. Escaped HTML comments — `&lt;!-- ... --&gt;`. These DO render
+ *   2. Escaped HTML comments  -  `&lt;!-- ... --&gt;`. These DO render
  *      as visible text because the browser sees them as text content
  *      (Bug 1).
  *
@@ -120,7 +120,7 @@ export function sanitiseProductDescriptionHtml(
  *
  * Used by product-page metadata generation to derive a clean
  * meta description / og:description / twitter:description from the
- * descriptionHtml — never from the raw `description` field, which
+ * descriptionHtml  -  never from the raw `description` field, which
  * carries the same WordPress debris in plain-text form.
  */
 export function metaDescriptionFromHtml(

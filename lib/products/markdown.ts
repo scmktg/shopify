@@ -11,17 +11,17 @@ import { getAllProductContent } from './getProductContent';
  * lists, h2/h3/h4 headings, and links. Headings and links are
  * required by the seed content (long-form descriptions with
  * sub-section headings, references to the ABCB database, the
- * Central Coast install package, etc.) — broader than the brief's
+ * Central Coast install package, etc.)  -  broader than the brief's
  * literal "paragraphs, bold, italic, unordered lists only" but
  * matches the data the merchant has authored.
  *
  * GFM is intentionally not loaded (no tables, autolinks, strike-
  * through). A post-pass strips any tag outside the allowlist as
- * defence in depth — even though the input is repo-controlled, the
+ * defence in depth  -  even though the input is repo-controlled, the
  * explicit allowlist makes the contract obvious to the next reader.
  *
  * Returns a string of HTML safe to feed to `dangerouslySetInnerHTML`.
- * Never call this from a `'use client'` component — `'server-only'`
+ * Never call this from a `'use client'` component  -  `'server-only'`
  * is imported at the top to fail the build if that happens.
  */
 
@@ -53,7 +53,7 @@ export async function renderProductMarkdown(
  * Map of product handle → canonical pathname, derived from
  * products.json at module load. Used to repair authored markdown
  * links of the form `/under-sink-water-filter-4-stage-reverse-osmosis-system/`
- * — bare top-level paths that 404 because the real product URL is
+ *  -  bare top-level paths that 404 because the real product URL is
  * `/water-filters/reverse-osmosis/under-sink-water-filter-4-stage-reverse-osmosis-system/`.
  *
  * Built lazily on first call and memoised for the life of the
@@ -96,7 +96,7 @@ function rewriteBareHandleLinks(html: string): string {
  * text. Whitespace is collapsed. When `max` is provided the result
  * is truncated with an ellipsis at the boundary.
  *
- * Server-side only — same constraint as `renderProductMarkdown`.
+ * Server-side only  -  same constraint as `renderProductMarkdown`.
  */
 export async function markdownToPlainText(
   source: string | null | undefined,
@@ -120,7 +120,7 @@ export async function markdownToPlainText(
 
 function stripDisallowedTags(html: string): string {
   // Strip the open/close tag itself but keep the content. This is a
-  // belt-and-braces pass — the input is authored in our repo, so the
+  // belt-and-braces pass  -  the input is authored in our repo, so the
   // primary concern is keeping the rendered output to the documented
   // subset, not blocking active injection.
   return html.replace(

@@ -1,12 +1,12 @@
 /**
  * Schema for entries in `data/products.json`.
  *
- * Source-of-truth split (locked): Shopify owns commerce primitives —
+ * Source-of-truth split (locked): Shopify owns commerce primitives  - 
  * title, price/compareAtPrice, stock, shipping, images, variants, sku,
  * handle. Everything else (description, categories, specs, compliance,
  * upsells, SEO) lives in `data/products.json` and is rendered through
  * the `getProductContent(handle)` helper. The storefront does not
- * read content fields from Shopify even when populated — see
+ * read content fields from Shopify even when populated  -  see
  * `lib/products/getProductContent.ts`.
  *
  * Edits to product copy or specifications go in `data/products.json`,
@@ -30,13 +30,13 @@ export interface ProductFaqItem {
  * WaterMark certification block. Render rules (enforced in the
  * component layer, not the schema):
  *   - status === 'certified'   → blue badge + caption (licence,
- *                                  certifier, validUntil — each shown
+ *                                  certifier, validUntil  -  each shown
  *                                  only when set)
  *   - status === 'pending'     → amber badge, no caption
  *   - status === 'not_required'/'not_certified' → render nothing
  *
  * The validator flags `status: 'certified'` with `licenceNumber: null`
- * as an error — a launch-blocker check before publishing.
+ * as an error  -  a launch-blocker check before publishing.
  */
 export type WatermarkStatus =
   | 'certified'
@@ -57,12 +57,12 @@ export interface ProductCompliance {
   /**
    * Reserved for a future WELS shape mirroring WatermarkInfo. Kept as
    * an explicit `null` placeholder so existing entries don't need to
-   * change when WELS is added — the validator accepts only `null`
+   * change when WELS is added  -  the validator accepts only `null`
    * today and will be widened when the rendering work happens.
    */
   wels?: null;
   /**
-   * Markdown — same subset and renderer as `description`
+   * Markdown  -  same subset and renderer as `description`
    * (paragraphs, bold, italic, unordered lists). Kept short:
    * one or two sentences of human-authored compliance context.
    */
@@ -102,7 +102,7 @@ export interface ProductSeoOverrides {
  * A single sibling within a product family (e.g. capacity variants of
  * a dosing tank, where each capacity is its own indexed Shopify product
  * rather than a Shopify variant). Rendered as a navigation pill on the
- * PDP — selecting one routes to that sibling's URL.
+ * PDP  -  selecting one routes to that sibling's URL.
  */
 export interface ProductFamilySibling {
   /** Shopify handle of the sibling product. */
@@ -115,14 +115,14 @@ export interface ProductFamilySibling {
  * Optional product-family block. When set, the PDP renders a "Choose
  * size" (or whatever the `label` field describes) pill row that links
  * to each sibling. The current product's own handle is allowed in the
- * list and is rendered as the active pill — keeping the data
+ * list and is rendered as the active pill  -  keeping the data
  * self-contained means siblings can be authored once and referenced
  * verbatim on each family member.
  */
 export interface ProductFamily {
   /** Heading shown above the pill row, e.g. "Capacity". */
   label: string;
-  /** Two or more siblings — singletons would just be noise on the page. */
+  /** Two or more siblings  -  singletons would just be noise on the page. */
   siblings: readonly ProductFamilySibling[];
 }
 
@@ -146,7 +146,7 @@ export interface ProductContent {
    */
   description?: string;
   features?: readonly string[];
-  /** Hard cap of 4 — entries beyond the fourth are dropped with a dev warning. */
+  /** Hard cap of 4  -  entries beyond the fourth are dropped with a dev warning. */
   headlineSpecs?: readonly SpecRow[];
   /** Unlimited; renders as a two-column table. */
   fullSpecs?: readonly SpecRow[];
