@@ -10,7 +10,7 @@ interface StaticContentPageProps {
 }
 
 /**
- * Layout for non-catalogue static pages — about, our-pricing,
+ * Layout for non-catalogue static pages  -  about, our-pricing,
  * shipping, returns, privacy, terms. Same shape as EditorialPage
  * but without the product grid.
  *

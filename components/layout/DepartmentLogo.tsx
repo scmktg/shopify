@@ -19,7 +19,7 @@ export function DepartmentLogo({ priority = false, onClick }: DepartmentLogoProp
     <Link
       href={isBathroom ? '/bathroom/' : '/'}
       onClick={onClick}
-      aria-label={isBathroom ? 'Enviro Aqua Bathroom Supplies – home' : 'Enviro Aqua Water Filters – home'}
+      aria-label={isBathroom ? 'Enviro Aqua Bathroom Supplies  -  home' : 'Enviro Aqua Water Filters  -  home'}
       className="inline-flex max-w-full shrink-0 items-center gap-[5px] rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue sm:gap-1.5"
     >
       <span className="relative block h-[52px] w-[52px] shrink-0 sm:h-[58px] sm:w-[58px]">
