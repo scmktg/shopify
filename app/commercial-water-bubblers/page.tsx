@@ -45,7 +45,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     modelName: 'Water Bubbler Round',
     tagline: 'Compact stainless commercial bubbler for direct chilled drinking in indoor and sheltered locations.',
     badge: 'Compact indoor',
-    highlights: ['20 L/hr', 'Approx. 8–12 °C', '304 stainless', 'WaterMark 023484'],
+    highlights: ['20 L/hr', 'Approx. 8 - 12 °C', '304 stainless', 'WaterMark 023484'],
   },
   {
     key: 'square',
@@ -56,7 +56,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     modelName: 'Water Bubbler Square',
     tagline: 'Stainless commercial bubbler with a separate side tap for bottles, glasses and jugs.',
     badge: 'Best all-round',
-    highlights: ['20 L/hr', 'Approx. 8–12 °C', 'Bottle-fill side tap', 'WaterMark 023484'],
+    highlights: ['20 L/hr', 'Approx. 8 - 12 °C', 'Bottle-fill side tap', 'WaterMark 023484'],
   },
   {
     key: 'hdpe',
@@ -67,7 +67,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
     modelName: 'Water Bubbler Grey',
     tagline: 'Contemporary HDPE drinking fountain with a separate side tap for bottles, glasses and jugs.',
     badge: 'Contemporary design',
-    highlights: ['20 L/hr', 'Approx. 8–12 °C', 'HDPE cabinet', 'WaterMark 023484'],
+    highlights: ['20 L/hr', 'Approx. 8 - 12 °C', 'HDPE cabinet', 'WaterMark 023484'],
   },
 ];
 
@@ -82,7 +82,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'How much chilled water do the Enviro Aqua commercial bubblers produce?',
-    a: 'All three current Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8–12 °C.',
+    a: 'All three current Enviro Aqua commercial bubbler models are rated at 20 litres per hour and deliver chilled water at approximately 8 - 12 °C.',
   },
   {
     q: 'What are the WaterMark identities of the three Enviro Aqua bubblers?',
@@ -109,7 +109,7 @@ const FAQ_ITEMS = [
 export const metadata: Metadata = {
   title: 'Water Bubblers & Drinking Fountains Australia | Commercial & School',
   description:
-    'Compare Enviro Aqua commercial water bubblers and drinking fountains for schools, offices, factories and gyms. All three models: 20 L/hr, approx. 8–12 °C and WaterMark Certificate 023484.',
+    'Compare Enviro Aqua commercial water bubblers and drinking fountains for schools, offices, factories and gyms. All three models: 20 L/hr, approx. 8 - 12 °C and WaterMark Certificate 023484.',
   alternates: { canonical: PATH },
   openGraph: {
     title: 'Commercial Water Bubblers & Drinking Fountains | Enviro Aqua',
@@ -161,7 +161,7 @@ export default async function CommercialBubblersPage({ searchParams }: Commercia
           collectionSchema(
             'Water Bubblers & Drinking Fountains Australia',
             PATH,
-            'Enviro Aqua commercial water bubblers YL-600C, YL-600R and YL-600P. All three are rated at 20 L/hr with approximately 8–12 °C chilled-water output and are WaterMark certified under Certificate 023484.',
+            'Enviro Aqua commercial water bubblers YL-600C, YL-600R and YL-600P. All three are rated at 20 L/hr with approximately 8 - 12 °C chilled-water output and are WaterMark certified under Certificate 023484.',
           ),
           productListSchema(productItems),
           breadcrumbSchema(breadcrumbs.map((item) => ({ name: item.name, path: item.href }))),
@@ -192,7 +192,7 @@ export default async function CommercialBubblersPage({ searchParams }: Commercia
             Three Enviro Aqua commercial models for schools, offices, factories,
             warehouses, gyms and public facilities. Every model is rated at{' '}
             <strong>20 L/hr</strong>, delivers chilled water at approximately{' '}
-            <strong>8–12 °C</strong> and is WaterMark certified under{' '}
+            <strong>8 - 12 °C</strong> and is WaterMark certified under{' '}
             <strong>Certificate 023484</strong>.
           </p>
         </section>
@@ -250,7 +250,7 @@ function ComparisonSection() {
     ['WaterMark model name', 'Water Bubbler Round', 'Water Bubbler Square', 'Water Bubbler Grey'],
     ['WaterMark certificate', '023484', '023484', '023484'],
     ['Cooling capacity', '20 L/hr', '20 L/hr', '20 L/hr'],
-    ['Chilled water temperature', 'Approx. 8–12 °C', 'Approx. 8–12 °C', 'Approx. 8–12 °C'],
+    ['Chilled water temperature', 'Approx. 8 - 12 °C', 'Approx. 8 - 12 °C', 'Approx. 8 - 12 °C'],
     ['Cabinet', '304 stainless steel', 'SUS304 stainless steel', 'HDPE'],
     ['Filtration', 'Integrated drinking-water cartridge', 'Sediment + activated carbon', 'PP sediment + activated carbon'],
     ['Bottle / glass fill side tap', 'No', 'Yes', 'Yes'],

@@ -6,7 +6,7 @@ import { getSiteUrl } from '@/lib/seo/siteUrl';
 export const revalidate = 3600;
 
 /**
- * Serves /llms.txt — the proposed standard from llmstxt.org for
+ * Serves /llms.txt  -  the proposed standard from llmstxt.org for
  * AI-assistant discovery. A concise, link-rich markdown index of the
  * site so LLMs can map the catalogue and editorial surfaces in one
  * fetch. The full content companion lives at /llms-full.txt.
@@ -28,10 +28,10 @@ export async function GET(): Promise<Response> {
 
   const lines: string[] = [];
 
-  lines.push(`# ${BUSINESS_INFO.name} — Australia's water filtration specialist`);
+  lines.push(`# ${BUSINESS_INFO.name}  -  Australia's water filtration specialist`);
   lines.push('');
   lines.push(
-    "> Wholesale prices on water filters, cartridges, and filtration systems. One price for everyone — homeowners, tradies, and commercial. No accounts, no quote requests, no trade gates.",
+    "> Wholesale prices on water filters, cartridges, and filtration systems. One price for everyone  -  homeowners, tradies, and commercial. No accounts, no quote requests, no trade gates.",
   );
   lines.push('');
   lines.push(
@@ -51,7 +51,7 @@ export async function GET(): Promise<Response> {
   for (const category of CATEGORIES) {
     for (const sub of category.subcategories) {
       lines.push(
-        `- [${category.label} — ${sub.label}](${u(`/${category.slug}/${sub.slug}/`)})`,
+        `- [${category.label}  -  ${sub.label}](${u(`/${category.slug}/${sub.slug}/`)})`,
       );
     }
   }
@@ -86,16 +86,16 @@ export async function GET(): Promise<Response> {
   lines.push('## Trust signals and compliance');
   lines.push('');
   lines.push(
-    `- [WaterMark certified products](${u('/watermark-certified/')}) — every certified product shows its Australian licence number`,
+    `- [WaterMark certified products](${u('/watermark-certified/')})  -  every certified product shows its Australian licence number`,
   );
   lines.push(`- [Whole-house installation package (Central Coast NSW)](${u('/whole-house-installation-package/')})`);
   lines.push(`- [Customer reviews](${u('/reviews/')})`);
-  lines.push(`- [Our pricing model](${u('/about/our-pricing/')}) — one wholesale price for everyone`);
+  lines.push(`- [Our pricing model](${u('/about/our-pricing/')})  -  one wholesale price for everyone`);
   lines.push('');
 
   lines.push('## Local service area');
   lines.push('');
-  lines.push(`- [Showroom](${u('/showroom/')}) — Wyong NSW, ${BUSINESS_INFO.showroom.hours}`);
+  lines.push(`- [Showroom](${u('/showroom/')})  -  Wyong NSW, ${BUSINESS_INFO.showroom.hours}`);
   lines.push(`- [Locations index](${u('/locations/')})`);
   for (const slug of locationSlugs) {
     lines.push(`- [${prettifySlug(slug)}](${u(`/locations/${slug}/`)})`);
@@ -104,8 +104,8 @@ export async function GET(): Promise<Response> {
 
   lines.push('## Policies and customer service');
   lines.push('');
-  lines.push(`- [Shipping](${u('/shipping/')}) — tracked Australia-wide from $9.95; free on whole-house systems, UV, and freestanding coolers`);
-  lines.push(`- [Returns](${u('/returns/')}) — 14-day window for damaged-or-faulty items; manufacturer warranty separate`);
+  lines.push(`- [Shipping](${u('/shipping/')})  -  tracked Australia-wide from $9.95; free on whole-house systems, UV, and freestanding coolers`);
+  lines.push(`- [Returns](${u('/returns/')})  -  14-day window for damaged-or-faulty items; manufacturer warranty separate`);
   lines.push(`- [About](${u('/about/')})`);
   lines.push(`- [Contact](${u('/contact/')})`);
   lines.push(`- [Privacy](${u('/privacy/')})`);

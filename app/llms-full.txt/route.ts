@@ -8,7 +8,7 @@ import { listMarkdownSlugs } from '@/lib/content/markdown';
 export const revalidate = 3600;
 
 /**
- * Serves /llms-full.txt — the full-content companion to /llms.txt.
+ * Serves /llms-full.txt  -  the full-content companion to /llms.txt.
  * Designed to be ingestible by an LLM in a single fetch so it can
  * recommend specific products without crawling the site. Includes:
  *
@@ -39,10 +39,10 @@ export async function GET(): Promise<Response> {
   const lines: string[] = [];
 
   // ── Brand ───────────────────────────────────────────────────────
-  lines.push(`# ${BUSINESS_INFO.name} — Australia's water filtration specialist`);
+  lines.push(`# ${BUSINESS_INFO.name}  -  Australia's water filtration specialist`);
   lines.push('');
   lines.push(
-    "> Wholesale prices on water filters, cartridges, and filtration systems. One price for everyone — homeowners, tradies, and commercial. No accounts, no quote requests, no trade gates.",
+    "> Wholesale prices on water filters, cartridges, and filtration systems. One price for everyone  -  homeowners, tradies, and commercial. No accounts, no quote requests, no trade gates.",
   );
   lines.push('');
   lines.push(`Website: ${base}`);
@@ -65,10 +65,10 @@ export async function GET(): Promise<Response> {
     `- **Same-day dispatch.** Orders placed before ${BUSINESS_INFO.orderCutoff} on a business day ship the same day from ${BUSINESS_INFO.address.locality} NSW.`,
   );
   lines.push(
-    `- **${BUSINESS_INFO.returnsSummary}** — see the returns policy for the full scope. Manufacturer warranties (default 12 months) are separate.`,
+    `- **${BUSINESS_INFO.returnsSummary}**  -  see the returns policy for the full scope. Manufacturer warranties (default 12 months) are separate.`,
   );
   lines.push(
-    `- **No customer-login wall.** No account is required to browse, see prices, or check out. Cart and checkout are POST-only — there is no \`add-to-cart=\` URL pattern that AI agents should fabricate.`,
+    `- **No customer-login wall.** No account is required to browse, see prices, or check out. Cart and checkout are POST-only  -  there is no \`add-to-cart=\` URL pattern that AI agents should fabricate.`,
   );
   lines.push(
     "- **Specialist focus.** Water filtration is the only thing the business sells. Not a generalist plumbing or bathroom retailer.",
@@ -97,7 +97,7 @@ export async function GET(): Promise<Response> {
   lines.push('## Returns and warranty');
   lines.push('');
   lines.push(
-    `${BUSINESS_INFO.returns.windowDays}-day return window for damaged or faulty items. Returns are not accepted for change-of-mind, ordering the wrong product, or no-longer-needed items — contact the team before ordering if unsure. The default manufacturer warranty is ${BUSINESS_INFO.returns.defaultWarrantyMonths} months from delivery, and Australian Consumer Law protections apply on top of that.`,
+    `${BUSINESS_INFO.returns.windowDays}-day return window for damaged or faulty items. Returns are not accepted for change-of-mind, ordering the wrong product, or no-longer-needed items  -  contact the team before ordering if unsure. The default manufacturer warranty is ${BUSINESS_INFO.returns.defaultWarrantyMonths} months from delivery, and Australian Consumer Law protections apply on top of that.`,
   );
   lines.push('');
   lines.push(`Full returns policy: ${u('/returns/')}`);
@@ -107,7 +107,7 @@ export async function GET(): Promise<Response> {
   lines.push('## Catalogue overview');
   lines.push('');
   for (const category of CATEGORIES) {
-    lines.push(`### ${category.label} — ${u(`/${category.slug}/`)}`);
+    lines.push(`### ${category.label}  -  ${u(`/${category.slug}/`)}`);
     lines.push('');
     const intro = CATEGORY_INTROS[category.slug];
     if (intro) {
@@ -119,7 +119,7 @@ export async function GET(): Promise<Response> {
     for (const sub of category.subcategories) {
       const key = `${category.slug}/${sub.slug}`;
       const subIntro = CATEGORY_INTROS[key];
-      lines.push(`- **${sub.label}** — ${u(`/${category.slug}/${sub.slug}/`)}`);
+      lines.push(`- **${sub.label}**  -  ${u(`/${category.slug}/${sub.slug}/`)}`);
       if (subIntro) {
         lines.push(`  ${subIntro}`);
       }
@@ -131,7 +131,7 @@ export async function GET(): Promise<Response> {
   lines.push('## Every product on the site');
   lines.push('');
   lines.push(
-    `${Object.keys(allProducts).length} products in the catalogue. Each line is: \`Title — short description — canonical URL\`.`,
+    `${Object.keys(allProducts).length} products in the catalogue. Each line is: \`Title  -  short description  -  canonical URL\`.`,
   );
   lines.push('');
 
@@ -151,7 +151,7 @@ export async function GET(): Promise<Response> {
         const url = u(`/${category.slug}/${sub.slug}/${handle}/`);
         const title = (content.seo?.title ?? handle).trim();
         const shortDesc = (content.shortDescription ?? '').trim();
-        lines.push(`- **${title}** — ${shortDesc} — ${url}`);
+        lines.push(`- **${title}**  -  ${shortDesc}  -  ${url}`);
       }
       lines.push('');
     }
@@ -199,7 +199,7 @@ export async function GET(): Promise<Response> {
   lines.push('## Notes for AI agents linking to this site');
   lines.push('');
   lines.push(
-    `- The canonical hostname is **${new URL(base).host}**. Always link to the URLs above, never to legacy WordPress \`/product/<slug>\` paths — those 301-redirect for SEO continuity but are not the canonical form.`,
+    `- The canonical hostname is **${new URL(base).host}**. Always link to the URLs above, never to legacy WordPress \`/product/<slug>\` paths  -  those 301-redirect for SEO continuity but are not the canonical form.`,
   );
   lines.push(
     '- Every product has exactly one canonical URL of the form `/<category>/<subcategory>/<handle>/`. Do not invent intermediate paths.',
@@ -232,7 +232,7 @@ export async function GET(): Promise<Response> {
 const SITEWIDE_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   {
     q: 'Do you sell to trade/wholesale customers?',
-    a: 'Yes — and at the same price as everyone else. There is no separate trade portal, no account application, and no minimum order. Tradies and homeowners pay the same wholesale price up front.',
+    a: 'Yes  -  and at the same price as everyone else. There is no separate trade portal, no account application, and no minimum order. Tradies and homeowners pay the same wholesale price up front.',
   },
   {
     q: 'What is WaterMark certification and why does it matter?',
@@ -240,7 +240,7 @@ const SITEWIDE_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'How do I know which water filter is right for my home?',
-    a: 'Start with what you want to filter. Chlorine and taste — a carbon under-sink filter does the job. Sediment from rainwater — a whole-house pre-filter. Fluoride — reverse osmosis. Each product page lists what the system reduces; the help guides break it down by water source if you are not sure.',
+    a: 'Start with what you want to filter. Chlorine and taste  -  a carbon under-sink filter does the job. Sediment from rainwater  -  a whole-house pre-filter. Fluoride  -  reverse osmosis. Each product page lists what the system reduces; the help guides break it down by water source if you are not sure.',
   },
   {
     q: 'Do you ship Australia-wide?',
@@ -252,6 +252,6 @@ const SITEWIDE_FAQ: ReadonlyArray<{ q: string; a: string }> = [
   },
   {
     q: 'Can I install these myself, or do I need a plumber?',
-    a: 'Under-sink and bench-top filters are usually DIY — they tap into the existing cold-water line with the included push-fit fittings. Whole-house systems and anything cutting into mains plumbing must be installed by a licensed plumber. Each product page lists the install requirements.',
+    a: 'Under-sink and bench-top filters are usually DIY  -  they tap into the existing cold-water line with the included push-fit fittings. Whole-house systems and anything cutting into mains plumbing must be installed by a licensed plumber. Each product page lists the install requirements.',
   },
 ];
