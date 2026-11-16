@@ -13,7 +13,7 @@
  *   3. The trailing `-LL-x-DD(-D)?` slug on the handle.
  *
  * The tag and metafield paths exist because handles in this
- * catalogue aren't a reliable source — some omit the size token
+ * catalogue aren't a reliable source  -  some omit the size token
  * (RO membranes, multi-stage replacement sets), some run the digits
  * together (`-10x2-5` rather than `-10-x-2-5`), and a couple are
  * truncated mid-token. The metafield and the size tags are set

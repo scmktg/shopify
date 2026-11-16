@@ -1,7 +1,7 @@
 /**
  * Shared site config surface for product-page trust signals.
  *
- * `content/business-info.ts` remains the single source of truth — this
+ * `content/business-info.ts` remains the single source of truth  -  this
  * module is a thin, named re-export so PDP components can pull
  * everything they need from one import without reaching into the
  * business-info shape directly. If you're adding a new piece of
@@ -28,7 +28,7 @@ export const BACK_IN_STOCK_ENDPOINT = '/api/back-in-stock';
 /**
  * Top promotional banner copy. Rendered by
  * `components/layout/PromoBanner.tsx` on every page above the
- * header. Edit the strings here — the merchant should never have
+ * header. Edit the strings here  -  the merchant should never have
  * to touch component code to change a banner line.
  *
  * Static line is split into two parts so each gets its own visual
