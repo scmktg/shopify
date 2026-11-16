@@ -11,7 +11,7 @@ export type JsonLd = Record<string, unknown>;
  * Outbound profile URLs that identify Enviro Aqua across the web.
  * Used for `sameAs` on Organization / LocalBusiness / Store nodes so
  * Google can collapse the brand entity across surfaces. Empty values
- * are filtered out — see business-info.ts for why `googleBusiness`
+ * are filtered out  -  see business-info.ts for why `googleBusiness`
  * may be empty until the canonical profile URL is confirmed.
  */
 function sameAsLinks(): ReadonlyArray<string> {
@@ -41,7 +41,7 @@ function abnIdentifier(): JsonLd {
 /**
  * Stand-alone Organization schema emitted sitewide alongside the
  * LocalBusiness graph. LocalBusiness extends Organization, so this is
- * technically redundant — but several SEO auditing tools (and parts of
+ * technically redundant  -  but several SEO auditing tools (and parts of
  * Google's knowledge graph pipeline) look for a dedicated
  * `@type: Organization` node, so the brand entity is easier to surface
  * when both are present. A stable `@id` lets future schemas reference
@@ -58,7 +58,7 @@ export function organisationSchema(): JsonLd {
     url,
     logo: absoluteUrl('/logo.svg'),
     description:
-      "Australia's specialist water filtration retailer — wholesale prices for everyone.",
+      "Australia's specialist water filtration retailer  -  wholesale prices for everyone.",
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS_INFO.address.street,
@@ -94,7 +94,7 @@ export function localBusinessSchema(): JsonLd {
     url,
     logo: absoluteUrl('/logo.svg'),
     description:
-      "Australia's specialist water filtration retailer — wholesale prices for everyone.",
+      "Australia's specialist water filtration retailer  -  wholesale prices for everyone.",
     telephone: BUSINESS_INFO.phone.tel,
     email: BUSINESS_INFO.email,
     address: {
@@ -130,7 +130,7 @@ export function localBusinessSchema(): JsonLd {
     // snippet policy, this field is reserved for first-party reviews
     // collected on our own surfaces. The visible "5.0 · 74 reviews"
     // on /reviews is verifiable on-page content sourced from Google
-    // and Facebook profiles — that's a separate concern from
+    // and Facebook profiles  -  that's a separate concern from
     // structured-data claims, which would mislead Search.
     identifier: abnIdentifier(),
     sameAs: sameAsLinks(),
@@ -142,7 +142,7 @@ export function localBusinessSchema(): JsonLd {
  * Augments the sitewide LocalBusiness with geo coordinates, a
  * full openingHoursSpecification (Mon-Thu 09:00-15:00; Fri 09:00-13:00), an
  * areaServed list (Central Coast suburbs), and a hasMap link to
- * Google Maps. Use this on the showroom page only — the layout
+ * Google Maps. Use this on the showroom page only  -  the layout
  * already emits the sitewide LocalBusiness on every page.
  */
 export interface StoreSchemaInput {
@@ -522,7 +522,7 @@ export interface ProductListItem {
 
 /**
  * ItemList enumerating the products visible on a category or
- * subcategory page. Each entry is a `name` + `url` ListItem — image
+ * subcategory page. Each entry is a `name` + `url` ListItem  -  image
  * and price are intentionally not duplicated here because they live
  * on the Product schema emitted by the PDP itself, and Google
  * dedupes via the URL.

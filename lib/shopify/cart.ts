@@ -205,7 +205,7 @@ function transformLine(node: RawCartLineNode): CartLine {
  * Force the checkout URL onto the configured Shopify-served checkout
  * subdomain (e.g. `checkout.enviroaqua.com.au`). Needed because the
  * storefront's primary domain is the headless apex (`enviroaqua.com.au`),
- * which is served by Vercel — Shopify's returned `checkoutUrl` uses
+ * which is served by Vercel  -  Shopify's returned `checkoutUrl` uses
  * the primary domain by default and would 404 on the Next.js side.
  * No-op when SHOPIFY_CHECKOUT_DOMAIN is unset.
  */

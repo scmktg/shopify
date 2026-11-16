@@ -57,7 +57,7 @@ export const PRODUCT_CARD_FRAGMENT = /* GraphQL */ `
 
 /**
  * Full product fragment for the canonical product detail page. Single
- * source of truth for the field list — every product-shaped detail
+ * source of truth for the field list  -  every product-shaped detail
  * query must spread `ProductFields` rather than re-listing fields.
  *
  * `metafields(identifiers: [...])` returns an array in the same order

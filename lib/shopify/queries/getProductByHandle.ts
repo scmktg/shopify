@@ -26,7 +26,7 @@ const GET_PRODUCT_BY_HANDLE = /* GraphQL */ `
  * request callers (CLI scripts, build-time tooling) can reach
  * Shopify directly. `unstable_cache` requires Next.js's request-
  * scoped incremental cache, which doesn't exist in a plain Node
- * script context — calling the cached version from a CLI script
+ * script context  -  calling the cached version from a CLI script
  * throws `Invariant: incrementalCache missing in unstable_cache`.
  *
  * App Router code paths should continue to use `getProductByHandle`
