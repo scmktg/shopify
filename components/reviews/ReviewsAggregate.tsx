@@ -11,8 +11,8 @@ interface ReviewsAggregateProps {
 /**
  * Aggregate-rating header used on the homepage and PDPs. Two
  * variants:
- *   homepage — headline plus a per-platform breakdown line.
- *   pdp      — compact single-line for the trust strip.
+ *   homepage  -  headline plus a per-platform breakdown line.
+ *   pdp       -  compact single-line for the trust strip.
  *
  * Numbers are sourced from data/reviews.ts so changing the source
  * data updates every display surface in one place.

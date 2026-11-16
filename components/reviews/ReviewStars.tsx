@@ -5,7 +5,7 @@ interface ReviewStarsProps {
 
 /**
  * Inline 5-star bar tinted to the visible rating. Same overlay
- * technique as ProductCardStars but tuned for the review surface —
+ * technique as ProductCardStars but tuned for the review surface  - 
  * larger text size, screen-reader-only numeric label so the
  * decorative glyphs don't get read twice.
  */

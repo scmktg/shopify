@@ -13,7 +13,7 @@ const SOURCE_LABEL: Record<Review['source'], string> = {
 };
 
 function formatDate(iso: string): string {
-  // Render dates as "October 2025" rather than full date — review
+  // Render dates as "October 2025" rather than full date  -  review
   // platforms only display month-level precision so anything more
   // exact would be falsely precise.
   const d = new Date(`${iso}T00:00:00Z`);

@@ -8,7 +8,7 @@ interface ReviewSourceLogoProps {
 /**
  * Inline-SVG source attribution for a review. Monochrome at the
  * card level so the Google G and Facebook F read as a paired label
- * (the brief calls this out — attribution, not advertising). The
+ * (the brief calls this out  -  attribution, not advertising). The
  * /reviews list reuses these at the same size, so accuracy of the
  * silhouettes matters more than colour.
  *

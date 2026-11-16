@@ -5,7 +5,7 @@ import { ReviewsAggregate } from './ReviewsAggregate';
 
 /**
  * Homepage reviews section. Three featured reviews server-rendered
- * in a responsive grid — mobile shows the top one and scrolls the
+ * in a responsive grid  -  mobile shows the top one and scrolls the
  * rest into view; desktop fits all three side-by-side. No client JS,
  * no carousel library; the brief asked for the most recent featured
  * reviews to lead, which a date-sorted grid handles directly.

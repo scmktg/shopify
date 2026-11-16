@@ -10,7 +10,7 @@ interface PdpReviewsSlotProps {
 /**
  * Two reviews shown on every PDP, bucketed by product handle so
  * the pair is stable per product but varies across the catalogue.
- * Sits below the trust strip — designed to live alongside the
+ * Sits below the trust strip  -  designed to live alongside the
  * BoughtTogether / MoreInCategory rails without competing for
  * attention.
  */

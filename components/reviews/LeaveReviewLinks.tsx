@@ -6,7 +6,7 @@ interface LeaveReviewLinksProps {
 }
 
 /**
- * Two outbound CTAs — leave a Google review or a Facebook
+ * Two outbound CTAs  -  leave a Google review or a Facebook
  * recommendation. Both URLs are read from env vars
  * (`NEXT_PUBLIC_GOOGLE_REVIEW_URL`, `NEXT_PUBLIC_FACEBOOK_REVIEW_URL`)
  * so they can be swapped without a deploy.
