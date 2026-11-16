@@ -112,7 +112,7 @@ export default function InstallPackagePage() {
             <Breadcrumbs items={breadcrumbs} />
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-brand-blue">NSW installation service</p>
             <h1 className="mt-3 text-4xl md:text-5xl font-bold tracking-tight text-black">
-              Whole House Water Filter Installation — $2,399 + GST Supplied &amp; Installed
+              Whole House Water Filter Installation  -  $2,399 + GST Supplied &amp; Installed
             </h1>
             <p className="mt-5 max-w-3xl text-lg text-black/70">
               Get a complete whole-house water filtration system supplied and professionally installed for $2,399 + GST. Available across eligible NSW Central Coast and Sydney service areas.
