@@ -43,7 +43,7 @@ interface CartContextValue {
   addItems: (items: ReadonlyArray<CartItemInput>) => Promise<void>;
   /**
    * Add a variant to the cart and redirect to the Shopify checkout
-   * URL. Does not open the drawer — the user is leaving the
+   * URL. Does not open the drawer  -  the user is leaving the
    * storefront. Uses `window.location.assign` so the redirect is a
    * real navigation rather than a client-side route push.
    */
@@ -206,7 +206,7 @@ export function CartProvider({ children }: CartProviderProps) {
         setError(extractMessage(caught, 'Could not start checkout.'));
         setIsMutating(false);
       }
-      // Note: no finally — on success we're navigating away, so we leave
+      // Note: no finally  -  on success we're navigating away, so we leave
       // isMutating=true to keep buttons disabled until the page unloads.
     },
     [ensureCart, syncAttribution],
