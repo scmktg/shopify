@@ -62,7 +62,7 @@ async function main(): Promise<void> {
 
   console.log(`[validate] canonical product content: ${handleCount} entries`);
   if (production) {
-    console.log(`${GREEN}✓${RESET} production build: strict Shopify catalogue validation enforced`);
+    console.log(`${GREEN}✓${RESET} production build: strict custom-entry validation; Shopify-only products use fallback pages`);
   }
 
   const result = validateProducts(catalogData);
@@ -149,9 +149,10 @@ async function main(): Promise<void> {
   }
 
   if (missingInProducts.length > 0) {
-    const stream = strict ? console.error : console.warn;
-    const colour = strict ? RED : YELLOW;
-    const symbol = strict ? '✖' : '!';
+    // Shopify-first fallback pages make missing custom content expected.
+    const stream = console.warn;
+    const colour = YELLOW;
+    const symbol = '!';
     stream('');
     stream(
       `${colour}${symbol} Shopify products with no storefront content entry (${missingInProducts.length}):${RESET}`,
@@ -186,7 +187,6 @@ async function main(): Promise<void> {
   }
 
   if (missingInShopify.length > 0 && strict) process.exit(1);
-  if (missingInProducts.length > 0 && strict) process.exit(1);
   if (categoryMismatches.length > 0) process.exit(1);
 
   console.log(
