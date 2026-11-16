@@ -165,7 +165,7 @@ export function QuoteBuilder() {
       <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
       <div className="min-w-0">
       {step === 1 && <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-semibold">Step 1 — Select products</h2>
+        <h2 className="text-2xl font-semibold">Step 1  -  Select products</h2>
         <p className="mt-2 text-sm text-zinc-500">Search by product name. Results update automatically while you type.</p>
         <label htmlFor="quote-search" className="sr-only">Search products</label>
         <input id="quote-search" type="search" value={query} onChange={e => setQuery(e.target.value)}
@@ -205,7 +205,7 @@ export function QuoteBuilder() {
           className="mt-6 w-full rounded-xl bg-black px-5 py-4 font-semibold text-white disabled:opacity-40">Continue to your details →</button>
       </section>}
       {step === 2 && <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-semibold">Step 2 — Your details</h2>
+        <h2 className="text-2xl font-semibold">Step 2  -  Your details</h2>
         <p className="mt-2 text-sm text-zinc-500">Enter the organisation and contact details to appear on your quotation.</p>
         <form onSubmit={e => { e.preventDefault(); setError(''); setStep(3); }} className="mt-6 grid gap-4 sm:grid-cols-2">
           <label className="text-sm">Organisation name *<input required value={organisation} onChange={e => setOrganisation(e.target.value)} maxLength={120} className="mt-2 w-full rounded-xl border border-zinc-300 px-4 py-3" /></label>
@@ -219,7 +219,7 @@ export function QuoteBuilder() {
         </form>
       </section>}
       {step === 3 && <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8">
-        <h2 className="text-2xl font-semibold">Step 3 — Download or email your quote</h2>
+        <h2 className="text-2xl font-semibold">Step 3  -  Download or email your quote</h2>
         <p className="mt-2 text-zinc-600">Review your details and product total, then generate your formal quotation. A PDF will be sent to your email address.</p>
         <div className="mt-6 rounded-xl bg-zinc-50 p-5 text-sm">
           <p className="font-semibold">{organisation}</p><p>{contact} · {email}</p><p>Delivery postcode: {postcode}</p>
