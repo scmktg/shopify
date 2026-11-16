@@ -5,7 +5,7 @@ interface ProductOverviewProps {
   description?: string;
   /**
    * One-line tagline. Used as the body when `description` is absent
-   * — bootstrapped products.json entries (~165 of the catalogue
+   *  -  bootstrapped products.json entries (~165 of the catalogue
    * post-backfill) only carry `shortDescription`, and a one-line
    * description still reads better than no body at all.
    */
@@ -41,7 +41,7 @@ export async function ProductOverview({
     return null;
   }
   if (!html) return null;
-  // No wrapper heading — long-form descriptions carry their own
+  // No wrapper heading  -  long-form descriptions carry their own
   // markdown h2/h3 structure (the seed content has "Why This System",
   // "Three-Stage Filtration", etc.). A wrapping "Overview" h2 would
   // compete with those and break the document outline.

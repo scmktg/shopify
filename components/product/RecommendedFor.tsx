@@ -3,7 +3,7 @@ interface RecommendedForProps {
 }
 
 /**
- * "Recommended for" list — the audiences the merchant has flagged as
+ * "Recommended for" list  -  the audiences the merchant has flagged as
  * good fit for this product. Renders as a tight bullet list so the
  * scanner can pattern-match to their own situation in two seconds.
  */

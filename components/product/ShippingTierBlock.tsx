@@ -142,7 +142,7 @@ export function ShippingTierBlock({
         <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2.5 font-semibold hover:bg-gray-100 [&::-webkit-details-marker]:hidden">
           <span className="flex items-center gap-2">
             <Truck className="h-4 w-4 flex-shrink-0 text-black/70" aria-hidden="true" />
-            Flat-rate tank delivery — ${tankDelivery}
+            Flat-rate tank delivery  -  ${tankDelivery}
           </span>
           <span aria-hidden="true" className="text-lg font-normal leading-none text-black/50 transition-transform group-open:rotate-45">+</span>
         </summary>
