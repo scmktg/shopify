@@ -13,9 +13,8 @@ import {
  * slashless prevents every product card / cross-sell / family link from
  * first hitting Next's trailing-slash redirect before reaching the PDP.
  *
- * When the handle has no entry we fall back to a top-level handle URL —
- * that path will 404, which surfaces the data-quality issue rather than
- * hiding it.
+ * When no enhanced content exists, use the canonical Shopify-first
+ * product fallback route instead of generating a broken link.
  */
 export function getProductUrl(handle: string): string {
   const canonicalHandle = canonicalProductHandle(handle);
@@ -24,7 +23,7 @@ export function getProductUrl(handle: string): string {
     const [category, subcategory] = content.categories;
     return `/${category}/${subcategory}/${canonicalHandle}`;
   }
-  return `/${canonicalHandle}`;
+  return `/products/${canonicalHandle}`;
 }
 
 export interface ProductCategoryPair {
