@@ -245,5 +245,68 @@
       "title": "3 Way Pull-Out Filtered Kitchen Mixer Tap in Brushed Nickel",
       "description": "Brushed nickel 3-way pull-out kitchen mixer tap with hot, cold and filtered water. 360° swivel, WELS 5 Star (T46861) and WaterMark 032200."
     }
+  },
+  "bubbler-filter-cto-plus-pp": {
+    "tags": [
+      "replacement-cartridge",
+      "carbon-cto",
+      "pp-sediment",
+      "bubbler-filter"
+    ],
+    "shortDescription": "Replacement sediment and activated carbon (CTO) filter cartridge for compatible Enviro Aqua commercial water bubblers and drinking fountains.",
+    "description": "Keep your compatible Enviro Aqua commercial drinking fountain performing as intended with this dedicated **replacement bubbler filter cartridge**. It combines sediment and activated carbon (CTO) filtration in one replacement unit for filtered fountain configurations.\n\n## What It Does\n\n- **Sediment filtration:** helps capture suspended particles such as sand, silt and rust.\n- **Activated carbon (CTO) filtration:** helps reduce chlorine-related taste and odour.\n\n## Compatibility\n\nDesigned as a replacement for the matching cartridge supplied with compatible **Enviro Aqua commercial water bubblers and drinking fountains**. This is not a universal cartridge. If you are unsure which filter your fountain uses, contact our team with your fountain model before ordering.\n\n## When to Replace\n\nReplace the cartridge according to your fountain's maintenance requirements, usage and local water quality. If you notice reduced water flow or a change in taste, check whether the cartridge needs servicing or replacement.\n\n**What's included:** One replacement filter cartridge. Drinking fountain sold separately.",
+    "features": [
+      "Replacement filter cartridge for compatible Enviro Aqua water bubblers and drinking fountains",
+      "Combines sediment and activated carbon (CTO) filtration",
+      "Helps reduce sediment and chlorine-related taste and odour",
+      "Made for maintenance of filtered commercial drinking fountains",
+      "One replacement cartridge supplied"
+    ],
+    "headlineSpecs": [
+      {
+        "label": "Product type",
+        "value": "Bubbler replacement filter"
+      },
+      {
+        "label": "Filter media",
+        "value": "Sediment + activated carbon (CTO)"
+      },
+      {
+        "label": "Compatibility",
+        "value": "Compatible Enviro Aqua filtered bubblers"
+      }
+    ],
+    "fullSpecs": [
+      {
+        "label": "Product type",
+        "value": "Replacement filter cartridge"
+      },
+      {
+        "label": "Filter media",
+        "value": "Sediment + activated carbon (CTO)"
+      },
+      {
+        "label": "Application",
+        "value": "Compatible Enviro Aqua commercial drinking fountains and water bubblers"
+      },
+      {
+        "label": "Configuration",
+        "value": "For fountains supplied with the matching cartridge"
+      },
+      {
+        "label": "Package contents",
+        "value": "One replacement filter cartridge"
+      }
+    ],
+    "recommendedFor": [
+      "Replacing the matching filter cartridge in an Enviro Aqua commercial drinking fountain",
+      "Maintaining sediment and carbon filtration in compatible filtered bubblers",
+      "Facility teams servicing compatible water fountains"
+    ],
+    "seo": {
+      "title": "Commercial Water Bubbler Replacement Filter | Sediment + Carbon | Enviro Aqua",
+      "description": "Replacement sediment and activated carbon (CTO) filter cartridge for compatible Enviro Aqua commercial water bubblers and drinking fountains."
+    }
   }
+
 }
