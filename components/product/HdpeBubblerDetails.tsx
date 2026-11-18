@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
+import { FountainManualDownload } from './FountainManualDownload';
 
 const SPEC_GROUPS = [
   {
@@ -19,7 +20,7 @@ const SPEC_GROUPS = [
 ] as const;
 
 export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
-  const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
+  const [activeTab, setActiveTab] = useState<'description' | 'specifications' | 'downloads'>('description');
   const tabsRef = useRef<HTMLDivElement>(null);
   const specs = (content.fullSpecs ?? []).filter((item) => !['sku', 'product type', 'watermark model name'].includes(item.label.trim().toLowerCase()));
   const groupedLabels = new Set<string>(SPEC_GROUPS.flatMap((group) => [...group.labels]));
@@ -36,7 +37,7 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
       <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex w-full items-center justify-center gap-8 border-b border-black/10 sm:gap-16">
-        {(['description', 'specifications'] as const).map((tab) => (
+        {(['description', 'specifications', 'downloads'] as const).map((tab) => (
           <button key={tab} type="button" role="tab" id={`hdpe-bubbler-tab-${tab}`}
             aria-controls={`hdpe-bubbler-panel-${tab}`} aria-selected={activeTab === tab}
             onClick={() => setActiveTab(tab)}
@@ -177,6 +178,9 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
             )}
           </div>
         </section>
+      </div>
+      <div id="hdpe-bubbler-panel-downloads" role="tabpanel" aria-labelledby="hdpe-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
+        <FountainManualDownload />
       </div>
     </div>
   );
