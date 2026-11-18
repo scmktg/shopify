@@ -6,14 +6,9 @@ import { Download, FileText } from 'lucide-react';
 
 const DOCUMENTS = [
   {
-    title: 'Product specification sheet',
-    description: 'Technical details for purchasing, approvals and project planning.',
-    file: 'Stainless Steel Fountain - Bubbler & Tap - Product Specifications.pdf',
-  },
-  {
-    title: 'Technical installation guide',
-    description: 'Connection and installation information for your licensed plumber.',
-    file: 'Stainless Steel Fountain - Bubbler & Tap - Technical Installation.pdf',
+    title: 'Product Specifications and Installation Manual',
+    description: 'Official product specifications, plumbing requirements and installation instructions for all three fountain models.',
+    file: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Installation_Manual_-_Water_Fountains.pdf?v=1794985405',
   },
 ] as const;
 
@@ -214,8 +209,8 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           {DOCUMENTS.map((document) => (
             <a
               key={document.file}
-              href={`/documents/bubblers/${encodeURIComponent(document.file)}`}
-              download={document.file}
+              href={document.file}
+              target="_blank" rel="noopener noreferrer"
               type="application/pdf"
               className="group flex items-center gap-5 py-6 transition-colors hover:bg-black/[0.015] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
             >
