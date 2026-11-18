@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 import { FountainManualDownload } from './FountainManualDownload';
+import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
 
 const SPEC_GROUPS = [
   {
@@ -36,12 +37,12 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
 
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
-      <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex w-full items-center justify-center gap-8 border-b border-black/10 sm:gap-16">
+      <div ref={tabsRef} role="tablist" aria-label="Product information" className={FOUNTAIN_TAB_LIST_CLASS}>
         {(['description', 'specifications', 'downloads'] as const).map((tab) => (
           <button key={tab} type="button" role="tab" id={`hdpe-bubbler-tab-${tab}`}
             aria-controls={`hdpe-bubbler-panel-${tab}`} aria-selected={activeTab === tab}
             onClick={() => setActiveTab(tab)}
-            className={`relative min-h-14 px-1 py-4 text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue ${activeTab === tab ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}>
+            className={fountainTabClass(activeTab === tab)}>
             {tab}
           </button>
         ))}
