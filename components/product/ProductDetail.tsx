@@ -351,7 +351,7 @@ export function ProductDetail({
         </div>
       </div>
 
-      {!isEditorialBubbler && !editorialTapFinish && <HeadlineSpecs specs={content.headlineSpecs} />}
+      {!isEditorialBubbler && !isRoundBubbler && !editorialTapFinish && <HeadlineSpecs specs={content.headlineSpecs} />}
       {editorialTapFinish && (
         <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
       )}
