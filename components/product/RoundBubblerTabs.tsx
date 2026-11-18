@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { FountainManualDownload } from './FountainManualDownload';
+import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
 
 type Tab = 'description' | 'specifications' | 'downloads';
 
@@ -15,7 +16,7 @@ export function RoundBubblerTabs({ description, specifications }: {
 
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
-      <div role="tablist" aria-label="Product information" className="flex w-full items-center justify-center gap-8 overflow-x-auto border-b border-black/10 sm:gap-16">
+      <div role="tablist" aria-label="Product information" className={FOUNTAIN_TAB_LIST_CLASS}>
         {tabs.map((tab) => (
           <button
             key={tab}
@@ -25,7 +26,7 @@ export function RoundBubblerTabs({ description, specifications }: {
             aria-controls={`round-bubbler-panel-${tab}`}
             aria-selected={activeTab === tab}
             onClick={() => setActiveTab(tab)}
-            className={`relative min-h-14 shrink-0 px-1 py-4 text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue ${activeTab === tab ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}
+            className={fountainTabClass(activeTab === tab)}
           >
             {tab}
           </button>
