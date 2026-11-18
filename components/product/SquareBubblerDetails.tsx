@@ -2,15 +2,8 @@
 
 import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
-import { Download, FileText } from 'lucide-react';
-
-const DOCUMENTS = [
-  {
-    title: 'Product Specifications and Installation Manual',
-    description: 'Official product specifications, plumbing requirements and installation instructions for all three fountain models.',
-    file: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Installation_Manual_-_Water_Fountains.pdf?v=1794985405',
-  },
-] as const;
+import { FountainManualDownload } from './FountainManualDownload';
+import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
 
 const SPEC_GROUPS = [
   {
@@ -45,14 +38,14 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
 
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
-      <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex w-full items-center justify-center gap-8 overflow-x-auto border-b border-black/10 sm:gap-16">
+      <div ref={tabsRef} role="tablist" aria-label="Product information" className={FOUNTAIN_TAB_LIST_CLASS}>
         {(['description', 'specifications', 'downloads'] as const).map((value) => (
           <button key={value} type="button" role="tab"
             id={`square-bubbler-tab-${value}`}
             aria-controls={`square-bubbler-panel-${value}`}
             aria-selected={activeTab === value}
             onClick={() => setActiveTab(value)}
-            className={`relative min-h-14 shrink-0 px-1 py-4 text-center text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:flex-none sm:px-0 ${activeTab === value ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}
+            className={fountainTabClass(activeTab === value)}
           >{value}</button>
         ))}
       </div>
@@ -202,29 +195,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
 
       </div>
       <div id="square-bubbler-panel-downloads" role="tabpanel" aria-labelledby="square-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
-      <section aria-labelledby="square-bubbler-documents">
-        <h2 id="square-bubbler-documents" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Product documents</h2>
-        <p className="mt-2 text-sm leading-6 text-black/65">Download the documents for your plumber, facilities team or purchasing approval.</p>
-        <div className="mt-7 divide-y divide-black/10 border-y border-black/10">
-          {DOCUMENTS.map((document) => (
-            <a
-              key={document.file}
-              href={document.file}
-              target="_blank" rel="noopener noreferrer"
-              type="application/pdf"
-              className="group flex items-center gap-5 py-6 transition-colors hover:bg-black/[0.015] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue"
-            >
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-black/10 text-black/70"><FileText size={23} aria-hidden="true" /></span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-semibold text-black">{document.title}</span>
-                <span className="mt-1 block text-xs leading-5 text-black/60">{document.description}</span>
-                <span className="mt-2 block text-xs font-medium text-black/70 underline underline-offset-4">Download PDF</span>
-              </span>
-              <Download size={20} className="shrink-0 text-black/65" aria-hidden="true" />
-            </a>
-          ))}
-        </div>
-      </section>
+      <FountainManualDownload />
 
 
       </div>
