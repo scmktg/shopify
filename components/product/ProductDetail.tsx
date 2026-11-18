@@ -369,6 +369,15 @@ export function ProductDetail({
           <ComplianceSection compliance={content.compliance} />
         </>
       )}
+      {(isHdpeBubbler || product.handle === 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm') && (
+        <section className="mt-10 border-t border-black/10 pt-10" aria-labelledby="fountain-manual-heading">
+          <h2 id="fountain-manual-heading" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Product Specifications and Installation Manual</h2>
+          <p className="mt-2 text-sm leading-6 text-black/65">Download the official PDF with technical specifications and installation guidance for your licensed plumber.</p>
+          <a href="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Installation_Manual_-_Water_Fountains.pdf?v=1794985405" target="_blank" rel="noopener noreferrer" type="application/pdf" className="mt-5 inline-flex items-center gap-2 rounded-md border border-black/20 px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
+            Download Product Specifications and Installation Manual (PDF)
+          </a>
+        </section>
+      )}
       {content.faq && content.faq.length > 0 && (
         isEditorialBubbler ? (
           <section className="mt-16 border-t border-black/10 pt-12 md:mt-20 md:pt-16" aria-labelledby="square-bubbler-faq-heading">
