@@ -7,6 +7,7 @@ import { FamilySelector } from './FamilySelector';
 import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
 import { HdpeBubblerDetails } from './HdpeBubblerDetails';
+import { RoundBubblerTabs } from './RoundBubblerTabs';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -104,6 +105,7 @@ export function ProductDetail({
   const requiresShippingQuote = product.handle === SHIPPING_QUOTE_ONLY_HANDLE;
   const isSquareBubbler = product.handle === 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des';
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
+  const isRoundBubbler = product.handle === 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
@@ -357,6 +359,18 @@ export function ProductDetail({
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
         <HdpeBubblerDetails content={content} />
+      ) : isRoundBubbler ? (
+        <RoundBubblerTabs
+          description={
+            <>
+              <ProductOverview description={content.description} shortDescription={content.shortDescription} />
+              <ProductFeatures features={content.features} />
+              <RecommendedFor items={content.recommendedFor} />
+              <ComplianceSection compliance={content.compliance} />
+            </>
+          }
+          specifications={<FullSpecs specs={content.fullSpecs} />}
+        />
       ) : editorialTapFinish ? null : (
         <>
           <FullSpecs specs={content.fullSpecs} />
@@ -368,15 +382,6 @@ export function ProductDetail({
           <RecommendedFor items={content.recommendedFor} />
           <ComplianceSection compliance={content.compliance} />
         </>
-      )}
-      {(isHdpeBubbler || product.handle === 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm') && (
-        <section className="mt-10 border-t border-black/10 pt-10" aria-labelledby="fountain-manual-heading">
-          <h2 id="fountain-manual-heading" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Product Specifications and Installation Manual</h2>
-          <p className="mt-2 text-sm leading-6 text-black/65">Download the official PDF with technical specifications and installation guidance for your licensed plumber.</p>
-          <a href="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/Installation_Manual_-_Water_Fountains.pdf?v=1794985405" target="_blank" rel="noopener noreferrer" type="application/pdf" className="mt-5 inline-flex items-center gap-2 rounded-md border border-black/20 px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
-            Download Product Specifications and Installation Manual (PDF)
-          </a>
-        </section>
       )}
       {content.faq && content.faq.length > 0 && (
         isEditorialBubbler ? (
