@@ -7,12 +7,12 @@
  */
 export const FOUNTAINS_AND_COOLERS_ORDER = [
   // Drinking fountains
-  'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
   'round-stainless-steel-drinking-fountain-water-bubbler-chilled-non-filtered-20l-hr',
-  'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
+  'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
   'stainless-steel-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
-  'commercial-rust-free-filtered-cold-water-bubbler-wm',
+  'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
   'hdpe-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
+  'commercial-rust-free-filtered-cold-water-bubbler-wm',
   // Coolers and chillers
   'stainless-steel-under-counter-drinking-water-chiller-plus-stainless-steel-tap',
   'bench-top-room-temperature-hot-and-cold-water-cooler-direct-connect',
