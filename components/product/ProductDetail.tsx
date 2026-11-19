@@ -201,7 +201,7 @@ export function ProductDetail({
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
               hideWholeDollarCents={subcategory === 'bubblers'}
-              showDispatchCountdown={!isKitchenTap && !(isBubbler && product.metafields.shipping_tier === 'T5')}
+              showDispatchCountdown
               sleek={useRefinedPurchaseLayout}
               compactLayout={isBubbler}
             />
