@@ -158,6 +158,10 @@
       {
         "q": "Does the round model have a bottle-filling side tap?",
         "a": "No. The round YL-600R is the direct-drinking option. Choose the square YL-600C or HDPE YL-600P where a separate side tap is required."
+      },
+      {
+        "q": "How often should the filter cartridge be replaced?",
+        "a": "We recommend replacing the filter cartridge every 6 to 9 months: approximately every 6 months for higher-use installations and every 9 months for lower-use installations. Replace it earlier if water quality, reduced flow or changes in taste or odour indicate that servicing is needed."
       }
     ]
   },
@@ -341,7 +345,7 @@
       },
       {
         "q": "How often does the water filter need replacing?",
-        "a": "Filter replacement depends on water quality and usage. As a general planning guide, busy facilities may need changes every 3 to 6 months, while quieter offices may be able to wait 6 to 12 months. Follow the cartridge manufacturer’s instructions and replace earlier if performance indicates it is necessary."
+        "a": "We recommend replacing the filter cartridge every 6 to 9 months: approximately every 6 months for higher-use installations and every 9 months for lower-use installations. Replace it earlier if water quality, reduced flow or changes in taste or odour indicate that servicing is needed."
       },
       {
         "q": "Is replacing the filter complicated?",
@@ -545,7 +549,7 @@
       },
       {
         "q": "Does the water bubbler include filtration?",
-        "a": "Yes. Built-in PP sediment and activated-carbon filtration helps reduce unwanted particles and improve the taste and odour of drinking water. Filters require periodic replacement, with servicing frequency depending on water quality and usage."
+        "a": "Yes. Built-in PP sediment and activated-carbon filtration helps reduce unwanted particles and improve the taste and odour of drinking water. We recommend replacing the filter cartridge every 6 to 9 months: every 6 months for higher-use installations and every 9 months for lower-use installations, or earlier if performance or water quality indicates."
       },
       {
         "q": "Does this water bubbler require professional installation?",
