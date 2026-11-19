@@ -14,6 +14,7 @@ interface VariantProductGalleryProps {
   watermarkPosition?: 'left' | 'right';
   cinematicVideoOverlay?: boolean;
   showChilledFilteredBadges?: boolean;
+  showFilteredBadge?: boolean;
 }
 
 export function VariantProductGallery({
@@ -26,6 +27,7 @@ export function VariantProductGallery({
   watermarkPosition = 'left',
   cinematicVideoOverlay = false,
   showChilledFilteredBadges = false,
+  showFilteredBadge = true,
 }: VariantProductGalleryProps) {
   const { selectedVariant } = useVariantSelection();
   return (
@@ -39,6 +41,7 @@ export function VariantProductGallery({
       watermarkPosition={watermarkPosition}
       cinematicVideoOverlay={cinematicVideoOverlay}
       showChilledFilteredBadges={showChilledFilteredBadges}
+      showFilteredBadge={showFilteredBadge}
       preferredImage={selectedVariant.image}
     />
   );
