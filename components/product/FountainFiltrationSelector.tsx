@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 import { clsx } from 'clsx';
 
 export const FOUNTAIN_FILTRATION_PAIRS = [
@@ -19,6 +22,10 @@ export const FOUNTAIN_FILTRATION_PAIRS = [
 /** Links independently purchasable fountain configurations without
  * breaking Google Shopping's dedicated product landing pages. */
 export function FountainFiltrationSelector({ currentHandle }: { currentHandle: string }) {
+  const [showNonFilteredInfo, setShowNonFilteredInfo] = useState(false);
+  // Flip only after the corresponding Shopify products are active, published,
+  // mapped to checkout shipping and connected to shared physical stock.
+  const nonFilteredOrderingEnabled = false;
   const pair = FOUNTAIN_FILTRATION_PAIRS.find(item =>
     item.filtered === currentHandle || item.nonFiltered === currentHandle,
   );
@@ -57,11 +64,27 @@ export function FountainFiltrationSelector({ currentHandle }: { currentHandle: s
           );
           return selected
             ? <span key={option.handle} className={styling} aria-current="page">{content}</span>
-            : <Link key={option.handle} className={styling}
-                href={`/bubblers-and-coolers/bubblers/${option.handle}`}
-                aria-label={`View ${option.label.toLowerCase()} configuration`}>{content}</Link>;
+            : option.handle === pair.nonFiltered && !nonFilteredOrderingEnabled
+              ? <button
+                  key={option.handle}
+                  type="button"
+                  onClick={() => setShowNonFilteredInfo(value => !value)}
+                  aria-expanded={showNonFilteredInfo}
+                  className={styling}
+                  aria-label="Learn about the non-filtered fountain, save $100"
+                >{content}</button>
+              : <Link key={option.handle} className={styling}
+                  href={`/bubblers-and-coolers/bubblers/${option.handle}`}
+                  aria-label={`View ${option.label.toLowerCase()} configuration`}>{content}</Link>;
         })}
       </div>
+      {showNonFilteredInfo && !nonFilteredOrderingEnabled && (
+        <div className="mt-3 rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-3 text-sm leading-6 text-neutral-700">
+          <p><strong className="text-neutral-900">Same fountain, $100 less.</strong> The non-filtered version is supplied without the filter cartridge.</p>
+          <p className="mt-1 text-xs leading-5 text-neutral-500">Online ordering for this configuration is being prepared.</p>
+          <a className="mt-2 inline-block text-sm font-semibold text-brand-blue underline underline-offset-2" href="mailto:info@enviroaqua.com.au?subject=Non-filtered%20water%20fountain%20enquiry">Enquire about the non-filtered version</a>
+        </div>
+      )}
     </fieldset>
   );
 }
