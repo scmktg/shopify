@@ -17,6 +17,7 @@ interface ProductGalleryProps {
   watermarkPosition?: 'left' | 'right';
   cinematicVideoOverlay?: boolean;
   showChilledFilteredBadges?: boolean;
+  showFilteredBadge?: boolean;
 }
 
 /**
@@ -44,6 +45,7 @@ export function ProductGallery({
   watermarkPosition = 'left',
   cinematicVideoOverlay = false,
   showChilledFilteredBadges = false,
+  showFilteredBadge = true,
 }: ProductGalleryProps) {
   const galleryImages =
     preferredImage && !images.some((image) => image.url === preferredImage.url)
@@ -217,7 +219,7 @@ export function ProductGallery({
       {showChilledFilteredBadges && !videoOpen && (
         <div
           className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col items-end gap-2 sm:right-4 sm:top-4"
-          aria-label="Chilled and filtered drinking water"
+          aria-label={showFilteredBadge ? "Chilled and filtered drinking water" : "Chilled drinking water"}
         >
           <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-2.5 py-1 text-white shadow-sm">
             <span className="flex skew-x-12 items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em]">
@@ -225,12 +227,14 @@ export function ProductGallery({
               Chilled
             </span>
           </span>
-          <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-2.5 py-1 text-white shadow-sm">
-            <span className="flex skew-x-12 items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em]">
-              <Droplets aria-hidden="true" className="h-3 w-3 shrink-0" />
-              Filtered
+          {showFilteredBadge && (
+            <span className="inline-flex min-h-[30px] w-[108px] -skew-x-12 items-center rounded-sm bg-neutral-900 px-2.5 py-1 text-white shadow-sm">
+              <span className="flex skew-x-12 items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em]">
+                <Droplets aria-hidden="true" className="h-3 w-3 shrink-0" />
+                Filtered
+              </span>
             </span>
-          </span>
+          )}
         </div>
       )}
 
