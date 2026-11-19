@@ -28,7 +28,7 @@ export function DispatchCountdown({ compact = false, minimal = false, inStock = 
 
   const current =
     state ?? {
-      headline: `Order before ${ORDER_CUTOFF_DISPLAY} for same-day dispatch from NSW`,
+      headline: `Order before ${ORDER_CUTOFF_DISPLAY} for same-day dispatch from Wyong, NSW`,
       urgent: false,
     };
 
@@ -53,7 +53,7 @@ export function DispatchCountdown({ compact = false, minimal = false, inStock = 
             <span className="text-neutral-600">
               {current.remaining ? (
                 <>
-                  Order in <strong className="whitespace-nowrap font-semibold tabular-nums text-neutral-900">{current.remaining}</strong> for same-day dispatch from NSW
+                  Order in <strong className="whitespace-nowrap font-semibold tabular-nums text-neutral-900">{current.remaining}</strong> for same-day dispatch from Wyong, NSW
                 </>
               ) : current.headline}
             </span>
@@ -109,11 +109,10 @@ export function DispatchCountdown({ compact = false, minimal = false, inStock = 
         </div>}
 
         <div className="min-w-0">
-          <p className="text-sm font-bold text-black tabular-nums">
-            {dispatchHeadline}
-          </p>
+          <p className="text-sm font-bold text-black">Fast dispatch from Wyong, NSW</p>
+          <p className="mt-1 text-sm font-medium text-black/80 tabular-nums">{dispatchHeadline}</p>
+          <p className="mt-1 text-xs leading-5 text-black/60">Before 12 pm Sydney time: same-business-day dispatch. After 12 pm: next-business-day dispatch. Excludes public holidays. Delivery time varies by postcode.</p>
         </div>
-
       </div>
     </div>
   );
@@ -126,7 +125,7 @@ function buildDispatchState(now: Date): DispatchState {
 
   if (isSaturday || isSunday) {
     return {
-      headline: 'Order now for Monday dispatch from NSW',
+      headline: 'Order now for next-business-day dispatch from Wyong, NSW',
       urgent: false,
     };
   }
@@ -139,7 +138,7 @@ function buildDispatchState(now: Date): DispatchState {
 
   if (!beforeCutoff) {
     return {
-      headline: 'Order now for next-business-day dispatch from NSW',
+      headline: 'Order now for next-business-day dispatch from Wyong, NSW',
       urgent: false,
     };
   }
@@ -156,7 +155,7 @@ function buildDispatchState(now: Date): DispatchState {
         : `${Math.max(seconds, 1)}s`;
 
   return {
-    headline: `Order within ${remaining} for same-day dispatch from NSW`,
+    headline: `Order within ${remaining} for same-day dispatch from Wyong, NSW`,
     urgent: true,
     remaining,
   };
