@@ -35,17 +35,22 @@ export function FountainFiltrationSelector({ currentHandle }: { currentHandle: s
       <p className="mt-1 text-xs leading-5 text-neutral-500">
         The same fountain, with or without the filter cartridge.
       </p>
-      <div className="mt-2.5 grid grid-cols-2 gap-2">
+      <div className="mt-2.5 grid grid-cols-2 gap-2.5">
         {options.map(option => {
           const selected = option.handle === currentHandle;
           const styling = clsx(
-            'flex min-h-[70px] flex-col justify-center rounded-lg border px-3 py-3 text-left transition-colors',
+            'relative flex min-h-[82px] flex-col justify-center rounded-lg border px-3 py-3 text-left transition-colors',
             selected
               ? 'border-neutral-900 bg-neutral-50 ring-1 ring-inset ring-neutral-900'
               : 'border-neutral-200 bg-white hover:border-neutral-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900',
           );
           const content = (
             <>
+              {option.handle === pair.nonFiltered && (
+                <span className="absolute -right-1.5 -top-2 rounded-md bg-brand-blue px-2 py-1 text-[11px] font-bold leading-none tracking-tight text-white shadow-sm">
+                  Save $100
+                </span>
+              )}
               <span className="text-sm font-semibold text-neutral-900">{option.label}</span>
               <span className="mt-0.5 text-xs text-neutral-500">{option.detail}</span>
             </>
