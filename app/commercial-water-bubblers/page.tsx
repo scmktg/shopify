@@ -26,6 +26,7 @@ type CabinetKey = 'round' | 'square' | 'hdpe';
 interface CabinetSpec {
   key: CabinetKey;
   handle: string;
+  nonFilteredHandle: string;
   shortName: string;
   displayName: string;
   modelId: string;
@@ -39,6 +40,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'round',
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
+    nonFilteredHandle: 'round-stainless-steel-drinking-fountain-water-bubbler-chilled-non-filtered-20l-hr',
     shortName: 'Round Stainless Steel',
     displayName: 'Round Stainless Steel Water Bubbler',
     modelId: 'YL-600R',
@@ -50,6 +52,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'square',
     handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
+    nonFilteredHandle: 'stainless-steel-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
     shortName: 'Square Stainless Steel',
     displayName: 'Stainless Steel Water Bubbler with Tap',
     modelId: 'YL-600C',
@@ -61,6 +64,7 @@ const CABINETS: ReadonlyArray<CabinetSpec> = [
   {
     key: 'hdpe',
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
+    nonFilteredHandle: 'hdpe-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
     shortName: 'HDPE Design',
     displayName: 'HDPE Water Bubbler with Tap',
     modelId: 'YL-600P',
@@ -131,17 +135,25 @@ export default async function CommercialBubblersPage({ searchParams }: Commercia
   const sort: SortValue = params.sort === 'price-asc' || params.sort === 'price-desc'
     ? params.sort
     : 'default';
-  const products = await Promise.all(
-    CABINETS.map((cabinet) => getProductByHandle(cabinet.handle)),
+  const pairs = await Promise.all(
+    CABINETS.map(async (cabinet) => {
+      const [filtered, nonFiltered] = await Promise.all([
+        getProductByHandle(cabinet.handle),
+        getProductByHandle(cabinet.nonFilteredHandle),
+      ]);
+      return { cabinet, filtered, nonFiltered };
+    }),
   );
 
-  const models = CABINETS.map((cabinet, index) => ({ cabinet, product: products[index] }));
-  const visibleModels = models
+  const visibleModels = pairs
     .filter(({ cabinet }) => selectedCabinets.length === 0 || selectedCabinets.includes(cabinet.key))
+    .flatMap(({ cabinet, filtered, nonFiltered }) =>
+      [filtered, nonFiltered].flatMap(product => product ? [{ cabinet, product }] : []),
+    )
     .sort((a, b) => {
       if (sort === 'default') return 0;
-      const aPrice = Number(a.product?.priceRange.minVariantPrice.amount ?? 0);
-      const bPrice = Number(b.product?.priceRange.minVariantPrice.amount ?? 0);
+      const aPrice = Number(a.product.priceRange.minVariantPrice.amount);
+      const bPrice = Number(b.product.priceRange.minVariantPrice.amount);
       return (aPrice - bPrice) * (sort === 'price-desc' ? -1 : 1);
     });
 
@@ -150,8 +162,10 @@ export default async function CommercialBubblersPage({ searchParams }: Commercia
     { name: 'Water Bubblers & Drinking Fountains', href: PATH },
   ];
 
-  const productItems = products.flatMap((product) =>
-    product ? [{ name: product.title, path: getProductUrl(product.handle) }] : [],
+  const productItems = pairs.flatMap(({ filtered, nonFiltered }) =>
+    [filtered, nonFiltered].flatMap(product =>
+      product ? [{ name: product.title, path: getProductUrl(product.handle) }] : [],
+    ),
   );
 
   return (
@@ -231,9 +245,9 @@ function toProductCard(product: Product): ProductCardData {
 function RangeSection({
   models,
 }: {
-  models: ReadonlyArray<{ cabinet: CabinetSpec; product: Product | null }>;
+  models: ReadonlyArray<{ cabinet: CabinetSpec; product: Product }>;
 }) {
-  const cards = models.flatMap(({ product }) => product ? [toProductCard(product)] : []);
+  const cards = models.map(({ product }) => toProductCard(product));
   return (
     <section id="range" aria-label="Shop commercial water bubblers" className="scroll-mt-24">
       <div className="mx-auto max-w-7xl px-4 pb-12 pt-8 sm:px-6 md:pt-10 lg:px-8">
