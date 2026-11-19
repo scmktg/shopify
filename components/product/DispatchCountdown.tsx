@@ -1,6 +1,6 @@
 'use client';
 
-import { Gauge, Truck } from 'lucide-react';
+import { Truck } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { ORDER_CUTOFF, ORDER_CUTOFF_DISPLAY } from '@/lib/site-config';
 
@@ -86,32 +86,24 @@ export function DispatchCountdown({ compact = false, minimal = false, inStock = 
   }
 
   return (
-    <div
-      className={
-        current.urgent
-          ? 'mt-3 rounded-lg border border-brand-blue/30 bg-brand-blue-light px-4 py-3'
-          : 'mt-3 rounded-lg border border-gray-200 bg-gray-50 px-4 py-3'
-      }
-    >
-      <div className="flex flex-wrap items-start gap-3">
-        {!inStock && <div
-          className={
-            current.urgent
-              ? 'mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white text-brand-blue shadow-sm'
-              : 'mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-full bg-white text-black/60'
-          }
-        >
-          {current.urgent ? (
-            <Gauge className="h-4 w-4" aria-hidden="true" />
-          ) : (
-            <Truck className="h-4 w-4" aria-hidden="true" />
-          )}
-        </div>}
-
+    <div role="status" className="mt-3 rounded-lg border border-neutral-200 bg-white px-4 py-3">
+      <div className="flex items-start gap-3">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-brand-blue/5 text-brand-blue">
+          <Truck className="h-[18px] w-[18px]" aria-hidden="true" />
+        </span>
         <div className="min-w-0">
-          <p className="text-sm font-bold text-black">Fast dispatch from Wyong, NSW</p>
-          <p className="mt-1 text-sm font-medium text-black/80 tabular-nums">{dispatchHeadline}</p>
-          <p className="mt-1 text-xs leading-5 text-black/60">Before 12 pm Sydney time: same-business-day dispatch. After 12 pm: next-business-day dispatch. Excludes public holidays. Delivery time varies by postcode.</p>
+          <p className="text-sm font-semibold tracking-tight text-neutral-900">
+            Fast dispatch from Wyong, NSW
+          </p>
+          <p className="mt-0.5 text-[13px] leading-5 text-neutral-600 tabular-nums">
+            {current.remaining ? (
+              <>Order within <span className="font-semibold text-neutral-900">{current.remaining}</span> for same-day dispatch.</>
+            ) : current.urgent ? (
+              current.headline
+            ) : (
+              'Order now for next-business-day dispatch.'
+            )}
+          </p>
         </div>
       </div>
     </div>
