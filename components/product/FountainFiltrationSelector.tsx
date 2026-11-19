@@ -25,7 +25,7 @@ export function FountainFiltrationSelector({ currentHandle }: { currentHandle: s
   const [showNonFilteredInfo, setShowNonFilteredInfo] = useState(false);
   // Flip only after the corresponding Shopify products are active, published,
   // mapped to checkout shipping and connected to shared physical stock.
-  const nonFilteredOrderingEnabled = false;
+  const nonFilteredOrderingEnabled = true;
   const pair = FOUNTAIN_FILTRATION_PAIRS.find(item =>
     item.filtered === currentHandle || item.nonFiltered === currentHandle,
   );
