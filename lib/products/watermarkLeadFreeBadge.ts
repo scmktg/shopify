@@ -7,6 +7,10 @@ const ELIGIBLE_BUBBLER_HANDLES = new Set([
   'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
   'commercial-rust-free-filtered-cold-water-bubbler-wm',
   'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
+  // Same certified fountain hardware, supplied without the filter cartridge.
+  'round-stainless-steel-drinking-fountain-water-bubbler-chilled-non-filtered-20l-hr',
+  'stainless-steel-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
+  'hdpe-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
 ]);
 
 /** Explicit product allowlist and authoritative WaterMark status, not overrideable prose. */
