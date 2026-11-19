@@ -148,7 +148,7 @@ export default async function CommercialBubblersPage({ searchParams }: Commercia
   const visibleModels = pairs
     .filter(({ cabinet }) => selectedCabinets.length === 0 || selectedCabinets.includes(cabinet.key))
     .flatMap(({ cabinet, filtered, nonFiltered }) =>
-      [filtered, nonFiltered].flatMap(product => product ? [{ cabinet, product }] : []),
+      [nonFiltered, filtered].flatMap(product => product ? [{ cabinet, product }] : []),
     )
     .sort((a, b) => {
       if (sort === 'default') return 0;
@@ -163,7 +163,7 @@ export default async function CommercialBubblersPage({ searchParams }: Commercia
   ];
 
   const productItems = pairs.flatMap(({ filtered, nonFiltered }) =>
-    [filtered, nonFiltered].flatMap(product =>
+    [nonFiltered, filtered].flatMap(product =>
       product ? [{ name: product.title, path: getProductUrl(product.handle) }] : [],
     ),
   );
