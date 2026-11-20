@@ -110,12 +110,6 @@ export function ProductDeliveryInsights({
               ? 'Delivery guide for Northern Territory'
               : `Deliveries to ${selected.name}`}
           </p>
-          {bulky && (
-            <p className="mt-0.5 text-[11px] leading-4 text-slate-500">
-              Parcel delivery history; large-item freight may take longer.
-            </p>
-          )}
-
           <div className={selected.milestones?.length === 2
               ? "mt-3 grid grid-cols-2 gap-3"
               : "mt-3 grid grid-cols-3 gap-2.5"}>
@@ -134,9 +128,7 @@ export function ProductDeliveryInsights({
             ))}
           </div>
           <p className="mt-2.5 text-[10px] leading-4 text-slate-500">
-            {state === 'NT'
-              ? 'NT uses WA delivery data as a guide.'
-              : 'Data is calculated from the last 90 days of orders.'}
+            Data is calculated from the last 90 days of orders.
           </p>
         </div>
       )}
