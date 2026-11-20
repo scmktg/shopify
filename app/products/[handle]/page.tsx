@@ -96,7 +96,7 @@ export default async function ShopifyProductPage({ params, searchParams }: Props
               <ProductDeliveryInsights
                 tier={product.metafields.shipping_tier ?? 'T1'}
                 bulky={product.metafields.shipping_tier === 'T6' || /fountain|bubbler/i.test(product.productType ?? '')}
-                fountain={/fountain|bubbler/i.test(product.title) && /fountain|bubbler/i.test(product.productType ?? product.title)}
+                fountain={/drinking fountain|water fountain/i.test(product.title)}
                 pickupOnly={product.metafields.shipping_tier === 'T7'}
               />
             </div>
