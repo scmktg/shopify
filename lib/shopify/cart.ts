@@ -456,24 +456,31 @@ export interface ShippingEstimateResult {
 const SHIPPING_ESTIMATE_MUTATION = /* GraphQL */ `
   mutation ShippingEstimate($input: CartInput!) {
     cartCreate(input: $input) {
-      cart {
-        deliveryGroups(first: 10) {
-          nodes {
-            deliveryOptions {
-              handle
-              title
-              deliveryMethodType
-              estimatedCost {
-                amount
-                currencyCode
-              }
-            }
-          }
+      cart { id }
+      userErrors { field message }
+    }
+  }
+`;
+
+// Carrier-app rates are intentionally NOT included in Shopify's default
+// deliveryGroups response. They require withCarrierRates + @defer and must be
+// collected from the streamed response (Shopify Storefront API 2026-04).
+const SHIPPING_ESTIMATE_WITH_CARRIER_RATES = /* GraphQL */ `
+  query ShippingRates($cartId: ID!) {
+    cart(id: $cartId) {
+      id
+      ...ShippingRateGroups @defer
+    }
+  }
+  fragment ShippingRateGroups on Cart {
+    deliveryGroups(first: 20, withCarrierRates: true) {
+      nodes {
+        deliveryOptions {
+          handle
+          title
+          deliveryMethodType
+          estimatedCost { amount currencyCode }
         }
-      }
-      userErrors {
-        field
-        message
       }
     }
   }
@@ -550,13 +557,19 @@ export async function estimateProductShipping(
 
   type ShippingEstimateData = {
     cartCreate: {
-      cart: RawShippingEstimateCart | null;
+      cart: { id: string } | null;
       userErrors: ReadonlyArray<UserError>;
     };
   };
 
+  const unavailable = (error: string): ShippingEstimateResult => ({
+    ok: false, postcode, provinceCode, options: [], error,
+  });
+
   try {
-    const result: ShopifyClientResponse<ShippingEstimateData> =
+    // First create an isolated single-item cart with a selected delivery
+    // address. Never modify the customer's existing cart.
+    const created: ShopifyClientResponse<ShippingEstimateData> =
       await shopifyClient.request<ShippingEstimateData>(
         SHIPPING_ESTIMATE_MUTATION,
         {
@@ -565,81 +578,74 @@ export async function estimateProductShipping(
               lines: [{ merchandiseId: variantId, quantity: 1 }],
               buyerIdentity: { countryCode: 'AU' },
               delivery: {
-                addresses: [
-                  {
-                    selected: true,
-                    oneTimeUse: true,
-                    validationStrategy: 'COUNTRY_CODE_ONLY',
-                    address: {
-                      deliveryAddress: {
-                        countryCode: 'AU',
-                        provinceCode,
-                        zip: postcode,
-                      },
+                addresses: [{
+                  selected: true,
+                  oneTimeUse: true,
+                  validationStrategy: 'COUNTRY_CODE_ONLY',
+                  address: {
+                    deliveryAddress: {
+                      countryCode: 'AU', provinceCode, zip: postcode,
                     },
                   },
-                ],
+                }],
               },
             },
           },
         },
       );
 
-    const { data, errors } = result;
-    if (errors) {
-      logShopifyErrors('estimateProductShipping errors', errors);
-      return {
-        ok: false,
-        postcode,
-        provinceCode,
-        options: [],
-        error: 'Could not calculate delivery right now.',
-      };
+    if (created.errors || created.data?.cartCreate.userErrors?.length) {
+      logShopifyErrors('estimateProductShipping create failed',
+        created.errors ?? created.data?.cartCreate.userErrors);
+      return unavailable('Shipping price is temporarily unavailable. Please check at checkout.');
+    }
+    const cartId = created.data?.cartCreate.cart?.id;
+    if (!cartId) return unavailable('Shipping price is temporarily unavailable. Please check at checkout.');
+
+    // request() and the default deliveryGroups query omit third-party
+    // carrier-calculated rates. Wait for Shopify's deferred carrier result.
+    const stream = await shopifyClient.requestStream<{
+      cart: { id: string; deliveryGroups?: RawShippingEstimateCart['deliveryGroups'] } | null;
+    }>(SHIPPING_ESTIMATE_WITH_CARRIER_RATES, {
+      variables: { cartId },
+    });
+
+    let groups: RawShippingEstimateCart['deliveryGroups']['nodes'] = [];
+    let streamError = false;
+    for await (const chunk of stream) {
+      if (chunk.errors) {
+        logShopifyErrors('estimateProductShipping carrier rates failed', chunk.errors);
+        streamError = true;
+      }
+      if (chunk.data?.cart?.deliveryGroups?.nodes) {
+        groups = chunk.data.cart.deliveryGroups.nodes;
+      }
+    }
+    if (streamError) {
+      return unavailable('Shipping price is temporarily unavailable. Please check at checkout.');
     }
 
-    const userErrors = data?.cartCreate.userErrors ?? [];
-    if (userErrors.length > 0) {
-      logShopifyErrors('estimateProductShipping userErrors', userErrors);
-      return {
-        ok: false,
-        postcode,
-        provinceCode,
-        options: [],
-        error: userErrors.map((e) => e.message).join('; '),
-      };
+    const options = groups.flatMap((group) => group.deliveryOptions)
+      .filter((option) =>
+        option.deliveryMethodType === 'SHIPPING' &&
+        option.estimatedCost.currencyCode === 'AUD' &&
+        Number.isFinite(Number(option.estimatedCost.amount)) &&
+        Number(option.estimatedCost.amount) >= 0,
+      );
+
+    if (!options.length) {
+      // A postcode-only address may be insufficient for some carrier
+      // services. Never equate an empty API result with no delivery.
+      console.warn('[shopify] No confirmed carrier shipping options for postcode-only estimate', {
+        postcode, provinceCode, variantId,
+      });
+      return unavailable('We could not confirm a shipping price for this postcode. Please check at checkout.');
     }
 
-    const cart = data?.cartCreate.cart;
-    if (!cart) {
-      return {
-        ok: false,
-        postcode,
-        provinceCode,
-        options: [],
-        error: 'Could not calculate delivery right now.',
-      };
-    }
-
-    const options = cart.deliveryGroups.nodes
-      .flatMap((group) => group.deliveryOptions)
-      .filter((option) => option.deliveryMethodType === 'SHIPPING');
-
-    return {
-      ok: true,
-      postcode,
-      provinceCode,
-      options,
-      error: null,
-    };
+    return { ok: true, postcode, provinceCode, options, error: null };
   } catch (caught) {
     console.error('[shopify] estimateProductShipping failed:', caught);
-    return {
-      ok: false,
-      postcode,
-      provinceCode,
-      options: [],
-      error: 'Could not calculate delivery right now.',
-    };
+    return unavailable('Shipping price is temporarily unavailable. Please check at checkout.');
   }
 }
 
