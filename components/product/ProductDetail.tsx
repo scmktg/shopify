@@ -18,7 +18,6 @@ import { MoreInCategory } from './MoreInCategory';
 import { BrandTrustStrip } from './BrandTrustStrip';
 import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
-import { ShippingTierBlock } from './ShippingTierBlock';
 import { ProductDeliveryInsights } from './ProductDeliveryInsights';
 import { WaterMarkCertificationBanner } from './WaterMarkCertificationBanner';
 import { isLeadFree } from './WatermarkBadge';
@@ -204,7 +203,7 @@ export function ProductDetail({
               singleFinish={product.handle === BRUSHED_GOLD_RO_TAP_HANDLE ? 'Brushed Gold' : undefined}
               ctaLabel={content.ctas?.primary ?? undefined}
               hideWholeDollarCents={subcategory === 'bubblers'}
-              showDispatchCountdown
+              showDispatchCountdown={false}
               sleek={useRefinedPurchaseLayout}
               compactLayout={isBubbler}
             />
@@ -324,23 +323,13 @@ export function ProductDetail({
           )}
 
 
-          {!requiresShippingQuote && (
-            isKitchenTap || (
-              product.metafields.shipping_tier !== 'T5' &&
-              product.metafields.shipping_tier !== 'T6' &&
-              product.metafields.shipping_tier !== 'T7' &&
-              !isBubbler &&
-              !/chemical-dosing-tank/i.test(product.handle)
-            ) ? (
-              <ProductDeliveryInsights tier={product.metafields.shipping_tier ?? 'T1'} />
-            ) : (
-              <ShippingTierBlock
-                tier={product.metafields.shipping_tier}
-                productHandle={product.handle}
-                combinedBubblerShipping={subcategory === 'bubblers'}
-              />
-            )
-          )}
+          <ProductDeliveryInsights
+            tier={product.metafields.shipping_tier ?? 'T1'}
+            bulky={isBubbler || product.metafields.shipping_tier === 'T6'}
+            pickupOnly={product.metafields.shipping_tier === 'T7'}
+            quoteOnly={requiresShippingQuote}
+            productHandle={product.handle}
+          />
 
           <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
 
