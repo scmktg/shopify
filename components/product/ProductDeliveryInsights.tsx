@@ -102,10 +102,12 @@ export function ProductDeliveryInsights({
             </select>
           </div>
 
-          <div className="mt-3 grid gap-x-3 gap-y-2 sm:grid-cols-3">
+          <div className={selected.milestones?.length === 2
+              ? "mt-3 grid grid-cols-2 gap-3"
+              : "mt-3 grid grid-cols-3 gap-2.5"}>
             {selected.milestones?.map(({ days, percent }) => (
               <div key={days} className="min-w-0">
-                <div className="flex items-baseline justify-between gap-2">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-1 gap-y-0">
                   <span className="whitespace-nowrap text-[11px] text-slate-600">Within {days} {days === 1 ? 'day' : 'days'}</span>
                   <span className="text-xs font-semibold tabular-nums text-sky-800">{percent}%</span>
                 </div>
