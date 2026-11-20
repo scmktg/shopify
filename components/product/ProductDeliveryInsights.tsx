@@ -19,11 +19,11 @@ type StateDelivery = {
 // Choose observed milestones below 100%; NT uses WA as a clearly labelled proxy.
 const DELIVERY: Record<StateCode, StateDelivery> = {
   NSW: { name: 'New South Wales', typical: '1–3 days', milestones: [{ days: 1, percent: 63 }, { days: 2, percent: 76 }, { days: 3, percent: 92 }] },
-  VIC: { name: 'Victoria', typical: '2–4 days', milestones: [{ days: 2, percent: 53 }, { days: 4, percent: 81 }] },
+  VIC: { name: 'Victoria', typical: '2–4 days', milestones: [{ days: 2, percent: 53 }, { days: 3, percent: 71 }, { days: 5, percent: 88 }] },
   QLD: { name: 'Queensland', typical: '2–5 days', milestones: [{ days: 2, percent: 48 }, { days: 4, percent: 78 }, { days: 6, percent: 91 }] },
-  ACT: { name: 'Australian Capital Territory', typical: '2–4 days', milestones: [{ days: 2, percent: 33 }, { days: 3, percent: 67 }] },
+  ACT: { name: 'Australian Capital Territory', typical: '2–4 days', milestones: [{ days: 1, percent: 0 }, { days: 2, percent: 33 }, { days: 3, percent: 67 }] },
   SA: { name: 'South Australia', typical: '3–6 days', milestones: [{ days: 3, percent: 18 }, { days: 5, percent: 59 }, { days: 7, percent: 88 }] },
-  TAS: { name: 'Tasmania', typical: '4–7 days', milestones: [{ days: 5, percent: 22 }, { days: 7, percent: 89 }] },
+  TAS: { name: 'Tasmania', typical: '4–7 days', milestones: [{ days: 5, percent: 22 }, { days: 6, percent: 44 }, { days: 7, percent: 89 }] },
   WA: { name: 'Western Australia', typical: '5–9 days', milestones: [{ days: 7, percent: 10 }, { days: 9, percent: 81 }, { days: 10, percent: 90 }] },
   NT: { name: 'Northern Territory', typical: '5–9 days', milestones: [{ days: 7, percent: 10 }, { days: 9, percent: 81 }, { days: 10, percent: 90 }] },
 };
@@ -136,7 +136,7 @@ export function ProductDeliveryInsights({
           <p className="mt-2.5 text-[10px] leading-4 text-slate-500">
             {state === 'NT'
               ? 'NT uses WA delivery data as a guide.'
-              : 'Data is calculated from the last 90 days of orders.'}
+              : 'Data is calculated from the last 90 days of orders.'}{state === 'ACT' ? ' ACT: 3 verified deliveries.' : ''}
           </p>
         </div>
       )}
