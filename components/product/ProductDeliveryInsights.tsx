@@ -136,7 +136,7 @@ export function ProductDeliveryInsights({
           <p className="mt-2.5 text-[10px] leading-4 text-slate-500">
             {state === 'NT'
               ? 'NT uses WA delivery data as a guide.'
-              : 'Data is calculated from the last 90 days of orders.'}{state === 'ACT' ? ' ACT: 3 verified deliveries.' : ''}
+              : 'Data is calculated from the last 90 days of orders.'}
           </p>
         </div>
       )}
