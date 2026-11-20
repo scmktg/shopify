@@ -1,12 +1,12 @@
 ---
 title: "Shipping & Delivery"
-description: "Australia-wide parcel delivery, flat-rate standalone chemical dosing tank shipping, regional bulky freight, and free Click & Collect from Wyong NSW."
+description: "Fast same-day dispatch before 12pm NSW time, data-backed Australia-wide delivery estimates, freight options and free Click & Collect from Wyong NSW."
 relatedLinks:
   - { label: "Returns & warranty", href: "/returns/" }
   - { label: "Contact us", href: "/contact/" }
 faq:
   - q: "When will my order ship?"
-    a: "Orders placed before 12pm AEST on a business day are normally dispatched the same business day. Orders placed after 12pm, on weekends, or on Australian public holidays are normally dispatched the next business day. Tracking is sent when the carrier collects your order."
+    a: "Orders placed before 12pm NSW local time (AEST or AEDT, depending on the season) on a business day are normally dispatched the same business day. Orders placed after 12pm, on weekends, or on NSW public holidays are normally dispatched the next business day. Tracking is sent when the carrier collects your order."
   - q: "How much is delivery?"
     a: "Delivery depends on the product, its packed weight, and the delivery destination. Standard parcel products are calculated at checkout using the rate table on this page. Selected products include free delivery. Standalone chemical dosing tanks have flat delivery rates from $49 in eligible states; other large products use bulky-freight rates by destination. Shopify checkout is the source of truth for the final delivery charge."
   - q: "Do you ship Australia-wide?"
@@ -17,7 +17,26 @@ faq:
     a: "Yes. Free Click & Collect is available from our Wyong NSW showroom at 6/45 Amsterdam Cct, Wyong NSW 2259 where the product is eligible for local pickup. Orders are usually ready within one hour during business hours. We will email or text you when the order is ready."
 ---
 
-We dispatch Monday to Friday from our Wyong NSW warehouse on the Central Coast.
+We dispatch Monday to Friday from our **Wyong NSW warehouse** on the Central Coast. Most in-stock orders placed **before 12pm NSW local time** on a business day are dispatched that day; orders placed later are normally dispatched the **next business day**. The cutoff follows NSW daylight saving time (AEST or AEDT).
+
+## How long does delivery take?
+
+These are typical **calendar days in transit after dispatch** for standard parcels, informed by our recent Aramex delivery history. We show the faster, usual delivery window first; some locations and carriers can take longer.
+
+| Destination | Typical transit time | Around 90% of verified Aramex deliveries within* |
+|---|---:|---:|
+| NSW | **1–3 days** | 3 days |
+| ACT | **2–4 days** | 4 days |
+| VIC | **2–4 days** | 6 days |
+| QLD | **2–5 days** | 6 days |
+| SA | **3–6 days** | 8 days |
+| TAS | **4–7 days** | 8 days |
+| WA | **5–9 days** | 10 days |
+| NT | **Carrier-dependent** | Not enough Aramex data |
+
+*The last column is a rounded reference point based on the 90th-percentile transit time for **successfully delivered Aramex parcels** in our September–November 2026 sample, not a delivery guarantee or an all-carrier service level. ACT and TAS have smaller samples. Transit is counted from the first carrier network scan to verified delivery; it excludes warehouse handling. WA, TAS and NT orders may use Australia Post or another courier, and bulky items and remote destinations may take longer.*
+
+**For the fastest estimate, check your tracking link after dispatch.** Your actual delivery timing depends on your postcode, parcel size, carrier and any regional handover. Weekend and public-holiday delivery is not guaranteed.
 
 Shopify checkout is the source of truth for the delivery methods and final shipping charge available to your order.
 
@@ -90,18 +109,9 @@ These products can be collected free from:
 
 Orders are usually ready within one hour during business hours. We will email or text you when the order is ready.
 
-## Dispatch times
+## Dispatch and tracking
 
-- Orders placed **before 12pm AEST** on a business day are normally dispatched the same business day.
-- Orders placed **after 12pm AEST**, on weekends, or on Australian public holidays are normally dispatched the next business day.
-
-Tracking information is sent after the carrier collects the order.
-
-## Delivery estimates
-
-Transit time varies by carrier, destination, and product type. Metro parcel deliveries are generally faster than regional or remote deliveries, while bulky freight normally takes longer.
-
-The carrier tracking link supplied after dispatch is the best source for the current delivery ETA.
+Orders placed before **12pm NSW local time** on a business day are normally dispatched the same day. Later orders, weekend orders and NSW public-holiday orders are normally dispatched the next business day. Tracking is provided after carrier collection.
 
 ## Damaged or missing parcels
 
