@@ -7,6 +7,7 @@ interface StaticContentPageProps {
   page: MarkdownPage;
   breadcrumbs: ReadonlyArray<BreadcrumbItem>;
   children?: React.ReactNode;
+  beforeContent?: React.ReactNode;
 }
 
 /**
@@ -21,6 +22,7 @@ export function StaticContentPage({
   page,
   breadcrumbs,
   children,
+  beforeContent,
 }: StaticContentPageProps) {
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
@@ -28,6 +30,8 @@ export function StaticContentPage({
       <h1 className="mt-4 text-3xl md:text-4xl font-semibold text-black">
         {page.title}
       </h1>
+
+      {beforeContent}
 
       <div
         className="prose prose-base max-w-none mt-6"
