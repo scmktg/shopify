@@ -68,15 +68,19 @@ export function ProductDeliveryInsights({
           </div>
         </div>
         {fountain && !pickupOnly && !quoteOnly && (
-          <div className="mt-3 rounded-lg border border-emerald-200 bg-emerald-50/80 px-3 py-2">
-            <div className="flex items-center gap-2">
-              <Truck aria-hidden="true" className="h-4 w-4 text-emerald-700" />
-              <strong className="text-[13px] font-semibold text-emerald-800">FREE SHIPPING</strong>
-              <span className="text-[11px] text-emerald-900">Metro &amp; regional Australia</span>
+          <div className="mt-3 flex items-start gap-2.5 border-t border-slate-100 pt-3">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100">
+              <Truck aria-hidden="true" className="h-4 w-4 text-slate-700" />
+            </span>
+            <div className="min-w-0">
+              <p className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                <strong className="text-[13px] font-bold tracking-tight text-slate-950">Free shipping</strong>
+                <span className="text-[11px] text-slate-600">Metro &amp; regional Australia</span>
+              </p>
+              <p className="mt-0.5 text-[11px] leading-4 text-slate-500">
+                Remote postcodes incur an additional fee. Check yours below.
+              </p>
             </div>
-            <p className="mt-0.5 pl-6 text-[11px] leading-4 text-slate-600">
-              Remote postcodes incur an additional fee. Check your postcode below.
-            </p>
           </div>
         )}
       </div>
