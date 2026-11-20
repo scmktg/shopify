@@ -19,7 +19,7 @@ import { BrandTrustStrip } from './BrandTrustStrip';
 import { PdpReviewsSlot } from '@/components/reviews/PdpReviewsSlot';
 import { FaqAccordion } from '@/components/editorial/FaqAccordion';
 import { ShippingTierBlock } from './ShippingTierBlock';
-import { KitchenTapShippingRates } from './KitchenTapShippingRates';
+import { ProductDeliveryInsights } from './ProductDeliveryInsights';
 import { WaterMarkCertificationBanner } from './WaterMarkCertificationBanner';
 import { isLeadFree } from './WatermarkBadge';
 import { BubblerModelSelector } from './BubblerModelSelector';
@@ -325,8 +325,14 @@ export function ProductDetail({
 
 
           {!requiresShippingQuote && (
-            isKitchenTap ? (
-              <KitchenTapShippingRates />
+            isKitchenTap || (
+              product.metafields.shipping_tier !== 'T5' &&
+              product.metafields.shipping_tier !== 'T6' &&
+              product.metafields.shipping_tier !== 'T7' &&
+              !isBubbler &&
+              !/chemical-dosing-tank/i.test(product.handle)
+            ) ? (
+              <ProductDeliveryInsights tier={product.metafields.shipping_tier ?? 'T1'} />
             ) : (
               <ShippingTierBlock
                 tier={product.metafields.shipping_tier}
