@@ -13,6 +13,8 @@ interface ShippingEstimatorProps {
   variantId: string;
   tier: ShippingTier;
   onQuoteProvince?: (provinceCode: string | null) => void;
+  compact?: boolean;
+  freeShipping?: boolean;
 }
 
 function formatMoney(option: ShippingEstimateOption): string {
@@ -28,6 +30,8 @@ export function ShippingEstimator({
   variantId,
   tier,
   onQuoteProvince,
+  compact = false,
+  freeShipping = false,
 }: ShippingEstimatorProps) {
   const [postcode, setPostcode] = useState('');
   const [resultPostcode, setResultPostcode] = useState<string | null>(null);
@@ -106,11 +110,11 @@ export function ShippingEstimator({
         : 'We couldn’t confirm a shipping price for this postcode. Please check at checkout.';
 
   return (
-    <div className="mt-2 pt-3 border-t border-gray-200">
+    <div className={compact ? "mt-2" : "mt-2 border-t border-gray-200 pt-3"}>
       <form onSubmit={onSubmit} className="flex flex-wrap items-end gap-2">
         <label className="flex flex-col gap-1">
-          <span className="text-xs font-semibold text-black/70">
-            Check delivery to your postcode
+          <span className={compact ? "text-[11px] font-medium text-slate-500" : "text-xs font-semibold text-black/70"}>
+            {compact ? "Delivery postcode" : "Check delivery to your postcode"}
           </span>
           <input
             type="text"
@@ -123,14 +127,18 @@ export function ShippingEstimator({
               { setPostcode(event.target.value.replace(/\D/g, '').slice(0, 4)); setSuburb(''); setAvailableSuburbs([]); setResultPostcode(null); setOptions([]); }
             }
             placeholder="2259"
-            className="w-28 rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
+            className={compact
+              ? "h-9 w-28 rounded-md border border-slate-200 bg-white px-3 text-xs text-slate-900 outline-none focus:border-sky-700 focus:ring-1 focus:ring-sky-200"
+              : "w-28 rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"}
             aria-label="Australian postcode"
           />
         </label>
         <button
           type="submit"
           disabled={isChecking}
-          className="rounded bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-60"
+          className={compact
+            ? "h-9 rounded-md bg-slate-900 px-4 text-xs font-semibold text-white hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
+            : "rounded bg-black px-4 py-2 text-sm font-semibold text-white hover:bg-black/80 disabled:cursor-not-allowed disabled:opacity-60"}
         >
           {isChecking ? 'Checking…' : 'Check'}
         </button>
@@ -164,11 +172,15 @@ export function ShippingEstimator({
         <div className="mt-3 text-sm text-black">
           <p>
             <strong className="font-semibold">
-              Delivery to {resultPostcode}: {formatMoney(cheapest)}
+              {freeShipping && Number(cheapest.estimatedCost.amount) === 0
+                ? `Free shipping to ${resultPostcode}`
+                : freeShipping
+                  ? `Remote delivery to ${resultPostcode}: ${formatMoney(cheapest)}`
+                  : `Delivery to ${resultPostcode}: ${formatMoney(cheapest)}`}
             </strong>
             {provinceCode ? ` - ${provinceCode}` : ''}
           </p>
-          {cheapest.title && (
+          {cheapest.title && !compact && (
             <p className="mt-0.5 text-xs text-black/60">{cheapest.title}</p>
           )}
         </div>
