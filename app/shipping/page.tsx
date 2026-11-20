@@ -21,10 +21,10 @@ function DeliveryPerformance() {
   return (
     <section aria-labelledby="delivery-performance-heading" className="mt-7 overflow-hidden rounded-3xl border border-sky-100 bg-gradient-to-br from-sky-50 via-white to-cyan-50 px-5 py-7 shadow-sm sm:px-8 sm:py-9">
       <span className="inline-flex rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-800">
-        Our last 90 days
+        Fast Dispatch from Wyong, NSW
       </span>
       <h2 id="delivery-performance-heading" className="mt-4 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
-        Fast shipping from our NSW warehouse
+        Our shipping times for the last 90 days.
       </h2>
       <p className="mt-2 text-sm leading-6 text-slate-700 sm:text-base">
         <strong>Order before 12pm</strong> on a business day for same-day dispatch.
@@ -50,10 +50,6 @@ function DeliveryPerformance() {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-xs leading-5 text-slate-500">
-        Based on verified Aramex deliveries recorded in the last 90 days.
-        Transit times are calendar days from carrier collection, excluding order handling.
-      </p>
     </section>
   );
 }
