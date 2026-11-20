@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import {
-  estimateProductShipping,
+  estimateProductShippingFromEngine,
   type ShippingEstimateOption,
 } from '@/lib/shopify/cart';
 import type { ShippingTier } from '@/types/product';
@@ -35,6 +35,8 @@ export function ShippingEstimator({
   const [options, setOptions] = useState<ReadonlyArray<ShippingEstimateOption>>([]);
   const [error, setError] = useState<string | null>(null);
   const [isChecking, setIsChecking] = useState(false);
+  const [suburb, setSuburb] = useState('');
+  const [availableSuburbs, setAvailableSuburbs] = useState<ReadonlyArray<string>>([]);
 
   useEffect(() => {
     try {
@@ -68,11 +70,19 @@ export function ShippingEstimator({
 
     setIsChecking(true);
     try {
-      const result = await estimateProductShipping(variantId, clean);
+      const result = await estimateProductShippingFromEngine(variantId, clean, suburb);
       if (!result.ok) {
-        setError(result.error ?? 'Could not calculate delivery right now.');
+        if (result.needsSuburb) {
+          setAvailableSuburbs(result.suburbs ?? []);
+          setError(null);
+        } else {
+          setAvailableSuburbs([]);
+          setError(result.error ?? 'Could not calculate delivery right now.');
+        }
         return;
       }
+      setAvailableSuburbs([]);
+      setError(null);
 
       setResultPostcode(result.postcode);
       setProvinceCode(result.provinceCode);
@@ -110,7 +120,7 @@ export function ShippingEstimator({
             maxLength={4}
             value={postcode}
             onChange={(event) =>
-              setPostcode(event.target.value.replace(/\D/g, '').slice(0, 4))
+              { setPostcode(event.target.value.replace(/\D/g, '').slice(0, 4)); setSuburb(''); setAvailableSuburbs([]); setResultPostcode(null); setOptions([]); }
             }
             placeholder="2259"
             className="w-28 rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue"
@@ -125,6 +135,24 @@ export function ShippingEstimator({
           {isChecking ? 'Checking…' : 'Check'}
         </button>
       </form>
+
+      {availableSuburbs.length > 0 && (
+        <div className="mt-3">
+          <label htmlFor="shipping-quote-suburb" className="block text-xs font-semibold text-black/70">
+            This postcode covers different delivery zones. Select your suburb.
+          </label>
+          <select
+            id="shipping-quote-suburb"
+            value={suburb}
+            onChange={(event) => { setSuburb(event.target.value); setOptions([]); setResultPostcode(null); }}
+            className="mt-1 w-full max-w-xs rounded border border-gray-300 bg-white px-3 py-2 text-sm text-black"
+          >
+            <option value="">Select suburb</option>
+            {availableSuburbs.map((name) => <option key={name} value={name}>{name}</option>)}
+          </select>
+          <p className="mt-1 text-xs text-black/60">Then press Check to see your shipping price.</p>
+        </div>
+      )}
 
       {error && (
         <p className="mt-2 text-sm text-red-700" role="alert">
