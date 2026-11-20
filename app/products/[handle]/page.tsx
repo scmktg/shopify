@@ -7,6 +7,7 @@ import { getProductUrl } from '@/lib/utils/productUrl';
 import { VariantSelectionProvider } from '@/components/product/VariantSelectionProvider';
 import { VariantProductGallery } from '@/components/product/VariantProductGallery';
 import { VariantPurchaseControls } from '@/components/product/VariantPurchaseControls';
+import { ProductDeliveryInsights } from '@/components/product/ProductDeliveryInsights';
 import { ProductViewTracker } from '@/components/analytics/ProductViewTracker';
 import { JsonLdScript } from '@/lib/seo/JsonLdScript';
 import { absoluteUrl } from '@/lib/seo/siteUrl';
@@ -91,10 +92,12 @@ export default async function ShopifyProductPage({ params, searchParams }: Props
               <h1 className="text-[1.8rem] font-semibold leading-tight tracking-tight text-black md:text-[2.2rem]">
                 {product.title}
               </h1>
-              <VariantPurchaseControls fallbackPrice={product.priceRange.minVariantPrice} />
-              <p className="mt-6 text-sm text-black/65">
-                Delivery options and charges are confirmed at checkout.
-              </p>
+              <VariantPurchaseControls fallbackPrice={product.priceRange.minVariantPrice} showDispatchCountdown={false} />
+              <ProductDeliveryInsights
+                tier={product.metafields.shipping_tier ?? 'T1'}
+                bulky={product.metafields.shipping_tier === 'T6' || /fountain|bubbler/i.test(product.productType ?? '')}
+                pickupOnly={product.metafields.shipping_tier === 'T7'}
+              />
             </div>
           </div>
           {product.description.trim() && (
