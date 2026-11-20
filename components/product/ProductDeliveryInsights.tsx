@@ -16,16 +16,16 @@ type StateDelivery = {
 };
 
 // Calculated from verified Aramex deliveries within the 90-day export window.
-// Display observed percentages for small samples too; do not infer NT data from WA.
+// Choose observed milestones below 100%; NT uses WA as a clearly labelled proxy.
 const DELIVERY: Record<StateCode, StateDelivery> = {
   NSW: { name: 'New South Wales', typical: '1–3 days', milestones: [{ days: 1, percent: 63 }, { days: 2, percent: 76 }, { days: 3, percent: 92 }] },
-  VIC: { name: 'Victoria', typical: '2–4 days', milestones: [{ days: 2, percent: 53 }, { days: 4, percent: 81 }, { days: 6, percent: 97 }] },
+  VIC: { name: 'Victoria', typical: '2–4 days', milestones: [{ days: 2, percent: 53 }, { days: 4, percent: 81 }] },
   QLD: { name: 'Queensland', typical: '2–5 days', milestones: [{ days: 2, percent: 48 }, { days: 4, percent: 78 }, { days: 6, percent: 91 }] },
-  ACT: { name: 'Australian Capital Territory', typical: '2–4 days', milestones: [{ days: 2, percent: 33 }, { days: 3, percent: 67 }, { days: 4, percent: 100 }] },
+  ACT: { name: 'Australian Capital Territory', typical: '2–4 days', milestones: [{ days: 2, percent: 33 }, { days: 3, percent: 67 }] },
   SA: { name: 'South Australia', typical: '3–6 days', milestones: [{ days: 3, percent: 18 }, { days: 5, percent: 59 }, { days: 7, percent: 88 }] },
-  TAS: { name: 'Tasmania', typical: '4–7 days', milestones: [{ days: 5, percent: 22 }, { days: 7, percent: 89 }, { days: 9, percent: 100 }] },
+  TAS: { name: 'Tasmania', typical: '4–7 days', milestones: [{ days: 5, percent: 22 }, { days: 7, percent: 89 }] },
   WA: { name: 'Western Australia', typical: '5–9 days', milestones: [{ days: 7, percent: 10 }, { days: 9, percent: 81 }, { days: 10, percent: 90 }] },
-  NT: { name: 'Northern Territory', typical: '5–9 days' },
+  NT: { name: 'Northern Territory', typical: '5–9 days', milestones: [{ days: 7, percent: 10 }, { days: 9, percent: 81 }, { days: 10, percent: 90 }] },
 };
 
 interface ProductDeliveryInsightsProps {
@@ -72,7 +72,7 @@ export function ProductDeliveryInsights({ tier }: ProductDeliveryInsightsProps) 
           </select>
         </div>
 
-        {selected.milestones ? (
+        {selected.milestones && (
           <div className="mt-5 space-y-3">
             {selected.milestones.map(({ days, percent }) => (
               <div key={days}>
@@ -93,17 +93,8 @@ export function ProductDeliveryInsights({ tier }: ProductDeliveryInsightsProps) 
               </div>
             ))}
           </div>
-        ) : (
-          <div className="mt-4 rounded-xl bg-slate-50 px-4 py-3">
-            <p className="font-semibold text-slate-900">Typical delivery: {selected.typical} after dispatch</p>
-            <p className="mt-1 text-xs text-slate-600">
-              {state === 'NT'
-                ? 'Planning estimate based on WA transit times.'
-                : 'Not enough recent delivered parcels to show reliable percentages.'}
-            </p>
-          </div>
         )}
-        <p className="mt-4 text-xs text-slate-500">Data is calculated from the last 90 days of orders.{state === 'ACT' ? ' Based on 3 verified deliveries.' : state === 'TAS' ? ' Based on 9 verified deliveries.' : ''}</p>
+        <p className="mt-4 text-xs text-slate-500">{state === 'NT' ? 'NT uses WA delivery results as a guide until sufficient NT data is available.' : 'Data is calculated from the last 90 days of orders.'}{state === 'ACT' ? ' Based on 3 verified deliveries.' : state === 'TAS' ? ' Based on 9 verified deliveries.' : ''}</p>
       </div>
 
       <div className="border-t border-slate-100 px-4 py-4 sm:px-5">
