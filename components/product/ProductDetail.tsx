@@ -326,6 +326,7 @@ export function ProductDetail({
           <ProductDeliveryInsights
             tier={product.metafields.shipping_tier ?? 'T1'}
             bulky={isBubbler || product.metafields.shipping_tier === 'T6'}
+            fountain={isBubbler}
             pickupOnly={product.metafields.shipping_tier === 'T7'}
             quoteOnly={requiresShippingQuote}
             productHandle={product.handle}
