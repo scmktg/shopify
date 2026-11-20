@@ -63,7 +63,7 @@ export function ProductDeliveryInsights({
                 ? 'Free collection from Wyong, NSW. We’ll notify you when ready.'
                 : !inStock
                   ? 'Dispatch timing confirmed when stock is available.'
-                  : 'Order before 12pm on a business day for same-day dispatch; otherwise next business day.'}
+                  : 'Order before 12pm on a business day for same-day dispatch.  After 12pm will be next business day.'}
             </p>
           </div>
         </div>
