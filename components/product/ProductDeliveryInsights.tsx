@@ -87,24 +87,34 @@ export function ProductDeliveryInsights({
 
       {showPerformance && (
         <div className="border-t border-slate-100 px-3.5 py-3 sm:px-4">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
             <div className="min-w-0">
               <h3 className="text-[13px] font-semibold text-slate-950">Delivery times after dispatch</h3>
-              {bulky && (
-                <p className="text-[11px] leading-4 text-slate-500">
-                  Parcel delivery history; large-item freight may take longer.
-                </p>
-              )}
+              <p className="text-[11px] leading-4 text-slate-500">See results for your state</p>
             </div>
-            <label htmlFor="product-delivery-state" className="sr-only">Delivery state</label>
-            <select id="product-delivery-state" value={state}
-              onChange={(event) => setState(event.target.value as StateCode)}
-              className="min-h-9 w-[82px] shrink-0 rounded-md border border-slate-200 bg-white px-2 text-xs font-semibold text-slate-900 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200">
-              {(Object.keys(DELIVERY) as StateCode[]).map((code) => (
-                <option key={code} value={code}>{code}</option>
-              ))}
-            </select>
+            <div className="flex items-center gap-2 rounded-lg border border-sky-200 bg-sky-50/70 py-1 pl-2.5 pr-1">
+              <label htmlFor="product-delivery-state" className="whitespace-nowrap text-[11px] font-semibold text-slate-700">
+                Delivering to
+              </label>
+              <select id="product-delivery-state" value={state}
+                onChange={(event) => setState(event.target.value as StateCode)}
+                className="min-h-8 max-w-[136px] rounded-md border border-sky-200 bg-white px-2 text-xs font-semibold text-slate-950 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200">
+                {(Object.keys(DELIVERY) as StateCode[]).map((code) => (
+                  <option key={code} value={code}>{DELIVERY[code].name}</option>
+                ))}
+              </select>
+            </div>
           </div>
+          <p aria-live="polite" className="mt-2 text-[12px] font-semibold text-slate-800">
+            {state === 'NT'
+              ? 'Delivery guide for Northern Territory'
+              : `Deliveries to ${selected.name}`}
+          </p>
+          {bulky && (
+            <p className="mt-0.5 text-[11px] leading-4 text-slate-500">
+              Parcel delivery history; large-item freight may take longer.
+            </p>
+          )}
 
           <div className={selected.milestones?.length === 2
               ? "mt-3 grid grid-cols-2 gap-3"
