@@ -12,6 +12,7 @@ const STORAGE_KEY = 'enviroaqua:delivery-postcode';
 interface ShippingEstimatorProps {
   variantId: string;
   tier: ShippingTier;
+  onQuoteProvince?: (provinceCode: string | null) => void;
 }
 
 function formatMoney(option: ShippingEstimateOption): string {
@@ -26,6 +27,7 @@ function formatMoney(option: ShippingEstimateOption): string {
 export function ShippingEstimator({
   variantId,
   tier,
+  onQuoteProvince,
 }: ShippingEstimatorProps) {
   const [postcode, setPostcode] = useState('');
   const [resultPostcode, setResultPostcode] = useState<string | null>(null);
@@ -74,6 +76,7 @@ export function ShippingEstimator({
 
       setResultPostcode(result.postcode);
       setProvinceCode(result.provinceCode);
+      onQuoteProvince?.(result.provinceCode);
       setOptions(result.options);
       try {
         window.localStorage.setItem(STORAGE_KEY, result.postcode);
