@@ -93,7 +93,7 @@ export function ShippingEstimator({
       ? 'Bulky freight to the Northern Territory requires a freight quote.'
       : tier === 'T7'
         ? 'This product is available for Click & Collect only.'
-        : 'No delivery option is available for this product to that postcode.';
+        : 'We couldn’t confirm a shipping price for this postcode. Please check at checkout.';
 
   return (
     <div className="mt-2 pt-3 border-t border-gray-200">
