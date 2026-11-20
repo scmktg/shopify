@@ -30,12 +30,23 @@ const DELIVERY: Record<StateCode, StateDelivery> = {
 
 interface ProductDeliveryInsightsProps {
   tier: ShippingTier;
+  bulky?: boolean;
+  pickupOnly?: boolean;
+  quoteOnly?: boolean;
+  productHandle?: string;
 }
 
-export function ProductDeliveryInsights({ tier }: ProductDeliveryInsightsProps) {
+export function ProductDeliveryInsights({
+  tier, bulky = false, pickupOnly = false, quoteOnly = false, productHandle,
+}: ProductDeliveryInsightsProps) {
   const [state, setState] = useState<StateCode>('NSW');
   const { selectedVariant } = useVariantSelection();
   const selected = DELIVERY[state];
+  const inStock = selectedVariant.availableForSale &&
+    (selectedVariant.quantityAvailable === null ||
+     selectedVariant.quantityAvailable === undefined ||
+     selectedVariant.quantityAvailable > 0);
+  const isTank = productHandle ? /chemical-dosing-tank/i.test(productHandle) : false;
 
   return (
     <section aria-label="Delivery times and shipping costs" className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white text-sm text-slate-800">
@@ -45,19 +56,32 @@ export function ProductDeliveryInsights({ tier }: ProductDeliveryInsightsProps) 
           <div>
             <h2 className="font-semibold text-slate-950">Fast dispatch from Wyong, NSW</h2>
             <p className="mt-1 leading-6">
-              <strong>Before 12pm on business days:</strong> normally dispatched the same day.
-              <br />
-              <strong>After 12pm:</strong> normally dispatched the next business day.
+              {pickupOnly ? (
+                <>This product is available for Click &amp; Collect from Wyong, NSW.</>
+              ) : !inStock ? (
+                <>Dispatch timing will be confirmed once stock is available.</>
+              ) : (
+                <>
+                  <strong>Before 12pm on business days:</strong> normally dispatched the same day.
+                  <br />
+                  <strong>After 12pm:</strong> normally dispatched the next business day.
+                </>
+              )}
             </p>
           </div>
         </div>
       </div>
 
+      {!pickupOnly && !quoteOnly && (
       <div className="px-4 py-4 sm:px-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <h3 className="font-semibold text-slate-950">Delivery times after dispatch</h3>
-            <p className="mt-0.5 text-xs text-slate-500">Select your state to see recent delivery performance.</p>
+            <p className="mt-0.5 text-xs text-slate-500">
+              {bulky
+                ? 'Standard-parcel delivery history for reference. Larger freight can take longer.'
+                : 'Select your state to see recent delivery performance.'}
+            </p>
           </div>
           <label className="sr-only" htmlFor="product-delivery-state">Delivery state</label>
           <select
@@ -96,25 +120,40 @@ export function ProductDeliveryInsights({ tier }: ProductDeliveryInsightsProps) 
         )}
         <p className="mt-4 text-xs text-slate-500">{state === 'NT' ? 'NT uses WA delivery results as a guide until sufficient NT data is available.' : 'Data is calculated from the last 90 days of orders.'}{state === 'ACT' ? ' Based on 3 verified deliveries.' : state === 'TAS' ? ' Based on 9 verified deliveries.' : ''}</p>
       </div>
+      )}
 
       <div className="border-t border-slate-100 px-4 py-4 sm:px-5">
         <h3 className="flex items-center gap-2 font-semibold text-slate-950">
           <Truck aria-hidden="true" className="h-4 w-4 text-sky-800" />
-          Check shipping cost
+          {pickupOnly ? 'Free Click & Collect' : quoteOnly ? 'Freight quotation' : 'Check shipping cost'}
         </h3>
-        <p className="mt-1 text-xs text-slate-600">Enter your postcode for this product's available delivery rates.</p>
-        <ShippingEstimator
-          variantId={selectedVariant.id}
-          tier={tier}
-          onQuoteProvince={(province) => {
-            if (province && Object.prototype.hasOwnProperty.call(DELIVERY, province)) {
-              setState(province as StateCode);
-            }
-          }}
-        />
+        {pickupOnly ? (
+          <p className="mt-2 text-sm text-slate-700">Collect from Wyong NSW, once your order is ready. Please contact us if you need delivery arranged.</p>
+        ) : quoteOnly ? (
+          <p className="mt-2 text-sm text-slate-700">This specialist product requires a freight quote. Contact our team for delivery options and pricing.</p>
+        ) : (
+          <>
+            <p className="mt-1 text-xs text-slate-600">
+              {bulky
+                ? 'Large-item freight is calculated for the selected product and destination.'
+                : isTank
+                  ? 'Tank freight is calculated for the selected product and destination.'
+                  : "Enter your postcode for this product's available delivery rates."}
+            </p>
+            <ShippingEstimator
+              variantId={selectedVariant.id}
+              tier={tier}
+              onQuoteProvince={(province) => {
+                if (province && Object.prototype.hasOwnProperty.call(DELIVERY, province)) {
+                  setState(province as StateCode);
+                }
+              }}
+            />
+          </>
+        )}
         <p className="mt-3 text-xs text-slate-500">
           <Link href="/shipping/" className="underline underline-offset-2 hover:text-sky-800">Shipping details</Link>
-          {' · '}Final delivery charge confirmed at checkout.
+          {' · '}{pickupOnly ? 'Collection availability is confirmed when ordering.' : 'Final delivery charge confirmed at checkout.'}
         </p>
       </div>
     </section>
