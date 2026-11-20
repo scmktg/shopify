@@ -30,8 +30,6 @@ Typical delivery times **after dispatch**, based on our shipment records from th
 | WA | **5–9 days** | 10 days |
 | NT | **5–9 days** | 10 days |
 
-*Times are in calendar days after dispatch. The right column is a guide to when approximately 90% of recorded Aramex deliveries arrived, with NT using the WA planning estimate. Your postcode, parcel size and carrier may affect delivery.*
-
 ## Shipping prices
 
 **Your shipping cost is calculated at checkout**, based on:
@@ -43,7 +41,7 @@ You'll see the delivery charge **before you pay**. Selected products include **f
 
 ## Our delivery partners
 
-We choose the **fastest and most economical suitable carrier** for each order. Most parcels are delivered by **Aramex** or **Australia Post**. Larger items may travel with specialist couriers including **Go Logistics, FedEx and TNT**.
+We choose the fastest and most economical suitable carrier for each order. Most parcels are delivered by Aramex or Australia Post. Larger items may travel with specialist couriers including Go Logistics, FedEx and TNT.
 
 ## Free Click & Collect
 
