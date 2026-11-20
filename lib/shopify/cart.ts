@@ -453,6 +453,78 @@ export interface ShippingEstimateResult {
   error: string | null;
 }
 
+/**
+ * Product-page quote from the approved Enviro Aqua shipping engine.
+ * Unlike a Shopify postcode-only Cart, this can resolve postcode zones
+ * and request suburb disambiguation without misreporting unavailable delivery.
+ * It does not alter a customer's cart or Shopify checkout rates.
+ */
+export interface EngineShippingEstimateResult extends ShippingEstimateResult {
+  needsSuburb?: boolean;
+  suburbs?: ReadonlyArray<string>;
+}
+
+export async function estimateProductShippingFromEngine(
+  variantId: string,
+  postcodeInput: string,
+  suburb = '',
+): Promise<EngineShippingEstimateResult> {
+  const postcode = postcodeInput.trim();
+  const provinceCode = provinceForAustralianPostcode(postcode);
+  const failure = (error: string, extra: Partial<EngineShippingEstimateResult> = {}):
+    EngineShippingEstimateResult => ({
+      ok: false, postcode, provinceCode, options: [], error, ...extra,
+    });
+  if (!provinceCode) return failure('Enter a valid 4-digit Australian postcode.');
+  if (!/^gid:\/\/shopify\/ProductVariant\/\d+$/.test(variantId))
+    return failure('This product cannot be quoted at the moment.');
+
+  try {
+    const response = await fetch('https://app.enviroaqua.com.au/api/public-shipping-quote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'no-store',
+      signal: AbortSignal.timeout(12000),
+      body: JSON.stringify({ postcode, state: provinceCode, variantId, suburb }),
+    });
+    if (!response.ok && response.status >= 500) {
+      return failure('Shipping prices are temporarily unavailable. Please check at checkout.');
+    }
+    const result: {
+      ok?: boolean; priceCents?: number; currency?: string; state?: string;
+      needsSuburb?: boolean; suburbs?: string[]; reason?: string;
+    } = await response.json();
+
+    if (result.needsSuburb && Array.isArray(result.suburbs)) {
+      return failure(result.reason || 'Select your suburb for an accurate shipping price.', {
+        needsSuburb: true,
+        suburbs: result.suburbs.filter(value => typeof value === 'string').slice(0, 250),
+      });
+    }
+    if (!result.ok || !Number.isSafeInteger(result.priceCents) ||
+        result.priceCents! < 0 || result.currency !== 'AUD') {
+      return failure(result.reason || 'Shipping prices are temporarily unavailable. Please check at checkout.');
+    }
+
+    return {
+      ok: true, postcode, provinceCode, error: null,
+      options: [{
+        handle: 'enviro-aqua-approved-shipping-quote',
+        title: 'Enviro Aqua Delivery',
+        deliveryMethodType: 'SHIPPING',
+        estimatedCost: {
+          amount: (result.priceCents! / 100).toFixed(2),
+          currencyCode: 'AUD',
+        },
+      }],
+    };
+  } catch (caught) {
+    console.error('[shipping] engine product quote failed:',
+      caught instanceof Error ? caught.message : 'unknown');
+    return failure('Shipping prices are temporarily unavailable. Please check at checkout.');
+  }
+}
+
 const SHIPPING_ESTIMATE_MUTATION = /* GraphQL */ `
   mutation ShippingEstimate($input: CartInput!) {
     cartCreate(input: $input) {
