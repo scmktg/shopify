@@ -10,6 +10,8 @@ import { useVariantSelection } from './VariantSelectionProvider';
 type StateCode = 'NSW' | 'VIC' | 'QLD' | 'ACT' | 'SA' | 'TAS' | 'WA' | 'NT';
 type DeliveryMilestone = { days: number; percent: number };
 type StateDelivery = {
+  name: string;
+  typical: string;
   milestones?: readonly DeliveryMilestone[];
 };
 
