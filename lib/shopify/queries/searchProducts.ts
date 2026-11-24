@@ -12,18 +12,20 @@ import type { ShopifyProductCardRaw } from '@/types/shopify';
 
 const QUERY = /* GraphQL */ `
   ${PRODUCT_CARD_FRAGMENT}
-  query PredictiveSearch($query: String!, $limit: Int!) {
-    predictiveSearch(query: $query, types: [PRODUCT], limit: $limit) {
-      products {
-        ...ProductCardFields
+  query ProductSearch($query: String!, $limit: Int!) {
+    search(query: $query, types: [PRODUCT], first: $limit, prefix: LAST, unavailableProducts: LAST) {
+      nodes {
+        ... on Product {
+          ...ProductCardFields
+        }
       }
     }
   }
 `;
 
 interface RawResponse {
-  predictiveSearch: {
-    products: ReadonlyArray<ShopifyProductCardRaw>;
+  search: {
+    nodes: ReadonlyArray<ShopifyProductCardRaw>;
   };
 }
 
@@ -34,7 +36,7 @@ export async function searchProducts(
   const trimmed = query.trim();
   if (trimmed.length < 2) return [];
 
-  const safeLimit = Math.min(Math.max(limit, 1), 20);
+  const safeLimit = Math.min(Math.max(limit, 1), 24);
 
   const result: ShopifyClientResponse<RawResponse> =
     await shopifyClient.request<RawResponse>(QUERY, {
@@ -50,8 +52,8 @@ export async function searchProducts(
     return [];
   }
 
-  if (!data?.predictiveSearch?.products) return [];
+  if (!data?.search?.nodes) return [];
 
-  return data.predictiveSearch.products.map(transformShopifyProductCard)
+  return data.search.nodes.map(transformShopifyProductCard)
     .filter((product) => !isRetiredProductHandle(product.handle));
 }
