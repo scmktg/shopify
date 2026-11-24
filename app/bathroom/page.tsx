@@ -8,7 +8,7 @@ import { breadcrumbSchema, collectionSchema } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
   title: 'Bathroom Supplies, Toilets & Tapware Australia',
-  description: 'Explore toilets, bathroom tapware, kitchen mixers and bathroom packages at Enviro Aqua. Browse the bathroom range online.',
+  description: 'Create a bathroom you love with toilets, bathroom tapware, kitchen mixers and coordinated packages at fair direct prices from Enviro Aqua.',
   alternates: { canonical: '/bathroom/' },
 };
 
@@ -65,32 +65,34 @@ export default async function BathroomLandingPage() {
 
       <header className="border-b border-stone-200 bg-[#F7F5F2]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.17em] text-stone-500">Enviro Aqua / Bathroom</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.17em] text-stone-500">Bathroom &amp; tapware / A smarter way to buy</p>
           <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-gray-950 sm:text-6xl md:text-7xl">
-            A better space
-            <span className="block text-stone-500">starts here.</span>
+            Create a bathroom
+            <span className="block text-stone-500">you love.</span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-stone-600 sm:text-lg">
-            Explore our bathroom collection, from considered everyday tapware to practical toilets and complete packages.
+            Beautiful bathroom products at fair prices. Sourced directly from manufacturers and sold directly to you, so you can create a space you love without spending a fortune.
           </p>
           <Link
             href="#bathroom-collections"
             className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-gray-950 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
           >
-            Explore the bathroom range <ArrowUpRight size={17} aria-hidden="true" />
+            Shop bathroom <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
+          <a href="#why-buy-direct" className="mt-4 ml-0 inline-flex min-h-12 items-center px-5 text-sm font-semibold text-stone-700 underline underline-offset-4 sm:ml-3">Why buy direct?</a>
+          <p className="mt-8 text-sm text-stone-600">Direct sourcing · Fair everyday prices · Genuine support</p>
         </div>
       </header>
 
       <section id="bathroom-collections" aria-labelledby="bathroom-shop-heading" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">Find your fit</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">Make it yours</p>
             <h2 id="bathroom-shop-heading" className="mt-2 text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">
               Shop by category
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-stone-500">Four straightforward ways to explore our bathroom and tapware range.</p>
+          <p className="max-w-sm text-sm text-stone-500">From a simple refresh to a coordinated upgrade, find the right pieces for your home.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {collections.map((item) => (
@@ -116,12 +118,34 @@ export default async function BathroomLandingPage() {
         <section aria-labelledby="bathroom-featured-heading" className="border-t border-stone-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
             <h2 id="bathroom-featured-heading" className="mb-7 text-3xl font-semibold tracking-tight text-gray-950">
-              Explore the collection
+              Discover your next upgrade
             </h2>
             <ProductGrid products={products} editorial />
           </div>
         </section>
       )}
+
+      <section id="why-buy-direct" aria-labelledby="bathroom-direct-heading" className="border-t border-stone-200 bg-[#EDE9E2]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 md:py-20 lg:px-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-600">A smarter way to buy</p>
+            <h2 id="bathroom-direct-heading" className="mt-3 text-3xl font-semibold tracking-tight text-stone-900 sm:text-5xl">Beautiful bathrooms shouldn&apos;t cost a fortune.</h2>
+            <p className="mt-5 max-w-xl leading-7 text-stone-700">We source directly from manufacturers and sell directly to you, without expensive retail storefronts. We reduce unnecessary costs, not our commitment to quality. So you can feel as good about what you paid as you do about your bathroom.</p>
+          </div>
+          <div className="grid gap-3">
+            {[
+              ['01', 'Find your style', 'Choose the products and finishes that feel right for your home.'],
+              ['02', 'Shop direct', 'Enjoy fair everyday prices and clear product information.'],
+              ['03', 'Love your space', 'Create a bathroom you look forward to using every day.'],
+            ].map(([number, title, description]) => (
+              <div key={number} className="flex gap-4 rounded-xl border border-stone-300 bg-white/50 p-5">
+                <span className="text-sm font-semibold text-stone-500">{number}</span>
+                <div><h3 className="font-semibold text-stone-900">{title}</h3><p className="mt-1 text-sm leading-6 text-stone-700">{description}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section aria-label="Why shop with Enviro Aqua" className="border-t border-stone-100 bg-[#FAF9F7]">
         <div className="mx-auto grid max-w-7xl gap-5 px-4 py-10 text-sm text-stone-600 sm:grid-cols-3 sm:px-6 lg:px-8">
@@ -129,6 +153,11 @@ export default async function BathroomLandingPage() {
           <p className="flex items-center gap-3"><Truck size={20} className="shrink-0 text-gray-900" /> Australia-wide delivery options</p>
           <p className="flex items-center gap-3"><ShieldCheck size={20} className="shrink-0 text-gray-900" /> Compliance details where applicable</p>
         </div>
+      </section>
+      <section className="bg-[#F7F5F2] px-4 py-14 text-center sm:px-6 md:py-20">
+        <h2 className="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">Your bathroom. Your style. A fair price.</h2>
+        <p className="mx-auto mt-4 max-w-lg leading-7 text-stone-600">Discover quality products that make everyday life a little better.</p>
+        <a href="#bathroom-collections" className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-gray-950 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800">Shop bathroom <ArrowUpRight size={17} aria-hidden="true" /></a>
       </section>
     </>
   );
