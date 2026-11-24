@@ -201,10 +201,10 @@ export function trackSelectItem(
   });
 }
 
-export function trackSearch(searchTerm: string): void {
+export function trackSearch(searchTerm: string, resultsCount?: number): void {
   const trimmed = searchTerm.trim();
   if (trimmed.length >= 2) {
-    emit('search', { search_term: trimmed }, 'search:' + trimmed, 2000);
+    emit('search', { search_term: trimmed, ...(resultsCount === undefined ? {} : { results_count: resultsCount, zero_results: resultsCount === 0 ? 1 : 0 }) }, 'search:' + trimmed, 2000);
   }
 }
 
