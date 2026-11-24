@@ -4,6 +4,8 @@ import {
   shopifyClient,
   type ShopifyClientResponse,
 } from '../client';
+import { getProducts } from './getProducts';
+import { rankProducts } from '@/lib/products/searchRelevance';
 import { PRODUCT_CARD_FRAGMENT } from '../fragments';
 import { transformShopifyProductCard } from '../transformers';
 import type { ProductCardData } from '@/types/product';
@@ -38,6 +40,25 @@ export async function searchProducts(
 
   const safeLimit = Math.min(Math.max(limit, 1), 24);
 
+  // Reuse the cached, paginated live catalogue, including newly published products.
+  try {
+    const catalogue: ProductCardData[] = [];
+    let after: string | null = null;
+    do {
+      const page = await getProducts({ first: 100, after });
+      catalogue.push(...page.products);
+      const next = page.pageInfo.hasNextPage ? page.pageInfo.endCursor : null;
+      if (next && next === after) throw new Error('Repeated catalogue cursor');
+      after = next;
+    } while (after);
+    const ranked = rankProducts(catalogue, trimmed);
+    if (ranked.length) return ranked.slice(0, safeLimit);
+  } catch (error) {
+    console.error('[shopify] catalogue search fallback:', error);
+  }
+
+  // Preserve Shopify native search for matches outside the local card fields
+  // (such as descriptions) or if the catalogue request fails.
   const result: ShopifyClientResponse<RawResponse> =
     await shopifyClient.request<RawResponse>(QUERY, {
       variables: { query: trimmed, limit: safeLimit },

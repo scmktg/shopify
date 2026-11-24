@@ -20,7 +20,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
   return (
     <>
-      <SearchTracker query={trimmed} />
+      <SearchTracker query={trimmed} resultsCount={results.length} />
     <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-12">
       <h1 className="text-3xl md:text-4xl font-semibold text-black">
         {trimmed ? `Results for "${trimmed}"` : 'Search'}
@@ -31,6 +31,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           : `${results.length} ${results.length === 1 ? 'product' : 'products'} found.`}
       </p>
 
+      {trimmed.length >= 2 && results.length === 0 && (
+        <p className="mt-6 text-sm text-black/70">Try a product name, alternative spelling, size or SKU, or browse our product categories.</p>
+      )}
       {results.length > 0 && (
         <div className="mt-8">
           <ProductGrid products={results} />
