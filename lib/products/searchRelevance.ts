@@ -3,7 +3,7 @@ import type { ProductCardData } from '@/types/product';
 // Canonical terms shared by customer queries and catalogue text.
 export function normaliseSearch(value: string): string {
   return value.toLowerCase().normalize('NFKC')
-    .replace(/[“”″]/g, '"')
+    .replace(/[“”″]/g, '"').replace(/×/g, 'x')
     .replace(/(\d+(?:\.\d+)?)\s*(?:"|inches\b|inch\b)/g, '$1 ')
     .replace(/(\d)\s*\/\s*(\d)/g, '$1fraction$2')
     .replace(/(\d)\.(\d)/g, '$1decimal$2')
@@ -60,7 +60,7 @@ export function rankProducts(products: ReadonlyArray<ProductCardData>, query: st
     if (title === q) total += 80;
     else if ((' '+title+' ').includes(' '+q+' ')) total += 24;
     const wantsPart = tokens.some(t => /^(replacement|cartridge|part|tap|filter|valve|accessory|membrane)$/.test(t));
-    if (!wantsPart && tokens.includes('fountain') && /\b(replacement|cartridge|fitting|tap)\b/.test(title) && !/\b(fountain|bubbler)\b.*\b(chilled|filtered|freestanding)\b/.test(title)) total -= 18;
+    if (!wantsPart && tokens.includes('fountain') && /\b(replacement|cartridge|fitting)\b|\bfountain tap\b/.test(title) && !/\b(chilled|freestanding)\b/.test(title)) total -= 30;
     if (p.variants.some(v => v.availableForSale)) total += 3;
     return Math.max(total,1);
   };
