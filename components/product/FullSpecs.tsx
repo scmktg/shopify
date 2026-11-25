@@ -27,7 +27,7 @@ export function FullSpecs({ specs, grouped = false }: FullSpecsProps) {
       <section className="mt-12 border-t border-gray-100 pt-8" aria-label="Specifications">
         <h2 className="text-2xl font-semibold tracking-tight text-black">Specifications</h2>
         <div className="mt-5 grid grid-cols-1 items-start gap-5 lg:grid-cols-2">
-          {groups.map((group) => (
+          {groups.filter((group) => visibleSpecs.some((row) => group.labels.includes(row.label))).map((group) => (
             <div key={group.title} className="overflow-hidden rounded-lg border border-gray-200">
               <h3 className="border-b border-gray-200 bg-gray-50 px-5 py-3 text-sm font-semibold text-black">{group.title}</h3>
               <dl className="divide-y divide-gray-100 px-5 text-sm">
