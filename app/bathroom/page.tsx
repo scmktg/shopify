@@ -73,18 +73,18 @@ export default async function BathroomLandingPage() {
         ]),
       ]} />
 
-      <header className="bg-[#f2eee7] text-[#282b25]">
-        <div className="mx-auto grid max-w-[1440px] lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex flex-col justify-center px-6 py-14 sm:px-12 lg:px-16 lg:py-24">
-            <p className="text-xs font-medium uppercase tracking-[0.22em] text-[#62675a]">The bathroom collection</p>
-            <h1 className="mt-7 text-[clamp(3rem,5.6vw,6rem)] font-normal leading-[0.99] tracking-[-0.055em]">A bathroom<br />you <span className="font-serif italic">love.</span></h1>
-            <p className="mt-7 max-w-md text-base leading-7 text-[#55594f] sm:text-lg">Beautiful bathroom products at fair prices. Direct from manufacturers, so you can create a space you love without spending a fortune.</p>
-            <a href="#bathroom-collections" className="mt-8 inline-flex min-h-12 w-fit items-center gap-8 bg-[#303b32] px-6 py-3.5 text-sm font-medium text-white hover:bg-[#465348]">Explore bathroom <ArrowUpRight size={18} aria-hidden="true" /></a>
-            <a href="#why-buy-direct" className="mt-5 w-fit text-sm text-[#55594f] underline underline-offset-4">A smarter way to buy</a>
+      <header className="bg-white text-black">
+        <div className="mx-auto grid max-w-[1568px] items-center gap-8 px-6 py-8 sm:px-10 sm:py-12 lg:grid-cols-2 lg:gap-12 lg:px-[3.4%]">
+          <div className="py-5 lg:pl-[8%] lg:pr-[5%]">
+            <h1 className="text-[clamp(2.5rem,4vw,4rem)] font-normal leading-[1.2] tracking-[-0.045em]">Create a bathroom<span className="mt-2 block font-bold italic">you&apos;ll love.</span></h1>
+            <div className="mt-9 max-w-[540px] space-y-6 text-[clamp(1.05rem,1.85vw,1.8rem)] leading-[1.4] tracking-[0.005em] lg:mt-16 lg:space-y-9">
+              <p>Explore beautiful, high-quality products without the expensive retail price tag.</p>
+              <p>Sourced directly from the manufacturer and sold straight to you.</p>
+            </div>
+            <a href="#bathroom-collections" className="mt-9 inline-flex min-h-14 w-full max-w-[306px] items-center justify-center rounded-[22px] bg-black px-8 py-4 text-xl font-bold tracking-tight text-white transition-colors hover:bg-stone-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black sm:text-2xl lg:mt-14 lg:min-h-20">Shop Now</a>
           </div>
-          <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#e2ded5] sm:min-h-[400px] lg:min-h-[540px]">
-            {heroImage ? <Image src={heroImage.url} alt={heroImage.altText || 'Bathroom tapware from Enviro Aqua'} fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-contain p-10 sm:p-16 mix-blend-multiply" preload /> : <p className="max-w-xs px-8 text-center font-serif text-4xl italic text-[#62675a]">Considered design. Everyday value.</p>}
-            <span className="absolute bottom-5 left-6 text-[10px] uppercase tracking-[0.2em] text-[#55594f]">Enviro Aqua / Bathroom</span>
+          <div className="relative aspect-[732/773] overflow-hidden bg-[#f5f4f1]">
+            {heroImage ? <Image src={heroImage.url} alt={heroImage.altText || 'Bathroom tapware from Enviro Aqua'} fill sizes="(min-width: 1024px) 48vw, 92vw" className="object-contain p-8" preload /> : <p className="absolute inset-0 flex items-center justify-center px-8 text-center text-3xl italic text-stone-600">A bathroom you love.</p>}
           </div>
         </div>
       </header>
