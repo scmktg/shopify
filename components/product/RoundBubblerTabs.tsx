@@ -7,12 +7,13 @@ import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
 
 type Tab = 'description' | 'specifications' | 'downloads';
 
-export function RoundBubblerTabs({ description, specifications }: {
+export function RoundBubblerTabs({ description, specifications, showDownloads = true }: {
   description: ReactNode;
   specifications: ReactNode;
+  showDownloads?: boolean;
 }) {
   const [activeTab, setActiveTab] = useState<Tab>('description');
-  const tabs: Tab[] = ['description', 'specifications', 'downloads'];
+  const tabs: Tab[] = showDownloads ? ['description', 'specifications', 'downloads'] : ['description', 'specifications'];
 
   return (
     <div className="mt-10 border-t border-black/10 pt-2">
@@ -38,9 +39,9 @@ export function RoundBubblerTabs({ description, specifications }: {
       <div role="tabpanel" id="round-bubbler-panel-specifications" aria-labelledby="round-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-4">
         {specifications}
       </div>
-      <div role="tabpanel" id="round-bubbler-panel-downloads" aria-labelledby="round-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
+      {showDownloads && <div role="tabpanel" id="round-bubbler-panel-downloads" aria-labelledby="round-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
         <FountainManualDownload />
-      </div>
+      </div>}
     </div>
   );
 }
