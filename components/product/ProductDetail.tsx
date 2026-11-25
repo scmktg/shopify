@@ -110,7 +110,8 @@ export function ProductDetail({
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
-  const useRefinedPurchaseLayout = isKitchenTap || isBubbler;
+  const isBathroomMixer = product.handle === 'bathroom-mixer-tap-in-polished-chrome-81h09';
+  const useRefinedPurchaseLayout = isKitchenTap || isBubbler || isBathroomMixer;
   // Use natural wrapping for a single customer-facing bubbler heading.
   const bubblerDisplayTitle = ({
     'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm': 'Stainless Steel Water Fountain with Bubbler | 20 L/hr',
@@ -141,7 +142,7 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
+      <div className={isBathroomMixer ? 'grid grid-cols-1 items-start gap-8 md:grid-cols-[1.1fr_1fr] md:gap-12 lg:gap-16' : isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
@@ -174,18 +175,20 @@ export function ProductDetail({
               DRINKING WATER FOUNTAINS
             </p>
           )}
+          {isBathroomMixer && <p className="mb-3 text-xs font-medium text-neutral-500">Bathroom tapware</p>}
           <h1 className={isBubbler
             ? "text-[1.65rem] font-semibold leading-[1.18] tracking-[-0.03em] text-neutral-900 sm:text-[1.9rem] lg:text-[2.05rem]"
             : useRefinedPurchaseLayout
               ? "max-w-[24ch] text-[1.9rem] font-semibold leading-[1.15] tracking-[-0.035em] text-neutral-900 sm:text-[2.25rem] lg:text-[2.55rem]"
               : "text-[1.65rem] md:text-[2.1rem] leading-tight font-semibold text-black tracking-tight"}>
-            {isKitchenTap
+            {isBathroomMixer ? 'Polished Chrome Basin Mixer' : isKitchenTap
               ? product.title.replace(/\s*\|\s*WaterMark\s*\+\s*WELS\s*$/i, '')
               : isBubbler
                 ? bubblerDisplayTitle
                 : product.title}
           </h1>
 
+          {isBathroomMixer && <p className="mt-3 max-w-md text-sm leading-6 text-neutral-600">Solid brass construction, a timeless chrome finish and smooth single-lever control.</p>}
           {isBubbler && <BubblerModelSelector currentHandle={product.handle} />}
           {isBubbler && <FountainFiltrationSelector currentHandle={product.handle} />}
           {content.family && familyPaths && !isBubbler && (
@@ -206,6 +209,7 @@ export function ProductDetail({
               showDispatchCountdown={false}
               sleek={useRefinedPurchaseLayout}
               compactLayout={isBubbler}
+              minimal={isBathroomMixer}
             />
           )}
 
@@ -311,7 +315,7 @@ export function ProductDetail({
             </div>
           )}
 
-          {!isKitchenTap && !isBubbler && (
+          {!isKitchenTap && !isBubbler && !isBathroomMixer && (
             <div className="mt-4">
               <CertificationSlot content={content} />
             </div>
@@ -323,6 +327,7 @@ export function ProductDetail({
           )}
 
 
+          {isBathroomMixer && <p className="mt-5 text-sm font-medium text-neutral-600">WaterMark certified · WELS 4 stars</p>}
           <ProductDeliveryInsights
             tier={product.metafields.shipping_tier ?? 'T1'}
             bulky={isBubbler || product.metafields.shipping_tier === 'T6'}
