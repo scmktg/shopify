@@ -61,7 +61,6 @@ export default async function BathroomLandingPage() {
       return result.products.find((product) => product.featuredImage)?.featuredImage ?? null;
     } catch { return null; }
   }));
-  const heroImage = categoryProducts[1] ?? categoryProducts.find(Boolean) ?? null;
 
   return (
     <>
@@ -84,7 +83,7 @@ export default async function BathroomLandingPage() {
             <a href="#bathroom-collections" className="mt-9 inline-flex min-h-14 w-full max-w-[306px] items-center justify-center rounded-[22px] bg-black px-8 py-4 text-xl font-bold tracking-tight text-white transition-colors hover:bg-stone-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black sm:text-2xl lg:mt-14 lg:min-h-20">Shop Now</a>
           </div>
           <div className="relative aspect-[732/773] overflow-hidden bg-[#f5f4f1]">
-            {heroImage ? <Image src={heroImage.url} alt={heroImage.altText || 'Bathroom tapware from Enviro Aqua'} fill sizes="(min-width: 1024px) 48vw, 92vw" className="object-contain p-8" preload /> : <p className="absolute inset-0 flex items-center justify-center px-8 text-center text-3xl italic text-stone-600">A bathroom you love.</p>}
+            <Image src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/165727ab5cbb_bathroom-hero-reference.jpg?v=1795566375" alt="Contemporary bathroom with a backlit arched mirror, white vanity and black tapware" fill sizes="(min-width: 1024px) 48vw, 92vw" className="object-cover" preload />
           </div>
         </div>
       </header>
