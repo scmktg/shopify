@@ -24,6 +24,7 @@ interface VariantPurchaseControlsProps {
   hideWholeDollarCents?: boolean;
   sleek?: boolean;
   compactLayout?: boolean;
+  minimal?: boolean;
 }
 
 export function VariantPurchaseControls({
@@ -36,6 +37,7 @@ export function VariantPurchaseControls({
   hideWholeDollarCents = false,
   sleek = false,
   compactLayout = false,
+  minimal = false,
 }: VariantPurchaseControlsProps) {
   const {
     variants,
@@ -52,7 +54,7 @@ export function VariantPurchaseControls({
 
   return (
     <>
-      <div className={compactLayout ? "mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-neutral-200 pt-4" : sleek ? "mt-6 flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t border-neutral-200 pt-5" : "mt-4 flex items-baseline justify-between gap-4 flex-wrap"}>
+      <div className={minimal ? "mt-5 flex flex-wrap items-baseline gap-3" : compactLayout ? "mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-neutral-200 pt-4" : sleek ? "mt-6 flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t border-neutral-200 pt-5" : "mt-4 flex items-baseline justify-between gap-4 flex-wrap"}>
         <div className="flex items-baseline gap-2 flex-wrap">
           <PriceDisplay
             money={price}
@@ -70,7 +72,7 @@ export function VariantPurchaseControls({
             </span>
           )}
         </div>
-        <ZipMessaging money={price} className={compactLayout ? "shrink-0 self-center [zoom:0.85]" : "shrink-0 self-center"} />
+        {!minimal && <ZipMessaging money={price} className={compactLayout ? "shrink-0 self-center [zoom:0.85]" : "shrink-0 self-center"} />}
       </div>
 
       {singleFinish && variants.length === 1 && optionNames.length === 0 && (
@@ -174,9 +176,10 @@ export function VariantPurchaseControls({
           onBackorderChange={setHasBackorder}
           integratedStockStatus
           label={ctaLabel}
-          enableBuyNow
+          enableBuyNow={!minimal}
           offerInstallationAssistance={offerInstallationAssistance}
         />
+        {minimal && <ZipMessaging money={price} className="mt-3 text-sm" />}
         {selectedVariant.availableForSale &&
           showDispatchCountdown && <VariantDispatchCountdown hasBackorder={hasBackorder} />}
       </div>
