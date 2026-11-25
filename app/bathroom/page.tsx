@@ -72,18 +72,21 @@ export default async function BathroomLandingPage() {
         ]),
       ]} />
 
-      <header className="bg-white text-black">
-        <div className="mx-auto grid max-w-[1568px] items-center gap-8 px-6 py-8 sm:px-10 sm:py-12 lg:grid-cols-2 lg:gap-12 lg:px-[3.4%]">
-          <div className="py-5 lg:pl-[8%] lg:pr-[5%]">
-            <h1 className="text-[clamp(2.5rem,4vw,4rem)] font-normal leading-[1.2] tracking-[-0.045em]">Create a bathroom<span className="mt-2 block font-bold italic">you&apos;ll love.</span></h1>
-            <div className="mt-9 max-w-[540px] space-y-6 text-[clamp(1.05rem,1.85vw,1.8rem)] leading-[1.4] tracking-[0.005em] lg:mt-16 lg:space-y-9">
+      <header className="bg-white font-sans text-black">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-7 sm:px-8 sm:py-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-10 lg:py-12 xl:gap-20">
+          <div className="min-w-0 py-3 sm:py-6 lg:pl-4 xl:pl-8">
+            <h1 className="text-[clamp(2.25rem,4.2vw,3.65rem)] font-medium" style={{ lineHeight: 1.1, letterSpacing: '-0.045em' }}>
+              Create a bathroom
+              <span className="mt-1 block font-semibold italic">you&apos;ll love.</span>
+            </h1>
+            <div className="mt-6 max-w-[440px] space-y-4 text-base leading-[1.65] text-black/80 sm:text-lg lg:mt-8 lg:space-y-5">
               <p>Explore beautiful, high-quality products without the expensive retail price tag.</p>
               <p>Sourced directly from the manufacturer and sold straight to you.</p>
             </div>
-            <a href="#bathroom-collections" className="mt-9 inline-flex min-h-14 w-full max-w-[306px] items-center justify-center rounded-[22px] bg-black px-8 py-4 text-xl font-bold tracking-tight text-white transition-colors hover:bg-stone-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black sm:text-2xl lg:mt-14 lg:min-h-20">Shop Now</a>
+            <a href="#bathroom-collections" className="mt-7 inline-flex min-h-12 w-fit min-w-[168px] items-center justify-center rounded-lg bg-black px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-stone-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black lg:mt-9 lg:min-h-14">Shop Now</a>
           </div>
-          <div className="relative aspect-[732/773] overflow-hidden bg-[#f5f4f1]">
-            <Image src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/165727ab5cbb_bathroom-hero-reference.jpg?v=1795566375" alt="Contemporary bathroom with a backlit arched mirror, white vanity and black tapware" fill sizes="(min-width: 1024px) 48vw, 92vw" className="object-cover" preload />
+          <div className="relative aspect-[4/3] overflow-hidden bg-[#f5f4f1] sm:aspect-[5/4] lg:aspect-[1/1]">
+            <Image src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/165727ab5cbb_bathroom-hero-reference.jpg?v=1795566375" alt="Contemporary bathroom with a backlit arched mirror, white vanity and black tapware" fill sizes="(min-width: 1280px) 600px, (min-width: 1024px) 48vw, 92vw" className="object-cover object-center" preload />
           </div>
         </div>
       </header>
@@ -128,7 +131,7 @@ export default async function BathroomLandingPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-24">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-[#d2d8cc]">A smarter way to buy</p>
-            <h2 id="bathroom-direct-heading" className="mt-5 text-4xl font-normal leading-tight tracking-tight sm:text-6xl">Beautiful bathrooms shouldn&apos;t <span className="font-serif italic">cost a fortune.</span></h2>
+            <h2 id="bathroom-direct-heading" className="mt-5 text-4xl font-normal leading-tight tracking-tight sm:text-6xl">Beautiful bathrooms shouldn&apos;t <span className="font-semibold italic">cost a fortune.</span></h2>
           </div>
           <div className="self-center">
             <p className="text-lg leading-8 text-[#e5e8df]">We source directly from manufacturers and sell directly to you, without expensive retail storefronts. Less unnecessary cost. More room in your budget for the things you love.</p>
