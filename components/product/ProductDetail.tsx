@@ -332,7 +332,7 @@ export function ProductDetail({
             productHandle={product.handle}
           />
 
-          <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
+          <VariantProductTrustBlock hideWarrantyAndContact={product.handle === 'bathroom-mixer-tap-in-polished-chrome-81h09'} productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
 
           {offersInstallPackage(content) && (
             <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
@@ -373,8 +373,32 @@ export function ProductDetail({
       ) : product.handle === 'bathroom-mixer-tap-in-polished-chrome-81h09' ? (
         <RoundBubblerTabs
           showDownloads={false}
+          prominent
+          certification={
+            <section className="py-6">
+              <h2 className="text-2xl font-semibold tracking-tight">Certification</h2>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-lg border border-gray-200 p-5">
+                  <h3 className="font-semibold">WaterMark certified</h3>
+                  <p className="mt-2 text-sm text-black/70">Licence number: {content.compliance?.watermark?.licenceNumber}</p>
+                </div>
+                <div className="rounded-lg border border-gray-200 p-5">
+                  <h3 className="font-semibold">WELS 4 stars · 7.5 L/min</h3>
+                  <p className="mt-2 text-sm text-black/70">Licence number: 1379</p>
+                  <p className="mt-1 text-sm text-black/70">Registration: T40630</p>
+                </div>
+              </div>
+            </section>
+          }
+          warranty={
+            <section className="py-6">
+              <h2 className="text-2xl font-semibold tracking-tight">12 month warranty</h2>
+              <p className="mt-3 text-sm leading-7 text-black/75">This product is covered by our 12 month warranty. Your rights under the Australian Consumer Law are not limited by this warranty.</p>
+              <Link href="/returns/#warranty" className="mt-4 inline-block text-sm font-semibold underline underline-offset-4 hover:text-brand-blue">View warranty policy</Link>
+            </section>
+          }
           description={<ProductOverview description={content.description} shortDescription={content.shortDescription} />}
-          specifications={<FullSpecs specs={content.fullSpecs} grouped />}
+          specifications={<FullSpecs specs={content.fullSpecs?.filter((row) => !/^(WaterMark|WELS)/i.test(row.label))} grouped />}
         />
       ) : editorialTapFinish ? null : (
         <>
