@@ -15,6 +15,7 @@ interface ProductTrustBlockProps {
   stockStatus: StockStatus;
   stockCount?: number;
   className?: string;
+  hideWarrantyAndContact?: boolean;
 }
 
 export function ProductTrustBlock({
@@ -23,8 +24,11 @@ export function ProductTrustBlock({
   stockStatus,
   stockCount,
   className = '',
+  hideWarrantyAndContact = false,
 }: ProductTrustBlockProps) {
   const inStock = stockStatus !== 'out_of_stock';
+
+  if (hideWarrantyAndContact && inStock) return null;
 
   return (
     <section
@@ -35,6 +39,7 @@ export function ProductTrustBlock({
         <BackInStockNotify productId={productId} sku={sku} />
       )}
 
+      {!hideWarrantyAndContact && <>
       <p className="flex items-start gap-2">
         <RefreshCcw
           className="h-4 w-4 mt-0.5 flex-shrink-0 text-black/70"
@@ -67,6 +72,7 @@ export function ProductTrustBlock({
           {PHONE_SUPPORT_HOURS.replace(/\s*·\s*Closed weekends\s*$/i, '')}
         </span>
       </p>
+      </>}
     </section>
   );
 }
