@@ -372,7 +372,7 @@ export function ProductDetail({
         />
       ) : editorialTapFinish ? null : (
         <>
-          <FullSpecs specs={content.fullSpecs} />
+          <FullSpecs specs={content.fullSpecs} grouped={product.handle === 'bathroom-mixer-tap-in-polished-chrome-81h09'} />
           <ProductOverview
             description={content.description}
             shortDescription={content.shortDescription}
