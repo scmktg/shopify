@@ -1250,10 +1250,14 @@
       },
       {
         "label": "WELS rating",
-        "value": "4 stars"
+        "value": "4 stars, 7.5 L/min"
       }
     ],
     "fullSpecs": [
+      {
+        "label": "Model",
+        "value": "81H09-CHR"
+      },
       {
         "label": "Type",
         "value": "Deck-mounted basin mixer"
@@ -1288,24 +1292,36 @@
       },
       {
         "label": "WELS rating",
-        "value": "4 stars"
+        "value": "4 stars, 7.5 L/min"
       },
       {
         "label": "WaterMark",
         "value": "Certified"
+      },
+      {
+        "label": "WaterMark licence",
+        "value": "074514"
+      },
+      {
+        "label": "WELS licence",
+        "value": "1379"
+      },
+      {
+        "label": "WELS registration",
+        "value": "T40630"
       }
     ],
     "recommendedFor": [],
     "compliance": {
       "watermark": {
         "status": "certified",
-        "licenceNumber": null,
+        "licenceNumber": "074514",
         "specificationNumber": "AS/NZS 3718",
         "certifier": null,
         "validUntil": null
       },
       "wels": null,
-      "note": "WaterMark and WELS registration details are to be confirmed against supplier documentation."
+      "note": "WaterMark licence 074514. WELS licence 1379, registration T40630; rated 4 stars at 7.5 L/min."
     },
     "ctas": {
       "primary": "Add to cart",
