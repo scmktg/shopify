@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowUpRight, Check, Truck, ShieldCheck } from 'lucide-react';
 import { getProducts } from '@/lib/shopify/queries/getProducts';
 import { ProductGrid } from '@/components/product/ProductGrid';
@@ -8,7 +9,7 @@ import { breadcrumbSchema, collectionSchema } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
   title: 'Bathroom Supplies, Toilets & Tapware Australia',
-  description: 'Explore toilets, bathroom tapware, kitchen mixers and bathroom packages at Enviro Aqua. Browse the bathroom range online.',
+  description: 'Create a bathroom you love with toilets, bathroom tapware, kitchen mixers and coordinated packages at fair direct prices from Enviro Aqua.',
   alternates: { canonical: '/bathroom/' },
 };
 
@@ -53,6 +54,14 @@ export default async function BathroomLandingPage() {
     console.error('[bathroom] Unable to load featured bathroom products', error);
   }
 
+  const categoryProducts = await Promise.all(collections.map(async (item) => {
+    try {
+      const tag = item.href.split('/')[2];
+      const result = await getProducts({ query: `tag:'primary-cat:plumbing' AND tag:'sub-cat:${tag}'`, first: 8 });
+      return result.products.find((product) => product.featuredImage)?.featuredImage ?? null;
+    } catch { return null; }
+  }));
+
   return (
     <>
       <JsonLdScript data={[
@@ -63,50 +72,45 @@ export default async function BathroomLandingPage() {
         ]),
       ]} />
 
-      <header className="border-b border-stone-200 bg-[#F7F5F2]">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.17em] text-stone-500">Enviro Aqua / Bathroom</p>
-          <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-tight tracking-tight text-gray-950 sm:text-6xl md:text-7xl">
-            A better space
-            <span className="block text-stone-500">starts here.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-stone-600 sm:text-lg">
-            Explore our bathroom collection, from considered everyday tapware to practical toilets and complete packages.
-          </p>
-          <Link
-            href="#bathroom-collections"
-            className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-gray-950 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-800"
-          >
-            Explore the bathroom range <ArrowUpRight size={17} aria-hidden="true" />
-          </Link>
+      <header className="bg-white font-sans text-black">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 px-5 py-7 sm:px-8 sm:py-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-10 lg:py-12 xl:gap-20">
+          <div className="min-w-0 py-3 sm:py-6 lg:pl-4 xl:pl-8">
+            <h1 className="text-[clamp(2.25rem,4.2vw,3.65rem)] font-medium" style={{ lineHeight: 1.1, letterSpacing: '-0.045em' }}>
+              Create a bathroom
+              <span className="mt-1 block font-semibold italic">you&apos;ll love.</span>
+            </h1>
+            <div className="mt-6 max-w-[440px] space-y-4 text-base leading-[1.65] text-black/80 sm:text-lg lg:mt-8 lg:space-y-5">
+              <p>Explore beautiful, high-quality products without the expensive retail price tag.</p>
+              <p>Sourced directly from the manufacturer and sold straight to you.</p>
+            </div>
+            <a href="#bathroom-collections" className="mt-7 inline-flex min-h-12 w-fit min-w-[168px] items-center justify-center rounded-lg bg-black px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-stone-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black lg:mt-9 lg:min-h-14">Shop Now</a>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden bg-[#f5f4f1] sm:aspect-[5/4] lg:aspect-[1/1]">
+            <Image src="https://cdn.shopify.com/s/files/1/0984/4693/4337/files/165727ab5cbb_bathroom-hero-reference.jpg?v=1795566375" alt="Contemporary bathroom with a backlit arched mirror, white vanity and black tapware" fill sizes="(min-width: 1280px) 600px, (min-width: 1024px) 48vw, 92vw" className="object-cover object-center" preload />
+          </div>
         </div>
       </header>
-
-      <section id="bathroom-collections" aria-labelledby="bathroom-shop-heading" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-        <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-stone-500">Find your fit</p>
-            <h2 id="bathroom-shop-heading" className="mt-2 text-3xl font-semibold tracking-tight text-gray-950 sm:text-4xl">
-              Shop by category
-            </h2>
-          </div>
-          <p className="max-w-sm text-sm text-stone-500">Four straightforward ways to explore our bathroom and tapware range.</p>
+      <div className="border-b border-[#dedbd3] bg-white">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-x-8 gap-y-3 px-6 py-5 text-xs font-medium text-stone-600 sm:text-sm">
+          <span>Direct manufacturer sourcing</span><span>Fair everyday prices</span><span>Australia-wide delivery</span>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {collections.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group relative flex min-h-52 flex-col justify-between overflow-hidden rounded-2xl border border-stone-200 bg-[#FAF9F7] p-6 transition-[border-color,background-color,transform] duration-200 hover:-translate-y-0.5 hover:border-stone-300 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue sm:p-8"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <span className="text-xs font-medium tabular-nums text-stone-400">{item.number} / 04</span>
-                <ArrowUpRight size={20} className="text-stone-500 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+      </div>
+
+      <section id="bathroom-collections" aria-labelledby="bathroom-shop-heading" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-14 sm:px-8 lg:py-24">
+        <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
+          <h2 id="bathroom-shop-heading" className="text-4xl font-normal tracking-tight text-stone-900 sm:text-5xl">Make it yours.</h2>
+          <p className="max-w-sm text-sm leading-6 text-stone-600">From a small refresh to a complete upgrade, find the pieces that make your space feel like home.</p>
+        </div>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 md:gap-x-6">
+          {collections.map((item, index) => (
+            <Link key={item.href} href={item.href} className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#f1eee8]">
+                {categoryProducts[index] ? <Image src={categoryProducts[index]!.url} alt="" fill sizes="(min-width: 768px) 25vw, 50vw" className="object-contain p-4 mix-blend-multiply transition-transform duration-500 group-hover:scale-105 sm:p-8" /> : <span className="absolute inset-0 flex items-center justify-center px-3 text-center font-serif text-xl italic text-stone-600">{item.label}</span>}
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold tracking-tight text-gray-950 sm:text-3xl">{item.label}</h3>
-                <p className="mt-2 max-w-sm text-sm leading-6 text-stone-600">{item.description}</p>
+              <div className="mt-4 flex items-center justify-between gap-2 border-b border-stone-200 pb-3">
+                <h3 className="text-base font-medium text-stone-900 sm:text-lg">{item.label}</h3><ArrowUpRight size={18} className="shrink-0 text-stone-600" aria-hidden="true" />
               </div>
+              <p className="mt-2 text-xs leading-5 text-stone-600 sm:text-sm">{item.description}</p>
             </Link>
           ))}
         </div>
@@ -115,13 +119,28 @@ export default async function BathroomLandingPage() {
       {products.length > 0 && (
         <section aria-labelledby="bathroom-featured-heading" className="border-t border-stone-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-            <h2 id="bathroom-featured-heading" className="mb-7 text-3xl font-semibold tracking-tight text-gray-950">
-              Explore the collection
+            <h2 id="bathroom-featured-heading" className="mb-9 text-4xl font-normal tracking-tight text-stone-900 sm:text-5xl">
+              Discover your next upgrade
             </h2>
             <ProductGrid products={products} editorial />
           </div>
         </section>
       )}
+
+      <section id="why-buy-direct" aria-labelledby="bathroom-direct-heading" className="scroll-mt-24 bg-[#303b32] text-[#f7f4ed]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-24">
+          <div>
+            <p className="text-xs uppercase tracking-[0.2em] text-[#d2d8cc]">A smarter way to buy</p>
+            <h2 id="bathroom-direct-heading" className="mt-5 text-4xl font-normal leading-tight tracking-tight sm:text-6xl">Beautiful bathrooms shouldn&apos;t <span className="font-semibold italic">cost a fortune.</span></h2>
+          </div>
+          <div className="self-center">
+            <p className="text-lg leading-8 text-[#e5e8df]">We source directly from manufacturers and sell directly to you, without expensive retail storefronts. Less unnecessary cost. More room in your budget for the things you love.</p>
+            <div className="mt-8 grid gap-3 border-t border-[#647064] pt-6 text-sm text-[#e5e8df]">
+              <p>01 / Find your style</p><p>02 / Shop direct</p><p>03 / Love your space</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section aria-label="Why shop with Enviro Aqua" className="border-t border-stone-100 bg-[#FAF9F7]">
         <div className="mx-auto grid max-w-7xl gap-5 px-4 py-10 text-sm text-stone-600 sm:grid-cols-3 sm:px-6 lg:px-8">
@@ -129,6 +148,11 @@ export default async function BathroomLandingPage() {
           <p className="flex items-center gap-3"><Truck size={20} className="shrink-0 text-gray-900" /> Australia-wide delivery options</p>
           <p className="flex items-center gap-3"><ShieldCheck size={20} className="shrink-0 text-gray-900" /> Compliance details where applicable</p>
         </div>
+      </section>
+      <section className="bg-[#F7F5F2] px-4 py-14 text-center sm:px-6 md:py-20">
+        <h2 className="text-3xl font-semibold tracking-tight text-stone-900 sm:text-4xl">Your bathroom. Your style. A fair price.</h2>
+        <p className="mx-auto mt-4 max-w-lg leading-7 text-stone-600">Discover quality products that make everyday life a little better.</p>
+        <a href="#bathroom-collections" className="mt-6 inline-flex min-h-12 items-center gap-2 bg-[#303b32] px-6 py-3 text-sm font-medium text-white hover:bg-[#465348]">Shop bathroom <ArrowUpRight size={17} aria-hidden="true" /></a>
       </section>
     </>
   );
