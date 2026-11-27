@@ -1,46 +1,13 @@
-'use client';
-
-import { useState } from 'react';
 import type { ReactNode } from 'react';
-import { FountainManualDownload } from './FountainManualDownload';
-import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
-
-type Tab = 'description' | 'specifications' | 'downloads';
 
 export function RoundBubblerTabs({ description, specifications }: {
   description: ReactNode;
   specifications: ReactNode;
 }) {
-  const [activeTab, setActiveTab] = useState<Tab>('description');
-  const tabs: Tab[] = ['description', 'specifications', 'downloads'];
-
   return (
-    <div className="mt-10 border-t border-black/10 pt-2">
-      <div role="tablist" aria-label="Product information" className={FOUNTAIN_TAB_LIST_CLASS}>
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            type="button"
-            role="tab"
-            id={`round-bubbler-tab-${tab}`}
-            aria-controls={`round-bubbler-panel-${tab}`}
-            aria-selected={activeTab === tab}
-            onClick={() => setActiveTab(tab)}
-            className={fountainTabClass(activeTab === tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-      <div role="tabpanel" id="round-bubbler-panel-description" aria-labelledby="round-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-4">
-        {description}
-      </div>
-      <div role="tabpanel" id="round-bubbler-panel-specifications" aria-labelledby="round-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-4">
-        {specifications}
-      </div>
-      <div role="tabpanel" id="round-bubbler-panel-downloads" aria-labelledby="round-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
-        <FountainManualDownload />
-      </div>
+    <div className="space-y-12 md:space-y-16">
+      <div id="fountain-description" className="scroll-mt-40 pt-6">{description}</div>
+      <div id="fountain-specifications" className="scroll-mt-40 border-t border-black/10 pt-10 md:pt-14">{specifications}</div>
     </div>
   );
 }
