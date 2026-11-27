@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
 export function FountainDetailSection({ title, children, id, desktopClassName = '' }: {
@@ -6,10 +9,19 @@ export function FountainDetailSection({ title, children, id, desktopClassName = 
   id: string;
   desktopClassName?: string;
 }) {
+  const [desktop, setDesktop] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 768px)');
+    const sync = () => setDesktop(media.matches);
+    sync();
+    media.addEventListener('change', sync);
+    return () => media.removeEventListener('change', sync);
+  }, []);
   return (
     <div id={id} className={`scroll-mt-40 ${desktopClassName}`}>
-      <details className="group rounded-xl border border-neutral-200 bg-white md:contents">
-        <summary className="flex min-h-[76px] cursor-pointer list-none items-center justify-between gap-5 px-5 py-6 text-base font-semibold text-neutral-900 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-brand-blue [&::-webkit-details-marker]:hidden md:hidden">
+      <details open={desktop || mobileOpen} className="group rounded-xl border border-neutral-200 bg-white md:contents">
+        <summary onClick={(event) => { event.preventDefault(); if (!desktop) setMobileOpen(value => !value); }} className="flex min-h-[76px] cursor-pointer list-none items-center justify-between gap-5 px-5 py-6 text-base font-semibold text-neutral-900 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-brand-blue [&::-webkit-details-marker]:hidden md:hidden">
           {title}
           <span aria-hidden="true" className="relative flex h-6 w-6 shrink-0 items-center justify-center text-neutral-500">
             <span className="absolute h-px w-4 bg-current" />
