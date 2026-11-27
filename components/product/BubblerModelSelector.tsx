@@ -25,18 +25,18 @@ export function BubblerModelSelector({ currentHandle }: { currentHandle: string 
   if (!selected) return null;
 
   return (
-    <fieldset className="mt-5">
+    <fieldset className="mt-6 md:mt-5">
       <legend className="w-full text-sm text-neutral-900">
         <span className="text-neutral-600">
           Currently viewing model: <strong className="font-semibold text-neutral-900">{selected.label.replace('  -  ', ' ')}</strong>
         </span>
       </legend>
-      <div className="mt-2.5 grid max-w-[350px] grid-cols-3 gap-2">
+      <div className="mt-3 md:mt-2.5 grid max-w-[350px] grid-cols-3 gap-2">
         {MODELS.map((model) => {
           const destinationHandle = model.handle;
           const active = destinationHandle === currentHandle;
           const className = clsx(
-            'flex min-w-0 flex-col items-center gap-1 rounded-md border px-1 py-2 text-center transition-colors',
+            'flex min-w-0 flex-col items-center gap-1 rounded-md border px-1 py-3 md:py-2 text-center transition-colors',
             active
               ? 'border-neutral-900 bg-neutral-50 ring-1 ring-inset ring-neutral-900'
               : 'border-neutral-200 bg-white hover:border-neutral-500 hover:bg-neutral-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900',
