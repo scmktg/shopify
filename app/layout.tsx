@@ -82,11 +82,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
               ]}
             />
             <CartProvider>
-              <div className="sticky top-0 z-40">
+              <div className="storefront-header sticky top-0 z-40">
                 <PromoBanner />
                 <Header />
               </div>
-              <main className="flex-1">{children}</main>
+              <main className="storefront-content flex-1">{children}</main>
               <Footer />
               <CartDrawer />
             </CartProvider>
