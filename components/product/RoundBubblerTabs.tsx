@@ -1,46 +1,47 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { FountainManualDownload } from './FountainManualDownload';
-import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
 
-type Tab = 'description' | 'specifications' | 'downloads';
+export function FountainDetailSection({ title, children, id, desktopClassName = '' }: {
+  title: string;
+  children: ReactNode;
+  id: string;
+  desktopClassName?: string;
+}) {
+  const [desktop, setDesktop] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 768px)');
+    const sync = () => setDesktop(media.matches);
+    sync();
+    media.addEventListener('change', sync);
+    return () => media.removeEventListener('change', sync);
+  }, []);
+  return (
+    <div id={id} className={`scroll-mt-40 ${desktopClassName}`}>
+      <details open={desktop || mobileOpen} className="group rounded-xl border border-neutral-200 bg-white md:contents">
+        <summary onClick={(event) => { event.preventDefault(); if (!desktop) setMobileOpen(value => !value); }} className="flex min-h-[76px] cursor-pointer list-none items-center justify-between gap-5 px-5 py-6 text-base font-semibold text-neutral-900 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-brand-blue [&::-webkit-details-marker]:hidden md:hidden">
+          {title}
+          <span aria-hidden="true" className="relative flex h-6 w-6 shrink-0 items-center justify-center text-neutral-500">
+            <span className="absolute h-px w-4 bg-current" />
+            <span className="absolute h-4 w-px bg-current transition-transform group-open:scale-y-0 motion-reduce:transition-none" />
+          </span>
+        </summary>
+        <div className="min-w-0 px-5 pb-8 text-sm leading-relaxed md:p-0 md:text-base">{children}</div>
+      </details>
+    </div>
+  );
+}
 
 export function RoundBubblerTabs({ description, specifications }: {
   description: ReactNode;
   specifications: ReactNode;
 }) {
-  const [activeTab, setActiveTab] = useState<Tab>('description');
-  const tabs: Tab[] = ['description', 'specifications', 'downloads'];
-
   return (
-    <div className="mt-10 border-t border-black/10 pt-2">
-      <div role="tablist" aria-label="Product information" className={FOUNTAIN_TAB_LIST_CLASS}>
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            type="button"
-            role="tab"
-            id={`round-bubbler-tab-${tab}`}
-            aria-controls={`round-bubbler-panel-${tab}`}
-            aria-selected={activeTab === tab}
-            onClick={() => setActiveTab(tab)}
-            className={fountainTabClass(activeTab === tab)}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-      <div role="tabpanel" id="round-bubbler-panel-description" aria-labelledby="round-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-4">
-        {description}
-      </div>
-      <div role="tabpanel" id="round-bubbler-panel-specifications" aria-labelledby="round-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-4">
-        {specifications}
-      </div>
-      <div role="tabpanel" id="round-bubbler-panel-downloads" aria-labelledby="round-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
-        <FountainManualDownload />
-      </div>
+    <div className="space-y-4 md:space-y-16">
+      <FountainDetailSection id="fountain-description" title="Description" desktopClassName="md:pt-6">{description}</FountainDetailSection>
+      <FountainDetailSection id="fountain-specifications" title="Specifications" desktopClassName="md:border-t md:border-black/10 md:pt-14">{specifications}</FountainDetailSection>
     </div>
   );
 }

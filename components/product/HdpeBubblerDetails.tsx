@@ -1,9 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
-import { FountainManualDownload } from './FountainManualDownload';
-import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
+import { FountainDetailSection } from './RoundBubblerTabs';
 
 const SPEC_GROUPS = [
   {
@@ -21,34 +19,13 @@ const SPEC_GROUPS = [
 ] as const;
 
 export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
-  const [activeTab, setActiveTab] = useState<'description' | 'specifications' | 'downloads'>('description');
-  const tabsRef = useRef<HTMLDivElement>(null);
   const specs = (content.fullSpecs ?? []).filter((item) => !['sku', 'product type', 'watermark model name'].includes(item.label.trim().toLowerCase()));
   const groupedLabels = new Set<string>(SPEC_GROUPS.flatMap((group) => [...group.labels]));
   const additional = specs.filter((row) => !groupedLabels.has(row.label));
-  const showSpecifications = () => {
-    setActiveTab('specifications');
-    const top = tabsRef.current?.getBoundingClientRect().top;
-    if (top !== undefined) {
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      window.scrollTo({ top: Math.max(0, window.scrollY + top - 150), behavior: reduced ? 'instant' : 'smooth' });
-    }
-  };
 
   return (
-    <div className="mt-10 border-t border-black/10 pt-2">
-      <div ref={tabsRef} role="tablist" aria-label="Product information" className={FOUNTAIN_TAB_LIST_CLASS}>
-        {(['description', 'specifications', 'downloads'] as const).map((tab) => (
-          <button key={tab} type="button" role="tab" id={`hdpe-bubbler-tab-${tab}`}
-            aria-controls={`hdpe-bubbler-panel-${tab}`} aria-selected={activeTab === tab}
-            onClick={() => setActiveTab(tab)}
-            className={fountainTabClass(activeTab === tab)}>
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      <div id="hdpe-bubbler-panel-description" role="tabpanel" aria-labelledby="hdpe-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-10">
+    <div className="space-y-4 md:space-y-16">
+      <FountainDetailSection id="fountain-description" title="Description" desktopClassName="md:pt-6">
         <section className="mx-auto max-w-5xl text-center" aria-labelledby="hdpe-bubbler-editorial-title">
           <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-black">
             <span aria-hidden="true" className="text-2xl leading-none">✦</span> Our contemporary fountain
@@ -95,13 +72,13 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
             </h3>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-black/65">Two-stage filtration combines PP sediment and activated carbon to help reduce particles, unwanted tastes and odours. The mains-connected fountain offers convenient drinking and bottle filling in one unit.</p>
             <p className="mt-4 text-sm text-black/55">Suitable for schools, gyms, offices and sheltered commercial facilities.</p>
-            <button type="button" onClick={showSpecifications}
-              className="mt-9 inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
+            <a href="#fountain-specifications"
+              className="hidden md:inline-flex mt-9 min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
               <span>View Specifications</span>
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M5 19 19 5M7 5h12v12" /></svg>
               </span>
-            </button>
+            </a>
           </div>
         </section>
         <style jsx>{`
@@ -140,9 +117,8 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
           }
           @media (prefers-reduced-motion: reduce) { .ea-granite-text, .ea-water-shine { animation: none; } .ea-granite-text { background-position: 0 0, 20px 30px, 40px 10px, 60px 50px, 10px 70px, 50% 0; } .ea-water-shine { background-position: 50% 0; } }
         `}</style>
-      </div>
-
-      <div id="hdpe-bubbler-panel-specifications" role="tabpanel" aria-labelledby="hdpe-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-9">
+      </FountainDetailSection>
+      <FountainDetailSection id="fountain-specifications" title="Specifications" desktopClassName="md:border-t md:border-black/10 md:pt-14">
         <section aria-labelledby="hdpe-bubbler-specs-title">
           <h2 id="hdpe-bubbler-specs-title" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
           <p className="mt-2 text-sm text-black/60">Key product details organised for easy comparison and purchasing approval.</p>
@@ -179,10 +155,7 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
             )}
           </div>
         </section>
-      </div>
-      <div id="hdpe-bubbler-panel-downloads" role="tabpanel" aria-labelledby="hdpe-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
-        <FountainManualDownload />
-      </div>
+      </FountainDetailSection>
     </div>
   );
 }

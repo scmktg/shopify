@@ -1,9 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
-import { FountainManualDownload } from './FountainManualDownload';
-import { FOUNTAIN_TAB_LIST_CLASS, fountainTabClass } from './fountainTabStyles';
+import { FountainDetailSection } from './RoundBubblerTabs';
 
 const SPEC_GROUPS = [
   {
@@ -21,35 +19,13 @@ const SPEC_GROUPS = [
 ] as const;
 
 export function SquareBubblerDetails({ content }: { content: ProductContent }) {
-  const [activeTab, setActiveTab] = useState<'description' | 'specifications' | 'downloads'>('description');
-  const tabsRef = useRef<HTMLDivElement>(null);
-  const openTab = (tab: 'specifications' | 'downloads') => {
-    setActiveTab(tab);
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const tabsTop = tabsRef.current?.getBoundingClientRect().top;
-    if (tabsTop !== undefined) {
-      const targetY = Math.max(0, window.scrollY + tabsTop - 150);
-      window.scrollTo({ top: targetY, behavior: reducedMotion ? 'instant' : 'smooth' });
-    }
-  };
   const specs = (content.fullSpecs ?? []).filter((item) => !['sku', 'product type', 'watermark model name'].includes(item.label.trim().toLowerCase()));
   const listed = new Set<string>(SPEC_GROUPS.flatMap((group) => [...group.labels]));
   const remaining = specs.filter((item) => !listed.has(item.label));
 
   return (
-    <div className="mt-10 border-t border-black/10 pt-2">
-      <div ref={tabsRef} role="tablist" aria-label="Product information" className={FOUNTAIN_TAB_LIST_CLASS}>
-        {(['description', 'specifications', 'downloads'] as const).map((value) => (
-          <button key={value} type="button" role="tab"
-            id={`square-bubbler-tab-${value}`}
-            aria-controls={`square-bubbler-panel-${value}`}
-            aria-selected={activeTab === value}
-            onClick={() => setActiveTab(value)}
-            className={fountainTabClass(activeTab === value)}
-          >{value}</button>
-        ))}
-      </div>
-      <div id="square-bubbler-panel-description" role="tabpanel" aria-labelledby="square-bubbler-tab-description" hidden={activeTab !== 'description'} className="pt-10">
+    <div className="space-y-4 md:space-y-16">
+      <FountainDetailSection id="fountain-description" title="Description" desktopClassName="md:pt-6">
         <section className="text-center" aria-labelledby="square-bubbler-editorial-title">
           <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.12em] text-black uppercase"><span aria-hidden="true" className="text-2xl leading-none">✦</span> Our most popular model</p>
           <h2 id="square-bubbler-editorial-title" className="mx-auto mt-6 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
@@ -102,10 +78,8 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             </div>
           </div>
           <div className="mt-10 flex justify-center">
-            <button
-              type="button"
-              onClick={() => openTab('specifications')}
-              className="inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700"
+            <a href="#fountain-specifications"
+              className="hidden md:inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700"
             >
               <span>View Specifications</span>
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
@@ -113,7 +87,7 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
                   <path d="M5 19 19 5M7 5h12v12" />
                 </svg>
               </span>
-            </button>
+            </a>
           </div>
         </section>
 
@@ -143,8 +117,8 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           @keyframes ea-steel-sweep { 0%, 18% { background-position: 100% 0; } 55%, 100% { background-position: 0 0; } }
           @media (prefers-reduced-motion: reduce) { .ea-steel-shine, .ea-water-shine { animation: none; background-position: 50% 0; } }
         `}</style>
-      </div>
-      <div id="square-bubbler-panel-specifications" role="tabpanel" aria-labelledby="square-bubbler-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-9">
+      </FountainDetailSection>
+      <FountainDetailSection id="fountain-specifications" title="Specifications" desktopClassName="md:border-t md:border-black/10 md:pt-14">
       <section aria-labelledby="square-bubbler-specs">
         <h2 id="square-bubbler-specs" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
         <p className="mt-2 text-sm text-black/60">Key product details organised for easy comparison and purchasing approval.</p>
@@ -181,24 +155,19 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           )}
         </div>
         <div className="mt-12 flex justify-center">
-          <button type="button" onClick={() => openTab('downloads')}
-            className="inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700">
+          <a href="#fountain-documents"
+            className="hidden md:inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700">
             <span>Download Docs</span>
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <path d="M5 19 19 5M7 5h12v12" />
               </svg>
             </span>
-          </button>
+          </a>
         </div>
       </section>
 
-      </div>
-      <div id="square-bubbler-panel-downloads" role="tabpanel" aria-labelledby="square-bubbler-tab-downloads" hidden={activeTab !== 'downloads'} className="pt-9">
-      <FountainManualDownload />
-
-
-      </div>
+      </FountainDetailSection>
     </div>
   );
 }
