@@ -130,7 +130,7 @@ export function ProductDetail({
         category={subcategoryLabel}
         brand={product.vendor || 'Enviro Aqua'}
       />
-      <article className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 pt-8 pb-28 md:py-12">
+      <article className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 pt-8 pb-28 md:py-12 max-md:w-full max-md:max-w-[calc(70vh+2.5rem)] sm:max-md:max-w-[calc(70vh+3rem)]">
       <div className="mb-7 md:w-[calc((100%-3rem)/2)]"><nav aria-label="Breadcrumb" className="mx-auto flex w-full max-w-[70vh] flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium sm:text-sm">
         <Link href={`/${breadcrumbCategory}`} className="rounded-md text-black/55 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
           {subcategoryNode?.category.label ?? humaniseSlug(breadcrumbCategory)}
