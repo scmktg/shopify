@@ -8,6 +8,7 @@ import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
 import { HdpeBubblerDetails } from './HdpeBubblerDetails';
 import { RoundBubblerTabs } from './RoundBubblerTabs';
+import { FountainManualDownload } from './FountainManualDownload';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -352,6 +353,22 @@ export function ProductDetail({
       {editorialTapFinish && (
         <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
       )}
+      {(isEditorialBubbler || isRoundBubbler) && (
+        <nav aria-label="Jump to product information" className="sticky top-20 z-20 mt-12 border-y border-black/10 bg-white/95 backdrop-blur md:mt-16">
+          <div className="mx-auto flex max-w-5xl items-center justify-start gap-6 overflow-x-auto px-1 py-1 sm:justify-center sm:gap-12">
+            {[
+              ['Description', 'fountain-description'],
+              ['Specifications', 'fountain-specifications'],
+              ...(content.faq?.length ? [['FAQs', 'fountain-faqs']] : []),
+              ['Documents', 'fountain-documents'],
+            ].map(([label, id]) => (
+              <a key={id} href={`#${id}`} className="shrink-0 whitespace-nowrap border-b-2 border-transparent px-1 py-3 text-sm font-semibold text-black/70 transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-brand-blue">
+                {label}
+              </a>
+            ))}
+          </div>
+        </nav>
+      )}
       {isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
@@ -382,7 +399,7 @@ export function ProductDetail({
       )}
       {content.faq && content.faq.length > 0 && (
         isEditorialBubbler ? (
-          <section className="mt-16 border-t border-black/10 pt-12 md:mt-20 md:pt-16" aria-labelledby="square-bubbler-faq-heading">
+          <section id="fountain-faqs" className="scroll-mt-40 mt-16 border-t border-black/10 pt-12 md:mt-20 md:pt-16" aria-labelledby="square-bubbler-faq-heading">
             <div className="mx-auto max-w-5xl">
               <div className="mb-9 text-center md:mb-12">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">Helpful information</p>
@@ -395,7 +412,7 @@ export function ProductDetail({
             </div>
           </section>
         ) : (
-          <section className="mt-10 border-t border-gray-200 pt-10">
+          <section id={isRoundBubbler ? "fountain-faqs" : undefined} className="scroll-mt-40 mt-10 border-t border-gray-200 pt-10">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
               <div>
                 <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
@@ -414,6 +431,11 @@ export function ProductDetail({
             </div>
           </section>
         )
+      )}
+      {(isEditorialBubbler || isRoundBubbler) && (
+        <div id="fountain-documents" className="scroll-mt-40 mt-12 border-t border-black/10 pt-10 md:mt-16 md:pt-14">
+          <FountainManualDownload />
+        </div>
       )}
       {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
