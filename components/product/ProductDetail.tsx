@@ -130,7 +130,7 @@ export function ProductDetail({
         category={subcategoryLabel}
         brand={product.vendor || 'Enviro Aqua'}
       />
-      <article className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-28 md:pb-12">
+      <article className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 pt-8 pb-28 md:py-12">
       <div className="mb-7 md:w-[calc((100%-3rem)/2)]"><nav aria-label="Breadcrumb" className="mx-auto flex w-full max-w-[70vh] flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium sm:text-sm">
         <Link href={`/${breadcrumbCategory}`} className="rounded-md text-black/55 transition-colors hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue">
           {subcategoryNode?.category.label ?? humaniseSlug(breadcrumbCategory)}
@@ -141,7 +141,7 @@ export function ProductDetail({
         </Link>
       </nav></div>
 
-      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
+      <div className={isBubbler ? 'grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-8 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
         <div>
           <VariantProductGallery
             images={product.images}
@@ -163,14 +163,14 @@ export function ProductDetail({
           )}
         </div>
 
-        <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "md:sticky md:top-24 md:pt-1" : "md:sticky md:top-24"}>
+        <div className={isBubbler ? "min-w-0 md:pt-0" : useRefinedPurchaseLayout ? "min-w-0 md:sticky md:top-24 md:pt-1" : "min-w-0 md:sticky md:top-24"}>
           {isKitchenTap && (
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-500">
               HOT, COLD &amp; FILTERED <span aria-hidden="true" className="mx-1 text-neutral-300">·</span> ALL IN ONE TAP
             </p>
           )}
           {isBubbler && (
-            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-[11px]">
+            <p className="mb-3 md:mb-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-neutral-500 sm:text-[11px]">
               DRINKING WATER FOUNTAINS
             </p>
           )}
@@ -230,7 +230,7 @@ export function ProductDetail({
           )}
 
           {showFourStageAlternative && (
-            <div className="mt-5 rounded-lg border border-black/15 bg-black/[0.03] p-4">
+            <div className="mt-6 md:mt-5 rounded-lg border border-black/15 bg-black/[0.03] p-5 md:p-4">
               <p className="text-sm font-semibold text-black">Sold out</p>
               <p className="mt-1 text-sm leading-6 text-black/70">
                 This 3-stage UV system is currently unavailable. For the closest
@@ -247,7 +247,7 @@ export function ProductDetail({
           )}
 
           {packageUpgrade && (
-            <div className="mt-5 rounded-lg border border-brand-blue/25 bg-brand-blue-light/40 p-4">
+            <div className="mt-6 md:mt-5 rounded-lg border border-brand-blue/25 bg-brand-blue-light/40 p-5 md:p-4">
               <p className="text-sm font-semibold text-black">
                 Need the complete setup?
               </p>
@@ -331,10 +331,10 @@ export function ProductDetail({
             productHandle={product.handle}
           />
 
-          <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-4 text-xs text-neutral-500' : undefined} />
+          <VariantProductTrustBlock productId={product.id} className={useRefinedPurchaseLayout ? '!mt-6 md:!mt-4 text-xs text-neutral-500' : undefined} />
 
           {offersInstallPackage(content) && (
-            <div className="mt-6 p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
+            <div className="mt-6 p-5 md:p-4 bg-brand-blue-light border border-brand-blue/30 rounded text-sm text-black">
               Live on the Central Coast NSW? Get this installed by a local
               plumber for $2,299 -{' '}
               <Link
