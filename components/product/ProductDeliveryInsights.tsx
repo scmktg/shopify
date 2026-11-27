@@ -49,7 +49,7 @@ export function ProductDeliveryInsights({
                 <span className="text-[11px] text-slate-600">Metro &amp; regional Australia</span>
               </p>
               <p className="mt-0.5 text-[11px] leading-4 text-slate-500">
-                Some remote postcodes may incur an additional fee.
+                Shipping charges may apply for remote areas. We&apos;ll confirm any cost with you before fulfilment.
               </p>
             </div>
           </div>
