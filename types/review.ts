@@ -6,11 +6,11 @@ export interface Review {
   source: ReviewSource;
   /** Display name as it appears on the source platform. */
   authorName: string;
-  /** 1–5 inclusive. Facebook "recommends" map to 5. */
-  rating: 1 | 2 | 3 | 4 | 5;
+  /** 1–5 inclusive when supplied. Facebook "recommends" map to 5. */
+  rating?: 1 | 2 | 3 | 4 | 5;
   /** Review body. Plain text only — no HTML, no markdown. */
   text: string;
-  /** ISO 8601 date string (YYYY-MM-DD). Source platform date. */
+  /** Source platform date, YYYY-MM-DD or YYYY-MM if only month is known. */
   date: string;
   /**
    * True when the review should appear in featured surfaces (homepage,

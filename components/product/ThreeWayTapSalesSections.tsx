@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { FountainDetailSection } from './RoundBubblerTabs';
 import type { ReactNode } from 'react';
 import type { ProductContent } from '@/lib/products/schema';
 
@@ -23,18 +23,8 @@ const SHARED_DIMENSIONS = [
 ] as const;
 
 export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { content: ProductContent; finishShowcase?: ReactNode; finish: TapFinish }) {
-  const [activeTab, setActiveTab] = useState<'description' | 'specifications'>('description');
-  const tabsRef = useRef<HTMLDivElement>(null);
   const selectedDiagram = DIMENSION_IMAGES.find((image) => image.name === finish) ?? DIMENSION_IMAGES[0];
 
-  const showSpecifications = () => {
-    setActiveTab('specifications');
-    const top = tabsRef.current?.getBoundingClientRect().top;
-    if (top !== undefined) {
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      window.scrollTo({ top: Math.max(0, window.scrollY + top - 150), behavior: reducedMotion ? 'instant' : 'smooth' });
-    }
-  };
 
   const dimensionLabels = new Set<string>(SHARED_DIMENSIONS.map((row) => row.label.toLowerCase()));
   const excludedLabels = new Set([
@@ -64,17 +54,8 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
   const specLabelClass = 'min-w-0 font-normal text-black/60';
   const specValueClass = 'min-w-0 text-right font-medium text-black';
   return (
-    <div className="mt-10 border-t border-black/10 pt-2">
-      <div ref={tabsRef} role="tablist" aria-label="Product information" className="flex items-center justify-center gap-8 border-b border-black/10 sm:gap-16">
-        {(['description', 'specifications'] as const).map((tab) => (
-          <button key={tab} type="button" role="tab" id={`matte-tap-tab-${tab}`}
-            aria-controls={`matte-tap-panel-${tab}`} aria-selected={activeTab === tab}
-            onClick={() => setActiveTab(tab)}
-            className={`relative min-h-14 px-1 py-4 text-sm font-medium capitalize transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue ${activeTab === tab ? 'text-black after:absolute after:inset-x-0 after:bottom-[-1px] after:h-[2px] after:bg-black' : 'text-black/50 hover:text-black'}`}
-          >{tab}</button>
-        ))}
-      </div>
-      <div id="matte-tap-panel-description" role="tabpanel" aria-labelledby="matte-tap-tab-description" hidden={activeTab !== 'description'} className="pt-12 sm:pt-16">
+    <div className="space-y-4 md:space-y-16">
+      <FountainDetailSection id="fountain-description" title="Description" desktopClassName="md:pt-12">
       <section className="mx-auto max-w-5xl text-center" aria-labelledby="three-way-tap-editorial-title">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-black/45">
           Designed for beautiful kitchens
@@ -168,18 +149,18 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
       </section>
 
         <div className="mt-12 flex justify-center">
-          <button type="button" onClick={showSpecifications}
-            className="inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
+          <a href="#fountain-specifications"
+            className="hidden md:inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
             <span>View Specifications</span>
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
                 <path d="M5 19 19 5M7 5h12v12" />
               </svg>
             </span>
-          </button>
+          </a>
         </div>
-      </div>
-      <div id="matte-tap-panel-specifications" role="tabpanel" aria-labelledby="matte-tap-tab-specifications" hidden={activeTab !== 'specifications'} className="pt-9">
+      </FountainDetailSection>
+      <FountainDetailSection id="fountain-specifications" title="Specifications" desktopClassName="md:border-t md:border-black/10 md:pt-14">
         <section className="mx-auto max-w-5xl" aria-labelledby="matte-tap-specifications-title">
           <h2 id="matte-tap-specifications-title" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
           <p className="mt-2 text-sm leading-7 text-black/60">Product details, fittings and installation information for your kitchen.</p>
@@ -204,7 +185,7 @@ export function ThreeWayTapSalesSections({ content, finishShowcase, finish }: { 
             </dl>
           </div>
         </section>
-      </div>
+      </FountainDetailSection>
     </div>
   );
 }

@@ -24,8 +24,17 @@ import type { Review, ReviewStats } from '@/types/review';
  */
 export const reviews: ReadonlyArray<Review> = [
   // ---- GOOGLE REVIEWS ----
-  // 8 of 64 public Google reviews. Add more by pasting verbatim into
-  // this array; keep date in YYYY-MM-DD form.
+  // Curated public Google reviews. Preserve the supplied text and use
+  // month-level dates if the exact day is not available.
+  {
+    id: 'google-lisa-w-2026-09',
+    source: 'google',
+    authorName: 'Lisa W.',
+    text: 'I went to organize filters to replace my current ones. I asked Adam does he come to the home to replace. Adam said yes he can do it for me the next day. True to his word Adam came round yesterday, replaced he filters, advise if any problems give him a call and he will come back and fix it. Thank you Adam, you have my future business.',
+    // Approximate month derived from the supplied relative date of 12 weeks ago.
+    date: '2026-09',
+    featured: true,
+  },
   {
     id: 'google-justin-jm-2025-02',
     source: 'google',
@@ -208,6 +217,6 @@ export const reviewStats: ReviewStats = {
   totalFacebook: 10,
   averageRating: 5.0,
   recommendRate: 1.0,
-  // 8 Google + 10 Facebook entries actually present in this file.
-  reviewsShownLocally: 18,
+  // 9 Google + 10 Facebook entries actually present in this file.
+  reviewsShownLocally: 19,
 };
