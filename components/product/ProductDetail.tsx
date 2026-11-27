@@ -22,7 +22,6 @@ import { ProductDeliveryInsights } from './ProductDeliveryInsights';
 import { WaterMarkCertificationBanner } from './WaterMarkCertificationBanner';
 import { isLeadFree } from './WatermarkBadge';
 import { BubblerModelSelector } from './BubblerModelSelector';
-import { FountainFiltrationSelector } from './FountainFiltrationSelector';
 import { VariantSelectionProvider } from './VariantSelectionProvider';
 import { VariantProductGallery } from './VariantProductGallery';
 import { VariantPurchaseControls } from './VariantPurchaseControls';
@@ -187,7 +186,6 @@ export function ProductDetail({
           </h1>
 
           {isBubbler && <BubblerModelSelector currentHandle={product.handle} />}
-          {isBubbler && <FountainFiltrationSelector currentHandle={product.handle} />}
           {content.family && familyPaths && !isBubbler && (
             <FamilySelector
               family={content.family}
