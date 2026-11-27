@@ -131,3 +131,19 @@ h6 {
     background-position: 50% 0;
   }
 }
+
+
+/* Shared storefront page gutters. Target existing outer content containers,
+   not nested cards, controls, full-bleed backgrounds or admin surfaces. */
+@media (width < 768px) {
+  :root { --storefront-gutter: 1.25rem; }
+
+  :is(main.storefront-content, .storefront-header, footer.storefront-footer)
+    :where(.mx-auto[class*="max-w-"]):is(.px-3, .px-4, .px-5, .px-6, .px-7, .px-8):not(:where(.mx-auto[class*="max-w-"] .mx-auto[class*="max-w-"])) {
+    padding-inline: var(--storefront-gutter);
+  }
+}
+
+@media (640px <= width < 768px) {
+  :root { --storefront-gutter: 1.5rem; }
+}
