@@ -52,7 +52,7 @@ export function VariantPurchaseControls({
 
   return (
     <>
-      <div className={compactLayout ? "mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-neutral-200 pt-4" : sleek ? "mt-6 flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t border-neutral-200 pt-5" : "mt-4 flex items-baseline justify-between gap-4 flex-wrap"}>
+      <div className={compactLayout ? "mt-6 md:mt-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 md:gap-y-2 border-t border-neutral-200 pt-6 md:pt-4" : sleek ? "mt-6 flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t border-neutral-200 pt-5" : "mt-6 md:mt-4 flex items-baseline justify-between gap-4 flex-wrap"}>
         <div className="flex items-baseline gap-2 flex-wrap">
           <PriceDisplay
             money={price}
@@ -165,7 +165,7 @@ export function VariantPurchaseControls({
         </div>
       )}
 
-      <div className={compactLayout ? "mt-4" : sleek ? "mt-5" : "mt-6"}>
+      <div className={compactLayout ? "mt-6 md:mt-4" : sleek ? "mt-6 md:mt-5" : "mt-6"}>
         <AddToCartButton
           variantId={selectedVariant.id}
           available={selectedVariant.availableForSale}
