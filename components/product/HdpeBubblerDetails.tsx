@@ -1,6 +1,7 @@
 'use client';
 
 import type { ProductContent } from '@/lib/products/schema';
+import { FountainDetailSection } from './RoundBubblerTabs';
 
 const SPEC_GROUPS = [
   {
@@ -23,13 +24,13 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
   const additional = specs.filter((row) => !groupedLabels.has(row.label));
 
   return (
-    <div className="space-y-12 md:space-y-16">
-      <div id="fountain-description" className="scroll-mt-40 pt-6">
+    <>
+      <FountainDetailSection title="Description">
         <section className="mx-auto max-w-5xl text-center" aria-labelledby="hdpe-bubbler-editorial-title">
           <p className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-black">
             <span aria-hidden="true" className="text-2xl leading-none">✦</span> Our contemporary fountain
           </p>
-          <h2 id="hdpe-bubbler-editorial-title" className="mx-auto mt-6 max-w-4xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
+          <h2 id="hdpe-bubbler-editorial-title" className="mx-auto mt-6 max-w-4xl text-2xl lg:text-3xl font-light leading-[1.13] tracking-tight text-black">
             A modern design with a<br className="hidden sm:block" /> <strong className="font-semibold"><span className="ea-granite-text">Granite-Inspired Finish.</span></strong>
           </h2>
           <h3 className="mt-7 text-lg font-semibold text-black/75 sm:text-xl">A fresh take on the traditional drinking fountain.</h3>
@@ -40,14 +41,14 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
           </div>
         </section>
 
-        <section className="mt-14 border-t border-black/10 pt-12 sm:mt-16 sm:pt-16" aria-labelledby="hdpe-bubbler-benefits">
+        <section className="mt-8 border-t border-black/10 pt-8" aria-labelledby="hdpe-bubbler-benefits">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.13em] text-black/45">Designed for everyday use</p>
-            <h3 id="hdpe-bubbler-benefits" className="mt-4 text-[clamp(1.8rem,3.4vw,3.2rem)] font-light leading-tight tracking-tight text-black">
+            <h3 id="hdpe-bubbler-benefits" className="mt-4 text-xl lg:text-2xl font-light leading-tight tracking-tight text-black">
               Stone-inspired style.<br className="hidden sm:block" /> <strong className="font-semibold">Practical drinking water.</strong>
             </h3>
           </div>
-          <div className="mx-auto mt-10 grid max-w-5xl gap-8 sm:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-5xl gap-8 grid-cols-1">
             <div className="border-t border-black/10 pt-5">
               <h4 className="text-base font-semibold text-black">Granite-inspired HDPE cabinet</h4>
               <p className="mt-3 text-sm leading-7 text-black/65">A corrosion-resistant exterior with a distinctive granite-stone appearance.</p>
@@ -63,21 +64,15 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
           </div>
         </section>
 
-        <section className="mt-14 border-t border-black/10 pt-12 sm:mt-16 sm:pt-16" aria-labelledby="hdpe-bubbler-filtration">
+        <section className="mt-8 border-t border-black/10 pt-8" aria-labelledby="hdpe-bubbler-filtration">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.13em] text-black/45">Integrated water filtration</p>
-            <h3 id="hdpe-bubbler-filtration" className="mt-4 text-[clamp(1.8rem,3.4vw,3.2rem)] font-light leading-tight tracking-tight text-black">
+            <h3 id="hdpe-bubbler-filtration" className="mt-4 text-xl lg:text-2xl font-light leading-tight tracking-tight text-black">
               Chilled water, with <span className="ea-water-shine font-semibold">filtration built in.</span>
             </h3>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-black/65">Two-stage filtration combines PP sediment and activated carbon to help reduce particles, unwanted tastes and odours. The mains-connected fountain offers convenient drinking and bottle filling in one unit.</p>
             <p className="mt-4 text-sm text-black/55">Suitable for schools, gyms, offices and sheltered commercial facilities.</p>
-            <a href="#fountain-specifications"
-              className="mt-9 inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black">
-              <span>View Specifications</span>
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><path d="M5 19 19 5M7 5h12v12" /></svg>
-              </span>
-            </a>
+            
           </div>
         </section>
         <style jsx>{`
@@ -116,13 +111,12 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
           }
           @media (prefers-reduced-motion: reduce) { .ea-granite-text, .ea-water-shine { animation: none; } .ea-granite-text { background-position: 0 0, 20px 30px, 40px 10px, 60px 50px, 10px 70px, 50% 0; } .ea-water-shine { background-position: 50% 0; } }
         `}</style>
-      </div>
-
-      <div id="fountain-specifications" className="scroll-mt-40 border-t border-black/10 pt-10 md:pt-14">
+      </FountainDetailSection>
+      <FountainDetailSection title="Specifications">
         <section aria-labelledby="hdpe-bubbler-specs-title">
           <h2 id="hdpe-bubbler-specs-title" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
           <p className="mt-2 text-sm text-black/60">Key product details organised for easy comparison and purchasing approval.</p>
-          <div className="mt-8 grid gap-x-14 gap-y-10 lg:grid-cols-2">
+          <div className="mt-8 grid gap-x-14 gap-y-10 grid-cols-1">
             {SPEC_GROUPS.map((group) => {
               const rows = specs.filter((item) => group.labels.some((label) => label === item.label));
               if (!rows.length) return null;
@@ -155,7 +149,7 @@ export function HdpeBubblerDetails({ content }: { content: ProductContent }) {
             )}
           </div>
         </section>
-      </div>
-    </div>
+      </FountainDetailSection>
+    </>
   );
 }
