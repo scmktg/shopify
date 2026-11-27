@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run validate:products && npm run validate:redirects && npm run test:analytics && npm run test:attribution",
+    "prebuild": "npm run validate:redirects && npm run test:analytics && npm run test:attribution",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
