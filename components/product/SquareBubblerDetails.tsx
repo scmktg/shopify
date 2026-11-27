@@ -24,11 +24,11 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
   const remaining = specs.filter((item) => !listed.has(item.label));
 
   return (
-    <>
-      <FountainDetailSection title="Description">
+    <div className="space-y-4 md:space-y-16">
+      <FountainDetailSection id="fountain-description" title="Description" desktopClassName="md:pt-6">
         <section className="text-center" aria-labelledby="square-bubbler-editorial-title">
           <p className="flex items-center justify-center gap-2 text-xs font-semibold tracking-[0.12em] text-black uppercase"><span aria-hidden="true" className="text-2xl leading-none">✦</span> Our most popular model</p>
-          <h2 id="square-bubbler-editorial-title" className="mx-auto mt-6 max-w-5xl text-2xl lg:text-3xl font-light leading-[1.13] tracking-tight text-black">
+          <h2 id="square-bubbler-editorial-title" className="mx-auto mt-6 max-w-5xl text-[clamp(2rem,4vw,3.8rem)] font-light leading-[1.13] tracking-tight text-black">
             Drink or refill... all from one<br className="hidden md:block" /> <strong className="font-semibold">Sleek <span className="ea-steel-shine">Stainless Steel</span> Fountain</strong>
           </h2>
         </section>
@@ -53,10 +53,10 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           ))}
         </section>
         <p className="mt-7 text-center text-sm text-black/55">Suitable for schools, gyms, offices and sheltered commercial facilities.</p>
-        <section className="mt-8 border-t border-black/10 pt-8" aria-labelledby="square-bubbler-filtration">
+        <section className="mt-16 border-t border-black/10 pt-12 sm:mt-20 sm:pt-16" aria-labelledby="square-bubbler-filtration">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.13em] text-black/45">Integrated water filtration</p>
-            <h3 id="square-bubbler-filtration" className="mt-4 text-xl lg:text-2xl font-light leading-tight tracking-tight text-black">
+            <h3 id="square-bubbler-filtration" className="mt-4 text-[clamp(1.8rem,3.4vw,3.2rem)] font-light leading-tight tracking-tight text-black">
               Built-in filtration for<br className="hidden sm:block" /> <span className="ea-water-shine font-semibold">cleaner, great tasting water.</span>
             </h3>
           </div>
@@ -78,7 +78,16 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             </div>
           </div>
           <div className="mt-10 flex justify-center">
-            
+            <a href="#fountain-specifications"
+              className="hidden md:inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700"
+            >
+              <span>View Specifications</span>
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                  <path d="M5 19 19 5M7 5h12v12" />
+                </svg>
+              </span>
+            </a>
           </div>
         </section>
 
@@ -109,11 +118,11 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
           @media (prefers-reduced-motion: reduce) { .ea-steel-shine, .ea-water-shine { animation: none; background-position: 50% 0; } }
         `}</style>
       </FountainDetailSection>
-      <FountainDetailSection title="Specifications">
+      <FountainDetailSection id="fountain-specifications" title="Specifications" desktopClassName="md:border-t md:border-black/10 md:pt-14">
       <section aria-labelledby="square-bubbler-specs">
         <h2 id="square-bubbler-specs" className="text-xl font-semibold tracking-tight text-black sm:text-2xl">Technical specifications</h2>
         <p className="mt-2 text-sm text-black/60">Key product details organised for easy comparison and purchasing approval.</p>
-        <div className="mt-8 grid gap-x-14 gap-y-10 grid-cols-1">
+        <div className="mt-8 grid gap-x-14 gap-y-10 lg:grid-cols-2">
           {SPEC_GROUPS.map((group) => {
             const rows = specs.filter((item) => group.labels.some((label) => label === item.label));
             if (!rows.length) return null;
@@ -145,10 +154,20 @@ export function SquareBubblerDetails({ content }: { content: ProductContent }) {
             </div>
           )}
         </div>
-        
+        <div className="mt-12 flex justify-center">
+          <a href="#fountain-documents"
+            className="hidden md:inline-flex min-h-12 items-center justify-center gap-4 rounded-full bg-black py-2 pl-7 pr-2 text-xs font-semibold uppercase tracking-[0.12em] text-white shadow-sm transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black active:bg-neutral-700">
+            <span>Download Docs</span>
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
+                <path d="M5 19 19 5M7 5h12v12" />
+              </svg>
+            </span>
+          </a>
+        </div>
       </section>
 
       </FountainDetailSection>
-    </>
+    </div>
   );
 }
