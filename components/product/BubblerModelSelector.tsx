@@ -5,27 +5,23 @@ import { clsx } from 'clsx';
 const MODELS = [
   {
     handle: 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm',
-    nonFilteredHandle: 'round-stainless-steel-drinking-fountain-water-bubbler-chilled-non-filtered-20l-hr',
     label: 'Stainless Steel  -  Bubbler',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600r-round-stainless-steel-drinking-fountain-water-bubbler-front-angle.png?v=1792231320',
   },
   {
     handle: 'commercial-water-bubbler-filtered-stainless-steel-watermark-certified-square-des',
-    nonFilteredHandle: 'stainless-steel-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
     label: 'Stainless Steel  -  Bubbler + Tap',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/stainless-steel-fountain-bubbler-tap.png?v=1793009157',
   },
   {
     handle: 'commercial-rust-free-filtered-cold-water-bubbler-wm',
-    nonFilteredHandle: 'hdpe-drinking-fountain-water-bubbler-with-tap-chilled-non-filtered-20l-hr',
     label: 'Granite Inspired  -  Bubbler + Tap',
     image: 'https://cdn.shopify.com/s/files/1/0984/4693/4337/files/yl-600p-hdpe-drinking-fountain-water-bubbler-with-tap-front.png?v=1792231482',
   },
 ] as const;
 
 export function BubblerModelSelector({ currentHandle }: { currentHandle: string }) {
-  const selected = MODELS.find((model) => model.handle === currentHandle || model.nonFilteredHandle === currentHandle);
-  const nonFiltered = MODELS.some(model => model.nonFilteredHandle === currentHandle);
+  const selected = MODELS.find((model) => model.handle === currentHandle);
   if (!selected) return null;
 
   return (
@@ -37,7 +33,7 @@ export function BubblerModelSelector({ currentHandle }: { currentHandle: string 
       </legend>
       <div className="mt-2.5 grid max-w-[350px] grid-cols-3 gap-2">
         {MODELS.map((model) => {
-          const destinationHandle = nonFiltered ? model.nonFilteredHandle : model.handle;
+          const destinationHandle = model.handle;
           const active = destinationHandle === currentHandle;
           const className = clsx(
             'flex min-w-0 flex-col items-center gap-1 rounded-md border px-1 py-2 text-center transition-colors',
