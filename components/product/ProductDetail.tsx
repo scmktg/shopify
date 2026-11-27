@@ -350,17 +350,14 @@ export function ProductDetail({
       </div>
 
       {!isEditorialBubbler && !isRoundBubbler && !editorialTapFinish && <HeadlineSpecs specs={content.headlineSpecs} />}
-      {editorialTapFinish && (
-        <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
-      )}
-      {(isEditorialBubbler || isRoundBubbler) && (
+      {(
         <nav aria-label="Jump to product information" className="hidden md:block sticky top-20 z-20 mt-12 border-y border-black/10 bg-white/95 backdrop-blur md:mt-16">
           <div className="mx-auto flex max-w-5xl items-center justify-start gap-6 overflow-x-auto px-1 py-1 sm:justify-center sm:gap-12">
             {[
               ['Description', 'fountain-description'],
               ['Specifications', 'fountain-specifications'],
               ...(content.faq?.length ? [['FAQs', 'fountain-faqs']] : []),
-              ['Documents', 'fountain-documents'],
+              ...((isEditorialBubbler || isRoundBubbler) ? [['Documents', 'fountain-documents']] : []),
             ].map(([label, id]) => (
               <a key={id} href={`#${id}`} className="shrink-0 whitespace-nowrap border-b-2 border-transparent px-1 py-3 text-sm font-semibold text-black/70 transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-brand-blue">
                 {label}
@@ -369,12 +366,14 @@ export function ProductDetail({
           </div>
         </nav>
       )}
-      {(isEditorialBubbler || isRoundBubbler) && <div className="mt-8 md:mt-0" />}
-      {isSquareBubbler ? (
+      <div className="mt-8 md:mt-0" />
+      {editorialTapFinish ? (
+        <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
+      ) : isSquareBubbler ? (
         <SquareBubblerDetails content={content} />
       ) : isHdpeBubbler ? (
         <HdpeBubblerDetails content={content} />
-      ) : isRoundBubbler ? (
+      ) : (
         <RoundBubblerTabs
           description={
             <>
@@ -386,19 +385,8 @@ export function ProductDetail({
           }
           specifications={<FullSpecs specs={content.fullSpecs} />}
         />
-      ) : editorialTapFinish ? null : (
-        <>
-          <FullSpecs specs={content.fullSpecs} />
-          <ProductOverview
-            description={content.description}
-            shortDescription={content.shortDescription}
-          />
-          <ProductFeatures features={content.features} />
-          <RecommendedFor items={content.recommendedFor} />
-          <ComplianceSection compliance={content.compliance} />
-        </>
       )}
-      {(isEditorialBubbler || isRoundBubbler) && content.faq && content.faq.length > 0 && (
+      {content.faq && content.faq.length > 0 && (
         <div className="mt-4 md:mt-0">
           <FountainDetailSection id="fountain-faqs" title="FAQs">
             {isEditorialBubbler ? (
@@ -436,26 +424,6 @@ export function ProductDetail({
             )}
           </FountainDetailSection>
         </div>
-      )}
-      {!isEditorialBubbler && !isRoundBubbler && content.faq && content.faq.length > 0 && (
-          <section className="scroll-mt-40 mt-10 border-t border-gray-200 pt-10">
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
-                  Questions about this model
-                </h2>
-                {subcategory === 'bubblers' && (
-                  <p className="mt-3 text-sm text-black/70">
-                    For a side-by-side comparison of cooling, cabinet, bottle-fill and location options, see the{' '}
-                    <Link href="/commercial-water-bubblers" className="font-semibold text-brand-blue hover:underline underline-offset-4">
-                      commercial water bubbler guide
-                    </Link>.
-                  </p>
-                )}
-              </div>
-              <FaqAccordion items={content.faq} />
-            </div>
-          </section>
       )}
       {(isEditorialBubbler || isRoundBubbler) && (
         <div className="mt-4 md:mt-0"><FountainDetailSection id="fountain-documents" title="Downloads" desktopClassName="md:mt-16 md:border-t md:border-black/10 md:pt-14"><FountainManualDownload /></FountainDetailSection></div>
