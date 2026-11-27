@@ -12,26 +12,13 @@ const SOURCE_LABEL: Record<Review['source'], string> = {
   facebook: 'Facebook',
 };
 
-function formatDate(iso: string): string {
-  // Render dates as "October 2025" rather than full date  -  review
-  // platforms only display month-level precision so anything more
-  // exact would be falsely precise.
-  const d = new Date(`${iso}T00:00:00Z`);
-  if (Number.isNaN(d.getTime())) return iso;
-  return new Intl.DateTimeFormat('en-AU', {
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(d);
-}
-
 export function ReviewCard({ review, className = '' }: ReviewCardProps) {
   return (
     <article
       className={`flex h-full flex-col rounded-lg border border-black/10 bg-white p-5 shadow-sm ${className}`}
     >
       <div className="flex items-center justify-between gap-3">
-        <ReviewStars value={review.rating} className="text-lg" />
+        {review.rating !== undefined ? <ReviewStars value={review.rating} className="text-lg" /> : <span />}
         <span
           className="inline-flex items-center gap-1.5 text-xs font-medium text-black/55"
           aria-label={`Source: ${SOURCE_LABEL[review.source]}`}
@@ -51,8 +38,6 @@ export function ReviewCard({ review, className = '' }: ReviewCardProps) {
             <span className="text-black/50">Local Guide</span>
           </>
         )}
-        <span aria-hidden="true"> · </span>
-        <time dateTime={review.date}>{formatDate(review.date)}</time>
       </footer>
     </article>
   );
