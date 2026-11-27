@@ -107,7 +107,6 @@ export function ProductDetail({
   const isHdpeBubbler = product.handle === 'commercial-rust-free-filtered-cold-water-bubbler-wm';
   const isRoundBubbler = product.handle === 'commercial-stainless-steel-filtered-cold-water-bubbler-round-wm';
   const isEditorialBubbler = isSquareBubbler || isHdpeBubbler;
-  const useFountainAccordion = isEditorialBubbler || isRoundBubbler;
   const isKitchenTap = shouldShowWaterMarkTapBadge(product.handle);
   const editorialTapFinish = THREE_WAY_TAP_FINISHES[product.handle];
   const isBubbler = subcategory === 'bubblers';
@@ -143,7 +142,7 @@ export function ProductDetail({
       </nav></div>
 
       <div className={isBubbler ? 'grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-8 lg:gap-10' : useRefinedPurchaseLayout ? 'grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-12 lg:gap-16' : 'grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start'}>
-        <div className={useFountainAccordion ? "min-w-0 md:sticky md:top-24 md:self-start" : undefined}>
+        <div>
           <VariantProductGallery
             images={product.images}
             videos={subcategory === 'bubblers' ? product.videos : []}
@@ -347,13 +346,35 @@ export function ProductDetail({
               .
             </div>
           )}
-          {useFountainAccordion && (
-            <div className="mt-7 border-t border-neutral-200" aria-label="Product information">
-              {isSquareBubbler ? (
-                <SquareBubblerDetails content={content} />
-              ) : isHdpeBubbler ? (
-                <HdpeBubblerDetails content={content} />
-              ) : (
+        </div>
+      </div>
+
+      {!isEditorialBubbler && !isRoundBubbler && !editorialTapFinish && <HeadlineSpecs specs={content.headlineSpecs} />}
+      {editorialTapFinish && (
+        <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
+      )}
+      {(isEditorialBubbler || isRoundBubbler) && (
+        <nav aria-label="Jump to product information" className="hidden md:block sticky top-20 z-20 mt-12 border-y border-black/10 bg-white/95 backdrop-blur md:mt-16">
+          <div className="mx-auto flex max-w-5xl items-center justify-start gap-6 overflow-x-auto px-1 py-1 sm:justify-center sm:gap-12">
+            {[
+              ['Description', 'fountain-description'],
+              ['Specifications', 'fountain-specifications'],
+              ...(content.faq?.length ? [['FAQs', 'fountain-faqs']] : []),
+              ['Documents', 'fountain-documents'],
+            ].map(([label, id]) => (
+              <a key={id} href={`#${id}`} className="shrink-0 whitespace-nowrap border-b-2 border-transparent px-1 py-3 text-sm font-semibold text-black/70 transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-brand-blue">
+                {label}
+              </a>
+            ))}
+          </div>
+        </nav>
+      )}
+      {(isEditorialBubbler || isRoundBubbler) && <div className="mt-8 md:mt-0" />}
+      {isSquareBubbler ? (
+        <SquareBubblerDetails content={content} />
+      ) : isHdpeBubbler ? (
+        <HdpeBubblerDetails content={content} />
+      ) : isRoundBubbler ? (
         <RoundBubblerTabs
           description={
             <>
@@ -365,35 +386,58 @@ export function ProductDetail({
           }
           specifications={<FullSpecs specs={content.fullSpecs} />}
         />
-
-              )}
-              {content.faq && content.faq.length > 0 && (
-                <FountainDetailSection title="FAQs">
-                  <FaqAccordion items={content.faq} variant="minimal" />
-                </FountainDetailSection>
-              )}
-              <FountainDetailSection title="Downloads">
-                <FountainManualDownload />
-              </FountainDetailSection>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {!isEditorialBubbler && !isRoundBubbler && !editorialTapFinish && <HeadlineSpecs specs={content.headlineSpecs} />}
-      {editorialTapFinish && (
-        <ThreeWayTapSalesSections content={content} finish={editorialTapFinish} finishShowcase={<ThreeWayTapFinishEditorial />} />
-      )}
-      {!useFountainAccordion && !editorialTapFinish && (
+      ) : editorialTapFinish ? null : (
         <>
           <FullSpecs specs={content.fullSpecs} />
-          <ProductOverview description={content.description} shortDescription={content.shortDescription} />
+          <ProductOverview
+            description={content.description}
+            shortDescription={content.shortDescription}
+          />
           <ProductFeatures features={content.features} />
           <RecommendedFor items={content.recommendedFor} />
           <ComplianceSection compliance={content.compliance} />
         </>
       )}
-      {!useFountainAccordion && content.faq && content.faq.length > 0 && (
+      {(isEditorialBubbler || isRoundBubbler) && content.faq && content.faq.length > 0 && (
+        <div className="mt-4 md:mt-0">
+          <FountainDetailSection id="fountain-faqs" title="FAQs">
+            {isEditorialBubbler ? (
+          <section className="md:mt-20 md:border-t md:border-black/10 md:pt-16" aria-labelledby="square-bubbler-faq-heading">
+            <div className="mx-auto max-w-5xl">
+              <div className="mb-9 text-center md:mb-12">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-black/45">Helpful information</p>
+                <h2 id="square-bubbler-faq-heading" className="mt-3 text-2xl font-semibold tracking-tight text-black md:text-3xl">
+                  Frequently asked questions
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-black/60">{isHdpeBubbler ? 'Everything you need to know about your granite-look drinking fountain.' : 'Everything you need to know before choosing your water bubbler.'}</p>
+              </div>
+              <FaqAccordion items={content.faq} variant="minimal" />
+            </div>
+          </section>
+        ) : (
+          <section className="md:mt-10 md:border-t md:border-gray-200 md:pt-10">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-semibold text-black tracking-tight">
+                  Questions about this model
+                </h2>
+                {subcategory === 'bubblers' && (
+                  <p className="mt-3 text-sm text-black/70">
+                    For a side-by-side comparison of cooling, cabinet, bottle-fill and location options, see the{' '}
+                    <Link href="/commercial-water-bubblers" className="font-semibold text-brand-blue hover:underline underline-offset-4">
+                      commercial water bubbler guide
+                    </Link>.
+                  </p>
+                )}
+              </div>
+              <FaqAccordion items={content.faq} />
+            </div>
+          </section>
+            )}
+          </FountainDetailSection>
+        </div>
+      )}
+      {!isEditorialBubbler && !isRoundBubbler && content.faq && content.faq.length > 0 && (
           <section className="scroll-mt-40 mt-10 border-t border-gray-200 pt-10">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12">
               <div>
@@ -412,6 +456,9 @@ export function ProductDetail({
               <FaqAccordion items={content.faq} />
             </div>
           </section>
+      )}
+      {(isEditorialBubbler || isRoundBubbler) && (
+        <div className="mt-4 md:mt-0"><FountainDetailSection id="fountain-documents" title="Downloads" desktopClassName="md:mt-16 md:border-t md:border-black/10 md:pt-14"><FountainManualDownload /></FountainDetailSection></div>
       )}
       {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
