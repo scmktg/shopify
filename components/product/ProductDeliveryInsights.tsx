@@ -45,11 +45,10 @@ export function ProductDeliveryInsights({
             </span>
             <div className="min-w-0">
               <p className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                <strong className="text-[13px] font-bold tracking-tight text-slate-950">Free shipping</strong>
-                <span className="text-[11px] text-slate-600">Metro &amp; regional Australia</span>
+                <strong className="text-[13px] font-bold tracking-tight text-slate-950">Free shipping Australia wide</strong>
               </p>
               <p className="mt-0.5 text-[11px] leading-4 text-slate-500">
-                Shipping charges may apply for remote areas. We&apos;ll confirm any cost with you before fulfilment.
+                Some remote areas may incur an additional shipping fee. If this applies to your order, we&apos;ll contact you before fulfilment.
               </p>
             </div>
           </div>
