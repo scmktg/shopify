@@ -8,7 +8,6 @@ import { ProductOverview } from './ProductOverview';
 import { SquareBubblerDetails } from './SquareBubblerDetails';
 import { HdpeBubblerDetails } from './HdpeBubblerDetails';
 import { RoundBubblerTabs, FountainDetailSection } from './RoundBubblerTabs';
-import { FountainManualDownload } from './FountainManualDownload';
 import { ProductFeatures } from './ProductFeatures';
 import { HeadlineSpecs } from './HeadlineSpecs';
 import { RecommendedFor } from './RecommendedFor';
@@ -360,7 +359,6 @@ export function ProductDetail({
               ['Description', 'fountain-description'],
               ['Specifications', 'fountain-specifications'],
               ...(content.faq?.length ? [['FAQs', 'fountain-faqs']] : []),
-              ['Documents', 'fountain-documents'],
             ].map(([label, id]) => (
               <a key={id} href={`#${id}`} className="shrink-0 whitespace-nowrap border-b-2 border-transparent px-1 py-3 text-sm font-semibold text-black/70 transition-colors hover:border-brand-blue hover:text-brand-blue focus-visible:outline-2 focus-visible:outline-brand-blue">
                 {label}
@@ -456,9 +454,6 @@ export function ProductDetail({
               <FaqAccordion items={content.faq} />
             </div>
           </section>
-      )}
-      {(isEditorialBubbler || isRoundBubbler) && (
-        <div className="mt-4 md:mt-0"><FountainDetailSection id="fountain-documents" title="Downloads" desktopClassName="md:mt-16 md:border-t md:border-black/10 md:pt-14"><FountainManualDownload /></FountainDetailSection></div>
       )}
       {subcategory === 'dosing-tanks' && <DosingTankComparison />}
 
